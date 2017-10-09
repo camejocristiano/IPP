@@ -1,3 +1,7 @@
+# CursoCrudRest Implementação
+
+Implementação do CRUD de Cursos com formulários reativos e Observables [Angular CLI](https://github.com/camejocristiano/ipp/tree/master/client/v1.0.1) version 1.0.1
+
 # AngularCrudRest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.2.

@@ -1,3 +1,5 @@
+import { cursosRouting } from './cursos/cursos.routing';
+import { CursosModule } from './cursos/cursos.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -12,13 +14,17 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { routing } from './app.routing';
 import { usersRouting } from "./users/users.routing";
 import { UsersModule } from "./users/users.module";
+import { FooterComponent } from './footer/footer.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +33,8 @@ import { UsersModule } from "./users/users.module";
     MaterializeModule,
     UsersModule,
     usersRouting,
+    CursosModule,
+    cursosRouting,
     routing
   ],
   providers: [],

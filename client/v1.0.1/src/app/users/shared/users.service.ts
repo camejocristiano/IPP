@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Rx';
 export class UsersService {
 
   //private url: string = "http://ipp.net.br/api/public/index.php/users";
-  private url: string = "http://localhost/projetos/clientes/ipp/api/v1.0.1/public/index.php/users";
+  private url: string = "http://localhost/projetos/clientes/ipp/api/v1.0.0/public/index.php/users";
   //private url: string = "http://localhost:3000/users";
 
   constructor(private http: Http) { }
