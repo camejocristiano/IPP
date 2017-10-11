@@ -1,10 +1,15 @@
-<nav style="background-color: #e6e6e6 !important">
-<div class="container">
-  <div class="nav-wrapper">
-    <a routerLink="" class="brand-logo">IPP</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a routerLink="/users" routerLinkActive="active">Usuários</a></li>
+<nav class="orange lighten-1" role="navigation">
+  <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo" style="color:white">IPP</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a routerLink="/cursos" routerLinkActive="active" style="color:white">Cursos</a></li>
+      <li><a routerLink="/aprendizes" routerLinkActive="active" style="color:white">Aprendizes</a></li>
+      <li><a routerLink="/empresas" routerLinkActive="active" style="color:white">Empresas</a></li>
+      <li><a routerLink="/users" routerLinkActive="active" style="color:white">Usuários</a></li>
     </ul>
+
+    <ul id="nav-mobile" class="side-nav">
+      <li><a routerLink="/users" routerLinkActive="active" style="color:white">Usuários</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse" style="color:white"><i class="material-icons">menu</i></a>
   </div>
-</div>
 </nav>

@@ -1,3 +1,5 @@
+import { ArcosocupacionaisModule } from './arcosocupacionais/arcosocupacionais.module';
+import { ArcosocupacionaisRoutingModule } from './arcosocupacionais/arcosocupacionais-routing.module';
 import { cursosRouting } from './cursos/cursos.routing';
 import { CursosModule } from './cursos/cursos.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,7 +17,6 @@ import { routing } from './app.routing';
 import { usersRouting } from "./users/users.routing";
 import { UsersModule } from "./users/users.module";
 import { FooterComponent } from './footer/footer.component';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     NavBarComponent,
     HomeComponent,
     NotFoundComponent,
-    FooterComponent,
-    BreadcrumbComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +35,9 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     usersRouting,
     CursosModule,
     cursosRouting,
-    routing
+    routing,
+    ArcosocupacionaisModule,
+    ArcosocupacionaisRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
