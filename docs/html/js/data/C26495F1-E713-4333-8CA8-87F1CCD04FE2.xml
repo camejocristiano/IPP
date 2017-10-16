@@ -1,9 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.10:1", "", "Regras de Negócio", "EARoot/EA1/EA1/EA5/EA1/EA10/EA501.htm", "188.png", "23", "0", "", "Custom diagram0","{F53C4705-7B59-46eb-B873-06F30B954A55}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.10.1", "1", "RN - Acessos ao Sistema", "EARoot/EA1/EA1/EA5/EA1/EA10/EA503.htm", "4.png", "", "", "{16F30BFF-0A0B-4acf-94DD-9A60698BEBC6}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.10.2", "1", "RN - Curso", "EARoot/EA1/EA1/EA5/EA1/EA10/EA504.htm", "4.png", "", "", "{722B08B2-95CE-470a-8F97-4196DE683BCD}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.10.3", "1", "RN - CBOs", "EARoot/EA1/EA1/EA5/EA1/EA10/EA505.htm", "4.png", "", "", "{B6E32A3A-7573-47aa-B5AC-3279EE67E752}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.10.4", "1", "RN - Arcos Ocupacionais", "EARoot/EA1/EA1/EA5/EA1/EA10/EA506.htm", "4.png", "", "", "{2E1F7AFD-E8D1-444d-A894-7C199693301F}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.10.5", "1", "RN - Turma", "EARoot/EA1/EA1/EA5/EA1/EA10/EA507.htm", "4.png", "", "", "{EADCDC06-539B-480a-B395-48256A4AC2E2}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.10.6", "1", "RN - Conteudos Teoricos Especificos", "EARoot/EA1/EA1/EA5/EA1/EA10/EA508.htm", "4.png", "", "", "{3B8D8BA5-B8C7-44c0-BF29-549102BC9EEE}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.10.7", "1", "RN - Conteudos Teoricos Basicos", "EARoot/EA1/EA1/EA5/EA1/EA10/EA509.htm", "4.png", "", "", "{A61EC9D4-44FA-4aee-9AB6-6D79A26118D4}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.10.8", "1", "RN - Unidades", "EARoot/EA1/EA1/EA5/EA1/EA10/EA510.htm", "4.png", "", "", "{70EF6E7C-AD56-4dbe-80CF-49DC509A45C5}", "Package");

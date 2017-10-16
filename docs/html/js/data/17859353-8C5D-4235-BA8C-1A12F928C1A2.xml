@@ -1,3 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.3.1.1:1", "", "Controller", "EARoot/EA1/EA3/EA1/EA1/EA731.htm", "176.png", "398", "0", "", "Package diagram0","{0E0EDF40-E971-4f35-91E3-C3D77F0D85D5}");
-tocTab[tocTab.length] = new Array("0.1.3.1.1.1", "1", "Classes Externas", "EARoot/EA1/EA3/EA1/EA1/EA733.htm", "4.png", "", "", "{2EB01CC7-521F-4f2d-AE34-64794B70FAE5}", "Package");
-tocTab[tocTab.length] = new Array("0.1.3.1.1.2", "1", "ControllersAdministracao", "EARoot/EA1/EA3/EA1/EA1/EA734.htm", "4.png", "", "", "{108C010C-0BA0-4a7c-8E5B-BBF6E3FD30A9}", "Package");

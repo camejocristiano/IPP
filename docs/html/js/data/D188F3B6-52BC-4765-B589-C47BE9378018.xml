@@ -1,3 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.8.1.2:1", "", "Capacidade 1: Matricular Aprendiz Na Turma", "EARoot/EA1/EA1/EA5/EA1/EA8/EA1/EA2/EA428.htm", "189.png", "701", "0", "", "Analysis diagram0","{D29746F7-72A4-4c9c-8761-A32C98BCDF0A}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.8.1.2:2", "", "«DFD_Process» Matricular Aprendiz Na Turma", "EARoot/EA1/EA1/EA5/EA1/EA8/EA1/EA2/EA430.htm", "21.png", "3589", "0", "", "Activity0","{AA2559D1-CDE5-4a9e-9614-BD74915AC083}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.8.1.2.1", "1", "Análise de Eventos", "EARoot/EA1/EA1/EA5/EA1/EA8/EA1/EA2/EA431.htm", "4.png", "", "", "{3B7EB2B5-EA23-4bf8-B95A-783094BEC788}", "Package");

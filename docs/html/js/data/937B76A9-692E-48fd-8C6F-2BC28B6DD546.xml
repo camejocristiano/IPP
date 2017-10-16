@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("0.1.2.1.2.3:1", "", "Manter Conteudo Teorico Basico", "EARoot/EA1/EA2/EA1/EA2/EA3/EA610.htm", "180.png", "598", "0", "", "Use Case diagram0","{1CD8FB65-07DF-464a-A37E-3BC0EE44DAC2}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.3:2", "", "Buscar Conteudo Teorico Especifico", "EARoot/EA1/EA2/EA1/EA2/EA3/EA612.htm", "7.png", "3250", "0", "", "UseCase0","{7E282A0D-A1F8-456c-82FF-A7C9277AC81C}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.3:3", "", "Cadastrar Conteudo Teorico Especifico", "EARoot/EA1/EA2/EA1/EA2/EA3/EA613.htm", "7.png", "3249", "0", "", "UseCase0","{4A94C0E8-DFC8-4478-A275-2951C759D939}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.3:4", "", "Editar Conteudo Teorico Especifico", "EARoot/EA1/EA2/EA1/EA2/EA3/EA614.htm", "7.png", "3251", "0", "", "UseCase0","{F14EE434-38D0-4180-B8D0-4EC7E6351E61}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.3:5", "", "Listar Conteudos Teoricos Especifico", "EARoot/EA1/EA2/EA1/EA2/EA3/EA615.htm", "7.png", "3247", "0", "", "UseCase0","{B145867F-6115-4ebf-BB33-58CC1F0F06D6}");

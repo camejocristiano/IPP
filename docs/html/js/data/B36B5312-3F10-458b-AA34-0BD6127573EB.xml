@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.1.2.1.3:1", "", "Controle de Acesso", "EARoot/EA1/EA2/EA1/EA3/EA651.htm", "180.png", "441", "0", "", "Use Case diagram0","{D9B1FEFB-D1F7-4e61-BDA3-041D560B270C}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3:2", "", "Logar no Sistema", "EARoot/EA1/EA2/EA1/EA3/EA653.htm", "7.png", "2114", "0", "", "UseCase0","{050207A4-AF0F-4ac1-AB64-0EFBCF9B60DF}");

@@ -1,5 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.2.1.2.1:1", "", "ManterArcos Ocupacionais", "EARoot/EA1/EA2/EA1/EA2/EA1/EA596.htm", "180.png", "596", "0", "", "Use Case diagram0","{3681773B-2D90-4243-874D-261CE24BB0F5}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.1:2", "", "Buscar Arco Ocupacional Por Id", "EARoot/EA1/EA2/EA1/EA2/EA1/EA598.htm", "7.png", "3237", "0", "", "UseCase0","{C87E4418-8EDF-4e6e-84EB-AB16C804D040}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.1:3", "", "Cadastrar Arco Ocupacional", "EARoot/EA1/EA2/EA1/EA2/EA1/EA599.htm", "7.png", "3236", "0", "", "UseCase0","{2438E116-D0BD-4fc9-A381-3BDD63EEEAB6}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.1:4", "", "Editar Arco Ocupacional", "EARoot/EA1/EA2/EA1/EA2/EA1/EA600.htm", "7.png", "3234", "0", "", "UseCase0","{0A81F6AC-2CD7-423a-81C2-05B041C42B09}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.1:5", "", "Listar Arcos Ocupacionais", "EARoot/EA1/EA2/EA1/EA2/EA1/EA601.htm", "7.png", "3233", "0", "", "UseCase0","{36567D9A-E8E1-48f1-900A-C2FAF4DFFE44}");

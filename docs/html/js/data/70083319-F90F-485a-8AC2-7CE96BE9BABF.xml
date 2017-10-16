@@ -1,8 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.2.1:1", "", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA2/EA1/EA132.htm", "189.png", "286", "0", "", "Analysis diagram0","{623DF3EC-3BBE-49b8-8EA4-6481C34CF47E}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.2.1.1", "1", "Manutenção: Cursos", "EARoot/EA1/EA1/EA5/EA1/EA2/EA1/EA134.htm", "4.png", "", "", "{64FC70E7-669C-4067-91D8-6579DE64327D}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.2.1.2", "1", "Capacidade 1: Cadastrar Curso", "EARoot/EA1/EA1/EA5/EA1/EA2/EA1/EA135.htm", "4.png", "", "", "{08460F64-5204-47f4-B653-E9C33C27BDF7}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.2.1.3", "1", "Capacidade 2: Editar Curso", "EARoot/EA1/EA1/EA5/EA1/EA2/EA1/EA136.htm", "4.png", "", "", "{C42DCD04-430D-429c-A14C-8C348ABC17E6}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.2.1.4", "1", "Capacidade 3: Visualizar Curso Por Id", "EARoot/EA1/EA1/EA5/EA1/EA2/EA1/EA137.htm", "4.png", "", "", "{FD2FFEC8-63A0-4896-97EA-20BED7BED893}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.2.1.5", "1", "Capacidade 4: Visualizar Curso Por Nome do Curso", "EARoot/EA1/EA1/EA5/EA1/EA2/EA1/EA138.htm", "4.png", "", "", "{39D8A7A0-1638-4dbd-8195-B20D88C7ABBE}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.2.1.6", "1", "Capacidade 5: Visualizar Cursos", "EARoot/EA1/EA1/EA5/EA1/EA2/EA1/EA139.htm", "4.png", "", "", "{7F5FBC21-AB21-4f58-9026-37608EE03B10}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.2.1.7", "1", "Capacidade 6: Visualizar Cursos Por Status dos Cursos", "EARoot/EA1/EA1/EA5/EA1/EA2/EA1/EA140.htm", "4.png", "", "", "{63BA80CD-A077-46d4-8BF2-F0BE2418D4B4}", "Package");

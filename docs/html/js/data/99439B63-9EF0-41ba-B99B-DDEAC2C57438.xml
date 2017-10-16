@@ -1,6 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1:1", "", "Análise de Sistemas", "EARoot/EA1/EA1/EA6.htm", "176.png", "3", "0", "", "Package diagram0","{56830BF0-C9F5-4d2c-A23A-2D9574E42AF6}");
-tocTab[tocTab.length] = new Array("0.1.1.1", "1", "Geral", "EARoot/EA1/EA1/EA8.htm", "4.png", "", "", "{71044853-3284-41aa-BE8F-174658348D4F}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.2", "1", "Análise do Problema			", "EARoot/EA1/EA1/EA9.htm", "4.png", "", "", "{1100F8C0-39D6-4f09-AEAD-3DA56A050E17}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.3", "1", "Needs", "EARoot/EA1/EA1/EA10.htm", "4.png", "", "", "{A9B40EBB-26AF-42e9-967C-9865AF9BBD7B}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.4", "1", "Workshop de Características", "EARoot/EA1/EA1/EA11.htm", "4.png", "", "", "{FFBA0BAB-2F41-496e-BDAF-97491916657E}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5", "1", "Modelagem dos Processos de Negócio", "EARoot/EA1/EA1/EA12.htm", "4.png", "", "", "{C00E4201-3AC8-4719-A4EE-A1F42FA8B9F2}", "Package");
