@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("0.1.2.1.2.2:1", "", "ManterCBOs", "EARoot/EA1/EA2/EA1/EA2/EA2/EA602.htm", "180.png", "597", "0", "", "Use Case diagram0","{30CE782F-EA3C-4ede-9D07-D684FE4766C9}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.2:2", "", "Buscar CBO Por Id", "EARoot/EA1/EA2/EA1/EA2/EA2/EA604.htm", "7.png", "3243", "0", "", "UseCase0","{F1AA6B3F-5CA8-4d97-AE99-BE41AE540A10}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.2:3", "", "Cadastrar CBO", "EARoot/EA1/EA2/EA1/EA2/EA2/EA605.htm", "7.png", "3241", "0", "", "UseCase0","{63C07FEE-4D37-4feb-BB24-59B9F022E0B1}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.2:4", "", "Editar CBO", "EARoot/EA1/EA2/EA1/EA2/EA2/EA606.htm", "7.png", "3240", "0", "", "UseCase0","{F6274BD9-E884-4140-AF85-CB0F3E5D783A}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.2:5", "", "Listar CBOs", "EARoot/EA1/EA2/EA1/EA2/EA2/EA607.htm", "7.png", "3242", "0", "", "UseCase0","{166CBA1C-9790-4c7f-9B43-4485C8BF848D}");

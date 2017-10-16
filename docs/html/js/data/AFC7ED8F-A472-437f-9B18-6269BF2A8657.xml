@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.2:1", "", "TestesDeVerificacao", "EARoot/EA2/EA749.htm", "175.png", "465", "0", "", "Logical diagram0","{860693F6-3C8B-43cb-B7D4-900774E87AC5}");
+tocTab[tocTab.length] = new Array("0.2.1", "", "Fases dos Testes de Verificação", "EARoot/EA2/EA751.htm", "4.png", "", "", "{B47608BC-2EF4-4e4d-9940-245414DED034}", "Package");

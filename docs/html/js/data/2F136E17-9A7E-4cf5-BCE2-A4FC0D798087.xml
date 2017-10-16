@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.3:1", "", "Capacidade 2: Editar", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA3/EA298.htm", "189.png", "667", "0", "", "Analysis diagram0","{CAC13CEB-4CB2-4b22-801E-CE330FC6C46C}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.3:2", "", "«DFD_Process» Editar", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA3/EA301.htm", "21.png", "3522", "0", "", "Activity0","{F6A20095-0966-43da-BBC0-55F54502063B}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.3.1", "1", "Análise de Eventos", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA3/EA300.htm", "4.png", "", "", "{F1AE55EB-CF10-4087-9B22-447FE4993DEB}", "Package");

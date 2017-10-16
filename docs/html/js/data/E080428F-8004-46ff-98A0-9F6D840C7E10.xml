@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.1.1.5.1.9.1.5:1", "", "Capacidade 4: Listar", "EARoot/EA1/EA1/EA5/EA1/EA9/EA1/EA5/EA495.htm", "189.png", "728", "0", "", "Analysis diagram0","{ECEA00DD-DFDE-4fbc-BA77-51E03EAF5237}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.9.1.5.1", "1", "Análise de Eventos", "EARoot/EA1/EA1/EA5/EA1/EA9/EA1/EA5/EA497.htm", "4.png", "", "", "{1C034A3C-E171-4d3d-A487-73C8B89BE8A8}", "Package");
