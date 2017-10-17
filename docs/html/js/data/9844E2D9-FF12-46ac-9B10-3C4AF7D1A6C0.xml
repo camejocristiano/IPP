@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.1.1.5.1.20.1.2:1", "", "Capacidade 1: Cadastrar Contratacao", "EARoot/EA1/EA1/EA5/EA1/EA20/EA1/EA2/EA995.htm", "189.png", "796", "0", "", "Analysis diagram0","{56808127-ED29-4575-BCF1-BF6AEE3A4862}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.20.1.2:2", "", "«DFD_Process» Cadastrar Contratacao", "EARoot/EA1/EA1/EA5/EA1/EA20/EA1/EA2/EA999.htm", "21.png", "3864", "0", "", "Activity0","{9A92C8CE-F8DC-40ad-A3BD-79BDF766AA83}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.20.1.2.1", "1", "Análise de Eventos", "", "4.png", "", "", "{A4FAB538-6270-472b-AC48-98BF76BB146A}", "Package");

@@ -1,2 +1,1 @@
 tocTab[tocTab.length] = new Array("0.1", "1", "Projeto IPP", "", "34.png", "", "", "{80DFAD7A-461B-48d7-A4B7-B2184AA07DE8}", "Package");
-tocTab[tocTab.length] = new Array("0.2", "1", "TestesDeVerificacao", "", "31.png", "", "", "{0EAB7F57-47BD-42c3-931C-4E6B6D5DDC97}", "Package");

@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.1.1.5.1.22.1.2:1", "", "Capacidade 1: Cadastrar  Historico", "EARoot/EA1/EA1/EA5/EA1/EA22/EA1/EA2/EA1080.htm", "189.png", "890", "0", "", "Analysis diagram0","{5BE6EC1B-00D6-40e8-8553-EA29FB56CFFC}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.22.1.2:2", "", "«DFD_Process» Cadastrar  Historico", "EARoot/EA1/EA1/EA5/EA1/EA22/EA1/EA2/EA1084.htm", "21.png", "4020", "0", "", "Activity0","{05D9C70F-F376-437e-AA78-B93C7C5F879A}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.22.1.2.1", "1", "Análise de Eventos", "", "4.png", "", "", "{1289AA01-84BC-488d-AF1C-8C0CD0F9B02F}", "Package");

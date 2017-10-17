@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.1.1.5.1.12.1.2:1", "", "Capacidade 1: Cadastrar  Situacao Laboral", "EARoot/EA1/EA1/EA5/EA1/EA12/EA1/EA2/EA698.htm", "189.png", "930", "0", "", "Analysis diagram0","{B4992E3E-94CC-4e49-8F62-A894AB571F8E}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.12.1.2:2", "", "«DFD_Process» Cadastrar  Situacao Laboral", "EARoot/EA1/EA1/EA5/EA1/EA12/EA1/EA2/EA702.htm", "21.png", "4084", "0", "", "Activity0","{42A3ED0B-EAB8-4520-BFE6-1CF59ED88EC3}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.12.1.2.1", "1", "Análise de Eventos", "", "4.png", "", "", "{A090FDCC-2311-4703-BD5B-F17F0C25C85D}", "Package");

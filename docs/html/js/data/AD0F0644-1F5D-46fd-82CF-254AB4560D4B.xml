@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.8.1.3:1", "", "Capacidade 2: Editar A Matricula Do Aprendiz Da Turma", "EARoot/EA1/EA1/EA5/EA1/EA8/EA1/EA3/EA437.htm", "189.png", "703", "0", "", "Analysis diagram0","{748304FA-8AB3-4dc2-AB38-21EFC419E294}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.8.1.3:2", "", "«DFD_Process» Editar A Matricula Do Aprendiz Da Turma", "EARoot/EA1/EA1/EA5/EA1/EA8/EA1/EA3/EA439.htm", "21.png", "3590", "0", "", "Activity0","{ECC448BD-DA25-449f-9041-5D895A88B321}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.8.1.3:1", "", "Capacidade 2: Editar A Matricula Do Aprendiz Da Turma", "EARoot/EA1/EA1/EA5/EA1/EA8/EA1/EA3/EA491.htm", "189.png", "703", "0", "", "Analysis diagram0","{748304FA-8AB3-4dc2-AB38-21EFC419E294}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.8.1.3:2", "", "«DFD_Process» Editar A Matricula Do Aprendiz Da Turma", "EARoot/EA1/EA1/EA5/EA1/EA8/EA1/EA3/EA493.htm", "21.png", "3590", "0", "", "Activity0","{ECC448BD-DA25-449f-9041-5D895A88B321}");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.8.1.3.1", "1", "Análise de Eventos", "", "4.png", "", "", "{BEC0C82F-EE60-42e6-95C1-E926482C115A}", "Package");

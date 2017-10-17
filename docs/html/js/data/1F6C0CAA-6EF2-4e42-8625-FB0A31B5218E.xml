@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.1.1.5.1.20.1.4:1", "", "Visualizar Contratacoes", "EARoot/EA1/EA1/EA5/EA1/EA20/EA1/EA4/EA1008.htm", "189.png", "800", "0", "", "Analysis diagram0","{7CCE6453-231A-4808-A786-3D7F43FDDEF0}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.20.1.4:2", "", "«DFD_Process» Visualizar Contratacoes", "EARoot/EA1/EA1/EA5/EA1/EA20/EA1/EA4/EA1012.htm", "21.png", "3869", "0", "", "Activity0","{B908CF9E-1184-4746-B165-1D10F51326B2}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.20.1.4.1", "1", "Análise de Eventos", "", "4.png", "", "", "{55B0E03F-129C-4125-BC6F-94A7661CBB4B}", "Package");

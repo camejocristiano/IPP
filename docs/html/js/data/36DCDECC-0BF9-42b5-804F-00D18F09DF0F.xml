@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.6:1", "", "Capacidade 5: Listar Turmas Por Curso", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA6/EA320.htm", "189.png", "711", "0", "", "Analysis diagram0","{6A3720A1-FF45-4291-8677-E03C7A18AF5B}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.6:2", "", "«DFD_Process» Capacidade 5: Listar Turmas Por Curso", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA6/EA324.htm", "21.png", "3602", "0", "", "Activity0","{2650BB0F-DD84-4825-8163-A0F323EB4F1C}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.6:1", "", "Capacidade 5: Listar Turmas Por Curso", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA6/EA374.htm", "189.png", "711", "0", "", "Analysis diagram0","{6A3720A1-FF45-4291-8677-E03C7A18AF5B}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.6:2", "", "«DFD_Process» Capacidade 5: Listar Turmas Por Curso", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA6/EA378.htm", "21.png", "3602", "0", "", "Activity0","{2650BB0F-DD84-4825-8163-A0F323EB4F1C}");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.6.1", "1", "Análise de Eventos", "", "4.png", "", "", "{8410698C-AFA8-44a2-8F2D-F1A40B08D535}", "Package");
