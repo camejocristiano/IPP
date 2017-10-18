@@ -1,4 +1,4 @@
-tocTab[tocTab.length] = new Array("0.1.2.1:1", "", "Análise de Software", "EARoot/EA1/EA2/EA1/EA1317.htm", "180.png", "344", "0", "", "Use Case diagram0","{DA175509-EE04-4ad5-A1E7-234FBBB64A09}");
+tocTab[tocTab.length] = new Array("0.1.2.1:1", "", "Análise de Software", "EARoot/EA1/EA2/EA1/EA1315.htm", "180.png", "344", "0", "", "Use Case diagram0","{DA175509-EE04-4ad5-A1E7-234FBBB64A09}");
 tocTab[tocTab.length] = new Array("0.1.2.1.1", "1", "Atores", "", "4.png", "", "", "{CF462648-CD75-4294-8336-B8CCF4858265}", "Package");
 tocTab[tocTab.length] = new Array("0.1.2.1.2", "1", "Geral", "", "4.png", "", "", "{74430B1C-F367-4876-A571-64FE19122514}", "Package");
 tocTab[tocTab.length] = new Array("0.1.2.1.3", "1", "Controle de Acesso", "", "4.png", "", "", "{B36B5312-3F10-458b-AA34-0BD6127573EB}", "Package");
