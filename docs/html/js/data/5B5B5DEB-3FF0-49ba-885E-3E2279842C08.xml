@@ -1,6 +1,6 @@
-tocTab[tocTab.length] = new Array("0.1.2.1.2.7:1", "", "Manter Turmas", "EARoot/EA1/EA2/EA1/EA2/EA7/EA1373.htm", "180.png", "544", "0", "", "Use Case diagram0","{D60F59CB-DA10-4d92-B0BB-7B6E3FDED9CB}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.7:2", "", "Buscar Turma Por Numero", "EARoot/EA1/EA2/EA1/EA2/EA7/EA1375.htm", "7.png", "3223", "0", "", "UseCase0","{67F05917-3AA9-41e9-AC79-A563A3672F8D}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.7:3", "", "Cadastrar Turma", "EARoot/EA1/EA2/EA1/EA2/EA7/EA1376.htm", "7.png", "3147", "0", "", "UseCase0","{A79065C9-A972-4656-89C1-85CB2BD907F1}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.7:4", "", "Editar Turma", "EARoot/EA1/EA2/EA1/EA2/EA7/EA1377.htm", "7.png", "3150", "0", "", "UseCase0","{A4A94686-7311-4b7f-8FF7-C488B7BF0D29}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.7:5", "", "Listar Turmas", "EARoot/EA1/EA2/EA1/EA2/EA7/EA1378.htm", "7.png", "3148", "0", "", "UseCase0","{2BD7F6A9-DBAF-4f71-9D1D-F277B2570B09}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.7:6", "", "Listar Turmas Por Curso", "EARoot/EA1/EA2/EA1/EA2/EA7/EA1379.htm", "7.png", "3152", "0", "", "UseCase0","{E1521C52-4EE3-41bc-AD52-8F07E205F920}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.7:1", "", "Manter Turmas", "EARoot/EA1/EA2/EA1/EA2/EA7/EA1404.htm", "180.png", "544", "0", "", "Use Case diagram0","{D60F59CB-DA10-4d92-B0BB-7B6E3FDED9CB}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.7:2", "", "Buscar Turma Por Numero", "EARoot/EA1/EA2/EA1/EA2/EA7/EA1406.htm", "7.png", "3223", "0", "", "UseCase0","{67F05917-3AA9-41e9-AC79-A563A3672F8D}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.7:3", "", "Cadastrar Turma", "EARoot/EA1/EA2/EA1/EA2/EA7/EA1407.htm", "7.png", "3147", "0", "", "UseCase0","{A79065C9-A972-4656-89C1-85CB2BD907F1}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.7:4", "", "Editar Turma", "EARoot/EA1/EA2/EA1/EA2/EA7/EA1408.htm", "7.png", "3150", "0", "", "UseCase0","{A4A94686-7311-4b7f-8FF7-C488B7BF0D29}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.7:5", "", "Listar Turmas", "EARoot/EA1/EA2/EA1/EA2/EA7/EA1409.htm", "7.png", "3148", "0", "", "UseCase0","{2BD7F6A9-DBAF-4f71-9D1D-F277B2570B09}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.7:6", "", "Listar Turmas Por Curso", "EARoot/EA1/EA2/EA1/EA2/EA7/EA1410.htm", "7.png", "3152", "0", "", "UseCase0","{E1521C52-4EE3-41bc-AD52-8F07E205F920}");

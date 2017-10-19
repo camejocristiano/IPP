@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.3:1", "", "Capacidade 2: Editar", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA3/EA354.htm", "189.png", "667", "0", "", "Analysis diagram0","{C1444D78-708E-402a-BE60-ADF73B5733DE}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.3:2", "", "«DFD_Process» Editar", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA3/EA357.htm", "21.png", "3522", "0", "", "Activity0","{19EEBF38-0012-4620-BEBD-AAB568DC0307}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.3.1", "1", "Análise de Eventos", "", "4.png", "", "", "{BF5FFFC5-E4D4-47b8-9DE0-033CA342047A}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.7.1.3:1", "", "Capacidade 2: Editar", "EARoot/EA1/EA1/EA5/EA1/EA7/EA1/EA3/EA471.htm", "189.png", "667", "0", "", "Analysis diagram0","{C1444D78-708E-402a-BE60-ADF73B5733DE}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.7.1.3:2", "", "«DFD_Process» Editar", "EARoot/EA1/EA1/EA5/EA1/EA7/EA1/EA3/EA474.htm", "21.png", "3522", "0", "", "Activity0","{19EEBF38-0012-4620-BEBD-AAB568DC0307}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.7.1.3.1", "1", "Análise de Eventos", "", "4.png", "", "", "{BF5FFFC5-E4D4-47b8-9DE0-033CA342047A}", "Package");

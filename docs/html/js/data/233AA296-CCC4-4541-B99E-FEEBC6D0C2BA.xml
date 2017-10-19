@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.24.1.2:1", "", "Capacidade 1: Cadastrar Dados Financeiros", "EARoot/EA1/EA1/EA5/EA1/EA24/EA1/EA2/EA1151.htm", "189.png", "808", "0", "", "Analysis diagram0","{A101F8B1-9489-4dbb-B964-FA85D86A290A}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.24.1.2:2", "", "«DFD_Process» Cadastrar Dados Financeiros", "EARoot/EA1/EA1/EA5/EA1/EA24/EA1/EA2/EA1155.htm", "21.png", "3885", "0", "", "Activity0","{B56D5EB5-65AB-44e3-9204-E17EC2E1618B}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.24.1.2:1", "", "Capacidade 1: Cadastrar Dados Financeiros", "EARoot/EA1/EA1/EA5/EA1/EA24/EA1/EA2/EA1182.htm", "189.png", "808", "0", "", "Analysis diagram0","{A101F8B1-9489-4dbb-B964-FA85D86A290A}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.24.1.2:2", "", "«DFD_Process» Cadastrar Dados Financeiros", "EARoot/EA1/EA1/EA5/EA1/EA24/EA1/EA2/EA1186.htm", "21.png", "3885", "0", "", "Activity0","{B56D5EB5-65AB-44e3-9204-E17EC2E1618B}");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.24.1.2.1", "1", "Análise de Eventos", "", "4.png", "", "", "{7CEED05F-DAFA-4362-B9B3-429D8230FD74}", "Package");

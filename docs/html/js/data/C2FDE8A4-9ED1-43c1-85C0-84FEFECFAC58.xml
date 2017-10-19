@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.17.1.4:1", "", "Capacidade 3: Visualizar Ficha Social Por Id", "EARoot/EA1/EA1/EA5/EA1/EA17/EA1/EA4/EA886.htm", "189.png", "874", "0", "", "Analysis diagram0","{C0E47EA5-55D5-4a3d-8BF7-0EC2E50E5AB9}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.17.1.4:2", "", "«DFD_Process» Visualizar Ficha Social Por Id", "EARoot/EA1/EA1/EA5/EA1/EA17/EA1/EA4/EA890.htm", "21.png", "3993", "0", "", "Activity0","{2C538313-ADA0-4fb9-BD6C-77824888029E}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.17.1.4:1", "", "Capacidade 3: Visualizar Ficha Social Por Id", "EARoot/EA1/EA1/EA5/EA1/EA17/EA1/EA4/EA917.htm", "189.png", "874", "0", "", "Analysis diagram0","{C0E47EA5-55D5-4a3d-8BF7-0EC2E50E5AB9}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.17.1.4:2", "", "«DFD_Process» Visualizar Ficha Social Por Id", "EARoot/EA1/EA1/EA5/EA1/EA17/EA1/EA4/EA921.htm", "21.png", "3993", "0", "", "Activity0","{2C538313-ADA0-4fb9-BD6C-77824888029E}");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.17.1.4.1", "1", "Análise de Eventos", "", "4.png", "", "", "{A3A44FF7-AD34-449c-86B8-9759B957897E}", "Package");

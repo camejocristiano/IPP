@@ -1,7 +1,7 @@
-tocTab[tocTab.length] = new Array("0.1.2.1.2.5:1", "", "Manter Cursos", "EARoot/EA1/EA2/EA1/EA2/EA5/EA1357.htm", "180.png", "440", "0", "", "Use Case diagram0","{7CB785B5-DC90-4d22-A448-FCEC94B2D04F}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.5:2", "", "Buscar Curso por Nome Do Curso", "EARoot/EA1/EA2/EA1/EA2/EA5/EA1359.htm", "7.png", "3221", "0", "", "UseCase0","{17602E24-805E-44be-9CFD-C59B39DC7F11}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.5:3", "", "Cadastrar Curso", "EARoot/EA1/EA2/EA1/EA2/EA5/EA1360.htm", "7.png", "3143", "0", "", "UseCase0","{2A468DED-156C-406a-9CDD-1E991058B633}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.5:4", "", "Editar Curso", "EARoot/EA1/EA2/EA1/EA2/EA5/EA1361.htm", "7.png", "3144", "0", "", "UseCase0","{D65B5CBB-BECA-4d5f-89BD-C820AC7F7685}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.5:5", "", "Listar Curso por Id", "EARoot/EA1/EA2/EA1/EA2/EA5/EA1362.htm", "7.png", "3145", "0", "", "UseCase0","{5535106E-5223-4a9f-AF88-8805D23C44AE}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.5:6", "", "Listar Cursos", "EARoot/EA1/EA2/EA1/EA2/EA5/EA1363.htm", "7.png", "3146", "0", "", "UseCase0","{AA279B80-248F-4e47-A093-0A5061CAB22F}");
-tocTab[tocTab.length] = new Array("0.1.2.1.2.5:7", "", "Listar Cursos Por Status Dos Cursos", "EARoot/EA1/EA2/EA1/EA2/EA5/EA1364.htm", "7.png", "3222", "0", "", "UseCase0","{D4F598A1-B41E-4a2b-BA2E-E4746C032469}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.5:1", "", "Manter Cursos", "EARoot/EA1/EA2/EA1/EA2/EA5/EA1388.htm", "180.png", "440", "0", "", "Use Case diagram0","{7CB785B5-DC90-4d22-A448-FCEC94B2D04F}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.5:2", "", "Buscar Curso por Nome Do Curso", "EARoot/EA1/EA2/EA1/EA2/EA5/EA1390.htm", "7.png", "3221", "0", "", "UseCase0","{17602E24-805E-44be-9CFD-C59B39DC7F11}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.5:3", "", "Cadastrar Curso", "EARoot/EA1/EA2/EA1/EA2/EA5/EA1391.htm", "7.png", "3143", "0", "", "UseCase0","{2A468DED-156C-406a-9CDD-1E991058B633}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.5:4", "", "Editar Curso", "EARoot/EA1/EA2/EA1/EA2/EA5/EA1392.htm", "7.png", "3144", "0", "", "UseCase0","{D65B5CBB-BECA-4d5f-89BD-C820AC7F7685}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.5:5", "", "Listar Curso por Id", "EARoot/EA1/EA2/EA1/EA2/EA5/EA1393.htm", "7.png", "3145", "0", "", "UseCase0","{5535106E-5223-4a9f-AF88-8805D23C44AE}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.5:6", "", "Listar Cursos", "EARoot/EA1/EA2/EA1/EA2/EA5/EA1394.htm", "7.png", "3146", "0", "", "UseCase0","{AA279B80-248F-4e47-A093-0A5061CAB22F}");
+tocTab[tocTab.length] = new Array("0.1.2.1.2.5:7", "", "Listar Cursos Por Status Dos Cursos", "EARoot/EA1/EA2/EA1/EA2/EA5/EA1395.htm", "7.png", "3222", "0", "", "UseCase0","{D4F598A1-B41E-4a2b-BA2E-E4746C032469}");

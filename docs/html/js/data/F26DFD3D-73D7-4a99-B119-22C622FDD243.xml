@@ -1,4 +1,4 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.13.1:1", "", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA13/EA1/EA721.htm", "189.png", "769", "0", "", "Analysis diagram0","{4BA9DD02-FAB4-4acb-8230-E70CA5208D07}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.13.1:1", "", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA13/EA1/EA752.htm", "189.png", "769", "0", "", "Analysis diagram0","{4BA9DD02-FAB4-4acb-8230-E70CA5208D07}");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.13.1.1", "1", "Manutenção: Caracteristicas Domiciliares", "", "4.png", "", "", "{E599237A-A70A-4a96-BCE7-7490AD4AA1B6}", "Package");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.13.1.2", "1", "Capacidade 1: Cadastrar Caracteristicas Domiciliares", "", "4.png", "", "", "{5EFD566E-B36D-4fc6-914B-A4E6DC0FD15E}", "Package");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.13.1.3", "1", "Capacidade 2: Editar Caracteristicas Domiciliares", "", "4.png", "", "", "{155D2E07-4103-4b1d-A987-2D289C466309}", "Package");

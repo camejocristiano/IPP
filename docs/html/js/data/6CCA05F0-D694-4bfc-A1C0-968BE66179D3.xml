@@ -1,2 +1,2 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.1:1", "", "Manutenção: Turmas", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA1/EA341.htm", "189.png", "663", "0", "", "Analysis diagram0","{2E2E8852-6A9C-45b1-9C96-CBC844CFC499}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.1.1", "1", "Análise de Eventos", "", "4.png", "", "", "{46AAC7FD-B1BC-4fc5-B12E-8E81239F2A7C}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.7.1.1:1", "", "Manutenção: Turmas", "EARoot/EA1/EA1/EA5/EA1/EA7/EA1/EA1/EA458.htm", "189.png", "663", "0", "", "Analysis diagram0","{2E2E8852-6A9C-45b1-9C96-CBC844CFC499}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.7.1.1.1", "1", "Análise de Eventos", "", "4.png", "", "", "{46AAC7FD-B1BC-4fc5-B12E-8E81239F2A7C}", "Package");
