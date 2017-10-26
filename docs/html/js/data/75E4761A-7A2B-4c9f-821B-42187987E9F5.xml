@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("0.1.1.5.1.26.2.7:1", "", "Frequencias", "EARoot/EA1/EA1/EA5/EA1/EA26/EA2/EA7/EA1781.htm", "175.png", "976", "0", "", "Logical diagram0","{BC87608E-EAB4-47eb-BA4B-C71C0E753854}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.26.2.7:2", "", "ListaDeFrequencia_PAP_DadosDePAP", "EARoot/EA1/EA1/EA5/EA1/EA26/EA2/EA7/EA1783.htm", "5.png", "4487", "0", "", "Class0","{A3943F46-943B-4654-BE62-3AF89C775D72}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.26.2.7:3", "", "ListaDeFrequencia_PIO_DadosDaLista", "EARoot/EA1/EA1/EA5/EA1/EA26/EA2/EA7/EA1784.htm", "5.png", "4491", "0", "", "Class0","{82F70E14-E959-436a-A7F7-D63EAD42CF55}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.26.2.7:4", "", "ListaDeFrequencia_PIOMes_DadosDoPIOMes", "EARoot/EA1/EA1/EA5/EA1/EA26/EA2/EA7/EA1785.htm", "5.png", "4488", "0", "", "Class0","{F22F9D91-D9C1-48c6-B05B-C70CA3360EB9}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.26.2.7:5", "", "ListaDeFrequencia_PITEPIP_DadosDaLista", "EARoot/EA1/EA1/EA5/EA1/EA26/EA2/EA7/EA1786.htm", "5.png", "4490", "0", "", "Class0","{5324D47C-EBEF-49c3-885A-813389C7B9A0}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.26.2.7:6", "", "ListaDeFrequencia_PITEPIP_Mes", "EARoot/EA1/EA1/EA5/EA1/EA26/EA2/EA7/EA1787.htm", "5.png", "4489", "0", "", "Class0","{902F1327-8DE1-437c-838F-65458CE575AC}");
