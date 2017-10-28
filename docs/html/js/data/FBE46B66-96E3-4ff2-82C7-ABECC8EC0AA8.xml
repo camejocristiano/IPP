@@ -1,9 +1,4 @@
-tocTab[tocTab.length] = new Array("0.1.2.1.3.5:1", "", "Financeiro", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2755.htm", "180.png", "1089", "0", "", "Use Case diagram0","{3F32FC7F-A70E-4fb0-A138-1C0964A0C6F3}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.5.1", "1", "13 Salario", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2757.htm", "4.png", "", "", "{D269D399-1D2C-4c00-AC81-779078266115}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.5.2", "1", "Bancos", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2759.htm", "4.png", "", "", "{6A1ABCAC-57E4-4237-81FC-0AABDF0A5F47}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.5.3", "1", "Contas A Pagar", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2760.htm", "4.png", "", "", "{07CA92A4-F8A4-42cc-8FE7-B51351C5DBC2}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.5.4", "1", "Contas A Receber", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2761.htm", "4.png", "", "", "{31F2EAB4-A39D-4178-A5F5-157D97ABBC26}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.5.5", "1", "Demonstrativo", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2762.htm", "4.png", "", "", "{EBA1AF2E-23B8-4f89-997D-F0F6EE3983B9}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.5.6", "1", "Parametros", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2763.htm", "4.png", "", "", "{0200871F-BC9E-442f-AB5E-F6D0FF89F321}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.5.7", "1", "VR", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2764.htm", "4.png", "", "", "{6A5EC938-7122-4b72-9B54-F66D0F57638F}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.5.8", "1", "VT", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2765.htm", "4.png", "", "", "{5C9E2EE0-6121-4953-81A4-96B33AC5A971}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.5:1", "", "Financeiro", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2908.htm", "180.png", "1089", "0", "", "Use Case diagram0","{3F32FC7F-A70E-4fb0-A138-1C0964A0C6F3}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.5.1", "1", "Financeiro Atores", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2911.htm", "4.png", "", "", "{0094E251-99AC-4f1d-8CE4-5F9E4B73F63D}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.5.2", "1", "Financeiro Componentes", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2912.htm", "4.png", "", "", "{D8E68095-4719-4675-9E1D-CE74DCDCB01A}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.5.3", "1", "Financeiro Geral", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2913.htm", "4.png", "", "", "{88776959-DC43-400f-9779-07846A64556F}", "Package");
