@@ -1,5 +1,5 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.16.1:1", "", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA16/EA1/EA857.htm", "189.png", "917", "0", "", "Analysis diagram0","{18ECCD95-5EFF-4aeb-963A-349636957E39}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.16.1:1", "", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA16/EA1/EA872.htm", "189.png", "917", "0", "", "Analysis diagram0","{18ECCD95-5EFF-4aeb-963A-349636957E39}");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.16.1.1", "1", "Manutenção: Situacao De Saude", "", "4.png", "", "", "{9E4E67EF-4299-46a2-8A21-6601EF8366E8}", "Package");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.16.1.2", "1", "Capacidade 1: Cadastrar Situacao De Saude", "", "4.png", "", "", "{589109DC-5D19-4970-9F1C-93FC47C20917}", "Package");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.16.1.3", "1", "Capacidade 2: Editar Situacao De Saude", "", "4.png", "", "", "{3F55D6BD-FF4F-4cb5-B8A3-5482AF444686}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.16.1.4", "1", "Capacidade 3: Visualizar Situacao De Saude Por Id", "EARoot/EA1/EA1/EA5/EA1/EA16/EA1/EA862.htm", "4.png", "", "", "{2FCE65DB-DDB1-405c-BFCD-D90C50144B97}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.16.1.4", "1", "Capacidade 3: Visualizar Situacao De Saude Por Id", "EARoot/EA1/EA1/EA5/EA1/EA16/EA1/EA877.htm", "4.png", "", "", "{2FCE65DB-DDB1-405c-BFCD-D90C50144B97}", "Package");

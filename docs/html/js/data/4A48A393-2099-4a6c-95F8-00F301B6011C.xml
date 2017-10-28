@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.21.1.2:1", "", "Capacidade 1: Cadastrar Dispensas", "EARoot/EA1/EA1/EA5/EA1/EA21/EA1/EA2/EA1069.htm", "189.png", "820", "0", "", "Analysis diagram0","{3EAF2A79-C43D-418b-B4DD-8E8E44011751}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.21.1.2:2", "", "«DFD_Process» Cadastrar Dispensas", "EARoot/EA1/EA1/EA5/EA1/EA21/EA1/EA2/EA1073.htm", "21.png", "3905", "0", "", "Activity0","{D3AA1468-3E82-470b-945E-028FE1AC3852}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.21.1.2:1", "", "Capacidade 1: Cadastrar Dispensas", "EARoot/EA1/EA1/EA5/EA1/EA21/EA1/EA2/EA1084.htm", "189.png", "820", "0", "", "Analysis diagram0","{3EAF2A79-C43D-418b-B4DD-8E8E44011751}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.21.1.2:2", "", "«DFD_Process» Cadastrar Dispensas", "EARoot/EA1/EA1/EA5/EA1/EA21/EA1/EA2/EA1088.htm", "21.png", "3905", "0", "", "Activity0","{D3AA1468-3E82-470b-945E-028FE1AC3852}");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.21.1.2.1", "1", "Análise de Eventos", "", "4.png", "", "", "{D7FA0CD8-929C-4ecd-8A44-61A82B748C2B}", "Package");

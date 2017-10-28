@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.14.1.2:1", "", "Capacidade 1: Cadastrar  Habilidades", "EARoot/EA1/EA1/EA5/EA1/EA14/EA1/EA2/EA799.htm", "189.png", "880", "0", "", "Analysis diagram0","{83C0735C-6276-41c6-AB19-1D715DE9BB2D}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.14.1.2:2", "", "«DFD_Process» Cadastrar  Habilidades", "EARoot/EA1/EA1/EA5/EA1/EA14/EA1/EA2/EA803.htm", "21.png", "4004", "0", "", "Activity0","{5DD54A9F-E79F-4977-A361-726C42216B0D}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.14.1.2:1", "", "Capacidade 1: Cadastrar  Habilidades", "EARoot/EA1/EA1/EA5/EA1/EA14/EA1/EA2/EA814.htm", "189.png", "880", "0", "", "Analysis diagram0","{83C0735C-6276-41c6-AB19-1D715DE9BB2D}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.14.1.2:2", "", "«DFD_Process» Cadastrar  Habilidades", "EARoot/EA1/EA1/EA5/EA1/EA14/EA1/EA2/EA818.htm", "21.png", "4004", "0", "", "Activity0","{5DD54A9F-E79F-4977-A361-726C42216B0D}");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.14.1.2.1", "1", "Análise de Eventos", "", "4.png", "", "", "{370224F9-9CCC-4afd-819C-D3512EB06124}", "Package");

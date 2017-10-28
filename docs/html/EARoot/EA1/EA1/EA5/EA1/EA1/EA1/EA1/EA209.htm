@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Capacidade 0: Manutenção Geral::Situacoes Laborais</title>
+<title>Manter Ficha Profissional</title>
 <link href="../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Situacoes Laborais", " : "))</script>  : Public  &lt;&lt;DFD_DataStore&gt;&gt; DataStore</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Manter Ficha Profissional", " : "))</script>  : Public  &lt;&lt;DFD_Process&gt;&gt; Process</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18/10/2017 22:18:03</td>
+			<td width="85%" class="ObjectDetailsValue">18/10/2017 22:12:06</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">18/10/2017 23:24:25</td>
+			<td class="ObjectDetailsValue">18/10/2017 22:12:22</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,19 +87,38 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{13801F2A-BE7D-448e-BBC7-5109937DAEDE}</td>
+			<td class="ObjectDetailsValue">{84B68DDA-ED75-433a-BE9E-5598A7680254}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA163.htm">Capacidade 0: Manutenção Geral</a>, <a href="../../../EA10/EA1/EA1/EA604.htm">Manutenção: Aprendizes</a>, <a href="../../../EA12/EA1/EA1/EA723.htm">Manutenção: Situacao Laboral</a>, <a href="../../../EA12/EA1/EA2/EA729.htm">Capacidade 1: Cadastrar  Situacao Laboral</a>, <a href="../../../EA12/EA1/EA3/EA736.htm">Capacidade 2: Editar Situacao Laboral</a>, <a href="../../../EA12/EA1/EA4/EA742.htm">Capacidade 3: Visualizar Situacao Laboral Por Id</a></td>
+			<td class="ObjectDetailsValue"><a href="EA178.htm">Capacidade 0: Manutenção Geral</a>, <a href="../../../EA18/EA1/EA1/EA949.htm">Manutenção: Ficha Profissional</a></td>
 		</tr>
 	</table>
 	
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
-		<div class="ItemBody" id="LinksTable">
+		<div class="ItemBody" id="CustomPropertiesTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Property</td>
+					<td width="70%" class="TableHeading">Value</td>
+				</tr>
+			<tr>
+				<td width="30%" class="TableRow">_defaultDiagramType:</td>
+				<td width="70%" class="TableRow">DiagramProfile::DataFlowDiagram</td>
+			</tr>
+
+			<tr>
+				<td width="30%" class="TableRow">isReadOnly:</td>
+				<td width="70%" class="TableRow">false</td>
+			</tr>
+
+
+			</table>
+		</div>		<div class="ItemBody" id="LinksTable">
 			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="30%" class="TableHeading">Object</td>
@@ -108,32 +127,20 @@ function nameClassifier(name, separator)
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../../EA12/EA1/EA2/EA733.htm">«DFD_Process» Cadastrar  Situacao Laboral</a></td>
-					<td width="15%" class="TableRow" valign="top">Activity</td>
+					<td width="30%" class="TableRow" valign="top"><a href="EA181.htm">«DFD_DataStore» Aprendizes</a></td>
+					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA202.htm">«DFD_Process» Manter Situacao Laboral</a></td>
-					<td width="15%" class="TableRow" valign="top">Activity</td>
+					<td width="30%" class="TableRow" valign="top"><a href="EA180.htm">«DFD_External» Administrador</a></td>
+					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../../EA12/EA1/EA3/EA739.htm">«DFD_Process» Editar Situacao Laboral</a></td>
-					<td width="15%" class="TableRow" valign="top">Activity</td>
-					<td width="15%" class="TableRow" valign="top">Dependency</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../../EA12/EA1/EA4/EA746.htm">«DFD_Process» Visualizar Situacao Laboral Por Id</a></td>
-					<td width="15%" class="TableRow" valign="top">Activity</td>
-					<td width="15%" class="TableRow" valign="top">Dependency</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA195.htm">«DFD_Process» Manter Ficha Social</a></td>
-					<td width="15%" class="TableRow" valign="top">Activity</td>
+					<td width="30%" class="TableRow" valign="top"><a href="EA193.htm">«DFD_DataStore» Fichas Profissionai</a></td>
+					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>

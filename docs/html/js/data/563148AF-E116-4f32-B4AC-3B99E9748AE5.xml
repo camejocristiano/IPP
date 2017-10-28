@@ -1,5 +1,5 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.15.1:1", "", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA15/EA1/EA822.htm", "189.png", "907", "0", "", "Analysis diagram0","{5444BC70-C5A6-4d36-A82F-BDD134421CE2}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.15.1:1", "", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA15/EA1/EA837.htm", "189.png", "907", "0", "", "Analysis diagram0","{5444BC70-C5A6-4d36-A82F-BDD134421CE2}");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.15.1.1", "1", "Manutenção: OutrosCursos", "", "4.png", "", "", "{FFAEEB17-AF20-446f-A2A3-0D367A44D479}", "Package");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.15.1.2", "1", "Capacidade 1: Cadastrar OutrosCursos", "", "4.png", "", "", "{566BA515-68F1-4d87-98CC-7CBFCE2DFA6E}", "Package");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.15.1.3", "1", "Capacidade 2: Editar OutrosCursos", "", "4.png", "", "", "{29A21D22-7F06-44ef-8231-E1D627B0201D}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.15.1.4", "1", "Capacidade 3: Visualizar OutrosCursos Por Id", "EARoot/EA1/EA1/EA5/EA1/EA15/EA1/EA827.htm", "4.png", "", "", "{F5EB78DE-51F3-44d7-943E-F00207E9F4A6}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.15.1.4", "1", "Capacidade 3: Visualizar OutrosCursos Por Id", "EARoot/EA1/EA1/EA5/EA1/EA15/EA1/EA842.htm", "4.png", "", "", "{F5EB78DE-51F3-44d7-943E-F00207E9F4A6}", "Package");

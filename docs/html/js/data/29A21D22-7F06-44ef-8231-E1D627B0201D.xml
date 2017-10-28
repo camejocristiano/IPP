@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.15.1.3:1", "", "Capacidade 2: Editar OutrosCursos", "EARoot/EA1/EA1/EA5/EA1/EA15/EA1/EA3/EA841.htm", "189.png", "912", "0", "", "Analysis diagram0","{6449C074-66A4-4f36-9868-234F68C3D971}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.15.1.3:2", "", "«DFD_Process» Editar OutrosCursos", "EARoot/EA1/EA1/EA5/EA1/EA15/EA1/EA3/EA844.htm", "21.png", "4054", "0", "", "Activity0","{101478B3-6C17-47bd-9A6C-4FEBFD698F96}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.15.1.3:1", "", "Capacidade 2: Editar OutrosCursos", "EARoot/EA1/EA1/EA5/EA1/EA15/EA1/EA3/EA856.htm", "189.png", "912", "0", "", "Analysis diagram0","{6449C074-66A4-4f36-9868-234F68C3D971}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.15.1.3:2", "", "«DFD_Process» Editar OutrosCursos", "EARoot/EA1/EA1/EA5/EA1/EA15/EA1/EA3/EA859.htm", "21.png", "4054", "0", "", "Activity0","{101478B3-6C17-47bd-9A6C-4FEBFD698F96}");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.15.1.3.1", "1", "Análise de Eventos", "", "4.png", "", "", "{15B5E48A-3AB3-498d-A43D-402409F5E322}", "Package");

@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.18.1.3:1", "", "Capacidade 2: Editar Ficha Profissional", "EARoot/EA1/EA1/EA5/EA1/EA18/EA1/EA3/EA947.htm", "189.png", "858", "0", "", "Analysis diagram0","{CC28B773-63A4-4750-A448-F7611ED1FB22}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.18.1.3:2", "", "«DFD_Process» Editar Ficha Profissional", "EARoot/EA1/EA1/EA5/EA1/EA18/EA1/EA3/EA950.htm", "21.png", "3966", "0", "", "Activity0","{0B2C7DE3-941B-40fe-9BBB-B40E7BB86B41}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.18.1.3:1", "", "Capacidade 2: Editar Ficha Profissional", "EARoot/EA1/EA1/EA5/EA1/EA18/EA1/EA3/EA962.htm", "189.png", "858", "0", "", "Analysis diagram0","{CC28B773-63A4-4750-A448-F7611ED1FB22}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.18.1.3:2", "", "«DFD_Process» Editar Ficha Profissional", "EARoot/EA1/EA1/EA5/EA1/EA18/EA1/EA3/EA965.htm", "21.png", "3966", "0", "", "Activity0","{0B2C7DE3-941B-40fe-9BBB-B40E7BB86B41}");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.18.1.3.1", "1", "Análise de Eventos", "", "4.png", "", "", "{52668818-B6B5-4267-96D8-966701603AA3}", "Package");

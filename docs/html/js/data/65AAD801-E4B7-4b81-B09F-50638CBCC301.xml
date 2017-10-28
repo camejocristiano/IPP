@@ -1,6 +1,6 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.21.1:1", "", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA21/EA1/EA1056.htm", "189.png", "817", "0", "", "Analysis diagram0","{41513AA3-F7B6-4df7-AFF6-39962C8AB7F6}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.21.1:1", "", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA21/EA1/EA1071.htm", "189.png", "817", "0", "", "Analysis diagram0","{41513AA3-F7B6-4df7-AFF6-39962C8AB7F6}");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.21.1.1", "1", "Manutenção: Dispensas", "", "4.png", "", "", "{33EF28EF-B088-4d03-8624-14A9F5887644}", "Package");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.21.1.2", "1", "Capacidade 1: Cadastrar Dispensas", "", "4.png", "", "", "{4A48A393-2099-4a6c-95F8-00F301B6011C}", "Package");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.21.1.3", "1", "Capacidade 2: Editar Dispensas", "", "4.png", "", "", "{06CBAAB6-42C5-4f96-9D6E-0FE2457838F0}", "Package");
 tocTab[tocTab.length] = new Array("0.1.1.5.1.21.1.4", "1", "Capacidade 3: Visualizar Dispensas", "", "4.png", "", "", "{8AB2C0FC-ADDB-4949-A499-E9FC0C7FE2AA}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.21.1.5", "1", "Capacidade 4: Visualizar Dispensas Por Id", "EARoot/EA1/EA1/EA5/EA1/EA21/EA1/EA1062.htm", "4.png", "", "", "{5D66B006-A701-472d-AA36-8A614B981A9A}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.21.1.5", "1", "Capacidade 4: Visualizar Dispensas Por Id", "EARoot/EA1/EA1/EA5/EA1/EA21/EA1/EA1077.htm", "4.png", "", "", "{5D66B006-A701-472d-AA36-8A614B981A9A}", "Package");
