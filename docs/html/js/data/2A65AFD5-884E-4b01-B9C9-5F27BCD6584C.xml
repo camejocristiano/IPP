@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.3.1.3.3:1", "", "Turma", "EARoot/EA1/EA1/EA5/EA3/EA1/EA3/EA3/EA1826.htm", "175.png", "1034", "0", "", "Logical diagram0","{7EA2F5BF-4DE2-4026-8DB8-EBD3DF79871E}");
-tocTab[tocTab.length] = new Array("0.1.1.5.3.1.3.3:2", "", "«ERD_Entity» Cursos_Turma_DadosDaTurma", "EARoot/EA1/EA1/EA5/EA3/EA1/EA3/EA3/EA1829.htm", "5.png", "4675", "0", "", "Class0","{F88A7D5C-8637-4bdb-ABF7-882CC79CBEF8}");
-tocTab[tocTab.length] = new Array("0.1.1.5.3.1.3.3:3", "", "«ERD_Attribute» cursos_turmas_dadosDaTurma_id", "EARoot/EA1/EA1/EA5/EA3/EA1/EA3/EA3/EA1830.htm", "5.png", "4676", "0", "", "Class0","{0AA76742-5BA2-40fb-8C16-D79FC2AA618F}");
+tocTab[tocTab.length] = new Array("0.1.1.5.3.1.3.3:1", "", "Turma", "EARoot/EA1/EA1/EA5/EA3/EA1/EA3/EA3/EA1837.htm", "175.png", "1034", "0", "", "Logical diagram0","{7EA2F5BF-4DE2-4026-8DB8-EBD3DF79871E}");
+tocTab[tocTab.length] = new Array("0.1.1.5.3.1.3.3:2", "", "«ERD_Entity» Cursos_Turma_DadosDaTurma", "EARoot/EA1/EA1/EA5/EA3/EA1/EA3/EA3/EA1840.htm", "5.png", "4675", "0", "", "Class0","{F88A7D5C-8637-4bdb-ABF7-882CC79CBEF8}");
+tocTab[tocTab.length] = new Array("0.1.1.5.3.1.3.3:3", "", "«ERD_Attribute» cursos_turmas_dadosDaTurma_id", "EARoot/EA1/EA1/EA5/EA3/EA1/EA3/EA3/EA1841.htm", "5.png", "4676", "0", "", "Class0","{0AA76742-5BA2-40fb-8C16-D79FC2AA618F}");

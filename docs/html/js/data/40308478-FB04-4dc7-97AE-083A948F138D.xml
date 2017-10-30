@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4.2:1", "", "Cenário 04.02: Manutenção de PAPs", "EARoot/EA1/EA1/EA5/EA1/EA4/EA2/EA940.htm", "189.png", "1435", "0", "", "Analysis diagram0","{D3952E9A-206D-4204-96CD-9DED09D77392}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4.2:2", "", "«DFD_DataStore» PAPs", "EARoot/EA1/EA1/EA5/EA1/EA4/EA2/EA943.htm", "5.png", "6831", "0", "", "Class0","{A55323DC-32AF-4d08-8B00-C968683615D7}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4.2.1", "1", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA4/EA2/EA944.htm", "4.png", "", "", "{4F402F2A-C56A-4fdd-8BC4-6075224B1AF5}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.4.2:1", "", "Cenário 04.02: Manutenção de PAPs", "EARoot/EA1/EA1/EA5/EA1/EA4/EA2/EA951.htm", "189.png", "1435", "0", "", "Analysis diagram0","{D3952E9A-206D-4204-96CD-9DED09D77392}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.4.2:2", "", "«DFD_DataStore» PAPs", "EARoot/EA1/EA1/EA5/EA1/EA4/EA2/EA954.htm", "5.png", "6831", "0", "", "Class0","{A55323DC-32AF-4d08-8B00-C968683615D7}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.4.2.1", "1", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA4/EA2/EA955.htm", "4.png", "", "", "{4F402F2A-C56A-4fdd-8BC4-6075224B1AF5}", "Package");

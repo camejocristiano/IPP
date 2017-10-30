@@ -1,5 +1,5 @@
-tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2.1.3:1", "", "Curso Geral", "EARoot/EA1/EA2/EA1/EA3/EA2/EA2/EA1/EA3/EA2583.htm", "180.png", "1209", "0", "", "Use Case diagram0","{5A46C929-4B83-4273-9099-0ECA06536C49}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2.1.3:2", "", "Add Curso", "EARoot/EA1/EA2/EA1/EA3/EA2/EA2/EA1/EA3/EA2585.htm", "7.png", "5160", "0", "", "UseCase0","{B584BB87-2B09-4220-95E5-0E1E3ACDCCA8}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2.1.3:3", "", "Edit Curso", "EARoot/EA1/EA2/EA1/EA3/EA2/EA2/EA1/EA3/EA2588.htm", "7.png", "5162", "0", "", "UseCase0","{041480AF-CDBA-44c9-83FA-B21459FA3D3F}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2.1.3:4", "", "List Cursos", "EARoot/EA1/EA2/EA1/EA3/EA2/EA2/EA1/EA3/EA2590.htm", "7.png", "5163", "0", "", "UseCase0","{B2CB8583-F630-4b9d-BBF5-8C1BCE7556A0}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2.1.3:5", "", "Visualizar Curso", "EARoot/EA1/EA2/EA1/EA3/EA2/EA2/EA1/EA3/EA2592.htm", "7.png", "5161", "0", "", "UseCase0","{8E72D7BD-636E-4633-8329-E434EDCAA50F}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2.1.3:1", "", "Curso Geral", "EARoot/EA1/EA2/EA1/EA3/EA2/EA2/EA1/EA3/EA2594.htm", "180.png", "1209", "0", "", "Use Case diagram0","{5A46C929-4B83-4273-9099-0ECA06536C49}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2.1.3:2", "", "Add Curso", "EARoot/EA1/EA2/EA1/EA3/EA2/EA2/EA1/EA3/EA2596.htm", "7.png", "5160", "0", "", "UseCase0","{B584BB87-2B09-4220-95E5-0E1E3ACDCCA8}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2.1.3:3", "", "Edit Curso", "EARoot/EA1/EA2/EA1/EA3/EA2/EA2/EA1/EA3/EA2599.htm", "7.png", "5162", "0", "", "UseCase0","{041480AF-CDBA-44c9-83FA-B21459FA3D3F}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2.1.3:4", "", "List Cursos", "EARoot/EA1/EA2/EA1/EA3/EA2/EA2/EA1/EA3/EA2601.htm", "7.png", "5163", "0", "", "UseCase0","{B2CB8583-F630-4b9d-BBF5-8C1BCE7556A0}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2.1.3:5", "", "Visualizar Curso", "EARoot/EA1/EA2/EA1/EA3/EA2/EA2/EA1/EA3/EA2603.htm", "7.png", "5161", "0", "", "UseCase0","{8E72D7BD-636E-4633-8329-E434EDCAA50F}");
