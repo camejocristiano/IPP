@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4.1:1", "", "Cenário 04.01: Manutenção de PITs E PIPs", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1/EA894.htm", "189.png", "1434", "0", "", "Analysis diagram0","{C0BB6E9D-2641-43d7-837F-6ECC73A24A2E}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4.1:2", "", "«DFD_DataStore» PITEPIP", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1/EA897.htm", "5.png", "6788", "0", "", "Class0","{5918CCC7-8FCB-4501-A3D4-1B9603D6ACA6}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4.1.1", "1", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1/EA898.htm", "4.png", "", "", "{1CA6C029-C90A-4568-AEDF-1A729509F53B}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.4.1:1", "", "Cenário 04.01: Manutenção de PITs E PIPs", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1/EA907.htm", "189.png", "1434", "0", "", "Analysis diagram0","{C0BB6E9D-2641-43d7-837F-6ECC73A24A2E}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.4.1:2", "", "«DFD_DataStore» PITEPIP", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1/EA910.htm", "5.png", "6788", "0", "", "Class0","{5918CCC7-8FCB-4501-A3D4-1B9603D6ACA6}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.4.1.1", "1", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1/EA911.htm", "4.png", "", "", "{1CA6C029-C90A-4568-AEDF-1A729509F53B}", "Package");

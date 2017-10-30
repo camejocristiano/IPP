@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.6.4:1", "", "Cenário 06.04: Manutenção de Historico", "EARoot/EA1/EA1/EA5/EA1/EA6/EA4/EA1446.htm", "189.png", "1448", "0", "", "Analysis diagram0","{4BA49771-97C6-4014-A36E-C8CCCFCB5F8E}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.6.4:2", "", "«DFD_DataStore» Historicos", "EARoot/EA1/EA1/EA5/EA1/EA6/EA4/EA1449.htm", "5.png", "7074", "0", "", "Class0","{E42DBBCE-74CC-479f-8975-9526B26D06EA}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.6.4.1", "1", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA6/EA4/EA1450.htm", "4.png", "", "", "{2FF9AB5D-3DE8-4a54-927B-9BFF043835E5}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.6.4:1", "", "Cenário 06.04: Manutenção de Historico", "EARoot/EA1/EA1/EA5/EA1/EA6/EA4/EA1474.htm", "189.png", "1448", "0", "", "Analysis diagram0","{4BA49771-97C6-4014-A36E-C8CCCFCB5F8E}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.6.4:2", "", "«DFD_DataStore» Historicos", "EARoot/EA1/EA1/EA5/EA1/EA6/EA4/EA1477.htm", "5.png", "7074", "0", "", "Class0","{E42DBBCE-74CC-479f-8975-9526B26D06EA}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.6.4.1", "1", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA6/EA4/EA1478.htm", "4.png", "", "", "{2FF9AB5D-3DE8-4a54-927B-9BFF043835E5}", "Package");

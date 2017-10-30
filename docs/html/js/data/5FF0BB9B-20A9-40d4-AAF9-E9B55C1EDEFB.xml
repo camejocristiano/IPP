@@ -1,4 +1,4 @@
-tocTab[tocTab.length] = new Array("0.1.2.2.1.3:1", "", "Cursos", "EARoot/EA1/EA2/EA2/EA1/EA3/EA3646.htm", "188.png", "1057", "0", "", "Custom diagram0","{05C65923-99C5-4f41-8A5B-EA02B9063D0A}");
-tocTab[tocTab.length] = new Array("0.1.2.2.1.3.1", "1", "Curso", "", "4.png", "", "", "{A3F38EB4-48DD-4393-A534-8BFA042E33BC}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.2.1.3.2", "1", "Matriculas", "", "4.png", "", "", "{A58F628F-CD49-4ea1-A346-CCBFFF90D4DE}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.2.1.3.3", "1", "Turmas", "", "4.png", "", "", "{308FB639-2354-4b00-83AE-80B5E7DD4CC7}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.3:1", "", "Cursos", "EARoot/EA1/EA2/EA2/EA3/EA3676.htm", "188.png", "1057", "0", "", "Custom diagram0","{05C65923-99C5-4f41-8A5B-EA02B9063D0A}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.1", "1", "Curso", "", "4.png", "", "", "{A3F38EB4-48DD-4393-A534-8BFA042E33BC}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.2", "1", "Matriculas", "", "4.png", "", "", "{A58F628F-CD49-4ea1-A346-CCBFFF90D4DE}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.3", "1", "Turmas", "", "4.png", "", "", "{308FB639-2354-4b00-83AE-80B5E7DD4CC7}", "Package");
