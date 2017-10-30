@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("0.1.1.5.1.2:1", "", "Cenário 02: Manutenção de Cursos", "EARoot/EA1/EA1/EA5/EA1/EA2/EA378.htm", "189.png", "1401", "0", "", "Analysis diagram0","{CFB1FC55-F023-41f9-8A65-41FA8981DCCF}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.2.1", "1", "Cenário 02.01: Manutenção de Cursos", "EARoot/EA1/EA1/EA5/EA1/EA2/EA381.htm", "4.png", "", "", "{AB2E72DF-BF49-473c-A3F3-5C76499926AC}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.2.2", "1", "Cenário 02.02: Manutenção de Turmas", "EARoot/EA1/EA1/EA5/EA1/EA2/EA382.htm", "4.png", "", "", "{E3E8032D-BE6F-4ec1-8799-C2CEEF82EFE7}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.2.3", "1", "Cenártio 02.03: Manutenção de Matrículas", "EARoot/EA1/EA1/EA5/EA1/EA2/EA383.htm", "4.png", "", "", "{112D1109-8F5B-4f11-87F1-C4587B5A91B9}", "Package");

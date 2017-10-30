@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.7.1.1:1", "", "Capacidade 01: Cadastrar", "EARoot/EA1/EA1/EA5/EA1/EA5/EA7/EA1/EA1/EA1287.htm", "189.png", "1593", "0", "", "Analysis diagram0","{3C9EF61F-74B9-4699-8E67-CB96B571DFE4}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.7.1.1:2", "", "«DFD_Process» Cadastrar Conta A Receber", "EARoot/EA1/EA1/EA5/EA1/EA5/EA7/EA1/EA1/EA1289.htm", "21.png", "7007", "0", "", "Activity0","{C315A780-23BC-45e9-8620-446861E2C6C0}");

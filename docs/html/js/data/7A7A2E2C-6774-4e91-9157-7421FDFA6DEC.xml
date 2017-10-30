@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.3.1:1", "", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA3/EA3/EA1/EA568.htm", "189.png", "1522", "0", "", "Analysis diagram0","{7D4C8368-6A93-44a8-B81D-50BCF62B4277}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.3.1:2", "", "«DFD_External» Administrador", "EARoot/EA1/EA1/EA5/EA1/EA3/EA3/EA1/EA570.htm", "5.png", "6611", "0", "", "Class0","{8C6A8429-AE3B-4638-A2D0-EED2B208B33D}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.3.1.1", "1", "Capacidade 01: Cadastrar", "EARoot/EA1/EA1/EA5/EA1/EA3/EA3/EA1/EA576.htm", "4.png", "", "", "{00079D19-CE36-457a-B314-59978D30C870}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.3.1.2", "1", "Capacidade 02: Visualizar", "EARoot/EA1/EA1/EA5/EA1/EA3/EA3/EA1/EA577.htm", "4.png", "", "", "{98A13255-28DD-4036-8117-02942AC37BCD}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.3.1.3", "1", "Capacidade 03: Editar", "EARoot/EA1/EA1/EA5/EA1/EA3/EA3/EA1/EA578.htm", "4.png", "", "", "{AC777AA2-BB5B-4f13-879E-097035C1FD8E}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.3.1.4", "1", "Capacidade 04: Listar", "EARoot/EA1/EA1/EA5/EA1/EA3/EA3/EA1/EA579.htm", "4.png", "", "", "{8DBDFB61-D890-4b2e-B8D7-EAB8F2183D7D}", "Package");
