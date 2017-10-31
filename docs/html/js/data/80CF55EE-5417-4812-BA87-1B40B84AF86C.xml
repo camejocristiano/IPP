@@ -1,2 +1,2 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.7.1.4:1", "", "Capacidade 04: Listar", "EARoot/EA1/EA1/EA5/EA1/EA5/EA7/EA1/EA4/EA1338.htm", "189.png", "1596", "0", "", "Analysis diagram0","{7EA1D135-9DF8-4bc0-8684-F4ECF84E6897}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.7.1.4:2", "", "«DFD_Process» Listar Contas A Receber", "EARoot/EA1/EA1/EA5/EA1/EA5/EA7/EA1/EA4/EA1340.htm", "21.png", "7004", "0", "", "Activity0","{FEE8D205-D3B7-4def-8AC8-B3C75D75CBEA}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.7.1.4:1", "", "Capacidade 04: Listar", "EARoot/EA1/EA1/EA5/EA1/EA5/EA7/EA1/EA4/EA1355.htm", "189.png", "1596", "0", "", "Analysis diagram0","{7EA1D135-9DF8-4bc0-8684-F4ECF84E6897}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.7.1.4:2", "", "«DFD_Process» Listar Contas A Receber", "EARoot/EA1/EA1/EA5/EA1/EA5/EA7/EA1/EA4/EA1357.htm", "21.png", "7004", "0", "", "Activity0","{FEE8D205-D3B7-4def-8AC8-B3C75D75CBEA}");

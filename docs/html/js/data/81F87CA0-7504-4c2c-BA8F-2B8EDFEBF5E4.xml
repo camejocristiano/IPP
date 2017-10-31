@@ -1,7 +1,7 @@
-tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.9:1", "", "Historicos", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA9/EA2897.htm", "180.png", "1127", "0", "", "Use Case diagram0","{1FE90022-2F58-4e36-A160-7F538B34C687}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.9:2", "", "Add Historico", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA9/EA2899.htm", "7.png", "5011", "0", "", "UseCase0","{A06984BD-D999-4520-AC25-DC4FF38D6EAC}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.9:3", "", "Edit Historico", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA9/EA2902.htm", "7.png", "5009", "0", "", "UseCase0","{2E19D9A0-D7BB-4a7f-ADA8-7FD62411E3B0}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.9:4", "", "Visualizar Historico", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA9/EA2906.htm", "7.png", "5010", "0", "", "UseCase0","{04F55261-FA75-479b-8B77-B13F7AF38672}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.9.1", "1", "Add Historicos", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA9/EA2900.htm", "4.png", "", "", "{25AF950A-2C8A-406a-94B5-C99CB099C77E}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.9.2", "1", "Edit Historicos", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA9/EA2903.htm", "4.png", "", "", "{AAA33B73-D387-4956-9F2D-518385193D30}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.9.3", "1", "Visualizar Historico", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA9/EA2907.htm", "4.png", "", "", "{40D8EE34-C8A6-4c14-AC97-198A5115E37A}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.9:1", "", "Historicos", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA9/EA3068.htm", "180.png", "1127", "0", "", "Use Case diagram0","{1FE90022-2F58-4e36-A160-7F538B34C687}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.9:2", "", "Add Historico", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA9/EA3070.htm", "7.png", "5011", "0", "", "UseCase0","{A06984BD-D999-4520-AC25-DC4FF38D6EAC}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.9:3", "", "Edit Historico", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA9/EA3073.htm", "7.png", "5009", "0", "", "UseCase0","{2E19D9A0-D7BB-4a7f-ADA8-7FD62411E3B0}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.9:4", "", "Visualizar Historico", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA9/EA3078.htm", "7.png", "5010", "0", "", "UseCase0","{04F55261-FA75-479b-8B77-B13F7AF38672}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.9.1", "1", "Add Historicos", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA9/EA3071.htm", "4.png", "", "", "{25AF950A-2C8A-406a-94B5-C99CB099C77E}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.9.2", "1", "Edit Historicos", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA9/EA3074.htm", "4.png", "", "", "{AAA33B73-D387-4956-9F2D-518385193D30}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.9.3", "1", "Visualizar Historico", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA9/EA3077.htm", "4.png", "", "", "{40D8EE34-C8A6-4c14-AC97-198A5115E37A}", "Package");
