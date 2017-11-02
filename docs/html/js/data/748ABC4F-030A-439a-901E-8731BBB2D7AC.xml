@@ -1,4 +1,4 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.3.2.1:1", "", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA3/EA2/EA1/EA588.htm", "189.png", "1517", "0", "", "Analysis diagram0","{684BD556-F0A2-4470-9BF1-C45DAB24E959}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.3.2.1:2", "", "«DFD_External» Administrador", "EARoot/EA1/EA1/EA5/EA1/EA3/EA2/EA1/EA590.htm", "5.png", "6599", "0", "", "Class0","{1EBE7AA4-55A6-4f37-8199-216B293BAF7A}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.3.2.1.1", "1", "Capacidade 02: Visualizar", "EARoot/EA1/EA1/EA5/EA1/EA3/EA2/EA1/EA594.htm", "4.png", "", "", "{38127E3E-DC85-40f1-B350-40A5A265CD01}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.3.2.1.2", "1", "Capacidade 04: Listar", "EARoot/EA1/EA1/EA5/EA1/EA3/EA2/EA1/EA595.htm", "4.png", "", "", "{BA5F37D1-1A19-4d53-9D59-974141070064}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.2.1:1", "", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA3/EA2/EA1/EA672.htm", "189.png", "1517", "0", "", "Analysis diagram0","{684BD556-F0A2-4470-9BF1-C45DAB24E959}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.2.1:2", "", "«DFD_External» Administrador", "EARoot/EA1/EA1/EA5/EA1/EA3/EA2/EA1/EA674.htm", "5.png", "6599", "0", "", "Class0","{1EBE7AA4-55A6-4f37-8199-216B293BAF7A}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.2.1.1", "1", "Capacidade 02: Visualizar", "EARoot/EA1/EA1/EA5/EA1/EA3/EA2/EA1/EA678.htm", "4.png", "", "", "{38127E3E-DC85-40f1-B350-40A5A265CD01}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.2.1.2", "1", "Capacidade 04: Listar", "EARoot/EA1/EA1/EA5/EA1/EA3/EA2/EA1/EA679.htm", "4.png", "", "", "{BA5F37D1-1A19-4d53-9D59-974141070064}", "Package");

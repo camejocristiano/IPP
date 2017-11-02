@@ -1,2 +1,2 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.6.2.1.1:1", "", "Capacidade 01: Cadastrar", "EARoot/EA1/EA1/EA5/EA1/EA6/EA2/EA1/EA1/EA1453.htm", "189.png", "1643", "0", "", "Analysis diagram0","{04028183-DEC8-4935-A7D0-5C2BFF7CDAA2}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.6.2.1.1:2", "", "«DFD_Process» Cadastrar Gestor", "EARoot/EA1/EA1/EA5/EA1/EA6/EA2/EA1/EA1/EA1455.htm", "21.png", "7046", "0", "", "Activity0","{7D01EA48-4BBB-42ed-895E-A4518B3DB465}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.6.2.1.1:1", "", "Capacidade 01: Cadastrar", "EARoot/EA1/EA1/EA5/EA1/EA6/EA2/EA1/EA1/EA1537.htm", "189.png", "1643", "0", "", "Analysis diagram0","{04028183-DEC8-4935-A7D0-5C2BFF7CDAA2}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.6.2.1.1:2", "", "«DFD_Process» Cadastrar Gestor", "EARoot/EA1/EA1/EA5/EA1/EA6/EA2/EA1/EA1/EA1539.htm", "21.png", "7046", "0", "", "Activity0","{7D01EA48-4BBB-42ed-895E-A4518B3DB465}");
