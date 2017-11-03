@@ -1,8 +1,8 @@
-tocTab[tocTab.length] = new Array("0.1.2.2.3.5:1", "", "Canais", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4231.htm", "188.png", "1045", "0", "", "Custom diagram0","{DB370C13-1AD0-4097-932C-1D8529C136D2}");
-tocTab[tocTab.length] = new Array("0.1.2.2.3.5:2", "", "Canais", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4235.htm", "11.png", "8063", "0", "", "Screen0","{F9B30F0F-C8E1-4ecc-964C-592FD32A8D60}");
-tocTab[tocTab.length] = new Array("0.1.2.2.3.5:3", "", "Menu NavBar - Configurações", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4239.htm", "99.png", "8066", "0", "", "UMLDiagram0","{578D01DD-5BBD-41af-8AE7-1F8A883E0A24}");
-tocTab[tocTab.length] = new Array("0.1.2.2.3.5:4", "", "Menu NavBar Principal", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4240.htm", "99.png", "8067", "0", "", "UMLDiagram0","{AB3A797B-812F-4d92-97FB-AD8A0FB7E035}");
-tocTab[tocTab.length] = new Array("0.1.2.2.3.5:5", "", "«table» ", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4241.htm", "16.png", "8068", "8063", "", "GUIElement0","{08763282-8ACC-46ab-AA00-1405E5CB8B34}");
-tocTab[tocTab.length] = new Array("0.1.2.2.3.5:6", "", "«label» Lista de Canais", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4243.htm", "16.png", "8069", "8063", "", "GUIElement0","{B674AC2B-E055-4c32-8121-7E0921AC7BFD}");
-tocTab[tocTab.length] = new Array("0.1.2.2.3.5:7", "", "«button» Novo", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4244.htm", "16.png", "8070", "8063", "", "GUIElement0","{83B31E91-E8B6-4263-8305-DD1AF2826A99}");
-tocTab[tocTab.length] = new Array("0.1.2.2.3.5.1", "1", "Canal", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4236.htm", "4.png", "", "", "{5CB3A0F8-5CAA-47f8-978F-C90D9949E5DD}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.5:1", "", "Canais", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4366.htm", "188.png", "1045", "0", "", "Custom diagram0","{DB370C13-1AD0-4097-932C-1D8529C136D2}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.5:2", "", "Canais", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4370.htm", "11.png", "8063", "0", "", "Screen0","{F9B30F0F-C8E1-4ecc-964C-592FD32A8D60}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.5:3", "", "Menu NavBar - Configurações", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4374.htm", "99.png", "8066", "0", "", "UMLDiagram0","{578D01DD-5BBD-41af-8AE7-1F8A883E0A24}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.5:4", "", "Menu NavBar Principal", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4375.htm", "99.png", "8067", "0", "", "UMLDiagram0","{AB3A797B-812F-4d92-97FB-AD8A0FB7E035}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.5:5", "", "«table» ", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4376.htm", "16.png", "8068", "8063", "", "GUIElement0","{08763282-8ACC-46ab-AA00-1405E5CB8B34}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.5:6", "", "«label» Lista de Canais", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4378.htm", "16.png", "8069", "8063", "", "GUIElement0","{B674AC2B-E055-4c32-8121-7E0921AC7BFD}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.5:7", "", "«button» Novo", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4379.htm", "16.png", "8070", "8063", "", "GUIElement0","{83B31E91-E8B6-4263-8305-DD1AF2826A99}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.5.1", "1", "Canal", "EARoot/EA1/EA2/EA2/EA3/EA5/EA4371.htm", "4.png", "", "", "{5CB3A0F8-5CAA-47f8-978F-C90D9949E5DD}", "Package");

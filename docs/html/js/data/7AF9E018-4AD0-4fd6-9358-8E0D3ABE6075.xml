@@ -1,7 +1,7 @@
-tocTab[tocTab.length] = new Array("0.1.3.1.2:1", "", "CLIENT", "EARoot/EA1/EA3/EA1/EA2/EA4673.htm", "178.png", "1797", "0", "", "Component diagram0","{39CCD54F-EEFF-4f68-AAA5-833B8FC9079A}");
-tocTab[tocTab.length] = new Array("0.1.3.1.2.1", "1", "ConfiguracoesModule", "EARoot/EA1/EA3/EA1/EA2/EA4677.htm", "225.png", "", "", "{B9326DB9-A871-4d44-981E-CC3EA2754E73}", "Package");
-tocTab[tocTab.length] = new Array("0.1.3.1.2.2", "1", "CursosModule", "EARoot/EA1/EA3/EA1/EA2/EA4678.htm", "225.png", "", "", "{94BBFF37-C83C-45ed-85CC-725BCD9BF294}", "Package");
-tocTab[tocTab.length] = new Array("0.1.3.1.2.3", "1", "AprendizesModule", "EARoot/EA1/EA3/EA1/EA2/EA4679.htm", "225.png", "", "", "{69C65E3E-9BB6-43fd-8825-3B2CA98C84DF}", "Package");
-tocTab[tocTab.length] = new Array("0.1.3.1.2.4", "1", "FrequenciasModule", "EARoot/EA1/EA3/EA1/EA2/EA4680.htm", "225.png", "", "", "{BCD75422-A37B-47ce-B4E6-6846364A292E}", "Package");
-tocTab[tocTab.length] = new Array("0.1.3.1.2.5", "1", "FinanceiroModule", "EARoot/EA1/EA3/EA1/EA2/EA4681.htm", "225.png", "", "", "{EB962C2A-774B-43fc-A2AD-EEB2F5C358DF}", "Package");
-tocTab[tocTab.length] = new Array("0.1.3.1.2.6", "1", "EmpresasModule", "EARoot/EA1/EA3/EA1/EA2/EA4682.htm", "225.png", "", "", "{E4ADDF15-6679-42d0-964A-CEE125290EC4}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.1.2:1", "", "CLIENT", "EARoot/EA1/EA3/EA1/EA2/EA4808.htm", "178.png", "1797", "0", "", "Component diagram0","{39CCD54F-EEFF-4f68-AAA5-833B8FC9079A}");
+tocTab[tocTab.length] = new Array("0.1.3.1.2.1", "1", "ConfiguracoesModule", "EARoot/EA1/EA3/EA1/EA2/EA4812.htm", "225.png", "", "", "{B9326DB9-A871-4d44-981E-CC3EA2754E73}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.1.2.2", "1", "CursosModule", "EARoot/EA1/EA3/EA1/EA2/EA4813.htm", "225.png", "", "", "{94BBFF37-C83C-45ed-85CC-725BCD9BF294}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.1.2.3", "1", "AprendizesModule", "EARoot/EA1/EA3/EA1/EA2/EA4814.htm", "225.png", "", "", "{69C65E3E-9BB6-43fd-8825-3B2CA98C84DF}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.1.2.4", "1", "FrequenciasModule", "EARoot/EA1/EA3/EA1/EA2/EA4815.htm", "225.png", "", "", "{BCD75422-A37B-47ce-B4E6-6846364A292E}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.1.2.5", "1", "FinanceiroModule", "EARoot/EA1/EA3/EA1/EA2/EA4816.htm", "225.png", "", "", "{EB962C2A-774B-43fc-A2AD-EEB2F5C358DF}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.1.2.6", "1", "EmpresasModule", "EARoot/EA1/EA3/EA1/EA2/EA4817.htm", "225.png", "", "", "{E4ADDF15-6679-42d0-964A-CEE125290EC4}", "Package");
