@@ -1,5 +1,5 @@
-tocTab[tocTab.length] = new Array("0.1.2.2.6:1", "", "Frequencias", "EARoot/EA1/EA2/EA2/EA6/EA4628.htm", "188.png", "1070", "0", "", "Custom diagram0","{061BF1F9-C906-4336-9987-BDEC6FC2035B}");
-tocTab[tocTab.length] = new Array("0.1.2.2.6.1", "1", "AulasEstras", "EARoot/EA1/EA2/EA2/EA6/EA4631.htm", "4.png", "", "", "{9CD03CA4-FEC0-4d1d-B067-3A33B24F1403}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.2.6.2", "1", "PAP", "EARoot/EA1/EA2/EA2/EA6/EA4632.htm", "4.png", "", "", "{73D3018F-23B2-43e5-B6CC-153DE59E97E1}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.2.6.3", "1", "PIO", "EARoot/EA1/EA2/EA2/EA6/EA4633.htm", "4.png", "", "", "{94CEB21D-2A26-483b-89F8-A8A87B10AD7E}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.2.6.4", "1", "PITEPIP", "EARoot/EA1/EA2/EA2/EA6/EA4634.htm", "4.png", "", "", "{F7D177A8-3D95-405b-9A5E-148F45C05E13}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.6:1", "", "Frequencias", "EARoot/EA1/EA2/EA2/EA6/EA5065.htm", "188.png", "1070", "0", "", "Custom diagram0","{061BF1F9-C906-4336-9987-BDEC6FC2035B}");
+tocTab[tocTab.length] = new Array("0.1.2.2.6.1", "1", "AulasEstras", "EARoot/EA1/EA2/EA2/EA6/EA5068.htm", "4.png", "", "", "{9CD03CA4-FEC0-4d1d-B067-3A33B24F1403}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.6.2", "1", "PAP", "EARoot/EA1/EA2/EA2/EA6/EA5069.htm", "4.png", "", "", "{73D3018F-23B2-43e5-B6CC-153DE59E97E1}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.6.3", "1", "PIO", "EARoot/EA1/EA2/EA2/EA6/EA5070.htm", "4.png", "", "", "{94CEB21D-2A26-483b-89F8-A8A87B10AD7E}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.6.4", "1", "PITEPIP", "EARoot/EA1/EA2/EA2/EA6/EA5071.htm", "4.png", "", "", "{F7D177A8-3D95-405b-9A5E-148F45C05E13}", "Package");

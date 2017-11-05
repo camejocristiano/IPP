@@ -1,4 +1,4 @@
-tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2:1", "", "Cursos Componentes", "EARoot/EA1/EA2/EA1/EA3/EA2/EA2/EA2846.htm", "180.png", "1195", "0", "", "Use Case diagram0","{E6783C23-FF48-47b6-B89B-326C73DFFD5C}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2.1", "1", "Curso Manter", "EARoot/EA1/EA2/EA1/EA3/EA2/EA2/EA2850.htm", "4.png", "", "", "{8C78D3EC-10FA-41aa-890E-DA654706DD40}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2:1", "", "Cursos Componentes", "EARoot/EA1/EA2/EA1/EA3/EA2/EA2/EA2964.htm", "180.png", "1195", "0", "", "Use Case diagram0","{E6783C23-FF48-47b6-B89B-326C73DFFD5C}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2.1", "1", "Curso Manter", "EARoot/EA1/EA2/EA1/EA3/EA2/EA2/EA2968.htm", "4.png", "", "", "{8C78D3EC-10FA-41aa-890E-DA654706DD40}", "Package");
 tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2.2", "1", "Turmas Manter", "", "4.png", "", "", "{5B5B5DEB-3FF0-49ba-885E-3E2279842C08}", "Package");
 tocTab[tocTab.length] = new Array("0.1.2.1.3.2.2.3", "1", "Matriculas Manter", "", "4.png", "", "", "{7AC78B48-195E-4a98-BB3C-CFFBF385CAF5}", "Package");

@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.3.4:1", "", "Cenário 03.04: Manutenção de Situação Laboral", "EARoot/EA1/EA1/EA5/EA1/EA3/EA4/EA833.htm", "189.png", "1422", "0", "", "Analysis diagram0","{32BAF425-793E-45b4-A392-EB76DF97AB19}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.3.4:2", "", "«DFD_DataStore» SituacoesLaborais", "EARoot/EA1/EA1/EA5/EA1/EA3/EA4/EA837.htm", "5.png", "6624", "0", "", "Class0","{409B2E60-7338-4959-8BE4-251EC30E3709}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.3.4.1", "1", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA3/EA4/EA838.htm", "4.png", "", "", "{747F6007-EE2C-45e1-B66F-A4F9C064F892}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.4:1", "", "Cenário 03.04: Manutenção de Situação Laboral", "EARoot/EA1/EA1/EA5/EA1/EA3/EA4/EA922.htm", "189.png", "1422", "0", "", "Analysis diagram0","{32BAF425-793E-45b4-A392-EB76DF97AB19}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.4:2", "", "«DFD_DataStore» SituacoesLaborais", "EARoot/EA1/EA1/EA5/EA1/EA3/EA4/EA926.htm", "5.png", "6624", "0", "", "Class0","{409B2E60-7338-4959-8BE4-251EC30E3709}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.4.1", "1", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA3/EA4/EA927.htm", "4.png", "", "", "{747F6007-EE2C-45e1-B66F-A4F9C064F892}", "Package");

@@ -1,8 +1,8 @@
-tocTab[tocTab.length] = new Array("0.1.2.2.3.6:1", "", "GerenciadorDeArquivos", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4394.htm", "188.png", "1050", "0", "", "Custom diagram0","{05715B00-3813-4c27-AB18-5A4A53ED323A}");
-tocTab[tocTab.length] = new Array("0.1.2.2.3.6:2", "", "Gerenciador de Arquivos", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4401.htm", "11.png", "8083", "0", "", "Screen0","{BF760E0B-D36B-4abf-8B5A-6E8EEE00D0F5}");
-tocTab[tocTab.length] = new Array("0.1.2.2.3.6:3", "", "Menu NavBar - Configurações", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4403.htm", "99.png", "8084", "0", "", "UMLDiagram0","{0F67369F-9824-4fa7-8B2D-F5E09BC71D22}");
-tocTab[tocTab.length] = new Array("0.1.2.2.3.6:4", "", "Menu NavBar Principal", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4404.htm", "99.png", "8085", "0", "", "UMLDiagram0","{ADA35AD8-030E-46b8-9EAB-1EFFB3A946D2}");
-tocTab[tocTab.length] = new Array("0.1.2.2.3.6:5", "", "«table» ", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4405.htm", "16.png", "8086", "8083", "", "GUIElement0","{6E15328B-08D3-4987-9662-A0F7DCE4431E}");
-tocTab[tocTab.length] = new Array("0.1.2.2.3.6:6", "", "«label» Lista de Arquivos", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4406.htm", "16.png", "8089", "8083", "", "GUIElement0","{D5111762-00A2-4a35-AFC6-2BB07C9F785D}");
-tocTab[tocTab.length] = new Array("0.1.2.2.3.6:7", "", "«button» Novo", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4407.htm", "16.png", "8088", "8083", "", "GUIElement0","{7E4E5B95-EEE2-44ec-99D9-6CFAF0ADB294}");
-tocTab[tocTab.length] = new Array("0.1.2.2.3.6.1", "1", "Arquivo", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4399.htm", "4.png", "", "", "{B269AD48-DC83-4813-AD48-0E2B623ADADC}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.6:1", "", "GerenciadorDeArquivos", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4626.htm", "188.png", "1050", "0", "", "Custom diagram0","{05715B00-3813-4c27-AB18-5A4A53ED323A}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.6:2", "", "Gerenciador de Arquivos", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4633.htm", "11.png", "8083", "0", "", "Screen0","{BF760E0B-D36B-4abf-8B5A-6E8EEE00D0F5}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.6:3", "", "Menu NavBar - Configurações", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4635.htm", "99.png", "8084", "0", "", "UMLDiagram0","{0F67369F-9824-4fa7-8B2D-F5E09BC71D22}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.6:4", "", "Menu NavBar Principal", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4636.htm", "99.png", "8085", "0", "", "UMLDiagram0","{ADA35AD8-030E-46b8-9EAB-1EFFB3A946D2}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.6:5", "", "«table» ", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4637.htm", "16.png", "8086", "8083", "", "GUIElement0","{6E15328B-08D3-4987-9662-A0F7DCE4431E}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.6:6", "", "«label» Lista de Arquivos", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4638.htm", "16.png", "8089", "8083", "", "GUIElement0","{D5111762-00A2-4a35-AFC6-2BB07C9F785D}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.6:7", "", "«button» Novo", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4639.htm", "16.png", "8088", "8083", "", "GUIElement0","{7E4E5B95-EEE2-44ec-99D9-6CFAF0ADB294}");
+tocTab[tocTab.length] = new Array("0.1.2.2.3.6.1", "1", "Arquivo", "EARoot/EA1/EA2/EA2/EA3/EA6/EA4631.htm", "4.png", "", "", "{B269AD48-DC83-4813-AD48-0E2B623ADADC}", "Package");

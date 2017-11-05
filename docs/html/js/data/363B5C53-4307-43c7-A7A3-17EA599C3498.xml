@@ -1,2 +1,2 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.2.1.1.8:1", "", "Capacidade 08: Editar CBO", "EARoot/EA1/EA1/EA5/EA1/EA2/EA1/EA1/EA8/EA598.htm", "189.png", "1848", "0", "", "Analysis diagram0","{301291DF-E3E7-4cac-84D1-F38D883B788F}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.2.1.1.8:2", "", "«DFD_Process» Editar CBO", "EARoot/EA1/EA1/EA5/EA1/EA2/EA1/EA1/EA8/EA601.htm", "21.png", "8346", "0", "", "Activity0","{82A585AB-B8CD-4bcc-BFC3-CD6E2D10869F}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.2.1.1.5.4:1", "", "Capacidade 08: Editar CBO", "EARoot/EA1/EA1/EA5/EA1/EA2/EA1/EA1/EA5/EA4/EA593.htm", "189.png", "1848", "0", "", "Analysis diagram0","{301291DF-E3E7-4cac-84D1-F38D883B788F}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.2.1.1.5.4:2", "", "«DFD_Process» Editar CBO", "EARoot/EA1/EA1/EA5/EA1/EA2/EA1/EA1/EA5/EA4/EA597.htm", "21.png", "8346", "0", "", "Activity0","{82A585AB-B8CD-4bcc-BFC3-CD6E2D10869F}");

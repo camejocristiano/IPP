@@ -1,7 +1,7 @@
-tocTab[tocTab.length] = new Array("0.1.1.4:1", "", "Workshop de Características", "EARoot/EA1/EA1/EA4/EA95.htm", "188.png", "16", "0", "", "Custom diagram0","{105BFF8F-D2E8-4c61-9920-1937C7AFC1B1}");
-tocTab[tocTab.length] = new Array("0.1.1.4.1", "1", "Configuracoes", "EARoot/EA1/EA1/EA4/EA99.htm", "4.png", "", "", "{32A506F6-C56B-4e12-84F8-5B41D0CD1D36}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.4.2", "1", "Cursos", "EARoot/EA1/EA1/EA4/EA100.htm", "4.png", "", "", "{5153FF26-C41C-4909-837F-FD81AAEA5E06}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.4.3", "1", "Aprendizes", "EARoot/EA1/EA1/EA4/EA101.htm", "4.png", "", "", "{CAD290BA-CD66-48f4-B908-7D799B722E49}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.4.4", "1", "Frequencias", "EARoot/EA1/EA1/EA4/EA102.htm", "4.png", "", "", "{075D31D7-48A8-486f-BEF9-1785BE33F6B1}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.4.5", "1", "Financeiro", "EARoot/EA1/EA1/EA4/EA103.htm", "4.png", "", "", "{D3872FA8-3CB5-453b-B77F-EC88C07092B4}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.4.6", "1", "Empresas", "EARoot/EA1/EA1/EA4/EA104.htm", "4.png", "", "", "{50B66853-504E-4156-AC82-000567E033F3}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.4:1", "", "Workshop de Características", "EARoot/EA1/EA1/EA4/EA96.htm", "188.png", "16", "0", "", "Custom diagram0","{105BFF8F-D2E8-4c61-9920-1937C7AFC1B1}");
+tocTab[tocTab.length] = new Array("0.1.1.4.1", "1", "Configuracoes", "EARoot/EA1/EA1/EA4/EA100.htm", "4.png", "", "", "{32A506F6-C56B-4e12-84F8-5B41D0CD1D36}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.4.2", "1", "Cursos", "EARoot/EA1/EA1/EA4/EA101.htm", "4.png", "", "", "{5153FF26-C41C-4909-837F-FD81AAEA5E06}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.4.3", "1", "Aprendizes", "EARoot/EA1/EA1/EA4/EA102.htm", "4.png", "", "", "{CAD290BA-CD66-48f4-B908-7D799B722E49}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.4.4", "1", "Frequencias", "EARoot/EA1/EA1/EA4/EA103.htm", "4.png", "", "", "{075D31D7-48A8-486f-BEF9-1785BE33F6B1}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.4.5", "1", "Financeiro", "EARoot/EA1/EA1/EA4/EA104.htm", "4.png", "", "", "{D3872FA8-3CB5-453b-B77F-EC88C07092B4}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.4.6", "1", "Empresas", "EARoot/EA1/EA1/EA4/EA105.htm", "4.png", "", "", "{50B66853-504E-4156-AC82-000567E033F3}", "Package");

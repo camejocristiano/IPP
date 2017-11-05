@@ -1,6 +1,7 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.2.2.1:1", "", "RN - Cursos", "EARoot/EA1/EA1/EA5/EA2/EA2/EA1/EA1788.htm", "188.png", "581", "0", "", "Custom diagram0","{37B1B943-9687-4a70-84F7-069D7FC24D41}");
-tocTab[tocTab.length] = new Array("0.1.1.5.2.2.1.1", "1", "RN - Cursos", "EARoot/EA1/EA1/EA5/EA2/EA2/EA1/EA1792.htm", "4.png", "", "", "{74B24F51-85C6-4245-8CD5-089F7CA916EA}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.2.2.1.2", "1", "RN - CBOs", "", "4.png", "", "", "{6DACC6CC-A306-49d8-8025-016CD33F4E35}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.2.2.1.3", "1", "RN - Arcos Ocupacionais", "", "4.png", "", "", "{64C1CB31-3EDD-47fb-ABE0-FDF8CCB5CFE3}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.2.2.1.4", "1", "RN - Conteudos Teoricos Especificos", "", "4.png", "", "", "{F68D4FA1-1983-46e2-967D-A35D70E10DCF}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.2.2.1.5", "1", "RN - Conteudos Teoricos Basicos", "", "4.png", "", "", "{020FDA8D-88AE-4caa-A974-41EC16A2EC66}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.2.2.1:1", "", "RN - Cursos", "EARoot/EA1/EA1/EA5/EA2/EA2/EA1/EA1877.htm", "188.png", "581", "0", "", "Custom diagram0","{37B1B943-9687-4a70-84F7-069D7FC24D41}");
+tocTab[tocTab.length] = new Array("0.1.1.5.2.2.1.1", "1", "RN - Validações", "EARoot/EA1/EA1/EA5/EA2/EA2/EA1/EA1881.htm", "4.png", "", "", "{F15FDF32-14C8-438c-BA7B-FEF50CADE432}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.2.2.1.2", "1", "RN - Cursos", "EARoot/EA1/EA1/EA5/EA2/EA2/EA1/EA1882.htm", "4.png", "", "", "{74B24F51-85C6-4245-8CD5-089F7CA916EA}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.2.2.1.3", "1", "RN - CBOs", "", "4.png", "", "", "{6DACC6CC-A306-49d8-8025-016CD33F4E35}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.2.2.1.4", "1", "RN - Arcos Ocupacionais", "", "4.png", "", "", "{64C1CB31-3EDD-47fb-ABE0-FDF8CCB5CFE3}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.2.2.1.5", "1", "RN - Conteudos Teoricos Especificos", "", "4.png", "", "", "{F68D4FA1-1983-46e2-967D-A35D70E10DCF}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.2.2.1.6", "1", "RN - Conteudos Teoricos Basicos", "", "4.png", "", "", "{020FDA8D-88AE-4caa-A974-41EC16A2EC66}", "Package");

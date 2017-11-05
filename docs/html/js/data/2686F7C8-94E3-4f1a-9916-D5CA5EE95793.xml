@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.1.3.1.2.2.3:1", "", "TurmasModule", "EARoot/EA1/EA3/EA1/EA2/EA2/EA3/EA5369.htm", "178.png", "1893", "0", "", "Component diagram0","{F0002D6D-C82C-4762-BF9D-F14D4D27D511}");
+tocTab[tocTab.length] = new Array("0.1.3.1.2.2.3:2", "", "TurmaComponent", "EARoot/EA1/EA3/EA1/EA2/EA2/EA3/EA5373.htm", "10.png", "9055", "0", "", "Component0","{04D70CCB-BD87-4bba-8AE9-29C9127EBCDE}");
+tocTab[tocTab.length] = new Array("0.1.3.1.2.2.3:3", "", "TurmasComponent", "EARoot/EA1/EA3/EA1/EA2/EA2/EA3/EA5374.htm", "10.png", "9054", "0", "", "Component0","{23E991EE-C2CB-4243-8283-836449F768B9}");

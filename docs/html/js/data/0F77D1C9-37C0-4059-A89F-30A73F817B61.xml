@@ -1,5 +1,5 @@
-tocTab[tocTab.length] = new Array("0.1.2.2.8:1", "", "Empresas", "EARoot/EA1/EA2/EA2/EA8/EA4697.htm", "188.png", "1081", "0", "", "Custom diagram0","{2463247E-7965-43fc-8E2F-B41000736CA3}");
-tocTab[tocTab.length] = new Array("0.1.2.2.8.1", "1", "Empresa", "EARoot/EA1/EA2/EA2/EA8/EA4700.htm", "4.png", "", "", "{8F3627CB-B6E1-45fe-BDED-020ED5229E01}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.2.8.2", "1", "Gestor", "EARoot/EA1/EA2/EA2/EA8/EA4701.htm", "4.png", "", "", "{422B650F-AC37-4883-9FA0-9E6FF112B78D}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.2.8.3", "1", "Historico", "EARoot/EA1/EA2/EA2/EA8/EA4702.htm", "4.png", "", "", "{B1B14711-871D-4914-9090-EF7EA903BCAC}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.2.8.4", "1", "Setor", "EARoot/EA1/EA2/EA2/EA8/EA4703.htm", "4.png", "", "", "{2E941E10-6F5E-47df-AD05-00598B17A4EB}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.8:1", "", "Empresas", "EARoot/EA1/EA2/EA2/EA8/EA5134.htm", "188.png", "1081", "0", "", "Custom diagram0","{2463247E-7965-43fc-8E2F-B41000736CA3}");
+tocTab[tocTab.length] = new Array("0.1.2.2.8.1", "1", "Empresa", "EARoot/EA1/EA2/EA2/EA8/EA5137.htm", "4.png", "", "", "{8F3627CB-B6E1-45fe-BDED-020ED5229E01}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.8.2", "1", "Gestor", "EARoot/EA1/EA2/EA2/EA8/EA5138.htm", "4.png", "", "", "{422B650F-AC37-4883-9FA0-9E6FF112B78D}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.8.3", "1", "Historico", "EARoot/EA1/EA2/EA2/EA8/EA5139.htm", "4.png", "", "", "{B1B14711-871D-4914-9090-EF7EA903BCAC}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.8.4", "1", "Setor", "EARoot/EA1/EA2/EA2/EA8/EA5140.htm", "4.png", "", "", "{2E941E10-6F5E-47df-AD05-00598B17A4EB}", "Package");
