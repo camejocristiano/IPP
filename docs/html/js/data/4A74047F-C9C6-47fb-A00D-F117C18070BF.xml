@@ -1,6 +1,6 @@
-tocTab[tocTab.length] = new Array("0.1.2.2.4.2.4.1:1", "", "Conteúdo Teórico Básico", "EARoot/EA1/EA2/EA2/EA4/EA2/EA4/EA1/EA4804.htm", "188.png", "1872", "0", "", "Custom diagram0","{2C3198E0-0AD8-4e27-B6FA-610B1400E21F}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.2.4.1:2", "", "«text» ", "EARoot/EA1/EA2/EA2/EA4/EA2/EA4/EA1/EA4806.htm", "16.png", "8633", "0", "", "GUIElement0","{82A7B97F-7A03-47a5-83A9-F83D89854F08}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.2.4.1:3", "", "«text» ", "EARoot/EA1/EA2/EA2/EA4/EA2/EA4/EA1/EA4808.htm", "16.png", "8632", "0", "", "GUIElement0","{21404D45-0FBA-495c-96F2-EC0A3ED3941B}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.2.4.1:4", "", "«label» Conteúdo Teórico Básico", "EARoot/EA1/EA2/EA2/EA4/EA2/EA4/EA1/EA4812.htm", "16.png", "8631", "0", "", "GUIElement0","{172B00D4-9653-474b-A793-CE110E98FF88}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.2.4.1:5", "", "«label» Hora / Aula", "EARoot/EA1/EA2/EA2/EA4/EA2/EA4/EA1/EA4814.htm", "16.png", "8634", "0", "", "GUIElement0","{218ADFFB-E20B-4951-8F6F-29F9B9B744C0}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.2.4.1:6", "", "«button» Incluir", "EARoot/EA1/EA2/EA2/EA4/EA2/EA4/EA1/EA4815.htm", "16.png", "8758", "0", "", "GUIElement0","{741607B0-9FB1-4ca6-A2A5-4C0A9FAF2D7F}");
+tocTab[tocTab.length] = new Array("0.1.2.2.4.2.4.1:1", "", "Conteúdo Teórico Básico", "EARoot/EA1/EA2/EA2/EA4/EA2/EA4/EA1/EA5073.htm", "188.png", "1872", "0", "", "Custom diagram0","{2C3198E0-0AD8-4e27-B6FA-610B1400E21F}");
+tocTab[tocTab.length] = new Array("0.1.2.2.4.2.4.1:2", "", "«text» ", "EARoot/EA1/EA2/EA2/EA4/EA2/EA4/EA1/EA5076.htm", "16.png", "8633", "0", "", "GUIElement0","{82A7B97F-7A03-47a5-83A9-F83D89854F08}");
+tocTab[tocTab.length] = new Array("0.1.2.2.4.2.4.1:3", "", "«text» ", "EARoot/EA1/EA2/EA2/EA4/EA2/EA4/EA1/EA5077.htm", "16.png", "8632", "0", "", "GUIElement0","{21404D45-0FBA-495c-96F2-EC0A3ED3941B}");
+tocTab[tocTab.length] = new Array("0.1.2.2.4.2.4.1:4", "", "«label» Conteúdo Teórico Básico", "EARoot/EA1/EA2/EA2/EA4/EA2/EA4/EA1/EA5081.htm", "16.png", "8631", "0", "", "GUIElement0","{172B00D4-9653-474b-A793-CE110E98FF88}");
+tocTab[tocTab.length] = new Array("0.1.2.2.4.2.4.1:5", "", "«label» Hora / Aula", "EARoot/EA1/EA2/EA2/EA4/EA2/EA4/EA1/EA5083.htm", "16.png", "8634", "0", "", "GUIElement0","{218ADFFB-E20B-4951-8F6F-29F9B9B744C0}");
+tocTab[tocTab.length] = new Array("0.1.2.2.4.2.4.1:6", "", "«button» Incluir", "EARoot/EA1/EA2/EA2/EA4/EA2/EA4/EA1/EA5084.htm", "16.png", "8758", "0", "", "GUIElement0","{741607B0-9FB1-4ca6-A2A5-4C0A9FAF2D7F}");

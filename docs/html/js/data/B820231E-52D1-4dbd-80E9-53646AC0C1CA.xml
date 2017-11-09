@@ -1,3 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.10.1.9:1", "", "Capacidade 10: Visualizar Matricula Por Nome Do Aprendiz E Status Da Matricula", "EARoot/EA1/EA1/EA5/EA1/EA10/EA1/EA9/EA673.htm", "189.png", "764", "0", "", "Analysis diagram0","{659F0449-88EB-4d94-800D-CCA712881159}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.10.1.9:2", "", "«DFD_Process» Visualizar Matricula Por Nome Do Aprendiz E Status Da Matricula", "EARoot/EA1/EA1/EA5/EA1/EA10/EA1/EA9/EA677.htm", "21.png", "3805", "0", "", "Activity0","{AC52097C-F745-40b2-81E5-9C3F78ADC320}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.10.1.9.1", "1", "Análise de Eventos", "", "4.png", "", "", "{25F7DAD3-E628-4c66-923C-BF9A76D214E8}", "Package");

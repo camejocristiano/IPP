@@ -1,6 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.24.1:1", "", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA24/EA1/EA1184.htm", "189.png", "805", "0", "", "Analysis diagram0","{4FCC59C1-E039-48cd-8A86-8409B6C2770C}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.24.1.1", "1", "Manutenção: Dados Financeiros", "", "4.png", "", "", "{58A2181D-D329-4acd-9E24-F7FFB206A225}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.24.1.2", "1", "Capacidade 1: Cadastrar Dados Financeiros", "", "4.png", "", "", "{233AA296-CCC4-4541-B99E-FEEBC6D0C2BA}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.24.1.3", "1", "Capacidade 2: Editar Dados Financeiros", "", "4.png", "", "", "{AF98BA4B-5E3B-4b3b-B753-25542ACC3E24}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.24.1.4", "1", "Capacidade 3: Visualizar Dados Financeiros", "", "4.png", "", "", "{4C0F4ACA-0438-4302-8598-64094774896A}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.24.1.5", "1", "Capacidade 4: Visualizar Dados Financeiros Por Id", "EARoot/EA1/EA1/EA5/EA1/EA24/EA1/EA1190.htm", "4.png", "", "", "{9D3796A4-0885-4197-AFE4-B6644A970910}", "Package");

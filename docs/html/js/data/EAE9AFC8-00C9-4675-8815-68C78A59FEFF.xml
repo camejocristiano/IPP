@@ -1,6 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.18.1:1", "", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA18/EA1/EA942.htm", "189.png", "853", "0", "", "Analysis diagram0","{977946E9-7FAA-4b1a-BDCB-58FB1DA29F63}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.18.1.1", "1", "Manutenção: Ficha Profissional", "", "4.png", "", "", "{ECB4AA4A-2DD4-45e2-8ACD-C8757CCA543B}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.18.1.2", "1", "Capacidade 1: Cadastrar Ficha Profissional", "", "4.png", "", "", "{8603C9C5-A286-4cb9-A8DC-D348F8B95CBC}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.18.1.3", "1", "Capacidade 2: Editar Ficha Profissional", "", "4.png", "", "", "{59D4596E-C44A-4c78-ADA0-377CA0538964}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.18.1.4", "1", "Capacidade 3: Visualizar Fichas Profissionais", "EARoot/EA1/EA1/EA5/EA1/EA18/EA1/EA947.htm", "4.png", "", "", "{AFFDD74E-C507-4866-BCEC-E23D66CF153D}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.18.1.5", "1", "Capacidade 4: Visualizar Ficha Profissional Por Id", "EARoot/EA1/EA1/EA5/EA1/EA18/EA1/EA948.htm", "4.png", "", "", "{E6D94089-CEA3-421f-B463-9B2457A2DA8A}", "Package");

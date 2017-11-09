@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.9.1.7.5:1", "", "Capacidade 05.05: Listar por Aprendiz", "EARoot/EA1/EA1/EA5/EA1/EA3/EA9/EA1/EA7/EA5/EA1318.htm", "189.png", "1964", "0", "", "Analysis diagram0","{37FB9DBD-4A9F-4953-9495-716E40485AA2}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.3.9.1.7.5:2", "", "«DFD_Process» Listar Dispensas por Ficha Profissional", "EARoot/EA1/EA1/EA5/EA1/EA3/EA9/EA1/EA7/EA5/EA1322.htm", "21.png", "10442", "0", "", "Activity0","{95996793-D1CD-45ce-A9BC-661BE45D0B72}");

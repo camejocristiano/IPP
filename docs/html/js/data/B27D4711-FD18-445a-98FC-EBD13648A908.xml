@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.3.1.2.2.2:1", "", "MatriculasModule", "EARoot/EA1/EA3/EA1/EA2/EA2/EA2/EA5363.htm", "178.png", "1892", "0", "", "Component diagram0","{3969E2BA-B624-4c6f-96E6-23579D82CE6C}");
-tocTab[tocTab.length] = new Array("0.1.3.1.2.2.2:2", "", "MatriculaComponnent", "EARoot/EA1/EA3/EA1/EA2/EA2/EA2/EA5367.htm", "10.png", "9134", "0", "", "Component0","{A8E3C80A-30C0-407a-8A3A-E410CF405433}");
-tocTab[tocTab.length] = new Array("0.1.3.1.2.2.2:3", "", "MatriculasComponent", "EARoot/EA1/EA3/EA1/EA2/EA2/EA2/EA5368.htm", "10.png", "9133", "0", "", "Component0","{10ED8362-BB2D-4c39-A0B8-D59366F6D914}");
+tocTab[tocTab.length] = new Array("0.1.3.1.2.2.2:1", "", "MatriculasModule", "EARoot/EA1/EA3/EA1/EA2/EA2/EA2/EA6435.htm", "178.png", "1892", "0", "", "Component diagram0","{3969E2BA-B624-4c6f-96E6-23579D82CE6C}");
+tocTab[tocTab.length] = new Array("0.1.3.1.2.2.2:2", "", "MatriculaComponnent", "EARoot/EA1/EA3/EA1/EA2/EA2/EA2/EA6439.htm", "10.png", "9134", "0", "", "Component0","{A8E3C80A-30C0-407a-8A3A-E410CF405433}");
+tocTab[tocTab.length] = new Array("0.1.3.1.2.2.2:3", "", "MatriculasComponent", "EARoot/EA1/EA3/EA1/EA2/EA2/EA2/EA6440.htm", "10.png", "9133", "0", "", "Component0","{10ED8362-BB2D-4c39-A0B8-D59366F6D914}");

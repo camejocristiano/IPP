@@ -1,5 +1,5 @@
-tocTab[tocTab.length] = new Array("0.1.2.2.4:1", "", "Cursos", "EARoot/EA1/EA2/EA2/EA4/EA4692.htm", "188.png", "1057", "0", "", "Custom diagram0","{05C65923-99C5-4f41-8A5B-EA02B9063D0A}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.1", "1", "Menu NavBar - Cursos", "EARoot/EA1/EA2/EA2/EA4/EA4696.htm", "4.png", "", "", "{6A80F1BA-0BA0-44f0-9040-04FF9C5A1A26}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.4:1", "", "Cursos", "EARoot/EA1/EA2/EA2/EA4/EA4961.htm", "188.png", "1057", "0", "", "Custom diagram0","{05C65923-99C5-4f41-8A5B-EA02B9063D0A}");
+tocTab[tocTab.length] = new Array("0.1.2.2.4.1", "1", "Menu NavBar - Cursos", "EARoot/EA1/EA2/EA2/EA4/EA4965.htm", "4.png", "", "", "{6A80F1BA-0BA0-44f0-9040-04FF9C5A1A26}", "Package");
 tocTab[tocTab.length] = new Array("0.1.2.2.4.2", "1", "Cursos", "", "4.png", "", "", "{A3F38EB4-48DD-4393-A534-8BFA042E33BC}", "Package");
 tocTab[tocTab.length] = new Array("0.1.2.2.4.3", "1", "Turmas", "", "4.png", "", "", "{308FB639-2354-4b00-83AE-80B5E7DD4CC7}", "Package");
 tocTab[tocTab.length] = new Array("0.1.2.2.4.4", "1", "Matriculas", "", "4.png", "", "", "{A58F628F-CD49-4ea1-A346-CCBFFF90D4DE}", "Package");

@@ -1,3 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.6.3:1", "", "Cenário 06.03: Manutenção de Setor", "EARoot/EA1/EA1/EA5/EA1/EA6/EA3/EA1754.htm", "189.png", "1447", "0", "", "Analysis diagram0","{80CA4726-DB5D-40b5-901C-593C3A20945A}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.6.3:2", "", "«DFD_DataStore» Setores", "EARoot/EA1/EA1/EA5/EA1/EA6/EA3/EA1757.htm", "5.png", "7057", "0", "", "Class0","{AC8C80AC-6D3E-4fa3-8E2C-CDA62595E8D1}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.6.3.1", "1", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA6/EA3/EA1758.htm", "4.png", "", "", "{332B83D6-F3DB-4d11-A274-CD83F56C5498}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.6.3:1", "", "Cenário 06.03: Manutenção de Setor", "EARoot/EA1/EA1/EA5/EA1/EA6/EA3/EA1989.htm", "189.png", "1447", "0", "", "Analysis diagram0","{80CA4726-DB5D-40b5-901C-593C3A20945A}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.6.3:2", "", "«DFD_DataStore» Setores", "EARoot/EA1/EA1/EA5/EA1/EA6/EA3/EA1992.htm", "5.png", "7057", "0", "", "Class0","{AC8C80AC-6D3E-4fa3-8E2C-CDA62595E8D1}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.6.3.1", "1", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA1/EA5/EA1/EA6/EA3/EA1993.htm", "4.png", "", "", "{332B83D6-F3DB-4d11-A274-CD83F56C5498}", "Package");

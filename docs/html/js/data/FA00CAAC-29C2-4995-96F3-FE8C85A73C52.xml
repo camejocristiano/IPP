@@ -1,2 +1,2 @@
-tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.7.1:1", "", "Edit Ficha Social", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA7/EA1/EA3572.htm", "180.png", "1294", "0", "", "Use Case diagram0","{DBE98303-A15E-4ebf-9317-F6DA3811FF49}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.7.1:2", "", "Edita Ficha Social", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA7/EA1/EA3575.htm", "7.png", "5587", "0", "", "UseCase0","{291EA191-F6FC-4fd2-AF71-7DA3B60F4A35}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.7.1:1", "", "Edit Ficha Social", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA7/EA1/EA3791.htm", "180.png", "1294", "0", "", "Use Case diagram0","{DBE98303-A15E-4ebf-9317-F6DA3811FF49}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.7.1:2", "", "Edita Ficha Social", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA7/EA1/EA3796.htm", "7.png", "5587", "0", "", "UseCase0","{291EA191-F6FC-4fd2-AF71-7DA3B60F4A35}");

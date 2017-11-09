@@ -1,2 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.3.2.2.2:1", "", "Matricula", "EARoot/EA1/EA1/EA5/EA3/EA2/EA2/EA2/EA2139.htm", "175.png", "1001", "0", "", "Logical diagram0","{1EEE1C7A-7CD9-4155-BA00-F6028A117320}");
-tocTab[tocTab.length] = new Array("0.1.1.5.3.2.2.2:2", "", "Cursos_Matricula_DadosDaMatricula", "EARoot/EA1/EA1/EA5/EA3/EA2/EA2/EA2/EA2141.htm", "5.png", "4464", "0", "", "Class0","{69917EE9-3214-4f2e-8ABD-2DC5EA853639}");

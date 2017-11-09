@@ -1,2 +1,12 @@
-tocTab[tocTab.length] = new Array("0.1.3.2.3:1", "", "Aprendizes", "EARoot/EA1/EA3/EA2/EA3/EA5517.htm", "188.png", "1108", "0", "", "Custom diagram0","{B8C4FDD8-C072-4d57-8938-AE11234F5424}");
-tocTab[tocTab.length] = new Array("0.1.3.2.3:2", "", "«Functional» SSS0009", "EARoot/EA1/EA3/EA2/EA3/EA5519.htm", "19.png", "4308", "0", "", "Requirement0","{E39078CB-C7B5-4118-9591-712481C2A555}");
+tocTab[tocTab.length] = new Array("0.1.3.2.3:1", "", "Aprendizes", "EARoot/EA1/EA3/EA2/EA3/EA6589.htm", "188.png", "1108", "0", "", "Custom diagram0","{B8C4FDD8-C072-4d57-8938-AE11234F5424}");
+tocTab[tocTab.length] = new Array("0.1.3.2.3.1", "1", "Jovens", "EARoot/EA1/EA3/EA2/EA3/EA6593.htm", "4.png", "", "", "{ADD95B9A-F99E-4826-880C-D93C3C3B60FF}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2.3.2", "1", "Cursos IPP", "EARoot/EA1/EA3/EA2/EA3/EA6594.htm", "4.png", "", "", "{7946EC5E-5620-44f9-96DA-09DF07959451}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2.3.3", "1", "Escolaridade", "EARoot/EA1/EA3/EA2/EA3/EA6595.htm", "4.png", "", "", "{3715E0F5-54EF-458c-8F4A-21CE343B9192}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2.3.4", "1", "Situação Laboral", "EARoot/EA1/EA3/EA2/EA3/EA6596.htm", "4.png", "", "", "{CF0C244E-89B7-48de-80E0-E6DE89A82B4C}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2.3.5", "1", "Carac. Domiciliares", "EARoot/EA1/EA3/EA2/EA3/EA6597.htm", "4.png", "", "", "{21ACED81-AE12-4503-8BD1-8944E111EC80}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2.3.6", "1", "Habilidades", "EARoot/EA1/EA3/EA2/EA3/EA6598.htm", "4.png", "", "", "{84964552-E0A0-44a9-9BEA-6E4112081FC6}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2.3.7", "1", "Situação de Saúde", "EARoot/EA1/EA3/EA2/EA3/EA6599.htm", "4.png", "", "", "{C4E90F8E-253C-4661-8DB3-2D1D0490F7E8}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2.3.8", "1", "Ficha Social", "EARoot/EA1/EA3/EA2/EA3/EA6600.htm", "4.png", "", "", "{3EA93FED-F21C-4e80-91C3-BC26930362DA}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2.3.9", "1", "Ficha Profissional", "EARoot/EA1/EA3/EA2/EA3/EA6601.htm", "4.png", "", "", "{8F37CDDC-9BC3-402a-ADD4-E0523D0C7CAD}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2.3.10", "1", "Histórico", "EARoot/EA1/EA3/EA2/EA3/EA6602.htm", "4.png", "", "", "{DF63C76E-7F79-439c-9CB4-B46F0FB7989D}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2.3.11", "1", "Dados Financeiros", "EARoot/EA1/EA3/EA2/EA3/EA6603.htm", "4.png", "", "", "{EE3B1ED2-BE9D-4bcb-B0FE-106CC9A17C4E}", "Package");

@@ -1,3 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.13.1.3:1", "", "Capacidade 2: Editar Caracteristicas Domiciliares", "EARoot/EA1/EA1/EA5/EA1/EA13/EA1/EA3/EA786.htm", "189.png", "774", "0", "", "Analysis diagram0","{688A1268-D058-46ad-B44E-1298CD900083}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.13.1.3:2", "", "«DFD_Process» Editar Caracteristicas Domiciliares", "EARoot/EA1/EA1/EA5/EA1/EA13/EA1/EA3/EA789.htm", "21.png", "3829", "0", "", "Activity0","{91A694CC-FE76-4684-8EA0-E357DC9AD56B}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.13.1.3.1", "1", "Análise de Eventos", "", "4.png", "", "", "{5D0AE26A-37D7-4d55-A7CB-EE6C6C80FF90}", "Package");

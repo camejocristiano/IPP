@@ -1,3 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.18.1.5:1", "", "Capacidade 4: Visualizar Ficha Profissional Por Id", "EARoot/EA1/EA1/EA5/EA1/EA18/EA1/EA5/EA975.htm", "189.png", "860", "0", "", "Analysis diagram0","{F0F3FC67-23AA-4d98-9AB3-DBDB255018C2}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.18.1.5:2", "", "«DFD_Process» Visualizar Ficha Profissional Por Id", "EARoot/EA1/EA1/EA5/EA1/EA18/EA1/EA5/EA979.htm", "21.png", "3969", "0", "", "Activity0","{4305A0E7-B5DF-4046-8C9A-37D014CF6CF8}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.18.1.5.1", "1", "Análise de Eventos", "", "4.png", "", "", "{214A2D00-74D3-4b53-BB15-F58329C97895}", "Package");
