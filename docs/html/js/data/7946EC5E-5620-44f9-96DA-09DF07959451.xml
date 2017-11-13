@@ -1,1 +1,3 @@
-tocTab[tocTab.length] = new Array("0.1.3.2.3.2:1", "", "Cursos IPP", "EARoot/EA1/EA3/EA2/EA3/EA2/EA6613.htm", "188.png", "1915", "0", "", "Custom diagram0","{BE889DC5-792C-4657-B0BF-761D6E9B82EC}");
+tocTab[tocTab.length] = new Array("0.1.3.2.3.2:1", "", "Cursos IPP", "EARoot/EA1/EA3/EA2/EA3/EA2/EA7330.htm", "188.png", "1915", "0", "", "Custom diagram0","{BE889DC5-792C-4657-B0BF-761D6E9B82EC}");
+tocTab[tocTab.length] = new Array("0.1.3.2.3.2:2", "", "«Functional» SSS0078", "EARoot/EA1/EA3/EA2/EA3/EA2/EA7334.htm", "19.png", "11387", "0", "", "Requirement0","{A8B811F0-5BAB-4a98-9A60-57293D2A3EA7}");
+tocTab[tocTab.length] = new Array("0.1.3.2.3.2:3", "", "«Functional» SSS0079", "EARoot/EA1/EA3/EA2/EA3/EA2/EA7335.htm", "19.png", "11388", "0", "", "Requirement0","{B0283821-88B4-40f4-AEE7-DF49559C7DB7}");

@@ -1,3 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.3.1.2.1.6:1", "", "AgendamentosModule", "EARoot/EA1/EA3/EA1/EA2/EA1/EA6/EA6407.htm", "178.png", "1840", "0", "", "Component diagram0","{C3E90301-B4E9-4f61-B5B8-2F211057DE55}");
-tocTab[tocTab.length] = new Array("0.1.3.1.2.1.6:2", "", "AgendamentoComponent", "EARoot/EA1/EA3/EA1/EA2/EA1/EA6/EA6410.htm", "10.png", "8303", "0", "", "Component0","{B5240D20-EF82-4fd2-AD44-56CF254291B9}");
-tocTab[tocTab.length] = new Array("0.1.3.1.2.1.6:3", "", "AgendamentosComponent", "EARoot/EA1/EA3/EA1/EA2/EA1/EA6/EA6411.htm", "10.png", "8302", "0", "", "Component0","{1BC04423-2FA7-477f-A9C8-9F92D1878718}");

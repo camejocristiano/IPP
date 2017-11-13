@@ -1,2 +1,2 @@
-tocTab[tocTab.length] = new Array("0.1.2.1.3.5.2.2.3:1", "", "List Bancos", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2/EA2/EA3/EA4225.htm", "180.png", "1324", "0", "", "Use Case diagram0","{A29D6D41-0D1B-4e6c-8568-C85D07365B45}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.5.2.2.3:2", "", "List Bancos", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2/EA2/EA3/EA4229.htm", "7.png", "5780", "0", "", "UseCase0","{F23CF22F-223F-4e3f-9645-1B1FCB8C1BF5}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.6.2.2.3:1", "", "List Bancos", "EARoot/EA1/EA2/EA1/EA3/EA6/EA2/EA2/EA3/EA4985.htm", "180.png", "1324", "0", "", "Use Case diagram0","{A29D6D41-0D1B-4e6c-8568-C85D07365B45}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.6.2.2.3:2", "", "List Bancos", "EARoot/EA1/EA2/EA1/EA3/EA6/EA2/EA2/EA3/EA4989.htm", "7.png", "5780", "0", "", "UseCase0","{F23CF22F-223F-4e3f-9645-1B1FCB8C1BF5}");

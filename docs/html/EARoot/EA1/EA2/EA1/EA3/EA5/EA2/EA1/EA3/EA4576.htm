@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title></title>
+<link href="../../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {	
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<div id="name_classifier" style="display: none;"></div>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("", " : "))</script>  : Public   Note</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">28/10/2017 14:21:03</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">10/11/2017 23:21:00</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">Cristiano</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{8DAF8E11-6EF4-42b7-8467-F1911721B380}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA4574.htm">List Empresas</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">UC001 - List Empresas&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;OBJETIVO: Listar Empresas&lt;br /&gt;&lt;/p&gt;&lt;p&gt;REQUISITOS:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;ATORES: Administrador, Usuario ( Funcionario )&lt;br /&gt;&lt;/p&gt;&lt;p&gt;PRIORIDADE:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;PRE-CONDICAO:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;FREQUENCIA DE USO:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;POS-CONDICAO:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;CAMPOS:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;vendedor,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;monitor,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;unidade,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;data de cadastro,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;razao social,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;tipo de empresa,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;nome fantazia,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;CNPJ,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;endereço,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;complemento,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;bairro,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;estado,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;cidade,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;CEP,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;telefone,]fax, Região,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;site,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;data de vencimento da fatura,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;com vinculo com o ipp,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;sem vinculo com o ipp,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;tipo de parceria,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;carga horaria semanal,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;% sobre SMF federal,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;boleto,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;transferencia,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;autoriza divulgação da empresa no site do ipp,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;vale refeição,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;vale alimentação,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;assistencia médica,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;assistência odontológica,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;outros,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;VR,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;convênio de saúde&lt;br /&gt;&lt;/p&gt;&lt;p&gt;benefícios administrado por&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;FLUXO PRINCIPAL:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;FLUXO ALTERNATIVO:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;FLUXO DE EXCESSAO:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;VALIDACOES:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;PROTOTIPOS DE TELAS:&lt;br /&gt;&lt;/p&gt;</div>
+
+<div class="pageFooter"></div>
+ 
+</body>
+</html>

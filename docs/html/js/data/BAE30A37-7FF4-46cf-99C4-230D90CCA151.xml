@@ -1,3 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.3.1.6.2:1", "", "Gestor", "EARoot/EA1/EA1/EA5/EA3/EA1/EA6/EA2/EA2542.htm", "175.png", "1036", "0", "", "Logical diagram0","{69425D07-87AF-40e4-B431-53D23F83F394}");
-tocTab[tocTab.length] = new Array("0.1.1.5.3.1.6.2:2", "", "«ERD_Attribute» empresas_empresa_dadosDoGestor_id", "EARoot/EA1/EA1/EA5/EA3/EA1/EA6/EA2/EA2545.htm", "5.png", "4698", "0", "", "Class0","{C57171E9-67A7-4ea9-A95D-DBC254A8274A}");
-tocTab[tocTab.length] = new Array("0.1.1.5.3.1.6.2:3", "", "«ERD_Entity» Empresas_Gestor_DadosDoGestor", "EARoot/EA1/EA1/EA5/EA3/EA1/EA6/EA2/EA2546.htm", "5.png", "4697", "0", "", "Class0","{CDD4C2F0-7DE9-40fc-A195-A5EFBE112C1C}");

@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title></title>
+<link href="../../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {	
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<div id="name_classifier" style="display: none;"></div>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("", " : "))</script>  : Public   Note</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">28/10/2017 15:36:37</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">11/11/2017 01:35:15</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">Cristiano</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{987EDD2B-71B3-4707-8B63-DEDAE571CDB7}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA4451.htm">List PIOs</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">UC001 - List PIOs&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;OBJETIVO: Listar PIOs&lt;br /&gt;&lt;/p&gt;&lt;p&gt;REQUISITOS:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;ATORES: Administrador, Usuario ( Funcionario )&lt;br /&gt;&lt;/p&gt;&lt;p&gt;PRIORIDADE:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;PRE-CONDICAO:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;FREQUENCIA DE USO:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;POS-CONDICAO:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;CAMPOS:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;curso,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;turma,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;data,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;mes,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;aprendizes,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia01,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia01Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia01Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia02,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia02Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia02Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia03,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia03Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia03Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia04,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia04Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia04Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia05,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia05Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia05Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia06,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia06Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia06Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia07,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia07Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia07Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia08,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia08Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia08Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia09,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia09Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia09Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia10,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia10Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia10Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia11,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia11Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia11Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia12,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia12Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia12Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia13,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia13Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia13Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia14,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia14Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia14Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia15,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia15Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia15Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia16,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia16Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia16Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia17,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia17Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia17Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia18,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia18Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia18Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia19,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia19Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia19Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia20,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia20Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia20Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia21,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia21Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia21Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia22,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia22Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia22Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia23,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia23Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia23Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia24,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia24Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia24Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia25,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia25Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia25Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia26,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia26Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia26Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia27,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia27Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia27Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia28,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia28Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia28Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia29,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia29Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia29Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia30,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia30Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia30Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia31,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia31Manha,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;dia31Tarde,&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;FLUXO PRINCIPAL:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;FLUXO ALTERNATIVO:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;FLUXO DE EXCESSAO:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;VALIDACOES:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;PROTOTIPOS DE TELAS:&lt;br /&gt;&lt;/p&gt;</div>
+
+<div class="pageFooter"></div>
+ 
+</body>
+</html>

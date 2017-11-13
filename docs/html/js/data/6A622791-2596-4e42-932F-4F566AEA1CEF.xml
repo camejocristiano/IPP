@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.2:1", "", "Nó Operacional: Empresa", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA2/EA1739.htm", "189.png", "2034", "0", "", "Analysis diagram0","{9FEAC594-C56B-495a-BC3A-165BC68C6E48}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.2:2", "", "«DFD_External» Empresa", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA2/EA1747.htm", "5.png", "11572", "0", "", "Class0","{2DDDD3B2-EC4A-44a5-B7F8-2D48F940098E}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.2.1", "1", "Capacidade 02: Visualizar", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA2/EA1748.htm", "4.png", "", "", "{7D26F02E-060B-4e42-91F0-429454A8C9B8}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.2.2", "1", "Capacidade 03: Editar", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA2/EA1749.htm", "4.png", "", "", "{4D16B687-EDFE-4fb4-9261-D669BB34A96A}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.2.3", "1", "Capacidade 05: Manter Representantes Legais", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA2/EA1750.htm", "4.png", "", "", "{ACD8E63B-B1A6-4709-AB1F-207CD34D3B95}", "Package");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.2.4", "1", "Capacidade 06: Manter Contatos", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA2/EA1751.htm", "4.png", "", "", "{DEDCBEDD-9C94-4d43-831C-E3915B2B6D3C}", "Package");

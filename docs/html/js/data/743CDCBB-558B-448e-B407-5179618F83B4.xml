@@ -1,2 +1,2 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.6.1.9:1", "", "Capacidade 09: Cadastrar Despesa", "EARoot/EA1/EA1/EA5/EA1/EA5/EA6/EA1/EA9/EA1830.htm", "189.png", "1694", "0", "", "Analysis diagram0","{4B4D2C58-3D71-4f84-84BE-CD7D36DD737E}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.6.1.9:2", "", "«DFD_Process» Cadastrar Despesa", "EARoot/EA1/EA1/EA5/EA1/EA5/EA6/EA1/EA9/EA1832.htm", "21.png", "6977", "0", "", "Activity0","{DB802FF4-9F85-42a2-94C2-502F3F0CA6A3}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.6.6.1.9:1", "", "Capacidade 09: Cadastrar Despesa", "EARoot/EA1/EA1/EA5/EA1/EA6/EA6/EA1/EA9/EA2266.htm", "189.png", "1694", "0", "", "Analysis diagram0","{4B4D2C58-3D71-4f84-84BE-CD7D36DD737E}");
+tocTab[tocTab.length] = new Array("0.1.1.5.1.6.6.1.9:2", "", "«DFD_Process» Cadastrar Despesa", "EARoot/EA1/EA1/EA5/EA1/EA6/EA6/EA1/EA9/EA2268.htm", "21.png", "6977", "0", "", "Activity0","{DB802FF4-9F85-42a2-94C2-502F3F0CA6A3}");

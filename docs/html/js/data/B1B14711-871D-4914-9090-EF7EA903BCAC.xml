@@ -1,1 +1,10 @@
-tocTab[tocTab.length] = new Array("0.1.2.2.8.3:1", "", "Historico", "EARoot/EA1/EA2/EA2/EA8/EA3/EA6219.htm", "188.png", "1084", "0", "", "Custom diagram0","{9E1FA3E6-8547-4473-A3A8-91E3752AF119}");
+tocTab[tocTab.length] = new Array("0.1.2.2.7.5:1", "", "Historico", "EARoot/EA1/EA2/EA2/EA7/EA5/EA7048.htm", "188.png", "1084", "0", "", "Custom diagram0","{9E1FA3E6-8547-4473-A3A8-91E3752AF119}");
+tocTab[tocTab.length] = new Array("0.1.2.2.7.5:2", "", "Manutenção de Históricos", "EARoot/EA1/EA2/EA2/EA7/EA5/EA7053.htm", "11.png", "11052", "0", "", "Screen0","{0FA0A440-D74C-4697-9B10-DB29035D8C87}");
+tocTab[tocTab.length] = new Array("0.1.2.2.7.5:3", "", "Menu NavBar - Empresas", "EARoot/EA1/EA2/EA2/EA7/EA5/EA7054.htm", "99.png", "11053", "0", "", "UMLDiagram0","{4AC8BA35-7E3B-45d5-8C6B-47FB402DA85B}");
+tocTab[tocTab.length] = new Array("0.1.2.2.7.5:4", "", "Menu NavBar Principal", "EARoot/EA1/EA2/EA2/EA7/EA5/EA7055.htm", "99.png", "11054", "0", "", "UMLDiagram0","{83C84B15-05D5-4482-97E1-73B359E6BE7A}");
+tocTab[tocTab.length] = new Array("0.1.2.2.7.5:5", "", "«table» ", "EARoot/EA1/EA2/EA2/EA7/EA5/EA7056.htm", "16.png", "11067", "11052", "", "GUIElement0","{3622537D-508C-4b5b-9345-EBA19B398C8D}");
+tocTab[tocTab.length] = new Array("0.1.2.2.7.5:6", "", "«text» ", "EARoot/EA1/EA2/EA2/EA7/EA5/EA7057.htm", "16.png", "11068", "11052", "", "GUIElement0","{C27CE386-99CB-40ac-95E1-36386B2E354B}");
+tocTab[tocTab.length] = new Array("0.1.2.2.7.5:7", "", "«text» ", "EARoot/EA1/EA2/EA2/EA7/EA5/EA7058.htm", "16.png", "11069", "11052", "", "GUIElement0","{E6805F2B-E1B2-44fe-A174-ABD55B00CC0E}");
+tocTab[tocTab.length] = new Array("0.1.2.2.7.5:8", "", "«label» Data", "EARoot/EA1/EA2/EA2/EA7/EA5/EA7059.htm", "16.png", "11064", "11052", "", "GUIElement0","{ADBB37C6-1226-4ffa-A23D-F978F3A9BBA1}");
+tocTab[tocTab.length] = new Array("0.1.2.2.7.5:9", "", "«label» Descrição", "EARoot/EA1/EA2/EA2/EA7/EA5/EA7060.htm", "16.png", "11065", "11052", "", "GUIElement0","{3BEE6761-B4D8-43cf-B1B6-C397F21C3A65}");
+tocTab[tocTab.length] = new Array("0.1.2.2.7.5:10", "", "«button» Salvar", "EARoot/EA1/EA2/EA2/EA7/EA5/EA7062.htm", "16.png", "11066", "11052", "", "GUIElement0","{AF37959B-4F56-461e-9805-4CA1EBF2814F}");

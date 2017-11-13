@@ -1,2 +1,2 @@
-tocTab[tocTab.length] = new Array("0.1.2.1.3.6.2.4.4:1", "", "Visualizar Setor", "EARoot/EA1/EA2/EA1/EA3/EA6/EA2/EA4/EA4/EA4580.htm", "180.png", "1361", "0", "", "Use Case diagram0","{31D6DC15-5A24-49af-9F15-9B98F154D8D9}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.6.2.4.4:2", "", "Visualizar Setor", "EARoot/EA1/EA2/EA1/EA3/EA6/EA2/EA4/EA4/EA4584.htm", "7.png", "5966", "0", "", "UseCase0","{A4AD6E06-D755-4bc5-85E5-9C896ECC5402}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.5.2.3.5:1", "", "Visualizar Setor", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2/EA3/EA5/EA4856.htm", "180.png", "1361", "0", "", "Use Case diagram0","{31D6DC15-5A24-49af-9F15-9B98F154D8D9}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.5.2.3.5:2", "", "Visualizar Setor", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2/EA3/EA5/EA4861.htm", "7.png", "5966", "0", "", "UseCase0","{A4AD6E06-D755-4bc5-85E5-9C896ECC5402}");

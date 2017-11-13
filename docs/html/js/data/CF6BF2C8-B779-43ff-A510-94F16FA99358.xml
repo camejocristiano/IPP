@@ -1,2 +1,2 @@
-tocTab[tocTab.length] = new Array("0.1.2.1.3.6.2.2.1:1", "", "Add Gestor", "EARoot/EA1/EA2/EA1/EA3/EA6/EA2/EA2/EA1/EA4495.htm", "180.png", "1351", "0", "", "Use Case diagram0","{AF92FA5F-6ECD-429b-B292-6046EE40B6B2}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.6.2.2.1:2", "", "Add Gestor", "EARoot/EA1/EA2/EA1/EA3/EA6/EA2/EA2/EA1/EA4498.htm", "7.png", "5940", "0", "", "UseCase0","{4DCBCFBE-C48F-4331-84A6-A35E90CD2DD6}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.5.2.2.1:1", "", "Add Gestor", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2/EA2/EA1/EA4784.htm", "180.png", "1351", "0", "", "Use Case diagram0","{AF92FA5F-6ECD-429b-B292-6046EE40B6B2}");
+tocTab[tocTab.length] = new Array("0.1.2.1.3.5.2.2.1:2", "", "Add Gestor", "EARoot/EA1/EA2/EA1/EA3/EA5/EA2/EA2/EA1/EA4788.htm", "7.png", "5940", "0", "", "UseCase0","{4DCBCFBE-C48F-4331-84A6-A35E90CD2DD6}");
