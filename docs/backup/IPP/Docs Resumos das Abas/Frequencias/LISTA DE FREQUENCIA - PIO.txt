@@ -1,0 +1,49 @@
+LISTA DE FREQUENCIA - PIO // ListaDeFrequencia_PIO_Dados
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+listaDeFrequencia_pIO_dados_id: long,
+
+listaDeFrequencia_pIO_dados_curso: Curso,
+listaDeFrequencia_pIO_dados_turma: Turma,
+listaDeFrequencia_pIO_dados_data: Date,
+
+listaDeFrequencia_pIO_dados_mes: PIOMes
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+configuracoes_pIO_pIO_criar () 
+configuracoes_pIO_pIO_editar () 
+configuracoes_pIO_pIO_listarPorId () 
+configuracoes_pIO_pIO_listar () 
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+Curso,
+Turma,
+PIOMes
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

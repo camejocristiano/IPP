@@ -12,12 +12,20 @@ $isDevMode = false;
 
 $paths = array(__DIR__ . '/src/Model');
 
-$dbParams = array(
+/*$dbParams = array(
     'driver'   => 'pdo_mysql',
     'user'     => 'root',
     'password' => '',
     'dbname'   => 'apirestfulsilexdoctrine',
     'host'     => 'localhost'
+);*/
+
+$dbParams = array(
+    'driver'   => 'pdo_mysql',
+    'user'     => 'ippti_cristiano',
+    'password' => '8876$55%#001Cri#',
+    'dbname'   => 'ippti_erpipp',
+    'host'     => 'robb0213.publiccloud.com.br'
 );
 
 $config = Setup::createConfiguration($isDevMode);

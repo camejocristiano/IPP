@@ -1,0 +1,49 @@
+FINANCEIROS - PARAMETROS - DADOS DE PARAMETROS // Financeiros_Parametros_DadosDeParametros
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+financeiros_parametros_dadosDeParametros_id: long,
+
+financeiros_parametros_dadosDeParametros_salarioMinimoFederalSMF: double,
+financeiros_parametros_dadosDeParametros_valorDoConvenioDeSaudeMenorDeIdade: double,
+financeiros_parametros_dadosDeParametros_seguroDeVidaPCMSO: double,
+financeiros_parametros_dadosDeParametros_contribuicaoSindical: double,
+financeiros_parametros_dadosDeParametros_taxaAdministrativaBOM: double,
+financeiros_parametros_dadosDeParametros_taxaBancaria: double,
+financeiros_parametros_dadosDeParametros_taxaAdministrativaDeVR: double,
+financeiros_parametros_dadosDeParametros_taxaAdministrativaDaSPTRANS: double,
+financeiros_parametros_dadosDeParametros_taxaBancariaDeVR: double,
+financeiros_parametros_dadosDeParametros_taxaBancariaDeVT: double,
+financeiros_parametros_dadosDeParametros_taxaDeEmissaoDeCartaoDeVR: double,
+
+
+ 
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

@@ -1,0 +1,38 @@
+APRENDIZES - JOVEM - MEDIDAS SOCIO EDUCATIVAS // Aprendizes_Jovem_MedidasSocioEducativas
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_jovem_medidasSocioEducativas_id: long,
+
+aprendizes_jovem_medidasSocioEducativas_estaCumprindo: Enums_SimNaoEnum,
+aprendizes_jovem_medidasSocioEducativas_jaTeveProblemasComALei: Enums_SimNaoEnum,
+aprendizes_jovem_medidasSocioEducativas_ehUsuarioDeDrogas: Enums_SimNaoEnum
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

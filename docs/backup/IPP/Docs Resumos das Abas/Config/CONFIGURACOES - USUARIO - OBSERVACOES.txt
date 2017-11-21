@@ -1,0 +1,37 @@
+CONFIGURACOES - USUARIO - OBSERVACOES // Configuracoes_Usuario_Observacoes
+
+__________________________________________________________________
+VARIAVEIS __________________ api_class_component_variable: Type __
+
+configuracoes_usuarios_observacoes_id: long,
+
+configuracoes_usuarios_observacoes_observacoes: string,
+
+
+__________________________________________________________________
+FUNCOES___________________________________________________________
+
+configuracoes_usuarios_criar () 
+configuracoes_usuarios_editar () 
+configuracoes_usuarios_listarPorId () 
+configuracoes_usuarios_listar () 
+
+
+__________________________________________________________________
+ENUMS ____________________________________________________________
+
+
+
+
+__________________________________________________________________
+CLASSES EXTERNAS _________________________________________________
+
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

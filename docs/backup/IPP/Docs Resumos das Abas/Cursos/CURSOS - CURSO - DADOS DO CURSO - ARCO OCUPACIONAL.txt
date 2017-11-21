@@ -1,0 +1,38 @@
+CURSOS - CURSO - DADOS DO CURSO ARCO OCUPACIONAL // Cursos_Curso_DadosDoCursoArcoOcupacional
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+cursos_curso_dadosDoCurso_id: long,
+
+cursos_curso_dadosDoCurso_titulo: Sting,
+cursos_curso_dadosDoCurso_cBOS: List<CBO>
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+CBO
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

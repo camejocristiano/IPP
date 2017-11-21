@@ -1,0 +1,37 @@
+APRENDIZES - JOVEM - PIS // Aprendizes_Jovem_PIS
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_jovem_pis_id: long,
+
+aprendizes_jovem_pis_numero: string,
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

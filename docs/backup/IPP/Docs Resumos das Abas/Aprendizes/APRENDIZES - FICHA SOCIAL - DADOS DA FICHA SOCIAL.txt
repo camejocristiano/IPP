@@ -1,0 +1,45 @@
+APRENDIZES - FICHA SOCIAL - DADOS DA FICHA SOCIAL // Aprendizes_FichaSocial_DadosDaFichaSocial
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_fichaSocial_dadosDaFichaSocial_id: long,
+
+aprendizes_fichaSocial_dadosDaFichaSocial_jovem: Jovem
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+* cadastrarNovo ()
+* buscarPorId ()
+* editarRegistro ()
+* listarContratacoes ()
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+Jovem
+
+ 
+######################## IMPORTANTE ##############################
+
+ informações captadas pela Assistente Social e da Coordenação Pedagógica, e será de uso exclusivo das assistentes e da superintendência. Todos os outros usuários não terão acesso a esta tela por completo, mas somente as informações de entrevista social, plano de saúde e dados para caso de emergência.
+
+
+Tela Jovem – Ficha Social Esta tela terá todas as informações captadas pela Assistente Social e da Coordenação Pedagógica, e será de uso exclusivo das assistentes e da superintendência. Todos os outros usuários não terão acesso a esta tela por completo, mas somente as informações de entrevista social, plano de saúde e dados para caso de emergência.
+
+##################################################################
+##################################################################

@@ -1,0 +1,12 @@
+ng serve
+ng g component task-list
+ng serve
+ng serve
+ng g component task.new.component
+ng g component tesk.new
+ng g component tesk-new
+ng g component task-new
+ng serve
+ng g service task
+ng serve
+ng serve

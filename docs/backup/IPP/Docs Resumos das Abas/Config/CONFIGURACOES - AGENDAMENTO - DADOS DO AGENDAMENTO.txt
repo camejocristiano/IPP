@@ -1,0 +1,37 @@
+CONFIGURACOES - AGENDAMENTOS - DADOS DO AGENDAMENTO // Configiuracoes_Agendamentos_DadosDoAgendamento
+
+__________________________________________________________________
+VARIAVEIS __________________ api_class_component_variable: Type __
+
+configuracoes_agendamentos_agendamentos_id: long,
+
+configuracoes_agendamentos_agendamentos_usuario: string,
+configuracoes_agendamentos_agendamentos_data: Date,
+configuracoes_agendamentos_agendamentos_hora: string,
+configuracoes_agendamentos_agendamentos_tempoPrevisto: string,
+configuracoes_agendamentos_agendamentos_descricao: string,
+configuracoes_agendamentos_agendamentos_dataDeCriacao: Date
+
+
+__________________________________________________________________
+FUNCOES___________________________________________________________
+
+configuracoes_agendamentos_criar () 
+configuracoes_agendamentos_editar () 
+configuracoes_agendamentos_listarPorId () 
+configuracoes_agendamentos_listar () 
+
+
+__________________________________________________________________
+ENUMS ____________________________________________________________
+
+
+
+
+ 
+######################## IMPORTANTE ##############################
+
+UTILIZAR UM	SISTEMA	DE AGENDAMENTO SEMELHANTE À	APPLE, ONDE	SE POSSA COLORIR POR GRUPO DE PERMISSÃO.	
+
+##################################################################
+##################################################################

@@ -1,0 +1,48 @@
+CURSOS - MATRICULA - DADOS DA MATRICULA // Cursos_Matricula_DadosDaMatricula
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+cursos_curso_dadosDaMatricula_id: long,
+
+cursos_curso_dadosDaMatricula_cpfDoAlunoAluno: long,
+cursos_curso_dadosDaMatricula_turma: Turma,
+cursos_curso_dadosDaMatricula_status: Enums_StatusDaMatriculaEnum,
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+Enums_StatusDaMatriculaEnum
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+Turma
+
+
+ 
+######################## IMPORTANTE ##############################
+
+Todos	os	campos	obrigatórios	menos	“data	fim”.
+
+Tela matrícula Nesta tela lista todos os jovens que estão matriculados no curso e também poderá matricular novos jovens no curso. A tela terá os campos para informar o CPF do jovem e a turma que o jovem irá ser matriculado. Também terá a opção matricular por planilha. Também terá um filtro para visualização caso precise verificar ou alterar algum jovem já matriculado. Esta matrícula será diretamente relacionada com a tela de cadastro do jovem na aba cursos IPP.
+
+A	busca	pode	ser	feita	combinando	o	CPF	com	a	turma	ou	o	CPF	com	o	status. O	busca	unitária	simples
+
+
+##################################################################
+##################################################################

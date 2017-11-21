@@ -1,0 +1,102 @@
+APRENDIZES - JOVEM - DADOS DO JOVEM // Aprendizes_Jovem_DadosDoJovem
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_jovem_dadosDoJovem_id: long,
+
+aprendizes_jovem_dadosDoJovem_nome: string,
+aprendizes_jovem_dadosDoJovem_status: Enums_StatusEnum,
+aprendizes_jovem_dadosDoJovem_dataDeNascimento: Date,
+aprendizes_jovem_dadosDoJovem_idade: string,
+aprendizes_jovem_dadosDoJovem_sexo: Enums_SexoEnum,
+
+aprendizes_jovem_dadosDoJovem_unidade: Unidade,
+aprendizes_jovem_dadosDoJovem_cPF: string,
+aprendizes_jovem_dadosDoJovem_rG: string,
+aprendizes_jovem_dadosDoJovem_orgaoEmissor: string,
+aprendizes_jovem_dadosDoJovem_dataDeExpedicao: Date,
+
+aprendizes_jovem_dadosDoJovem_telefone: string,
+aprendizes_jovem_dadosDoJovem_celular: string,
+aprendizes_jovem_dadosDoJovem_endereco: string,
+aprendizes_jovem_dadosDoJovem_numero: string,
+aprendizes_jovem_dadosDoJovem_area: Enums_AreaEnum,
+
+aprendizes_jovem_dadosDoJovem_complemento: string,
+aprendizes_jovem_dadosDoJovem_bairro: string,
+aprendizes_jovem_dadosDoJovem_regiao: string,
+aprendizes_jovem_dadosDoJovem_cEP: string,
+aprendizes_jovem_dadosDoJovem_estado: string,
+aprendizes_jovem_dadosDoJovem_cidade: string,
+
+aprendizes_jovem_dadosDoJovem_email: string,
+aprendizes_jovem_dadosDoJovem_nomeDaMae: string,
+aprendizes_jovem_dadosDoJovem_estadoCivil: Enums_EstadoCivilEnum,
+
+// aprendizes_jovem_dadosDoJovem_codigo: long, // = id
+
+aprendizes_jovem_dadosDoJovem_nomeDoPai: string,
+aprendizes_jovem_dadosDoJovem_rGDoPai: string,
+aprendizes_jovem_dadosDoJovem_codigo: string,
+
+aprendizes_jovem_dadosDoJovem_responsavelLegal: string,
+aprendizes_jovem_dadosDoJovem_rGDoResponsavelLegal: string,
+aprendizes_jovem_dadosDoJovem_cPFDoResponsavelLegal: string,
+
+aprendizes_jovem_dadosDoJovem_tipoDeInsercao: Enums_TipoDeInsercaoEnum,
+aprendizes_jovem_dadosDoJovem_canal: Configuracoes_Canais_DadosDoCanal,
+
+aprendizes_jovem_dadosDoJovem_noPIT: string,
+aprendizes_jovem_dadosDoJovem_noPIP: string,
+aprendizes_jovem_dadosDoJovem_noPIO: string,
+aprendizes_jovem_dadosDoJovem_noPAP: string,
+	
+aprendizes_jovem_dadosDoJovem_pAPDiaSem: Enums_PAPDiaDaSemanaEnum,
+aprendizes_jovem_dadosDoJovem_hrEmPAP: string,
+aprendizes_jovem_dadosDoJovem_hrSdPAP: string,
+aprendizes_jovem_dadosDoJovem_aEDiaSem: Enums_aEDiaDaSemanaEnum	
+aprendizes_jovem_dadosDoJovem_aETurma: Turma 
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+* cadastroNovo ()
+* edicaoDeRegistro ()
+* listagemDeAprendizes ()
+// bascarJovemPorCodigoDoJovem
+* bascarJovemPorId ()
+
+* listarPorStatusDoJovem('ativo' || 'inativo')
+* bascarJovemPorNome
+* buscarJovemPorNumeroDeMatricula (numero)
+* listadeAvaliacoesDoJoven ()
+* listarOcorrenciasDoJovem ()
+* listarMatriculasPorNomeJovemEStatusDaMatricula (Cursando)
+* listarMatriculasPorNomeJovemEStatusDaMatricula (concluido, demitido(Não Concluído), excluido, desistente, transferido)
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+A tela de cadastro de jovem será baseada na ficha de cadastro utilizada para inclusão do jovem no MTE. O sistema será desenvolvido para ser utilizado com mais de uma unidade, sendo assim cada jovem será cadastrado em sua unidade de origem. No momento do cadastro, como o usuário que irá cadastrar pertence a uma unidade, então todo o cadastro feito por ele automaticamente estará cadastrado na unidade que ele pertence. A tela de cadastro será dividida em 9 abas sendo elas: Dados cadastrais, Cursos IPP, Escolaridade, Situação Laboral, Características Domiciliar, Habilidades, Ficha social, Ficha profissional, Histórico e Dados financeiros. 
+
+Tudo obrigatório, menos, pai, responsável, área, região, complemento, PIS,Título de eleitor, CNH, Serviço Militar e a nova barra laranja.
+
+##################################################################
+##################################################################

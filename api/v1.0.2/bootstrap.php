@@ -11,12 +11,20 @@ $isDevMode = false;
 
 $paths = array(__DIR__ . '/src/Entity');
 
+/*$dbParams = array(
+    'driver'   => 'pdo_mysql',
+    'user'     => 'ippti_cristiano',
+    'password' => '8876$55%#001Cri#',
+    'dbname'   => 'ippti_erpipp',
+    'host'     => 'robb0213.publiccloud.com.br'
+);*/
+
 $dbParams = array(
     'driver'   => 'pdo_mysql',
     'user'     => 'root',
     'password' => '',
     'dbname'   => 'api-master',
-    'host'     => '127.0.0.1'
+    'host'     => 'localhost'
 );
 
 $config = Setup::createConfiguration($isDevMode);

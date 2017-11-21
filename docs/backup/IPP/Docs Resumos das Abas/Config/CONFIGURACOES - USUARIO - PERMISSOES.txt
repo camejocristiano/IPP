@@ -1,0 +1,35 @@
+CONFIGURACOES - USUARIO - PERMISSOES // Configuracoes_Usuario_Permissoes
+
+__________________________________________________________________
+VARIAVEIS __________________ api_class_component_variable: Type __
+
+configuracoes_usuarios_permissoes_idPermissoes: long,
+
+configuracoes_usuarios_permissoes_unidades: List<Unidade>,
+configuracoes_usuarios_permissoes_gruposDePermissoes: List<Permissoes>,
+
+
+__________________________________________________________________
+FUNCOES___________________________________________________________
+
+configuracoes_usuarios_permissoes_listar () 
+
+
+__________________________________________________________________
+ENUMS ____________________________________________________________
+
+
+
+__________________________________________________________________
+CLASSES EXTERNAS _________________________________________________
+
+Unidade,
+Permissoes
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

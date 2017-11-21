@@ -1,7 +1,3 @@
-import { ArcosocupacionaisModule } from './arcosocupacionais/arcosocupacionais.module';
-import { ArcosocupacionaisRoutingModule } from './arcosocupacionais/arcosocupacionais-routing.module';
-import { cursosRouting } from './cursos/cursos.routing';
-import { CursosModule } from './cursos/cursos.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -14,30 +10,24 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { routing } from './app.routing';
-import { usersRouting } from "./users/users.routing";
-import { UsersModule } from "./users/users.module";
-import { FooterComponent } from './footer/footer.component';
+import { cursosRouting } from "./cursos/cursos.routing";
+import { CursosModule } from "./cursos/cursos.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    NotFoundComponent,
-    FooterComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterializeModule,
-    UsersModule,
-    usersRouting,
     CursosModule,
     cursosRouting,
-    routing,
-    ArcosocupacionaisModule,
-    ArcosocupacionaisRoutingModule
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,55 @@
+APRENDIZES - HABILIDADES - DADOS DAS HABILIDADES // Aprendizes_Habilidades_DadosDasHabilidades
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_habilidades_dadosDasHabilidades_id: long,
+
+aprendizes_habilidades_dadosDasHabilidades_sabeLerEEscrever: Enums_SimNaoEnum,
+aprendizes_habilidades_dadosDasHabilidades_outrosCursos: List<OutrosCursos>,
+aprendizes_habilidades_dadosDasHabilidades_habilidadeManual: Enums_HabilidadeManualEnum,
+aprendizes_habilidades_dadosDasHabilidades_conhecimentosDeInformaticaWord: Enums_SimNaoEnum,
+aprendizes_habilidades_dadosDasHabilidades_conhecimentosDeInformaticaExcel: Enums_SimNaoEnum,
+aprendizes_habilidades_dadosDasHabilidades_conhecimentosDeInformaticaPowerPoint: Enums_SimNaoEnum,
+aprendizes_habilidades_dadosDasHabilidades_conhecimentosDeInformaticaAccess: Enums_SimNaoEnum,
+aprendizes_habilidades_dadosDasHabilidades_conhecimentosDeInformaticaOutlook: Enums_SimNaoEnum,
+aprendizes_habilidades_dadosDasHabilidades_conhecimentosDeInformaticaOutros: Enums_SimNaoEnum,
+aprendizes_habilidades_dadosDasHabilidades_idiomasIngles: Enums_SimNaoEnum,
+aprendizes_habilidades_dadosDasHabilidades_idiomasEspanhol: Enums_SimNaoEnum,
+aprendizes_habilidades_dadosDasHabilidades_idiomasOutros: Enums_SimNaoEnum,
+aprendizes_habilidades_dadosDasHabilidades_caracteristicasMarcantes: string
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+* cadastrarNovo ()
+* buscarPorId ()
+* editarRegistro ()
+* listarContratacoes ()
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+Enums_SimNaoEnum,
+Enums_SimNaoEnum
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+OutrosCursos
+ 
+######################## IMPORTANTE ##############################
+
+informações importantes para uma futura seleção. As habilidades como idiomas, informáticas e outras, poderão ser descritas aqui, que servirão de apoio ao comercial do IPP para saber enviar o jovem indicado para as vagas disponíveis das empresas. Outros cursos que caso o jovem tenha feito e possa agregar ao seu futuro profissional poderão ser incluídos, não tendo limite de quantidade.
+
+##################################################################
+##################################################################

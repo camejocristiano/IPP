@@ -49,4 +49,8 @@ $app->register(new \Dflydev\Provider\DoctrineOrm\DoctrineOrmServiceProvider(), a
     'orm.default_cache' => 'array'
 ));
 
+$app->get('/', function(){
+    return new Response('Silex index!', 200);
+});
+
 $app->run();

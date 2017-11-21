@@ -1,0 +1,34 @@
+FINANCEIROS - CONTAS A PAGAR - DADOS DE CONTAS A PAGAR // Financeiros_ContasAPagar_DadosDeContasAPagar
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+financeiros_contasAPagar_dadosDeContasAPagar: long
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

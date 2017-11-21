@@ -1,0 +1,95 @@
+CONFIGURACOES - PERMISSOES - DADOS DA OERMISSAO // Configuracoes_Permissao_DadosDaPermissao
+
+__________________________________________________________________
+VARIAVEIS __________________ api_class_component_variable: Type __
+
+configuracoes_permissoes_grupo_id: long,
+
+configuracoes_permissoes_grupo_grupo: string,
+configuracoes_permissoes_grupo_unidade: string,
+configuracoes_permissoes_grupo_status: StatusEnum,
+
+configuracoes_permissoes_caracteristicaDomiciliar_caracteristicaDomiciliar: PermissaoEnum,
+
+configuracoes_permissoes_configuracao_canais: PermissaoEnum,
+configuracoes_permissoes_configuracao_gerenciadorDeArquivos: PermissaoEnum,
+configuracoes_permissoes_configuracao_permissoes: PermissaoEnum,
+configuracoes_permissoes_configuracao_unidades: PermissaoEnum,
+configuracoes_permissoes_configuracao_usuarios: PermissaoEnum,
+
+configuracoes_permissoes_cursosIPP_cursosIpp: PermissaoEnum,
+configuracoes_permissoes_cursosIPP_matriculas: PermissaoEnum,
+configuracoes_permissoes_cursosIPP_turmas: PermissaoEnum,
+configuracoes_permissoes_cursosIPP_administrarListaDePresenca: PermissaoEnum,
+
+configuracoes_permissoes_dadosFinanceiros_dadosFinanceiros: PermissaoEnum,
+
+configuracoes_permissoes_empresas_dadosCadastrais: PermissaoEnum,
+configuracoes_permissoes_empresas_gestor: PermissaoEnum,
+configuracoes_permissoes_empresas_historico: PermissaoEnum,
+configuracoes_permissoes_empresas_observacoes: PermissaoEnum,
+configuracoes_permissoes_empresas_setor: PermissaoEnum,
+
+configuracoes_permissoes_escolaridade_frequentaEscola: PermissaoEnum,
+
+configuracoes_permissoes_fichaProfissional_contratacoes: PermissaoEnum,
+configuracoes_permissoes_fichaProfissional_entrevistas: PermissaoEnum,
+configuracoes_permissoes_fichaProfissional_situacao: PermissaoEnum,
+
+configuracoes_permissoes_fichaSocial_emCasoDeEmergencia: PermissaoEnum,
+configuracoes_permissoes_fichaSocial_internacoes: PermissaoEnum,
+configuracoes_permissoes_fichaSocial_jovem: PermissaoEnum,
+configuracoes_permissoes_fichaSocial_observacoes: PermissaoEnum,
+configuracoes_permissoes_fichaSocial_parecerConclusivo: PermissaoEnum,
+configuracoes_permissoes_fichaSocial_planoDeSaude: PermissaoEnum,
+configuracoes_permissoes_fichaSocial_situacaoFamiliar: PermissaoEnum,
+configuracoes_permissoes_fichaSocial_situacaoHabitacional: PermissaoEnum,
+configuracoes_permissoes_fichaSocial_situacaoDeSaude: PermissaoEnum,
+configuracoes_permissoes_fichaSocial_situacaoSocioCultural: PermissaoEnum,
+configuracoes_permissoes_fichaSocial_situacaoSocioEconomicaFamiliar: PermissaoEnum,
+
+configuracoes_permissoes_habilidades_habilidades: PermissaoEnum,
+
+configuracoes_permissoes_historico_avaliacoesPAP: PermissaoEnum,
+configuracoes_permissoes_historico_avaliacoesPIO: PermissaoEnum,
+configuracoes_permissoes_historico_avaliacoesPIT: PermissaoEnum,
+configuracoes_permissoes_historico_evolucaoDoJovem: PermissaoEnum,
+configuracoes_permissoes_historico_ocorrencias: PermissaoEnum,
+
+configuracoes_permissoes_jovem_dadosGerais: PermissaoEnum,
+configuracoes_permissoes_jovem_certidaoDeNascimento: PermissaoEnum,
+configuracoes_permissoes_jovem_cNH: PermissaoEnum,
+configuracoes_permissoes_jovem_cTPS: PermissaoEnum,
+configuracoes_permissoes_jovem_deficienciaFisica: PermissaoEnum,
+configuracoes_permissoes_jovem_jovem: PermissaoEnum,
+configuracoes_permissoes_jovem_medidasSocioEducativas: PermissaoEnum,
+configuracoes_permissoes_jovem_naturalidade: PermissaoEnum,
+configuracoes_permissoes_jovem_pIS: PermissaoEnum,
+configuracoes_permissoes_jovem_servicoMilitar: PermissaoEnum,
+configuracoes_permissoes_jovem_tituloDeEleitor: PermissaoEnum,
+
+
+__________________________________________________________________
+FUNCOES___________________________________________________________
+
+configuracoes_permissoes_criar () 
+configuracoes_permissoes_editar () 
+configuracoes_permissoes_listarPorId () 
+configuracoes_permissoes_listar () 
+
+__________________________________________________________________
+ENUMS ____________________________________________________________
+
+PermissaoEnum {
+	Visualizar, Editar, Remover
+}
+StatusEnum {
+	Ativo, Inativo
+}
+ 
+######################## IMPORTANTE ##############################
+
+Um grupo só pode ser deletado se estiver vazio.	Se estiver vinculado a um usuário, não pode ser deletado.
+
+##################################################################
+##################################################################

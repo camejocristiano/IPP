@@ -1,0 +1,33 @@
+import { Component, OnInit } from '@angular/core';
+import { CepService } from '../cep.service';
+import { Cep } from '../cep';
+
+@Component({
+  selector: 'app-cep',
+  templateUrl: './cep.component.html',
+  styleUrls: ['./cep.component.css']
+})
+export class CepComponent implements OnInit {
+
+  cep = new Cep();
+  isLoading = false;
+  constructor(private cepService: CepService) { }
+
+  ngOnInit() {
+  }
+
+  buscar() {
+    this.cepService.buscar(this.cep.cep)
+      .then((cep: Cep) => {
+        isLoading = true;
+        this.cep = cep
+      })
+      .catch(() => {
+        let cep = this.cep.cep;
+        this.cep = new Cep();
+        this.cep.cep = cep;
+        alert("Confira o Cep!");
+      });
+  }
+
+}

@@ -1,0 +1,53 @@
+APRENDIZES - DISPENSAS - DADOS DA DISPENSA // Aprendizes_Dispensas_DadosDaDispensa
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_dispensa_dadosDaDispensa_id: long,
+
+aprendizes_dispensa_dadosDaDispensa_motivoDaDispensa: Enums_MotivoDaDispensaEnum,
+aprendizes_dispensa_dadosDaDispensa_dataDaDispensa: Date,
+aprendizes_dispensa_dadosDaDispensa_exameDemissional: Date,
+aprendizes_dispensa_dadosDaDispensa_justificativa: string,
+aprendizes_dispensa_dadosDaDispensa_oJovemEstaCiente: Enums_SimNaoEnum,
+aprendizes_dispensa_dadosDaDispensa_haveraSubstituicao: Enums_SimNaoEnum,
+aprendizes_dispensa_dadosDaDispensa_consideracoes: string,
+aprendizes_dispensa_dadosDaDispensa_imformacoesComplementares: string
+
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+* cadastrarNovo ()
+* buscarPorId ()
+* editarRegistro ()
+* listarContratacoes ()
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+Enums_MotivoDaDispensaEnum,
+Enums_SimNaoEnum
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+ para efetuar o desligamento do jovem da empresa no qual está trabalhando. Na tela anterior (Ficha Profissional), temos a lista das contratações e a linha que corresponder ao contrato atual terá um ícone que ao clicar irá chamar a tela de dispensa conforme segue. Na tela teremos como escolher o motivo da dispensa. Caso o motivo for demissão por parte da empresa, irá habilitar o botão para a impressão da ficha de laudo de dispensa, caso contrário não estará ativo este botão.
+
+##################################################################
+##################################################################

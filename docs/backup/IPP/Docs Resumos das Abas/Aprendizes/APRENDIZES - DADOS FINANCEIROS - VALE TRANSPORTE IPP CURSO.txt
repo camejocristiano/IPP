@@ -1,0 +1,54 @@
+APRENDIZES - DADOS FINANCEIROS - VALE TRANSPORTE IPP CURSO // Aprendizes_DadosFinanceiros_ValeTransporteIPPCurso
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_dadosFinanceiros_valeTransporteIPPCurso_id: long,
+
+aprendizes_dadosFinanceiros_valeTransporteIPPCurso_usaValeTransporte: Enums_SimNaoEnum,
+aprendizes_dadosFinanceiros_valeTransporteIPPCurso_metro: Enums_SimNaoEnum,
+aprendizes_dadosFinanceiros_valeTransporteIPPCurso_trem: Enums_SimNaoEnum,
+aprendizes_dadosFinanceiros_valeTransporteIPPCurso_onibusMunicipal: Enums_SimNaoEnum,
+aprendizes_dadosFinanceiros_valeTransporteIPPCurso_integracao: Enums_SimNaoEnum,
+aprendizes_dadosFinanceiros_valeTransporteIPPCurso_bom: Enums_SimNaoEnum,
+aprendizes_dadosFinanceiros_valeTransporteIPPCurso_valorBom: double,
+aprendizes_dadosFinanceiros_valeTransporteIPPCurso_bem: Enums_SimNaoEnum,
+aprendizes_dadosFinanceiros_valeTransporteIPPCurso_valorBem: double,
+aprendizes_dadosFinanceiros_valeTransporteIPPCurso_valorEmpresa: double,
+aprendizes_dadosFinanceiros_valeTransporteIPPCurso_administradoPor: Enums_AdministradoPorEnum
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+* cadastrarNovo ()
+* buscarPorId ()
+* editarRegistro ()
+* listarContratacoes ()
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+Enums_SimNaoEnum,
+Enums_AdministradoPorEnum
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

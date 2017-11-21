@@ -1,0 +1,43 @@
+APRENDIZES - SITUACAO LABORAL - JA FOI APRENDIZ // Aprendizes_SituacaoLaboral_JaFoiAprendiz
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_situacaoLaboral_jaFoiAprendiz_id: long,
+
+aprendizes_situacaoLaboral_jaFoiAprendiz_dataDeInicio: Date,
+aprendizes_situacaoLaboral_jaFoiAprendiz_dataDeFim: Date,
+aprendizes_situacaoLaboral_jaFoiAprendiz_totalDeDias: string
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+* cadastrarNovo ()
+* buscarPorId ()
+* editarRegistro ()
+* listarContratacoes ()
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

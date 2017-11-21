@@ -1,0 +1,12 @@
+<label>Nome: </label>
+<input type="text" [(ngModel)]="task" />
+<label>Value: </label>
+<input type="text" />
+<br />
+<button type="button" (click)="add()">Adicionar</button>
+{{task}}
+<ul>
+	<li *ngFor="let item of tasks">
+		{{item}}
+	</li>
+</ul>

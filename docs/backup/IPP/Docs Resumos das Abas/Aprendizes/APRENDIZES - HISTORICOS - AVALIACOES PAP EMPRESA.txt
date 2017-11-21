@@ -1,0 +1,72 @@
+APRENDIZES - HISTORICOS - AVALIACOES PAP EMPRESA // Aprendizes_Historicos_AvaliacoesPAPEmpresas
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_historicos_avaliacoesPAPEmpresa_id: long,
+
+aprendizes_historicos_avaliacoesPAPEmpresa_1avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPAPEmpresa_1avaliacaoAvaliador: string,
+aprendizes_historicos_avaliacoesPAPEmpresa_1avaliacaoNota: double,
+
+aprendizes_historicos_avaliacoesPAPEmpresa_2avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPAPEmpresa_2avaliacaoAvaliador: string,
+aprendizes_historicos_avaliacoesPAPEmpresa_2avaliacaoNota: double,
+
+aprendizes_historicos_avaliacoesPAPEmpresa_3avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPAPEmpresa_3avaliacaoAvaliador: string,
+aprendizes_historicos_avaliacoesPAPEmpresa_3avaliacaoNota: double,
+
+aprendizes_historicos_avaliacoesPAPEmpresa_4avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPAPEmpresa_4avaliacaoAvaliador: string,
+aprendizes_historicos_avaliacoesPAPEmpresa_4avaliacaoNota: double,
+
+aprendizes_historicos_avaliacoesPAPEmpresa_5avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPAPEmpresa_5avaliacaoAvaliador: string,
+aprendizes_historicos_avaliacoesPAPEmpresa_5avaliacaoNota: double,
+
+aprendizes_historicos_avaliacoesPAPEmpresa_6avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPAPEmpresa_6avaliacaoAvaliador: string,
+aprendizes_historicos_avaliacoesPAPEmpresa_6avaliacaoNota: double,
+
+aprendizes_historicos_avaliacoesPAPEmpresa_7avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPAPEmpresa_7avaliacaoAvaliador: string,
+aprendizes_historicos_avaliacoesPAPEmpresa_7avaliacaoNota: double,
+
+aprendizes_historicos_avaliacoesPAPEmpresa_8avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPAPEmpresa_8avaliacaoAvaliador: string,
+aprendizes_historicos_avaliacoesPAPEmpresa_8avaliacaoNota: double,
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+* cadastrarNovo ()
+* buscarPorId ()
+* editarRegistro ()
+* listarContratacoes ()
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

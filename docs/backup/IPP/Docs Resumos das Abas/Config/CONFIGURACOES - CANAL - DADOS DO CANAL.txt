@@ -1,0 +1,31 @@
+CONFIGURACOES - CANAL - DADOS DO CANAL // Configuracoes_Canal_DadosDoCanal
+
+__________________________________________________________________
+VARIAVEIS __________________ api_class_component_variable: Type __
+
+configuracoes_canais_canais_id: long,
+configuracoes_canais_canais_descricao: string
+
+
+__________________________________________________________________
+FUNCOES___________________________________________________________
+
+configuracoes_canais_criar () 
+configuracoes_canais_editar () 
+configuracoes_canais_listarPorId () 
+configuracoes_canais_listar () 
+
+
+__________________________________________________________________
+ENUMS ____________________________________________________________
+
+
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

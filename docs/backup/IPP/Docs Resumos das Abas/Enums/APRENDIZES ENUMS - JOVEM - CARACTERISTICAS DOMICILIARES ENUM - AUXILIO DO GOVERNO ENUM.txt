@@ -1,0 +1,19 @@
+APRENDIZES ENUMS - JOVEM - CARACTERISTICAS DOMICILIARES ENUM - AUXILIO DO GOVERNO ENUM
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+Enums_AuxilioDoGovernoEnum {
+	Bolsa,
+	FamiliaOutros	
+}
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

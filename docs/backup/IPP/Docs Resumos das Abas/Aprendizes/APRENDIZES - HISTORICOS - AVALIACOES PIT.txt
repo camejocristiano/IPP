@@ -1,0 +1,52 @@
+APRENDIZES - HISTORICOS - AVALIACOES PIT // Aprendizes_Historicos_AvaliacoesPIT
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_historicos_avaliacoesPIT_id: long,
+
+aprendizes_historicos_avaliacoesPIT_dataAutoAvaliacao: Date,
+aprendizes_historicos_avaliacoesPIT_autoAvaliacao: double,
+aprendizes_historicos_avaliacoesPIT_dataOrientador: Date,
+aprendizes_historicos_avaliacoesPIT_orientador: double,
+aprendizes_historicos_avaliacoesPIT_dataVivencias: Date,
+aprendizes_historicos_avaliacoesPIT_vivencias: double,
+aprendizes_historicos_avaliacoesPIT_dataMatematica: Date,
+aprendizes_historicos_avaliacoesPIT_matematica: double,
+aprendizes_historicos_avaliacoesPIT_dataInformatica: Date,
+aprendizes_historicos_avaliacoesPIT_informatica: double,
+aprendizes_historicos_avaliacoesPIT_dataPortugues: Date,
+aprendizes_historicos_avaliacoesPIT_portugues: double
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+* cadastrarNovo ()
+* buscarPorId ()
+* editarRegistro ()
+* listarContratacoes ()
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

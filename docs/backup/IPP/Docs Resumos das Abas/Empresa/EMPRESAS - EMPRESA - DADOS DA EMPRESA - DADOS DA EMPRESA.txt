@@ -1,0 +1,73 @@
+EMPRESAS - DADOS DA EMPRESA - DADOS DA EMPRESA // Empresas_DadosDaEmpresa_DadosDaEmpresa
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+empresas_empresa_dadosDaEmpresa_id: long,
+
+empresas_empresa_dadosDaEmpresa_vendedor: Usuario,
+empresas_empresa_dadosDaEmpresa_monitor: Usuario,
+empresas_empresa_dadosDaEmpresa_unidade: Unidade,
+empresas_empresa_dadosDaEmpresa_dataDeCadastro: Date,
+empresas_empresa_dadosDaEmpresa_razaoSocial: string,
+empresas_empresa_dadosDaEmpresa_tipoDaEmpresa: Enums_TipoDeEmpresaEnum,
+empresas_empresa_dadosDaEmpresa_nomeFantasia: string,
+empresas_empresa_dadosDaEmpresa_cNPJ: string,
+empresas_empresa_dadosDaEmpresa_endereco: string,
+empresas_empresa_dadosDaEmpresa_complemento: string,
+empresas_empresa_dadosDaEmpresa_bairro: string,
+empresas_empresa_dadosDaEmpresa_estado: string,
+empresas_empresa_dadosDaEmpresa_cidade: string,
+empresas_empresa_dadosDaEmpresa_cEP: string,
+empresas_empresa_dadosDaEmpresa_telefone: string,
+empresas_empresa_dadosDaEmpresa_fax: string,
+empresas_empresa_dadosDaEmpresa_regiao: Enums_RegiaoEnum,
+empresas_empresa_dadosDaEmpresa_site: string,
+empresas_empresa_dadosDaEmpresa_dataDeVencimentoDaFatura: Date,
+empresas_empresa_dadosDaEmpresa_vinculoComOIPP: Enums_SimNaoEnum,
+empresas_empresa_dadosDaEmpresa_tipoDeParceria: Enums_TipoDeParceriaEnum,
+empresas_empresa_dadosDaEmpresa_cargaHorariaTaxa: CargaHorariaTaxa,
+empresas_empresa_dadosDaEmpresa_cargasHorariasTaxas: List<CargaHorariaTaxa>,
+empresas_empresa_dadosDaEmpresa_autorizaDivulgacaoDaEmpresaNoSiteDoIpp: Enums_SimNaoEnum,
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+Enums_TipoDeEmpresaEnum,
+Enums_RegiaoEnum,
+Enums_SimNaoEnum,
+Enums_TipoDeParceriaEnum
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+Usuario,
+Unidade,
+CargaHorariaTaxa
+
+ 
+######################## IMPORTANTE ##############################
+
+Tela listagem de empresas Nesta tela terá a listagem das empresas cadastradas no sistema. Esta listagem poderá ser filtrada pela razão social, nome fantasia, número de CNPJ e status. A tela irá listar em uma grid conforme abaixo.
+
+Combo	Unidade:	Definido	na	área	Configurações. Para	o	cadastro	da	Empresa,	o	sistema	deve	permitir	que	se	sete	apenas	uma	unidade
+
+CAMPOS	NÃO	OBRIGATÓRIOS:	COMPLEMENTO	E	FAX
+
+
+##################################################################
+##################################################################

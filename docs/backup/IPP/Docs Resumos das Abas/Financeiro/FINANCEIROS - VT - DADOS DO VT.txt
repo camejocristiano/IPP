@@ -1,0 +1,39 @@
+FINANCEIROS - VT - DADOS DO VT // Financeiros_VT_DadosDoVT
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+financeiros_vT_dadosDoVT_id: long,
+
+financeiros_vT_dadosDoVT_empresa: Empresa,
+financeiros_vT_dadosDoVT_mes: MesEnum,
+financeiros_vT_dadosDoVT_ano: AnoEnum,
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

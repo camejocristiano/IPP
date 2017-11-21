@@ -1,0 +1,13 @@
+footer {
+    background-color: #e6e6e6;
+    position:absolute;
+    width:100%;
+    clear: both;
+    margin-top: 7em;
+}
+
+ul li {
+    display: inline    
+}
+
+      

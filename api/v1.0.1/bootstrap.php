@@ -12,14 +12,6 @@ $isDevMode = false;
 
 $paths = array(__DIR__ . '/src/Model');
 
-$dbParams = array(
-    'driver'   => 'pdo_mysql',
-    'user'     => 'root',
-    'password' => '',
-    'dbname'   => 'apirestfulsilexdoctrine',
-    'host'     => 'localhost'
-);
-
 $config = Setup::createConfiguration($isDevMode);
 
 $driver = new AnnotationDriver(new AnnotationReader(), $paths);

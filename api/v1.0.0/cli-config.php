@@ -1,6 +1,6 @@
 <?php
     // http://docs.doctrine-project.org/en/latest/reference/configuration.html
-    require __DIR__.'/vendor/autoload.php';
+    /* require __DIR__.'/vendor/autoload.php';
     require __DIR__.'/config.php';
     $newDefaultAnnotationDrivers = array(
         __DIR__."/src/Model",
@@ -15,4 +15,4 @@
     $helpers = new Symfony\Component\Console\Helper\HelperSet(array(
         'db' => new \Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper($em->getConnection()),
         'em' => new \Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper($em),
-    ));
+    )); */

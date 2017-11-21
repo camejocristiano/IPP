@@ -1,0 +1,47 @@
+CURSOS - TURMA - DADOS DA TURMA // Cursos_Turma_DadosDaTurma
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+cursos_turmas_dadosDaTurma_id: long, 
+
+cursos_turmas_dadosDaTurma_numero: long,
+cursos_turmas_dadosDaTurma_diaDaSemana: Enums_DiaDaSemanaEnum,
+cursos_turmas_dadosDaTurma_horaDeInicio: string,
+cursos_turmas_dadosDaTurma_horaDeFim: string,
+cursos_turmas_dadosDaTurma_diaDeInicio: Date,
+cursos_turmas_dadosDaTurma_diaDeFim: Date,
+cursos_turmas_dadosDaTurma_orientador: Usuario
+
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+Enums_DiaDaSemanaEnum
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+Usuario
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

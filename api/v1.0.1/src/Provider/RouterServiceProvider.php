@@ -10,14 +10,6 @@ class RouterServiceProvider implements ServiceProviderInterface
 {
     public function register(Container $app)
     {
-        $app->get('/users/', 'users:index');
-
-        $app->post('/users/create', 'users:create');    
-        $app->put('/users/update{1}', 'users:update');
-        $app->delete('/users/delete', 'users:delete');
-        $app->get('/users/find/{id}', 'users:find');
-        $app->get('/users/list', 'users:list');
-
 
         $app->get('/cursos/', 'cursos:index');
         

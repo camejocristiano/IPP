@@ -1,0 +1,39 @@
+APRENDIZES - JOVEM - CNH // Aprendizes_Jovem_CNH
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_jovem_cNH_id: long,
+
+aprendizes_jovem_cNH_possui: Enums_SimNaoEnum,
+aprendizes_jovem_cNH_numero: string,
+aprendizes_jovem_cNH_tipo: Enums_TipoDeCNHEnum,
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

@@ -1,0 +1,60 @@
+APRENDIZES - CARACTERISTICAS DOMICILIARES - DADOS DAS CARACTERISTICAS DOMICILIARES
+// Aprendizes_CaracteristicasDomiciliares_DadosDasCaracteristicasDomiciliares
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_caracteristicasDomiciliares_dadosDasCaracteristicasDomiciliares_id: long,
+
+aprendizes_caracteristicasDomiciliares_dadosDasCaracteristicasDomiciliares_moraComAMaeResponsavel: Enums_SimNaoEnum,
+aprendizes_caracteristicasDomiciliares_dadosDasCaracteristicasDomiciliares_temFilhos: Enums_SimNaoEnum,
+aprendizes_caracteristicasDomiciliares_dadosDasCaracteristicasDomiciliares_moramComOJovem: Enums_SimNaoEnum,
+aprendizes_caracteristicasDomiciliares_dadosDasCaracteristicasDomiciliares_membrosDaFamiliaMoramNoMesmoDomicilio: string,
+aprendizes_caracteristicasDomiciliares_dadosDasCaracteristicasDomiciliares_escolaridadeMaeResponsavel: Enums_EscolaridadeEnum,
+aprendizes_caracteristicasDomiciliares_dadosDasCaracteristicasDomiciliares_curso: string,
+aprendizes_caracteristicasDomiciliares_dadosDasCaracteristicasDomiciliares_situacaoDoCurso: Enums_SituacaoDoCursoEnum,
+aprendizes_caracteristicasDomiciliares_dadosDasCaracteristicasDomiciliares_arrimoDeFamilia: Enums_SimNaoEnum,
+aprendizes_caracteristicasDomiciliares_dadosDasCaracteristicasDomiciliares_rendaFamiliarPorMes: string,
+aprendizes_caracteristicasDomiciliares_dadosDasCaracteristicasDomiciliares_recebeAuxilioDoGoverno: Enums_SimNaoEnum,
+aprendizes_caracteristicasDomiciliares_dadosDasCaracteristicasDomiciliares_tipoDoAuxilio: Enums_AuxilioDoGovernoEnum,
+aprendizes_caracteristicasDomiciliares_dadosDasCaracteristicasDomiciliares_outros: string,
+aprendizes_caracteristicasDomiciliares_dadosDasCaracteristicasDomiciliares_responsavelPeloCartao: Enums_ResponsavelPeloCartaoEnum,
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+* cadastrarNovo ()
+* buscarPorId ()
+* editarRegistro ()
+* listarContratacoes ()
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+Enums_SimNaoEnum
+Enums_EscolaridadeEnum
+Enums_SituacaoDoCursoEnum
+Enums_AuxilioDoGovernoEnum
+Enums_ResponsavelPeloCartaoEnum
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+perfil da família do jovem, como é a relação financeira em sua residência
+
+##################################################################
+##################################################################

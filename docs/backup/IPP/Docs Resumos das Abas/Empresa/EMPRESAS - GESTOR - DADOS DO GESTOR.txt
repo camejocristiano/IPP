@@ -1,0 +1,43 @@
+EMPRESAS - GESTOR - DADOS DO GESTOR // Empresas_Gestor_DadosDoGestor
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+empresas_empresa_dadosDoGestor_id: long,
+
+empresas_empresa_dadosDoGestor_nome: string,
+empresas_empresa_dadosDoGestor_telefone: string,
+empresas_empresa_dadosDoGestor_ramal: string,
+empresas_empresa_dadosDoGestor_email: string,
+empresas_empresa_dadosDoGestor_senha: string,
+empresas_empresa_dadosDoGestor_permitirQueVisualizeTodosOsJovens: string
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+CAMPOS	NÃO	OBRIGATÓRIOS:	FOTO	DO	GESTOR
+
+
+##################################################################
+##################################################################

@@ -1,0 +1,23 @@
+<h5>{{ title }}</h5>
+<div class="row">
+  <form materialize class="col s12" [formGroup]="form" (ngSubmit)="signup()">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="title" type="text" class="validate"
+               [(ngModel)]="event.title" formControlName="title"
+               [class.invalid]="form.controls['title'].touched && !form.controls['title'].valid"
+        >
+        <label for="title"
+               [class.active]="event.title"
+               data-error="Title is required and needs to contain at least 3 chars">
+          Title
+        </label>
+      </div>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit"
+            [disabled]="!form.valid">
+      Submit<i class="material-icons right">send</i>
+    </button>
+  </form>
+</div>

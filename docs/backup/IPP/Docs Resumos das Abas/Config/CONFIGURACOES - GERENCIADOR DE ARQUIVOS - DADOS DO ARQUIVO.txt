@@ -1,0 +1,36 @@
+CONFIGURACOES - GERENCIADOR DE ARQUIVOS - DADOS DO ARQUIVO // Configuracoes_GerenciadorDeArquivos_DadosDoArquivo
+
+__________________________________________________________________
+VARIAVEIS __________________ api_class_component_variable: Type __
+
+configuracoes_gerenciadorDeArquivos_gerenciadorDeArquivos_id: long,
+configuracoes_gerenciadorDeArquivos_gerenciadorDeArquivos_link: string,
+configuracoes_gerenciadorDeArquivos_gerenciadorDeArquivos_pasta: string
+
+
+__________________________________________________________________
+FUNCOES___________________________________________________________
+
+configuracoes_gerenciadorDeArquivos_upload () 
+configuracoes_gerenciadorDeArquivos_download () 
+configuracoes_gerenciadorDeArquivos_remover () 
+configuracoes_gerenciadorDeArquivos_listarPorId () 
+configuracoes_gerenciadorDeArquivos_listar () 
+
+
+__________________________________________________________________
+ENUMS ____________________________________________________________
+
+
+
+__________________________________________________________________
+CLASSES EXTERNAS _________________________________________________
+
+
+ 
+######################## IMPORTANTE ##############################
+
+Arquivos permitidos: PDF, ZIP, JPG,	PNG	em formatos	grandes
+
+##################################################################
+##################################################################

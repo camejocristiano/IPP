@@ -1,0 +1,45 @@
+FINANCEIRO - VR - DADOS DO VR // Financeiro_VR_DadosDoVR
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+financeiros_vR_dadosDoVR_id: long,
+
+financeiros_vR_dadosDoVR_empresa: Empresa,
+financeiros_vR_dadosDoVR_mes: MesEnum,
+financeiros_vR_dadosDoVR_ano: AnoEnum,
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+MesEnum {
+	Janeiro, Fevereiro, Marco, ...
+}
+AnoEnum {
+	2017, 2018, 2019, 2020, 2021, ...
+}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

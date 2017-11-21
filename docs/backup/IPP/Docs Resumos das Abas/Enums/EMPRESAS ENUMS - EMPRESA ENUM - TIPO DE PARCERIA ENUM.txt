@@ -1,0 +1,27 @@
+EMPRESAS ENUMS - EMPRESA ENUM - TIPO DE PARCERIA ENUM
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+Enums_TipoDeParceriaEnum {
+	EmpresasParceiras,
+	ParceirosInstitucionais,
+	Patrocinadores,
+	EmpresasColaboradoras,
+	FornecedoresAmigos,
+	ClubesAssociados,
+	AliadosEstrategicos,
+	Apoiadores,
+	EmpresasAmigas,
+	Contatos
+}
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

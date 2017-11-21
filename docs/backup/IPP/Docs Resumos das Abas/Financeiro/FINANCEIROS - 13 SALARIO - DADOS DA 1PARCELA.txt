@@ -1,0 +1,41 @@
+FINANCEIROS - 13 SALARIO - DADOS DA 1PARCELA // Financeiros_13Salario_Parcela1
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+financeiros_13Salario_Parcela1_id: long,
+
+financeiros_13Salario_Parcela1_empresa: Empresa,
+financeiros_13Salario_Parcela1_ano: AnoEnum,
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+AnoEnum {
+	2017, 2018, 2019, 2020, 2021, ...
+}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

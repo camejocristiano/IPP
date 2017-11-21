@@ -26,8 +26,6 @@ $app['debug'] = true;
 $app->register(new ServiceControllerServiceProvider());
 $app->register(new ControllerServiceProvider());
 $app->register(new RouterServiceProvider());
-//$app->register(new ConnectionServiceProvider());
-
 
 $app->get('/', function(){
     return new Response('Silex index!', 200);
@@ -36,33 +34,6 @@ $app->get('/', function(){
 $app->error(function (Exception $e) use ($app) {
     return new \Symfony\Component\HttpFoundation\Response("Something goes terribly wrong: " . $e->getMessage());
 });
-
-/**
- *  DB PDO
- *      Connection
- */
-/* $app->register(new ConnectionServiceProvider(), array(
-    'db.name' => 'apirestfulsilexdoctrine',
-    'db.host' => 'localhost',
-    'db.user' => 'root',
-    'db.password' => ''
-));
-
-$app->get('/pdo', function(Application $app) {
-    $users = $app['pdo'];
-    $users = $users->query("SELECT * FROM users");
-    var_dump($users->fetchAll());
-    return new Response('PDO is running!', 200);
-}); */
-// FIM DB PDO
-
-
-
-
-
-/**
- * Doctrine Bloco de testes
- */
 
 // Doctrine
 AnnotationRegistry::registerLoader([$loader, 'loadClass']);
@@ -73,10 +44,10 @@ $app->register(
     [
         'db.options' => [
             'driver'        => 'pdo_mysql',
-            'host'          => 'localhost',
-            'dbname'        => 'apirestfulsilexdoctrine',
-            'user'          => 'root',
-            'password'      => '',
+            'host'          => 'robb0213.publiccloud.com.br',
+            'dbname'        => 'ippti_erpipp',
+            'user'          => 'ippti_cristiano',
+            'password'      => '8876$55%#001Cri#',
             'charset'       => 'utf8',
             'driverOptions' => [
                 1002 => 'SET NAMES utf8',
@@ -100,36 +71,5 @@ $app->register(new DoctrineOrmServiceProvider(), [
         ],
     ]
 ]);
-
-/* // Doctrine
-$app->get('/user', function (Application $app) {
-    $user = new src\Model\User();
-    $user->setName('Hello');
-    $entityManager = $app['orm.em'];
-    $entityManager->persist($user);
-    $entityManager->flush();
-    return new Response('Successfully inserted!');
-});
-
-// Doctrine
-$app->get('/create-user', function(Application $app){
-	$entityManager = $app['orm.em'];
-	$entityManager->getConnection()->beginTransaction(); // suspend auto-commit
-	try {
-		$user = new src\Model\User;
-		$user->setName("Camejo");
-		$user->setEmail("cris@camejo");
-		$entityManager->persist($user);
-		$entityManager->flush();
-		$entityManager->getConnection()->commit();
-		$entityManager->close();
-	} catch (Exception $e) {
-		$entityManager->getConnection()->rollBack();
-		throw $e;
-	}
-	return new Response('Successfully inserted!');
-}); */
-
-// Final Doctrine
 
 $app->run();

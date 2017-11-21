@@ -1,0 +1,44 @@
+APRENDIZES - DADOS FINANCEIROS - CONTA SALARIO // Aprendizes_DadosFinanceiros_ContaSalario
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_dadosFinanceiros_contaSalario_id: long,
+
+aprendizes_dadosFinanceiros_contaSalario_banco: string,
+aprendizes_dadosFinanceiros_contaSalario_numeroDoBanco: string
+aprendizes_dadosFinanceiros_contaSalario_agencia: string
+aprendizes_dadosFinanceiros_contaSalario_cS: string
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+* cadastrarNovo ()
+* buscarPorId ()
+* editarRegistro ()
+* listarContratacoes ()
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

@@ -1,0 +1,73 @@
+APRENDIZES - HISTORICOS - AVALIACOES PIO // Aprendizes_Historicos_AvaliacoesPIO
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_historicos_avaliacoesPIO_id: long,
+
+aprendizes_historicos_avaliacoesPIO_1avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPIO_1avaliacaoAutoAv: double,
+aprendizes_historicos_avaliacoesPIO_1avaliacaoAvOrient: double,
+aprendizes_historicos_avaliacoesPIO_1avaliacaoAvConteudo: double,
+aprendizes_historicos_avaliacoesPIO_2avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPIO_2avaliacaoAutoAv: double,
+aprendizes_historicos_avaliacoesPIO_2avaliacaoAvOrient: double,
+aprendizes_historicos_avaliacoesPIO_2avaliacaoAvConteudo: double,
+aprendizes_historicos_avaliacoesPIO_3avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPIO_3avaliacaoAutoAv: double,
+aprendizes_historicos_avaliacoesPIO_3avaliacaoAvOrient: double,
+aprendizes_historicos_avaliacoesPIO_3avaliacaoAvConteudo: double,
+aprendizes_historicos_avaliacoesPIO_4avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPIO_4avaliacaoAutoAv: double,
+aprendizes_historicos_avaliacoesPIO_4avaliacaoAvOrient: double,
+aprendizes_historicos_avaliacoesPIO_4avaliacaoAvConteudo: double,
+aprendizes_historicos_avaliacoesPIO_5avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPIO_5avaliacaoAutoAv: double,
+aprendizes_historicos_avaliacoesPIO_5avaliacaoAvOrient: double,
+aprendizes_historicos_avaliacoesPIO_5avaliacaoAvConteudo: double,
+aprendizes_historicos_avaliacoesPIO_6avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPIO_6avaliacaoAutoAv: double,
+aprendizes_historicos_avaliacoesPIO_6avaliacaoAvOrient: double,
+aprendizes_historicos_avaliacoesPIO_6avaliacaoAvConteudo: double,
+aprendizes_historicos_avaliacoesPIO_7avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPIO_7avaliacaoAutoAv: double,
+aprendizes_historicos_avaliacoesPIO_7avaliacaoAvOrient: double,
+aprendizes_historicos_avaliacoesPIO_7avaliacaoAvConteudo: double,
+aprendizes_historicos_avaliacoesPIO_8avaliacaoData: Date,
+aprendizes_historicos_avaliacoesPIO_8avaliacaoAutoAv: double,
+aprendizes_historicos_avaliacoesPIO_8avaliacaoAvOrient: double,
+aprendizes_historicos_avaliacoesPIO_8avaliacaoAvConteudo: double
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+
+* cadastrarNovo ()
+* buscarPorId ()
+* editarRegistro ()
+* listarContratacoes ()
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################

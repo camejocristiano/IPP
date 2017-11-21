@@ -1,0 +1,56 @@
+APRENDIZES - DADOS FINANCEIROS - VALE REFEICAO // Aprendizes_DadosFinanceiros_ValeRefeicao
+
+__________________________________________________________________
+VARIAVEIS ____________ apiFolder_class_component_variable: Type __
+
+// apiFolder_class_component_variable: Type
+
+aprendizes_dadosFinanceiros_valeRefeicao_id: long,
+
+aprendizes_dadosFinanceiros_valeRefeicao_usaValeRefeicao: Enums_SimNaoEnum,
+aprendizes_dadosFinanceiros_valeRefeicao_valorIPP: double,
+aprendizes_dadosFinanceiros_valeRefeicao_valorIPPPor: Enums_PorDiaPorMesEnum,
+aprendizes_dadosFinanceiros_valeRefeicao_valorIPPSMF: double,
+aprendizes_dadosFinanceiros_valeRefeicao_valorIPPSMFPor: Enums_PorDiaPorMesEnum,
+aprendizes_dadosFinanceiros_valeRefeicao_iPPAdministradoPor: Enums_AdministradoPorEnum,
+
+aprendizes_dadosFinanceiros_valeRefeicao_valorEmpresa: double,
+aprendizes_dadosFinanceiros_valeRefeicao_valorEmpresaPor: Enums_PorDiaPorMesEnum,
+aprendizes_dadosFinanceiros_valeRefeicao_valorEmpresaSMF: double,
+aprendizes_dadosFinanceiros_valeRefeicao_valorEmpresaSMFPor: Enums_PorDiaPorMesEnum,
+aprendizes_dadosFinanceiros_valeRefeicao_empresaAdministradoPor: Enums_AdministradoPorEnum,
+
+
+
+__________________________________________________________________
+FUNCOES__________________ apiFolder_class_component_function () __
+
+// apiFolder_class_component_function ()
+
+* cadastrarNovo ()
+* buscarPorId ()
+* editarRegistro ()
+* listarContratacoes ()
+
+__________________________________________________________________
+ENUMS __________________________________________ apiFolder_enum __
+
+// apiFolder_enum {}
+
+Enums_SimNaoEnum,
+Enums_PorDiaPorMesEnum,
+Enums_AdministradoPorEnum
+
+__________________________________________________________________
+CLASSES EXTERNAS ______________________________________ class ____
+
+// class
+
+
+ 
+######################## IMPORTANTE ##############################
+
+
+
+##################################################################
+##################################################################
