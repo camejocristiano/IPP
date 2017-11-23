@@ -17,6 +17,12 @@ import { RepresentantesComponent } from './unidades/unidade/representantes/repre
 import { RepresentanteFormComponent } from './unidades/unidade/representantes/representante/representante-form.component';
 import { ContatosComponent } from './unidades/unidade/contatos/contatos.component';
 import { ContatoFormComponent } from './unidades/unidade/contatos/contato/contato-form.component';
+import { CanaisComponent } from './canais/canais.component';
+import { CanalFormComponent } from './canais/canal/canal-form.component';
+import { ArquivosComponent } from './arquivos/arquivos.component';
+import { ArquivoFormComponent } from './arquivos/arquivo/arquivo-form.component';
+import { AgendamentosComponent } from './agendamentos/agendamentos.component';
+import { AgendamentoFormComponent } from './agendamentos/agendamento/agendamento-form.component';
 
 @NgModule({
   imports: [
@@ -38,7 +44,13 @@ import { ContatoFormComponent } from './unidades/unidade/contatos/contato/contat
     RepresentantesComponent,
     RepresentanteFormComponent,
     ContatosComponent,
-    ContatoFormComponent
+    ContatoFormComponent,
+    CanaisComponent,
+    CanalFormComponent,
+    ArquivosComponent,
+    ArquivoFormComponent,
+    AgendamentosComponent,
+    AgendamentoFormComponent
     ],
   exports: [
     ConfiguracoesComponent,
@@ -51,7 +63,13 @@ import { ContatoFormComponent } from './unidades/unidade/contatos/contato/contat
     RepresentantesComponent,
     RepresentanteFormComponent,
     ContatosComponent,
-    ContatoFormComponent
+    ContatoFormComponent,
+    CanaisComponent,
+    CanalFormComponent,
+    ArquivosComponent,
+    ArquivoFormComponent,
+    AgendamentosComponent,
+    AgendamentoFormComponent
     ],
   providers: [
   ]

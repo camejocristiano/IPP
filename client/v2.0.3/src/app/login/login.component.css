@@ -26,3 +26,12 @@ body {
     border-bottom: 2px solid #e91e63;
     box-shadow: none;
   }
+
+  form {
+    background-color: #f3f3f3f3;
+  }
+
+
+  .container {
+    text-align: center;
+  }
