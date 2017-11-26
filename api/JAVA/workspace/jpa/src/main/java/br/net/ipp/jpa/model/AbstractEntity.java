@@ -1,4 +1,4 @@
-package br.net.ipp.api.model;
+package br.net.ipp.jpa.model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

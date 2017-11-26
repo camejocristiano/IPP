@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class HttpService {
 
-  private mainUrl: string = 'http://localhost:8080/';/* http://api-ipp.sa-east-1.elasticbeanstalk.com/'; */
+  private mainUrl: string =  'http://api-ipp.sa-east-1.elasticbeanstalk.com/';
 
 
   constructor(public http: Http) { }

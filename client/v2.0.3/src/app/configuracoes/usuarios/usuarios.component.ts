@@ -11,7 +11,7 @@ export class UsuariosComponent implements OnInit {
   private usuarios: Array<{}>;
   constructor(public http: HttpService) {
     // Função para iniciar a lista de usuários
-    this.http.get('configuracoes/usuarios').subscribe(res => this.usuarios = res);
+    this.http.get('endpoint/users').subscribe(res => this.usuarios = res);
   }
   ngOnInit() {
     // Função para iniciar o JQuery DataTable
