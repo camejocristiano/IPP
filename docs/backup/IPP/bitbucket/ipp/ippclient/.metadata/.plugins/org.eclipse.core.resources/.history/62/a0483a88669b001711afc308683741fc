@@ -1,4 +1,0 @@
-<div class="container">
-	<h1>Busca Cep</h1>
-	<app-cep></app-cep>
-</div>

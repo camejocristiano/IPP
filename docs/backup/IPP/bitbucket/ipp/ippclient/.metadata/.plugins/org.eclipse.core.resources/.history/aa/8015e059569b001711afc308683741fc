@@ -1,8 +1,0 @@
-<input type="text" [(ngModel)]="task" />
-<button type="button" (click)="add()">Adicionar</button>
-{{task}}
-<ul>
-	<li *ngFor="let item of tasks">
-		{{item}}
-	</li>
-</ul>

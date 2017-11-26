@@ -1,9 +1,0 @@
-<ul>
-	<li *ngFor = "let item of tasks" [task]="item">
-		{{
-			(item.name | uppercase) + ' - ' +
-			(item.value) + ' - ' +
-			(item.date_launch)
-		}}
-	</li>
-</ul>

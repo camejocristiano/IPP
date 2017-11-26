@@ -1,7 +1,0 @@
-<ul>
-	<li *ngFor = "let item of tasks" [myTask]="item">
-		{{item.name | uppercase}}
-		{{item.value}}
-		{{item.name | lowercase}}
-	</li>
-</ul>

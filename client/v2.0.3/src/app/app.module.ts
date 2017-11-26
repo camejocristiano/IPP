@@ -6,6 +6,9 @@ import { HttpModule } from '@angular/http';
 import { MaterializeModule } from 'ng2-materialize';
 import { DataTablesModule } from 'angular-datatables';
 
+import { AuthService } from './login/auth.service';
+import { HttpService } from './http.service';
+
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -41,7 +44,7 @@ import { AprendizesModule } from "./aprendizes/aprendizes.module";
     routing,
     DataTablesModule
   ],
-  providers: [],
+  providers: [HttpService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

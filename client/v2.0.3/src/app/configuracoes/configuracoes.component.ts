@@ -12,9 +12,7 @@ export class ConfiguracoesComponent implements OnInit {
   }
 
   ngOnInit(){
-    $(document).ready(function(){
-      $('ul.tabs').tabs();
-    });
+
   }
 
 }
