@@ -29,7 +29,6 @@ public class MainEndpoint {
 	}
 	@CrossOrigin(origins = "*")
 	@GetMapping(path = "/admin/users")
-	//@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> listAll() {
         return new ResponseEntity<>(userDAO.findAll(), HttpStatus.OK);
     }
@@ -42,19 +41,16 @@ public class MainEndpoint {
 	}
 	@CrossOrigin(origins = "*")
 	@PostMapping(path = "/admin/users")
-	//@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> save(@RequestBody User user) {
 	    return new ResponseEntity<>(userDAO.save(user),HttpStatus.CREATED);
 	}
 	@CrossOrigin(origins = "*")
 	@DeleteMapping(path = "/admin/users/{id}")
-	//@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> delete(@PathVariable Long id) {
 		verifyIfUserExists(id);
       	userDAO.delete(id);
       	return new ResponseEntity<>(HttpStatus.OK);
 	}
-	//@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping(path = "/admin/users")
     public ResponseEntity<?> update(@RequestBody User user) {
 		verifyIfUserExists(user.getId());
