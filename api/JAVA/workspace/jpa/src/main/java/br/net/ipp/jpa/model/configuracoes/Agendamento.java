@@ -1,6 +1,6 @@
 package br.net.ipp.jpa.model.configuracoes;
 
-import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -12,18 +12,18 @@ public class Agendamento extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	private Calendar data;
+	private Date data;
 	private String descricao;
-	private Calendar hora;
+	private Date hora;
 	private String tempoPrevisto;
 	@ManyToOne
 	private Usuario usuario;
 
-	public Calendar getData() {
+	public Date getData() {
 		return data;
 	}
 
-	public void setData(Calendar data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 
@@ -35,11 +35,11 @@ public class Agendamento extends AbstractEntity {
 		this.descricao = descricao;
 	}
 
-	public Calendar getHora() {
+	public Date getHora() {
 		return hora;
 	}
 
-	public void setHora(Calendar hora) {
+	public void setHora(Date hora) {
 		this.hora = hora;
 	}
 

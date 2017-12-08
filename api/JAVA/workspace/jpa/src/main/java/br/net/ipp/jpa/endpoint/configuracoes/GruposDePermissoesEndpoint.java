@@ -25,31 +25,31 @@ public class GruposDePermissoesEndpoint {
 		this.grupoDePermissoesDAO = grupoDePermissoesDAO;
 	}
 	@CrossOrigin(origins = "*")
-	@GetMapping(path = "/grupoDePermissoess")
+	@GetMapping(path = "/permissoes")
     public ResponseEntity<?> listAll() {
         return new ResponseEntity<>(grupoDePermissoesDAO.findAll(), HttpStatus.OK);
     }
 	@CrossOrigin(origins = "*")
-	@GetMapping(path = "/grupoDePermissoess/{id}")
+	@GetMapping(path = "/permissoes/{id}")
 	public ResponseEntity<?> getGrupoDePermissoesById(@PathVariable("id") Long id) {
 		verifyIfGrupoDePermissoesExists(id);
 	    GrupoDePermissoes grupoDePermissoes = grupoDePermissoesDAO.findOne(id);
 	    return new ResponseEntity<>(grupoDePermissoes, HttpStatus.OK);
 	}
 	@CrossOrigin(origins = "*")
-	@PostMapping(path = "/grupoDePermissoess")
+	@PostMapping(path = "/permissoes")
 	public ResponseEntity<?> save(@RequestBody GrupoDePermissoes grupoDePermissoes) {
 	    return new ResponseEntity<>(grupoDePermissoesDAO.save(grupoDePermissoes),HttpStatus.CREATED);
 	}
 	@CrossOrigin(origins = "*")
-	@DeleteMapping(path = "/grupoDePermissoess/{id}")
+	@DeleteMapping(path = "/permissoes/{id}")
 	public ResponseEntity<?> delete(@PathVariable Long id) {
 		verifyIfGrupoDePermissoesExists(id);
       	grupoDePermissoesDAO.delete(id);
       	return new ResponseEntity<>(HttpStatus.OK);
 	}
 	@CrossOrigin(origins = "*")
-	@PutMapping(path = "/grupoDePermissoess")
+	@PutMapping(path = "/permissoes")
     public ResponseEntity<?> update(@RequestBody GrupoDePermissoes grupoDePermissoes) {
 		verifyIfGrupoDePermissoesExists(grupoDePermissoes.getId());
         grupoDePermissoesDAO.save(grupoDePermissoes);

@@ -44,10 +44,10 @@ $app->register(
     [
         'db.options' => [
             'driver'        => 'pdo_mysql',
-            'host'          => 'robb0213.publiccloud.com.br',
-            'dbname'        => 'ippti_erpipp',
-            'user'          => 'ippti_cristiano',
-            'password'      => '8876$55%#001Cri#',
+            'host'          => '',
+            'dbname'        => '',
+            'user'          => '',
+            'password'      => '',
             'charset'       => 'utf8',
             'driverOptions' => [
                 1002 => 'SET NAMES utf8',

@@ -1,6 +1,6 @@
 package br.net.ipp.jpa.model.configuracoes;
 
-import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,7 +24,7 @@ public class Unidade extends AbstractEntity {
 	private String cNPJ;
 	private String fax;
 	private String telefone;
-	private Calendar dataDeCadastro;
+	private Date dataDeCadastro;
 	private String endereco;
 	private String numero;
 	private String complemento;
@@ -75,10 +75,10 @@ public class Unidade extends AbstractEntity {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public Calendar getDataDeCadastro() {
+	public Date getDataDeCadastro() {
 		return dataDeCadastro;
 	}
-	public void setDataDeCadastro(Calendar dataDeCadastro) {
+	public void setDataDeCadastro(Date dataDeCadastro) {
 		this.dataDeCadastro = dataDeCadastro;
 	}
 	public String getEndereco() {

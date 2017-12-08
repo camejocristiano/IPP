@@ -2,6 +2,7 @@ package br.net.ipp.security.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -19,8 +20,42 @@ public class User extends AbstractEntity {
 	private String nome;
 	@NotNull
 	private boolean admin;
+	@ManyToOne
+	private GrupoDePermissoes grupoDePermissoes;
+
+	public User(
+			Long id, 
+			String username, 
+			String password, 
+			String nome, 
+			boolean admin
+			) {
+        this.id = id;
+        this.username = username;
+		this.password = password;
+		this.nome = nome;
+		this.admin = admin;
+    }
 	
+	public User(
+			String username, 
+			String password, 
+			String nome, 
+			boolean admin
+			) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.nome = nome;
+		this.admin = admin;
+	}
 	
+
+	public User() {
+
+	}
+
+
 	public String getUsername() {
 		return username;
 	}
@@ -45,8 +80,11 @@ public class User extends AbstractEntity {
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
 	}
+	public GrupoDePermissoes getGrupoDePermissoes() {
+		return grupoDePermissoes;
+	}
+	public void setGrupoDePermissoes(GrupoDePermissoes grupoDePermissoes) {
+		this.grupoDePermissoes = grupoDePermissoes;
+	}
 	
-	
-
-
 }

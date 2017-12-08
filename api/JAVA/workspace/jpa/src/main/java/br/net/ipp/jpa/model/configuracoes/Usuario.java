@@ -1,6 +1,6 @@
 package br.net.ipp.jpa.model.configuracoes;
 
-import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -39,9 +39,9 @@ public class Usuario extends User {
 	private String serieCTPS;
 	private String orgaoEmissor;
 	private String uFCTPS;
-	private Calendar dataExpedicaoCTPS;
+	private Date dataExpedicaoCTPS;
 
-	private Calendar dataDeNascimento;
+	private Date dataDeNascimento;
 	private EstadoCivil estadoCivil;
 	private String formacao;
 
@@ -53,8 +53,8 @@ public class Usuario extends User {
 	private String rG;
 
 	private String curriculoResumido;
-	private Calendar dataDeAdmissao;
-	private Calendar DataDeDesligamento;
+	private Date dataDeAdmissao;
+	private Date DataDeDesligamento;
 	private String disciplina;
 	private String cargo;
 	private RelacaoFuncional relacaoFuncional;
@@ -199,19 +199,19 @@ public class Usuario extends User {
 		this.uFCTPS = uFCTPS;
 	}
 
-	public Calendar getDataExpedicaoCTPS() {
+	public Date getDataExpedicaoCTPS() {
 		return dataExpedicaoCTPS;
 	}
 
-	public void setDataExpedicaoCTPS(Calendar dataExpedicaoCTPS) {
+	public void setDataExpedicaoCTPS(Date dataExpedicaoCTPS) {
 		this.dataExpedicaoCTPS = dataExpedicaoCTPS;
 	}
 
-	public Calendar getDataDeNascimento() {
+	public Date getDataDeNascimento() {
 		return dataDeNascimento;
 	}
 
-	public void setDataDeNascimento(Calendar dataDeNascimento) {
+	public void setDataDeNascimento(Date dataDeNascimento) {
 		this.dataDeNascimento = dataDeNascimento;
 	}
 
@@ -279,19 +279,19 @@ public class Usuario extends User {
 		this.curriculoResumido = curriculoResumido;
 	}
 
-	public Calendar getDataDeAdmissao() {
+	public Date getDataDeAdmissao() {
 		return dataDeAdmissao;
 	}
 
-	public void setDataDeAdmissao(Calendar dataDeAdmissao) {
+	public void setDataDeAdmissao(Date dataDeAdmissao) {
 		this.dataDeAdmissao = dataDeAdmissao;
 	}
 
-	public Calendar getDataDeDesligamento() {
+	public Date getDataDeDesligamento() {
 		return DataDeDesligamento;
 	}
 
-	public void setDataDeDesligamento(Calendar dataDeDesligamento) {
+	public void setDataDeDesligamento(Date dataDeDesligamento) {
 		DataDeDesligamento = dataDeDesligamento;
 	}
 

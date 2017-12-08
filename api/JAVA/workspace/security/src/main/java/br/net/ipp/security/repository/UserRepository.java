@@ -6,7 +6,7 @@ import br.net.ipp.security.model.User;
 
 
 public interface UserRepository extends PagingAndSortingRepository<User, Long>  {
-
+	
 	User findByUsername(String username);
 	
 }
