@@ -1,3 +1,6 @@
+import { Http } from '@angular/http';
+import { UnidadeFormComponent } from './../../unidades/unidade/unidade-form.component';
+import { Usuario } from './Usuario';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,6 +15,11 @@ declare var $:any;
   styleUrls: ['./usuario-form.component.css']
 })
 export class UsuarioFormComponent implements OnInit {
+
+  save () {
+    console.log(nome);
+  }
+
   ngOnInit(){
     $(document).ready(function() {
       $('select').material_select();

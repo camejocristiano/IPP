@@ -14,9 +14,6 @@ import org.springframework.stereotype.Component;
 import br.net.ipp.api.model.User;
 import br.net.ipp.api.repository.UserRepository;
 
-/**
- * @author William Suane for DevDojo on 6/27/17.
- */
 @Component
 public class CustomUserDetailService implements UserDetailsService {
     private final UserRepository userRepository;

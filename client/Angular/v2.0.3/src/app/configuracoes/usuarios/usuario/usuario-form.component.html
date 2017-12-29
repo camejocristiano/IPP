@@ -1,6 +1,6 @@
   
   <div class="row">
-        <form class="col s12">
+        <form class="col s12"  [formGroup]="form" (ngSubmit)="save()">
           <div class="row">
             <div class="input-field  s12 col l2">
               <img src="../../assets/images/usuario.png" alt="" width="175em" />
@@ -8,7 +8,7 @@
             <div class="input-field s12 col l10">
                 <div class="row">
                   <div class="input-field s12 col l6">
-                    <input id="nome" type="text" class="validate">
+                    <input id="nome" type="text" class="validate" [(ngModel)]="usuario.nome" formControlName="nome">
                     <label for="nome">Nome</label>
                   </div>
                   <div class="input-field s12 col l3">

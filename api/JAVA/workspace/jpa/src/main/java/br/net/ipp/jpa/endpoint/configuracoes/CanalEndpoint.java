@@ -25,31 +25,31 @@ public class CanalEndpoint {
 		this.canalDAO = canalDAO;
 	}
 	@CrossOrigin(origins = "*")
-	@GetMapping(path = "/canais")
+	@GetMapping(path = "/canals")
     public ResponseEntity<?> listAll() {
         return new ResponseEntity<>(canalDAO.findAll(), HttpStatus.OK);
     }
 	@CrossOrigin(origins = "*")
-	@GetMapping(path = "/canais/{id}")
+	@GetMapping(path = "/canals/{id}")
 	public ResponseEntity<?> getCanalById(@PathVariable("id") Long id) {
 		verifyIfCanalExists(id);
 	    Canal canal = canalDAO.findOne(id);
 	    return new ResponseEntity<>(canal, HttpStatus.OK);
 	}
 	@CrossOrigin(origins = "*")
-	@PostMapping(path = "/canais")
+	@PostMapping(path = "/canals")
 	public ResponseEntity<?> save(@RequestBody Canal canal) {
 	    return new ResponseEntity<>(canalDAO.save(canal),HttpStatus.CREATED);
 	}
 	@CrossOrigin(origins = "*")
-	@DeleteMapping(path = "/canais/{id}")
+	@DeleteMapping(path = "/canals/{id}")
 	public ResponseEntity<?> delete(@PathVariable Long id) {
 		verifyIfCanalExists(id);
       	canalDAO.delete(id);
       	return new ResponseEntity<>(HttpStatus.OK);
 	}
 	@CrossOrigin(origins = "*")
-	@PutMapping(path = "/canais")
+	@PutMapping(path = "/canals")
     public ResponseEntity<?> update(@RequestBody Canal canal) {
 		verifyIfCanalExists(canal.getId());
         canalDAO.save(canal);
