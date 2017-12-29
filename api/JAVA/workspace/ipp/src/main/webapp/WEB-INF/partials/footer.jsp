@@ -60,6 +60,30 @@
             $('#tabelaUnidades').DataTable();
         } );
     </script>
+    
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $('#tabelaGruposDePermissoes').DataTable();
+        } );
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#tabelaAgendamentos').DataTable();
+        } );
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#tabelaCanais').DataTable();
+        } );
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#tabelaArquivos').DataTable();
+        } );
+    </script>
 
 </body>
 </html>

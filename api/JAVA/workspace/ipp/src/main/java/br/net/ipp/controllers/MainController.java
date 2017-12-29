@@ -49,6 +49,7 @@ public class MainController {
 		ModelAndView modelAndView = new ModelAndView("configuracoes/configuracoes");
 		modelAndView.addObject("usuarios", usuarioDAO.findAll());
 		modelAndView.addObject("unidades", unidadeDAO.findAll());
+		modelAndView.addObject("arquivos", arquivoDAO.findAll());
 		modelAndView.addObject("canais", canalDAO.findAll());
 		modelAndView.addObject("gruposDePermissoes", grupoDePermissoesDAO.findAll());
 		modelAndView.addObject("agendamentos", agendamentoDAO.findAll());

@@ -4,26 +4,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<table id="tabelaUsuarios" class="display" width="100%" cellspacing="0">
+<table id="tabelaCanais" class="display" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>ID</th>
-            <th>NOME</th>
-            <th>USERNAME</th>
-            <th>TELEFONE</th>
-            <th>STATUS</th>
+            <th>CANAL</th>
+            <th>JOVEM</th>
             <th class="td-icon">EDITAR</th>
           </tr>
         </thead>
         <tbody>
-        <c:forEach var="usuario" items="${requestScope.usuarios}">
+        <c:forEach var="canal" items="${requestScope.canais}">
           <tr>
-            <td>${usuario.id}</td>
-            <td>${usuario.nome}</td>
-            <td>${usuario.username}</td>
-            <td>${usuario.telefone}</td>
-            <td>${usuario.status}</td>
-            <td class="td-icon"><a href="/usuarios/${usuario.id}"><i class="material-icons" >border_color</i></a></td>
+            <td>${canal.id}</td>
+            <td>${canal.canal}</td>
+            <td>${canal.jovem}</td>
+            <td class="td-icon"><a href="/canais/${canal.id}"><i class="material-icons" >border_color</i></a></td>
           </tr>
           </c:forEach>
           </tbody>
@@ -32,7 +28,7 @@
       
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/usuario">
+                href="/canal">
                 <i class="material-icons">add</i>
             </a>
          </div>

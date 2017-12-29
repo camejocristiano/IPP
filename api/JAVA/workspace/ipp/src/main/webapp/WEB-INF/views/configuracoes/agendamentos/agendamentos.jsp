@@ -4,26 +4,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<table id="tabelaUsuarios" class="display" width="100%" cellspacing="0">
+<table id="tabelaAgendamentos" class="display" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>ID</th>
-            <th>NOME</th>
-            <th>USERNAME</th>
-            <th>TELEFONE</th>
-            <th>STATUS</th>
+            <th>DESCRÇÃO</th>
             <th class="td-icon">EDITAR</th>
           </tr>
         </thead>
         <tbody>
-        <c:forEach var="usuario" items="${requestScope.usuarios}">
+        <c:forEach var="agendamento" items="${requestScope.agendamentos}">
           <tr>
-            <td>${usuario.id}</td>
-            <td>${usuario.nome}</td>
-            <td>${usuario.username}</td>
-            <td>${usuario.telefone}</td>
-            <td>${usuario.status}</td>
-            <td class="td-icon"><a href="/usuarios/${usuario.id}"><i class="material-icons" >border_color</i></a></td>
+            <td>${agendamento.id}</td>
+            <td>${agendamento.descricao}</td>
+            <td class="td-icon"><a href="/agendamentos/${agendamento.id}"><i class="material-icons" >border_color</i></a></td>
           </tr>
           </c:forEach>
           </tbody>
@@ -32,7 +26,7 @@
       
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/usuario">
+                href="/agendamento">
                 <i class="material-icons">add</i>
             </a>
          </div>
