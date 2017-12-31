@@ -15,7 +15,7 @@ public abstract class User extends AbstractEntity {
     private String email;
 	@NotEmpty
 	private String username;
-	@NotEmpty
+	private boolean admin;
     private String password;
 	
 	
@@ -36,6 +36,12 @@ public abstract class User extends AbstractEntity {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public boolean isAdmin() {
+		return admin;
+	}
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 
 }

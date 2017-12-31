@@ -1,69 +1,54 @@
 package br.net.ipp.controllers.configuracoes;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.net.ipp.daos.configuracoes.CanalRepository;
 import br.net.ipp.models.configuracoes.Canal;
 
 @RestController
 public class CanalEndpoint {
-	
+
 	private CanalRepository canalDAO;
-	
+
 	@Autowired
 	public void CanalEndPoint(CanalRepository canalDAO) {
 		this.canalDAO = canalDAO;
 	}
-	@CrossOrigin(origins = "*")
-	@GetMapping(path = "/canals")
-    public ResponseEntity<?> listAll() {
-        return new ResponseEntity<>(canalDAO.findAll(), HttpStatus.OK);
-    }
-	@CrossOrigin(origins = "*")
-	@GetMapping(path = "/canals/{id}")
-	public ResponseEntity<?> getCanalById(@PathVariable("id") Long id) {
-		verifyIfCanalExists(id);
-	    Canal canal = canalDAO.findOne(id);
-	    return new ResponseEntity<>(canal, HttpStatus.OK);
+
+	@GetMapping("/canal")
+	public ModelAndView canal(Canal canal) {
+		ModelAndView modelAndView = new ModelAndView("configuracoes/canais/canal");
+		return modelAndView;
 	}
-	@CrossOrigin(origins = "*")
-	@PostMapping(path = "/canals")
-	public ResponseEntity<?> save(@RequestBody Canal canal) {
-	    return new ResponseEntity<>(canalDAO.save(canal),HttpStatus.CREATED);
+
+	@PostMapping("/canais")
+	public ModelAndView save(@Valid Canal canal, BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+			return canal(canal);
+		}
+		ModelAndView modelAndView = new ModelAndView("configuracoes/canais/canal");
+		String _canal = canal.getCanal();
+		canalDAO.save(canal);
+		Canal can = canalDAO.findByCanal(_canal);
+		modelAndView.addObject("msg", "Operação realizada com sucesso!");
+		modelAndView.addObject("canal", can);
+		return modelAndView;
 	}
-	@CrossOrigin(origins = "*")
-	@DeleteMapping(path = "/canals/{id}")
-	public ResponseEntity<?> delete(@PathVariable Long id) {
-		verifyIfCanalExists(id);
-      	canalDAO.delete(id);
-      	return new ResponseEntity<>(HttpStatus.OK);
+
+	@GetMapping("/canais/{id}")
+	public ModelAndView load(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("configuracoes/canais/canal");
+		modelAndView.addObject("canal", canalDAO.findOne(id));
+		return modelAndView;
 	}
-	@CrossOrigin(origins = "*")
-	@PutMapping(path = "/canals")
-    public ResponseEntity<?> update(@RequestBody Canal canal) {
-		verifyIfCanalExists(canal.getId());
-        canalDAO.save(canal);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-	
-	private boolean verifyIfCanalExists(Long id){
-        if (canalDAO.findOne(id) != null) {
-        	return true;
-        }
-		return false;
-    }
-	
-	
+
+	// put
 }
-
-

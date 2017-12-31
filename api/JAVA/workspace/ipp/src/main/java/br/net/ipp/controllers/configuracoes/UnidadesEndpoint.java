@@ -22,18 +22,10 @@ public class UnidadesEndpoint {
 		this.unidadeDAO = unidadeDAO;
 	}
 
-	@GetMapping("unidades")
-	public ModelAndView list() {
-		ModelAndView modelAndView = new ModelAndView("configuracoes/unidades/unidades");
-		modelAndView.addObject("unidades", unidadeDAO.findAll());
-		return modelAndView;
-	}
-
 	@GetMapping("/unidade")
 	public ModelAndView unidade() {
 		ModelAndView modelAndView = new ModelAndView("configuracoes/unidades/unidade");
 		return modelAndView;
-
 	}
 
 	@PostMapping("/unidades")
@@ -77,7 +69,6 @@ public class UnidadesEndpoint {
 			modelAndView.addObject("unidades", unidadeDAO.findAll());
 		}		
 		return modelAndView;
-
 	}
 
 }

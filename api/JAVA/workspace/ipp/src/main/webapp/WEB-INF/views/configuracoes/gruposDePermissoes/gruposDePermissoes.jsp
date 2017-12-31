@@ -22,7 +22,7 @@
 				<td>${grupoDePermissoes.id}</td>
 				<td>${grupoDePermissoes.grupo}</td>
 				<td>${grupoDePermissoes.status}</td>
-				<td>${grupoDePermissoes.unidade}</td>
+				<td>${grupoDePermissoes.unidade.nomeFantazia}</td>
 				<td class="td-icon"><a
 					href="/gruposDePermissoes/${grupoDePermissoes.id}"><i
 						class="material-icons">border_color</i></a></td>
@@ -34,6 +34,6 @@
 
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
 	<a class="btn-floating btn-large waves-effect waves-light orange"
-		href="/grupoDePermissoes"> <i class="material-icons">add</i>
+		href="gruposDePermissoes/form"> <i class="material-icons">add</i>
 	</a>
 </div>

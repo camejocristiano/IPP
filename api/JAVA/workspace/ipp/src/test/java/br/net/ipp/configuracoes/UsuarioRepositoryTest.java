@@ -35,15 +35,15 @@ public class UsuarioRepositoryTest {
 		user.setUsername("ipptest");
 		user.setPassword("ipptest");
 		user.setEmail("emailusuariocadastrando@teste.com");
-		user.setBairro("Centro");
+	/*	user.setBairro("Centro");
 		user.setCargo("Cargo");
 		user.setCelular("(11) 999 999 999");
 		user.setcEP("99999-9999");
 		user.setCidade("São Paulo");
 		user.setcNPJMEI("99.999.999/0001-99");
-		user.setComplemento("complemento");
+		user.setComplemento("complemento");*/
 		user.setcPF(123456789);
-		user.setCurriculoResumido("Texto de currículo resumido.");
+		/*user.setCurriculoResumido("Texto de currículo resumido.");
 		user.setDataDeAdmissao(c.getTime());
 		user.setDataDeDesligamento(c.getTime());
 		user.setDataDeExpedicao("01/01/2018");
@@ -54,7 +54,7 @@ public class UsuarioRepositoryTest {
 		user.setNumero("123");
 		user.setEstado("São Paulo");
 		user.setEstadoCivil(EstadoCivil.CASADO);
-		user.setFormacao("Graduação");
+		user.setFormacao("Graduação");*/
 		
 		this.userRepository.save(user);
 

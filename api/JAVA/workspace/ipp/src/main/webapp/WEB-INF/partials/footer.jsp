@@ -41,14 +41,15 @@
 	</div>
 </footer>
 
-<!--  Scripts-->
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--  Scripts
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+	<script src="../../assets/js/jquery-1.12.4.js"></script>
 	<script src="../../assets/js/materialize.js"></script>
 	<script src="../../assets/js/init.js"></script>
 	
-	<script src="../../assets/js/jquery-1.12.4.js"></script>
     <script src="../../assets/js/jquery.dataTables.min.js"></script>
 
+	<!-- Scripts de Inicialização das tabelas -->
     <script type="text/javascript">
         $(document).ready(function() {
             $('#tabelaUsuarios').DataTable();
@@ -84,6 +85,3 @@
             $('#tabelaArquivos').DataTable();
         } );
     </script>
-
-</body>
-</html>
