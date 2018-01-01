@@ -35,18 +35,18 @@ public class UsuarioRepositoryTest {
 		user.setUsername("ipptest");
 		user.setPassword("ipptest");
 		user.setEmail("emailusuariocadastrando@teste.com");
-	/*	user.setBairro("Centro");
+		user.setBairro("Centro");
 		user.setCargo("Cargo");
 		user.setCelular("(11) 999 999 999");
 		user.setcEP("99999-9999");
 		user.setCidade("São Paulo");
 		user.setcNPJMEI("99.999.999/0001-99");
-		user.setComplemento("complemento");*/
-		user.setcPF(123456789);
-		/*user.setCurriculoResumido("Texto de currículo resumido.");
+		user.setComplemento("complemento");
+		user.setcPF("123456789");
+		user.setCurriculoResumido("Texto de currículo resumido.");
 		user.setDataDeAdmissao(c.getTime());
 		user.setDataDeDesligamento(c.getTime());
-		user.setDataDeExpedicao("01/01/2018");
+		user.setDataDeExpedicaoRG("01/01/2018");
 		user.setDataDeNascimento(c.getTime());
 		user.setDataExpedicaoCTPS(c.getTime());
 		user.setDisciplina("Português");
@@ -54,7 +54,7 @@ public class UsuarioRepositoryTest {
 		user.setNumero("123");
 		user.setEstado("São Paulo");
 		user.setEstadoCivil(EstadoCivil.CASADO);
-		user.setFormacao("Graduação");*/
+		user.setFormacao("Graduação");
 		
 		this.userRepository.save(user);
 
@@ -73,7 +73,7 @@ public class UsuarioRepositoryTest {
 		assertThat(user.getCurriculoResumido()).isEqualTo("Texto de currículo resumido.");
 		assertThat(user.getDataDeAdmissao()).isToday();
 		assertThat(user.getDataDeDesligamento()).isToday();
-		assertThat(user.getDataDeExpedicao()).isEqualTo("01/01/2018");
+		assertThat(user.getDataDeExpedicaoRG()).isEqualTo("01/01/2018");
 		assertThat(user.getDataDeNascimento()).isToday();
 		assertThat(user.getDataExpedicaoCTPS()).isToday();
 		assertThat(user.getDisciplina()).isEqualTo("Português");
@@ -100,11 +100,11 @@ public class UsuarioRepositoryTest {
 		user.setCidade("São Paulo");
 		user.setcNPJMEI("99.999.999/0001-99");
 		user.setComplemento("complemento");
-		user.setcPF(123456789);
+		user.setcPF("123456789");
 		user.setCurriculoResumido("Texto de currículo resumido.");
 		user.setDataDeAdmissao(c.getTime());
 		user.setDataDeDesligamento(c.getTime());
-		user.setDataDeExpedicao("01/01/2018");
+		user.setDataDeExpedicaoRG("01/01/2018");
 		user.setDataDeNascimento(c.getTime());
 		user.setDataExpedicaoCTPS(c.getTime());
 		user.setDisciplina("Português");
@@ -132,11 +132,11 @@ public class UsuarioRepositoryTest {
 		user.setCidade("São Paulo");
 		user.setcNPJMEI("99.999.999/0001-99");
 		user.setComplemento("complemento");
-		user.setcPF(123456789);
+		user.setcPF("123456789");
 		user.setCurriculoResumido("Texto de currículo resumido.");
 		user.setDataDeAdmissao(c.getTime());
 		user.setDataDeDesligamento(c.getTime());
-		user.setDataDeExpedicao("01/01/2018");
+		user.setDataDeExpedicaoRG("01/01/2018");
 		user.setDataDeNascimento(c.getTime());
 		user.setDataExpedicaoCTPS(c.getTime());
 		user.setDisciplina("Português");
@@ -158,11 +158,11 @@ public class UsuarioRepositoryTest {
 		user2.setCidade("São Paulo Update");
 		user2.setcNPJMEI("88.888.888/0001-88");
 		user2.setComplemento("complemento Update");
-		user2.setcPF(123456789);
+		user2.setcPF("123456789");
 		user2.setCurriculoResumido("Texto de currículo resumido Update.");
 		user2.setDataDeAdmissao(c.getTime());
 		user2.setDataDeDesligamento(c.getTime());
-		user2.setDataDeExpedicao("02/02/2018");
+		user2.setDataDeExpedicaoRG("02/02/2018");
 		user2.setDataDeNascimento(c.getTime());
 		user2.setDataExpedicaoCTPS(c.getTime());
 		user2.setDisciplina("Português Update");
@@ -190,7 +190,7 @@ public class UsuarioRepositoryTest {
 		assertThat(user.getCurriculoResumido()).isEqualTo("Texto de currículo resumido Update.");
 		assertThat(user.getDataDeAdmissao()).isToday();
 		assertThat(user.getDataDeDesligamento()).isToday();
-		assertThat(user.getDataDeExpedicao()).isEqualTo("02/02/2018");
+		assertThat(user.getDataDeExpedicaoRG()).isEqualTo("02/02/2018");
 		assertThat(user.getDataDeNascimento()).isToday();
 		assertThat(user.getDataExpedicaoCTPS()).isToday();
 		assertThat(user.getDisciplina()).isEqualTo("Português Update");
@@ -217,11 +217,11 @@ public class UsuarioRepositoryTest {
 		user.setCidade("São Paulo");
 		user.setcNPJMEI("99.999.999/0001-99");
 		user.setComplemento("complemento");
-		user.setcPF(123456789);
+		user.setcPF("123456789");
 		user.setCurriculoResumido("Texto de currículo resumido.");
 		user.setDataDeAdmissao(c.getTime());
 		user.setDataDeDesligamento(c.getTime());
-		user.setDataDeExpedicao("01/01/2018");
+		user.setDataDeExpedicaoRG("01/01/2018");
 		user.setDataDeNascimento(c.getTime());
 		user.setDataExpedicaoCTPS(c.getTime());
 		user.setDisciplina("Português");
@@ -243,11 +243,11 @@ public class UsuarioRepositoryTest {
 		user2.setCidade("São Paulo Update");
 		user2.setcNPJMEI("88.888.888/0001-88");
 		user2.setComplemento("complemento Update");
-		user2.setcPF(123456789);
+		user2.setcPF("123456789");
 		user2.setCurriculoResumido("Texto de currículo resumido Update.");
 		user2.setDataDeAdmissao(c.getTime());
 		user2.setDataDeDesligamento(c.getTime());
-		user2.setDataDeExpedicao("02/02/2018");
+		user2.setDataDeExpedicaoRG("02/02/2018");
 		user2.setDataDeNascimento(c.getTime());
 		user2.setDataExpedicaoCTPS(c.getTime());
 		user2.setDisciplina("Português Update");

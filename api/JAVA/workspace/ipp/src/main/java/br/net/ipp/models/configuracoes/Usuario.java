@@ -2,10 +2,12 @@ package br.net.ipp.models.configuracoes;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.enums.EstadoCivil;
 import br.net.ipp.enums.Regiao;
@@ -26,6 +28,10 @@ public class Usuario extends User {
 	private Sexo sexo;
 	private Status status;
 
+	private String rG;
+	private String orgaoEmissorRG;
+	private String dataDeExpedicaoRG;
+	
 	private String endereco;
 	private String numero;
 	private String complemento;
@@ -37,24 +43,30 @@ public class Usuario extends User {
 
 	private String numeroCTPS;
 	private String serieCTPS;
-	private String orgaoEmissor;
 	private String uFCTPS;
+	@Column(name = "dataExpedicaoCTPS")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy") 
 	private Date dataExpedicaoCTPS;
 
+	@Column(name = "dataDeNascimento")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy")  
 	private Date dataDeNascimento;
 	private EstadoCivil estadoCivil;
 	private String formacao;
 
 	private String habilitacao;
-	private String dataDeExpedicao;
 
 	private String cNPJMEI;
-	private int cPF;
-	private String rG;
+	private String cPF;
 
 	private String curriculoResumido;
+	@Column(name = "dataDeAdmissao")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy") 
 	private Date dataDeAdmissao;
-	private Date DataDeDesligamento;
+	@Column(name = "DataDeDesligamento")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy") 
+	private Date dataDeDesligamento;
+	
 	private String disciplina;
 	private String cargo;
 	private RelacaoFuncional relacaoFuncional;
@@ -183,12 +195,12 @@ public class Usuario extends User {
 		this.serieCTPS = serieCTPS;
 	}
 
-	public String getOrgaoEmissor() {
-		return orgaoEmissor;
+	public String getOrgaoEmissorRG() {
+		return orgaoEmissorRG;
 	}
 
-	public void setOrgaoEmissor(String orgaoEmissor) {
-		this.orgaoEmissor = orgaoEmissor;
+	public void setOrgaoEmissorRG(String orgaoEmissorRG) {
+		this.orgaoEmissorRG = orgaoEmissorRG;
 	}
 
 	public String getuFCTPS() {
@@ -239,12 +251,12 @@ public class Usuario extends User {
 		this.habilitacao = habilitacao;
 	}
 
-	public String getDataDeExpedicao() {
-		return dataDeExpedicao;
+	public String getDataDeExpedicaoRG() {
+		return dataDeExpedicaoRG;
 	}
 
-	public void setDataDeExpedicao(String dataDeExpedicao) {
-		this.dataDeExpedicao = dataDeExpedicao;
+	public void setDataDeExpedicaoRG(String dataDeExpedicaoRG) {
+		this.dataDeExpedicaoRG = dataDeExpedicaoRG;
 	}
 
 	public String getcNPJMEI() {
@@ -255,11 +267,11 @@ public class Usuario extends User {
 		this.cNPJMEI = cNPJMEI;
 	}
 
-	public int getcPF() {
+	public String getcPF() {
 		return cPF;
 	}
 
-	public void setcPF(int cPF) {
+	public void setcPF(String cPF) {
 		this.cPF = cPF;
 	}
 
@@ -288,11 +300,11 @@ public class Usuario extends User {
 	}
 
 	public Date getDataDeDesligamento() {
-		return DataDeDesligamento;
+		return dataDeDesligamento;
 	}
 
 	public void setDataDeDesligamento(Date dataDeDesligamento) {
-		DataDeDesligamento = dataDeDesligamento;
+		this.dataDeDesligamento = dataDeDesligamento;
 	}
 
 	public String getDisciplina() {

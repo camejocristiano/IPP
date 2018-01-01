@@ -3,7 +3,7 @@ package br.net.ipp.enums;
 public enum RelacaoFuncional {
 	COOPERADO,
 	CELETISTA,
-	PRESTADORDESERVICOS,
+	PRESTADOR_DE_SERVICOS,
 	ESTAGIARIO,
 	APRENDIZ,
 	VOLUNTARIO,

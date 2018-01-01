@@ -13,7 +13,9 @@
 	<div class="row">
 		<div class="col s12">
 			<ul class="tabs">
+			<c:if test="${usuarios != null}">
 				<li class="tab col s2"><a href="#usuarios">Usuários</a></li>
+			</c:if>
 				<li class="tab col s2"><a href="#gruposDePermissoes">Permissões</a></li>
 				<li class="tab col s2"><a href="#unidades">Unidades</a></li>
 				<li class="tab col s2"><a href="#canais">Canais</a></li>
@@ -25,11 +27,13 @@
 	
 	<br />
 		</div>
+		<c:if test="${usuarios != null}">
 		<div id="usuarios" class="col s12">
 			<div class="row">
 				<c:import url="usuarios/usuarios.jsp"></c:import>
 			</div>
 		</div>
+		</c:if>
 		<div id="gruposDePermissoes" class="col s12">
 			<c:import url="gruposDePermissoes/gruposDePermissoes.jsp"></c:import>
 		</div>
