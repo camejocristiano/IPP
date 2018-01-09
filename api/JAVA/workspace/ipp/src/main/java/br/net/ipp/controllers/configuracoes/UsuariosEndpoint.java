@@ -58,9 +58,9 @@ public class UsuariosEndpoint {
 		modelAndView.addObject("regiao", regiao);
 		List<GrupoDePermissoes> gruposDePermissoes = (List<GrupoDePermissoes>) grupoDePermissoeDAO.findAll();
 		modelAndView.addObject("gruposDePermissoes", gruposDePermissoes);
-		Long user = usuario.getGrupoDePermissoes().getId();
+		/*Long user = usuario.getGrupoDePermissoes().getId();
 		GrupoDePermissoes grupoDePermissoes = grupoDePermissoeDAO.findById(user);
-		modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);
+		modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);*/
 		return modelAndView;
 	}
 
@@ -84,9 +84,9 @@ public class UsuariosEndpoint {
 			modelAndView.addObject("relacaoFuncional", relacaoFuncional);
 			List<String> regiao = carregarRegiao();
 			modelAndView.addObject("regiao", regiao);
-			Long user = usuario.getGrupoDePermissoes().getId();
+			/*Long user = usuario.getGrupoDePermissoes().getId();
 			GrupoDePermissoes grupoDePermissoes = grupoDePermissoeDAO.findById(user);
-			modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);
+			modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);*/
 			this.load(usuario.getId());
 		}		
 		return modelAndView;
@@ -109,9 +109,10 @@ public class UsuariosEndpoint {
 		modelAndView.addObject("regiao", regiao);
 		List<GrupoDePermissoes> gruposDePermissoes = (List<GrupoDePermissoes>) grupoDePermissoeDAO.findAll();
 		modelAndView.addObject("gruposDePermissoes", gruposDePermissoes);
-		Long user = usuario.getGrupoDePermissoes().getId();
-		GrupoDePermissoes grupoDePermissoes = grupoDePermissoeDAO.findById(user);
-		modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);
+		if (usuario.getGrupoDePermissoes() != null) {
+			GrupoDePermissoes grupoDePermissoes = grupoDePermissoes(usuario);
+			modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);				
+		}
 		return modelAndView;
 	}
 	
@@ -139,12 +140,18 @@ public class UsuariosEndpoint {
 			modelAndView.addObject("regiao", regiao);
 			List<GrupoDePermissoes> gruposDePermissoes = (List<GrupoDePermissoes>) grupoDePermissoeDAO.findAll();
 			modelAndView.addObject("gruposDePermissoes", gruposDePermissoes);
-			Long user = usuario.getGrupoDePermissoes().getId();
-			GrupoDePermissoes grupoDePermissoes = grupoDePermissoeDAO.findById(user);
-			modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);
-			this.load(usuario.getId());
-		}		
+			if (usuario.getGrupoDePermissoes() != null) {
+				GrupoDePermissoes grupoDePermissoes = grupoDePermissoes(usuario);
+				modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);				
+			}
+		}	
 		return modelAndView;
+	}
+	
+	public GrupoDePermissoes grupoDePermissoes(Usuario usuario) {
+		Long user = usuario.getGrupoDePermissoes().getId();
+		GrupoDePermissoes grupoDePermissoes = grupoDePermissoeDAO.findById(user);
+		return grupoDePermissoes;
 	}
 	
 	public List<String> carregarStatus() {

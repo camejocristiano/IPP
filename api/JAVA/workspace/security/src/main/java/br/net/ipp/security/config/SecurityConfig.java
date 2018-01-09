@@ -33,6 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	/*
 	 * Configurações com JPA
 	 * 
+	 * 
 	@Autowired
 	private CustomUserDetailService customUserDetailService;
 	

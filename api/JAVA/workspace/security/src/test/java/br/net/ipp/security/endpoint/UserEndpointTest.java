@@ -1,7 +1,6 @@
 package br.net.ipp.security.endpoint;
 
 import static java.util.Arrays.asList;
-import static org.springframework.http.HttpMethod.DELETE;
 
 import java.util.List;
 
@@ -20,11 +19,8 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import br.net.ipp.security.model.User;
 import br.net.ipp.security.repository.UserRepository;

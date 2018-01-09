@@ -1,5 +1,6 @@
 package br.net.ipp.test;
 
+
 import java.io.Serializable;
 
 import javax.persistence.GeneratedValue;
