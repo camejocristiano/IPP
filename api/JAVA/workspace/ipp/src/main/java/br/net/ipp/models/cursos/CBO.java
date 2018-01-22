@@ -1,6 +1,12 @@
 package br.net.ipp.models.cursos;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 import br.net.ipp.models.AbstractEntity;
 
@@ -11,8 +17,12 @@ public class CBO  extends AbstractEntity {
 	
 	private String numero;
 	private String titulo;
-	public ArcoOcupacional arcoOcupacional;
+	@ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "arco_cbo", joinColumns = @JoinColumn(name = "cbo_id", referencedColumnName = "id"), 
+    inverseJoinColumns = @JoinColumn(name = "arco_id", referencedColumnName = "id"))
+	private List<ArcoOcupacional> arcos;
 
+	
 	public String getNumero() {
 		return numero;
 	}
@@ -25,11 +35,11 @@ public class CBO  extends AbstractEntity {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public ArcoOcupacional getArcoOcupacional() {
-		return arcoOcupacional;
+	public List<ArcoOcupacional> getArcosOcupacionais() {
+		return arcos;
 	}
-	public void setM_ArcoOcupacional(ArcoOcupacional arcoOcupacional) {
-		this.arcoOcupacional = arcoOcupacional;
+	public void setArcosOcupacionais(List<ArcoOcupacional> arcos) {
+		this.arcos = arcos;
 	}
 
 }

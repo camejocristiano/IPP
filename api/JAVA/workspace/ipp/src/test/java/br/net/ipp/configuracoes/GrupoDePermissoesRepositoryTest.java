@@ -1,12 +1,7 @@
 package br.net.ipp.configuracoes;
 
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.util.Calendar;
-
 import org.junit.Rule;
-import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +10,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import br.net.ipp.daos.configuracoes.GrupoDePermissoesRepository;
 import br.net.ipp.daos.configuracoes.UnidadeRepository;
-import br.net.ipp.enums.Status;
-import br.net.ipp.models.configuracoes.GrupoDePermissoes;
-import br.net.ipp.models.configuracoes.Unidade;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -32,7 +24,7 @@ public class GrupoDePermissoesRepositoryTest {
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
 
-	@Test
+/*	@Test
 	public void createShouldPersistData() {
 		GrupoDePermissoes grupoDePermissoes = new GrupoDePermissoes();
 		grupoDePermissoes.setGrupo("TestGrupo");
@@ -326,5 +318,5 @@ public class GrupoDePermissoesRepositoryTest {
 		this.grupoDePermissoesRepository.delete(grupoDePermissoes);
 		this.unidadeRepository.delete(unidade);
 	}
-
+*/
 }

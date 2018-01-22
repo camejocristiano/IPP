@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.net.ipp.daos.aprendizes.JovemRepository;
+import br.net.ipp.daos.cursos.CursoRepository;
 import br.net.ipp.daos.cursos.MatriculaRepository;
+import br.net.ipp.daos.cursos.TurmaRepository;
+import br.net.ipp.models.cursos.Curso;
 import br.net.ipp.models.cursos.Matricula;
 
 @Controller
@@ -21,23 +25,37 @@ import br.net.ipp.models.cursos.Matricula;
 public class MatriculaController {
 	
 private MatriculaRepository matriculaRepository;
+private CursoRepository cursoRepository;
+private TurmaRepository turmaRepository;
+private JovemRepository jovemRepository;
 	
 	@Autowired
 	public void MatriculaEndPoint(
-			MatriculaRepository matriculaRepository
+			MatriculaRepository matriculaRepository,
+			CursoRepository cursoRepository,
+			TurmaRepository turmaRepository,
+			JovemRepository jovemRepository			
 			) {
 		this.matriculaRepository = matriculaRepository;
+		this.cursoRepository = cursoRepository;
+		this.turmaRepository = turmaRepository;
+		this.jovemRepository = jovemRepository;
 	}
 
-	@GetMapping("/form")
-	public ModelAndView matricula(Matricula matricula) {
+	@GetMapping("/form/{id}")
+	public ModelAndView matriculaCurso(Matricula matricula, @PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("cursos/matriculas/matricula");
+		modelAndView.addObject("matricula", matricula);
+		Curso curso = cursoRepository.findOne(id);
+		modelAndView.addObject("curso", curso);
+		modelAndView.addObject("turmas", turmaRepository.findAllByCurso(curso));
+		modelAndView.addObject("jovens", jovemRepository.findAll());
 		return modelAndView;
 	}
 
 	@PostMapping
 	public ModelAndView save(@Valid Matricula matricula, BindingResult bindingResult) {
-		Long id = (long) 1;
+		Long id = matricula.getTurma().getCurso().getId();
 		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
@@ -56,12 +74,15 @@ private MatriculaRepository matriculaRepository;
 		ModelAndView modelAndView = new ModelAndView("cursos/matriculas/matricula");
 		Matricula matricula = matriculaRepository.findOne(id);
 		modelAndView.addObject("matricula", matricula);
+		modelAndView.addObject("cursos", cursoRepository.findAll());
+		modelAndView.addObject("turmas", turmaRepository.findAll());
+		modelAndView.addObject("jovens", jovemRepository.findAll());
 		return modelAndView;
 	}
 	
 	@PostMapping("/{id}")
 	public ModelAndView update(@Valid Matricula matricula, BindingResult bindingResult) {
-		Long id = (long) 1;
+		Long id = matricula.getTurma().getCurso().getId();
 		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");

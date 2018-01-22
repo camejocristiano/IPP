@@ -1,25 +1,28 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<table id="tabelaCanais" class="display" width="100%" cellspacing="0">
+<table id="tabelaCursos" class="display" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>CANAL</th>
+            <th>MATRICULA</th>
             <th>JOVEM</th>
+            <th>DATA</th>
+            <th>FREQUÊNCIA</th>
             <th class="td-icon">EDITAR</th>
           </tr>
         </thead>
         <tbody>
-        <c:forEach var="canal" items="${requestScope.canais}">
+        <c:forEach var="pITEPIP" items="${requestScope.pITsEPIPs}">
           <tr>
-            <td>${canal.id}</td>
-            <td>${canal.canal}</td>
-            <td>${canal.jovem}</td>
-            <td class="td-icon"><a href="/canais/${canal.id}"><i class="material-icons" >border_color</i></a></td>
+            <td>${pITEPIP.matricula.id}</td>
+            <td>${pITEPIP.matricula.jovem.nome}</td>
+            <td>${pITEPIP.dia}/${pITEPIP.mes}/${pITEPIP.ano}</td>
+            <td>${pITEPIP.frequencia}</td>
+            <td class="td-icon"><a href="/pITsEPIPs/${pITEPIP.id}"><i class="material-icons" >border_color</i></a></td>
           </tr>
           </c:forEach>
           </tbody>
@@ -28,7 +31,7 @@
       
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/canal">
+                href="/pITsEPIPs/form">
                 <i class="material-icons">add</i>
             </a>
          </div>

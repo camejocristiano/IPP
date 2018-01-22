@@ -1,7 +1,13 @@
 package br.net.ipp.models.aprendizes;
 
-import javax.persistence.Entity;
+import java.math.BigDecimal;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+
+import br.net.ipp.enums.SituacaoDaMoradia;
+import br.net.ipp.enums.TipoDeConstrucao;
+import br.net.ipp.enums.TipoDeMoradia;
 import br.net.ipp.models.AbstractEntity;
 
 @Entity
@@ -10,40 +16,45 @@ public class FichaSocial extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 
 	private String casoRepetiuQualAno;
-	/*private String comoFoiAAdaptacaoAoMeioEscolar;
+	private String comoFoiAAdaptacaoAoMeioEscolar;
 	private String comoSeRelacionaComOsColegas;
-	private double despesaAgua;
-	private double despesaAlimentacao;
-	private double despesaAluguelPrestacaoCasaApartamento;
-	private double despesaCondominio;
+	private BigDecimal despesaAgua;
+	private BigDecimal despesaAlimentacao;
+	private BigDecimal despesaAluguelPrestacaoCasaApartamento;
+	private BigDecimal despesaCondominio;
 	private String despesaDescricaoDosImpostos;
-	private double despesaImpostos;
-	private double despesaLuz;
-	private double despesaTelefone;
-	private double despesaTransporte;
+	private BigDecimal despesaImpostos;
+	private BigDecimal despesaLuz;
+	private BigDecimal despesaTelefone;
+	private BigDecimal despesaTransporte;
 	private String dinamicaFamiliar;
-	private Boolean jaRepetiuDeAno;
+	private boolean jaRepetiuDeAno;
 	private String observacoesFamiliares;
 	private String parecerConclusivo;
 	private String primeiraInternacaoMotivo;
-	private int quantidadeDeBanheiros;
-	private int quantidadeDeComodos;
-	private String queTipoDeLaserMaisGosta;
-	private double receitaDaFamilia;
-	private String seEntidadeSocialQualONome;
 	private String segundaInternacaoMotivo;
-	private SituacaoDaMoradia situacaoDaMoradia;
-	private Boolean temDificuldadesEmAlgumaMateria;
 	private String terceiraInternacaoMotivo;
-	private TipoDaMoradia tipoDeMoradia;*/
+	private String quantidadeDeBanheiros;
+	private String quantidadeDeComodos;
+	private String queTipoDeLaserMaisGosta;
+	private BigDecimal receitaDaFamilia;
+	private String seEntidadeSocialQualONome;
+	private SituacaoDaMoradia situacaoDaMoradia;
+	private boolean temDificuldadesEmAlgumaMateria;
+	private String seTemDificuldadesQual;
+	private TipoDeConstrucao tipoDeConstrucao;
+	private TipoDeMoradia tipoDeMoradia;
+	@OneToOne
+	private Jovem jovem;
 
+	
 	public String getCasoRepetiuQualAno() {
 		return casoRepetiuQualAno;
 	}
 	public void setCasoRepetiuQualAno(String casoRepetiuQualAno) {
 		this.casoRepetiuQualAno = casoRepetiuQualAno;
 	}
-	/*public String getComoFoiAAdaptacaoAoMeioEscolar() {
+	public String getComoFoiAAdaptacaoAoMeioEscolar() {
 		return comoFoiAAdaptacaoAoMeioEscolar;
 	}
 	public void setComoFoiAAdaptacaoAoMeioEscolar(String comoFoiAAdaptacaoAoMeioEscolar) {
@@ -55,28 +66,28 @@ public class FichaSocial extends AbstractEntity {
 	public void setComoSeRelacionaComOsColegas(String comoSeRelacionaComOsColegas) {
 		this.comoSeRelacionaComOsColegas = comoSeRelacionaComOsColegas;
 	}
-	public double getDespesaAgua() {
+	public BigDecimal getDespesaAgua() {
 		return despesaAgua;
 	}
-	public void setDespesaAgua(double despesaAgua) {
+	public void setDespesaAgua(BigDecimal despesaAgua) {
 		this.despesaAgua = despesaAgua;
 	}
-	public double getDespesaAlimentacao() {
+	public BigDecimal getDespesaAlimentacao() {
 		return despesaAlimentacao;
 	}
-	public void setDespesaAlimentacao(double despesaAlimentacao) {
+	public void setDespesaAlimentacao(BigDecimal despesaAlimentacao) {
 		this.despesaAlimentacao = despesaAlimentacao;
 	}
-	public double getDespesaAluguelPrestacaoCasaApartamento() {
+	public BigDecimal getDespesaAluguelPrestacaoCasaApartamento() {
 		return despesaAluguelPrestacaoCasaApartamento;
 	}
-	public void setDespesaAluguelPrestacaoCasaApartamento(double despesaAluguelPrestacaoCasaApartamento) {
+	public void setDespesaAluguelPrestacaoCasaApartamento(BigDecimal despesaAluguelPrestacaoCasaApartamento) {
 		this.despesaAluguelPrestacaoCasaApartamento = despesaAluguelPrestacaoCasaApartamento;
 	}
-	public double getDespesaCondominio() {
+	public BigDecimal getDespesaCondominio() {
 		return despesaCondominio;
 	}
-	public void setDespesaCondominio(double despesaCondominio) {
+	public void setDespesaCondominio(BigDecimal despesaCondominio) {
 		this.despesaCondominio = despesaCondominio;
 	}
 	public String getDespesaDescricaoDosImpostos() {
@@ -85,28 +96,28 @@ public class FichaSocial extends AbstractEntity {
 	public void setDespesaDescricaoDosImpostos(String despesaDescricaoDosImpostos) {
 		this.despesaDescricaoDosImpostos = despesaDescricaoDosImpostos;
 	}
-	public double getDespesaImpostos() {
+	public BigDecimal getDespesaImpostos() {
 		return despesaImpostos;
 	}
-	public void setDespesaImpostos(double despesaImpostos) {
+	public void setDespesaImpostos(BigDecimal despesaImpostos) {
 		this.despesaImpostos = despesaImpostos;
 	}
-	public double getDespesaLuz() {
+	public BigDecimal getDespesaLuz() {
 		return despesaLuz;
 	}
-	public void setDespesaLuz(double despesaLuz) {
+	public void setDespesaLuz(BigDecimal despesaLuz) {
 		this.despesaLuz = despesaLuz;
 	}
-	public double getDespesaTelefone() {
+	public BigDecimal getDespesaTelefone() {
 		return despesaTelefone;
 	}
-	public void setDespesaTelefone(double despesaTelefone) {
+	public void setDespesaTelefone(BigDecimal despesaTelefone) {
 		this.despesaTelefone = despesaTelefone;
 	}
-	public double getDespesaTransporte() {
+	public BigDecimal getDespesaTransporte() {
 		return despesaTransporte;
 	}
-	public void setDespesaTransporte(double despesaTransporte) {
+	public void setDespesaTransporte(BigDecimal despesaTransporte) {
 		this.despesaTransporte = despesaTransporte;
 	}
 	public String getDinamicaFamiliar() {
@@ -115,10 +126,10 @@ public class FichaSocial extends AbstractEntity {
 	public void setDinamicaFamiliar(String dinamicaFamiliar) {
 		this.dinamicaFamiliar = dinamicaFamiliar;
 	}
-	public Boolean getJaRepetiuDeAno() {
+	public boolean isJaRepetiuDeAno() {
 		return jaRepetiuDeAno;
 	}
-	public void setJaRepetiuDeAno(Boolean jaRepetiuDeAno) {
+	public void setJaRepetiuDeAno(boolean jaRepetiuDeAno) {
 		this.jaRepetiuDeAno = jaRepetiuDeAno;
 	}
 	public String getObservacoesFamiliares() {
@@ -139,16 +150,16 @@ public class FichaSocial extends AbstractEntity {
 	public void setPrimeiraInternacaoMotivo(String primeiraInternacaoMotivo) {
 		this.primeiraInternacaoMotivo = primeiraInternacaoMotivo;
 	}
-	public int getQuantidadeDeBanheiros() {
+	public String getQuantidadeDeBanheiros() {
 		return quantidadeDeBanheiros;
 	}
-	public void setQuantidadeDeBanheiros(int quantidadeDeBanheiros) {
+	public void setQuantidadeDeBanheiros(String quantidadeDeBanheiros) {
 		this.quantidadeDeBanheiros = quantidadeDeBanheiros;
 	}
-	public int getQuantidadeDeComodos() {
+	public String getQuantidadeDeComodos() {
 		return quantidadeDeComodos;
 	}
-	public void setQuantidadeDeComodos(int quantidadeDeComodos) {
+	public void setQuantidadeDeComodos(String quantidadeDeComodos) {
 		this.quantidadeDeComodos = quantidadeDeComodos;
 	}
 	public String getQueTipoDeLaserMaisGosta() {
@@ -157,10 +168,10 @@ public class FichaSocial extends AbstractEntity {
 	public void setQueTipoDeLaserMaisGosta(String queTipoDeLaserMaisGosta) {
 		this.queTipoDeLaserMaisGosta = queTipoDeLaserMaisGosta;
 	}
-	public double getReceitaDaFamilia() {
+	public BigDecimal getReceitaDaFamilia() {
 		return receitaDaFamilia;
 	}
-	public void setReceitaDaFamilia(double receitaDaFamilia) {
+	public void setReceitaDaFamilia(BigDecimal receitaDaFamilia) {
 		this.receitaDaFamilia = receitaDaFamilia;
 	}
 	public String getSeEntidadeSocialQualONome() {
@@ -181,11 +192,23 @@ public class FichaSocial extends AbstractEntity {
 	public void setSituacaoDaMoradia(SituacaoDaMoradia situacaoDaMoradia) {
 		this.situacaoDaMoradia = situacaoDaMoradia;
 	}
-	public Boolean getTemDificuldadesEmAlgumaMateria() {
+	public boolean isTemDificuldadesEmAlgumaMateria() {
 		return temDificuldadesEmAlgumaMateria;
 	}
-	public void setTemDificuldadesEmAlgumaMateria(Boolean temDificuldadesEmAlgumaMateria) {
+	public void setTemDificuldadesEmAlgumaMateria(boolean temDificuldadesEmAlgumaMateria) {
 		this.temDificuldadesEmAlgumaMateria = temDificuldadesEmAlgumaMateria;
+	}
+	public String getSeTemDificuldadesQual() {
+		return seTemDificuldadesQual;
+	}
+	public void setSeTemDificuldadesQual(String seTemDificuldadesQual) {
+		this.seTemDificuldadesQual = seTemDificuldadesQual;
+	}
+	public TipoDeConstrucao getTipoDeConstrucao() {
+		return tipoDeConstrucao;
+	}
+	public void setTipoDeConstrucao(TipoDeConstrucao tipoDeConstrucao) {
+		this.tipoDeConstrucao = tipoDeConstrucao;
 	}
 	public String getTerceiraInternacaoMotivo() {
 		return terceiraInternacaoMotivo;
@@ -193,11 +216,20 @@ public class FichaSocial extends AbstractEntity {
 	public void setTerceiraInternacaoMotivo(String terceiraInternacaoMotivo) {
 		this.terceiraInternacaoMotivo = terceiraInternacaoMotivo;
 	}
-	public TipoDaMoradia getTipoDeMoradia() {
+	public TipoDeMoradia getTipoDeMoradia() {
 		return tipoDeMoradia;
 	}
-	public void setTipoDeMoradia(TipoDaMoradia tipoDeMoradia) {
+	public void setTipoDeMoradia(TipoDeMoradia tipoDeMoradia) {
 		this.tipoDeMoradia = tipoDeMoradia;
-	}*/
-
+	}
+	public Jovem getJovem() {
+		return jovem;
+	}
+	public void setJovem(Jovem jovem) {
+		this.jovem = jovem;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 }

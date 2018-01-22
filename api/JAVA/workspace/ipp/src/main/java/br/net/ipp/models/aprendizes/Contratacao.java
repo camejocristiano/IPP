@@ -1,39 +1,77 @@
 package br.net.ipp.models.aprendizes;
 
-import javax.persistence.Entity;
+import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import br.net.ipp.enums.TipoDeContratacao;
 import br.net.ipp.models.AbstractEntity;
+import br.net.ipp.models.cursos.CBO;
+import br.net.ipp.models.cursos.Curso;
+import br.net.ipp.models.empresas.Empresa;
+import br.net.ipp.models.empresas.Gestor;
 
 @Entity
 public class Contratacao extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
+	@Column(name = "dataDeInicioDaContratacao")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy") 
+	private Date dataDeInicioDaContratacao;
+	@ManyToOne
+	private Empresa empresaContratante;
+	@ManyToOne
+	private Gestor gestorContratacao;
+	@Column(name = "exameAdmissional")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy") 
+	private Date exameAdmissional;
+	@Column(name = "terminoDoContrato")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy")
+	private Date terminoDoContrato;
+	@ManyToOne
 	private Jovem jovem;
 	private String contratacaoObservacoes;
-	/*private CBO dadosDoCursoCBO;
+	@ManyToOne
+	private CBO dadosDoCursoCBO;
+	@ManyToOne
+	private Curso curso;
+	@Column(name = "dataDeInicioDoCurso")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy")
 	private Date dataDeInicioDoCurso;
 	private String diaDoCurso;
-	private Boolean domingo;
-	private Empresa empresa;
-	private Date exameAdmissional;
+	private boolean domingo;
+	@Column(name = "feriasDataDeFim")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy")
 	private Date feriasDataDeFim;
+	@Column(name = "feriasDataDeInicio")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy")
 	private Date feriasDataDeInicio;
+	@Column(name = "feriasDataDeVencimento")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy")
 	private Date feriasDataDeVencimento;
 	private String feriasDiasAGozar;
-	private Gestor gestor;
 	private String horarioDeTrabalho;
 	private String localDeTrgabalho;
-	private Boolean quarta;
-	private Boolean quinta;
-	private Boolean sabado;
-	private Boolean segunda;
-	private Boolean sexta;
-	private Boolean terca;
-	private Date terminoDoContrato;
+	private boolean segunda;
+	private boolean terca;
+	private boolean quarta;
+	private boolean quinta;
+	private boolean sexta;
+	private boolean sabado;
 	private TipoDeContratacao tipoDeContratacao;
-	private String totalDeHorasSemanai;*/
+	private String totalDeHorasSemana;
 
+	public Gestor getGestorContratacao() {
+		return gestorContratacao;
+	}
+	public void setGestorContratacao(Gestor gestorContratacao) {
+		this.gestorContratacao = gestorContratacao;
+	}
 	public Jovem getJovem() {
 		return jovem;
 	}
@@ -46,7 +84,25 @@ public class Contratacao extends AbstractEntity {
 	public void setContratacaoObservacoes(String contratacaoObservacoes) {
 		this.contratacaoObservacoes = contratacaoObservacoes;
 	}
-	/*public CBO getDadosDoCursoCBO() {
+	public Empresa getEmpresaContratante() {
+		return empresaContratante;
+	}
+	public void setEmpresaContratante(Empresa empresaContratante) {
+		this.empresaContratante = empresaContratante;
+	}
+	public Date getExameAdmissional() {
+		return exameAdmissional;
+	}
+	public void setExameAdmissional(Date exameAdmissional) {
+		this.exameAdmissional = exameAdmissional;
+	}
+	public Date getTerminoDoContrato() {
+		return terminoDoContrato;
+	}
+	public void setTerminoDoContrato(Date terminoDoContrato) {
+		this.terminoDoContrato = terminoDoContrato;
+	}
+	public CBO getDadosDoCursoCBO() {
 		return dadosDoCursoCBO;
 	}
 	public void setDadosDoCursoCBO(CBO dadosDoCursoCBO) {
@@ -64,23 +120,11 @@ public class Contratacao extends AbstractEntity {
 	public void setDiaDoCurso(String diaDoCurso) {
 		this.diaDoCurso = diaDoCurso;
 	}
-	public Boolean getDomingo() {
+	public boolean getDomingo() {
 		return domingo;
 	}
-	public void setDomingo(Boolean domingo) {
+	public void setDomingo(boolean domingo) {
 		this.domingo = domingo;
-	}
-	public Empresa getEmpresa() {
-		return empresa;
-	}
-	public void setEmpresa(Empresa empresa) {
-		this.empresa = empresa;
-	}
-	public Date getExameAdmissional() {
-		return exameAdmissional;
-	}
-	public void setExameAdmissional(Date exameAdmissional) {
-		this.exameAdmissional = exameAdmissional;
 	}
 	public Date getFeriasDataDeFim() {
 		return feriasDataDeFim;
@@ -106,12 +150,6 @@ public class Contratacao extends AbstractEntity {
 	public void setFeriasDiasAGozar(String feriasDiasAGozar) {
 		this.feriasDiasAGozar = feriasDiasAGozar;
 	}
-	public Gestor getGestor() {
-		return gestor;
-	}
-	public void setGestor(Gestor gestor) {
-		this.gestor = gestor;
-	}
 	public String getHorarioDeTrabalho() {
 		return horarioDeTrabalho;
 	}
@@ -124,47 +162,41 @@ public class Contratacao extends AbstractEntity {
 	public void setLocalDeTrgabalho(String localDeTrgabalho) {
 		this.localDeTrgabalho = localDeTrgabalho;
 	}
-	public Boolean getQuarta() {
+	public boolean getQuarta() {
 		return quarta;
 	}
-	public void setQuarta(Boolean quarta) {
+	public void setQuarta(boolean quarta) {
 		this.quarta = quarta;
 	}
-	public Boolean getQuinta() {
+	public boolean getQuinta() {
 		return quinta;
 	}
-	public void setQuinta(Boolean quinta) {
+	public void setQuinta(boolean quinta) {
 		this.quinta = quinta;
 	}
-	public Boolean getSabado() {
+	public boolean getSabado() {
 		return sabado;
 	}
-	public void setSabado(Boolean sabado) {
+	public void setSabado(boolean sabado) {
 		this.sabado = sabado;
 	}
-	public Boolean getSegunda() {
+	public boolean getSegunda() {
 		return segunda;
 	}
-	public void setSegunda(Boolean segunda) {
+	public void setSegunda(boolean segunda) {
 		this.segunda = segunda;
 	}
-	public Boolean getSexta() {
+	public boolean getSexta() {
 		return sexta;
 	}
-	public void setSexta(Boolean sexta) {
+	public void setSexta(boolean sexta) {
 		this.sexta = sexta;
 	}
-	public Boolean getTerca() {
+	public boolean getTerca() {
 		return terca;
 	}
-	public void setTerca(Boolean terca) {
+	public void setTerca(boolean terca) {
 		this.terca = terca;
-	}
-	public Date getTerminoDoContrato() {
-		return terminoDoContrato;
-	}
-	public void setTerminoDoContrato(Date terminoDoContrato) {
-		this.terminoDoContrato = terminoDoContrato;
 	}
 	public TipoDeContratacao getTipoDeContratacao() {
 		return tipoDeContratacao;
@@ -172,11 +204,23 @@ public class Contratacao extends AbstractEntity {
 	public void setTipoDeContratacao(TipoDeContratacao tipoDeContratacao) {
 		this.tipoDeContratacao = tipoDeContratacao;
 	}
-	public String getTotalDeHorasSemanai() {
-		return totalDeHorasSemanai;
+	public String getTotalDeHorasSemana() {
+		return totalDeHorasSemana;
 	}
-	public void setTotalDeHorasSemanai(String totalDeHorasSemanai) {
-		this.totalDeHorasSemanai = totalDeHorasSemanai;
-	}*/
+	public void setTotalDeHorasSemana(String totalDeHorasSemana) {
+		this.totalDeHorasSemana = totalDeHorasSemana;
+	}
+	public Date getDataDeInicioDaContratacao() {
+		return dataDeInicioDaContratacao;
+	}
+	public void setDataDeInicioDaContratacao(Date dataDeInicioDaContratacao) {
+		this.dataDeInicioDaContratacao = dataDeInicioDaContratacao;
+	}
+	public Curso getCurso() {
+		return curso;
+	}
+	public void setCurso(Curso curso) {
+		this.curso = curso;
+	}
 
 }

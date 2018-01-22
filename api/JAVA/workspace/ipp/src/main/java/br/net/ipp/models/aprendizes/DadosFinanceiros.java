@@ -1,7 +1,12 @@
 package br.net.ipp.models.aprendizes;
 
-import javax.persistence.Entity;
+import java.math.BigDecimal;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+
+import br.net.ipp.enums.Periodo;
+import br.net.ipp.enums.TipoDeContratacao;
 import br.net.ipp.models.AbstractEntity;
 
 @Entity
@@ -9,139 +14,101 @@ public class DadosFinanceiros extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	private String testDadosFinanceiros;
-	/*private TipoDeContratacao assistenciaMedica_administradoPor;
-	private Boolean assistenciaMedica_possui;
-	private double assistenciaMedica_valor;
-	private TipoDeContratacao assistenciaOdontologica_administradoPor;
-	private Boolean assistenciaOdontologica_possui;
-	private double assistenciaOdontologica_valor;
-	private String contaCorrente_agencia;
-	private String contaCorrente_banco;
-	private String contaCorrente_cc;
-	private String contaCorrente_numeroDoBanco;
+	// Dados Salariais
+	private BigDecimal dadosSalariais_salarioRS;
+	private BigDecimal dadosSalariais_salarioSMF;
+	private TipoDeContratacao dadosSalariais_administradoPor;
+	// Conta Salário
 	private String contaSalario_agencia;
 	private String contaSalario_banco;
 	private String contaSalario_cs;
 	private String contaSalario_numeroDoBanco;
-	private TipoDeContratacao dadosSalariais_administradoPor;
-	private double dadosSalariais_salarioRS;
-	private double dadosSalariais_salarioSMF;
-	private TipoDeContratacao valeAlimentacao_administradoPor;
-	private Boolean valeAlimentacao_usa;
-	private double valeAlimentacao_valorRS;
-	private Periodo valeAlimentacao_valorRSPeriodo;
-	private double valeAlimentacao_valorSMF;
-	private Periodo valeAlimentacao_valorSMFPeriodo;
-	private Boolean valeRefeicao_usaValeRefeicao;
-	private double valeRefeicao_valorEmpresaRS;
+	// Conta Corrente
+	private String contaCorrente_agencia;
+	private String contaCorrente_banco;
+	private String contaCorrente_cc;
+	private String contaCorrente_numeroDoBanco;
+	// Vale Transporte Empresa Trabalho
+	private TipoDeContratacao valeTransporteEmpresaTrabalho_administradoPor;
+	private boolean valeTransporteEmpresaTrabalho_bem;
+	private BigDecimal valeTransporteEmpresaTrabalho_bemValor;
+	private boolean valeTransporteEmpresaTrabalho_bom;
+	private BigDecimal valeTransporteEmpresaTrabalho_bomValor;
+	private boolean valeTransporteEmpresaTrabalho_integracao;
+	private BigDecimal valeTransporteEmpresaTrabalho_integracaoValor;
+	private boolean valeTransporteEmpresaTrabalho_metro;
+	private BigDecimal valeTransporteEmpresaTrabalho_metroValor;
+	private boolean valeTransporteEmpresaTrabalho_onibusMunicipal;
+	private BigDecimal valeTransporteEmpresaTrabalho_onibusMunicipalValor;
+	private boolean valeTransporteEmpresaTrabalho_trem;
+	private BigDecimal valeTransporteEmpresaTrabalho_tremValor;
+	private boolean valeTransporteEmpresaTrabalho_usa;
+	// Vale Transporte Ipp Curso
+	private TipoDeContratacao valeTransporteIPPCurso_administradoPor;
+	private boolean valeTransporteIPPCurso_bem;
+	private BigDecimal valeTransporteIPPCurso_bemValor;
+	private boolean valeTransporteIPPCurso_bom;
+	private BigDecimal valeTransporteIPPCurso_bomValor;
+	private boolean valeTransporteIPPCurso_integracao;
+	private BigDecimal valeTransporteIPPCurso_integracaoValor;
+	private boolean valeTransporteIPPCurso_metro;
+	private BigDecimal valeTransporteIPPCurso_metroValor;
+	private boolean valeTransporteIPPCurso_onibusMunicipal;
+	private BigDecimal valeTransporteIPPCurso_onibusMunicipalValor;
+	private boolean valeTransporteIPPCurso_trem;
+	private BigDecimal valeTransporteIPPCurso_tremValor;
+	private boolean valeTransporteIPPCurso_usa;
+	// Vale Refeição
+	private boolean valeRefeicao_usaValeRefeicao;
+	private BigDecimal valeRefeicao_valorEmpresaRS;
 	private Periodo valeRefeicao_valorEmpresaRSPeriodo;
-	private double valeRefeicao_valorEmpresaSMF;
+	private BigDecimal valeRefeicao_valorEmpresaSMF;
 	private Periodo valeRefeicao_valorEmpresaSMFPeriodo;
-	private double valeRefeicao_valorIPPRS;
+	private BigDecimal valeRefeicao_valorIPPRS;
 	private Periodo valeRefeicao_valorIPPRSPeriodo;
-	private double valeRefeicao_valorIPPSMF;
+	private BigDecimal valeRefeicao_valorIPPSMF;
 	private Periodo valeRefeicao_valorIPPSMFPeriodo;
 	private TipoDeContratacao valeRefeicaoEmpresa_administradoPor;
 	private TipoDeContratacao valeRefeicaoIPP_administradoPor;
-	private TipoDeContratacao valeTransporteEmpresaTrabalho_administradoPor;
-	private Boolean valeTransporteEmpresaTrabalho_bem;
-	private double valeTransporteEmpresaTrabalho_bemValor;
-	private Boolean valeTransporteEmpresaTrabalho_bom;
-	private double valeTransporteEmpresaTrabalho_bomValor;
-	private Boolean valeTransporteEmpresaTrabalho_integracao;
-	private double valeTransporteEmpresaTrabalho_integracaoValor;
-	private Boolean valeTransporteEmpresaTrabalho_metro;
-	private double valeTransporteEmpresaTrabalho_metroValor;
-	private Boolean valeTransporteEmpresaTrabalho_onibusMunicipal;
-	private double valeTransporteEmpresaTrabalho_onibusMunicipalValor;
-	private Boolean valeTransporteEmpresaTrabalho_trem;
-	private double valeTransporteEmpresaTrabalho_tremValor;
-	private Boolean valeTransporteEmpresaTrabalho_usa;
-	private TipoDeContratacao valeTransporteIPPCurso_administradoPor;
-	private Boolean valeTransporteIPPCurso_bem;
-	private double valeTransporteIPPCurso_bemValor;
-	private Boolean valeTransporteIPPCurso_bom;
-	private double valeTransporteIPPCurso_bomValor;
-	private Boolean valeTransporteIPPCurso_integracao;
-	private double valeTransporteIPPCurso_integracaoValor;
-	private Boolean valeTransporteIPPCurso_metro;
-	private double valeTransporteIPPCurso_metroValor;
-	private Boolean valeTransporteIPPCurso_onibusMunicipal;
-	private double valeTransporteIPPCurso_onibusMunicipalValor;
-	private Boolean valeTransporteIPPCurso_trem;
-	private double valeTransporteIPPCurso_tremValor;
-	private Boolean valeTransporteIPPCurso_usa;*/
-
-	public String getTestDadosFinanceiros() {
-		return testDadosFinanceiros;
-	}
-
-	public void setTestDadosFinanceiros(String testDadosFinanceiros) {
-		this.testDadosFinanceiros = testDadosFinanceiros;
-	}
+	// Vale Alimentação
+	private TipoDeContratacao valeAlimentacao_administradoPor;
+	private boolean valeAlimentacao_usa;
+	private BigDecimal valeAlimentacao_valorRS;
+	private Periodo valeAlimentacao_valorRSPeriodo;
+	private BigDecimal valeAlimentacao_valorSMF;
+	private Periodo valeAlimentacao_valorSMFPeriodo;
+	// Assistência Médica
+	private TipoDeContratacao assistenciaMedica_administradoPor;
+	private boolean assistenciaMedica_possui;
+	private BigDecimal assistenciaMedica_valor;
+	// Assistência Odontológica
+	private TipoDeContratacao assistenciaOdontologica_administradoPor;
+	private boolean assistenciaOdontologica_possui;
+	private BigDecimal assistenciaOdontologica_valor;
+	// Observações
+	private String observacoes; 
+	// Jovem
+	@OneToOne
+	private Jovem jovem;
 	
 	
-	
-	/*public TipoDeContratacao getAssistenciaMedica_administradoPor() {
-		return assistenciaMedica_administradoPor;
+	public BigDecimal getDadosSalariais_salarioRS() {
+		return dadosSalariais_salarioRS;
 	}
-	public void setAssistenciaMedica_administradoPor(TipoDeContratacao assistenciaMedica_administradoPor) {
-		this.assistenciaMedica_administradoPor = assistenciaMedica_administradoPor;
+	public void setDadosSalariais_salarioRS(BigDecimal dadosSalariais_salarioRS) {
+		this.dadosSalariais_salarioRS = dadosSalariais_salarioRS;
 	}
-	public Boolean getAssistenciaMedica_possui() {
-		return assistenciaMedica_possui;
+	public BigDecimal getDadosSalariais_salarioSMF() {
+		return dadosSalariais_salarioSMF;
 	}
-	public void setAssistenciaMedica_possui(Boolean assistenciaMedica_possui) {
-		this.assistenciaMedica_possui = assistenciaMedica_possui;
+	public void setDadosSalariais_salarioSMF(BigDecimal dadosSalariais_salarioSMF) {
+		this.dadosSalariais_salarioSMF = dadosSalariais_salarioSMF;
 	}
-	public double getAssistenciaMedica_valor() {
-		return assistenciaMedica_valor;
+	public TipoDeContratacao getDadosSalariais_administradoPor() {
+		return dadosSalariais_administradoPor;
 	}
-	public void setAssistenciaMedica_valor(double assistenciaMedica_valor) {
-		this.assistenciaMedica_valor = assistenciaMedica_valor;
-	}
-	public TipoDeContratacao getAssistenciaOdontologica_administradoPor() {
-		return assistenciaOdontologica_administradoPor;
-	}
-	public void setAssistenciaOdontologica_administradoPor(TipoDeContratacao assistenciaOdontologica_administradoPor) {
-		this.assistenciaOdontologica_administradoPor = assistenciaOdontologica_administradoPor;
-	}
-	public Boolean getAssistenciaOdontologica_possui() {
-		return assistenciaOdontologica_possui;
-	}
-	public void setAssistenciaOdontologica_possui(Boolean assistenciaOdontologica_possui) {
-		this.assistenciaOdontologica_possui = assistenciaOdontologica_possui;
-	}
-	public double getAssistenciaOdontologica_valor() {
-		return assistenciaOdontologica_valor;
-	}
-	public void setAssistenciaOdontologica_valor(double assistenciaOdontologica_valor) {
-		this.assistenciaOdontologica_valor = assistenciaOdontologica_valor;
-	}
-	public String getContaCorrente_agencia() {
-		return contaCorrente_agencia;
-	}
-	public void setContaCorrente_agencia(String contaCorrente_agencia) {
-		this.contaCorrente_agencia = contaCorrente_agencia;
-	}
-	public String getContaCorrente_banco() {
-		return contaCorrente_banco;
-	}
-	public void setContaCorrente_banco(String contaCorrente_banco) {
-		this.contaCorrente_banco = contaCorrente_banco;
-	}
-	public String getContaCorrente_cc() {
-		return contaCorrente_cc;
-	}
-	public void setContaCorrente_cc(String contaCorrente_cc) {
-		this.contaCorrente_cc = contaCorrente_cc;
-	}
-	public String getContaCorrente_numeroDoBanco() {
-		return contaCorrente_numeroDoBanco;
-	}
-	public void setContaCorrente_numeroDoBanco(String contaCorrente_numeroDoBanco) {
-		this.contaCorrente_numeroDoBanco = contaCorrente_numeroDoBanco;
+	public void setDadosSalariais_administradoPor(TipoDeContratacao dadosSalariais_administradoPor) {
+		this.dadosSalariais_administradoPor = dadosSalariais_administradoPor;
 	}
 	public String getContaSalario_agencia() {
 		return contaSalario_agencia;
@@ -167,70 +134,210 @@ public class DadosFinanceiros extends AbstractEntity {
 	public void setContaSalario_numeroDoBanco(String contaSalario_numeroDoBanco) {
 		this.contaSalario_numeroDoBanco = contaSalario_numeroDoBanco;
 	}
-	public TipoDeContratacao getDadosSalariais_administradoPor() {
-		return dadosSalariais_administradoPor;
+	public String getContaCorrente_agencia() {
+		return contaCorrente_agencia;
 	}
-	public void setDadosSalariais_administradoPor(TipoDeContratacao dadosSalariais_administradoPor) {
-		this.dadosSalariais_administradoPor = dadosSalariais_administradoPor;
+	public void setContaCorrente_agencia(String contaCorrente_agencia) {
+		this.contaCorrente_agencia = contaCorrente_agencia;
 	}
-	public double getDadosSalariais_salarioRS() {
-		return dadosSalariais_salarioRS;
+	public String getContaCorrente_banco() {
+		return contaCorrente_banco;
 	}
-	public void setDadosSalariais_salarioRS(double dadosSalariais_salarioRS) {
-		this.dadosSalariais_salarioRS = dadosSalariais_salarioRS;
+	public void setContaCorrente_banco(String contaCorrente_banco) {
+		this.contaCorrente_banco = contaCorrente_banco;
 	}
-	public double getDadosSalariais_salarioSMF() {
-		return dadosSalariais_salarioSMF;
+	public String getContaCorrente_cc() {
+		return contaCorrente_cc;
 	}
-	public void setDadosSalariais_salarioSMF(double dadosSalariais_salarioSMF) {
-		this.dadosSalariais_salarioSMF = dadosSalariais_salarioSMF;
+	public void setContaCorrente_cc(String contaCorrente_cc) {
+		this.contaCorrente_cc = contaCorrente_cc;
 	}
-	public TipoDeContratacao getValeAlimentacao_administradoPor() {
-		return valeAlimentacao_administradoPor;
+	public String getContaCorrente_numeroDoBanco() {
+		return contaCorrente_numeroDoBanco;
 	}
-	public void setValeAlimentacao_administradoPor(TipoDeContratacao valeAlimentacao_administradoPor) {
-		this.valeAlimentacao_administradoPor = valeAlimentacao_administradoPor;
+	public void setContaCorrente_numeroDoBanco(String contaCorrente_numeroDoBanco) {
+		this.contaCorrente_numeroDoBanco = contaCorrente_numeroDoBanco;
 	}
-	public Boolean getValeAlimentacao_usa() {
-		return valeAlimentacao_usa;
+	public TipoDeContratacao getValeTransporteEmpresaTrabalho_administradoPor() {
+		return valeTransporteEmpresaTrabalho_administradoPor;
 	}
-	public void setValeAlimentacao_usa(Boolean valeAlimentacao_usa) {
-		this.valeAlimentacao_usa = valeAlimentacao_usa;
+	public void setValeTransporteEmpresaTrabalho_administradoPor(
+			TipoDeContratacao valeTransporteEmpresaTrabalho_administradoPor) {
+		this.valeTransporteEmpresaTrabalho_administradoPor = valeTransporteEmpresaTrabalho_administradoPor;
 	}
-	public double getValeAlimentacao_valorRS() {
-		return valeAlimentacao_valorRS;
+	public boolean isValeTransporteEmpresaTrabalho_bem() {
+		return valeTransporteEmpresaTrabalho_bem;
 	}
-	public void setValeAlimentacao_valorRS(double valeAlimentacao_valorRS) {
-		this.valeAlimentacao_valorRS = valeAlimentacao_valorRS;
+	public void setValeTransporteEmpresaTrabalho_bem(boolean valeTransporteEmpresaTrabalho_bem) {
+		this.valeTransporteEmpresaTrabalho_bem = valeTransporteEmpresaTrabalho_bem;
 	}
-	public Periodo getValeAlimentacao_valorRSPeriodo() {
-		return valeAlimentacao_valorRSPeriodo;
+	public BigDecimal getValeTransporteEmpresaTrabalho_bemValor() {
+		return valeTransporteEmpresaTrabalho_bemValor;
 	}
-	public void setValeAlimentacao_valorRSPeriodo(Periodo valeAlimentacao_valorRSPeriodo) {
-		this.valeAlimentacao_valorRSPeriodo = valeAlimentacao_valorRSPeriodo;
+	public void setValeTransporteEmpresaTrabalho_bemValor(BigDecimal valeTransporteEmpresaTrabalho_bemValor) {
+		this.valeTransporteEmpresaTrabalho_bemValor = valeTransporteEmpresaTrabalho_bemValor;
 	}
-	public double getValeAlimentacao_valorSMF() {
-		return valeAlimentacao_valorSMF;
+	public boolean isValeTransporteEmpresaTrabalho_bom() {
+		return valeTransporteEmpresaTrabalho_bom;
 	}
-	public void setValeAlimentacao_valorSMF(double valeAlimentacao_valorSMF) {
-		this.valeAlimentacao_valorSMF = valeAlimentacao_valorSMF;
+	public void setValeTransporteEmpresaTrabalho_bom(boolean valeTransporteEmpresaTrabalho_bom) {
+		this.valeTransporteEmpresaTrabalho_bom = valeTransporteEmpresaTrabalho_bom;
 	}
-	public Periodo getValeAlimentacao_valorSMFPeriodo() {
-		return valeAlimentacao_valorSMFPeriodo;
+	public BigDecimal getValeTransporteEmpresaTrabalho_bomValor() {
+		return valeTransporteEmpresaTrabalho_bomValor;
 	}
-	public void setValeAlimentacao_valorSMFPeriodo(Periodo valeAlimentacao_valorSMFPeriodo) {
-		this.valeAlimentacao_valorSMFPeriodo = valeAlimentacao_valorSMFPeriodo;
+	public void setValeTransporteEmpresaTrabalho_bomValor(BigDecimal valeTransporteEmpresaTrabalho_bomValor) {
+		this.valeTransporteEmpresaTrabalho_bomValor = valeTransporteEmpresaTrabalho_bomValor;
 	}
-	public Boolean getValeRefeicao_usaValeRefeicao() {
+	public boolean isValeTransporteEmpresaTrabalho_integracao() {
+		return valeTransporteEmpresaTrabalho_integracao;
+	}
+	public void setValeTransporteEmpresaTrabalho_integracao(boolean valeTransporteEmpresaTrabalho_integracao) {
+		this.valeTransporteEmpresaTrabalho_integracao = valeTransporteEmpresaTrabalho_integracao;
+	}
+	public BigDecimal getValeTransporteEmpresaTrabalho_integracaoValor() {
+		return valeTransporteEmpresaTrabalho_integracaoValor;
+	}
+	public void setValeTransporteEmpresaTrabalho_integracaoValor(BigDecimal valeTransporteEmpresaTrabalho_integracaoValor) {
+		this.valeTransporteEmpresaTrabalho_integracaoValor = valeTransporteEmpresaTrabalho_integracaoValor;
+	}
+	public boolean isValeTransporteEmpresaTrabalho_metro() {
+		return valeTransporteEmpresaTrabalho_metro;
+	}
+	public void setValeTransporteEmpresaTrabalho_metro(boolean valeTransporteEmpresaTrabalho_metro) {
+		this.valeTransporteEmpresaTrabalho_metro = valeTransporteEmpresaTrabalho_metro;
+	}
+	public BigDecimal getValeTransporteEmpresaTrabalho_metroValor() {
+		return valeTransporteEmpresaTrabalho_metroValor;
+	}
+	public void setValeTransporteEmpresaTrabalho_metroValor(BigDecimal valeTransporteEmpresaTrabalho_metroValor) {
+		this.valeTransporteEmpresaTrabalho_metroValor = valeTransporteEmpresaTrabalho_metroValor;
+	}
+	public boolean isValeTransporteEmpresaTrabalho_onibusMunicipal() {
+		return valeTransporteEmpresaTrabalho_onibusMunicipal;
+	}
+	public void setValeTransporteEmpresaTrabalho_onibusMunicipal(boolean valeTransporteEmpresaTrabalho_onibusMunicipal) {
+		this.valeTransporteEmpresaTrabalho_onibusMunicipal = valeTransporteEmpresaTrabalho_onibusMunicipal;
+	}
+	public BigDecimal getValeTransporteEmpresaTrabalho_onibusMunicipalValor() {
+		return valeTransporteEmpresaTrabalho_onibusMunicipalValor;
+	}
+	public void setValeTransporteEmpresaTrabalho_onibusMunicipalValor(
+			BigDecimal valeTransporteEmpresaTrabalho_onibusMunicipalValor) {
+		this.valeTransporteEmpresaTrabalho_onibusMunicipalValor = valeTransporteEmpresaTrabalho_onibusMunicipalValor;
+	}
+	public boolean isValeTransporteEmpresaTrabalho_trem() {
+		return valeTransporteEmpresaTrabalho_trem;
+	}
+	public void setValeTransporteEmpresaTrabalho_trem(boolean valeTransporteEmpresaTrabalho_trem) {
+		this.valeTransporteEmpresaTrabalho_trem = valeTransporteEmpresaTrabalho_trem;
+	}
+	public BigDecimal getValeTransporteEmpresaTrabalho_tremValor() {
+		return valeTransporteEmpresaTrabalho_tremValor;
+	}
+	public void setValeTransporteEmpresaTrabalho_tremValor(BigDecimal valeTransporteEmpresaTrabalho_tremValor) {
+		this.valeTransporteEmpresaTrabalho_tremValor = valeTransporteEmpresaTrabalho_tremValor;
+	}
+	public boolean isValeTransporteEmpresaTrabalho_usa() {
+		return valeTransporteEmpresaTrabalho_usa;
+	}
+	public void setValeTransporteEmpresaTrabalho_usa(boolean valeTransporteEmpresaTrabalho_usa) {
+		this.valeTransporteEmpresaTrabalho_usa = valeTransporteEmpresaTrabalho_usa;
+	}
+	public TipoDeContratacao getValeTransporteIPPCurso_administradoPor() {
+		return valeTransporteIPPCurso_administradoPor;
+	}
+	public void setValeTransporteIPPCurso_administradoPor(TipoDeContratacao valeTransporteIPPCurso_administradoPor) {
+		this.valeTransporteIPPCurso_administradoPor = valeTransporteIPPCurso_administradoPor;
+	}
+	public boolean isValeTransporteIPPCurso_bem() {
+		return valeTransporteIPPCurso_bem;
+	}
+	public void setValeTransporteIPPCurso_bem(boolean valeTransporteIPPCurso_bem) {
+		this.valeTransporteIPPCurso_bem = valeTransporteIPPCurso_bem;
+	}
+	public BigDecimal getValeTransporteIPPCurso_bemValor() {
+		return valeTransporteIPPCurso_bemValor;
+	}
+	public void setValeTransporteIPPCurso_bemValor(BigDecimal valeTransporteIPPCurso_bemValor) {
+		this.valeTransporteIPPCurso_bemValor = valeTransporteIPPCurso_bemValor;
+	}
+	public boolean isValeTransporteIPPCurso_bom() {
+		return valeTransporteIPPCurso_bom;
+	}
+	public void setValeTransporteIPPCurso_bom(boolean valeTransporteIPPCurso_bom) {
+		this.valeTransporteIPPCurso_bom = valeTransporteIPPCurso_bom;
+	}
+	public BigDecimal getValeTransporteIPPCurso_bomValor() {
+		return valeTransporteIPPCurso_bomValor;
+	}
+	public void setValeTransporteIPPCurso_bomValor(BigDecimal valeTransporteIPPCurso_bomValor) {
+		this.valeTransporteIPPCurso_bomValor = valeTransporteIPPCurso_bomValor;
+	}
+	public boolean isValeTransporteIPPCurso_integracao() {
+		return valeTransporteIPPCurso_integracao;
+	}
+	public void setValeTransporteIPPCurso_integracao(boolean valeTransporteIPPCurso_integracao) {
+		this.valeTransporteIPPCurso_integracao = valeTransporteIPPCurso_integracao;
+	}
+	public BigDecimal getValeTransporteIPPCurso_integracaoValor() {
+		return valeTransporteIPPCurso_integracaoValor;
+	}
+	public void setValeTransporteIPPCurso_integracaoValor(BigDecimal valeTransporteIPPCurso_integracaoValor) {
+		this.valeTransporteIPPCurso_integracaoValor = valeTransporteIPPCurso_integracaoValor;
+	}
+	public boolean isValeTransporteIPPCurso_metro() {
+		return valeTransporteIPPCurso_metro;
+	}
+	public void setValeTransporteIPPCurso_metro(boolean valeTransporteIPPCurso_metro) {
+		this.valeTransporteIPPCurso_metro = valeTransporteIPPCurso_metro;
+	}
+	public BigDecimal getValeTransporteIPPCurso_metroValor() {
+		return valeTransporteIPPCurso_metroValor;
+	}
+	public void setValeTransporteIPPCurso_metroValor(BigDecimal valeTransporteIPPCurso_metroValor) {
+		this.valeTransporteIPPCurso_metroValor = valeTransporteIPPCurso_metroValor;
+	}
+	public boolean isValeTransporteIPPCurso_onibusMunicipal() {
+		return valeTransporteIPPCurso_onibusMunicipal;
+	}
+	public void setValeTransporteIPPCurso_onibusMunicipal(boolean valeTransporteIPPCurso_onibusMunicipal) {
+		this.valeTransporteIPPCurso_onibusMunicipal = valeTransporteIPPCurso_onibusMunicipal;
+	}
+	public BigDecimal getValeTransporteIPPCurso_onibusMunicipalValor() {
+		return valeTransporteIPPCurso_onibusMunicipalValor;
+	}
+	public void setValeTransporteIPPCurso_onibusMunicipalValor(BigDecimal valeTransporteIPPCurso_onibusMunicipalValor) {
+		this.valeTransporteIPPCurso_onibusMunicipalValor = valeTransporteIPPCurso_onibusMunicipalValor;
+	}
+	public boolean isValeTransporteIPPCurso_trem() {
+		return valeTransporteIPPCurso_trem;
+	}
+	public void setValeTransporteIPPCurso_trem(boolean valeTransporteIPPCurso_trem) {
+		this.valeTransporteIPPCurso_trem = valeTransporteIPPCurso_trem;
+	}
+	public BigDecimal getValeTransporteIPPCurso_tremValor() {
+		return valeTransporteIPPCurso_tremValor;
+	}
+	public void setValeTransporteIPPCurso_tremValor(BigDecimal valeTransporteIPPCurso_tremValor) {
+		this.valeTransporteIPPCurso_tremValor = valeTransporteIPPCurso_tremValor;
+	}
+	public boolean isValeTransporteIPPCurso_usa() {
+		return valeTransporteIPPCurso_usa;
+	}
+	public void setValeTransporteIPPCurso_usa(boolean valeTransporteIPPCurso_usa) {
+		this.valeTransporteIPPCurso_usa = valeTransporteIPPCurso_usa;
+	}
+	public boolean isValeRefeicao_usaValeRefeicao() {
 		return valeRefeicao_usaValeRefeicao;
 	}
-	public void setValeRefeicao_usaValeRefeicao(Boolean valeRefeicao_usaValeRefeicao) {
+	public void setValeRefeicao_usaValeRefeicao(boolean valeRefeicao_usaValeRefeicao) {
 		this.valeRefeicao_usaValeRefeicao = valeRefeicao_usaValeRefeicao;
 	}
-	public double getValeRefeicao_valorEmpresaRS() {
+	public BigDecimal getValeRefeicao_valorEmpresaRS() {
 		return valeRefeicao_valorEmpresaRS;
 	}
-	public void setValeRefeicao_valorEmpresaRS(double valeRefeicao_valorEmpresaRS) {
+	public void setValeRefeicao_valorEmpresaRS(BigDecimal valeRefeicao_valorEmpresaRS) {
 		this.valeRefeicao_valorEmpresaRS = valeRefeicao_valorEmpresaRS;
 	}
 	public Periodo getValeRefeicao_valorEmpresaRSPeriodo() {
@@ -239,10 +346,10 @@ public class DadosFinanceiros extends AbstractEntity {
 	public void setValeRefeicao_valorEmpresaRSPeriodo(Periodo valeRefeicao_valorEmpresaRSPeriodo) {
 		this.valeRefeicao_valorEmpresaRSPeriodo = valeRefeicao_valorEmpresaRSPeriodo;
 	}
-	public double getValeRefeicao_valorEmpresaSMF() {
+	public BigDecimal getValeRefeicao_valorEmpresaSMF() {
 		return valeRefeicao_valorEmpresaSMF;
 	}
-	public void setValeRefeicao_valorEmpresaSMF(double valeRefeicao_valorEmpresaSMF) {
+	public void setValeRefeicao_valorEmpresaSMF(BigDecimal valeRefeicao_valorEmpresaSMF) {
 		this.valeRefeicao_valorEmpresaSMF = valeRefeicao_valorEmpresaSMF;
 	}
 	public Periodo getValeRefeicao_valorEmpresaSMFPeriodo() {
@@ -251,10 +358,10 @@ public class DadosFinanceiros extends AbstractEntity {
 	public void setValeRefeicao_valorEmpresaSMFPeriodo(Periodo valeRefeicao_valorEmpresaSMFPeriodo) {
 		this.valeRefeicao_valorEmpresaSMFPeriodo = valeRefeicao_valorEmpresaSMFPeriodo;
 	}
-	public double getValeRefeicao_valorIPPRS() {
+	public BigDecimal getValeRefeicao_valorIPPRS() {
 		return valeRefeicao_valorIPPRS;
 	}
-	public void setValeRefeicao_valorIPPRS(double valeRefeicao_valorIPPRS) {
+	public void setValeRefeicao_valorIPPRS(BigDecimal valeRefeicao_valorIPPRS) {
 		this.valeRefeicao_valorIPPRS = valeRefeicao_valorIPPRS;
 	}
 	public Periodo getValeRefeicao_valorIPPRSPeriodo() {
@@ -263,10 +370,10 @@ public class DadosFinanceiros extends AbstractEntity {
 	public void setValeRefeicao_valorIPPRSPeriodo(Periodo valeRefeicao_valorIPPRSPeriodo) {
 		this.valeRefeicao_valorIPPRSPeriodo = valeRefeicao_valorIPPRSPeriodo;
 	}
-	public double getValeRefeicao_valorIPPSMF() {
+	public BigDecimal getValeRefeicao_valorIPPSMF() {
 		return valeRefeicao_valorIPPSMF;
 	}
-	public void setValeRefeicao_valorIPPSMF(double valeRefeicao_valorIPPSMF) {
+	public void setValeRefeicao_valorIPPSMF(BigDecimal valeRefeicao_valorIPPSMF) {
 		this.valeRefeicao_valorIPPSMF = valeRefeicao_valorIPPSMF;
 	}
 	public Periodo getValeRefeicao_valorIPPSMFPeriodo() {
@@ -287,175 +394,92 @@ public class DadosFinanceiros extends AbstractEntity {
 	public void setValeRefeicaoIPP_administradoPor(TipoDeContratacao valeRefeicaoIPP_administradoPor) {
 		this.valeRefeicaoIPP_administradoPor = valeRefeicaoIPP_administradoPor;
 	}
-	public TipoDeContratacao getValeTransporteEmpresaTrabalho_administradoPor() {
-		return valeTransporteEmpresaTrabalho_administradoPor;
+	public TipoDeContratacao getValeAlimentacao_administradoPor() {
+		return valeAlimentacao_administradoPor;
 	}
-	public void setValeTransporteEmpresaTrabalho_administradoPor(
-			TipoDeContratacao valeTransporteEmpresaTrabalho_administradoPor) {
-		this.valeTransporteEmpresaTrabalho_administradoPor = valeTransporteEmpresaTrabalho_administradoPor;
+	public void setValeAlimentacao_administradoPor(TipoDeContratacao valeAlimentacao_administradoPor) {
+		this.valeAlimentacao_administradoPor = valeAlimentacao_administradoPor;
 	}
-	public Boolean getValeTransporteEmpresaTrabalho_bem() {
-		return valeTransporteEmpresaTrabalho_bem;
+	public boolean isValeAlimentacao_usa() {
+		return valeAlimentacao_usa;
 	}
-	public void setValeTransporteEmpresaTrabalho_bem(Boolean valeTransporteEmpresaTrabalho_bem) {
-		this.valeTransporteEmpresaTrabalho_bem = valeTransporteEmpresaTrabalho_bem;
+	public void setValeAlimentacao_usa(boolean valeAlimentacao_usa) {
+		this.valeAlimentacao_usa = valeAlimentacao_usa;
 	}
-	public double getValeTransporteEmpresaTrabalho_bemValor() {
-		return valeTransporteEmpresaTrabalho_bemValor;
+	public BigDecimal getValeAlimentacao_valorRS() {
+		return valeAlimentacao_valorRS;
 	}
-	public void setValeTransporteEmpresaTrabalho_bemValor(double valeTransporteEmpresaTrabalho_bemValor) {
-		this.valeTransporteEmpresaTrabalho_bemValor = valeTransporteEmpresaTrabalho_bemValor;
+	public void setValeAlimentacao_valorRS(BigDecimal valeAlimentacao_valorRS) {
+		this.valeAlimentacao_valorRS = valeAlimentacao_valorRS;
 	}
-	public Boolean getValeTransporteEmpresaTrabalho_bom() {
-		return valeTransporteEmpresaTrabalho_bom;
+	public Periodo getValeAlimentacao_valorRSPeriodo() {
+		return valeAlimentacao_valorRSPeriodo;
 	}
-	public void setValeTransporteEmpresaTrabalho_bom(Boolean valeTransporteEmpresaTrabalho_bom) {
-		this.valeTransporteEmpresaTrabalho_bom = valeTransporteEmpresaTrabalho_bom;
+	public void setValeAlimentacao_valorRSPeriodo(Periodo valeAlimentacao_valorRSPeriodo) {
+		this.valeAlimentacao_valorRSPeriodo = valeAlimentacao_valorRSPeriodo;
 	}
-	public double getValeTransporteEmpresaTrabalho_bomValor() {
-		return valeTransporteEmpresaTrabalho_bomValor;
+	public BigDecimal getValeAlimentacao_valorSMF() {
+		return valeAlimentacao_valorSMF;
 	}
-	public void setValeTransporteEmpresaTrabalho_bomValor(double valeTransporteEmpresaTrabalho_bomValor) {
-		this.valeTransporteEmpresaTrabalho_bomValor = valeTransporteEmpresaTrabalho_bomValor;
+	public void setValeAlimentacao_valorSMF(BigDecimal valeAlimentacao_valorSMF) {
+		this.valeAlimentacao_valorSMF = valeAlimentacao_valorSMF;
 	}
-	public Boolean getValeTransporteEmpresaTrabalho_integracao() {
-		return valeTransporteEmpresaTrabalho_integracao;
+	public Periodo getValeAlimentacao_valorSMFPeriodo() {
+		return valeAlimentacao_valorSMFPeriodo;
 	}
-	public void setValeTransporteEmpresaTrabalho_integracao(Boolean valeTransporteEmpresaTrabalho_integracao) {
-		this.valeTransporteEmpresaTrabalho_integracao = valeTransporteEmpresaTrabalho_integracao;
+	public void setValeAlimentacao_valorSMFPeriodo(Periodo valeAlimentacao_valorSMFPeriodo) {
+		this.valeAlimentacao_valorSMFPeriodo = valeAlimentacao_valorSMFPeriodo;
 	}
-	public double getValeTransporteEmpresaTrabalho_integracaoValor() {
-		return valeTransporteEmpresaTrabalho_integracaoValor;
+	public TipoDeContratacao getAssistenciaMedica_administradoPor() {
+		return assistenciaMedica_administradoPor;
 	}
-	public void setValeTransporteEmpresaTrabalho_integracaoValor(double valeTransporteEmpresaTrabalho_integracaoValor) {
-		this.valeTransporteEmpresaTrabalho_integracaoValor = valeTransporteEmpresaTrabalho_integracaoValor;
+	public void setAssistenciaMedica_administradoPor(TipoDeContratacao assistenciaMedica_administradoPor) {
+		this.assistenciaMedica_administradoPor = assistenciaMedica_administradoPor;
 	}
-	public Boolean getValeTransporteEmpresaTrabalho_metro() {
-		return valeTransporteEmpresaTrabalho_metro;
+	public boolean isAssistenciaMedica_possui() {
+		return assistenciaMedica_possui;
 	}
-	public void setValeTransporteEmpresaTrabalho_metro(Boolean valeTransporteEmpresaTrabalho_metro) {
-		this.valeTransporteEmpresaTrabalho_metro = valeTransporteEmpresaTrabalho_metro;
+	public void setAssistenciaMedica_possui(boolean assistenciaMedica_possui) {
+		this.assistenciaMedica_possui = assistenciaMedica_possui;
 	}
-	public double getValeTransporteEmpresaTrabalho_metroValor() {
-		return valeTransporteEmpresaTrabalho_metroValor;
+	public BigDecimal getAssistenciaMedica_valor() {
+		return assistenciaMedica_valor;
 	}
-	public void setValeTransporteEmpresaTrabalho_metroValor(double valeTransporteEmpresaTrabalho_metroValor) {
-		this.valeTransporteEmpresaTrabalho_metroValor = valeTransporteEmpresaTrabalho_metroValor;
+	public void setAssistenciaMedica_valor(BigDecimal assistenciaMedica_valor) {
+		this.assistenciaMedica_valor = assistenciaMedica_valor;
 	}
-	public Boolean getValeTransporteEmpresaTrabalho_onibusMunicipal() {
-		return valeTransporteEmpresaTrabalho_onibusMunicipal;
+	public TipoDeContratacao getAssistenciaOdontologica_administradoPor() {
+		return assistenciaOdontologica_administradoPor;
 	}
-	public void setValeTransporteEmpresaTrabalho_onibusMunicipal(Boolean valeTransporteEmpresaTrabalho_onibusMunicipal) {
-		this.valeTransporteEmpresaTrabalho_onibusMunicipal = valeTransporteEmpresaTrabalho_onibusMunicipal;
+	public void setAssistenciaOdontologica_administradoPor(TipoDeContratacao assistenciaOdontologica_administradoPor) {
+		this.assistenciaOdontologica_administradoPor = assistenciaOdontologica_administradoPor;
 	}
-	public double getValeTransporteEmpresaTrabalho_onibusMunicipalValor() {
-		return valeTransporteEmpresaTrabalho_onibusMunicipalValor;
+	public boolean isAssistenciaOdontologica_possui() {
+		return assistenciaOdontologica_possui;
 	}
-	public void setValeTransporteEmpresaTrabalho_onibusMunicipalValor(
-			double valeTransporteEmpresaTrabalho_onibusMunicipalValor) {
-		this.valeTransporteEmpresaTrabalho_onibusMunicipalValor = valeTransporteEmpresaTrabalho_onibusMunicipalValor;
+	public void setAssistenciaOdontologica_possui(boolean assistenciaOdontologica_possui) {
+		this.assistenciaOdontologica_possui = assistenciaOdontologica_possui;
 	}
-	public Boolean getValeTransporteEmpresaTrabalho_trem() {
-		return valeTransporteEmpresaTrabalho_trem;
+	public BigDecimal getAssistenciaOdontologica_valor() {
+		return assistenciaOdontologica_valor;
 	}
-	public void setValeTransporteEmpresaTrabalho_trem(Boolean valeTransporteEmpresaTrabalho_trem) {
-		this.valeTransporteEmpresaTrabalho_trem = valeTransporteEmpresaTrabalho_trem;
+	public void setAssistenciaOdontologica_valor(BigDecimal assistenciaOdontologica_valor) {
+		this.assistenciaOdontologica_valor = assistenciaOdontologica_valor;
 	}
-	public double getValeTransporteEmpresaTrabalho_tremValor() {
-		return valeTransporteEmpresaTrabalho_tremValor;
+	public String getObservacoes() {
+		return observacoes;
 	}
-	public void setValeTransporteEmpresaTrabalho_tremValor(double valeTransporteEmpresaTrabalho_tremValor) {
-		this.valeTransporteEmpresaTrabalho_tremValor = valeTransporteEmpresaTrabalho_tremValor;
+	public void setObservacoes(String observacoes) {
+		this.observacoes = observacoes;
 	}
-	public Boolean getValeTransporteEmpresaTrabalho_usa() {
-		return valeTransporteEmpresaTrabalho_usa;
+	public Jovem getJovem() {
+		return jovem;
 	}
-	public void setValeTransporteEmpresaTrabalho_usa(Boolean valeTransporteEmpresaTrabalho_usa) {
-		this.valeTransporteEmpresaTrabalho_usa = valeTransporteEmpresaTrabalho_usa;
+	public void setJovem(Jovem jovem) {
+		this.jovem = jovem;
 	}
-	public TipoDeContratacao getValeTransporteIPPCurso_administradoPor() {
-		return valeTransporteIPPCurso_administradoPor;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
-	public void setValeTransporteIPPCurso_administradoPor(TipoDeContratacao valeTransporteIPPCurso_administradoPor) {
-		this.valeTransporteIPPCurso_administradoPor = valeTransporteIPPCurso_administradoPor;
-	}
-	public Boolean getValeTransporteIPPCurso_bem() {
-		return valeTransporteIPPCurso_bem;
-	}
-	public void setValeTransporteIPPCurso_bem(Boolean valeTransporteIPPCurso_bem) {
-		this.valeTransporteIPPCurso_bem = valeTransporteIPPCurso_bem;
-	}
-	public double getValeTransporteIPPCurso_bemValor() {
-		return valeTransporteIPPCurso_bemValor;
-	}
-	public void setValeTransporteIPPCurso_bemValor(double valeTransporteIPPCurso_bemValor) {
-		this.valeTransporteIPPCurso_bemValor = valeTransporteIPPCurso_bemValor;
-	}
-	public Boolean getValeTransporteIPPCurso_bom() {
-		return valeTransporteIPPCurso_bom;
-	}
-	public void setValeTransporteIPPCurso_bom(Boolean valeTransporteIPPCurso_bom) {
-		this.valeTransporteIPPCurso_bom = valeTransporteIPPCurso_bom;
-	}
-	public double getValeTransporteIPPCurso_bomValor() {
-		return valeTransporteIPPCurso_bomValor;
-	}
-	public void setValeTransporteIPPCurso_bomValor(double valeTransporteIPPCurso_bomValor) {
-		this.valeTransporteIPPCurso_bomValor = valeTransporteIPPCurso_bomValor;
-	}
-	public Boolean getValeTransporteIPPCurso_integracao() {
-		return valeTransporteIPPCurso_integracao;
-	}
-	public void setValeTransporteIPPCurso_integracao(Boolean valeTransporteIPPCurso_integracao) {
-		this.valeTransporteIPPCurso_integracao = valeTransporteIPPCurso_integracao;
-	}
-	public double getValeTransporteIPPCurso_integracaoValor() {
-		return valeTransporteIPPCurso_integracaoValor;
-	}
-	public void setValeTransporteIPPCurso_integracaoValor(double valeTransporteIPPCurso_integracaoValor) {
-		this.valeTransporteIPPCurso_integracaoValor = valeTransporteIPPCurso_integracaoValor;
-	}
-	public Boolean getValeTransporteIPPCurso_metro() {
-		return valeTransporteIPPCurso_metro;
-	}
-	public void setValeTransporteIPPCurso_metro(Boolean valeTransporteIPPCurso_metro) {
-		this.valeTransporteIPPCurso_metro = valeTransporteIPPCurso_metro;
-	}
-	public double getValeTransporteIPPCurso_metroValor() {
-		return valeTransporteIPPCurso_metroValor;
-	}
-	public void setValeTransporteIPPCurso_metroValor(double valeTransporteIPPCurso_metroValor) {
-		this.valeTransporteIPPCurso_metroValor = valeTransporteIPPCurso_metroValor;
-	}
-	public Boolean getValeTransporteIPPCurso_onibusMunicipal() {
-		return valeTransporteIPPCurso_onibusMunicipal;
-	}
-	public void setValeTransporteIPPCurso_onibusMunicipal(Boolean valeTransporteIPPCurso_onibusMunicipal) {
-		this.valeTransporteIPPCurso_onibusMunicipal = valeTransporteIPPCurso_onibusMunicipal;
-	}
-	public double getValeTransporteIPPCurso_onibusMunicipalValor() {
-		return valeTransporteIPPCurso_onibusMunicipalValor;
-	}
-	public void setValeTransporteIPPCurso_onibusMunicipalValor(double valeTransporteIPPCurso_onibusMunicipalValor) {
-		this.valeTransporteIPPCurso_onibusMunicipalValor = valeTransporteIPPCurso_onibusMunicipalValor;
-	}
-	public Boolean getValeTransporteIPPCurso_trem() {
-		return valeTransporteIPPCurso_trem;
-	}
-	public void setValeTransporteIPPCurso_trem(Boolean valeTransporteIPPCurso_trem) {
-		this.valeTransporteIPPCurso_trem = valeTransporteIPPCurso_trem;
-	}
-	public double getValeTransporteIPPCurso_tremValor() {
-		return valeTransporteIPPCurso_tremValor;
-	}
-	public void setValeTransporteIPPCurso_tremValor(double valeTransporteIPPCurso_tremValor) {
-		this.valeTransporteIPPCurso_tremValor = valeTransporteIPPCurso_tremValor;
-	}
-	public Boolean getValeTransporteIPPCurso_usa() {
-		return valeTransporteIPPCurso_usa;
-	}
-	public void setValeTransporteIPPCurso_usa(Boolean valeTransporteIPPCurso_usa) {
-		this.valeTransporteIPPCurso_usa = valeTransporteIPPCurso_usa;
-	}*/
 	
 }

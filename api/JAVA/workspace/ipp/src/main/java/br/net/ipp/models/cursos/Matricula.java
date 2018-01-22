@@ -1,21 +1,27 @@
 package br.net.ipp.models.cursos;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import br.net.ipp.enums.StatusDaMatricula;
 import br.net.ipp.models.AbstractEntity;
 import br.net.ipp.models.aprendizes.Jovem;
 
 @Entity
+@Table(name="matricula")
 public class Matricula extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	private String nomeTest;
-	private Jovem jovem;
 	private StatusDaMatricula statusDaMaticula;
-	private Turma Turma;
-	public Curso curso;
+	@ManyToOne
+	private Jovem jovem;
+	@ManyToOne
+	@JoinColumn(name = "turma_id")
+	public Turma turma;
+	
 	
 	public Jovem getJovem() {
 		return jovem;
@@ -29,26 +35,15 @@ public class Matricula extends AbstractEntity {
 	public void setStatusDaMaticula(StatusDaMatricula statusDaMaticula) {
 		this.statusDaMaticula = statusDaMaticula;
 	}
-	public Turma getTurma() {
-		return Turma;
-	}
-	public void setTurma(Turma turma) {
-		Turma = turma;
-	}
-	public Curso getCurso() {
-		return curso;
-	}
-	public void setCurso(Curso curso) {
-		this.curso = curso;
-	}
-	public String getNomeTest() {
-		return nomeTest;
-	}
-	public void setNomeTest(String nomeTest) {
-		this.nomeTest = nomeTest;
-	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+	public Turma getTurma() {
+		return turma;
+	}
+	public void setTurma(Turma turma) {
+		this.turma = turma;
 	}
 	
 }

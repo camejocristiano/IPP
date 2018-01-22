@@ -8,8 +8,7 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>CANAL</th>
-            <th>JOVEM</th>
+            <th>NOME DO CANAL</th>
             <th class="td-icon">EDITAR</th>
           </tr>
         </thead>
@@ -17,8 +16,7 @@
         <c:forEach var="canal" items="${requestScope.canais}">
           <tr>
             <td>${canal.id}</td>
-            <td>${canal.canal}</td>
-            <td>${canal.jovem}</td>
+            <td>${canal.nomeCanal}</td>
             <td class="td-icon"><a href="/canais/${canal.id}"><i class="material-icons" >border_color</i></a></td>
           </tr>
           </c:forEach>
@@ -28,7 +26,7 @@
       
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/canal">
+                href="/canais/form">
                 <i class="material-icons">add</i>
             </a>
          </div>

@@ -15,30 +15,24 @@ public class ArcoOcupacional  extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
+	private String titulo;
 	@ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "arco_cbo", joinColumns = @JoinColumn(name = "arco_id", referencedColumnName = "id"), 
     inverseJoinColumns = @JoinColumn(name = "cbo_id", referencedColumnName = "id"))
-	private List<CBO> listaDeCBOs;
-	private String titulo;
-	public Curso curso;
+	private List<CBO> cbos;
 
-	public List<CBO> getListaDeCBOs() {
-		return listaDeCBOs;
-	}
-	public void setListaDeCBOs(List<CBO> listaDeCBOs) {
-		this.listaDeCBOs = listaDeCBOs;
-	}
+	
 	public String getTitulo() {
 		return titulo;
 	}
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public Curso getCurso() {
-		return curso;
+	public List<CBO> getCbos() {
+		return cbos;
 	}
-	public void setCurso(Curso curso) {
-		this.curso = curso;
+	public void setCbos(List<CBO> cbos) {
+		this.cbos = cbos;
 	}
 	
 }

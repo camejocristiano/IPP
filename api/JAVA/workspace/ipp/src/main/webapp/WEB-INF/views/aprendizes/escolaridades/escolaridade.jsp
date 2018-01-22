@@ -15,10 +15,15 @@
 		<form:form role="form" commandName="escolaridade" servletRelativeAction="/escolaridades/${escolaridade.id}" method="POST"
 			class="col s12">
 			<div class="row">
-				<div class="input-field s12 col l12">
+				<div class="input-field s12 col l9">
 					<form:input path='curso' type='text'/>
 					<form:errors path='curso'/> 
-					<label for="curso">Motivo</label>
+					<label for="curso">Curso</label>
+				</div>
+				<div class="input-field s12 col l3">
+					<form:input path='jovem' type='text' value="${jovem.id}" />
+					<form:errors path='jovem'/> 
+					<label for="jovem">Jovem</label>
 				</div>
 			</div>
 			<div class="row">
@@ -33,5 +38,6 @@
 
 </div>
 
+<c:import url="../../../partials/js.jsp"></c:import>
 <c:import url="../../../partials/footer.jsp"></c:import>
 <c:import url="../../../partials/final.jsp"></c:import>

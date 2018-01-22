@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.net.ipp.daos.aprendizes.HistoricoRepository;
+import br.net.ipp.daos.aprendizes.JovemRepository;
 import br.net.ipp.models.aprendizes.Historico;
+import br.net.ipp.models.aprendizes.Jovem;
 
 @Controller
 @Transactional
@@ -21,18 +23,30 @@ import br.net.ipp.models.aprendizes.Historico;
 public class HistoricoController {
 
 	private HistoricoRepository historicoRepository;
+	private JovemRepository jovemRepository;
 	
 	@Autowired
 	public void HistoricoEndPoint(
-			HistoricoRepository historicoRepository
+			HistoricoRepository historicoRepository,
+			JovemRepository jovemRepository
 			) {
 		this.historicoRepository = historicoRepository;
+		this.jovemRepository = jovemRepository;
 	}
 
 	@GetMapping("/form")
 	public ModelAndView historico(Historico historico) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/historicos/historico");
 		modelAndView.addObject("historico", historico);
+		return modelAndView;
+	}
+	
+	@GetMapping("/form/{id}")
+	public ModelAndView historicoJovem(Historico historico, @PathVariable Long id) {
+		ModelAndView modelAndView = new ModelAndView("aprendizes/historicos/historico");
+		Jovem jovem = jovemRepository.findOne(id);
+		modelAndView.addObject("historico", historico);
+		modelAndView.addObject("jovem", jovem);
 		return modelAndView;
 	}
 

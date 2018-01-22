@@ -11,14 +11,20 @@
 <div class="container" id="main-container-content">
 
 	<div class="row">
-		<h2>Histórico</h2>
+		<div class="input-field  s12 col l12" style="border-top: 2px solid orange;">
+			 <h4 class="header right orange-text">Histórico: <a class="header right" href="/jovens/${historico.jovem != null ? historico.jovem.id : jovem.id}">${historico.jovem != null ? historico.jovem.nome : jovem.nome}</a></h4>
+		</div>
+	</div>
+	
+	<div class="row">
 		<form:form role="form" commandName="historico" servletRelativeAction="/historicos/${historico.id}" method="POST"
 			class="col s12">
 			<div class="row">
 				<div class="input-field s12 col l12">
-					<form:input path='observacoes' type='text'/>
+					<form:textarea path='observacoes' />
 					<form:errors path='observacoes'/> 
 					<label for="observacoes">Observações</label>
+					<form:hidden path="jovem" value="${jovem.id}" />
 				</div>
 			</div>
 			<div class="row">
@@ -33,5 +39,6 @@
 
 </div>
 
+<c:import url="../../../partials/js.jsp"></c:import>
 <c:import url="../../../partials/footer.jsp"></c:import>
 <c:import url="../../../partials/final.jsp"></c:import>

@@ -1,3 +1,4 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -9,7 +10,7 @@
           <tr>
             <th>ID</th>
             <th>NOME</th>
-            <th class="hide-on-small-only">TURMAS</th>
+            <th class="hide-on-small-only">Nome do Curso</th>
             <th class="hide-on-small-only">STATUS</th>
             <th class="td-icon">EDITAR</th>
           </tr>
@@ -20,7 +21,7 @@
             <td>${curso.id}</td>
             <td>${curso.nomeDoCurso}</td>
             <td class="hide-on-small-only"></td>
-            <td class="hide-on-small-only">${curso.statusDoCurso}</td>
+            <td class="hide-on-small-only">${curso.status}</td>
             <td class="td-icon"><a href="/cursos/${curso.id}"><i class="material-icons" >border_color</i></a></td>
           </tr>
           </c:forEach>

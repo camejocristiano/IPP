@@ -19,6 +19,8 @@ $(document).ready(function() {
     $('#tabelaMatriculas').DataTable();
     $('#tabelaTurmas').DataTable();
     
+    // Tabelas de Frequência
+    
     $('#tabelaUsuarios').DataTable();
     $('#tabelaUnidades').DataTable();
     $('#tabelaGruposDePermissoes').DataTable();
@@ -31,4 +33,14 @@ $(document).ready(function() {
     $('#tabelaSetores').DataTable();
     $('#tabelaContatos').DataTable();
     $('#tabelaRepresentantes').DataTable();
+    
+    $('#tabelaParametros').DataTable();
+    $('#tabelaDemonstrativos').DataTable();
+    $('#tabelaVRs').DataTable();
+    $('#tabelaVTs').DataTable();
+    $('#tabelaSalarios13').DataTable();
+    $('#tabelaContasAPagar').DataTable();
+    $('#tabelaContasAReceber').DataTable();
+    $('#tabelaBancos').DataTable();
+
 } );

@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 
+import br.net.ipp.enums.AEDiaDaSemana;
 import br.net.ipp.enums.Frequencia;
 import br.net.ipp.enums.MesEnum;
 import br.net.ipp.models.AbstractEntity;
@@ -20,6 +21,7 @@ public class PAP extends AbstractEntity {
 	private Curso curso;
 	private Date data;
 	private MesEnum mes;
+	private AEDiaDaSemana aeDiaDaSemana;
 	
 	private String semana01;
 	private Frequencia semana01Manha;
@@ -185,6 +187,12 @@ public class PAP extends AbstractEntity {
 	}
 	public void setM_Frequencia(Frequencia m_Frequencia) {
 		this.m_Frequencia = m_Frequencia;
+	}
+	public AEDiaDaSemana getAeDiaDaSemana() {
+		return aeDiaDaSemana;
+	}
+	public void setAeDiaDaSemana(AEDiaDaSemana aeDiaDaSemana) {
+		this.aeDiaDaSemana = aeDiaDaSemana;
 	}
 
 }

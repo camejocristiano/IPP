@@ -1,16 +1,12 @@
 package br.net.ipp.models.cursos;
 
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 import br.net.ipp.enums.Status;
+import br.net.ipp.enums.StatusPAP;
 import br.net.ipp.models.AbstractEntity;
 import br.net.ipp.models.configuracoes.Unidade;
 
@@ -18,32 +14,36 @@ import br.net.ipp.models.configuracoes.Unidade;
 public class Curso  extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
-
+	
 	private ArcoOcupacional arcoOcupacional;
 	private String articulacaoComOutrasAreas;
 	private String atividadePraticas;
 	private String cargaHorariaTotal;
 	private String cargaHorarioSemanal;
+	@ManyToOne
 	private CBO cBO;
-	@OneToMany
+	/*@OneToMany
 	private List<ConteudoTeoricoBasico> conteudosTeoricosBasicos;
 	@OneToMany
 	private List<ConteudoTeoricoEspecifico> conteudosTeoricosEspecificos;
-	private Date dataDoCadastro;
-	private Boolean livre;
+	*/private Date dataDoCadastro;
+	private boolean livre;
+	private boolean pap;
+	private StatusPAP statusPAP;
 	private String nomeDoCurso;
 	private String numeroDoCurso;
-	private Boolean pAP;
+	
 	private String publicoAlvo;
 	private String resumo;
-	private Status statusDoCurso;
+	private Status status;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "curso_unidade", joinColumns = @JoinColumn(name = "curso_id", referencedColumnName = "id"), 
-    inverseJoinColumns = @JoinColumn(name = "unidade_id", referencedColumnName = "id"))
-	private List<Unidade> unidades;
+	@ManyToOne
+	private Unidade unidade;
+	/*
 	@OneToMany
 	private List<Validacao> validacoes;
+	*/
+	
 	
 	public ArcoOcupacional getArcoOcupacional() {
 		return arcoOcupacional;
@@ -75,7 +75,7 @@ public class Curso  extends AbstractEntity {
 	public void setCargaHorarioSemanal(String cargaHorarioSemanal) {
 		this.cargaHorarioSemanal = cargaHorarioSemanal;
 	}
-	public CBO getcBO() {
+	/*	public CBO getcBO() {
 		return cBO;
 	}
 	public void setcBO(CBO cBO) {
@@ -92,18 +92,12 @@ public class Curso  extends AbstractEntity {
 	}
 	public void setConteudosTeoricosEspecificos(List<ConteudoTeoricoEspecifico> conteudosTeoricosEspecificos) {
 		this.conteudosTeoricosEspecificos = conteudosTeoricosEspecificos;
-	}
+	}*/
 	public Date getDataDoCadastro() {
 		return dataDoCadastro;
 	}
 	public void setDataDoCadastro(Date dataDoCadastro) {
 		this.dataDoCadastro = dataDoCadastro;
-	}
-	public Boolean getLivre() {
-		return livre;
-	}
-	public void setLivre(Boolean livre) {
-		this.livre = livre;
 	}
 	public String getNomeDoCurso() {
 		return nomeDoCurso;
@@ -117,12 +111,6 @@ public class Curso  extends AbstractEntity {
 	public void setNumeroDoCurso(String numeroDoCurso) {
 		this.numeroDoCurso = numeroDoCurso;
 	}
-	public Boolean getpAP() {
-		return pAP;
-	}
-	public void setpAP(Boolean pAP) {
-		this.pAP = pAP;
-	}
 	public String getPublicoAlvo() {
 		return publicoAlvo;
 	}
@@ -135,23 +123,48 @@ public class Curso  extends AbstractEntity {
 	public void setResumo(String resumo) {
 		this.resumo = resumo;
 	}
-	public Status getStatusDoCurso() {
-		return statusDoCurso;
+	public Status getStatus() {
+		return status;
 	}
-	public void setStatusDoCurso(Status statusDoCurso) {
-		this.statusDoCurso = statusDoCurso;
+	public void setStatus(Status status) {
+		this.status = status;
 	}
-	public List<Unidade> getUnidades() {
-		return unidades;
+	public Unidade getUnidade() {
+		return unidade;
 	}
-	public void setUnidades(List<Unidade> unidades) {
-		this.unidades = unidades;
+	public void setUnidade(Unidade unidade) {
+		this.unidade = unidade;
 	}
-	public List<Validacao> getValidacoes() {
+	/*	public List<Validacao> getValidacoes() {
 		return validacoes;
 	}
 	public void setValidacoes(List<Validacao> validacoes) {
 		this.validacoes = validacoes;
+	}*/
+
+	public boolean isLivre() {
+		return livre;
+	}
+	public void setLivre(boolean livre) {
+		this.livre = livre;
+	}
+	public boolean isPap() {
+		return pap;
+	}
+	public void setPap(boolean pap) {
+		this.pap = pap;
+	}
+	public StatusPAP getStatusPAP() {
+		return statusPAP;
+	}
+	public void setStatusPAP(StatusPAP statusPAP) {
+		this.statusPAP = statusPAP;
+	}
+	public CBO getcBO() {
+		return cBO;
+	}
+	public void setcBO(CBO cBO) {
+		this.cBO = cBO;
 	}
 
 }

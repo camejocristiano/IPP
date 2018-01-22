@@ -1,13 +1,10 @@
 package br.net.ipp.models.configuracoes;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import br.net.ipp.enums.Status;
 import br.net.ipp.models.AbstractEntity;
 
 @Entity
@@ -15,11 +12,11 @@ public class Unidade extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
+	private String nomeFantazia;
 	@NotEmpty
 	@Column(unique = true)
 	private String email;
-	private String nomeFantazia;
-	private String razaoSocial;
+	/*private String razaoSocial;
 	private Status status;
 	private String cNPJ;
 	private String fax;
@@ -31,21 +28,21 @@ public class Unidade extends AbstractEntity {
 	private String bairro;
 	private String cidade;
 	private String estado;
-	private String cEP;
+	private String cEP;*/
 	
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	public String getNomeFantazia() {
 		return nomeFantazia;
 	}
 	public void setNomeFantazia(String nomeFantazia) {
 		this.nomeFantazia = nomeFantazia;
 	}
-	public String getRazaoSocial() {
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	/*public String getRazaoSocial() {
 		return razaoSocial;
 	}
 	public void setRazaoSocial(String razaoSocial) {
@@ -122,6 +119,6 @@ public class Unidade extends AbstractEntity {
 	}
 	public void setcEP(String cEP) {
 		this.cEP = cEP;
-	}
+	}*/
 	
 }

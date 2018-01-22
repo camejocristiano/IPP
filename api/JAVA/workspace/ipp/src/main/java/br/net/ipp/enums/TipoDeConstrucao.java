@@ -5,5 +5,6 @@ public enum TipoDeConstrucao {
 	BLOCO,
 	MADEIRA,
 	ACABADO,
+	MISTA,
 	SEMI_ACABADO;
 }

@@ -20,6 +20,7 @@ import br.net.ipp.daos.configuracoes.GrupoDePermissoesRepository;
 import br.net.ipp.daos.configuracoes.UnidadeRepository;
 import br.net.ipp.enums.Status;
 import br.net.ipp.models.configuracoes.GrupoDePermissoes;
+import br.net.ipp.models.frequencias.PITEPIP;
 
 @Controller
 @Transactional
@@ -27,7 +28,6 @@ import br.net.ipp.models.configuracoes.GrupoDePermissoes;
 public class GruposDePermissoesEndpoint {
 
 	private GrupoDePermissoesRepository grupoDePermissoesDAO;
-	
 	private UnidadeRepository unidadesDAO;
 
 	@Autowired
@@ -45,6 +45,7 @@ public class GruposDePermissoesEndpoint {
 		List<String> status = carregarStatus();
 		modelAndView.addObject("status", status);
 		modelAndView.addObject("unidades", unidadesDAO.findAll());
+		modelAndView.addObject("pitepip", new PITEPIP());
 		return modelAndView;
 	}
 

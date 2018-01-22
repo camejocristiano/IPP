@@ -1,53 +1,66 @@
 package br.net.ipp.models.aprendizes;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.models.AbstractEntity;
+import br.net.ipp.models.configuracoes.Usuario;
 
 @Entity
 public class SituacaoDeSaude  extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
-/*	private String alergiasContraIndicacoes;
-	private Boolean asma;
-	private Boolean cardiopatias;
+	private String alergiasContraIndicacoes;
+	private boolean asma;
+	private boolean cardiopatias;
 	private String convenioMedicoFamiliar;
-	private Boolean convulcoes;
+	private boolean convulcoes;
+	@Column(name = "dataDaEntrevista")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy") 
 	private Date dataDaEntrevista;
-	private Boolean desmaios;
-	private Boolean diabetes;
+	private boolean desmaios;
+	private boolean diabetes;
 	private String emCasoDeEmergenciaGrauDeParentesco;
 	private String emCasoDeEmergenciaNome;
 	private String emCasoDeEmergenciaTelefones;
-	private Boolean enxaqueca;
-	private Boolean epilepsia;
-	private Boolean fornecidoPelaEmpresa;
+	private boolean enxaqueca;
+	private boolean epilepsia;
+	private boolean fornecidoPelaEmpresa;
 	private String grauDeParentesco;
-	private Boolean hipoglicemia;
+	private boolean hipoglicemia;
 	private String medicamentosEmUso;
 	private String nomeDoEntrevistado;
 	private String outrasDoencas;
-	private Boolean possuiConvenioMedicoFamiliar;
+	private boolean possuiConvenioMedicoFamiliar;
+	private String sePossuiQual;
+	private String situacaoDeSaudeObservacoes;
+	@ManyToOne
 	private Usuario quemEntrevistou;
-*/	private String situacaoDeSaudeObservacoes;
+	@ManyToOne
+	private Jovem jovem;
 	
-/*	public String getAlergiasContraIndicacoes() {
+	public String getAlergiasContraIndicacoes() {
 		return alergiasContraIndicacoes;
 	}
 	public void setAlergiasContraIndicacoes(String alergiasContraIndicacoes) {
 		this.alergiasContraIndicacoes = alergiasContraIndicacoes;
 	}
-	public Boolean getAsma() {
+	public boolean isAsma() {
 		return asma;
 	}
-	public void setAsma(Boolean asma) {
+	public void setAsma(boolean asma) {
 		this.asma = asma;
 	}
-	public Boolean getCardiopatias() {
+	public boolean isCardiopatias() {
 		return cardiopatias;
 	}
-	public void setCardiopatias(Boolean cardiopatias) {
+	public void setCardiopatias(boolean cardiopatias) {
 		this.cardiopatias = cardiopatias;
 	}
 	public String getConvenioMedicoFamiliar() {
@@ -56,10 +69,10 @@ public class SituacaoDeSaude  extends AbstractEntity {
 	public void setConvenioMedicoFamiliar(String convenioMedicoFamiliar) {
 		this.convenioMedicoFamiliar = convenioMedicoFamiliar;
 	}
-	public Boolean getConvulcoes() {
+	public boolean isConvulcoes() {
 		return convulcoes;
 	}
-	public void setConvulcoes(Boolean convulcoes) {
+	public void setConvulcoes(boolean convulcoes) {
 		this.convulcoes = convulcoes;
 	}
 	public Date getDataDaEntrevista() {
@@ -68,16 +81,16 @@ public class SituacaoDeSaude  extends AbstractEntity {
 	public void setDataDaEntrevista(Date dataDaEntrevista) {
 		this.dataDaEntrevista = dataDaEntrevista;
 	}
-	public Boolean getDesmaios() {
+	public boolean isDesmaios() {
 		return desmaios;
 	}
-	public void setDesmaios(Boolean desmaios) {
+	public void setDesmaios(boolean desmaios) {
 		this.desmaios = desmaios;
 	}
-	public Boolean getDiabetes() {
+	public boolean isDiabetes() {
 		return diabetes;
 	}
-	public void setDiabetes(Boolean diabetes) {
+	public void setDiabetes(boolean diabetes) {
 		this.diabetes = diabetes;
 	}
 	public String getEmCasoDeEmergenciaGrauDeParentesco() {
@@ -98,22 +111,22 @@ public class SituacaoDeSaude  extends AbstractEntity {
 	public void setEmCasoDeEmergenciaTelefones(String emCasoDeEmergenciaTelefones) {
 		this.emCasoDeEmergenciaTelefones = emCasoDeEmergenciaTelefones;
 	}
-	public Boolean getEnxaqueca() {
+	public boolean isEnxaqueca() {
 		return enxaqueca;
 	}
-	public void setEnxaqueca(Boolean enxaqueca) {
+	public void setEnxaqueca(boolean enxaqueca) {
 		this.enxaqueca = enxaqueca;
 	}
-	public Boolean getEpilepsia() {
+	public boolean isEpilepsia() {
 		return epilepsia;
 	}
-	public void setEpilepsia(Boolean epilepsia) {
+	public void setEpilepsia(boolean epilepsia) {
 		this.epilepsia = epilepsia;
 	}
-	public Boolean getFornecidoPelaEmpresa() {
+	public boolean isFornecidoPelaEmpresa() {
 		return fornecidoPelaEmpresa;
 	}
-	public void setFornecidoPelaEmpresa(Boolean fornecidoPelaEmpresa) {
+	public void setFornecidoPelaEmpresa(boolean fornecidoPelaEmpresa) {
 		this.fornecidoPelaEmpresa = fornecidoPelaEmpresa;
 	}
 	public String getGrauDeParentesco() {
@@ -122,10 +135,10 @@ public class SituacaoDeSaude  extends AbstractEntity {
 	public void setGrauDeParentesco(String grauDeParentesco) {
 		this.grauDeParentesco = grauDeParentesco;
 	}
-	public Boolean getHipoglicemia() {
+	public boolean isHipoglicemia() {
 		return hipoglicemia;
 	}
-	public void setHipoglicemia(Boolean hipoglicemia) {
+	public void setHipoglicemia(boolean hipoglicemia) {
 		this.hipoglicemia = hipoglicemia;
 	}
 	public String getMedicamentosEmUso() {
@@ -146,11 +159,23 @@ public class SituacaoDeSaude  extends AbstractEntity {
 	public void setOutrasDoencas(String outrasDoencas) {
 		this.outrasDoencas = outrasDoencas;
 	}
-	public Boolean getPossuiConvenioMedicoFamiliar() {
+	public boolean isPossuiConvenioMedicoFamiliar() {
 		return possuiConvenioMedicoFamiliar;
 	}
-	public void setPossuiConvenioMedicoFamiliar(Boolean possuiConvenioMedicoFamiliar) {
+	public void setPossuiConvenioMedicoFamiliar(boolean possuiConvenioMedicoFamiliar) {
 		this.possuiConvenioMedicoFamiliar = possuiConvenioMedicoFamiliar;
+	}
+	public String getSePossuiQual() {
+		return sePossuiQual;
+	}
+	public void setSePossuiQual(String sePossuiQual) {
+		this.sePossuiQual = sePossuiQual;
+	}
+	public String getSituacaoDeSaudeObservacoes() {
+		return situacaoDeSaudeObservacoes;
+	}
+	public void setSituacaoDeSaudeObservacoes(String situacaoDeSaudeObservacoes) {
+		this.situacaoDeSaudeObservacoes = situacaoDeSaudeObservacoes;
 	}
 	public Usuario getQuemEntrevistou() {
 		return quemEntrevistou;
@@ -158,11 +183,14 @@ public class SituacaoDeSaude  extends AbstractEntity {
 	public void setQuemEntrevistou(Usuario quemEntrevistou) {
 		this.quemEntrevistou = quemEntrevistou;
 	}
-*/	public String getSituacaoDeSaudeObservacoes() {
-		return situacaoDeSaudeObservacoes;
+	public Jovem getJovem() {
+		return jovem;
 	}
-	public void setSituacaoDeSaudeObservacoes(String situacaoDeSaudeObservacoes) {
-		this.situacaoDeSaudeObservacoes = situacaoDeSaudeObservacoes;
+	public void setJovem(Jovem jovem) {
+		this.jovem = jovem;
 	}
-	
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 }

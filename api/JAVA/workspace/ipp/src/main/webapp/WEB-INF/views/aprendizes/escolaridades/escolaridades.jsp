@@ -23,10 +23,11 @@
           </tbody>
           
       </table> 
-      
+            <c:if test="${empty escolaridades}">
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/escolaridades/form">
+                href="/escolaridades/form/${requestScope.jovem.id}">
                 <i class="material-icons">add</i>
             </a>
          </div>
+         </c:if>

@@ -8,7 +8,7 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>TESTE</th>
+            <th>JOVEM</th>
             <th class="td-icon">EDITAR</th>
           </tr>
         </thead>
@@ -16,17 +16,18 @@
         <c:forEach var="financeiro" items="${requestScope.dadosFinanceiros}">
           <tr>
             <td>${financeiro.id}</td>
-            <td>${financeiro.testDadosFinanceiros}</td>
+            <td>${financeiro.dadosSalariais_salarioRS}</td>
             <td class="td-icon"><a href="/dadosFinanceiros/${financeiro.id}"><i class="material-icons" >border_color</i></a></td>
           </tr>
           </c:forEach>
           </tbody>
           
       </table> 
-      
+      <c:if test="${empty dadosFinanceiros}">
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/dadosFinanceiros/form">
+                href="/dadosFinanceiros/form/${jovem.id}">
                 <i class="material-icons">add</i>
             </a>
          </div>
+         </c:if>

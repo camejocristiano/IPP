@@ -1,5 +1,9 @@
 package br.net.ipp.controllers.cursos;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -12,9 +16,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.net.ipp.daos.configuracoes.UnidadeRepository;
+import br.net.ipp.daos.cursos.ArcoOcupacionalRepository;
+import br.net.ipp.daos.cursos.CBORepository;
+import br.net.ipp.daos.cursos.ConteudoTeoricoBasicoRepository;
+import br.net.ipp.daos.cursos.ConteudoTeoricoEspecificoRepository;
 import br.net.ipp.daos.cursos.CursoRepository;
 import br.net.ipp.daos.cursos.MatriculaRepository;
 import br.net.ipp.daos.cursos.TurmaRepository;
+import br.net.ipp.daos.cursos.ValidacaoRepository;
+import br.net.ipp.enums.Status;
+import br.net.ipp.enums.StatusPAP;
 import br.net.ipp.models.cursos.Curso;
 
 @Controller
@@ -25,40 +37,74 @@ public class CursoController {
 private CursoRepository cursoRepository;
 private TurmaRepository turmaRepository;
 private MatriculaRepository matriculaRepository;
-	
+private CBORepository cboRepository;
+private UnidadeRepository unidadeRepository;
+private ArcoOcupacionalRepository arcoOcupacionalRepository;
+private ConteudoTeoricoBasicoRepository conteudoTeoricoBasicoRepository;
+private ConteudoTeoricoEspecificoRepository conteudoTeoricoEspecificoRepository;
+private ValidacaoRepository validacaoRepository;
+
 	@Autowired
 	public void CursoEndPoint(
 			CursoRepository cursoRepository,
 			TurmaRepository turmaRepository,
-			MatriculaRepository matriculaRepository
+			MatriculaRepository matriculaRepository,
+			CBORepository cboRepository,
+			UnidadeRepository unidadeRepository,
+			ArcoOcupacionalRepository arcoOcupacionalRepository,
+			ConteudoTeoricoBasicoRepository conteudoTeoricoBasicoRepository,
+			ConteudoTeoricoEspecificoRepository conteudoTeoricoEspecificoRepository,
+			ValidacaoRepository validacaoRepository
 			) {
 		this.cursoRepository = cursoRepository;
 		this.turmaRepository = turmaRepository;
 		this.matriculaRepository = matriculaRepository;
+		this.cboRepository = cboRepository;
+		this.unidadeRepository = unidadeRepository;
+		this.arcoOcupacionalRepository = arcoOcupacionalRepository;
+		this.conteudoTeoricoBasicoRepository = conteudoTeoricoBasicoRepository;
+		this.conteudoTeoricoEspecificoRepository = conteudoTeoricoEspecificoRepository;
+		this.validacaoRepository = validacaoRepository;
+		
+		
 	}
 
 	@GetMapping("/form")
 	public ModelAndView curso(Curso curso) {
 		ModelAndView modelAndView = new ModelAndView("cursos/cursos/curso");
 		modelAndView.addObject("curso", curso);
-		modelAndView.addObject("turmas", turmaRepository.findAll());
-		modelAndView.addObject("matriculas", matriculaRepository.findAll());
+		List<String> status = carregarStatus();
+		modelAndView.addObject("status", status);
+		List<String> statusPAP = carregarStatusPAP();
+		modelAndView.addObject("statusPAP", statusPAP);
+		modelAndView.addObject("cBOs", cboRepository.findAll());
+		modelAndView.addObject("unidades", unidadeRepository.findAll());
 		
 		return modelAndView;
 	}
 
 	@PostMapping
 	public ModelAndView save(@Valid Curso curso, BindingResult bindingResult) {
-		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("curso", curso);
+			List<String> status = carregarStatus();
+			modelAndView.addObject("status", status);
+			List<String> statusPAP = carregarStatusPAP();
+			modelAndView.addObject("statusPAP", statusPAP);
+			modelAndView.addObject("cBOs", cboRepository.findAll());			
+			modelAndView.addObject("unidades", unidadeRepository.findAll());
 		} else {
 			cursoRepository.save(curso);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 			modelAndView.addObject("curso", curso);
-			this.load(curso.getId());
+			List<String> status = carregarStatus();
+			modelAndView.addObject("status", status);
+			List<String> statusPAP = carregarStatusPAP();
+			modelAndView.addObject("statusPAP", statusPAP);
+			modelAndView.addObject("cBOs", cboRepository.findAll());
+			modelAndView.addObject("unidades", unidadeRepository.findAll());
 		}		
 		return modelAndView;
 	}
@@ -68,24 +114,63 @@ private MatriculaRepository matriculaRepository;
 		ModelAndView modelAndView = new ModelAndView("cursos/cursos/curso");
 		Curso curso = cursoRepository.findOne(id);
 		modelAndView.addObject("curso", curso);
-		modelAndView.addObject("turmas", turmaRepository.findAll());
+		modelAndView.addObject("turmas", turmaRepository.findAllByCurso(curso));
 		modelAndView.addObject("matriculas", matriculaRepository.findAll());
+		List<String> status = carregarStatus();
+		modelAndView.addObject("status", status);
+		List<String> statusPAP = carregarStatusPAP();
+		modelAndView.addObject("statusPAP", statusPAP);
+		modelAndView.addObject("cbos", cboRepository.findAll());
+		modelAndView.addObject("arcos", arcoOcupacionalRepository.findAll());
+		modelAndView.addObject("unidades", unidadeRepository.findAll());
+		modelAndView.addObject("basicos", conteudoTeoricoBasicoRepository.findAll());
+		modelAndView.addObject("especificos", conteudoTeoricoEspecificoRepository.findAll());
+		modelAndView.addObject("validacoes", validacaoRepository.findAll());
 		return modelAndView;
 	}
 	
 	@PostMapping("/{id}")
 	public ModelAndView update(@Valid Curso curso, BindingResult bindingResult) {
-		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("curso", curso);
+			List<String> status = carregarStatus();
+			modelAndView.addObject("status", status);
+			List<String> statusPAP = carregarStatusPAP();
+			modelAndView.addObject("statusPAP", statusPAP);
+			modelAndView.addObject("cBOs", cboRepository.findAll());
+			modelAndView.addObject("unidades", unidadeRepository.findAll());
 		} else {
 			cursoRepository.save(curso);
 			modelAndView.addObject("curso", curso);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
+			List<String> status = carregarStatus();
+			modelAndView.addObject("status", status);
+			List<String> statusPAP = carregarStatusPAP();
+			modelAndView.addObject("statusPAP", statusPAP);
+			modelAndView.addObject("cBOs", cboRepository.findAll());
+			modelAndView.addObject("unidades", unidadeRepository.findAll());
 		}	
 		return modelAndView;
+	}
+	
+	public List<String> carregarStatus() {
+		List<Status> lista = Arrays.asList(Status.values());
+		List<String> status = new ArrayList<String>();
+		for (int i = 0; i < lista.size(); i++) {
+			status.add(lista.get(i).name());
+		}
+		return status;
+	}
+	
+	public List<String> carregarStatusPAP() {
+		List<StatusPAP> lista = Arrays.asList(StatusPAP.values());
+		List<String> statusPAP = new ArrayList<String>();
+		for (int i = 0; i < lista.size(); i++) {
+			statusPAP.add(lista.get(i).name());
+		}
+		return statusPAP;
 	}
 	
 }

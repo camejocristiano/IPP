@@ -8,11 +8,8 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>NOME</th>
-            <th>USERNAME</th>
-            <th>ADMIN</th>
-            <th class="td-icon">TELEFONE</th>
-            <th class="td-icon">STATUS</th>
+            <th>NOME FANTAZIA</th>
+            <th>E-MAIL</th>
             <th class="td-icon">EDITAR</th>
           </tr>
         </thead>
@@ -21,10 +18,7 @@
           <tr>
             <td>${unidade.id}</td>
             <td>${unidade.nomeFantazia}</td>
-            <td>${unidade.razaoSocial}</td>
             <td>${unidade.email}</td>
-            <td class="td-icon">11 879 546 213</td>
-            <td class="td-icon">ATIVO</td>
             <td class="td-icon"><a href="/unidades/${unidade.id}"><i class="material-icons" >border_color</i></a></td>
           </tr>
           </c:forEach>
@@ -34,7 +28,7 @@
       
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/unidade">
+                href="/unidades/form">
                 <i class="material-icons">add</i>
             </a>
          </div>

@@ -4,22 +4,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<table id="tabelaCanais" class="display" width="100%" cellspacing="0">
+<table id="tabelaBancos" class="display" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>ID</th>
-            <th>CANAL</th>
-            <th>JOVEM</th>
+            <th>TESTE</th>
             <th class="td-icon">EDITAR</th>
           </tr>
         </thead>
         <tbody>
-        <c:forEach var="canal" items="${requestScope.canais}">
+        <c:forEach var="banco" items="${requestScope.bancos}">
           <tr>
-            <td>${canal.id}</td>
-            <td>${canal.canal}</td>
-            <td>${canal.jovem}</td>
-            <td class="td-icon"><a href="/canais/${canal.id}"><i class="material-icons" >border_color</i></a></td>
+            <td>${banco.id}</td>
+            <td>${banco.test}</td>
+            <td class="td-icon"><a href="/bancos/${banco.id}"><i class="material-icons" >border_color</i></a></td>
           </tr>
           </c:forEach>
           </tbody>
@@ -28,7 +26,7 @@
       
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/canal">
+                href="/bancos/form">
                 <i class="material-icons">add</i>
             </a>
          </div>

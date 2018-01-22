@@ -1,5 +1,9 @@
 package br.net.ipp.controllers.aprendizes;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -14,6 +18,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.net.ipp.daos.aprendizes.ContratacaoRepository;
 import br.net.ipp.daos.aprendizes.JovemRepository;
+import br.net.ipp.daos.cursos.CursoRepository;
+import br.net.ipp.daos.empresas.EmpresaRepository;
+import br.net.ipp.daos.empresas.GestorRepository;
+import br.net.ipp.enums.TipoDeContratacao;
 import br.net.ipp.models.aprendizes.Contratacao;
 import br.net.ipp.models.aprendizes.Jovem;
 
@@ -24,18 +32,43 @@ public class ContratacaoController {
 
 	private ContratacaoRepository contratacaoRepository;
 	private JovemRepository jovemRepository;
+	private EmpresaRepository empresaRepository;
+	private GestorRepository gestorRepository;
+	private CursoRepository cursoRepository;
 	
 	@Autowired
 	public void ContratacaoEndPoint(
-			ContratacaoRepository contratacaoRepository
+			ContratacaoRepository contratacaoRepository,
+			JovemRepository jovemRepository,
+			EmpresaRepository empresaRepository,
+			GestorRepository gestorRepository,
+			CursoRepository cursoRepository
 			) {
 		this.contratacaoRepository = contratacaoRepository;
+		this.jovemRepository = jovemRepository;
+		this.empresaRepository = empresaRepository;
+		this.gestorRepository = gestorRepository;
+		this.cursoRepository = cursoRepository;
 	}
 
 	@GetMapping("/form")
 	public ModelAndView contratacao(Contratacao contratacao) {
-		ModelAndView modelAndView = new ModelAndView("aprendizes/contratacoes/contratacao");
+		ModelAndView modelAndView = new ModelAndView("aprendizes/profissionais/contratacoes/contratacao");
 		modelAndView.addObject("contratacao", contratacao);
+		return modelAndView;
+	}
+	
+	@GetMapping("/form/{id}")
+	public ModelAndView contratacaoJovem(Contratacao contratacao, @PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("aprendizes/profissionais/contratacoes/contratacao");
+		Jovem jovem = jovemRepository.findOne(id);
+		modelAndView.addObject("contratacao", contratacao);
+		modelAndView.addObject("empresas", empresaRepository.findAll());
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("cursos", cursoRepository.findAll());
+		modelAndView.addObject("gestores", gestorRepository.findAll());
+		List<String> tiposDeContratacao = this.carregarTipoDeContratacao();
+		modelAndView.addObject("tiposDeContratacao", tiposDeContratacao);
 		return modelAndView;
 	}
 
@@ -59,9 +92,14 @@ public class ContratacaoController {
 
 	@GetMapping("/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("aprendizes/contratacoes/contratacao");
+		ModelAndView modelAndView = new ModelAndView("aprendizes/profissionais/contratacoes/contratacao");
 		Contratacao contratacao = contratacaoRepository.findOne(id);
 		modelAndView.addObject("contratacao", contratacao);
+		modelAndView.addObject("empresas", empresaRepository.findAll());
+		modelAndView.addObject("cursos", cursoRepository.findAll());
+		modelAndView.addObject("gestores", gestorRepository.findAll());
+		List<String> tiposDeContratacao = this.carregarTipoDeContratacao();
+		modelAndView.addObject("tiposDeContratacao", tiposDeContratacao);
 		return modelAndView;
 	}
 	
@@ -78,6 +116,15 @@ public class ContratacaoController {
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 		}	
 		return modelAndView;
+	}
+	
+	public List<String> carregarTipoDeContratacao() {
+		List<TipoDeContratacao> lista = Arrays.asList(TipoDeContratacao.values());
+		List<String> tiposDeContratacao = new ArrayList<String>();
+		for (int i = 0; i < lista.size(); i++) {
+			tiposDeContratacao.add(lista.get(i).name());
+		}
+		return tiposDeContratacao;
 	}
 	
 }

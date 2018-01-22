@@ -1,13 +1,7 @@
 package br.net.ipp.configuracoes;
 
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.util.Calendar;
-import java.util.List;
-
 import org.junit.Rule;
-import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import br.net.ipp.daos.configuracoes.UnidadeRepository;
-import br.net.ipp.enums.Status;
-import br.net.ipp.models.configuracoes.Unidade;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -28,7 +20,7 @@ public class UnidadeRepositoryTest {
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
 
-	@Test
+	/*@Test
 	public void createShouldPersistData() {
 		Unidade unidade = new Unidade();
 		unidade.setRazaoSocial("IPPTest");
@@ -196,5 +188,5 @@ public class UnidadeRepositoryTest {
         
         
     }
-	
+*/	
 }

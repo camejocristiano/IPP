@@ -1,7 +1,14 @@
 package br.net.ipp.models.aprendizes;
 
-import javax.persistence.Entity;
+import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import br.net.ipp.enums.MotivoDaDispensa;
 import br.net.ipp.models.AbstractEntity;
 
 @Entity
@@ -9,15 +16,20 @@ public class Dispensa extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	private String consideracoesDaDispensa;
-	/*private Date dataDaDispensa;
+	@ManyToOne
+	private Jovem jovem;
+	@Column(name = "dataDaDispensa")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy") 
+	private Date dataDaDispensa;
+	@Column(name = "exameDemissional")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy") 
 	private Date exameDemissional;
-	private Boolean haveraSubstituicao;
+	private MotivoDaDispensa motivoDaDispensa;
+	private String consideracoesDaDispensa;
 	private String informacoesComplementaresDaDispensa;
 	private String justificativaDaDispensa;
-	private MotivoDaDispensa motivoDaDispensa;
 	private Boolean oJovemEstaCienteDaDispensa;
-	public FichaProfissional m_FichaProfissional;*/
+	private Boolean haveraSubstituicao;
 	
 	public String getConsideracoesDaDispensa() {
 		return consideracoesDaDispensa;
@@ -25,7 +37,7 @@ public class Dispensa extends AbstractEntity {
 	public void setConsideracoesDaDispensa(String consideracoesDaDispensa) {
 		this.consideracoesDaDispensa = consideracoesDaDispensa;
 	}
-	/*public Date getDataDaDispensa() {
+	public Date getDataDaDispensa() {
 		return dataDaDispensa;
 	}
 	public void setDataDaDispensa(Date dataDaDispensa) {
@@ -67,11 +79,11 @@ public class Dispensa extends AbstractEntity {
 	public void setoJovemEstaCienteDaDispensa(Boolean oJovemEstaCienteDaDispensa) {
 		this.oJovemEstaCienteDaDispensa = oJovemEstaCienteDaDispensa;
 	}
-	public FichaProfissional getM_FichaProfissional() {
-		return m_FichaProfissional;
+	public Jovem getJovem() {
+		return jovem;
 	}
-	public void setM_FichaProfissional(FichaProfissional m_FichaProfissional) {
-		this.m_FichaProfissional = m_FichaProfissional;
-	}*/
+	public void setJovem(Jovem jovem) {
+		this.jovem = jovem;
+	}
 	
 }

@@ -1,6 +1,9 @@
 package br.net.ipp.models.aprendizes;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 import br.net.ipp.models.AbstractEntity;
 
@@ -10,22 +13,22 @@ public class Escolaridade extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 
 	private String curso;
-/*	private Date anoConclusaoEnsinoMedio;
+	private Date anoConclusaoEnsinoMedio;
 	private Boolean concluiuOEnsinoMedio;
 	private String cursoEnsinoMedio;
 	private Boolean fequentaEscola;
 	private String nomeDaEscola;
 	private String serieAno;
-	public Jovem m_Jovem;*/
-
+	@OneToOne
+	private Jovem jovem;
+	
 	public String getCurso() {
 		return curso;
 	}
 	public void setCurso(String curso) {
 		this.curso = curso;
 	}
-	
-/*	public Date getAnoConclusaoEnsinoMedio() {
+	public Date getAnoConclusaoEnsinoMedio() {
 		return anoConclusaoEnsinoMedio;
 	}
 	public void setAnoConclusaoEnsinoMedio(Date anoConclusaoEnsinoMedio) {
@@ -61,11 +64,16 @@ public class Escolaridade extends AbstractEntity {
 	public void setSerieAno(String serieAno) {
 		this.serieAno = serieAno;
 	}
-	public Jovem getM_Jovem() {
-		return m_Jovem;
+	public Jovem getJovem() {
+		return jovem;
 	}
-	public void setM_Jovem(Jovem m_Jovem) {
-		this.m_Jovem = m_Jovem;
-	}*/
+	public void setJovem(Jovem jovem) {
+		this.jovem = jovem;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
 
 }

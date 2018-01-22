@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.net.ipp.daos.aprendizes.EscolaridadeRepository;
+import br.net.ipp.daos.aprendizes.JovemRepository;
 import br.net.ipp.models.aprendizes.Escolaridade;
+import br.net.ipp.models.aprendizes.Jovem;
 
 @Controller
 @Transactional
@@ -21,18 +23,30 @@ import br.net.ipp.models.aprendizes.Escolaridade;
 public class EscolaridadeController {
 
 	private EscolaridadeRepository escolaridadeRepository;
+	private JovemRepository jovemRepository;
 	
 	@Autowired
 	public void EscolaridadeEndPoint(
-			EscolaridadeRepository escolaridadeRepository
+			EscolaridadeRepository escolaridadeRepository,
+			JovemRepository jovemRepository
 			) {
 		this.escolaridadeRepository = escolaridadeRepository;
+		this.jovemRepository = jovemRepository;
 	}
 
 	@GetMapping("/form")
-	public ModelAndView escolaridade(Escolaridade escolaridade) {
+	public ModelAndView escolaridadeNull(Jovem jovem) {
+		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/form");
+		modelAndView.addObject("jovem", jovem);
+		return modelAndView;
+	}
+	
+	@GetMapping("/form/{id}")
+	public ModelAndView escolaridade(Escolaridade escolaridade, @PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/escolaridades/escolaridade");
+		Jovem jovem = jovemRepository.findOne(id);
 		modelAndView.addObject("escolaridade", escolaridade);
+		modelAndView.addObject("jovem", jovem);
 		return modelAndView;
 	}
 
