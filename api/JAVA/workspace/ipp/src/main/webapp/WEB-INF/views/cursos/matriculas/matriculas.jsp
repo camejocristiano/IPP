@@ -32,6 +32,6 @@
 
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
 	<a class="btn-floating btn-large waves-effect waves-light orange"
-		href="/matriculas/form/${matricula.turma.curso.id}"> <i class="material-icons">add</i>
+		href="/matriculas/form/${requestScope.curso.id}"> <i class="material-icons">add</i>
 	</a>
 </div>

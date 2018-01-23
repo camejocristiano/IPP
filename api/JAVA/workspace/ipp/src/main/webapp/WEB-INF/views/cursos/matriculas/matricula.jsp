@@ -14,7 +14,7 @@
 <h3 class="${requestScope.corMsg} col s12">${requestScope.msg}</h3>
 
 	<div class="row">
-		<form:form role="form" commandName="matricula" servletRelativeAction="/matriculas/${matricula.id}" method="POST">
+		<form:form role="form" commandName="matricula" servletRelativeAction="/matriculas/${matricula.jovem != null ? matricula.id : null}" method="POST">
 
 			<div class="row">
 				<div class="input-field s12 col l4">

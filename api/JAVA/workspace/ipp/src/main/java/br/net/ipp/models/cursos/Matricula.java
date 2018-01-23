@@ -1,7 +1,6 @@
 package br.net.ipp.models.cursos;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -19,7 +18,6 @@ public class Matricula extends AbstractEntity {
 	@ManyToOne
 	private Jovem jovem;
 	@ManyToOne
-	@JoinColumn(name = "turma_id")
 	public Turma turma;
 	
 	

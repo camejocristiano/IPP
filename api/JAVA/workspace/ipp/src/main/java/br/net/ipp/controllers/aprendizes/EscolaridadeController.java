@@ -52,7 +52,7 @@ public class EscolaridadeController {
 
 	@PostMapping
 	public ModelAndView save(@Valid Escolaridade escolaridade, BindingResult bindingResult) {
-		Long id = (long) 1;
+		Long id = escolaridade.getJovem().getId();
 		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
@@ -75,7 +75,7 @@ public class EscolaridadeController {
 	
 	@PostMapping("/{id}")
 	public ModelAndView update(@Valid Escolaridade escolaridade, BindingResult bindingResult) {
-		Long id = (long) 1;
+		Long id = escolaridade.getJovem().getId();
 		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");

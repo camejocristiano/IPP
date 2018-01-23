@@ -18,9 +18,6 @@ import br.net.ipp.models.User;
 import br.net.ipp.models.configuracoes.Canal;
 import br.net.ipp.models.configuracoes.Unidade;
 import br.net.ipp.models.cursos.Turma;
-import br.net.ipp.models.frequencias.AulaExtra;
-import br.net.ipp.models.frequencias.PIO;
-import br.net.ipp.models.frequencias.PITEPIP;
 
 @Entity
 public class Jovem extends User {
@@ -113,11 +110,6 @@ public class Jovem extends User {
 	private Canal canal;
 	@ManyToOne
 	private Unidade unidade;
-	private PITEPIP listaDeFrequencia_PITEPIP;
-	private AulaExtra listaDeFrequencia_AulaExtra;
-	private PIO listaDeFrequencia_PIO;
-	
-	
 	
 	// RELACIONAMENTOS - ENUMS
 	/*
@@ -514,24 +506,6 @@ public class Jovem extends User {
 	}
 	public void setTipoDeInsercao(TipoDeInsercao tipoDeInsercao) {
 		this.tipoDeInsercao = tipoDeInsercao;
-	}
-	public PITEPIP getListaDeFrequencia_PITEPIP() {
-		return listaDeFrequencia_PITEPIP;
-	}
-	public void setListaDeFrequencia_PITEPIP(PITEPIP listaDeFrequencia_PITEPIP) {
-		this.listaDeFrequencia_PITEPIP = listaDeFrequencia_PITEPIP;
-	}
-	public AulaExtra getListaDeFrequencia_AulaExtra() {
-		return listaDeFrequencia_AulaExtra;
-	}
-	public void setListaDeFrequencia_AulaExtra(AulaExtra listaDeFrequencia_AulaExtra) {
-		this.listaDeFrequencia_AulaExtra = listaDeFrequencia_AulaExtra;
-	}
-	public PIO getListaDeFrequencia_PIO() {
-		return listaDeFrequencia_PIO;
-	}
-	public void setListaDeFrequencia_PIO(PIO listaDeFrequencia_PIO) {
-		this.listaDeFrequencia_PIO = listaDeFrequencia_PIO;
 	}
 	public Turma getAETurma() {
 		return aETurma;

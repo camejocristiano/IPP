@@ -5,21 +5,18 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.enums.DiaDaSemana;
-import br.net.ipp.enums.TipoTurma;
+import br.net.ipp.enums.TipoTurmaEnum;
 import br.net.ipp.models.AbstractEntity;
 import br.net.ipp.models.configuracoes.Usuario;
 
 @Entity
-@Table(name="turma")
-public class Turma  extends AbstractEntity {
+public class Turma extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
-	
 	
 	@Column(name = "dataInicioTurma")  
 	@DateTimeFormat(pattern = "dd/mm/yyyy") 
@@ -35,19 +32,13 @@ public class Turma  extends AbstractEntity {
 	@ManyToOne
 	private Curso curso;
 	private String numeroTurma;
-	private TipoTurma tipoTurma;
-
-//	public Jovem jovem;
-//	public PITEPIP m_ListaDeFrequencia_PITEPIP;
-//	public AulaExtra m_ListaDeFrequencia_AulaExtra;
-//	public PAP m_ListaDeFrequencia_PAP;
-//	public PIO m_ListaDeFrequencia_PIO;
+	private TipoTurmaEnum tipoTurma;
 	
-	public Curso getCurso() {
-		return curso;
+	public Date getDataInicioTurma() {
+		return dataInicioTurma;
 	}
-	public void setCurso(Curso curso) {
-		this.curso = curso;
+	public void setDataInicioTurma(Date dataInicioTurma) {
+		this.dataInicioTurma = dataInicioTurma;
 	}
 	public Date getDataFimTurma() {
 		return dataFimTurma;
@@ -55,17 +46,11 @@ public class Turma  extends AbstractEntity {
 	public void setDataFimTurma(Date dataFimTurma) {
 		this.dataFimTurma = dataFimTurma;
 	}
-	public Date getDataInicioTurma() {
-		return dataInicioTurma;
+	public DiaDaSemana getDiaDaSemana() {
+		return diaDaSemana;
 	}
-	public void setDataInicioTurma(Date dataInicioTurma) {
-		this.dataInicioTurma = dataInicioTurma;
-	}
-	public String getHoraFimTurma() {
-		return horaFimTurma;
-	}
-	public void setHoraFimTurma(String horaFimTurma) {
-		this.horaFimTurma = horaFimTurma;
+	public void setDiaDaSemana(DiaDaSemana diaDaSemana) {
+		this.diaDaSemana = diaDaSemana;
 	}
 	public String getHoraInicioTurma() {
 		return horaInicioTurma;
@@ -73,11 +58,11 @@ public class Turma  extends AbstractEntity {
 	public void setHoraInicioTurma(String horaInicioTurma) {
 		this.horaInicioTurma = horaInicioTurma;
 	}
-	public String getNumeroTurma() {
-		return numeroTurma;
+	public String getHoraFimTurma() {
+		return horaFimTurma;
 	}
-	public void setNumeroTurma(String numeroTurma) {
-		this.numeroTurma = numeroTurma;
+	public void setHoraFimTurma(String horaFimTurma) {
+		this.horaFimTurma = horaFimTurma;
 	}
 	public Usuario getOrientadorTurma() {
 		return orientadorTurma;
@@ -85,17 +70,28 @@ public class Turma  extends AbstractEntity {
 	public void setOrientadorTurma(Usuario orientadorTurma) {
 		this.orientadorTurma = orientadorTurma;
 	}
-	public DiaDaSemana getDiaDaSemana() {
-		return diaDaSemana;
+	public Curso getCurso() {
+		return curso;
 	}
-	public void setDiaDaSemana(DiaDaSemana diaDaSemana) {
-		this.diaDaSemana = diaDaSemana;
+	public void setCurso(Curso curso) {
+		this.curso = curso;
 	}
-	public TipoTurma getTipoTurma() {
+	public String getNumeroTurma() {
+		return numeroTurma;
+	}
+	public void setNumeroTurma(String numeroTurma) {
+		this.numeroTurma = numeroTurma;
+	}
+	public TipoTurmaEnum getTipoTurma() {
 		return tipoTurma;
 	}
-	public void setTipoTurma(TipoTurma tipoTurma) {
+	public void setTipoTurma(TipoTurmaEnum tipoTurma) {
 		this.tipoTurma = tipoTurma;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
 	
 }

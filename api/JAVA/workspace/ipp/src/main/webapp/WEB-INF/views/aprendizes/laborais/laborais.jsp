@@ -8,6 +8,11 @@
 <div class="row">
 	<div class="input-field  s12 col l12" style="border-bottom: 2px solid orange;">
 		 <h4 class="header right orange-text">Situações Laborais:</h4>
+		 <c:if test="${empty situacoesLaborais}">
+ 		 <a class="btn-floating btn-large waves-effect waves-light orange" href="/situacoesLaborais/form/${jovem.id}">
+		 	<i class="material-icons">add</i>
+		 </a>
+		 </c:if>
 	</div>
 </div>
 <table id="tabelaUnidades" class="display" width="100%" cellspacing="0">
@@ -28,10 +33,17 @@
           </c:forEach>
     </tbody>
 </table>
-<c:if test="${empty situacoesLaborais}">
-<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-	<a class="btn-floating btn-large waves-effect waves-light orange" href="/situacoesLaborais/form/${jovem.id}">
-		<i class="material-icons">add</i>
-	</a>
+<br />
+<br />
+
+<div class="row">
+	<div class="input-field  s12 col l12" style="border-bottom: 2px solid orange;">
+		 <h4 class="header right orange-text">Aprendizes:</h4>
+ 		 <a class="btn-floating btn-large waves-effect waves-light orange" href="/aprendizes/form/${jovem.id}">
+		 	<i class="material-icons">add</i>
+		 </a>
+	</div>
 </div>
-</c:if>
+<c:import url="../laborais/aprendiz/aprendizes.jsp"></c:import>
+<br />
+<br />

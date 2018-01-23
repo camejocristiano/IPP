@@ -20,6 +20,7 @@ import br.net.ipp.daos.configuracoes.UsuarioRepository;
 import br.net.ipp.daos.cursos.CursoRepository;
 import br.net.ipp.daos.cursos.TurmaRepository;
 import br.net.ipp.enums.DiaDaSemana;
+import br.net.ipp.enums.TipoTurmaEnum;
 import br.net.ipp.models.cursos.Curso;
 import br.net.ipp.models.cursos.Turma;
 
@@ -55,6 +56,8 @@ private UsuarioRepository usuarioRepository;
 		Curso curso = cursoRepository.findOne(id);
 		List<String> diaDaSemana = carregarDiaDaSemana();
 		modelAndView.addObject("diaDaSemana", diaDaSemana);
+		List<String> tiposTurma = carregarTiposTurmaEnum();
+		modelAndView.addObject("tiposTurma", tiposTurma);
 		turma = new Turma();
 		turma.setCurso(curso);
 		modelAndView.addObject("curso", curso);
@@ -87,6 +90,8 @@ private UsuarioRepository usuarioRepository;
 		ModelAndView modelAndView = new ModelAndView("cursos/turmas/turma");
 		Turma turma = turmaRepository.findOne(id);
 		modelAndView.addObject("turma", turma);
+		List<String> tiposTurma = carregarTiposTurmaEnum();
+		modelAndView.addObject("tiposTurma", tiposTurma);
 		List<String> diaDaSemana = carregarDiaDaSemana();
 		modelAndView.addObject("diaDaSemana", diaDaSemana);
 		return modelAndView;
@@ -103,10 +108,10 @@ private UsuarioRepository usuarioRepository;
 			modelAndView.addObject("diaDaSemana", diaDaSemana);
 		} else {
 			turmaRepository.save(turma);
+			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 			modelAndView.addObject("turma", turma);
 			List<String> diaDaSemana = carregarDiaDaSemana();
 			modelAndView.addObject("diaDaSemana", diaDaSemana);
-			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 		}	
 		return modelAndView;
 	}
@@ -118,6 +123,15 @@ private UsuarioRepository usuarioRepository;
 			diaDaSemana.add(lista.get(i).name());
 		}
 		return diaDaSemana;
+	}
+	
+	public List<String> carregarTiposTurmaEnum() {
+		List<TipoTurmaEnum> lista = Arrays.asList(TipoTurmaEnum.values());
+		List<String> tiposTurma = new ArrayList<String>();
+		for (int i = 0; i < lista.size(); i++) {
+			tiposTurma.add(lista.get(i).name());
+		}
+		return tiposTurma;
 	}
 	
 }

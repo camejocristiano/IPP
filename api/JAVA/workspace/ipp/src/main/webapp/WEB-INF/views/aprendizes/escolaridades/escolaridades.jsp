@@ -8,7 +8,7 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Curso</th>
+            <th>JOVEM</th>
             <th class="td-icon">EDITAR</th>
           </tr>
         </thead>
@@ -16,7 +16,7 @@
         <c:forEach var="escolaridade" items="${requestScope.escolaridades}">
           <tr>
             <td>${escolaridade.id}</td>
-            <td>${escolaridade.curso}</td>
+            <td>${escolaridade.jovem.nome}</td>
             <td class="td-icon"><a href="/escolaridades/${escolaridade.id}"><i class="material-icons" >border_color</i></a></td>
           </tr>
           </c:forEach>

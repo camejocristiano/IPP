@@ -31,6 +31,7 @@ import br.net.ipp.daos.aprendizes.FichaProfissionalRepository;
 import br.net.ipp.daos.aprendizes.FichaSocialRepository;
 import br.net.ipp.daos.aprendizes.HabilidadesRepository;
 import br.net.ipp.daos.aprendizes.HistoricoRepository;
+import br.net.ipp.daos.aprendizes.JaFoiAprendizRepository;
 import br.net.ipp.daos.aprendizes.JovemRepository;
 import br.net.ipp.daos.aprendizes.OcorrenciaRepository;
 import br.net.ipp.daos.aprendizes.OutroCursoRepository;
@@ -38,6 +39,7 @@ import br.net.ipp.daos.aprendizes.SituacaoDeSaudeRepository;
 import br.net.ipp.daos.aprendizes.SituacaoLaboralRepository;
 import br.net.ipp.daos.configuracoes.CanalRepository;
 import br.net.ipp.daos.configuracoes.UnidadeRepository;
+import br.net.ipp.daos.cursos.MatriculaRepository;
 import br.net.ipp.enums.Area;
 import br.net.ipp.enums.EstadoCivil;
 import br.net.ipp.enums.Regiao;
@@ -45,7 +47,6 @@ import br.net.ipp.enums.RelacaoFuncional;
 import br.net.ipp.enums.Sexo;
 import br.net.ipp.enums.Status;
 import br.net.ipp.enums.TipoDeInsercao;
-import br.net.ipp.models.aprendizes.Escolaridade;
 import br.net.ipp.models.aprendizes.Jovem;
 import br.net.ipp.models.configuracoes.Unidade;
 
@@ -76,6 +77,8 @@ public class JovemController {
 	private CanalRepository canalRepository;
 	private CaracteristicasDomiciliaresRepository caracteristicasDomiciliaresRepository;
 	private SituacaoLaboralRepository situacaoLaboralRepository;
+	private JaFoiAprendizRepository aprendizRepository;
+	private MatriculaRepository matriculaRepository;
 	
 	@Autowired
 	public void JovemEndPoint(
@@ -100,7 +103,9 @@ public class JovemController {
 			UnidadeRepository unidadeRepository,
 			CanalRepository canalRepository,
 			CaracteristicasDomiciliaresRepository caracteristicasDomiciliaresRepository,
-			SituacaoLaboralRepository situacaoLaboralRepository
+			SituacaoLaboralRepository situacaoLaboralRepository,
+			JaFoiAprendizRepository aprendizRepository,
+			MatriculaRepository matriculaRepository
 			) {
 		this.jovemRepository = jovemRepository;
 		this.contratacaoRepository = contratacaoRepository;
@@ -124,6 +129,8 @@ public class JovemController {
 		this.canalRepository = canalRepository;
 		this.caracteristicasDomiciliaresRepository = caracteristicasDomiciliaresRepository;
 		this.situacaoLaboralRepository = situacaoLaboralRepository;
+		this.aprendizRepository = aprendizRepository;
+		this.matriculaRepository = matriculaRepository;
 	}
 
 	@GetMapping("/form")
@@ -133,7 +140,7 @@ public class JovemController {
 		modelAndView.addObject("contratacoes", contratacaoRepository.findAll());
 		modelAndView.addObject("dispensas", dispensaRepository.findAll());
 		modelAndView.addObject("dadosFinanceiros", dadosFinanceirosRepository.findAll());
-		//modelAndView.addObject("escolaridades", escolaridadeRepository.findAll());
+		modelAndView.addObject("escolaridades", escolaridadeRepository.findAllByJovem(jovem));
 		modelAndView.addObject("familiares", familiarRepository.findAllByJovem(jovem));
 		modelAndView.addObject("fichasProfissionais", fichaProfissionalRepository.findAll());
 		modelAndView.addObject("fichasSociais", fichaSocialRepository.findAllByJovem(jovem));
@@ -150,6 +157,8 @@ public class JovemController {
 		modelAndView.addObject("canais", canalRepository.findAll());
 		modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliaresRepository.findAllByJovem(jovem));
 		modelAndView.addObject("situacoesLaborais", situacaoLaboralRepository.findAllByJovem(jovem));
+		modelAndView.addObject("aprendizes", aprendizRepository.findAllByJovem(jovem));
+		modelAndView.addObject("matriculas", matriculaRepository.findAllByJovem(jovem));
 		modelAndView.addObject("jovem", jovem);
 		List<String> status = this.carregarStatus();
 		modelAndView.addObject("status", status);
@@ -168,15 +177,17 @@ public class JovemController {
 
 	@PostMapping
 	public ModelAndView save(@Valid Jovem jovem, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/");
+		Long id = null;
+		ModelAndView modelAndView = null;
 		if (bindingResult.hasErrors()) {
+			modelAndView = new ModelAndView("redirect:/jovens/");
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("jovem", jovem);
 			modelAndView.addObject("contratacoes", contratacaoRepository.findAll());
 			modelAndView.addObject("dadosFinanceiros", dadosFinanceirosRepository.findAllByJovem(jovem));
 			modelAndView.addObject("dispensas", dispensaRepository.findAll());
 			modelAndView.addObject("entrevistas", entrevistaRepository.findAll());
-			modelAndView.addObject("escolaridades", escolaridadeRepository.findAll());
+			modelAndView.addObject("escolaridades", escolaridadeRepository.findAllByJovem(jovem));
 			modelAndView.addObject("familiares", familiarRepository.findAll());
 			modelAndView.addObject("fichasProfissionais", fichaProfissionalRepository.findAll());
 			modelAndView.addObject("fichasSociais", fichaSocialRepository.findAll());
@@ -195,6 +206,8 @@ public class JovemController {
 			modelAndView.addObject("canais", canalRepository.findAll());
 			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliaresRepository.findAllByJovem(jovem));
 			modelAndView.addObject("situacoesLaborais", situacaoLaboralRepository.findAllByJovem(jovem));
+			modelAndView.addObject("aprendizes", aprendizRepository.findAllByJovem(jovem));
+			modelAndView.addObject("matriculas", matriculaRepository.findAllByJovem(jovem));
 			List<String> status = this.carregarStatus();
 			modelAndView.addObject("status", status);
 			List<String> sexo = this.carregarSexo();
@@ -210,13 +223,16 @@ public class JovemController {
 			
 		} else {
 			jovemRepository.save(jovem);
+			Jovem jov = jovemRepository.findByEmail(jovem.getEmail());
+			id = jov.getId();
+			modelAndView = new ModelAndView("redirect:/jovens/"+id);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 			modelAndView.addObject("jovem", jovem);		
 			modelAndView.addObject("contratacoes", contratacaoRepository.findAll());
 			modelAndView.addObject("dadosFinanceiros", dadosFinanceirosRepository.findAllByJovem(jovem));
 			modelAndView.addObject("dispensas", dispensaRepository.findAll());
 			modelAndView.addObject("entrevistas", entrevistaRepository.findAll());
-			modelAndView.addObject("escolaridades", escolaridadeRepository.findAll());
+			modelAndView.addObject("escolaridades", escolaridadeRepository.findAllByJovem(jovem));
 			modelAndView.addObject("familiares", familiarRepository.findAll());
 			modelAndView.addObject("fichasProfissionais", fichaProfissionalRepository.findAll());
 			modelAndView.addObject("fichasSociais", fichaSocialRepository.findAll());
@@ -235,6 +251,8 @@ public class JovemController {
 			modelAndView.addObject("canais", canalRepository.findAll());
 			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliaresRepository.findAllByJovem(jovem));
 			modelAndView.addObject("situacoesLaborais", situacaoLaboralRepository.findAllByJovem(jovem));
+			modelAndView.addObject("aprendizes", aprendizRepository.findAllByJovem(jovem));
+			modelAndView.addObject("matriculas", matriculaRepository.findAllByJovem(jovem));
 			List<String> status = this.carregarStatus();
 			modelAndView.addObject("status", status);
 			List<String> sexo = this.carregarSexo();
@@ -260,7 +278,7 @@ public class JovemController {
 		modelAndView.addObject("dadosFinanceiros", dadosFinanceirosRepository.findAllByJovem(jovem));
 		modelAndView.addObject("dispensas", dispensaRepository.findAll());
 		modelAndView.addObject("entrevistas", entrevistaRepository.findAll());
-		modelAndView.addObject("escolaridades", escolaridadeRepository.findAll());
+		modelAndView.addObject("escolaridades", escolaridadeRepository.findAllByJovem(jovem));
 		modelAndView.addObject("familiares", familiarRepository.findAll());
 		modelAndView.addObject("fichasProfissionais", fichaProfissionalRepository.findAll());
 		modelAndView.addObject("fichasSociais", fichaSocialRepository.findAll());
@@ -276,11 +294,11 @@ public class JovemController {
 		modelAndView.addObject("unidades", unidadeRepository.findAll());
 		Unidade unidade = unidadeRepository.findOne((long) 1);
 		modelAndView.addObject("unidade", unidade);
-		Escolaridade escolaridade = escolaridadeRepository.findOneByJovem(jovem);
-		modelAndView.addObject("escolaridade", escolaridade);
 		modelAndView.addObject("canais", canalRepository.findAll());
 		modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliaresRepository.findAllByJovem(jovem));
 		modelAndView.addObject("situacoesLaborais", situacaoLaboralRepository.findAllByJovem(jovem));
+		modelAndView.addObject("aprendizes", aprendizRepository.findAllByJovem(jovem));
+		modelAndView.addObject("matriculas", matriculaRepository.findAllByJovem(jovem));
 		List<String> status = this.carregarStatus();
 		modelAndView.addObject("status", status);
 		List<String> sexo = this.carregarSexo();
@@ -307,7 +325,7 @@ public class JovemController {
 			modelAndView.addObject("dadosFinanceiros", dadosFinanceirosRepository.findAllByJovem(jovem));
 			modelAndView.addObject("dispensas", dispensaRepository.findAll());
 			modelAndView.addObject("entrevistas", entrevistaRepository.findAll());
-			//modelAndView.addObject("escolaridades", escolaridadeRepository.findAll());
+			modelAndView.addObject("escolaridades", escolaridadeRepository.findAllByJovem(jovem));
 			modelAndView.addObject("familiares", familiarRepository.findAll());
 			modelAndView.addObject("fichasProfissionais", fichaProfissionalRepository.findAll());
 			modelAndView.addObject("fichasSociais", fichaSocialRepository.findAll());
@@ -323,11 +341,11 @@ public class JovemController {
 			modelAndView.addObject("unidades", unidadeRepository.findAll());
 			Unidade unidade = unidadeRepository.findOne((long) 1);
 			modelAndView.addObject("unidade", unidade);
-			Escolaridade escolaridade = escolaridadeRepository.findOneByJovem(jovem);
-			modelAndView.addObject("escolaridade", escolaridade);
 			modelAndView.addObject("canais", canalRepository.findAll());
 			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliaresRepository.findAllByJovem(jovem));
 			modelAndView.addObject("situacoesLaborais", situacaoLaboralRepository.findAllByJovem(jovem));
+			modelAndView.addObject("aprendizes", aprendizRepository.findAllByJovem(jovem));
+			modelAndView.addObject("matriculas", matriculaRepository.findAllByJovem(jovem));
 			List<String> status = this.carregarStatus();
 			modelAndView.addObject("status", status);
 			List<String> sexo = this.carregarSexo();
@@ -348,7 +366,7 @@ public class JovemController {
 			modelAndView.addObject("dadosFinanceiros", dadosFinanceirosRepository.findAllByJovem(jovem));
 			modelAndView.addObject("dispensas", dispensaRepository.findAll());
 			modelAndView.addObject("entrevistas", entrevistaRepository.findAll());
-			modelAndView.addObject("escolaridades", escolaridadeRepository.findAll());
+			modelAndView.addObject("escolaridades", escolaridadeRepository.findAllByJovem(jovem));
 			modelAndView.addObject("familiares", familiarRepository.findAll());
 			modelAndView.addObject("fichasProfissionais", fichaProfissionalRepository.findAll());
 			modelAndView.addObject("fichasSociais", fichaSocialRepository.findAll());
@@ -364,11 +382,11 @@ public class JovemController {
 			modelAndView.addObject("unidades", unidadeRepository.findAll());
 			Unidade unidade = unidadeRepository.findOne((long) 1);
 			modelAndView.addObject("unidade", unidade);
-			Escolaridade escolaridade = escolaridadeRepository.findOneByJovem(jovem);
-			modelAndView.addObject("escolaridade", escolaridade);
 			modelAndView.addObject("canais", canalRepository.findAll());
 			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliaresRepository.findAllByJovem(jovem));
 			modelAndView.addObject("situacoesLaborais", situacaoLaboralRepository.findAllByJovem(jovem));
+			modelAndView.addObject("aprendizes", aprendizRepository.findAllByJovem(jovem));
+			modelAndView.addObject("matriculas", matriculaRepository.findAllByJovem(jovem));
 			List<String> status = this.carregarStatus();
 			modelAndView.addObject("status", status);
 			List<String> sexo = this.carregarSexo();

@@ -20,66 +20,106 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.net.ipp.daos.cursos.MatriculaRepository;
 import br.net.ipp.daos.cursos.TurmaRepository;
-import br.net.ipp.daos.frequencias.PITEPIPRepository;
-import br.net.ipp.enums.Frequencia;
-import br.net.ipp.enums.TipoTurma;
+import br.net.ipp.daos.frequencias.FrequenciaRepository;
+import br.net.ipp.enums.FrequenciaEnum;
+import br.net.ipp.enums.TipoTurmaEnum;
 import br.net.ipp.models.cursos.Matricula;
 import br.net.ipp.models.cursos.Turma;
-import br.net.ipp.models.frequencias.PITEPIP;
+import br.net.ipp.models.frequencias.Frequencia;
 
 @Controller
 @Transactional
-@RequestMapping("/frequencia")
+@RequestMapping("/frequencias")
 public class FrequenciasController {
 
-	private PITEPIPRepository pITEPIPRepository;
+	private FrequenciaRepository frequenciaRepository;
 	private MatriculaRepository matriculaRepository;
 	private TurmaRepository turmaRepository;
 	Calendar c = Calendar.getInstance();
 	
 	@Autowired
 	public void FrequenciasEndPoint(
-			PITEPIPRepository pITEPIPRepository,
+			FrequenciaRepository frequenciaRepository,
 			MatriculaRepository matriculaRepository,
 			TurmaRepository turmaRepository
 			) {
-		this.pITEPIPRepository = pITEPIPRepository;
+		this.frequenciaRepository = frequenciaRepository;
 		this.matriculaRepository = matriculaRepository;
 		this.turmaRepository = turmaRepository;
 	}
 	
-	@GetMapping("/turma/{id}")
-	public ModelAndView pitEPipTurma(@PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("frequencias/pitsepips/turma");
+	@GetMapping("/mes/{id}")
+	public ModelAndView frequenciaMes(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("frequencias/mes");
+		List<List<Frequencia>> frequencias = new ArrayList<>();
 		Turma turma = turmaRepository.findOne(id);
 		modelAndView.addObject("turma", turma);
 		List<Matricula> matriculas = matriculaRepository.findAllByTurma(turma);
 		modelAndView.addObject("matriculas", matriculas);
-		List<String> frequencias = this.carregarFrequencias();
+		List<Frequencia> cabecalho = new ArrayList<Frequencia>();
+		for (Matricula matricula : matriculas) {
+			cabecalho = frequenciaRepository.findByMatriculaAndMes(matricula, 1);
+			List<Frequencia> freq = frequenciaRepository.findByMatriculaAndMes(matricula, 1);
+			frequencias.add(freq);
+		}
+		modelAndView.addObject("cabecalho", cabecalho);
+		modelAndView.addObject("frequencias", frequencias);
+		return modelAndView;
+	}
+	
+	@GetMapping("/geral/{id}")
+	public ModelAndView frequenciaGeral(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("frequencias/mes");
+		List<List<Frequencia>> frequencias = new ArrayList<>();
+		Turma turma = turmaRepository.findOne(id);
+		modelAndView.addObject("turma", turma);
+		List<Matricula> matriculas = matriculaRepository.findAllByTurma(turma);
+		modelAndView.addObject("matriculas", matriculas);
+		List<Frequencia> cabecalho = new ArrayList<Frequencia>();
+		for (Matricula matricula : matriculas) {
+			cabecalho = frequenciaRepository.findByMatricula(matricula);
+			List<Frequencia> freq = frequenciaRepository.findAllByMatricula(matricula);
+			frequencias.add(freq);
+		}
+		modelAndView.addObject("cabecalho", cabecalho);
+		modelAndView.addObject("frequencias", frequencias);
+		return modelAndView;
+	}
+	
+	@GetMapping("/turma/{id}")
+	public ModelAndView frequenciaTurma(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("frequencias/turma");
+		Turma turma = turmaRepository.findOne(id);
+		modelAndView.addObject("turma", turma);
+		List<Matricula> matriculas = matriculaRepository.findAllByTurma(turma);
+		modelAndView.addObject("matriculas", matriculas);
+		List<String> frequencias = this.carregarFrequenciasEnum();
 		modelAndView.addObject("frequencias", frequencias);
 		return modelAndView;
 	}
 
 	@PostMapping("/turma/{id}")
 	public ModelAndView save(@PathVariable("id") Long id, HttpServletRequest request, HttpServletResponse response) throws IOException {
-		ModelAndView modelAndView = new ModelAndView("redirect:/frequencia/turma/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/frequencias");
 		String matriculas[] = request.getParameterValues("matriculas");
-		String frequencias[] = request.getParameterValues("frequencias");
+		String frequenciasManha[] = request.getParameterValues("frequenciasManha");
+		String frequenciasTarde[] = request.getParameterValues("frequenciasTarde");
 		for (int i = 0; i < matriculas.length; i++) {
-			PITEPIP pitepip = new PITEPIP();
+			Frequencia frequencia = new Frequencia();
 			Matricula matricula = matriculaRepository.findOne(Long.parseLong(matriculas[i]));
-			pitepip.setMatricula(matricula);
-			pitepip.setFrequencia(Frequencia.valueOf(frequencias[i]));
-			pitepip.setDia(c.get(Calendar.DAY_OF_MONTH));
-			pitepip.setMes(c.get(Calendar.MONTH));
-			pitepip.setAno(c.get(Calendar.YEAR));
-			pITEPIPRepository.save(pitepip);
+			frequencia.setMatricula(matricula);
+			frequencia.setFrequenciaManha(FrequenciaEnum.valueOf(frequenciasManha[i]));
+			frequencia.setFrequenciaTarde(FrequenciaEnum.valueOf(frequenciasTarde[i]));
+			frequencia.setDia(c.get(Calendar.DAY_OF_MONTH));
+			frequencia.setMes(c.get(Calendar.MONTH));
+			frequencia.setAno(c.get(Calendar.YEAR));
+			frequenciaRepository.save(frequencia);
 		}
 		return modelAndView;
 	}
 
-	public List<String> carregarFrequencias() {
-		List<Frequencia> lista = Arrays.asList(Frequencia.values());
+	public List<String> carregarFrequenciasEnum() {
+		List<FrequenciaEnum> lista = Arrays.asList(FrequenciaEnum.values());
 		List<String> frequencias = new ArrayList<String>();
 		for (int i = 0; i < lista.size(); i++) {
 			frequencias.add(lista.get(i).name());
@@ -87,8 +127,8 @@ public class FrequenciasController {
 		return frequencias;
 	}
 	
-	public List<String> carregarTipoTurma() {
-		List<TipoTurma> lista = Arrays.asList(TipoTurma.values());
+	public List<String> carregarTiposTurmaEnum() {
+		List<TipoTurmaEnum> lista = Arrays.asList(TipoTurmaEnum.values());
 		List<String> tiposTurma = new ArrayList<String>();
 		for (int i = 0; i < lista.size(); i++) {
 			tiposTurma.add(lista.get(i).name());

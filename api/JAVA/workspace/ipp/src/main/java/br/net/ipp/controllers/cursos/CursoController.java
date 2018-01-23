@@ -28,6 +28,8 @@ import br.net.ipp.daos.cursos.ValidacaoRepository;
 import br.net.ipp.enums.Status;
 import br.net.ipp.enums.StatusPAP;
 import br.net.ipp.models.cursos.Curso;
+import br.net.ipp.models.cursos.Matricula;
+import br.net.ipp.models.cursos.Turma;
 
 @Controller
 @Transactional
@@ -114,8 +116,16 @@ private ValidacaoRepository validacaoRepository;
 		ModelAndView modelAndView = new ModelAndView("cursos/cursos/curso");
 		Curso curso = cursoRepository.findOne(id);
 		modelAndView.addObject("curso", curso);
-		modelAndView.addObject("turmas", turmaRepository.findAllByCurso(curso));
-		modelAndView.addObject("matriculas", matriculaRepository.findAll());
+		List<Turma> turmas = turmaRepository.findAllByCurso(curso);
+		modelAndView.addObject("turmas", turmas);
+		List<Matricula> matriculas = new ArrayList<Matricula>();
+		for (Turma turma : turmas) {
+			List<Matricula> mats  = matriculaRepository.findAllByTurma(turma);
+			for (Matricula matricula : mats) {
+				matriculas.add(matricula);
+			}
+		}
+		modelAndView.addObject("matriculas", matriculas);
 		List<String> status = carregarStatus();
 		modelAndView.addObject("status", status);
 		List<String> statusPAP = carregarStatusPAP();

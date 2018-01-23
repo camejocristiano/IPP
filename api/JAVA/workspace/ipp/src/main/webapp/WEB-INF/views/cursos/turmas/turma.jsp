@@ -56,14 +56,22 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s12">
+				<div class="input-field col s9">
 					<form:select path="orientadorTurma" required="required">
-                		<form:option  value="${usuario.id}" label="${turma.orientadorTurma == null ? 'Orientador da Turma' : turma.orientadorTurma.nome}" />
+                		<form:option  value="${turma.orientadorTurma == null ? usuario.id : turma.orientadorTurma.id}" label="${turma.orientadorTurma == null ? 'Orientador da Turma' : turma.orientadorTurma.nome}" />
 						<c:forEach var="usuario" items="${requestScope.usuarios}">
 							<option value="${usuario.id}">${usuario.nome}</option>							
 						</c:forEach>
 					</form:select>
 				</div>
+				<div class="input-field s12 col l3">
+                    <form:select path="tipoTurma">
+	                	<form:option value="${turma.tipoTurma}" label="${turma.tipoTurma == null ? 'Tipo da Turma' : turma.tipoTurma}" />
+						<c:forEach var="tipoTurma" items="${requestScope.tiposTurma}">
+							<option>${tipoTurma}</option>							
+						</c:forEach>
+					</form:select>
+                </div>
 			</div>
 			<button class="btn waves-effect waves-light right" type="submit">
 				Salvar<i class="material-icons right">send</i>

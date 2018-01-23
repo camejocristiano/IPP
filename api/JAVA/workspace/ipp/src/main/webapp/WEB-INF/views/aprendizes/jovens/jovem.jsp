@@ -14,16 +14,18 @@
 		<div class="col s12">
 			<ul class="tabs">
 				<li class="tab col s1"><a href="#jovem">Jovem</a></li>
-				<li class="tab col s1"><a href="#cursos">Cursos IPP</a></li> 
-				<li class="tab col s1"><a href="#escolaridade">Escolaridade</a></li> 
-				<li class="tab col s1"><a href="#laborais">Laboral</a></li> 
-				<li class="tab col s1"><a href="#domiciliares">Domiciliares</a></li>
-				<li class="tab col s1"><a href="#habilidades">Habilidades</a></li> 
-				<li class="tab col s1"><a href="#situacaoDeSaude">Saude</a></li> 
-				<li class="tab col s1"><a href="#fichaSocial">Social</a></li> 
-				<li class="tab col s1"><a href="#fichaProfissional">Profissional</a></li> 
-				<li class="tab col s1"><a href="#historico">Historico</a></li> 
-				<li class="tab col s1"><a href="#dadosFinanceiros">Financeiros</a></li> 
+				<c:if test="${jovem.id != null}">
+					<li class="tab col s1"><a href="#cursos">Cursos IPP</a></li> 
+					<li class="tab col s1"><a href="#escolaridade">Escolaridade</a></li> 
+					<li class="tab col s1"><a href="#laborais">Laboral</a></li> 
+					<li class="tab col s1"><a href="#domiciliares">Domiciliares</a></li>
+					<li class="tab col s1"><a href="#habilidades">Habilidades</a></li> 
+					<li class="tab col s1"><a href="#situacaoDeSaude">Saude</a></li> 
+					<li class="tab col s1"><a href="#fichaSocial">Social</a></li> 
+					<li class="tab col s1"><a href="#fichaProfissional">Profissional</a></li> 
+					<li class="tab col s1"><a href="#historico">Historico</a></li> 
+					<li class="tab col s1"><a href="#dadosFinanceiros">Financeiros</a></li> 
+				</c:if>
 			</ul>
 	<br /> 
 	
@@ -32,36 +34,38 @@
 		<div id="jovem" class="col s12">
 			<c:import url="form.jsp"></c:import>
 		</div>
-		<div id="cursos" class="col s12">
-			<c:import url="../habilidades/cursos/cursos.jsp"></c:import>
-		</div> 
-		<div id="escolaridade" class="col s12">
-			<c:import url="../escolaridades/escolaridades.jsp"></c:import>
-		</div> 
-		<div id="laborais" class="col s12">
-			<c:import url="../laborais/laborais.jsp"></c:import>
-		</div> 
-		<div id="domiciliares" class="col s12">
-			<c:import url="../domiciliares/domiciliares.jsp"></c:import>
-		</div> 
-		<div id="habilidades" class="col s12">
-			<c:import url="../habilidades/habilidades.jsp"></c:import>
-		</div> 
-		<div id="situacaoDeSaude" class="col s12">
-			<c:import url="../saudes/saudes.jsp"></c:import>
-		</div> 
-		<div id="fichaSocial" class="col s12">
-			<c:import url="../sociais/sociais.jsp"></c:import>
-		</div>
-		<div id="fichaProfissional" class="col s12">
-			<c:import url="../profissionais/profissionais.jsp"></c:import>
-		</div> 
-		<div id="historico" class="col s12">
-			<c:import url="../historicos/historicos.jsp"></c:import>
-		</div>
-		<div id="dadosFinanceiros" class="col s12">
-			<c:import url="../financeiros/financeiros.jsp"></c:import>
-		</div> 
+		<c:if test="${jovem.id != null}">
+			<div id="cursos" class="col s12">
+				<c:import url="../cursos/cursos.jsp"></c:import>
+			</div> 
+			<div id="escolaridade" class="col s12">
+				<c:import url="../escolaridades/escolaridades.jsp"></c:import>
+			</div> 
+			<div id="laborais" class="col s12">
+				<c:import url="../laborais/laborais.jsp"></c:import>
+			</div> 
+			<div id="domiciliares" class="col s12">
+				<c:import url="../domiciliares/domiciliares.jsp"></c:import>
+			</div> 
+			<div id="habilidades" class="col s12">
+				<c:import url="../habilidades/habilidades.jsp"></c:import>
+			</div> 
+			<div id="situacaoDeSaude" class="col s12">
+				<c:import url="../saudes/saudes.jsp"></c:import>
+			</div> 
+			<div id="fichaSocial" class="col s12">
+				<c:import url="../sociais/sociais.jsp"></c:import>
+			</div>
+			<div id="fichaProfissional" class="col s12">
+				<c:import url="../profissionais/profissionais.jsp"></c:import>
+			</div> 
+			<div id="historico" class="col s12">
+				<c:import url="../historicos/historicos.jsp"></c:import>
+			</div>
+			<div id="dadosFinanceiros" class="col s12">
+				<c:import url="../financeiros/financeiros.jsp"></c:import>
+			</div> 
+		</c:if>
 	</div>
 </div>
 

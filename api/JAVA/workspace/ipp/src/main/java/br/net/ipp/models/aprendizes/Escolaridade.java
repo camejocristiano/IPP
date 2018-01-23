@@ -2,8 +2,11 @@ package br.net.ipp.models.aprendizes;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.models.AbstractEntity;
 
@@ -12,32 +15,43 @@ public class Escolaridade extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	private String curso;
-	private Date anoConclusaoEnsinoMedio;
-	private Boolean concluiuOEnsinoMedio;
+	private String nomeDoCurso;
+	@Column(name = "dataConclusaoEnsinoMedio")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy")
+	private Date dataConclusaoEnsinoMedio;
+	@Column(name = "dataConclusaoCurso")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy")
+	private Date dataConclusaoCurso;
+	private boolean concluiuOEnsinoMedio;
 	private String cursoEnsinoMedio;
-	private Boolean fequentaEscola;
+	private boolean frequentaAEscola;
 	private String nomeDaEscola;
 	private String serieAno;
 	@OneToOne
 	private Jovem jovem;
 	
-	public String getCurso() {
-		return curso;
+	public String getNomeDoCurso() {
+		return nomeDoCurso;
 	}
-	public void setCurso(String curso) {
-		this.curso = curso;
+	public void setNomeDoCurso(String nomeDoCurso) {
+		this.nomeDoCurso = nomeDoCurso;
 	}
-	public Date getAnoConclusaoEnsinoMedio() {
-		return anoConclusaoEnsinoMedio;
+	public Date getDataConclusaoEnsinoMedio() {
+		return dataConclusaoEnsinoMedio;
 	}
-	public void setAnoConclusaoEnsinoMedio(Date anoConclusaoEnsinoMedio) {
-		this.anoConclusaoEnsinoMedio = anoConclusaoEnsinoMedio;
+	public void setDataConclusaoEnsinoMedio(Date dataConclusaoEnsinoMedio) {
+		this.dataConclusaoEnsinoMedio = dataConclusaoEnsinoMedio;
 	}
-	public Boolean getConcluiuOEnsinoMedio() {
+	public Date getDataConclusaoCurso() {
+		return dataConclusaoCurso;
+	}
+	public void setDataConclusaoCurso(Date dataConclusaoCurso) {
+		this.dataConclusaoCurso = dataConclusaoCurso;
+	}
+	public boolean isConcluiuOEnsinoMedio() {
 		return concluiuOEnsinoMedio;
 	}
-	public void setConcluiuOEnsinoMedio(Boolean concluiuOEnsinoMedio) {
+	public void setConcluiuOEnsinoMedio(boolean concluiuOEnsinoMedio) {
 		this.concluiuOEnsinoMedio = concluiuOEnsinoMedio;
 	}
 	public String getCursoEnsinoMedio() {
@@ -46,11 +60,11 @@ public class Escolaridade extends AbstractEntity {
 	public void setCursoEnsinoMedio(String cursoEnsinoMedio) {
 		this.cursoEnsinoMedio = cursoEnsinoMedio;
 	}
-	public Boolean getFequentaEscola() {
-		return fequentaEscola;
+	public boolean isFrequentaAEscola() {
+		return frequentaAEscola;
 	}
-	public void setFequentaEscola(Boolean fequentaEscola) {
-		this.fequentaEscola = fequentaEscola;
+	public void setFrequentaAEscola(boolean frequentaAEscola) {
+		this.frequentaAEscola = frequentaAEscola;
 	}
 	public String getNomeDaEscola() {
 		return nomeDaEscola;
@@ -73,7 +87,5 @@ public class Escolaridade extends AbstractEntity {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-
 
 }

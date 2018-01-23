@@ -16,14 +16,8 @@ import br.net.ipp.daos.configuracoes.CanalRepository;
 import br.net.ipp.daos.configuracoes.GrupoDePermissoesRepository;
 import br.net.ipp.daos.configuracoes.UnidadeRepository;
 import br.net.ipp.daos.configuracoes.UsuarioRepository;
-import br.net.ipp.daos.cursos.ArcoOcupacionalRepository;
-import br.net.ipp.daos.cursos.CBORepository;
-import br.net.ipp.daos.cursos.ConteudoTeoricoBasicoRepository;
-import br.net.ipp.daos.cursos.ConteudoTeoricoEspecificoRepository;
 import br.net.ipp.daos.cursos.CursoRepository;
-import br.net.ipp.daos.cursos.MatriculaRepository;
 import br.net.ipp.daos.cursos.TurmaRepository;
-import br.net.ipp.daos.cursos.ValidacaoRepository;
 import br.net.ipp.daos.empresas.EmpresaRepository;
 import br.net.ipp.daos.financeiros.BancoRepository;
 import br.net.ipp.daos.financeiros.ContaAPagarRepository;
@@ -33,10 +27,6 @@ import br.net.ipp.daos.financeiros.ParametroRepository;
 import br.net.ipp.daos.financeiros.Salario13Repository;
 import br.net.ipp.daos.financeiros.VRRepository;
 import br.net.ipp.daos.financeiros.VTRepository;
-import br.net.ipp.daos.frequencias.AulaExtraRepository;
-import br.net.ipp.daos.frequencias.PAPRepository;
-import br.net.ipp.daos.frequencias.PIORepository;
-import br.net.ipp.daos.frequencias.PITEPIPRepository;
 import br.net.ipp.models.configuracoes.Usuario;
 import br.net.ipp.models.cursos.Turma;
 
@@ -49,24 +39,9 @@ public class MainController {
 	private ArquivoRepository arquivoRepository;
 	private GrupoDePermissoesRepository grupoDePermissoesRepository;
 	private CanalRepository canalRepository;
-
 	private CursoRepository cursoRepository;
-	private MatriculaRepository matriculaRepository;
-	private TurmaRepository turmaRepository;
-	private CBORepository cboRepository;
-	private ArcoOcupacionalRepository arcoOcupacionalRepository;
-	private ConteudoTeoricoBasicoRepository conteudoTeoricoBasicoRepository;
-	private ConteudoTeoricoEspecificoRepository conteudoTeoricoEspecificoRepository;
-	private ValidacaoRepository validacaoRepository;
-	
 	private JovemRepository jovemRepository;
 	private EmpresaRepository empresaRepository;
-	
-	private AulaExtraRepository aulaExtraRepository;
-	private PAPRepository pAPRepository;
-	private PIORepository pIORepository;
-	private PITEPIPRepository pITEPIPRepository;
-	
 	private BancoRepository bancoRepository;
 	private ContaAPagarRepository contaAPagarRepository;
 	private ContaAReceberRepository contaAReceberRepository;
@@ -75,6 +50,7 @@ public class MainController {
 	private Salario13Repository salario13Repository;
 	private VRRepository vRRepository;
 	private VTRepository vTRepository;
+	private TurmaRepository turmaRepository;
 
 	
 	@Autowired
@@ -85,25 +61,10 @@ public class MainController {
 			ArquivoRepository arquivoRepository,
 			GrupoDePermissoesRepository grupoDePermissoesRepository,
 			CanalRepository canalRepository,
-			
 			CursoRepository cursoRepository,
-			MatriculaRepository matriculaRepository,
 			TurmaRepository turmaRepository,
-			CBORepository cboRepository,
-			ArcoOcupacionalRepository arcoOcupacionalRepository,
-			ConteudoTeoricoBasicoRepository conteudoTeoricoBasicoRepository,
-			ConteudoTeoricoEspecificoRepository conteudoTeoricoEspecificoRepository,
-			ValidacaoRepository validacaoRepository,
-			
 			JovemRepository jovemRepository,
-			
 			EmpresaRepository empresaRepository,
-			
-			AulaExtraRepository aulaExtraRepository,
-			PAPRepository pAPRepository,
-			PIORepository pIORepository,
-			PITEPIPRepository pITEPIPRepository,
-			
 			BancoRepository bancoRepository,
 			ContaAPagarRepository contaAPagarRepository,
 			ContaAReceberRepository contaAReceberRepository,
@@ -119,24 +80,9 @@ public class MainController {
 		this.arquivoRepository = arquivoRepository;
 		this.grupoDePermissoesRepository = grupoDePermissoesRepository;
 		this.canalRepository = canalRepository;
-		
 		this.cursoRepository = cursoRepository;
-		this.matriculaRepository = matriculaRepository;
-		this.turmaRepository = turmaRepository;
-		this.cboRepository = cboRepository;
-		this.arcoOcupacionalRepository = arcoOcupacionalRepository;
-		this.conteudoTeoricoBasicoRepository = conteudoTeoricoBasicoRepository;
-		this.conteudoTeoricoEspecificoRepository = conteudoTeoricoEspecificoRepository;
-		
 		this.jovemRepository = jovemRepository;
-		
 		this.empresaRepository = empresaRepository;
-		
-		this.aulaExtraRepository = aulaExtraRepository;
-		this.pAPRepository = pAPRepository;
-		this.pIORepository = pIORepository;
-		this.pITEPIPRepository = pITEPIPRepository;
-
 		this.bancoRepository = bancoRepository;
 		this.contaAPagarRepository = contaAPagarRepository;
 		this.contaAReceberRepository = contaAReceberRepository;
@@ -145,7 +91,7 @@ public class MainController {
 		this.salario13Repository = salario13Repository;
 		this.vRRepository = vRRepository;
 		this.vTRepository = vTRepository;
-		
+		this.turmaRepository = turmaRepository;
 	}
 
 	@GetMapping("/")
@@ -188,9 +134,6 @@ public class MainController {
 	public ModelAndView cursos() {
 		ModelAndView modelAndView = new ModelAndView("cursos/cursos");
 		modelAndView.addObject("cursos", cursoRepository.findAll());
-		modelAndView.addObject("matriculas", matriculaRepository.findAll());
-		modelAndView.addObject("turmas", turmaRepository.findAll());
-		modelAndView.addObject("cbos", cboRepository.findAll());
 		return modelAndView;
 	}
 	
@@ -203,11 +146,9 @@ public class MainController {
 	
 	@GetMapping("frequencias")
 	public ModelAndView frequencias() {
+		Usuario usuario = usuarioRepository.findOne((long) 1);
 		ModelAndView modelAndView = new ModelAndView("frequencias/frequencias");
-		modelAndView.addObject("aulasExtras", aulaExtraRepository.findAll());
-		modelAndView.addObject("pio", pIORepository.findAll());
-		modelAndView.addObject("pap", pAPRepository.findAll());
-		modelAndView.addObject("pITsEPIPs", pITEPIPRepository.findAll());
+		modelAndView.addObject("turmas", turmaRepository.findAllByOrientadorTurma(usuario));
 		return modelAndView;
 	}
 	

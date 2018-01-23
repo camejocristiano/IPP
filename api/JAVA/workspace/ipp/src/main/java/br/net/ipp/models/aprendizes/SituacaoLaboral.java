@@ -10,9 +10,9 @@ public class SituacaoLaboral extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 	
-	private boolean cTPSRegistrada;
 	private boolean jaTrabalhou;
 	private boolean remunerado;
+	private boolean cTPSRegistrada;
 	private boolean trabalhouVoluntario;
 	@ManyToOne
 	private Jovem jovem;
