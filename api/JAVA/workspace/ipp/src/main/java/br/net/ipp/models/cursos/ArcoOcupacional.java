@@ -17,8 +17,10 @@ public class ArcoOcupacional  extends AbstractEntity {
 
 	private String titulo;
 	@ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "arco_cbo", joinColumns = @JoinColumn(name = "arco_id", referencedColumnName = "id"), 
-    inverseJoinColumns = @JoinColumn(name = "cbo_id", referencedColumnName = "id"))
+    @JoinTable(name = "cbo_arco", 
+      joinColumns = @JoinColumn(name = "arco_id", referencedColumnName = "id"), 
+      inverseJoinColumns = @JoinColumn(name = "cbo_id", 
+      referencedColumnName = "id"))
 	private List<CBO> cbos;
 
 	

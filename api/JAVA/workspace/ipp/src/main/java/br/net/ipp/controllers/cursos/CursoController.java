@@ -27,6 +27,10 @@ import br.net.ipp.daos.cursos.TurmaRepository;
 import br.net.ipp.daos.cursos.ValidacaoRepository;
 import br.net.ipp.enums.Status;
 import br.net.ipp.enums.StatusPAP;
+import br.net.ipp.models.cursos.ArcoOcupacional;
+import br.net.ipp.models.cursos.CBO;
+import br.net.ipp.models.cursos.ConteudoTeoricoBasico;
+import br.net.ipp.models.cursos.ConteudoTeoricoEspecifico;
 import br.net.ipp.models.cursos.Curso;
 import br.net.ipp.models.cursos.Matricula;
 import br.net.ipp.models.cursos.Turma;
@@ -118,6 +122,7 @@ private ValidacaoRepository validacaoRepository;
 		modelAndView.addObject("curso", curso);
 		List<Turma> turmas = turmaRepository.findAllByCurso(curso);
 		modelAndView.addObject("turmas", turmas);
+		modelAndView.addObject("cBOs", cboRepository.findAll());
 		List<Matricula> matriculas = new ArrayList<Matricula>();
 		for (Turma turma : turmas) {
 			List<Matricula> mats  = matriculaRepository.findAllByTurma(turma);
@@ -130,10 +135,18 @@ private ValidacaoRepository validacaoRepository;
 		modelAndView.addObject("status", status);
 		List<String> statusPAP = carregarStatusPAP();
 		modelAndView.addObject("statusPAP", statusPAP);
-		modelAndView.addObject("cbos", cboRepository.findAll());
 		modelAndView.addObject("arcos", arcoOcupacionalRepository.findAll());
+		if(curso.getArcoOcupacional() != null) {
+			ArcoOcupacional arcoOcupacional = arcoOcupacionalRepository.findOne(curso.getArcoOcupacional().getId());
+			List<CBO> cbos_arco = arcoOcupacional.getCbos();
+			modelAndView.addObject("cbos_arco", cbos_arco);
+		}
 		modelAndView.addObject("unidades", unidadeRepository.findAll());
+		List<ConteudoTeoricoBasico> basicos_curso = curso.getConteudosTeoricosBasicos();
+		modelAndView.addObject("basicos_curso", basicos_curso);
 		modelAndView.addObject("basicos", conteudoTeoricoBasicoRepository.findAll());
+		List<ConteudoTeoricoEspecifico> especificos_curso = curso.getConteudosTeoricosEspecificos();
+		modelAndView.addObject("especificos_curso", especificos_curso);
 		modelAndView.addObject("especificos", conteudoTeoricoEspecificoRepository.findAll());
 		modelAndView.addObject("validacoes", validacaoRepository.findAll());
 		return modelAndView;

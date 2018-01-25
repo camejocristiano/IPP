@@ -1,6 +1,9 @@
 package br.net.ipp.models.cursos;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 
 import br.net.ipp.models.AbstractEntity;
 
@@ -11,7 +14,9 @@ public class ConteudoTeoricoEspecifico  extends AbstractEntity {
 
 	private String horaAula;
 	private String titulo;
-
+	@ManyToMany(mappedBy = "conteudosTeoricosEspecificos")
+	private List<Curso> cursos;
+	
 	public String getHoraAula() {
 		return horaAula;
 	}

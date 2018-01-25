@@ -17,7 +17,7 @@ import br.net.ipp.models.cursos.ConteudoTeoricoEspecifico;
 
 @Controller
 @Transactional
-@RequestMapping("/conteudoTeoricoEspecificos")
+@RequestMapping("/especificos")
 public class ConteudoTeoricoEspecificoController {
 
 private ConteudoTeoricoEspecificoRepository conteudoTeoricoEspecificoRepository;
@@ -35,10 +35,10 @@ private ConteudoTeoricoEspecificoRepository conteudoTeoricoEspecificoRepository;
 		modelAndView.addObject("conteudoTeoricoEspecifico", conteudoTeoricoEspecifico);
 		return modelAndView;
 	}
-
+	
 	@PostMapping
 	public ModelAndView save(@Valid ConteudoTeoricoEspecifico conteudoTeoricoEspecifico, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:");
+		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("conteudoTeoricoEspecifico", conteudoTeoricoEspecifico);
@@ -60,7 +60,7 @@ private ConteudoTeoricoEspecificoRepository conteudoTeoricoEspecificoRepository;
 	
 	@PostMapping("/{id}")
 	public ModelAndView update(@Valid ConteudoTeoricoEspecifico conteudoTeoricoEspecifico, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:");
+		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("conteudoTeoricoEspecifico", conteudoTeoricoEspecifico);

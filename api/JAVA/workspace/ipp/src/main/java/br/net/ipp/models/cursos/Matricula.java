@@ -2,14 +2,12 @@ package br.net.ipp.models.cursos;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 import br.net.ipp.enums.StatusDaMatricula;
 import br.net.ipp.models.AbstractEntity;
 import br.net.ipp.models.aprendizes.Jovem;
 
 @Entity
-@Table(name="matricula")
 public class Matricula extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;

@@ -1,5 +1,7 @@
 package br.net.ipp.controllers.cursos;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -10,11 +12,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.net.ipp.daos.cursos.ArcoOcupacionalRepository;
+import br.net.ipp.daos.cursos.CBORepository;
 import br.net.ipp.daos.cursos.CursoRepository;
 import br.net.ipp.models.cursos.ArcoOcupacional;
+import br.net.ipp.models.cursos.CBO;
 import br.net.ipp.models.cursos.Curso;
 
 @Controller
@@ -24,20 +29,24 @@ public class ArcoOcupacionalController {
 
 private ArcoOcupacionalRepository arcoOcupacionalRepository;
 private CursoRepository cursoRepository;
+private CBORepository cBORepository;
 
 	@Autowired
 	public void ArcoOcupacionalEndPoint(
 			ArcoOcupacionalRepository arcoOcupacionalRepository,
-			CursoRepository cursoRepository
+			CursoRepository cursoRepository,
+			CBORepository cBORepository
 			) {
 		this.arcoOcupacionalRepository = arcoOcupacionalRepository;
 		this.cursoRepository = cursoRepository;
+		this.cBORepository = cBORepository;
 	}
 
 	@GetMapping("/form")
 	public ModelAndView arcoOcupacional(ArcoOcupacional arcoOcupacional) {
 		ModelAndView modelAndView = new ModelAndView("cursos/arcos/arco");
 		modelAndView.addObject("arcoOcupacional", arcoOcupacional);
+		modelAndView.addObject("cbos", cBORepository.findAll());
 		return modelAndView;
 	}
 	
@@ -47,12 +56,14 @@ private CursoRepository cursoRepository;
 		Curso curso = cursoRepository.findOne(id);
 		modelAndView.addObject("curso", curso);
 		modelAndView.addObject("arcoOcupacional", arcoOcupacional);
+		modelAndView.addObject("cbos", cBORepository.findAll());
 		return modelAndView;
 	}
 
 	@PostMapping
-	public ModelAndView save(@Valid ArcoOcupacional arcoOcupacional, BindingResult bindingResult, @PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/"+id);
+	public ModelAndView save(@Valid ArcoOcupacional arcoOcupacional, BindingResult bindingResult, @RequestParam("curso") String curso) {
+		Long idCurso = Long.parseLong(curso.toString());
+		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/"+idCurso);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("arcoOcupacional", arcoOcupacional);
@@ -71,12 +82,16 @@ private CursoRepository cursoRepository;
 		Curso curso = cursoRepository.findByArcoOcupacional(arcoOcupacional);
 		modelAndView.addObject("arcoOcupacional", arcoOcupacional);
 		modelAndView.addObject("curso", curso);
+		modelAndView.addObject("cbos", cBORepository.findAll());
+		List<CBO> cbos_arco = arcoOcupacional.getCbos();
+		modelAndView.addObject("cbos_arco", cbos_arco);
 		return modelAndView;
 	}
 	
 	@PostMapping("/{id}")
 	public ModelAndView update(@Valid ArcoOcupacional arcoOcupacional, BindingResult bindingResult, @PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/"+id);
+		Long idCurso = (long) 1;
+		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/"+idCurso);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("arcoOcupacional", arcoOcupacional);

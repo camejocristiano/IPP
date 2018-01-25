@@ -2,10 +2,7 @@ package br.net.ipp.models.cursos;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 import br.net.ipp.models.AbstractEntity;
@@ -17,9 +14,7 @@ public class CBO  extends AbstractEntity {
 	
 	private String numero;
 	private String titulo;
-	@ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "arco_cbo", joinColumns = @JoinColumn(name = "cbo_id", referencedColumnName = "id"), 
-    inverseJoinColumns = @JoinColumn(name = "arco_id", referencedColumnName = "id"))
+	@ManyToMany(mappedBy = "cbos")
 	private List<ArcoOcupacional> arcos;
 
 	

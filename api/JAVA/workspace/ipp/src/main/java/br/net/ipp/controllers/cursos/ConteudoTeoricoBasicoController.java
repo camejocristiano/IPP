@@ -31,14 +31,14 @@ private ConteudoTeoricoBasicoRepository conteudoTeoricoBasicoRepository;
 
 	@GetMapping("/form")
 	public ModelAndView conteudoTeoricoBasico(ConteudoTeoricoBasico conteudoTeoricoBasico) {
-		ModelAndView modelAndView = new ModelAndView("conteudoTeoricoBasicos/conteudoTeoricoBasicos/conteudoTeoricoBasico");
+		ModelAndView modelAndView = new ModelAndView("cursos/matrizes/basicos/basico");
 		modelAndView.addObject("conteudoTeoricoBasico", conteudoTeoricoBasico);
 		return modelAndView;
 	}
 
 	@PostMapping
 	public ModelAndView save(@Valid ConteudoTeoricoBasico conteudoTeoricoBasico, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:");
+		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("conteudoTeoricoBasico", conteudoTeoricoBasico);
@@ -52,7 +52,7 @@ private ConteudoTeoricoBasicoRepository conteudoTeoricoBasicoRepository;
 
 	@GetMapping("/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("conteudoTeoricoBasicos/conteudoTeoricoBasicos/conteudoTeoricoBasico");
+		ModelAndView modelAndView = new ModelAndView("matrizes/basicos/basico");
 		ConteudoTeoricoBasico conteudoTeoricoBasico = conteudoTeoricoBasicoRepository.findOne(id);
 		modelAndView.addObject("conteudoTeoricoBasico", conteudoTeoricoBasico);
 		return modelAndView;
@@ -60,7 +60,7 @@ private ConteudoTeoricoBasicoRepository conteudoTeoricoBasicoRepository;
 	
 	@PostMapping("/{id}")
 	public ModelAndView update(@Valid ConteudoTeoricoBasico conteudoTeoricoBasico, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:");
+		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("conteudoTeoricoBasico", conteudoTeoricoBasico);
