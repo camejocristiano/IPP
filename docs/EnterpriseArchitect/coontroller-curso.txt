@@ -1,0 +1,32 @@
+****************************************************
+****************************************************
+/sw/validacoes		GET	FindAll
+/sw/validacoes		POST	FindAll
+2/sw/validacoes/{id}	GET	FindOne
+4/sw/validacoes/{id}	PUT	FindOne
+
+
+****************************************************
+****************************************************
+1/sw/validacoesCurso/{id}	GET	FindAll
+/sw/validacoesCurso/{id}	GET	FindOne
+/sw/validacoesCurso/{id}	PUT	FindOne
+3/sw/validacoesCurso/{id}	POST	FindByCurso
+/sw/validacoesCurso/{id}	GET	FindByCurso
+
+
+***************************************************
+***************************************************
+Listar todos por curso ok 1
+Listar um por id ok 2 
+Cadastrar um por curso ok 3
+Atualizar um por id ok 4
+
+
+***************************************************
+***************************************************
+1/sw/validacoes/{id}	GET	FindByCurso
+
+2/sw/validacao/{id}	GET	FindOne	
+3/sw/validacao		POST	
+4/sw/validacao/{id}	PUT

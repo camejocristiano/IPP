@@ -17,43 +17,43 @@ public class User extends AbstractEntity {
     @NotEmpty
     private String password;
 	@NotEmpty
-	private String nome;
+	private String email;
 	@NotNull
 	private boolean admin;
 	@ManyToOne
 	private GrupoDePermissoes grupoDePermissoes;
 
-	public User(
+/*	public User(
 			Long id, 
 			String username, 
 			String password, 
-			String nome, 
+			String email, 
 			boolean admin
 			) {
         this.id = id;
         this.username = username;
 		this.password = password;
-		this.nome = nome;
+		this.email = email;
 		this.admin = admin;
     }
 	
 	public User(
 			String username, 
 			String password, 
-			String nome, 
+			String email, 
 			boolean admin
 			) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.nome = nome;
+		this.email = email;
 		this.admin = admin;
 	}
 	
 
 	public User() {
 
-	}
+	}*/
 
 
 	public String getUsername() {
@@ -68,11 +68,11 @@ public class User extends AbstractEntity {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getNome() {
-		return nome;
+	public String getEmail() {
+		return email;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public boolean isAdmin() {
 		return admin;

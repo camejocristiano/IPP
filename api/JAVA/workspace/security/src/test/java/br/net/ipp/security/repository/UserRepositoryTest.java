@@ -29,7 +29,7 @@ public class UserRepositoryTest {
 	@Test
 	public void createShouldPersistData() {
 		User user = new User();
-		user.setNome("IPP");
+		user.setEmail("IPP");
 		user.setUsername("ipp");
 		user.setPassword("ipp");
 		user.setAdmin(true);
@@ -43,7 +43,7 @@ public class UserRepositoryTest {
 		user.setGrupoDePermissoes(grupoDePermissoes);
 		this.userRepository.save(user);
 		assertThat(user.getId()).isNotNull();
-		assertThat(user.getNome()).isEqualTo("IPP");
+		assertThat(user.getEmail()).isEqualTo("IPP");
 		assertThat(user.getUsername()).isEqualTo("ipp");
 		assertThat(user.getPassword()).isEqualTo("ipp");
 		assertThat(user.getGrupoDePermissoes()).isEqualTo(grupoDePermissoes);
@@ -56,7 +56,7 @@ public class UserRepositoryTest {
 	@Test
 	public void deleteShouldRemoveData() {
 		User user = new User();
-		user.setNome("IPP");
+		user.setEmail("IPP");
 		user.setUsername("ipp");
 		user.setPassword("ipp");
 		user.setAdmin(true);
@@ -80,7 +80,7 @@ public class UserRepositoryTest {
 	@Test
 	public void updateShouldPersistData() {
 		User user = new User();
-		user.setNome("IPP");
+		user.setEmail("IPP");
 		user.setUsername("ipp");
 		user.setPassword("ipp");
 		user.setAdmin(true);
@@ -95,7 +95,7 @@ public class UserRepositoryTest {
 		this.userRepository.save(user);
 		
 		User user2 = new User();
-		user2.setNome("IPP2");
+		user2.setEmail("IPP2");
 		user2.setUsername("ipp2");
 		user2.setPassword("ipp2");
 		user2.setAdmin(false);
@@ -106,7 +106,7 @@ public class UserRepositoryTest {
 		user = this.userRepository.save(user2);
 		
 		assertThat(user.getId()).isNotNull();
-		assertThat(user.getNome()).isEqualTo("IPP2");
+		assertThat(user.getEmail()).isEqualTo("IPP2");
 		assertThat(user.getUsername()).isEqualTo("ipp2");
 		assertThat(user.getPassword()).isEqualTo("ipp2");
 		assertThat(user.getGrupoDePermissoes()).isEqualTo(grupoDePermissoes);
