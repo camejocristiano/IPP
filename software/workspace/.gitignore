@@ -1,0 +1,11 @@
+/.metadata/
+
+/.recommenders/
+
+/RemoteSystemsTempFiles/
+
+.DS_Store
+
+Servers/*
+
+.metadata

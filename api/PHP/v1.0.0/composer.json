@@ -1,0 +1,27 @@
+{   "name": "cristiano/silex",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "require": {
+        "silex/silex": "^2.0",
+        "doctrine/common": "^2.7",
+        "doctrine/orm": "^2.5",
+        "doctrine/dbal": "~2.5",
+        "dflydev/doctrine-orm-service-provider": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.7"
+    },
+    "authors": [
+        {
+            "name": "Cristiano Camejo",
+            "email": "camejocristiano@gmail.com"
+        }
+    ],
+    "config":{
+        "bin-dir": "bin/"
+    }
+
+}

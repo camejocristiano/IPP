@@ -1,0 +1,31 @@
+{
+    "name": "cristiano/silex",
+    "require": {
+        "silex/silex": "^2.0",
+        "doctrine/common": "^2.7",
+        "doctrine/orm": "^2.5",
+        "doctrine/dbal": "^2.5",
+        "dflydev/doctrine-orm-service-provider": "^2.0",
+        "jms/serializer": "1.5",
+        "lcobucci/jwt": "3.3.x-dev",
+        "jdesrosiers/silex-cors-provider": "^1.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7",
+        "guzzlehttp/guzzle": "6.2"
+    },
+    "authors": [
+        {
+            "name": "Cristiano Camejo",
+            "email": "camejocristiano@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "config": {
+      "bin-dir": "bin/"
+    }
+}
