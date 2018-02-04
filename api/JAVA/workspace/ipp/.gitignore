@@ -5,12 +5,9 @@
 *.war
 *.ear
 
-#Gradle temporary files
 target/
 
 #Eclipse files
 **/.project
 **/.classpath
 **/.settings/
-blog/bin/
-**/.tern-project
