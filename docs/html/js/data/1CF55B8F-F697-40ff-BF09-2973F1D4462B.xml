@@ -1,8 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.2.2.5.3:1", "", "Cursos", "EARoot/EA1/EA2/EA2/EA5/EA3/EA6019.htm", "188.png", "969", "0", "", "Custom diagram0","{37116098-91D9-4ab5-B2AC-B4234CC60F99}");
-tocTab[tocTab.length] = new Array("0.1.2.2.5.3:2", "", "Cursos IPP", "EARoot/EA1/EA2/EA2/EA5/EA3/EA6024.htm", "11.png", "9418", "0", "", "Screen0","{6DA9E9EC-147C-4dd5-A65E-F9E77E240FA8}");
-tocTab[tocTab.length] = new Array("0.1.2.2.5.3:3", "", "Menu NavBar - Aprendizes", "EARoot/EA1/EA2/EA2/EA5/EA3/EA6025.htm", "99.png", "9419", "0", "", "UMLDiagram0","{06E6D5F3-67FD-41de-B666-90A886996D21}");
-tocTab[tocTab.length] = new Array("0.1.2.2.5.3:4", "", "Menu NavBar Principal", "EARoot/EA1/EA2/EA2/EA5/EA3/EA6026.htm", "99.png", "9420", "0", "", "UMLDiagram0","{2CD99302-D156-4460-9211-6A896964B003}");
-tocTab[tocTab.length] = new Array("0.1.2.2.5.3:5", "", "«table» ", "EARoot/EA1/EA2/EA2/EA5/EA3/EA6028.htm", "16.png", "9423", "9418", "", "GUIElement0","{362D1851-8F5F-49ac-9EBC-36EC083B31CF}");
-tocTab[tocTab.length] = new Array("0.1.2.2.5.3:6", "", "«table» ", "EARoot/EA1/EA2/EA2/EA5/EA3/EA6029.htm", "16.png", "9421", "9418", "", "GUIElement0","{030878DB-FBC2-41d5-A746-C0DBD625C1F7}");
-tocTab[tocTab.length] = new Array("0.1.2.2.5.3:7", "", "«label» Curso Atual", "EARoot/EA1/EA2/EA2/EA5/EA3/EA6030.htm", "16.png", "9424", "9418", "", "GUIElement0","{5244049E-8FBC-491f-B0EB-9F4241C78B5E}");
-tocTab[tocTab.length] = new Array("0.1.2.2.5.3:8", "", "«label» Históricos de Cursos", "EARoot/EA1/EA2/EA2/EA5/EA3/EA6032.htm", "16.png", "9422", "9418", "", "GUIElement0","{F20A9995-3D53-4f4a-A345-81DD99216E3E}");

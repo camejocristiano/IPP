@@ -1,7 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.3.2.4:1", "", "Frequencias", "EARoot/EA1/EA1/EA5/EA3/EA2/EA4/EA2976.htm", "175.png", "976", "0", "", "Logical diagram0","{BC87608E-EAB4-47eb-BA4B-C71C0E753854}");
-tocTab[tocTab.length] = new Array("0.1.1.5.3.2.4:2", "", "AulaExtra_Jovem", "EARoot/EA1/EA1/EA5/EA3/EA2/EA4/EA2979.htm", "5.png", "11349", "0", "", "Class0","{5EE59CF7-8485-496e-8273-0A1B7D8E3834}");
-tocTab[tocTab.length] = new Array("0.1.1.5.3.2.4:3", "", "«enumeration» Frequencia", "EARoot/EA1/EA1/EA5/EA3/EA2/EA4/EA2981.htm", "5.png", "11341", "0", "", "Class0","{316EC4C9-FB33-4998-93A6-5ED44F68443C}");
-tocTab[tocTab.length] = new Array("0.1.1.5.3.2.4:4", "", "ListaDeFrequencia_PIO", "EARoot/EA1/EA1/EA5/EA3/EA2/EA4/EA2982.htm", "5.png", "4488", "0", "", "Class0","{F22F9D91-D9C1-48c6-B05B-C70CA3360EB9}");
-tocTab[tocTab.length] = new Array("0.1.1.5.3.2.4:5", "", "ListaDeFrequencia_AulaExtra", "EARoot/EA1/EA1/EA5/EA3/EA2/EA4/EA2983.htm", "5.png", "11347", "0", "", "Class0","{436EE93D-9915-4ee3-86D1-4B8E71478EEA}");
-tocTab[tocTab.length] = new Array("0.1.1.5.3.2.4:6", "", "ListaDeFrequencia_PAP", "EARoot/EA1/EA1/EA5/EA3/EA2/EA4/EA2984.htm", "5.png", "11343", "0", "", "Class0","{D19E5B56-F88A-472b-B6C0-7FCF076CEE3D}");
-tocTab[tocTab.length] = new Array("0.1.1.5.3.2.4:7", "", "ListaDeFrequencia_PITEPIP", "EARoot/EA1/EA1/EA5/EA3/EA2/EA4/EA2985.htm", "5.png", "11340", "0", "", "Class0","{AD7F5CC7-AFC1-4a93-9ACE-B4F2DFBD1C01}");

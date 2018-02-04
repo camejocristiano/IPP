@@ -1,5 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.4:1", "", "Situacao Laboral", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA4/EA4030.htm", "180.png", "1124", "0", "", "Use Case diagram0","{C316656A-3611-4e6f-969E-FB3B348E8531}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.4:2", "", "Editar Situacao Laboral", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA4/EA4034.htm", "7.png", "4916", "0", "", "UseCase0","{50D09B7B-5212-4e00-AF69-8C6824700544}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.4:3", "", "Visualizar Situacao Laboral", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA4/EA4036.htm", "7.png", "4917", "0", "", "UseCase0","{625AF31B-DC3C-48dc-B8B5-8BD106CF172F}");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.4.1", "1", "Edit Situacao Laboral", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA4/EA4038.htm", "4.png", "", "", "{834C6145-243C-40a8-92B8-2333CD29C9F5}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2.1.3.3.2.4.2", "1", "Visualizar Situacao Laboral", "EARoot/EA1/EA2/EA1/EA3/EA3/EA2/EA4/EA4039.htm", "4.png", "", "", "{018EF8E3-E394-4d00-9DC1-8522F9B9F750}", "Package");

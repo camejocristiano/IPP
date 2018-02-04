@@ -1,6 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.2.2.4.2.5.1:1", "", "Conteúdo Teórico Específico", "EARoot/EA1/EA2/EA2/EA4/EA2/EA5/EA1/EA5692.htm", "188.png", "1873", "0", "", "Custom diagram0","{DAF257CC-4D28-47c8-ABDB-75CCDAA1C9A8}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.2.5.1:2", "", "«button» Incluir", "EARoot/EA1/EA2/EA2/EA4/EA2/EA5/EA1/EA5699.htm", "16.png", "8759", "0", "", "GUIElement0","{AFEE1FF3-94A1-4c97-A78A-3130BACF95EB}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.2.5.1:3", "", "«text» ", "EARoot/EA1/EA2/EA2/EA4/EA2/EA5/EA1/EA5700.htm", "16.png", "8664", "0", "", "GUIElement0","{691D443B-4199-41e9-9925-5E32C45FA8B2}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.2.5.1:4", "", "«text» ", "EARoot/EA1/EA2/EA2/EA4/EA2/EA5/EA1/EA5701.htm", "16.png", "8663", "0", "", "GUIElement0","{FD4B2BC8-E4BA-46e8-924D-AF211C818F1F}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.2.5.1:5", "", "«label» Conteúdo Teórico Específico", "EARoot/EA1/EA2/EA2/EA4/EA2/EA5/EA1/EA5702.htm", "16.png", "8665", "0", "", "GUIElement0","{7D9C528C-AE37-4ae9-A926-9088C74DF087}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.2.5.1:6", "", "«label» Hora / Aula", "EARoot/EA1/EA2/EA2/EA4/EA2/EA5/EA1/EA5703.htm", "16.png", "8666", "0", "", "GUIElement0","{8FBE7DA3-18DC-4fef-9F52-B50093259595}");

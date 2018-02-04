@@ -1,5 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.2.2.6.1:1", "", "Menu NavBar - Frequências", "EARoot/EA1/EA2/EA2/EA6/EA1/EA6762.htm", "188.png", "2007", "0", "", "Custom diagram0","{CD42456C-FFB5-4f5d-887F-C534CE483204}");
-tocTab[tocTab.length] = new Array("0.1.2.2.6.1:2", "", "«button» Aulas Extras", "EARoot/EA1/EA2/EA2/EA6/EA1/EA6764.htm", "16.png", "10921", "0", "", "GUIElement0","{B8AE8495-067C-485b-A843-FB3B115277D8}");
-tocTab[tocTab.length] = new Array("0.1.2.2.6.1:3", "", "«button» PAP", "EARoot/EA1/EA2/EA2/EA6/EA1/EA6765.htm", "16.png", "10922", "0", "", "GUIElement0","{1C04D14A-0E9A-42fd-B9F4-E609C871DCD5}");
-tocTab[tocTab.length] = new Array("0.1.2.2.6.1:4", "", "«button» PIO", "EARoot/EA1/EA2/EA2/EA6/EA1/EA6766.htm", "16.png", "10920", "0", "", "GUIElement0","{DE5A4970-DCE1-4599-BCD0-3D6BA980D62B}");
-tocTab[tocTab.length] = new Array("0.1.2.2.6.1:5", "", "«button» PIT e PIP", "EARoot/EA1/EA2/EA2/EA6/EA1/EA6767.htm", "16.png", "10919", "0", "", "GUIElement0","{FC81F689-C394-40f5-A564-EE178352AF92}");

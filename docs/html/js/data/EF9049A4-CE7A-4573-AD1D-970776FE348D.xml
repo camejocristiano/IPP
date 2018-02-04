@@ -1,7 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.3.2:1", "", "Requisitos de Sistema", "EARoot/EA1/EA3/EA2/EA7172.htm", "188.png", "28", "0", "", "Custom diagram0","{59839623-7F42-4650-92AB-DD2E33726B7D}");
-tocTab[tocTab.length] = new Array("0.1.3.2.1", "1", "Configuracoes", "EARoot/EA1/EA3/EA2/EA7176.htm", "4.png", "", "", "{423DD1EC-5850-491b-B96B-5A5EECE66ED5}", "Package");
-tocTab[tocTab.length] = new Array("0.1.3.2.2", "1", "Cursos", "EARoot/EA1/EA3/EA2/EA7177.htm", "4.png", "", "", "{EA9F969E-439B-49ce-800A-9B2F5F36B200}", "Package");
-tocTab[tocTab.length] = new Array("0.1.3.2.3", "1", "Aprendizes", "EARoot/EA1/EA3/EA2/EA7178.htm", "4.png", "", "", "{D8AB1B69-8924-429a-ABAD-4CBB4F867F8D}", "Package");
-tocTab[tocTab.length] = new Array("0.1.3.2.4", "1", "Frequencias", "EARoot/EA1/EA3/EA2/EA7179.htm", "4.png", "", "", "{1FF518BD-F535-4c0e-9D16-126F586D67B8}", "Package");
-tocTab[tocTab.length] = new Array("0.1.3.2.5", "1", "Empresas", "EARoot/EA1/EA3/EA2/EA7180.htm", "4.png", "", "", "{55A686D0-218C-4be5-A264-2F9D54920368}", "Package");
-tocTab[tocTab.length] = new Array("0.1.3.2.6", "1", "Financeiro", "EARoot/EA1/EA3/EA2/EA7181.htm", "4.png", "", "", "{4D58B41A-697B-4302-B610-3778FEEB6890}", "Package");

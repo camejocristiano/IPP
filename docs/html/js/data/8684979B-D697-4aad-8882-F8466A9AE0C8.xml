@@ -1,9 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4:1", "", "Cenário 04: Manutenção de Frequencias", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1448.htm", "189.png", "1404", "0", "", "Analysis diagram0","{619F5A48-9712-4840-9AB8-1C48C2199CAC}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4:2", "", "«DFD_DataStore» AulasExtras", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1451.htm", "5.png", "6841", "0", "", "Class0","{9BE3E66A-D024-420f-8D1E-56CDC864DD84}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4:3", "", "«DFD_DataStore» PAPs", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1453.htm", "5.png", "6831", "0", "", "Class0","{A55323DC-32AF-4d08-8B00-C968683615D7}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4:4", "", "«DFD_DataStore» PIO", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1454.htm", "5.png", "6814", "0", "", "Class0","{38BA8F37-4487-442a-AAF5-FF979988A892}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4:5", "", "«DFD_DataStore» PITEPIP", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1455.htm", "5.png", "6788", "0", "", "Class0","{5918CCC7-8FCB-4501-A3D4-1B9603D6ACA6}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4.1", "1", "Cenário 04.01: Manutenção de PITs E PIPs", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1456.htm", "4.png", "", "", "{7BD88B9B-E75B-4b8e-831B-282896BADC5E}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4.2", "1", "Cenário 04.02: Manutenção de PAPs", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1457.htm", "4.png", "", "", "{40308478-FB04-4dc7-97AE-083A948F138D}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4.3", "1", "Cenário 04.03: Manutenção de PIOs", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1458.htm", "4.png", "", "", "{AADA4B08-E12E-4787-B030-995DC222CE9A}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4.4", "1", "Cenário 04.04: Manutenção de Aulas Extras", "EARoot/EA1/EA1/EA5/EA1/EA4/EA1459.htm", "4.png", "", "", "{CE9F872E-9743-4bd1-9E8F-65AF031DE6EF}", "Package");

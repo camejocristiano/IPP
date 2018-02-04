@@ -1,9 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5:1", "", "Cenário 06: Manutenção de Empresas", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1607.htm", "189.png", "1406", "0", "", "Analysis diagram0","{743B27B6-624E-427a-BEDD-F38CEE8FE6A0}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5:2", "", "«DFD_DataStore» Empresas", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1615.htm", "5.png", "7026", "0", "", "Class0","{833C3471-E66B-41fd-B482-FD27CC5F04E9}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5:3", "", "«DFD_DataStore» Gestores", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1616.htm", "5.png", "7041", "0", "", "Class0","{645F8C24-9455-4baf-830D-ECE38E740362}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5:4", "", "«DFD_DataStore» Historicos", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1617.htm", "5.png", "7074", "0", "", "Class0","{E42DBBCE-74CC-479f-8975-9526B26D06EA}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5:5", "", "«DFD_DataStore» Setores", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1618.htm", "5.png", "7057", "0", "", "Class0","{AC8C80AC-6D3E-4fa3-8E2C-CDA62595E8D1}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1", "1", "Cenário 06.01: Manutenção de Empresas", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1610.htm", "4.png", "", "", "{A370AECE-AA2D-4599-85F6-027A18644101}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.2", "1", "Cenário 06.02: Manutenção de Gestores", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1611.htm", "4.png", "", "", "{42F71647-DE07-422f-A7ED-FD53BFBE017D}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.3", "1", "Cenário 06.03: Manutenção de Setor", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1612.htm", "4.png", "", "", "{BC640932-6953-42a6-8D49-D759CDCBC28D}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.4", "1", "Cenário 06.04: Manutenção de Historico", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1613.htm", "4.png", "", "", "{CCBBCF61-B1CE-4e6b-9795-3DF12D8A5DCD}", "Package");

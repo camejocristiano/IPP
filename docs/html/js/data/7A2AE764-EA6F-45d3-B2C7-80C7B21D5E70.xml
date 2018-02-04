@@ -1,7 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1:1", "", "DFD Essencial", "EARoot/EA1/EA1/EA5/EA1/EA173.htm", "189.png", "18", "0", "", "Analysis diagram0","{27466CC9-35BE-4ada-8EE7-B55F44D73225}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.1", "1", "Cenário 01: Manutenção de Configurações", "EARoot/EA1/EA1/EA5/EA1/EA177.htm", "4.png", "", "", "{B14883C6-0ED2-4213-98E7-7BFFA3411878}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.2", "1", "Cenário 02: Manutenção de Cursos", "EARoot/EA1/EA1/EA5/EA1/EA178.htm", "4.png", "", "", "{E83E940C-853A-445b-BB99-BAFC8EFBC86F}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.3", "1", "Cenário 03: Manutenção de Aprendizes", "EARoot/EA1/EA1/EA5/EA1/EA179.htm", "4.png", "", "", "{8833678B-195A-4f2c-B4CD-5608462B872A}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.4", "1", "Cenário 04: Manutenção de Frequencias", "EARoot/EA1/EA1/EA5/EA1/EA180.htm", "4.png", "", "", "{8684979B-D697-4aad-8882-F8466A9AE0C8}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5", "1", "Cenário 06: Manutenção de Empresas", "EARoot/EA1/EA1/EA5/EA1/EA181.htm", "4.png", "", "", "{9D57FD0C-5106-44ab-A9D1-2FA1B45DA3B6}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.6", "1", "Cenário 05: Manutenção de Financeiro", "EARoot/EA1/EA1/EA5/EA1/EA182.htm", "4.png", "", "", "{798F7A96-3817-40a4-8AEB-2ED5AAFFE68D}", "Package");

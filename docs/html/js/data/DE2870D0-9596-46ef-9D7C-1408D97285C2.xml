@@ -1,7 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.1.6:1", "", "Capacidade 06: Manter Contatos", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA1/EA6/EA1700.htm", "189.png", "1980", "0", "", "Analysis diagram0","{86CCA28B-E0C3-4a14-A7C6-0C4A8737A628}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.1.6:2", "", "«DFD_Process» Manter Contatos", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA1/EA6/EA1706.htm", "21.png", "11215", "0", "", "Activity0","{1B227E5A-E00F-45cb-8510-7462883C9CA5}");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.1.6.1", "1", "Cadastrar Contato", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA1/EA6/EA1709.htm", "4.png", "", "", "{31776C68-0BC1-4264-B656-C08C19BF0864}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.1.6.2", "1", "Listar Contatos", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA1/EA6/EA1710.htm", "4.png", "", "", "{EBCD4DC7-31E6-4a81-B26E-F6DD945EC47B}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.1.6.3", "1", "Visualizar Contato", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA1/EA6/EA1711.htm", "4.png", "", "", "{3DFECF92-D049-49d0-81DB-50B20FE1638C}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.1.6.4", "1", "Editar Contato", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA1/EA6/EA1712.htm", "4.png", "", "", "{8424EE3F-F4A1-4e14-B152-CC29259F439E}", "Package");
-tocTab[tocTab.length] = new Array("0.1.1.5.1.5.1.1.6.5", "1", "Listar Contatos por Empresa", "EARoot/EA1/EA1/EA5/EA1/EA5/EA1/EA1/EA6/EA1713.htm", "4.png", "", "", "{4A173C1A-E2C0-4100-A9B3-D66C2E48FC29}", "Package");

@@ -1,5 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.2.2.7.2:1", "", "Empresas", "EARoot/EA1/EA2/EA2/EA7/EA2/EA6878.htm", "188.png", "1085", "0", "", "Custom diagram0","{BBE1195E-C776-4ed6-BDC6-04B698F3A210}");
-tocTab[tocTab.length] = new Array("0.1.2.2.7.2:2", "", "Manutenção de Empresa", "EARoot/EA1/EA2/EA2/EA7/EA2/EA6885.htm", "11.png", "11061", "0", "", "Screen0","{2CCBE014-746E-4a84-AE6C-08BD349F2EF0}");
-tocTab[tocTab.length] = new Array("0.1.2.2.7.2:3", "", "Menu NavBar - Empresas", "EARoot/EA1/EA2/EA2/EA7/EA2/EA6886.htm", "99.png", "11062", "0", "", "UMLDiagram0","{F45B5181-06C0-4b5b-9125-47AE17BD827F}");
-tocTab[tocTab.length] = new Array("0.1.2.2.7.2:4", "", "Menu NavBar Principal", "EARoot/EA1/EA2/EA2/EA7/EA2/EA6887.htm", "99.png", "11063", "0", "", "UMLDiagram0","{2673A067-BBB5-4843-8A8D-DAF1BE6D5D03}");
-tocTab[tocTab.length] = new Array("0.1.2.2.7.2.1", "1", "Empresa", "EARoot/EA1/EA2/EA2/EA7/EA2/EA6889.htm", "4.png", "", "", "{CCBC8967-9318-4a05-94B0-F9F1D158BA6B}", "Package");

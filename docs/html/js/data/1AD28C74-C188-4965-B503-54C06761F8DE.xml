@@ -1,3 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.3:1", "", "Projeto de Sistemas", "EARoot/EA1/EA3/EA7109.htm", "176.png", "1717", "0", "", "Package diagram0","{DD22497E-62F2-4b76-BAED-10259A63B17A}");
-tocTab[tocTab.length] = new Array("0.1.3.1", "1", "Arquitetura do Sistema", "", "4.png", "", "", "{AB7EAE68-C1A2-4b6c-8C0E-F707FD3D8988}", "Package");
-tocTab[tocTab.length] = new Array("0.1.3.2", "1", "Requisitos de Sistema", "", "4.png", "", "", "{EF9049A4-CE7A-4573-AD1D-970776FE348D}", "Package");

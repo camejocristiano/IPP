@@ -1,7 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.2.2.4.3:1", "", "Turmas", "EARoot/EA1/EA2/EA2/EA4/EA3/EA5752.htm", "188.png", "621", "0", "", "Custom diagram0","{DBE2C03C-C6E9-4363-9CD2-6FA318E4C13E}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.3:2", "", "Menu NavBar - Cursos", "EARoot/EA1/EA2/EA2/EA4/EA3/EA5757.htm", "99.png", "9026", "0", "", "UMLDiagram0","{2BA25C14-D65E-48d1-845D-4EB4DD34C86A}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.3:3", "", "Menu NavBar Principal", "EARoot/EA1/EA2/EA2/EA4/EA3/EA5758.htm", "99.png", "9027", "0", "", "UMLDiagram0","{34F6FA9C-AEA4-4356-9663-97E926638D83}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.3:4", "", "Turmas", "EARoot/EA1/EA2/EA2/EA4/EA3/EA5760.htm", "11.png", "9025", "0", "", "Screen0","{B529A9C5-CC6D-4edd-B182-78213AB58E11}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.3:5", "", "«table» ", "EARoot/EA1/EA2/EA2/EA4/EA3/EA5762.htm", "16.png", "9028", "9025", "", "GUIElement0","{7FE5ABF0-6755-40cb-A057-7B3652F4DE12}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.3:6", "", "«label» Lista de Turmas", "EARoot/EA1/EA2/EA2/EA4/EA3/EA5763.htm", "16.png", "9029", "9025", "", "GUIElement0","{43253120-594C-45d4-8A46-ECF7E69E277F}");
-tocTab[tocTab.length] = new Array("0.1.2.2.4.3.1", "1", "Turma", "EARoot/EA1/EA2/EA2/EA4/EA3/EA5761.htm", "4.png", "", "", "{9FABAFD3-4378-4a87-834D-4170C90B4875}", "Package");
