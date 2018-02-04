@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/materialize-css/dist/css/materialize.css";
+.tabs .indicator {
+	background-color:#222 !important;
+}
+
+body {
+	background: url("../src/assets/images/banner.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center; 
+}
+
+button {
+	margin-bottom: 4rem;
+}
+
+.breadcrumb {
+	color: #222;
+	background-color: white;
+}
+
+form {
+	background-color: white;
+}
