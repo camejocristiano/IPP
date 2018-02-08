@@ -6,22 +6,43 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
+
+<style>
+/*
+ CSS INDEXES
+*/
+.btn-index:hover {
+	background-color: #669999;
+	font-weight: bolder;
+	font-style: italic;
+}
+.card-content:hover {
+	font-weight: bolder;
+	background-color: #669999;
+	font-style: italic;
+}
+</style>
+
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
 	<div class="row">
-		<div class="input-field  s12 col l12" style="border-top: 2px solid orange;">
-			 <h4 class="header right orange-text">Ficha Social: <a class="header right" href="/jovens/${fichaSocial.jovem != null ? fichaSocial.jovem.id : jovem.id}">${fichaSocial.jovem != null ? fichaSocial.jovem.nome : jovem.nome}</a></h4>
-		</div>
+		<div class="col s12 l12">
+			<a href="/sw/jovem/${jovem.id}">
+				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
+			</a>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
 	</div>
-	<div class="row">
-		<form:form role="form" commandName="fichaSocial" servletRelativeAction="/fichasSociais/${fichaSocial.id}" method="POST">
-		<div class="input-field s12 col l12">	
+</div>
+
+		<form:form role="form" commandName="fichaSocial" servletRelativeAction="/sw/fichaSocial/${fichaSocial.id}" method="POST">
 			<div class="row">
 				<div class="input-field s12 col l12">
-				Situação Habitacional
-				<hr />
-				<hr />
 					<div class="row">
 						<div class="input-field s12 col l12">
 							<form:hidden path="jovem" value="${jovem.id}" />
@@ -303,18 +324,35 @@
 					</div><!-- // row -->
 				</div><!-- // col -->
 			</div><!-- // row -->
-		</div><!-- // col -->
 			<button class="btn waves-effect waves-light right" type="submit">
 				Salvar<i class="material-icons right">send</i>
 			</button>
 		</form:form>
-	</div>
-</div>
+	<br />
+	<br />
+</div><!-- // container -->
 <c:import url="../../../partials/js.jsp"></c:import>
 <script type="text/javascript">
-$(document).ready(function() {
-	$('select').material_select();
-});
+	$(document).ready(function() {
+		$('select').material_select();
+	});
+	$('.datepicker').pickadate({
+		monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+		monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+		weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
+		weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+		weekdaysLetter: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+		today: 'Hoje',
+		clear: 'Limpar',
+		close: 'Pronto',
+		labelMonthNext: 'Próximo mês',
+		labelMonthPrev: 'Mês anterior',
+		labelMonthSelect: 'Selecione um mês',
+		labelYearSelect: 'Selecione um ano',
+		selectMonths: true,
+		selectYears: 99,
+	    format: 'dd/mm/yyyy' 
+	});
 </script>
 <c:import url="../../../partials/footer.jsp"></c:import>
 <c:import url="../../../partials/final.jsp"></c:import>

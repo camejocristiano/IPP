@@ -9,4 +9,5 @@ import br.net.ipp.models.aprendizes.Jovem;
 
 public interface DispensaRepository extends PagingAndSortingRepository<Dispensa, Long> {
 	List<Dispensa> findAllByJovem(Jovem jovem);
+	Dispensa findByJovem(Jovem jovem);
 }

@@ -19,29 +19,22 @@ import br.net.ipp.models.aprendizes.OutroCurso;
 
 @Controller
 @Transactional
-@RequestMapping("/outrosCursos")
+@RequestMapping("/sw")
 public class OutroCursoController {
 
 	private OutroCursoRepository outroCursoRepository;
 	private JovemRepository jovemRepository;
 	
 	@Autowired
-	public void OutroCursoEndPoint(
+	public OutroCursoController(
 			OutroCursoRepository outroCursoRepository,
 			JovemRepository jovemRepository
 			) {
 		this.outroCursoRepository = outroCursoRepository;
 		this.jovemRepository = jovemRepository;
 	}
-
-	@GetMapping("/form")
-	public ModelAndView outroCurso(OutroCurso outroCurso) {
-		ModelAndView modelAndView = new ModelAndView("aprendizes/habilidades/cursos/curso");
-		modelAndView.addObject("outroCurso", outroCurso);
-		return modelAndView;
-	}
 	
-	@GetMapping("/form/{id}")
+	@GetMapping("/outroCursoForm/{id}")
 	public ModelAndView outroCursoJovem(OutroCurso outroCurso, @PathVariable Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/habilidades/cursos/curso");
 		modelAndView.addObject("outroCurso", outroCurso);
@@ -50,7 +43,7 @@ public class OutroCursoController {
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/outroCurso")
 	public ModelAndView save(@Valid OutroCurso outroCurso, BindingResult bindingResult) {
 		Long id = outroCurso.getJovem().getId();
 		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
@@ -65,7 +58,7 @@ public class OutroCursoController {
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/outroCurso/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/habilidades/cursos/curso");
 		OutroCurso outroCurso = outroCursoRepository.findOne(id);
@@ -73,7 +66,7 @@ public class OutroCursoController {
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/outroCurso/{id}")
 	public ModelAndView update(@Valid OutroCurso outroCurso, BindingResult bindingResult) {
 		Long id = outroCurso.getJovem().getId();
 		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);

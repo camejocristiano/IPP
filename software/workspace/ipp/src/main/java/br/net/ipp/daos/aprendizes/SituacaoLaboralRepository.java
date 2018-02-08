@@ -9,4 +9,5 @@ import br.net.ipp.models.aprendizes.SituacaoLaboral;
 
 public interface SituacaoLaboralRepository extends PagingAndSortingRepository<SituacaoLaboral, Long> {
 	List<SituacaoLaboral> findAllByJovem(Jovem jovem);
+	SituacaoLaboral findByJovem(Jovem jovem);
 }

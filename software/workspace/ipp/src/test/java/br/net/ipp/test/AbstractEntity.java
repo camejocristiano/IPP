@@ -5,8 +5,9 @@ import java.io.Serializable;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+
+import org.springframework.data.annotation.Id;
 
 @MappedSuperclass
 public class AbstractEntity implements Serializable {

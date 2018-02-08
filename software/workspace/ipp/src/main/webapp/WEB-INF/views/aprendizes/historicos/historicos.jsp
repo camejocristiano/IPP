@@ -73,7 +73,7 @@
 		 </a>
 	</div>
 </div>
-<table id="tabelaAgendamentos" class="display" width="100%" cellspacing="0">
+<table id="tabelaAgendamentos" class="display">
     <thead>
     	<tr>
             <th>ID</th>

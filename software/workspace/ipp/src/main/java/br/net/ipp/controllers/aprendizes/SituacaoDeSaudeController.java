@@ -20,7 +20,7 @@ import br.net.ipp.models.aprendizes.SituacaoDeSaude;
 
 @Controller
 @Transactional
-@RequestMapping("/situacoesDeSaude")
+@RequestMapping("/sw")
 public class SituacaoDeSaudeController {
 
 	private SituacaoDeSaudeRepository situacaoDeSaudeRepository;
@@ -28,7 +28,7 @@ public class SituacaoDeSaudeController {
 	private JovemRepository jovemRepository;
 	
 	@Autowired
-	public void SituacaoDeSaudeEndPoint(
+	public SituacaoDeSaudeController(
 			SituacaoDeSaudeRepository situacaoDeSaudeRepository,
 			UsuarioRepository usuarioRepository,
 			JovemRepository jovemRepository
@@ -38,7 +38,7 @@ public class SituacaoDeSaudeController {
 		this.jovemRepository = jovemRepository;
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/situacaoDeSaude/form")
 	public ModelAndView situacaoDeSaude(SituacaoDeSaude situacaoDeSaude) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/saudes/saude");
 		modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
@@ -46,7 +46,7 @@ public class SituacaoDeSaudeController {
 		return modelAndView;
 	}
 	
-	@GetMapping("/form/{id}")
+	@GetMapping("/situacaoDeSaude/form/{id}")
 	public ModelAndView situacaoDeSaudeJovem(SituacaoDeSaude situacaoDeSaude, @PathVariable Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/saudes/saude");
 		Jovem jovem = jovemRepository.findOne(id);
@@ -56,7 +56,7 @@ public class SituacaoDeSaudeController {
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/situacaoDeSaude")
 	public ModelAndView save(@Valid SituacaoDeSaude situacaoDeSaude, BindingResult bindingResult) {
 		Long id = situacaoDeSaude.getJovem().getId();
 		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
@@ -71,7 +71,7 @@ public class SituacaoDeSaudeController {
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/situacaoDeSaude/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/saudes/saude");
 		SituacaoDeSaude situacaoDeSaude = situacaoDeSaudeRepository.findOne(id);
@@ -80,7 +80,7 @@ public class SituacaoDeSaudeController {
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/situacaoDeSaude/{id}")
 	public ModelAndView update(@Valid SituacaoDeSaude situacaoDeSaude, BindingResult bindingResult) {
 		Long id = situacaoDeSaude.getJovem().getId();
 		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
@@ -92,6 +92,21 @@ public class SituacaoDeSaudeController {
 			modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 		}	
+		return modelAndView;
+	}
+	
+	@GetMapping("/situacaoDeSaudeJovem/{id}")
+	public ModelAndView situacaoDeSaudeJovem(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("aprendizes/saudes/saude");
+		Jovem jovem = jovemRepository.findOne(id);
+		modelAndView.addObject("jovem", jovem);
+		if (situacaoDeSaudeRepository.findByJovem(jovem) != null) {
+			modelAndView.addObject("situacaoDeSaude", situacaoDeSaudeRepository.findByJovem(jovem));
+		} else {
+			SituacaoDeSaude situacaoDeSaude = new SituacaoDeSaude();
+			modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
+		}
+		modelAndView.addObject("usuarios", usuarioRepository.findAll());
 		return modelAndView;
 	}
 	

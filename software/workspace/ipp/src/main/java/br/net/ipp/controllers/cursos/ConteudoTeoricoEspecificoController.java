@@ -17,7 +17,7 @@ import br.net.ipp.models.cursos.ConteudoTeoricoEspecifico;
 
 @Controller
 @Transactional
-@RequestMapping("/especificos")
+@RequestMapping("/sw")
 public class ConteudoTeoricoEspecificoController {
 
 private ConteudoTeoricoEspecificoRepository conteudoTeoricoEspecificoRepository;
@@ -29,7 +29,14 @@ private ConteudoTeoricoEspecificoRepository conteudoTeoricoEspecificoRepository;
 		this.conteudoTeoricoEspecificoRepository = conteudoTeoricoEspecificoRepository;
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/especificos")
+	public ModelAndView especificos(ConteudoTeoricoEspecifico conteudoTeoricoEspecifico) {
+		ModelAndView modelAndView = new ModelAndView("cursos/matrizes/especificos/especificos");
+		modelAndView.addObject("especificos", conteudoTeoricoEspecificoRepository.findAll());
+		return modelAndView;
+	}
+
+	@GetMapping("/especificos/form")
 	public ModelAndView conteudoTeoricoEspecifico(ConteudoTeoricoEspecifico conteudoTeoricoEspecifico) {
 		ModelAndView modelAndView = new ModelAndView("cursos/matrizes/especificos/especifico");
 		modelAndView.addObject("conteudoTeoricoEspecifico", conteudoTeoricoEspecifico);
@@ -50,7 +57,7 @@ private ConteudoTeoricoEspecificoRepository conteudoTeoricoEspecificoRepository;
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/especificos/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("cursos/matrizes/especificos/especifico");
 		ConteudoTeoricoEspecifico conteudoTeoricoEspecifico = conteudoTeoricoEspecificoRepository.findOne(id);
@@ -58,7 +65,7 @@ private ConteudoTeoricoEspecificoRepository conteudoTeoricoEspecificoRepository;
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/especificos/{id}")
 	public ModelAndView update(@Valid ConteudoTeoricoEspecifico conteudoTeoricoEspecifico, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/");
 		if (bindingResult.hasErrors()) {

@@ -1,7 +1,5 @@
 package br.net.ipp.controllers.configuracoes;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -18,48 +16,55 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.net.ipp.daos.configuracoes.GrupoDePermissoesRepository;
 import br.net.ipp.daos.configuracoes.UsuarioRepository;
-import br.net.ipp.enums.EstadoCivil;
-import br.net.ipp.enums.Regiao;
-import br.net.ipp.enums.RelacaoFuncional;
-import br.net.ipp.enums.Sexo;
-import br.net.ipp.enums.Status;
 import br.net.ipp.models.configuracoes.GrupoDePermissoes;
 import br.net.ipp.models.configuracoes.Usuario;
+import br.net.ipp.services.EnumService;
 
 @Controller
 @Transactional
-@RequestMapping("/usuarios")
+@RequestMapping("/sw/usuarios")
 public class UsuariosEndpoint {
 	
-	private UsuarioRepository usuarioDAO;
-	private GrupoDePermissoesRepository grupoDePermissoeDAO;
+	private UsuarioRepository usuarioRepository;
+	private GrupoDePermissoesRepository grupoDePermissoeRepository;
+	private EnumService enumService;
 	
 	@Autowired
 	public void UsuarioEndPoint(
-			UsuarioRepository usuarioDAO,
-			GrupoDePermissoesRepository grupoDePermissoeDAO
+			UsuarioRepository usuarioRepository,
+			GrupoDePermissoesRepository grupoDePermissoeRepository
 			) {
-		this.usuarioDAO = usuarioDAO;
-		this.grupoDePermissoeDAO = grupoDePermissoeDAO;
+		this.usuarioRepository = usuarioRepository;
+		this.grupoDePermissoeRepository = grupoDePermissoeRepository;
+		this.enumService = new EnumService();
+		
 	}
-
+	
+	@GetMapping
+	public ModelAndView index() {
+		ModelAndView modelAndView = new ModelAndView("configuracoes/usuarios/usuarios");
+		modelAndView.addObject("usuarios", usuarioRepository.findAll());
+		return modelAndView;
+	}
+	
 	@GetMapping("/form")
 	public ModelAndView usuario(Usuario usuario) {
 		ModelAndView modelAndView = new ModelAndView("configuracoes/usuarios/usuario");
-		List<String> status = carregarStatus();
+		List<String> status = enumService.carregarStatus();
 		modelAndView.addObject("status", status);
-		List<String> estadoCivil = carregarEstadoCivil();
+		List<String> estadoCivil = enumService.carregarEstadoCivil();
 		modelAndView.addObject("estadoCivil", estadoCivil);
-		List<String> sexo = carregarSexo();
+		
+		List<String> sexo = enumService.carregarSexo();
 		modelAndView.addObject("sexo", sexo);
-		List<String> relacaoFuncional = carregarRelacaoFuncional();
+		List<String> relacaoFuncional = enumService.carregarRelacaoFuncional();
 		modelAndView.addObject("relacaoFuncional", relacaoFuncional);
-		List<String> regiao = carregarRegiao();
+		List<String> regiao = enumService.carregarRegiao();
 		modelAndView.addObject("regiao", regiao);
-		List<GrupoDePermissoes> gruposDePermissoes = (List<GrupoDePermissoes>) grupoDePermissoeDAO.findAll();
+		List<GrupoDePermissoes> gruposDePermissoes = (List<GrupoDePermissoes>) grupoDePermissoeRepository.findAll();
 		modelAndView.addObject("gruposDePermissoes", gruposDePermissoes);
 		/*Long user = usuario.getGrupoDePermissoes().getId();
-		GrupoDePermissoes grupoDePermissoes = grupoDePermissoeDAO.findById(user);
+		GrupoDePermissoes grupoDePermissoes = grupoDePermissoeRepository.findById(user);
 		modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);*/
 		return modelAndView;
 	}
@@ -71,21 +76,22 @@ public class UsuariosEndpoint {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("usuario", usuario);
 		} else {
-			usuarioDAO.save(usuario);
+			usuarioRepository.save(usuario);
 			modelAndView.addObject("usuario", usuario);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
-			List<String> status = carregarStatus();
+			List<String> status = enumService.carregarStatus();
 			modelAndView.addObject("status", status);
-			List<String> estadoCivil = carregarEstadoCivil();
+			List<String> estadoCivil = enumService.carregarEstadoCivil();
 			modelAndView.addObject("estadoCivil", estadoCivil);
-			List<String> sexo = carregarSexo();
+			EnumService enumService = new EnumService();
+			List<String> sexo = enumService.carregarSexo();
 			modelAndView.addObject("sexo", sexo);
-			List<String> relacaoFuncional = carregarRelacaoFuncional();
+			List<String> relacaoFuncional = enumService.carregarRelacaoFuncional();
 			modelAndView.addObject("relacaoFuncional", relacaoFuncional);
-			List<String> regiao = carregarRegiao();
+			List<String> regiao = enumService.carregarRegiao();
 			modelAndView.addObject("regiao", regiao);
 			/*Long user = usuario.getGrupoDePermissoes().getId();
-			GrupoDePermissoes grupoDePermissoes = grupoDePermissoeDAO.findById(user);
+			GrupoDePermissoes grupoDePermissoes = grupoDePermissoeRepository.findById(user);
 			modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);*/
 			this.load(usuario.getId());
 		}		
@@ -95,19 +101,20 @@ public class UsuariosEndpoint {
 	@GetMapping("/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("configuracoes/usuarios/usuario");
-		Usuario usuario = usuarioDAO.findOne(id);
+		Usuario usuario = usuarioRepository.findOne(id);
 		modelAndView.addObject("usuario", usuario);
-		List<String> status = carregarStatus();
+		List<String> status = enumService.carregarStatus();
 		modelAndView.addObject("status", status);
-		List<String> estadoCivil = carregarEstadoCivil();
+		List<String> estadoCivil = enumService.carregarEstadoCivil();
 		modelAndView.addObject("estadoCivil", estadoCivil);
-		List<String> sexo = carregarSexo();
+		EnumService enumService = new EnumService();
+		List<String> sexo = enumService.carregarSexo();
 		modelAndView.addObject("sexo", sexo);
-		List<String> relacaoFuncional = carregarRelacaoFuncional();
+		List<String> relacaoFuncional = enumService.carregarRelacaoFuncional();
 		modelAndView.addObject("relacaoFuncional", relacaoFuncional);
-		List<String> regiao = carregarRegiao();
+		List<String> regiao = enumService.carregarRegiao();
 		modelAndView.addObject("regiao", regiao);
-		List<GrupoDePermissoes> gruposDePermissoes = (List<GrupoDePermissoes>) grupoDePermissoeDAO.findAll();
+		List<GrupoDePermissoes> gruposDePermissoes = (List<GrupoDePermissoes>) grupoDePermissoeRepository.findAll();
 		modelAndView.addObject("gruposDePermissoes", gruposDePermissoes);
 		if (usuario.getGrupoDePermissoes() != null) {
 			GrupoDePermissoes grupoDePermissoes = grupoDePermissoes(usuario);
@@ -122,23 +129,24 @@ public class UsuariosEndpoint {
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("usuario", usuario);
-			GrupoDePermissoes grupoDePermissoes = grupoDePermissoeDAO.findById(usuario.getId());
+			GrupoDePermissoes grupoDePermissoes = grupoDePermissoeRepository.findById(usuario.getId());
 			modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);
 		} else {
-			usuarioDAO.save(usuario);
+			usuarioRepository.save(usuario);
 			modelAndView.addObject("usuario", usuario);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
-			List<String> status = carregarStatus();
+			List<String> status = enumService.carregarStatus();
 			modelAndView.addObject("status", status);
-			List<String> estadoCivil = carregarEstadoCivil();
+			List<String> estadoCivil = enumService.carregarEstadoCivil();
 			modelAndView.addObject("estadoCivil", estadoCivil);
-			List<String> sexo = carregarSexo();
+			EnumService enumService = new EnumService();
+			List<String> sexo = enumService.carregarSexo();
 			modelAndView.addObject("sexo", sexo);
-			List<String> relacaoFuncional = carregarRelacaoFuncional();
+			List<String> relacaoFuncional = enumService.carregarRelacaoFuncional();
 			modelAndView.addObject("relacaoFuncional", relacaoFuncional);
-			List<String> regiao = carregarRegiao();
+			List<String> regiao = enumService.carregarRegiao();
 			modelAndView.addObject("regiao", regiao);
-			List<GrupoDePermissoes> gruposDePermissoes = (List<GrupoDePermissoes>) grupoDePermissoeDAO.findAll();
+			List<GrupoDePermissoes> gruposDePermissoes = (List<GrupoDePermissoes>) grupoDePermissoeRepository.findAll();
 			modelAndView.addObject("gruposDePermissoes", gruposDePermissoes);
 			if (usuario.getGrupoDePermissoes() != null) {
 				GrupoDePermissoes grupoDePermissoes = grupoDePermissoes(usuario);
@@ -150,54 +158,10 @@ public class UsuariosEndpoint {
 	
 	public GrupoDePermissoes grupoDePermissoes(Usuario usuario) {
 		Long user = usuario.getGrupoDePermissoes().getId();
-		GrupoDePermissoes grupoDePermissoes = grupoDePermissoeDAO.findById(user);
+		GrupoDePermissoes grupoDePermissoes = grupoDePermissoeRepository.findById(user);
 		return grupoDePermissoes;
 	}
 	
-	public List<String> carregarStatus() {
-		List<Status> lista = Arrays.asList(Status.values());
-		List<String> status = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			status.add(lista.get(i).name());
-		}
-		return status;
-	}
-	
-	public List<String> carregarSexo() {
-		List<Sexo> lista = Arrays.asList(Sexo.values());
-		List<String> sexo = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			sexo.add(lista.get(i).name());
-		}
-		return sexo;
-	}
-	
-	public List<String> carregarEstadoCivil() {
-		List<EstadoCivil> lista = Arrays.asList(EstadoCivil.values());
-		List<String> estadoCivil = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			estadoCivil.add(lista.get(i).name());
-		}
-		return estadoCivil;
-	}
-	
-	public List<String> carregarRelacaoFuncional() {
-		List<RelacaoFuncional> lista = Arrays.asList(RelacaoFuncional.values());
-		List<String> relacaoFuncional = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			relacaoFuncional.add(lista.get(i).name());
-		}
-		return relacaoFuncional;
-	}
-	
-	public List<String> carregarRegiao() {
-		List<Regiao> lista = Arrays.asList(Regiao.values());
-		List<String> regiao = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			regiao.add(lista.get(i).name());
-		}
-		return regiao;
-	}
 }
 
 

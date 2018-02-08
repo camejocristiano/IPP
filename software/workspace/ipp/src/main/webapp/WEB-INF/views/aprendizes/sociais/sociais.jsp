@@ -12,7 +12,7 @@
 		 </a>
 	</div>
 </div>
-<table id="tabelaFichasSociais" class="display" width="100%" cellspacing="0">
+<table id="tabelaFichasSociais" class="display">
 	<thead>
           <tr>
             <th>ID</th>

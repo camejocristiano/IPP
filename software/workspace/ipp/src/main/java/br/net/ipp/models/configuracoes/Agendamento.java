@@ -2,8 +2,11 @@ package br.net.ipp.models.configuracoes;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.models.AbstractEntity;
 
@@ -12,6 +15,8 @@ public class Agendamento extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
+	@Column(name = "data")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy") 
 	private Date data;
 	private String descricao;
 	private Date hora;

@@ -9,4 +9,5 @@ import br.net.ipp.models.aprendizes.Jovem;
 
 public interface EntrevistaRepository extends PagingAndSortingRepository<Entrevista, Long> {
 	List<Entrevista> findAllByJovem(Jovem jovem);
+	Entrevista findByJovem(Jovem jovem);
 }

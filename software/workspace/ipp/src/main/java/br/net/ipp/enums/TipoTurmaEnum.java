@@ -1,7 +1,8 @@
 package br.net.ipp.enums;
 
 public enum TipoTurmaEnum {
-	PIT_E_PIP,
+	PIT,
+	PIP,
 	PAP,
 	PIO,
 	AULA_EXTRA;

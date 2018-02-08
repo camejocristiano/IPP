@@ -1,6 +1,8 @@
 package br.net.ipp.models.empresas;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import br.net.ipp.models.AbstractEntity;
 
@@ -10,29 +12,32 @@ public class Setor extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 
 	private String nome;
-/*	@OneToOne
+	@OneToOne
 	private Gestor gestor;
 	@ManyToOne
-	private Empresa empresa;*/
+	private Empresa empresa;
 	
 
-/*	public Gestor getGestor() {
+	public Gestor getGestor() {
 		return gestor;
 	}
 	public void setGestor(Gestor gestor) {
 		this.gestor = gestor;
-	}*/
+	}
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-/*	public Empresa getEmpresa() {
+	public Empresa getEmpresa() {
 		return empresa;
 	}
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
-	}*/
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	
 }

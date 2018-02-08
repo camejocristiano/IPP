@@ -1,7 +1,5 @@
 package br.net.ipp.controllers.aprendizes;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -18,51 +16,54 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.net.ipp.daos.aprendizes.HabilidadesRepository;
 import br.net.ipp.daos.aprendizes.JovemRepository;
-import br.net.ipp.enums.HabilidadeManual;
 import br.net.ipp.models.aprendizes.Habilidades;
 import br.net.ipp.models.aprendizes.Jovem;
+import br.net.ipp.services.EnumService;
 
 @Controller
 @Transactional
-@RequestMapping("/habilidades")
+@RequestMapping("/sw")
 public class HabilidadesController {
 
 	private HabilidadesRepository habilidadesRepository;
 	private JovemRepository jovemRepository;
+	private EnumService enumService;
 	
 	@Autowired
-	public void HabilidadesEndPoint(
+	public HabilidadesController(
 			HabilidadesRepository habilidadesRepository,
-			JovemRepository jovemRepository
+			JovemRepository jovemRepository,
+			EnumService enumService
 			) {
 		this.habilidadesRepository = habilidadesRepository;
 		this.jovemRepository = jovemRepository;
+		this.enumService = new EnumService();
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/habilidade/form")
 	public ModelAndView habilidades(Habilidades habilidades) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/habilidades/habilidade");
 		modelAndView.addObject("habilidades", habilidades);
-		List<String> habilidadesManuais = this.carregarHabilidadesManuais();
+		List<String> habilidadesManuais = this.enumService.carregarHabilidadesManuais();
 		modelAndView.addObject("habilidadesManuais", habilidadesManuais);
 		return modelAndView;
 	}
 	
-	@GetMapping("/form/{id}")
+	@GetMapping("/habilidade/form/{id}")
 	public ModelAndView habilidadesJovem(Habilidades habilidades, @PathVariable Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/habilidades/habilidade");
 		modelAndView.addObject("habilidades", habilidades);
 		Jovem jovem = jovemRepository.findOne(id);
 		modelAndView.addObject("jovem", jovem);
-		List<String> habilidadesManuais = this.carregarHabilidadesManuais();
+		List<String> habilidadesManuais = this.enumService.carregarHabilidadesManuais();
 		modelAndView.addObject("habilidadesManuais", habilidadesManuais);
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/habilidade")
 	public ModelAndView save(@Valid Habilidades habilidades, BindingResult bindingResult) {
 		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("habilidades", habilidades);
@@ -74,20 +75,20 @@ public class HabilidadesController {
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/habilidade/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/habilidades/habilidade");
 		Habilidades habilidades = habilidadesRepository.findOne(id);
 		modelAndView.addObject("habilidades", habilidades);
-		List<String> habilidadesManuais = this.carregarHabilidadesManuais();
+		List<String> habilidadesManuais = this.enumService.carregarHabilidadesManuais();
 		modelAndView.addObject("habilidadesManuais", habilidadesManuais);
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/habilidade/{id}")
 	public ModelAndView update(@Valid Habilidades habilidades, BindingResult bindingResult) {
 		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("habilidades", habilidades);
@@ -99,13 +100,20 @@ public class HabilidadesController {
 		return modelAndView;
 	}
 	
-	public List<String> carregarHabilidadesManuais() {
-		List<HabilidadeManual> lista = Arrays.asList(HabilidadeManual.values());
-		List<String> habilidadesManuais = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			habilidadesManuais.add(lista.get(i).name());
+	@GetMapping("/habilidadeJovem/{id}")
+	public ModelAndView habilidadeJovem(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("aprendizes/habilidades/habilidade");
+		Jovem jovem = jovemRepository.findOne(id);
+		modelAndView.addObject("jovem", jovem);
+		if (habilidadesRepository.findByJovem(jovem) != null) {
+			modelAndView.addObject("habilidades", habilidadesRepository.findByJovem(jovem));			
+		} else {
+			Habilidades habilidades = new Habilidades();
+			modelAndView.addObject("habilidades", habilidades);
 		}
-		return habilidadesManuais;
+		List<String> habilidadesManuais = this.enumService.carregarHabilidadesManuais();
+		modelAndView.addObject("habilidadesManuais", habilidadesManuais);
+		return modelAndView;
 	}
 	
 }

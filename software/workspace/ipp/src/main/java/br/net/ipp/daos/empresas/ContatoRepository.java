@@ -6,4 +6,5 @@ import br.net.ipp.models.empresas.Contato;
 
 public interface ContatoRepository extends PagingAndSortingRepository<Contato, Long> {
 	Contato findById(Long id);
+	Contato findByUsername(String username);
 }

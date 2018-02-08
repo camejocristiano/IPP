@@ -2,22 +2,19 @@ package br.net.ipp.models.empresas;
 
 import javax.persistence.Entity;
 
-import br.net.ipp.models.AbstractEntity;
+import br.net.ipp.models.User;
 
 @Entity
-public class Contato extends AbstractEntity {
+public class Contato extends User {
 
 	private static final long serialVersionUID = 1L;
 
 	private String nome;
-	/*	private String cargo;
+	private String cargo;
 	private String departamento;
-	private String email;
 	private String observacoes;
 	private String telefone;
 	private String tipoDeContato;
-	@ManyToOne
-	private Empresa empresa;*/
 	
 	public String getNome() {
 		return nome;
@@ -26,7 +23,7 @@ public class Contato extends AbstractEntity {
 		this.nome = nome;
 	}
 
-/*	public String getCargo() {
+	public String getCargo() {
 		return cargo;
 	}
 	public void setCargo(String cargo) {
@@ -37,12 +34,6 @@ public class Contato extends AbstractEntity {
 	}
 	public void setDepartamento(String departamento) {
 		this.departamento = departamento;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
 	}
 	public String getObservacoes() {
 		return observacoes;
@@ -62,12 +53,6 @@ public class Contato extends AbstractEntity {
 	public void setTipoDeContato(String tipoDeContato) {
 		this.tipoDeContato = tipoDeContato;
 	}
-	public Empresa getEmpresa() {
-		return empresa;
-	}
-	public void setEmpresa(Empresa empresa) {
-		this.empresa = empresa;
-	}*/
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}

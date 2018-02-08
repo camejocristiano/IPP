@@ -1,7 +1,5 @@
 package br.net.ipp.controllers.aprendizes;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -18,52 +16,58 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.net.ipp.daos.aprendizes.DadosFinanceirosRepository;
 import br.net.ipp.daos.aprendizes.JovemRepository;
-import br.net.ipp.enums.Periodo;
-import br.net.ipp.enums.TipoDeContratacao;
 import br.net.ipp.models.aprendizes.DadosFinanceiros;
 import br.net.ipp.models.aprendizes.Jovem;
+import br.net.ipp.services.EnumService;
 
 @Controller
 @Transactional
-@RequestMapping("/dadosFinanceiros")
+@RequestMapping("/sw")
 public class DadosFinanceirosController {
 
 	private DadosFinanceirosRepository dadosFinanceirosRepository;
 	private JovemRepository jovemRepository;
+	private EnumService enumService;
 	
 	@Autowired
-	public void DadosFinanceirosEndPoint(
+	public DadosFinanceirosController (
 			DadosFinanceirosRepository dadosFinanceirosRepository,
-			JovemRepository jovemRepository
+			JovemRepository jovemRepository,
+			EnumService enumService	
 			) {
 		this.dadosFinanceirosRepository = dadosFinanceirosRepository;
 		this.jovemRepository = jovemRepository;
+		this.enumService = new EnumService();
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/dadosFinanceiros/form")
 	public ModelAndView dadosFinanceiros(DadosFinanceiros dadosFinanceiros) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/financeiros/financeiro");
 		modelAndView.addObject("dadosFinanceiros", dadosFinanceiros);
 		return modelAndView;
 	}
 	
-	@GetMapping("/form/{id}")
+	@GetMapping("/dadosFinanceirosJovem/{id}")
 	public ModelAndView dadosFinanceiros(DadosFinanceiros dadosFinanceiros, @PathVariable Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/financeiros/financeiro");
 		Jovem jovem = jovemRepository.findOne(id);
-		modelAndView.addObject("dadosFinanceiros", dadosFinanceiros);
-		List<String> tiposDeContratacoes = this.carregarTipoDeContratacao();
+		if (dadosFinanceirosRepository.findByJovem(jovem) != null) {
+			modelAndView.addObject("dadosFinanceiros", dadosFinanceirosRepository.findByJovem(jovem));
+		} else {
+			modelAndView.addObject("dadosFinanceiros", dadosFinanceiros);
+		}
+		List<String> tiposDeContratacoes = this.enumService.carregarTipoDeContratacao();
 		modelAndView.addObject("tiposDeContratacoes", tiposDeContratacoes);
-		List<String> periodos = this.carregarPeriodo();
+		List<String> periodos = this.enumService.carregarPeriodo();
 		modelAndView.addObject("periodos", periodos);
 		modelAndView.addObject("jovem", jovem);
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/dadosFinanceiros")
 	public ModelAndView save(@Valid DadosFinanceiros dadosFinanceiros, BindingResult bindingResult) {
 		Long id = dadosFinanceiros.getJovem().getId();
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("dadosFinanceiros", dadosFinanceiros);
@@ -75,22 +79,22 @@ public class DadosFinanceirosController {
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/dadosFinanceiros/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/financeiros/financeiro");
 		DadosFinanceiros dadosFinanceiros = dadosFinanceirosRepository.findOne(id);
 		modelAndView.addObject("dadosFinanceiros", dadosFinanceiros);
-		List<String> tiposDeContratacoes = this.carregarTipoDeContratacao();
+		List<String> tiposDeContratacoes = this.enumService.carregarTipoDeContratacao();
 		modelAndView.addObject("tiposDeContratacoes", tiposDeContratacoes);
-		List<String> periodos = this.carregarPeriodo();
+		List<String> periodos = this.enumService.carregarPeriodo();
 		modelAndView.addObject("periodos", periodos);
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/dadosFinanceiros/{id}")
 	public ModelAndView update(@Valid DadosFinanceiros dadosFinanceiros, BindingResult bindingResult) {
 		Long id = dadosFinanceiros.getJovem().getId();
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("dadosFinanceiros", dadosFinanceiros);
@@ -101,22 +105,5 @@ public class DadosFinanceirosController {
 		}	
 		return modelAndView;
 	}
-	
-	public List<String> carregarTipoDeContratacao() {
-		List<TipoDeContratacao> lista = Arrays.asList(TipoDeContratacao.values());
-		List<String> tiposDeContratacoes = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			tiposDeContratacoes.add(lista.get(i).name());
-		}
-		return tiposDeContratacoes;
-	}
-	
-	public List<String> carregarPeriodo() {
-		List<Periodo> lista = Arrays.asList(Periodo.values());
-		List<String> periodos = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			periodos.add(lista.get(i).name());
-		}
-		return periodos;
-	}
+
 }

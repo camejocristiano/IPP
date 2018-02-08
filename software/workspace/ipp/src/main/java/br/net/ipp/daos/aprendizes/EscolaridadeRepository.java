@@ -9,4 +9,5 @@ import br.net.ipp.models.aprendizes.Jovem;
 
 public interface EscolaridadeRepository extends PagingAndSortingRepository<Escolaridade, Long> {
 	List<Escolaridade> findAllByJovem(Jovem jovem);
+	Escolaridade findByJovem(Jovem jovem);
 }

@@ -6,30 +6,46 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
+<style>
+table, th {
+    border: 2px solid black;
+}
+table, td {
+    border: 1px solid black;
+}
+</style>
+
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
-  <div class="row">
-      	<form:form role="form" commandName="salario13" servletRelativeAction="/salarios13/${salario13.id}" method="POST">
+
+
+	<div class="row">
+		<div class="col s12 l12">
+			<a href="/sw/demonstrativos">
+				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "13º Salário"}</h4>
+			</a>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
+		</div><!-- // col -->
+	</div><!-- // row -->
    		<div class="row">
             <div class="input-field s12 col l12">
-                <div class="row">
-                  <div class="input-field s12 col l12">
-                    <form:input path='test' type='text' required="required" />
-					<form:errors path='test'/> 
-					<label for="test">Teste</label>
-                  </div>
-                </div>
-            </div>
-        </div>
-	    <button class="btn waves-effect waves-light right" type="submit">
-    	     Salvar<i class="material-icons right">send</i>
-     	</button>
-   		</form:form>
-      </div>
-</div>
-
+				content
+			</div><!-- // col -->
+        </div><!-- // row -->
+   		<br />
+   		<br />
+	</div><!-- // container -->
 <c:import url="../../../partials/js.jsp"></c:import>
 <c:import url="../../../partials/footer.jsp"></c:import>
-
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('select').material_select();
+	});
+</script>
 <c:import url="../../../partials/final.jsp"></c:import>

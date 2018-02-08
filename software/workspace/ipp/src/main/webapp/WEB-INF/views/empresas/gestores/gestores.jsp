@@ -5,20 +5,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<table id="tabelaGestores" class="display" width="100%" cellspacing="0">
+<c:import url="../../../partials/header.jsp"></c:import>
+
+<style>
+/*
+ CSS INDEXES
+*/
+.btn-index:hover {
+	background-color: #669999;
+	font-weight: bolder;
+	font-style: italic;
+}
+.card-content:hover {
+	font-weight: bolder;
+	background-color: #669999;
+	font-style: italic;
+}
+</style>
+
+<c:import url="../../../partials/navbar.jsp"></c:import>
+
+<div class="container" id="main-container-content">
+	<div class="row">
+		<div class="col s12 l12">
+			<a href="/sw/empresa/${empresa.id}">
+				<h4 class="header right black-text">${empresa.nomeFantazia != null ? empresa.nomeFantazia : "Empresa"}</h4>
+			</a>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
+	</div>
+</div>
+<table id="tabelaGestores" class="display">
         <thead>
           <tr>
-            <th>ID</th>
             <th>NOME</th>
+            <th>EMAIL</th>
+            <th>TELEFONE</th>
+            <th>RAMAL</th>
             <th class="td-icon">EDITAR</th>
           </tr>
         </thead>
         <tbody>
         <c:forEach var="gestor" items="${requestScope.gestores}">
           <tr>
-            <td>${gestor.id}</td>
             <td>${gestor.nome}</td>
-            <td class="td-icon"><a href="/gestores/${gestor.id}"><i class="material-icons" >border_color</i></a></td>
+            <td>${gestor.email}</td>
+            <td>${gestor.telefone}</td>
+            <td>${gestor.ramal}</td>
+            <td class="td-icon"><a href="/sw/gestor/${gestor.id}"><i class="material-icons" >border_color</i></a></td>
           </tr>
           </c:forEach>
           </tbody>
@@ -27,7 +65,12 @@
       
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/gestores/form">
+                href="/sw/gestorEmpresa/${empresa.id}">
                 <i class="material-icons">add</i>
             </a>
          </div>
+ </div>
+
+<c:import url="../../../partials/js.jsp"></c:import>
+<c:import url="../../../partials/footer.jsp"></c:import>
+<c:import url="../../../partials/final.jsp"></c:import>

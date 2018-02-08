@@ -12,7 +12,7 @@ public class Matricula extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	private StatusDaMatricula statusDaMaticula;
+	private StatusDaMatricula statusDaMatricula;
 	@ManyToOne
 	private Jovem jovem;
 	@ManyToOne
@@ -25,21 +25,20 @@ public class Matricula extends AbstractEntity {
 	public void setJovem(Jovem jovem) {
 		this.jovem = jovem;
 	}
-	public StatusDaMatricula getStatusDaMaticula() {
-		return statusDaMaticula;
-	}
-	public void setStatusDaMaticula(StatusDaMatricula statusDaMaticula) {
-		this.statusDaMaticula = statusDaMaticula;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 	public Turma getTurma() {
 		return turma;
 	}
 	public void setTurma(Turma turma) {
 		this.turma = turma;
+	}
+	public StatusDaMatricula getStatusDaMatricula() {
+		return statusDaMatricula;
+	}
+	public void setStatusDaMatricula(StatusDaMatricula statusDaMatricula) {
+		this.statusDaMatricula = statusDaMatricula;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	
 }

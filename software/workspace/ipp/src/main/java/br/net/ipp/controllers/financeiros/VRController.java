@@ -1,75 +1,91 @@
 package br.net.ipp.controllers.financeiros;
 
+import java.util.Calendar;
+
 import javax.transaction.Transactional;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.net.ipp.daos.financeiros.VRRepository;
-import br.net.ipp.models.financeiros.VR;
+import br.net.ipp.daos.aprendizes.ContratacaoRepository;
+import br.net.ipp.daos.aprendizes.DadosFinanceirosRepository;
+import br.net.ipp.daos.aprendizes.FichaProfissionalRepository;
+import br.net.ipp.daos.aprendizes.JovemRepository;
+import br.net.ipp.daos.empresas.EmpresaRepository;
+import br.net.ipp.daos.financeiros.ParametroRepository;
+import br.net.ipp.models.aprendizes.Contratacao;
+import br.net.ipp.models.aprendizes.DadosFinanceiros;
+import br.net.ipp.models.aprendizes.FichaProfissional;
+import br.net.ipp.models.aprendizes.Jovem;
+import br.net.ipp.models.empresas.Empresa;
+import br.net.ipp.models.financeiros.Parametro;
 
-@Controller
+@RestController
 @Transactional
-@RequestMapping("/vrs")
+@RequestMapping("/sw")
 public class VRController {
 
-	private VRRepository vRRepository;
+	private ContratacaoRepository contratacaoRepository;
+	private JovemRepository jovemRepository;
+	private FichaProfissionalRepository fichaProfissionalRepository;
+	private EmpresaRepository empresaRepository;
+	// private MatriculaRepository matriculaRepository;
+	private ParametroRepository parametroRepository;
+	// private FrequenciaRepository frequenciaRepository;
+	private DadosFinanceirosRepository dadosFinanceirosRepository;
+	Calendar c = Calendar.getInstance();
 	
 	@Autowired
-	public void VREndPoint(
-			VRRepository vRRepository
+	public VRController(
+			ContratacaoRepository contratacaoRepository,
+			JovemRepository jovemRepository,
+			FichaProfissionalRepository fichaProfissionalRepository,
+			EmpresaRepository empresaRepository,
+			//MatriculaRepository matriculaRepository,
+			ParametroRepository parametroRepository,
+			//FrequenciaRepository frequenciaRepository,
+			DadosFinanceirosRepository dadosFinanceirosRepository
 			) {
-		this.vRRepository = vRRepository;
+		this.contratacaoRepository = contratacaoRepository;
+		this.jovemRepository = jovemRepository;
+		this.fichaProfissionalRepository = fichaProfissionalRepository;
+		this.empresaRepository  = empresaRepository;
+		//this.matriculaRepository = matriculaRepository;
+		this.parametroRepository = parametroRepository;
+		//this.frequenciaRepository = frequenciaRepository;
+		this.dadosFinanceirosRepository = dadosFinanceirosRepository;
 	}
 
-	@GetMapping("/form")
-	public ModelAndView vR(VR vR) {
-		ModelAndView modelAndView = new ModelAndView("financeiros/vrs/vr");
-		modelAndView.addObject("vr", vR);
+	@GetMapping("/vrs")
+	public ModelAndView vRs() {
+		ModelAndView modelAndView = new ModelAndView("financeiros/vrs/vrs");
+		modelAndView.addObject("contratacoes", contratacaoRepository.findAll());
 		return modelAndView;
 	}
-
-	@PostMapping
-	public ModelAndView save(@Valid VR vR, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/financeiros/");
-		if (bindingResult.hasErrors()) {
-			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
-			modelAndView.addObject("vr", vR);
-		} else {
-			vRRepository.save(vR);
-			modelAndView.addObject("msg", "Operação realizada com sucesso!");
-			modelAndView.addObject("vr", vR);
-		}		
-		return modelAndView;
-	}
-
-	@GetMapping("/{id}")
+	
+	@GetMapping("/vr/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("financeiros/vrs/vr");
-		VR vR = vRRepository.findOne(id);
-		modelAndView.addObject("vr", vR);
+
+		Contratacao contratacao = contratacaoRepository.findOne(id); // (dataDeAdmissao)
+		Empresa empresa = empresaRepository.findOne((long) 1);
+		Parametro parametro = parametroRepository.findOne((long) 1); //(taxaAdministracaoVR)
+		Jovem jovem = jovemRepository.findOne(contratacao.getId());//código, nome, valorVR
+		FichaProfissional fichaProfissional = fichaProfissionalRepository.findByJovem(jovem);
+		DadosFinanceiros dadosFinanceiros = dadosFinanceirosRepository.findByJovem(jovem);
+		
+		modelAndView.addObject("contratacao", contratacao);
+		modelAndView.addObject("empresa", empresa);
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("fichaProfissional", fichaProfissional);
+		modelAndView.addObject("dadosFinanceiros", dadosFinanceiros);
+		modelAndView.addObject("parametro", parametro);
+
 		return modelAndView;
 	}
-	
-	@PostMapping("/{id}")
-	public ModelAndView update(@Valid VR vR, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/financeiros/");
-		if (bindingResult.hasErrors()) {
-			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
-			modelAndView.addObject("vr", vR);
-		} else {
-			vRRepository.save(vR);
-			modelAndView.addObject("vr", vR);
-			modelAndView.addObject("msg", "Operação realizada com sucesso!");
-		}	
-		return modelAndView;
-	}
-	
+
 }

@@ -1,7 +1,6 @@
 package br.net.ipp.controllers.cursos;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -25,8 +24,6 @@ import br.net.ipp.daos.cursos.CursoRepository;
 import br.net.ipp.daos.cursos.MatriculaRepository;
 import br.net.ipp.daos.cursos.TurmaRepository;
 import br.net.ipp.daos.cursos.ValidacaoRepository;
-import br.net.ipp.enums.Status;
-import br.net.ipp.enums.StatusPAP;
 import br.net.ipp.models.cursos.ArcoOcupacional;
 import br.net.ipp.models.cursos.CBO;
 import br.net.ipp.models.cursos.ConteudoTeoricoBasico;
@@ -34,10 +31,11 @@ import br.net.ipp.models.cursos.ConteudoTeoricoEspecifico;
 import br.net.ipp.models.cursos.Curso;
 import br.net.ipp.models.cursos.Matricula;
 import br.net.ipp.models.cursos.Turma;
+import br.net.ipp.services.EnumService;
 
 @Controller
 @Transactional
-@RequestMapping("/cursos")
+@RequestMapping("/sw/curso")
 public class CursoController {
 
 private CursoRepository cursoRepository;
@@ -49,9 +47,10 @@ private ArcoOcupacionalRepository arcoOcupacionalRepository;
 private ConteudoTeoricoBasicoRepository conteudoTeoricoBasicoRepository;
 private ConteudoTeoricoEspecificoRepository conteudoTeoricoEspecificoRepository;
 private ValidacaoRepository validacaoRepository;
+private EnumService enumService;
 
 	@Autowired
-	public void CursoEndPoint(
+	public CursoController(
 			CursoRepository cursoRepository,
 			TurmaRepository turmaRepository,
 			MatriculaRepository matriculaRepository,
@@ -71,17 +70,16 @@ private ValidacaoRepository validacaoRepository;
 		this.conteudoTeoricoBasicoRepository = conteudoTeoricoBasicoRepository;
 		this.conteudoTeoricoEspecificoRepository = conteudoTeoricoEspecificoRepository;
 		this.validacaoRepository = validacaoRepository;
-		
-		
+		this.enumService = new EnumService();	
 	}
 
 	@GetMapping("/form")
 	public ModelAndView curso(Curso curso) {
 		ModelAndView modelAndView = new ModelAndView("cursos/cursos/curso");
 		modelAndView.addObject("curso", curso);
-		List<String> status = carregarStatus();
+		List<String> status = enumService.carregarStatus();
 		modelAndView.addObject("status", status);
-		List<String> statusPAP = carregarStatusPAP();
+		List<String> statusPAP = enumService.carregarStatusPAP();
 		modelAndView.addObject("statusPAP", statusPAP);
 		modelAndView.addObject("cBOs", cboRepository.findAll());
 		modelAndView.addObject("unidades", unidadeRepository.findAll());
@@ -95,9 +93,9 @@ private ValidacaoRepository validacaoRepository;
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("curso", curso);
-			List<String> status = carregarStatus();
+			List<String> status = enumService.carregarStatus();
 			modelAndView.addObject("status", status);
-			List<String> statusPAP = carregarStatusPAP();
+			List<String> statusPAP = enumService.carregarStatusPAP();
 			modelAndView.addObject("statusPAP", statusPAP);
 			modelAndView.addObject("cBOs", cboRepository.findAll());			
 			modelAndView.addObject("unidades", unidadeRepository.findAll());
@@ -105,9 +103,9 @@ private ValidacaoRepository validacaoRepository;
 			cursoRepository.save(curso);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 			modelAndView.addObject("curso", curso);
-			List<String> status = carregarStatus();
+			List<String> status = enumService.carregarStatus();
 			modelAndView.addObject("status", status);
-			List<String> statusPAP = carregarStatusPAP();
+			List<String> statusPAP = enumService.carregarStatusPAP();
 			modelAndView.addObject("statusPAP", statusPAP);
 			modelAndView.addObject("cBOs", cboRepository.findAll());
 			modelAndView.addObject("unidades", unidadeRepository.findAll());
@@ -131,9 +129,9 @@ private ValidacaoRepository validacaoRepository;
 			}
 		}
 		modelAndView.addObject("matriculas", matriculas);
-		List<String> status = carregarStatus();
+		List<String> status = enumService.carregarStatus();
 		modelAndView.addObject("status", status);
-		List<String> statusPAP = carregarStatusPAP();
+		List<String> statusPAP = enumService.carregarStatusPAP();
 		modelAndView.addObject("statusPAP", statusPAP);
 		modelAndView.addObject("arcos", arcoOcupacionalRepository.findAll());
 		if(curso.getArcoOcupacional() != null) {
@@ -158,9 +156,9 @@ private ValidacaoRepository validacaoRepository;
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("curso", curso);
-			List<String> status = carregarStatus();
+			List<String> status = enumService.carregarStatus();
 			modelAndView.addObject("status", status);
-			List<String> statusPAP = carregarStatusPAP();
+			List<String> statusPAP = enumService.carregarStatusPAP();
 			modelAndView.addObject("statusPAP", statusPAP);
 			modelAndView.addObject("cBOs", cboRepository.findAll());
 			modelAndView.addObject("unidades", unidadeRepository.findAll());
@@ -168,32 +166,14 @@ private ValidacaoRepository validacaoRepository;
 			cursoRepository.save(curso);
 			modelAndView.addObject("curso", curso);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
-			List<String> status = carregarStatus();
+			List<String> status = enumService.carregarStatus();
 			modelAndView.addObject("status", status);
-			List<String> statusPAP = carregarStatusPAP();
+			List<String> statusPAP = enumService.carregarStatusPAP();
 			modelAndView.addObject("statusPAP", statusPAP);
 			modelAndView.addObject("cBOs", cboRepository.findAll());
 			modelAndView.addObject("unidades", unidadeRepository.findAll());
 		}	
 		return modelAndView;
-	}
-	
-	public List<String> carregarStatus() {
-		List<Status> lista = Arrays.asList(Status.values());
-		List<String> status = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			status.add(lista.get(i).name());
-		}
-		return status;
-	}
-	
-	public List<String> carregarStatusPAP() {
-		List<StatusPAP> lista = Arrays.asList(StatusPAP.values());
-		List<String> statusPAP = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			statusPAP.add(lista.get(i).name());
-		}
-		return statusPAP;
 	}
 	
 }

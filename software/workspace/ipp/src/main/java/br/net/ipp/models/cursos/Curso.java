@@ -28,7 +28,7 @@ public class Curso  extends AbstractEntity {
 	private String articulacaoComOutrasAreas;
 	private String atividadesPraticas;
 	private String cargaHorariaTotal;
-	private String cargaHorarioSemanal;
+	private String cargaHorariaSemanal;
 	@ManyToOne
 	private CBO cBO;
 	@ManyToMany(cascade = CascadeType.ALL)
@@ -83,11 +83,11 @@ public class Curso  extends AbstractEntity {
 	public void setCargaHorariaTotal(String cargaHorariaTotal) {
 		this.cargaHorariaTotal = cargaHorariaTotal;
 	}
-	public String getCargaHorarioSemanal() {
-		return cargaHorarioSemanal;
+	public String getCargaHorariaSemanal() {
+		return cargaHorariaSemanal;
 	}
-	public void setCargaHorarioSemanal(String cargaHorarioSemanal) {
-		this.cargaHorarioSemanal = cargaHorarioSemanal;
+	public void setCargaHorariaSemanal(String cargaHorariaSemanal) {
+		this.cargaHorariaSemanal = cargaHorariaSemanal;
 	}
 	public CBO getcBO() {
 		return cBO;

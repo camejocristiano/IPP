@@ -10,16 +10,27 @@
 
 <div class="container" id="main-container-content">
 
-	<br>
-<h3 class="${requestScope.corMsg} col s12">${requestScope.msg}</h3>
 
 	<div class="row">
-		<form:form role="form" commandName="matricula" servletRelativeAction="/matriculas/${matricula.jovem != null ? matricula.id : null}" method="POST">
+		<div class="col s12 l12">
+			<a href="/sw/cursos/${curso.id}">
+				<h4 class="header right black-text">${curso.nomeDoCurso != null ? curso.nomeDoCurso : "Curso"}</h4>
+			</a>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
+		</div>
+	</div>
+
+	<form:form role="form" commandName="matricula" servletRelativeAction="/sw/matricula/${matricula.jovem != null ? matricula.id : null}" method="POST">
 
 			<div class="row">
 				<div class="input-field s12 col l4">
 	                <form:select path="turma">
-	              		<form:option  value="${turma.id}" label="${matricula.turma == null ? 'Turma' : matricula.turma.numeroTurma}" />
+	              		<form:option  value="${matricula.turma.id != null ? matricula.turma.id : turma.id}" label="${matricula.turma == null ? 'Turma' : matricula.turma.numeroTurma}" />
 						<c:forEach var="turma" items="${requestScope.turmas}">
 							<option value="${turma.id}">${turma.numeroTurma}</option>							
 						</c:forEach>
@@ -35,6 +46,14 @@
 					</form:select>
 					<label for="jovem">Jovem</label>
             	</div>
+            	<div class="input-field s12 col l4">
+            		<form:select path="statusDaMatricula">
+		               	<form:option value="${matricula.statusDaMatricula}" label="${matricula.statusDaMatricula == null ? 'Status Da Matrícula' : matricula.statusDaMatricula}" />
+						<c:forEach var="statusDaMatricula" items="${requestScope.statusDeMatricula}">
+							<option>${statusDaMatricula}</option>							
+						</c:forEach>
+					</form:select>
+            	</div>
 			</div>
 
 			<button class="btn waves-effect waves-light right" type="submit">
@@ -42,16 +61,14 @@
 			</button>
 
 		</form:form>
+<br />
+   		<br />
 	</div>
-
-</div>
 <c:import url="../../../partials/js.jsp"></c:import>
 <c:import url="../../../partials/footer.jsp"></c:import>
-
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('select').material_select();
 	});
 </script>
-
 <c:import url="../../../partials/final.jsp"></c:import>

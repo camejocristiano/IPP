@@ -1,5 +1,8 @@
 package br.net.ipp.controllers.cursos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -16,44 +19,39 @@ import br.net.ipp.daos.aprendizes.JovemRepository;
 import br.net.ipp.daos.cursos.CursoRepository;
 import br.net.ipp.daos.cursos.MatriculaRepository;
 import br.net.ipp.daos.cursos.TurmaRepository;
+import br.net.ipp.models.aprendizes.Jovem;
 import br.net.ipp.models.cursos.Curso;
 import br.net.ipp.models.cursos.Matricula;
+import br.net.ipp.models.cursos.Turma;
+import br.net.ipp.services.EnumService;
 
 @Controller
 @Transactional
-@RequestMapping("/matriculas")
+@RequestMapping("/sw")
 public class MatriculaController {
 	
 private MatriculaRepository matriculaRepository;
 private CursoRepository cursoRepository;
 private TurmaRepository turmaRepository;
 private JovemRepository jovemRepository;
+private EnumService enumService;
 	
 	@Autowired
 	public void MatriculaEndPoint(
 			MatriculaRepository matriculaRepository,
 			CursoRepository cursoRepository,
 			TurmaRepository turmaRepository,
-			JovemRepository jovemRepository			
+			JovemRepository jovemRepository,
+			EnumService enumService
 			) {
 		this.matriculaRepository = matriculaRepository;
 		this.cursoRepository = cursoRepository;
 		this.turmaRepository = turmaRepository;
 		this.jovemRepository = jovemRepository;
+		this.enumService = new EnumService();
 	}
 
-	@GetMapping("/form/{id}")
-	public ModelAndView matriculaCurso(Matricula matricula, @PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("cursos/matriculas/matricula");
-		modelAndView.addObject("matricula", matricula);
-		Curso curso = cursoRepository.findOne(id);
-		modelAndView.addObject("curso", curso);
-		modelAndView.addObject("turmas", turmaRepository.findAllByCurso(curso));
-		modelAndView.addObject("jovens", jovemRepository.findAll());
-		return modelAndView;
-	}
-
-	@PostMapping
+	@PostMapping("/matricula")
 	public ModelAndView save(@Valid Matricula matricula, BindingResult bindingResult) {
 		Long id = matricula.getTurma().getCurso().getId();
 		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/"+id);
@@ -69,7 +67,7 @@ private JovemRepository jovemRepository;
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/matricula/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("cursos/matriculas/matricula");
 		Matricula matricula = matriculaRepository.findOne(id);
@@ -77,6 +75,8 @@ private JovemRepository jovemRepository;
 		modelAndView.addObject("cursos", cursoRepository.findAll());
 		modelAndView.addObject("turmas", turmaRepository.findAll());
 		modelAndView.addObject("jovens", jovemRepository.findAll());
+		List<String> statusDeMatricula = this.enumService.carregarStatusDeMatricula();
+		modelAndView.addObject("statusDeMatricula", statusDeMatricula);
 		return modelAndView;
 	}
 	
@@ -92,6 +92,32 @@ private JovemRepository jovemRepository;
 			modelAndView.addObject("matricula", matricula);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 		}	
+		return modelAndView;
+	}
+	
+	@GetMapping("/matriculas/{id}")
+	public ModelAndView matriculas(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("cursos/matriculas/matriculas");
+		Curso curso = cursoRepository.findOne(id);
+		List<Turma> turmas = turmaRepository.findAllByCurso(curso);
+		List<Matricula> matriculas = new ArrayList<Matricula>();
+		for (Turma turma : turmas) {
+			List<Matricula> matric = matriculaRepository.findAllByTurma(turma);
+			for (Matricula matricula : matric) {
+				matriculas.add(matricula);
+			}
+		}
+		modelAndView.addObject("curso", curso);
+		modelAndView.addObject("matriculas", matriculas);
+		return modelAndView;
+	}
+	
+	@GetMapping("/matriculasJovem/{id}")
+	public ModelAndView matriculasJovem(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("aprendizes/cursos/cursos");
+		Jovem jovem = jovemRepository.findOne(id);
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("matriculas", matriculaRepository.findAllByJovem(jovem));
 		return modelAndView;
 	}
 	

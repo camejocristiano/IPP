@@ -9,4 +9,5 @@ import br.net.ipp.models.aprendizes.Jovem;
 
 public interface CaracteristicasDomiciliaresRepository extends PagingAndSortingRepository<CaracteristicasDomiciliares, Long> {
 	List<CaracteristicasDomiciliares> findAllByJovem(Jovem jovem);
+	CaracteristicasDomiciliares findByJovem(Jovem jovem);
 }

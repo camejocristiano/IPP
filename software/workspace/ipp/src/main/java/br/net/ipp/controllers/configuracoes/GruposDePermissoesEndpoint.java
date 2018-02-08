@@ -24,27 +24,34 @@ import br.net.ipp.models.frequencias.Frequencia;
 
 @Controller
 @Transactional
-@RequestMapping("/gruposDePermissoes")
+@RequestMapping("/sw/gruposDePermissoes")
 public class GruposDePermissoesEndpoint {
 
-	private GrupoDePermissoesRepository grupoDePermissoesDAO;
-	private UnidadeRepository unidadesDAO;
+	private GrupoDePermissoesRepository grupoDePermissoesRepository;
+	private UnidadeRepository unidadesRepository;
 
 	@Autowired
 	public void GrupoDePermissoesEndPoint(
-			GrupoDePermissoesRepository grupoDePermissoesDAO,
-			UnidadeRepository unidadesDAO
+			GrupoDePermissoesRepository grupoDePermissoesRepository,
+			UnidadeRepository unidadesRepository
 			) {
-		this.grupoDePermissoesDAO = grupoDePermissoesDAO;
-		this.unidadesDAO = unidadesDAO;
+		this.grupoDePermissoesRepository = grupoDePermissoesRepository;
+		this.unidadesRepository = unidadesRepository;
 	}
-
+	
+	@GetMapping
+	public ModelAndView index() {
+		ModelAndView modelAndView = new ModelAndView("configuracoes/gruposDePermissoes/gruposDePermissoes");
+		modelAndView.addObject("gruposDePermissoes", grupoDePermissoesRepository.findAll());
+		return modelAndView;
+	}
+	
 	@GetMapping("/form")
 	public ModelAndView form(GrupoDePermissoes grupoDePermissoes) {
 		ModelAndView modelAndView = new ModelAndView("configuracoes/gruposDePermissoes/grupoDePermissoes");
 		List<String> status = carregarStatus();
 		modelAndView.addObject("status", status);
-		modelAndView.addObject("unidades", unidadesDAO.findAll());
+		modelAndView.addObject("unidades", unidadesRepository.findAll());
 		modelAndView.addObject("pitepip", new Frequencia());
 		return modelAndView;
 	}
@@ -59,10 +66,10 @@ public class GruposDePermissoesEndpoint {
 			modelAndView.addObject("msg",
 					"Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 		} else {
-			grupoDePermissoesDAO.save(grupoDePermissoes);
+			grupoDePermissoesRepository.save(grupoDePermissoes);
 			modelAndView.addObject("status", status);
 			modelAndView.addObject("corMsg", "green");
-			modelAndView.addObject("unidades", unidadesDAO.findAll());
+			modelAndView.addObject("unidades", unidadesRepository.findAll());
 			modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 		}
@@ -72,10 +79,10 @@ public class GruposDePermissoesEndpoint {
 	@GetMapping("/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("configuracoes/gruposDePermissoes/grupoDePermissoes");
-		GrupoDePermissoes grupoDePermissoes = grupoDePermissoesDAO.findOne(id);
+		GrupoDePermissoes grupoDePermissoes = grupoDePermissoesRepository.findOne(id);
 		modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);
 		List<String> status = carregarStatus();
-		modelAndView.addObject("unidades", unidadesDAO.findAll());
+		modelAndView.addObject("unidades", unidadesRepository.findAll());
 		modelAndView.addObject("status", status);
 		return modelAndView;
 	}
@@ -92,10 +99,10 @@ public class GruposDePermissoesEndpoint {
 			modelAndView.addObject("msg",
 					"Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 		} else {
-			grupoDePermissoesDAO.save(grupoDePermissoes);
+			grupoDePermissoesRepository.save(grupoDePermissoes);
 			modelAndView.addObject("status", status);
 			modelAndView.addObject("corMsg", "green");
-			modelAndView.addObject("unidades", unidadesDAO.findAll());
+			modelAndView.addObject("unidades", unidadesRepository.findAll());
 			modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 		}

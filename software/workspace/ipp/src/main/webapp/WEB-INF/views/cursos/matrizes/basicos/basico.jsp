@@ -8,6 +8,7 @@
 <c:import url="../../../../partials/header.jsp"></c:import>
 <c:import url="../../../../partials/navbar.jsp"></c:import>
 
+
 <div class="container" id="main-container-content">
 
 	<div class="row">
@@ -17,7 +18,7 @@
 	</div>
 	
 	<div class="row">
-		<form:form role="form" commandName="conteudoTeoricoBasico" servletRelativeAction="/basicos/${conteudoTeoricoBasico.titulo != null ? conteudoTeoricoBasico.id : null}" method="POST">
+		<form:form role="form" commandName="conteudoTeoricoBasico" servletRelativeAction="/basicos/${conteudoTeoricoBasico.id}" method="POST">
 			<div class="input-field s12 col l12">
 			</div>
 				<div class="input-field s12 col l8">

@@ -6,21 +6,44 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../../partials/header.jsp"></c:import>
+
+<style>
+/*
+ CSS INDEXES
+*/
+.btn-index:hover {
+	background-color: #669999;
+	font-weight: bolder;
+	font-style: italic;
+}
+.card-content:hover {
+	font-weight: bolder;
+	background-color: #669999;
+	font-style: italic;
+}
+</style>
+
 <c:import url="../../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
-
 	<div class="row">
-		<div class="input-field  s12 col l12" style="border-top: 2px solid orange;">
-			 <h4 class="header right orange-text">Contratação: <a class="header right" href="/jovens/${fichaProfissional.jovem != null ? fichaProfissional.jovem.id : jovem.id}">${fichaProfissional.jovem != null ? fichaProfissional.jovem.nome : jovem.nome}</a></h4>
-		</div>
+		<div class="col s12 l12">
+			<a href="/sw/jovem/${jovem.id}">
+				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
+			</a>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
 	</div>
-<div class="row">
-	<div class="input-field s12 col l12">
-		<form:form role="form" commandName="contratacao" servletRelativeAction="/contratacoes/${contratacao.id}" method="POST">
+</div>
+
+		<form:form role="form" commandName="contratacao" servletRelativeAction="/sw/contratacao/${contratacao.dataDeInicioDaContratacao != null ? contratacao.id : null}" method="POST">
 		<div class="row">
 			<div class="input-field s12 col l4">
-				<form:input id="dataDeInicioDaContratacao" path="dataDeInicioDaContratacao" type="date" class="validate datepicker" placeholder="Data de Inicio da Contratação" /> 
+				<input id="dataDeInicioDaContratacao" name="dataDeInicioDaContratacao" type="date" class="validate datepicker" placeholder="Data de Inicio da Contratação" /> 
 				<label for="dataDeInicioDaContratacao">Data de Inicio da Contratação</label>
 			</div>
 			<div class="input-field s12 col l8">
@@ -60,33 +83,33 @@
 				</form:select>	
 				<label for="tipoDeContratacao">Tipo de Contratação</label>
 			</div>
-			<div class="input-field col s1">
+			<div class="col s1">
 				<input type="checkbox" name="segunda" class="filled-in" id="segunda" <c:if test="${contratacao.segunda == true}">checked</c:if> />
 				<label for="segunda">Seg</label>
 			</div>
-			<div class="input-field col s1">
+			<div class="col s1">
 				<input type="checkbox" name="terca" class="filled-in" id="terca" <c:if test="${contratacao.terca == true}">checked</c:if> />
 				<label for="terca">Ter</label>
 			</div>
-			<div class="input-field col s1">
+			<div class="col s1">
 				<input type="checkbox" name="quarta" class="filled-in" id="quarta" <c:if test="${contratacao.quarta == true}">checked</c:if> />
 				<label for="quarta">Qua</label>
 			</div>
-			<div class="input-field col s1">
+			<div class="col s1">
 				<input type="checkbox" name="quinta" class="filled-in" id="quinta" <c:if test="${contratacao.quinta == true}">checked</c:if> />
 				<label for="quinta">Qui</label>
 			</div>
-			<div class="input-field col s1">
+			<div class="col s1">
 				<input type="checkbox" name="sexta" class="filled-in" id="sexta" <c:if test="${contratacao.sexta == true}">checked</c:if> />
 				<label for="sexta">Sex</label>
 			</div>
-			<div class="input-field col s1">
+			<div class="col s1">
 				<input type="checkbox" name="sabado" class="filled-in" id="sabado" <c:if test="${contratacao.sabado == true}">checked</c:if> />
 				<label for="sabado">Sáb</label>
 			</div>
-			<div class="input-field col s1">
+			<div class="col s1">
 			</div>
-			<div class="input-field col s2">
+			<div class="col s2">
 				<form:input path='horarioDeTrabalho' type='text' class="validate timepicker" />
 				<form:errors path='horarioDeTrabalho'/> 
 				<label for="horarioDeTrabalho">Horário de Trabalho</label>
@@ -114,31 +137,19 @@
 			Total de Horas Semanais
 			</div>
 		</div>
-		<div class="row">
-			<div class="input-field col s12">
-               	<form:input path='jovem' type='hidden' value="${requestScope.jovem.id}" />
-				<form:errors path='jovem'/> 
-				<label for="jovem">
-					<c:if test="${contratacao.jovem == null}">${requestScope.jovem.nome}</c:if>
-					<c:if test="${contratacao.jovem != null}">${contratacao.jovem.nome}</c:if>
-				</label>
-			</div>
-		</div>
+       	<form:input path='jovem' type='hidden' value="${requestScope.jovem.id}" />
 		<button class="btn waves-effect waves-light right" type="submit">
 			Salvar<i class="material-icons right">send</i>
 		</button>
 		</form:form>
-	</div>
-</div>
-</div>
-
+		<br />
+		<br />
+</div><!-- // container -->
 <c:import url="../../../../partials/js.jsp"></c:import>
-<c:import url="../../../../partials/footer.jsp"></c:import>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('select').material_select();
 	});
-
 	$('.datepicker').pickadate({
 		monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
 		monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
@@ -157,4 +168,5 @@
 	    format: 'dd/mm/yyyy' 
 	});
 </script>
+<c:import url="../../../../partials/footer.jsp"></c:import>
 <c:import url="../../../../partials/final.jsp"></c:import>

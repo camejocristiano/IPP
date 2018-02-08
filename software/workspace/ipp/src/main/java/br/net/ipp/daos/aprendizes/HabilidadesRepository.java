@@ -9,4 +9,5 @@ import br.net.ipp.models.aprendizes.Jovem;
 
 public interface HabilidadesRepository extends PagingAndSortingRepository<Habilidades, Long> {
 	List<Habilidades> findAllByJovem(Jovem jovem);
+	Habilidades findByJovem(Jovem jovem);
 }

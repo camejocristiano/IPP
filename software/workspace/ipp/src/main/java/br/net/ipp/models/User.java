@@ -14,6 +14,7 @@ public abstract class User extends AbstractEntity {
 	@Column(unique = true)
     private String email;
 	@NotEmpty
+	@Column(unique = true)
 	private String username;
 	private boolean admin;
     private String password;

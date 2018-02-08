@@ -9,7 +9,7 @@
 Sem funcionamento do table jquery;
 Arquivo desativado momentaneamente; -->
 
-<table id="tabelaMatriculas" class="display" width="100%" cellspacing="0">
+<table id="tabelaMatriculas" class="display">
 	<thead>
           <tr>
             <th>ID</th>

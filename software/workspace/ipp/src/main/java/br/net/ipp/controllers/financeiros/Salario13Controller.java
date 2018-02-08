@@ -1,37 +1,41 @@
 package br.net.ipp.controllers.financeiros;
 
 import javax.transaction.Transactional;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.net.ipp.daos.financeiros.Salario13Repository;
-import br.net.ipp.models.financeiros.Salario13;
+import br.net.ipp.daos.aprendizes.JovemRepository;
+import br.net.ipp.models.aprendizes.Jovem;
 
 @Controller
 @Transactional
-@RequestMapping("/salarios13")
+@RequestMapping("/sw")
 public class Salario13Controller {
 
-	private Salario13Repository salario13Repository;
+	private JovemRepository jovemRepository;
 	
 	@Autowired
-	public void Salario13EndPoint(
-			Salario13Repository salario13Repository
+	public Salario13Controller(
+			JovemRepository jovemRepository
 			) {
-		this.salario13Repository = salario13Repository;
+		this.jovemRepository = jovemRepository;
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/salarios13")
+	public ModelAndView salario13() {
+		ModelAndView modelAndView = new ModelAndView("financeiros/salarios/salarios");
+		modelAndView.addObject("jovens", jovemRepository.findAll());
+		return modelAndView;
+	}
+	
+	/*@GetMapping("/salario13/form")
 	public ModelAndView salario13(Salario13 salario13) {
-		ModelAndView modelAndView = new ModelAndView("financeiros/salarios13/salario13");
+		ModelAndView modelAndView = new ModelAndView("financeiros/salarios/salario");
 		modelAndView.addObject("salario13", salario13);
 		return modelAndView;
 	}
@@ -49,16 +53,16 @@ public class Salario13Controller {
 		}		
 		return modelAndView;
 	}
-
-	@GetMapping("/{id}")
+*/
+	@GetMapping("/salario13/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("financeiros/salarios13/salario13");
-		Salario13 salario13 = salario13Repository.findOne(id);
-		modelAndView.addObject("salario13", salario13);
+		ModelAndView modelAndView = new ModelAndView("financeiros/salarios/salario");
+		Jovem jovem = jovemRepository.findOne(id);
+		modelAndView.addObject("jovem", jovem);
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+/*	@PostMapping("/salario13/{id}")
 	public ModelAndView update(@Valid Salario13 salario13, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/financeiros/");
 		if (bindingResult.hasErrors()) {
@@ -70,6 +74,6 @@ public class Salario13Controller {
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 		}	
 		return modelAndView;
-	}
+	}*/
 	
 }

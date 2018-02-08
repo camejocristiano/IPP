@@ -10,13 +10,22 @@
 
 <div class="container" id="main-container-content">
 
+
 	<div class="row">
-	<div class="row">
-		<div class="input-field  s12 col l12" style="border-top: 2px solid orange;">
-			 <h4 class="header right orange-text">Turma</h4>
+		<div class="col s12 l12">
+			<a href="/sw/cursos/${curso.id}">
+				<h4 class="header right black-text">${curso.nomeDoCurso != null ? curso.nomeDoCurso : "Turmas"}</h4>
+			</a>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
 		</div>
 	</div>
-		<form:form role="form" commandName="turma" servletRelativeAction="/turmas/${turma.id}" method="POST">
+
+		<form:form role="form" commandName="turma" servletRelativeAction="/sw/turma/${turma.id}" method="POST">
 			<div class="row">
 				<div class="input-field s12 col l6">
 					<form:input path='numeroTurma' type='text'/>
@@ -78,8 +87,6 @@
 			</button>
 		</form:form>
 	</div>
-
-</div>
 <c:import url="../../../partials/js.jsp"></c:import>
 <c:import url="../../../partials/footer.jsp"></c:import>
 <script type="text/javascript">

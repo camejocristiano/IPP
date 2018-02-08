@@ -8,6 +8,7 @@ import javax.persistence.ManyToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import br.net.ipp.enums.StatusDaContratacao;
 import br.net.ipp.enums.TipoDeContratacao;
 import br.net.ipp.models.AbstractEntity;
 import br.net.ipp.models.cursos.CBO;
@@ -65,6 +66,7 @@ public class Contratacao extends AbstractEntity {
 	private boolean sabado;
 	private TipoDeContratacao tipoDeContratacao;
 	private String totalDeHorasSemana;
+	private StatusDaContratacao statusDaContratacao;
 
 	public Gestor getGestorContratacao() {
 		return gestorContratacao;
@@ -221,6 +223,12 @@ public class Contratacao extends AbstractEntity {
 	}
 	public void setCurso(Curso curso) {
 		this.curso = curso;
+	}
+	public StatusDaContratacao getStatusDaContratacao() {
+		return statusDaContratacao;
+	}
+	public void setStatusDaContratacao(StatusDaContratacao statusDaContratacao) {
+		this.statusDaContratacao = statusDaContratacao;
 	}
 
 }

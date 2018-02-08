@@ -1,7 +1,6 @@
 package br.net.ipp.controllers.aprendizes;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -18,48 +17,51 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.net.ipp.daos.aprendizes.DispensaRepository;
 import br.net.ipp.daos.aprendizes.JovemRepository;
-import br.net.ipp.enums.MotivoDaDispensa;
 import br.net.ipp.models.aprendizes.Dispensa;
 import br.net.ipp.models.aprendizes.Jovem;
+import br.net.ipp.services.EnumService;
 
 @Controller
 @Transactional
-@RequestMapping("/dispensas")
+@RequestMapping("/sw")
 public class DispensaController {
 
 	private DispensaRepository dispensaRepository;
 	private JovemRepository jovemRepository;
+	private EnumService enumService;
 	
 	@Autowired
-	public void DispensaEndPoint(
+	public DispensaController (
 			DispensaRepository dispensaRepository,
-			JovemRepository jovemRepository
+			JovemRepository jovemRepository,
+			EnumService enumService
 			) {
 		this.dispensaRepository = dispensaRepository;
 		this.jovemRepository = jovemRepository;
+		this.enumService = new EnumService();
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/dispensa/form")
 	public ModelAndView dispensa(Dispensa dispensa) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens");
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovens");
 		return modelAndView;
 	}
 	
-	@GetMapping("/form/{id}")
+	@GetMapping("/dispensaJovem/{id}")
 	public ModelAndView dispensaJovem(Dispensa dispensa, @PathVariable("id") Long id) {
 		Jovem jovem = jovemRepository.findOne(id);
 		ModelAndView modelAndView = new ModelAndView("aprendizes/profissionais/dispensas/dispensa");
 		modelAndView.addObject("dispensa", dispensa);
 		modelAndView.addObject("jovem", jovem);
-		List<String> motivosDaDispensa = this.carregarMotivoDaDispensa();
+		List<String> motivosDaDispensa = this.enumService.carregarMotivoDaDispensa();
 		modelAndView.addObject("motivosDaDispensa", motivosDaDispensa);
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/dispensa")
 	public ModelAndView save(@Valid Dispensa dispensa, BindingResult bindingResult) {
 		Long id = dispensa.getJovem().getId();
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("dispensa", dispensa);
@@ -71,18 +73,20 @@ public class DispensaController {
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/dispensa/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/profissionais/dispensas/dispensa");
 		Dispensa dispensa = dispensaRepository.findOne(id);
+		Jovem jovem = jovemRepository.findOne(dispensa.getJovem().getId());
+		modelAndView.addObject("jovem", jovem);
 		modelAndView.addObject("dispensa", dispensa);
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/dispensa/{id}")
 	public ModelAndView update(@Valid Dispensa dispensa, BindingResult bindingResult) {
-		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
+		Long id = dispensa.getJovem().getId();
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("dispensa", dispensa);
@@ -94,13 +98,18 @@ public class DispensaController {
 		return modelAndView;
 	}
 	
-	public List<String> carregarMotivoDaDispensa() {
-		List<MotivoDaDispensa> lista = Arrays.asList(MotivoDaDispensa.values());
-		List<String> motivoDaDispensa = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			motivoDaDispensa.add(lista.get(i).name());
+	@GetMapping("/dispensasJovem/{id}")
+	public ModelAndView dispensasJovem(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("aprendizes/profissionais/dispensas/dispensas");
+		Jovem jovem = jovemRepository.findOne(id);
+		modelAndView.addObject("jovem", jovem);
+		if (dispensaRepository.findAllByJovem(jovem) != null) {
+			modelAndView.addObject("dispensas", dispensaRepository.findAllByJovem(jovem));
+		} else {
+			List<Dispensa> dispensas = new ArrayList<Dispensa>();
+			modelAndView.addObject("dispensas", dispensas);
 		}
-		return motivoDaDispensa;
+		return modelAndView;
 	}
 	
 }

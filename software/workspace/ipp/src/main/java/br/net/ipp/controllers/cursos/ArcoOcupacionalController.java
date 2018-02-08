@@ -24,7 +24,7 @@ import br.net.ipp.models.cursos.Curso;
 
 @Controller
 @Transactional
-@RequestMapping("/arcos")
+@RequestMapping("/sw")
 public class ArcoOcupacionalController {
 
 private ArcoOcupacionalRepository arcoOcupacionalRepository;
@@ -42,15 +42,22 @@ private CBORepository cBORepository;
 		this.cBORepository = cBORepository;
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/arco/form")
 	public ModelAndView arcoOcupacional(ArcoOcupacional arcoOcupacional) {
 		ModelAndView modelAndView = new ModelAndView("cursos/arcos/arco");
 		modelAndView.addObject("arcoOcupacional", arcoOcupacional);
 		modelAndView.addObject("cbos", cBORepository.findAll());
 		return modelAndView;
 	}
+
+	@GetMapping("/arcos")
+	public ModelAndView arcos() {
+		ModelAndView modelAndView = new ModelAndView("cursos/arcos/arcos");
+		modelAndView.addObject("arcos", arcoOcupacionalRepository.findAll());
+		return modelAndView;
+	}
 	
-	@GetMapping("/form/{id}")
+	@GetMapping("/arco/form/{id}")
 	public ModelAndView arcoOcupacionalCurso(ArcoOcupacional arcoOcupacional, @PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("cursos/arcos/arco");
 		Curso curso = cursoRepository.findOne(id);
@@ -60,7 +67,7 @@ private CBORepository cBORepository;
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/arco")
 	public ModelAndView save(@Valid ArcoOcupacional arcoOcupacional, BindingResult bindingResult, @RequestParam("curso") String curso) {
 		Long idCurso = Long.parseLong(curso.toString());
 		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/"+idCurso);
@@ -75,7 +82,7 @@ private CBORepository cBORepository;
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/arco/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("cursos/arcos/arco");
 		ArcoOcupacional arcoOcupacional = arcoOcupacionalRepository.findOne(id);
@@ -88,7 +95,7 @@ private CBORepository cBORepository;
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/arco/{id}")
 	public ModelAndView update(@Valid ArcoOcupacional arcoOcupacional, BindingResult bindingResult, @PathVariable("id") Long id) {
 		Long idCurso = (long) 1;
 		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/"+idCurso);

@@ -9,4 +9,5 @@ import br.net.ipp.models.aprendizes.Jovem;
 
 public interface ContratacaoRepository extends PagingAndSortingRepository<Contratacao, Long> {
 	List<Contratacao> findAllByJovem(Jovem jovem);
+	Contratacao findByJovem(Jovem jovem);
 }

@@ -19,7 +19,7 @@ import br.net.ipp.models.aprendizes.Jovem;
 
 @Controller
 @Transactional
-@RequestMapping("/escolaridades")
+@RequestMapping("/sw")
 public class EscolaridadeController {
 
 	private EscolaridadeRepository escolaridadeRepository;
@@ -34,14 +34,14 @@ public class EscolaridadeController {
 		this.jovemRepository = jovemRepository;
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/escolaridade/form")
 	public ModelAndView escolaridadeNull(Jovem jovem) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/form");
 		modelAndView.addObject("jovem", jovem);
 		return modelAndView;
 	}
 	
-	@GetMapping("/form/{id}")
+	@GetMapping("/escolaridade/form/{id}")
 	public ModelAndView escolaridade(Escolaridade escolaridade, @PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/escolaridades/escolaridade");
 		Jovem jovem = jovemRepository.findOne(id);
@@ -50,7 +50,7 @@ public class EscolaridadeController {
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/escolaridade")
 	public ModelAndView save(@Valid Escolaridade escolaridade, BindingResult bindingResult) {
 		Long id = escolaridade.getJovem().getId();
 		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
@@ -65,7 +65,7 @@ public class EscolaridadeController {
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/escolaridade/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/escolaridades/escolaridade");
 		Escolaridade escolaridade = escolaridadeRepository.findOne(id);
@@ -73,7 +73,7 @@ public class EscolaridadeController {
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/escolaridade/{id}")
 	public ModelAndView update(@Valid Escolaridade escolaridade, BindingResult bindingResult) {
 		Long id = escolaridade.getJovem().getId();
 		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
@@ -85,6 +85,20 @@ public class EscolaridadeController {
 			modelAndView.addObject("escolaridade", escolaridade);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 		}	
+		return modelAndView;
+	}
+	
+	@GetMapping("/escolaridadeJovem/{id}")
+	public ModelAndView escolaridadeJovem(@PathVariable Long id) {
+		ModelAndView modelAndView = new ModelAndView("aprendizes/escolaridades/escolaridade");
+		Jovem jovem = jovemRepository.findOne(id);
+		modelAndView.addObject("jovem", jovem);
+		if (escolaridadeRepository.findByJovem(jovem) != null) {
+			modelAndView.addObject("escolaridade", escolaridadeRepository.findByJovem(jovem));
+		} else {
+			Escolaridade escolaridade = new Escolaridade();
+			modelAndView.addObject("escolaridade", escolaridade);
+		}
 		return modelAndView;
 	}
 	

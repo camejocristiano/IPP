@@ -1,7 +1,6 @@
 package br.net.ipp.controllers.aprendizes;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -21,13 +20,13 @@ import br.net.ipp.daos.aprendizes.JovemRepository;
 import br.net.ipp.daos.cursos.CursoRepository;
 import br.net.ipp.daos.empresas.EmpresaRepository;
 import br.net.ipp.daos.empresas.GestorRepository;
-import br.net.ipp.enums.TipoDeContratacao;
 import br.net.ipp.models.aprendizes.Contratacao;
 import br.net.ipp.models.aprendizes.Jovem;
+import br.net.ipp.services.EnumService;
 
 @Controller
 @Transactional
-@RequestMapping("/contratacoes")
+@RequestMapping("/sw")
 public class ContratacaoController {
 
 	private ContratacaoRepository contratacaoRepository;
@@ -35,30 +34,33 @@ public class ContratacaoController {
 	private EmpresaRepository empresaRepository;
 	private GestorRepository gestorRepository;
 	private CursoRepository cursoRepository;
+	private EnumService enumService;
 	
 	@Autowired
-	public void ContratacaoEndPoint(
+	public ContratacaoController (
 			ContratacaoRepository contratacaoRepository,
 			JovemRepository jovemRepository,
 			EmpresaRepository empresaRepository,
 			GestorRepository gestorRepository,
-			CursoRepository cursoRepository
+			CursoRepository cursoRepository,
+			EnumService enumService
 			) {
 		this.contratacaoRepository = contratacaoRepository;
 		this.jovemRepository = jovemRepository;
 		this.empresaRepository = empresaRepository;
 		this.gestorRepository = gestorRepository;
 		this.cursoRepository = cursoRepository;
+		this.enumService = new EnumService();
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/contratacao/form")
 	public ModelAndView contratacao(Contratacao contratacao) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/profissionais/contratacoes/contratacao");
 		modelAndView.addObject("contratacao", contratacao);
 		return modelAndView;
 	}
 	
-	@GetMapping("/form/{id}")
+	@GetMapping("/contratacaoJovem/{id}")
 	public ModelAndView contratacaoJovem(Contratacao contratacao, @PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/profissionais/contratacoes/contratacao");
 		Jovem jovem = jovemRepository.findOne(id);
@@ -67,18 +69,15 @@ public class ContratacaoController {
 		modelAndView.addObject("jovem", jovem);
 		modelAndView.addObject("cursos", cursoRepository.findAll());
 		modelAndView.addObject("gestores", gestorRepository.findAll());
-		List<String> tiposDeContratacao = this.carregarTipoDeContratacao();
+		List<String> tiposDeContratacao = this.enumService.carregarTipoDeContratacao();
 		modelAndView.addObject("tiposDeContratacao", tiposDeContratacao);
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/contratacao")
 	public ModelAndView save(@Valid Contratacao contratacao, BindingResult bindingResult) {
-		Long jid = (long) 1;
-		Jovem jovem = jovemRepository.findOne(jid);
-		contratacao.setJovem(jovem);
-		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
+		Long id = contratacao.getJovem().getId();
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("contratacao", contratacao);
@@ -90,7 +89,7 @@ public class ContratacaoController {
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/contratacao/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/profissionais/contratacoes/contratacao");
 		Contratacao contratacao = contratacaoRepository.findOne(id);
@@ -98,15 +97,15 @@ public class ContratacaoController {
 		modelAndView.addObject("empresas", empresaRepository.findAll());
 		modelAndView.addObject("cursos", cursoRepository.findAll());
 		modelAndView.addObject("gestores", gestorRepository.findAll());
-		List<String> tiposDeContratacao = this.carregarTipoDeContratacao();
+		List<String> tiposDeContratacao = this.enumService.carregarTipoDeContratacao();
 		modelAndView.addObject("tiposDeContratacao", tiposDeContratacao);
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/contratacao/{id}")
 	public ModelAndView update(@Valid Contratacao contratacao, BindingResult bindingResult) {
-		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
+		Long id = contratacao.getJovem().getId();
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("contratacao", contratacao);
@@ -118,13 +117,18 @@ public class ContratacaoController {
 		return modelAndView;
 	}
 	
-	public List<String> carregarTipoDeContratacao() {
-		List<TipoDeContratacao> lista = Arrays.asList(TipoDeContratacao.values());
-		List<String> tiposDeContratacao = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			tiposDeContratacao.add(lista.get(i).name());
+	@GetMapping("/contratacoesJovem/{id}")
+	public ModelAndView contratacoesJovem(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("aprendizes/profissionais/contratacoes/contratacoes");
+		Jovem jovem = jovemRepository.findOne(id);
+		modelAndView.addObject("jovem", jovem);
+		if (contratacaoRepository.findAllByJovem(jovem).size() > 0) {
+			modelAndView.addObject("contratacoes", contratacaoRepository.findAllByJovem(jovem));
+		} else {
+			List<Contratacao> contratacoes = new ArrayList<Contratacao>();
+			modelAndView.addObject("contratacoes", contratacoes);
 		}
-		return tiposDeContratacao;
+		return modelAndView;
 	}
 	
 }

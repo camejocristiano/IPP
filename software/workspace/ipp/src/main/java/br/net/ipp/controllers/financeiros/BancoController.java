@@ -1,5 +1,7 @@
 package br.net.ipp.controllers.financeiros;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -14,31 +16,46 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.net.ipp.daos.financeiros.BancoRepository;
 import br.net.ipp.models.financeiros.Banco;
+import br.net.ipp.services.EnumService;
 
 @Controller
 @Transactional
-@RequestMapping("/bancos")
+@RequestMapping("/sw")
 public class BancoController {
 
 	private BancoRepository bancoRepository;
+	private EnumService enumService;
 	
 	@Autowired
-	public void BancoEndPoint(
-			BancoRepository bancoRepository
+	public BancoController(
+			BancoRepository bancoRepository,
+			EnumService enumService
 			) {
 		this.bancoRepository = bancoRepository;
+		this.enumService = new EnumService();
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/bancos")
+	public ModelAndView bancos() {
+		ModelAndView modelAndView = new ModelAndView("financeiros/bancos/bancos");
+		modelAndView.addObject("bancos", bancoRepository.findAll());
+		return modelAndView;
+	}
+	
+	@GetMapping("/banco/form")
 	public ModelAndView banco(Banco banco) {
 		ModelAndView modelAndView = new ModelAndView("financeiros/bancos/banco");
 		modelAndView.addObject("banco", banco);
+		List<String> tiposDeParceria = this.enumService.carregarTiposDeParceria();
+		modelAndView.addObject("tiposDeParceria", tiposDeParceria);
+		List<String> regioes = this.enumService.carregarRegioes();
+		modelAndView.addObject("regioes", regioes);
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/banco")
 	public ModelAndView save(@Valid Banco banco, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/financeiros/");
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/financeiros/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("banco", banco);
@@ -50,17 +67,21 @@ public class BancoController {
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/banco/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("financeiros/bancos/banco");
 		Banco banco = bancoRepository.findOne(id);
 		modelAndView.addObject("banco", banco);
+		List<String> tiposDeParceria = this.enumService.carregarTiposDeParceria();
+		modelAndView.addObject("tiposDeParceria", tiposDeParceria);
+		List<String> regioes = this.enumService.carregarRegioes();
+		modelAndView.addObject("regioes", regioes);
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/banco/{id}")
 	public ModelAndView update(@Valid Banco banco, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/financeiros/");
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/financeiros/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("banco", banco);

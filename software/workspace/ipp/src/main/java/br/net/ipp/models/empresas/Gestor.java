@@ -1,26 +1,21 @@
 package br.net.ipp.models.empresas;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
-import br.net.ipp.models.AbstractEntity;
+import br.net.ipp.models.User;
 
 @Entity
-public class Gestor extends AbstractEntity {
+public class Gestor extends User {
 
 	private static final long serialVersionUID = 1L;
 	
 	private String nome;
-	/*	private String email;
-	private Boolean permitirQueVisualizaeTodosOsJovens;
 	private String ramal;
-	private String senha;
 	private String telefone;
-	@OneToOne
-	private Contratacao contratacao;
 	@ManyToOne
 	private Empresa empresa;
-	@OneToOne
-	private Setor setor;*/
+	private Boolean permitirQueVisualizeTodosOsJovens;
 
 	public String getNome() {
 		return nome;
@@ -28,30 +23,11 @@ public class Gestor extends AbstractEntity {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-/*	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public Boolean getPermitirQueVisualizaeTodosOsJovens() {
-		return permitirQueVisualizaeTodosOsJovens;
-	}
-	public void setPermitirQueVisualizaeTodosOsJovens(Boolean permitirQueVisualizaeTodosOsJovens) {
-		this.permitirQueVisualizaeTodosOsJovens = permitirQueVisualizaeTodosOsJovens;
-	}
 	public String getRamal() {
 		return ramal;
 	}
 	public void setRamal(String ramal) {
 		this.ramal = ramal;
-	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
 	}
 	public String getTelefone() {
 		return telefone;
@@ -59,22 +35,20 @@ public class Gestor extends AbstractEntity {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public Contratacao getContratacao() {
-		return contratacao;
-	}
-	public void setContratacao(Contratacao contratacao) {
-		this.contratacao = contratacao;
-	}
 	public Empresa getEmpresa() {
 		return empresa;
 	}
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
 	}
-	public Setor getSetor() {
-		return setor;
+	public Boolean getPermitirQueVisualizeTodosOsJovens() {
+		return permitirQueVisualizeTodosOsJovens;
 	}
-	public void setSetor(Setor setor) {
-		this.setor = setor;
-	}	*/
+	public void setPermitirQueVisualizeTodosOsJovens(Boolean permitirQueVisualizeTodosOsJovens) {
+		this.permitirQueVisualizeTodosOsJovens = permitirQueVisualizeTodosOsJovens;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 }

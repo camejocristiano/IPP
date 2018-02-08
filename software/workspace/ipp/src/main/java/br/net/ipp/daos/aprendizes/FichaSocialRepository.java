@@ -9,4 +9,5 @@ import br.net.ipp.models.aprendizes.Jovem;
 
 public interface FichaSocialRepository extends PagingAndSortingRepository<FichaSocial, Long> {
 	List<FichaSocial> findAllByJovem(Jovem jovem);
+	FichaSocial findByJovem(Jovem jovem);
 }

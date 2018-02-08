@@ -21,7 +21,7 @@ import br.net.ipp.models.empresas.Empresa;
 
 @Controller
 @Transactional
-@RequestMapping("/empresas")
+@RequestMapping("/sw")
 public class EmpresaController {
 
 	private EmpresaRepository empresaRepository;
@@ -31,7 +31,7 @@ public class EmpresaController {
 	private RepresentanteLegalRepository representanteLegalRepository;
 	
 	@Autowired
-	public void EmpresaEndPoint(
+	public EmpresaController(
 			EmpresaRepository empresaRepository,
 			GestorRepository gestorRepository,
 			SetorRepository setorRepository,
@@ -45,17 +45,16 @@ public class EmpresaController {
 		this.representanteLegalRepository = representanteLegalRepository;
 	}
 
-	@GetMapping("/form")
-	public ModelAndView empresa(Empresa empresa) {
+	@GetMapping("/empresa")
+	public ModelAndView home(Empresa empresa) {
 		ModelAndView modelAndView = new ModelAndView("empresas/empresas/empresa");
 		modelAndView.addObject("empresa", empresa);
 		return modelAndView;
 	}
-
-	@PostMapping
+	
+	@PostMapping("/empresa")
 	public ModelAndView save(@Valid Empresa empresa, BindingResult bindingResult) {
-		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:/empresas/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/empresas/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("empresa", empresa);
@@ -68,8 +67,20 @@ public class EmpresaController {
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/empresa/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("empresas/empresas/home");
+		Empresa empresa = empresaRepository.findOne(id);
+		modelAndView.addObject("empresa", empresa);
+		modelAndView.addObject("gestores", gestorRepository.findAll());
+		modelAndView.addObject("setores", setorRepository.findAll());
+		modelAndView.addObject("contatos", contatoRepository.findAll());
+		modelAndView.addObject("representantes", representanteLegalRepository.findAll());
+		return modelAndView;
+	}
+	
+	@GetMapping("/loadEmpresa/{id}")
+	public ModelAndView loadEmpresa(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("empresas/empresas/empresa");
 		Empresa empresa = empresaRepository.findOne(id);
 		modelAndView.addObject("empresa", empresa);
@@ -80,7 +91,7 @@ public class EmpresaController {
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/empresa/{id}")
 	public ModelAndView update(@Valid Empresa empresa, BindingResult bindingResult) {
 		Long id = (long) 1;
 		ModelAndView modelAndView = new ModelAndView("redirect:/empresas/"+id);

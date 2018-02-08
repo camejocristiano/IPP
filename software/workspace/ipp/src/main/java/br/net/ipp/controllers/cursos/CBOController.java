@@ -20,7 +20,7 @@ import br.net.ipp.models.cursos.Curso;
 
 @Controller
 @Transactional
-@RequestMapping("/cbos")
+@RequestMapping("/sw")
 public class CBOController {
 
 private CBORepository cboRepository;
@@ -28,7 +28,7 @@ private ArcoOcupacionalRepository arcoOcupacionalRepository;
 private CursoRepository cursoRepository;
 
 	@Autowired
-	public void CBOEndPoint(
+	public CBOController(
 			CBORepository cboRepository,
 			CursoRepository cursoRepository,
 			ArcoOcupacionalRepository arcoOcupacionalRepository
@@ -38,14 +38,21 @@ private CursoRepository cursoRepository;
 		this.arcoOcupacionalRepository = arcoOcupacionalRepository;
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/cbos")
+	public ModelAndView cbos() {
+		ModelAndView modelAndView = new ModelAndView("cursos/cbos/cbos");
+		modelAndView.addObject("cbos", cboRepository.findAll());
+		return modelAndView;
+	}
+	
+	@GetMapping("/cbos/form")
 	public ModelAndView cbo(CBO cbo) {
 		ModelAndView modelAndView = new ModelAndView("cursos/cbos/cbo");
 		modelAndView.addObject("cbo", cbo);
 		return modelAndView;
 	}
 	
-	@GetMapping("/form/{id}")
+	@GetMapping("/cbos/form/{id}")
 	public ModelAndView cboCurso(CBO cbo, @PathVariable Long id) {
 		ModelAndView modelAndView = new ModelAndView("cursos/cbos/cbo");
 		Curso curso = cursoRepository.findOne(id);
@@ -55,9 +62,9 @@ private CursoRepository cursoRepository;
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/cbos")
 	public ModelAndView save(@Valid CBO cbo, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/");
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/cursos/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("cbo", cbo);
@@ -69,7 +76,7 @@ private CursoRepository cursoRepository;
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/cbos/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("cursos/cbos/cbo");
 		CBO cbo = cboRepository.findOne(id);
@@ -77,9 +84,9 @@ private CursoRepository cursoRepository;
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/cbos/{id}")
 	public ModelAndView update(@Valid CBO cbo, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/");
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/cursos/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("cbo", cbo);

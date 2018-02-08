@@ -1,13 +1,33 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<table id="tabelaTurmas" class="display" width="100%" cellspacing="0">
+<c:import url="../../partials/header.jsp"></c:import>
+<c:import url="../../partials/navbar.jsp"></c:import>
+
+<div class="container" id="main-container-content">
+
+<div class="row">
+		<div class="col s12 l12">
+			<h4 class="header right black-text">Turmas</h4>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
+		</div>
+	</div>
+
+
+<table id="tabelaTurmas" class="display">
 	<thead>
 		<tr>
 			<th>TURMA</th>
+			<th>CURSO</th>
 			<th>CURSO</th>
 			<th class="td-icon">HOJE</th>
 			<th class="td-icon">MÊS</th>
@@ -19,18 +39,19 @@
 			<tr>
 				<td>${turma.numeroTurma}</td>
 				<td>${turma.curso.nomeDoCurso}</td>
+				<td>${turma.tipoTurma}</td>
 				<td class="td-icon">
-					<a href="/frequencias/turma/${turma.id}">
+					<a href="/sw/frequenciasTurma/${turma.id}">
 						<i class="material-icons">border_color</i>
 					</a>
 				</td>
 				<td class="td-icon">
-					<a href="/frequencias/mes/${turma.id}">
+					<a href="/sw/frequencias/mes/${turma.id}">
 						<i class="material-icons">border_color</i>
 					</a>
 				</td>
 				<td class="td-icon">
-					<a href="/frequencias/geral/${turma.id}">
+					<a href="/sw/frequencias/geral/${turma.id}">
 						<i class="material-icons">border_color</i>
 					</a>
 				</td>
@@ -39,12 +60,8 @@
 	</tbody>
 
 </table>
+</div>  
 
-<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-	<a class="btn-floating btn-large waves-effect waves-light orange"
-		href="/frequencias/turma/${turma.id}"> <i class="material-icons">add</i>
-	</a>
-</div>
-
-<br />
-<br />
+<c:import url="../../partials/js.jsp"></c:import>
+<c:import url="../../partials/footer.jsp"></c:import>
+<c:import url="../../partials/final.jsp"></c:import>

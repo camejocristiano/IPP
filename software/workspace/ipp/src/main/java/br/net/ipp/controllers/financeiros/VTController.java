@@ -1,42 +1,45 @@
 package br.net.ipp.controllers.financeiros;
 
 import javax.transaction.Transactional;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.net.ipp.daos.financeiros.VTRepository;
-import br.net.ipp.models.financeiros.VT;
+import br.net.ipp.daos.aprendizes.JovemRepository;
 
 @Controller
 @Transactional
-@RequestMapping("/vts")
+@RequestMapping("/sw")
 public class VTController {
 
-	private VTRepository vTRepository;
+	private JovemRepository jovemRepository;
 	
 	@Autowired
 	public void VTEndPoint(
-			VTRepository vTRepository
+			JovemRepository jovemRepository
 			) {
-		this.vTRepository = vTRepository;
+		this.jovemRepository = jovemRepository;
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/vts")
+	public ModelAndView vTs() {
+		ModelAndView modelAndView = new ModelAndView("financeiros/vts/vts");
+		modelAndView.addObject("jovens", jovemRepository.findAll());
+		return modelAndView;
+	}
+	
+/*	@GetMapping("/vt/form")
 	public ModelAndView vT(VT vT) {
 		ModelAndView modelAndView = new ModelAndView("financeiros/vts/vt");
 		modelAndView.addObject("vt", vT);
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/vt")
 	public ModelAndView save(@Valid VT vT, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/financeiros/");
 		if (bindingResult.hasErrors()) {
@@ -48,17 +51,16 @@ public class VTController {
 			modelAndView.addObject("vt", vT);
 		}		
 		return modelAndView;
-	}
+	}*/
 
-	@GetMapping("/{id}")
+	@GetMapping("/vt/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("financeiros/vts/vt");
-		VT vT = vTRepository.findOne(id);
-		modelAndView.addObject("vt", vT);
+		modelAndView.addObject("jovem", jovemRepository.findOne(id));
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	/*@PostMapping("/vt/{id}")
 	public ModelAndView update(@Valid VT vT, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/financeiros/");
 		if (bindingResult.hasErrors()) {
@@ -70,6 +72,6 @@ public class VTController {
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 		}	
 		return modelAndView;
-	}
+	}*/
 	
 }

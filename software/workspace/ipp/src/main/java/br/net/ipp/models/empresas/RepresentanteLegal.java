@@ -1,22 +1,22 @@
 package br.net.ipp.models.empresas;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
-import br.net.ipp.models.AbstractEntity;
+import br.net.ipp.models.User;
 
 @Entity
-public class RepresentanteLegal extends AbstractEntity {
+public class RepresentanteLegal extends User {
 
 	private static final long serialVersionUID = 1L;
 
     private String nome;
-  /*	private String cargo;
+    private String cargo;
 	private String cPF;
-	private String email;
 	private String rG;
 	private String telefone;
 	@ManyToOne
-	private Empresa empresa;*/
+	private Empresa empresa;
 
 	public String getNome() {
 		return nome;
@@ -26,7 +26,7 @@ public class RepresentanteLegal extends AbstractEntity {
 	}
 
 	
-/*	public String getCargo() {
+	public String getCargo() {
 		return cargo;
 	}
 	public void setCargo(String cargo) {
@@ -37,12 +37,6 @@ public class RepresentanteLegal extends AbstractEntity {
 	}
 	public void setcPF(String cPF) {
 		this.cPF = cPF;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
 	}
 	public String getrG() {
 		return rG;
@@ -61,7 +55,7 @@ public class RepresentanteLegal extends AbstractEntity {
 	}
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
-	}*/
+	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}

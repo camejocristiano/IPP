@@ -17,7 +17,7 @@ import br.net.ipp.models.cursos.ConteudoTeoricoBasico;
 
 @Controller
 @Transactional
-@RequestMapping("/basicos")
+@RequestMapping("/sw")
 public class ConteudoTeoricoBasicoController {
 
 private ConteudoTeoricoBasicoRepository conteudoTeoricoBasicoRepository;
@@ -29,14 +29,21 @@ private ConteudoTeoricoBasicoRepository conteudoTeoricoBasicoRepository;
 		this.conteudoTeoricoBasicoRepository = conteudoTeoricoBasicoRepository;
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/basicos")
+	public ModelAndView basicos(ConteudoTeoricoBasico conteudoTeoricoBasico) {
+		ModelAndView modelAndView = new ModelAndView("cursos/matrizes/basicos/basicos");
+		modelAndView.addObject("basicos", conteudoTeoricoBasicoRepository.findAll());
+		return modelAndView;
+	}
+	
+	@GetMapping("/basicos/form")
 	public ModelAndView conteudoTeoricoBasico(ConteudoTeoricoBasico conteudoTeoricoBasico) {
 		ModelAndView modelAndView = new ModelAndView("cursos/matrizes/basicos/basico");
 		modelAndView.addObject("conteudoTeoricoBasico", conteudoTeoricoBasico);
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/basicos")
 	public ModelAndView save(@Valid ConteudoTeoricoBasico conteudoTeoricoBasico, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/");
 		if (bindingResult.hasErrors()) {
@@ -50,15 +57,15 @@ private ConteudoTeoricoBasicoRepository conteudoTeoricoBasicoRepository;
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/basicos/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("matrizes/basicos/basico");
+		ModelAndView modelAndView = new ModelAndView("cursos/matrizes/basicos/basico");
 		ConteudoTeoricoBasico conteudoTeoricoBasico = conteudoTeoricoBasicoRepository.findOne(id);
 		modelAndView.addObject("conteudoTeoricoBasico", conteudoTeoricoBasico);
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/basicos/{id}")
 	public ModelAndView update(@Valid ConteudoTeoricoBasico conteudoTeoricoBasico, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/");
 		if (bindingResult.hasErrors()) {

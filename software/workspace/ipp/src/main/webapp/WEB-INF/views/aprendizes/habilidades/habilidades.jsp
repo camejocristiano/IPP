@@ -15,7 +15,7 @@
 			</c:if>
 	</div>
 </div>
-<table id="tabelaRepresentantes" class="display" width="100%" cellspacing="0">
+<table id="tabelaRepresentantes" class="display">
 	<thead>
           <tr>
             <th>ID</th>
@@ -43,7 +43,7 @@
 		 </a>
 	</div>
 </div>
-<table id="tabelaTurmas" class="display" width="100%" cellspacing="0">
+<table id="tabelaTurmas" class="display">
 	<thead>
           <tr>
             <th>ID</th>

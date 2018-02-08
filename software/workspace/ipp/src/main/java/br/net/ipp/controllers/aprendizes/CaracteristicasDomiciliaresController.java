@@ -1,7 +1,5 @@
 package br.net.ipp.controllers.aprendizes;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -18,51 +16,53 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.net.ipp.daos.aprendizes.CaracteristicasDomiciliaresRepository;
 import br.net.ipp.daos.aprendizes.JovemRepository;
-import br.net.ipp.enums.AuxilioDoGoverno;
-import br.net.ipp.enums.Escolaridade;
 import br.net.ipp.models.aprendizes.CaracteristicasDomiciliares;
 import br.net.ipp.models.aprendizes.Jovem;
+import br.net.ipp.services.EnumService;
 
 @Controller
 @Transactional
-@RequestMapping("/caracteristicasDomiciliares")
+@RequestMapping("/sw")
 public class CaracteristicasDomiciliaresController {
 
 	private CaracteristicasDomiciliaresRepository caracteristicasDomiciliaresRepository;
 	private JovemRepository jovemRepository;
+	private EnumService enumService;
 	
 	@Autowired
-	public void CaracteristicasDomiciliaresEndPoint(
+	public CaracteristicasDomiciliaresController(
 			CaracteristicasDomiciliaresRepository caracteristicasDomiciliaresRepository,
-			JovemRepository jovemRepository
+			JovemRepository jovemRepository,
+			EnumService enumService
 			) {
 		this.caracteristicasDomiciliaresRepository = caracteristicasDomiciliaresRepository;
 		this.jovemRepository = jovemRepository;
+		this.enumService = new EnumService();
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/caracteristicaDomiciliar/form")
 	public ModelAndView caracteristicasDomiciliares(CaracteristicasDomiciliares caracteristicasDomiciliares) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/jovens");
 		return modelAndView;
 	}
 	
-	@GetMapping("/form/{id}")
+	@GetMapping("/caracteristicaDomiciliar/form/{id}")
 	public ModelAndView caracteristicasDomiciliaresJovem(CaracteristicasDomiciliares caracteristicasDomiciliares, @PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/domiciliares/domiciliar");
 		Jovem jovem = jovemRepository.findOne(id);
 		modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
 		modelAndView.addObject("jovem", jovem);
-		List<String> auxiliosDoGoverno = this.carregarAuxiliosDoGoverno();
+		List<String> auxiliosDoGoverno = this.enumService.carregarAuxiliosDoGoverno();
 		modelAndView.addObject("auxiliosDoGoverno", auxiliosDoGoverno);
-		List<String> escolaridades = this.carregarEscolaridades();
+		List<String> escolaridades = this.enumService.carregarEscolaridades();
 		modelAndView.addObject("escolaridades", escolaridades);
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/caracteristicaDomiciliar")
 	public ModelAndView save(@Valid CaracteristicasDomiciliares caracteristicasDomiciliares, BindingResult bindingResult) {
 		Long id = caracteristicasDomiciliares.getJovem().getId();
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
@@ -74,22 +74,22 @@ public class CaracteristicasDomiciliaresController {
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/caracteristicaDomiciliar/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/domiciliares/domiciliar");
 		CaracteristicasDomiciliares caracteristicasDomiciliares = caracteristicasDomiciliaresRepository.findOne(id);
 		modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
-		List<String> auxiliosDoGoverno = this.carregarAuxiliosDoGoverno();
+		List<String> auxiliosDoGoverno = this.enumService.carregarAuxiliosDoGoverno();
 		modelAndView.addObject("auxiliosDoGoverno", auxiliosDoGoverno);
-		List<String> escolaridades = this.carregarEscolaridades();
+		List<String> escolaridades = this.enumService.carregarEscolaridades();
 		modelAndView.addObject("escolaridades", escolaridades);
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/caracteristicaDomiciliar/{id}")
 	public ModelAndView update(@Valid CaracteristicasDomiciliares caracteristicasDomiciliares, BindingResult bindingResult) {
 		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
@@ -101,22 +101,22 @@ public class CaracteristicasDomiciliaresController {
 		return modelAndView;
 	}
 	
-	public List<String> carregarEscolaridades() {
-		List<Escolaridade> lista = Arrays.asList(Escolaridade.values());
-		List<String> escolaridades = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			escolaridades.add(lista.get(i).name());
+	@GetMapping("/caracteristicaDomiciliarJovem/{id}")
+	public ModelAndView caracteristicaDomiciliarJovem(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("aprendizes/domiciliares/domiciliar");
+		Jovem jovem = jovemRepository.findOne(id);
+		modelAndView.addObject("jovem", jovem);
+		if (caracteristicasDomiciliaresRepository.findByJovem(jovem) != null) {
+			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliaresRepository.findByJovem(jovem));
+		} else {
+			CaracteristicasDomiciliares caracteristicasDomiciliares = new CaracteristicasDomiciliares();
+			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
 		}
-		return escolaridades;
-	}
-	
-	public List<String> carregarAuxiliosDoGoverno() {
-		List<AuxilioDoGoverno> lista = Arrays.asList(AuxilioDoGoverno.values());
-		List<String> auxiliosDoGoverno = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			auxiliosDoGoverno.add(lista.get(i).name());
-		}
-		return auxiliosDoGoverno;
+		List<String> auxiliosDoGoverno = this.enumService.carregarAuxiliosDoGoverno();
+		modelAndView.addObject("auxiliosDoGoverno", auxiliosDoGoverno);
+		List<String> escolaridades = this.enumService.carregarEscolaridades();
+		modelAndView.addObject("escolaridades", escolaridades);
+		return modelAndView;
 	}
 	
 }

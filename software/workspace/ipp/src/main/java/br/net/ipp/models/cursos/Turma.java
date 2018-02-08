@@ -92,6 +92,4 @@ public class Turma extends AbstractEntity {
 		return serialVersionUID;
 	}
 
-
-	
 }

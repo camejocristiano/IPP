@@ -17,7 +17,7 @@ import br.net.ipp.models.financeiros.ContaAReceber;
 
 @Controller
 @Transactional
-@RequestMapping("/contasAReceber")
+@RequestMapping("/sw")
 public class ContaAReceberController {
 
 	private ContaAReceberRepository contaAReceberRepository;
@@ -29,14 +29,21 @@ public class ContaAReceberController {
 		this.contaAReceberRepository = contaAReceberRepository;
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/entradas")
+	public ModelAndView entradas() {
+		ModelAndView modelAndView = new ModelAndView("financeiros/receber/entradas");
+		modelAndView.addObject("entradas", contaAReceberRepository.findAll());
+		return modelAndView;
+	}
+	
+	@GetMapping("/entrada/form")
 	public ModelAndView contaAReceber(ContaAReceber contaAReceber) {
 		ModelAndView modelAndView = new ModelAndView("financeiros/receber/receber");
 		modelAndView.addObject("contaAReceber", contaAReceber);
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/entrada")
 	public ModelAndView save(@Valid ContaAReceber contaAReceber, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/financeiros/");
 		if (bindingResult.hasErrors()) {
@@ -50,7 +57,7 @@ public class ContaAReceberController {
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/entrada/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("financeiros/receber/receber");
 		ContaAReceber contaAReceber = contaAReceberRepository.findOne(id);
@@ -58,7 +65,7 @@ public class ContaAReceberController {
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/entrada/{id}")
 	public ModelAndView update(@Valid ContaAReceber contaAReceber, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/financeiros/");
 		if (bindingResult.hasErrors()) {

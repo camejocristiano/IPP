@@ -6,18 +6,41 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../../partials/header.jsp"></c:import>
+
+<style>
+/*
+ CSS INDEXES
+*/
+.btn-index:hover {
+	background-color: #669999;
+	font-weight: bolder;
+	font-style: italic;
+}
+.card-content:hover {
+	font-weight: bolder;
+	background-color: #669999;
+	font-style: italic;
+}
+</style>
+
 <c:import url="../../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
-
-	
 	<div class="row">
-		<div class="input-field  s12 col l12" style="border-top: 2px solid orange;">
-			 <h4 class="header right orange-text">Dispensa: <a class="header right" href="/jovens/${fichaProfissional.jovem != null ? fichaProfissional.jovem.id : jovem.id}">${fichaProfissional.jovem != null ? fichaProfissional.jovem.nome : jovem.nome}</a></h4>
-		</div>
+		<div class="col s12 l12">
+			<a href="/sw/jovem/${jovem.id}">
+				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
+			</a>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
 	</div>
-		<div class="row">
-		<form:form role="form" commandName="dispensa" servletRelativeAction="/dispensas/${dispensa.id}" method="POST">
+</div>
+
+		<form:form role="form" commandName="dispensa" servletRelativeAction="/sw/dispensa/${dispensa.motivoDaDispensa != null ? dispensa.id : null}" method="POST">
 			<div class="row">
 				<div class="input-field s12 col l12">
 					<form:select path="motivoDaDispensa">
@@ -88,15 +111,14 @@
 				Salvar<i class="material-icons right">send</i>
 			</button>
 		</form:form>
-	</div>
-
-</div>
+		<br />
+		<br />
+</div><!-- // container -->
 <c:import url="../../../../partials/js.jsp"></c:import>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('select').material_select();
 	});
-
 	$('.datepicker').pickadate({
 		monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
 		monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],

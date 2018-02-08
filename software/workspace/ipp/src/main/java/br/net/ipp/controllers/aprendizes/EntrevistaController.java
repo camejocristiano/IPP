@@ -1,5 +1,8 @@
 package br.net.ipp.controllers.aprendizes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -20,7 +23,7 @@ import br.net.ipp.models.aprendizes.Jovem;
 
 @Controller
 @Transactional
-@RequestMapping("/entrevistas")
+@RequestMapping("/sw")
 public class EntrevistaController {
 
 	private EntrevistaRepository entrevistaRepository;
@@ -28,7 +31,7 @@ public class EntrevistaController {
 	private EmpresaRepository empresaRepository;
 	
 	@Autowired
-	public void EntrevistaEndPoint(
+	public EntrevistaController (
 			EntrevistaRepository entrevistaRepository,
 			JovemRepository jovemRepository,
 			EmpresaRepository empresaRepository
@@ -38,13 +41,13 @@ public class EntrevistaController {
 		this.empresaRepository = empresaRepository;
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/entrevista/form")
 	public ModelAndView entrevista(Entrevista entrevista) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens");
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovens");
 		return modelAndView;
 	}
-	
-	@GetMapping("/form/{id}")
+
+	@GetMapping("/entrevistaJovem/{id}")
 	public ModelAndView entrevistaJovem(Entrevista entrevista, @PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/profissionais/entrevistas/entrevista");
 		Jovem jovem = jovemRepository.findOne(id);
@@ -54,10 +57,10 @@ public class EntrevistaController {
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/entrevista")
 	public ModelAndView save(@Valid Entrevista entrevista, BindingResult bindingResult) {
-		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
+		Long id = entrevista.getJovem().getId();
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("entrevista", entrevista);
@@ -69,7 +72,7 @@ public class EntrevistaController {
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/entrevista/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/profissionais/entrevistas/entrevista");
 		Entrevista entrevista = entrevistaRepository.findOne(id);
@@ -78,10 +81,10 @@ public class EntrevistaController {
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/entrevista/{id}")
 	public ModelAndView update(@Valid Entrevista entrevista, BindingResult bindingResult) {
-		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
+		Long id = entrevista.getJovem().getId();
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("entrevista", entrevista);
@@ -90,6 +93,20 @@ public class EntrevistaController {
 			modelAndView.addObject("entrevista", entrevista);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 		}	
+		return modelAndView;
+	}
+	
+	@GetMapping("/entrevistasJovem/{id}")
+	public ModelAndView entrevistasJovem(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("aprendizes/profissionais/entrevistas/entrevistas");
+		Jovem jovem = jovemRepository.findOne(id);
+		modelAndView.addObject("jovem", jovem);
+		if (entrevistaRepository.findAllByJovem(jovem).size() > 0) {
+			modelAndView.addObject("entrevistas", entrevistaRepository.findAllByJovem(jovem));
+		} else {
+			List<Entrevista> entrevistas = new ArrayList<Entrevista>();
+			modelAndView.addObject("entrevistas", entrevistas);
+		}
 		return modelAndView;
 	}
 	

@@ -19,14 +19,14 @@ import br.net.ipp.models.aprendizes.SituacaoLaboral;
 
 @Controller
 @Transactional
-@RequestMapping("/situacoesLaborais")
+@RequestMapping("/sw")
 public class SituacaoLaboralController {
 
 	private SituacaoLaboralRepository situacaoLaboralRepository;
 	private JovemRepository jovemRepository;
 	
 	@Autowired
-	public void SituacaoLaboralEndPoint(
+	public SituacaoLaboralController(
 			SituacaoLaboralRepository situacaoLaboralRepository,
 			JovemRepository jovemRepository
 			) {
@@ -34,14 +34,14 @@ public class SituacaoLaboralController {
 		this.jovemRepository = jovemRepository;
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/situacaoLaboral/form")
 	public ModelAndView situacaoLaboral(SituacaoLaboral situacaoLaboral) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/laborais/laboral");
 		modelAndView.addObject("situacaoLaboral", situacaoLaboral);
 		return modelAndView;
 	}
 	
-	@GetMapping("/form/{id}")
+	@GetMapping("/situacaoLaboral/form/{id}")
 	public ModelAndView situacaoLaboralJovem(SituacaoLaboral situacaoLaboral, @PathVariable Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/laborais/laboral");
 		Jovem jovem = jovemRepository.findOne(id);
@@ -50,10 +50,10 @@ public class SituacaoLaboralController {
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/situacaoLaboral")
 	public ModelAndView save(@Valid SituacaoLaboral situacaoLaboral, BindingResult bindingResult) {
 		Long id = situacaoLaboral.getJovem().getId();
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("situacaoLaboral", situacaoLaboral);
@@ -65,7 +65,7 @@ public class SituacaoLaboralController {
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/situacaoLaboral/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/laborais/laboral");
 		SituacaoLaboral situacaoLaboral = situacaoLaboralRepository.findOne(id);
@@ -73,10 +73,10 @@ public class SituacaoLaboralController {
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/situacaoLaboral/{id}")
 	public ModelAndView update(@Valid SituacaoLaboral situacaoLaboral, BindingResult bindingResult) {
 		Long id = situacaoLaboral.getJovem().getId();
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("situacaoLaboral", situacaoLaboral);
@@ -85,6 +85,20 @@ public class SituacaoLaboralController {
 			modelAndView.addObject("situacaoLaboral", situacaoLaboral);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 		}	
+		return modelAndView;
+	}
+	
+	@GetMapping("/situacaoLaboralJovem/{id}")
+	public ModelAndView situacaoLaboralJovem(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("aprendizes/laborais/laboral");
+		Jovem jovem = jovemRepository.findOne(id);
+		modelAndView.addObject("jovem", jovem);
+		if (situacaoLaboralRepository.findByJovem(jovem) != null) {
+			modelAndView.addObject("situacaoLaboral", situacaoLaboralRepository.findByJovem(jovem));
+		} else {
+			SituacaoLaboral situacaoLaboral = new SituacaoLaboral();
+			modelAndView.addObject("situacaoLaboral", situacaoLaboral);
+		}
 		return modelAndView;
 	}
 	

@@ -1,8 +1,19 @@
 package br.net.ipp.models.empresas;
 
-import javax.persistence.Entity;
+import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import br.net.ipp.enums.Regiao;
+import br.net.ipp.enums.Status;
+import br.net.ipp.enums.TipoDeParceria;
 import br.net.ipp.models.AbstractEntity;
+import br.net.ipp.models.configuracoes.Unidade;
+import br.net.ipp.models.configuracoes.Usuario;
 
 @Entity
 public class Empresa extends AbstractEntity {
@@ -10,8 +21,8 @@ public class Empresa extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 
 	private String razaoSocial;
-	
-	/*	private Boolean assistenciaMedica;
+	private Status status;
+	private Boolean assistenciaMedica;
 	private Boolean assistenciaOdontologica;
 	private Boolean autorizaDivulgacaoDaEmpresaNoSiteDoIpp;
 	private String bairro;
@@ -21,12 +32,14 @@ public class Empresa extends AbstractEntity {
 	private String cidade;
 	private String cNPJ;
 	private String complemento;
+	@Column(name = "dataDeCadastro")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy") 
 	private Date dataDeCadastro;
-	private Date dataDeVencimentoDaFatura;
+	@Column(name = "dataDeVencimentoDaFatura")  
+	private String dataDeVencimentoDaFatura;
 	private String endereco;
 	private String estado;
 	private String fax;
-	private Usuario monitor;
 	private String nomeFantazia;
 	private Boolean outros;
 	private double porcentagemSobreATaxaExtraBaseSMF;
@@ -39,23 +52,17 @@ public class Empresa extends AbstractEntity {
 	private String telefone;
 	private String tipoDeEmpresa;
 	private TipoDeParceria tipoDeParceria;
-	private Unidade unidade;
 	private Boolean valeAlimentacao;
 	private Boolean valeRefeicao;
 	private double valorPorcentagemSobreATaxaExtraBaseSMF;
 	private double valorPorcentagemSobreOSMF;
-	private Usuario vendedor;
 	private Boolean vinculoComOIPP;
 	private Boolean vRCurso;
-	@OneToMany
-	public List<Setor> setores;
-	@OneToMany
-	public List<Gestor> gestores;
-	@OneToMany
-	public List<Contato> contatos;
-	@OneToMany
-	public List<RepresentanteLegal> representantesLegais;*/
-
+	// Criar relacionamento
+	private Usuario monitor;
+	private Usuario vendedor;
+	@ManyToOne
+	private Unidade unidade;
 	
 	public String getRazaoSocial() {
 		return razaoSocial;
@@ -63,7 +70,13 @@ public class Empresa extends AbstractEntity {
 	public void setRazaoSocial(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
 	}
-/*	public Boolean getAssistenciaMedica() {
+	public Status getStatus() {
+		return status;
+	}
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+	public Boolean getAssistenciaMedica() {
 		return assistenciaMedica;
 	}
 	public void setAssistenciaMedica(Boolean assistenciaMedica) {
@@ -129,10 +142,10 @@ public class Empresa extends AbstractEntity {
 	public void setDataDeCadastro(Date dataDeCadastro) {
 		this.dataDeCadastro = dataDeCadastro;
 	}
-	public Date getDataDeVencimentoDaFatura() {
+	public String getDataDeVencimentoDaFatura() {
 		return dataDeVencimentoDaFatura;
 	}
-	public void setDataDeVencimentoDaFatura(Date dataDeVencimentoDaFatura) {
+	public void setDataDeVencimentoDaFatura(String dataDeVencimentoDaFatura) {
 		this.dataDeVencimentoDaFatura = dataDeVencimentoDaFatura;
 	}
 	public String getEndereco() {
@@ -279,33 +292,8 @@ public class Empresa extends AbstractEntity {
 	public void setvRCurso(Boolean vRCurso) {
 		this.vRCurso = vRCurso;
 	}
-	public List<Setor> getSetores() {
-		return setores;
-	}
-	public void setSetores(List<Setor> setores) {
-		this.setores = setores;
-	}
-	public List<Gestor> getGestores() {
-		return gestores;
-	}
-	public void setGestores(List<Gestor> gestores) {
-		this.gestores = gestores;
-	}
-	public List<Contato> getContatos() {
-		return contatos;
-	}
-	public void setContatos(List<Contato> contatos) {
-		this.contatos = contatos;
-	}
-	public List<RepresentanteLegal> getRepresentantesLegais() {
-		return representantesLegais;
-	}
-	public void setRepresentantesLegais(List<RepresentanteLegal> representantesLegais) {
-		this.representantesLegais = representantesLegais;
-	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	*/
 	
 }

@@ -10,7 +10,7 @@
 		 <h4 class="header right orange-text">Características Domiciliares:</h4>
 	</div>
 </div>
-<table id="tabelaUnidades" class="display" width="100%" cellspacing="0">
+<table id="tabelaUnidades" class="display">
 	<thead>
           <tr>
             <th>ID</th>

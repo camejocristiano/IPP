@@ -12,34 +12,47 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.net.ipp.daos.empresas.EmpresaRepository;
 import br.net.ipp.daos.empresas.RepresentanteLegalRepository;
+import br.net.ipp.models.empresas.Empresa;
 import br.net.ipp.models.empresas.RepresentanteLegal;
 
 @Controller
 @Transactional
-@RequestMapping("/representantes")
+@RequestMapping("/sw")
 public class RepresentanteLegalController {
 
 	private RepresentanteLegalRepository representanteLegalRepository;
+	private EmpresaRepository empresaRepository;
 	
 	@Autowired
 	public void EmpresaEndPoint(
-			RepresentanteLegalRepository representanteLegalRepository
+			RepresentanteLegalRepository representanteLegalRepository,
+			EmpresaRepository empresaRepository
 			) {
 		this.representanteLegalRepository = representanteLegalRepository;
+		this.empresaRepository = empresaRepository;
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/representantes/form")
 	public ModelAndView representanteLegal(RepresentanteLegal representanteLegal) {
 		ModelAndView modelAndView = new ModelAndView("empresas/representantes/representante");
 		modelAndView.addObject("representanteLegal", representanteLegal);
 		return modelAndView;
 	}
 
-	@PostMapping
+	@GetMapping("/representantes/{id}")
+	public ModelAndView representantesEmpresa(RepresentanteLegal representanteLegal, @PathVariable Long id) {
+		ModelAndView modelAndView = new ModelAndView("empresas/representantes/representantes");
+		Empresa empresa = empresaRepository.findOne(id);
+		modelAndView.addObject("representantes", representanteLegalRepository.findByEmpresa(empresa));
+		modelAndView.addObject("empresa", empresa);
+		return modelAndView;
+	}
+	
+	@PostMapping("/representante")
 	public ModelAndView save(@Valid RepresentanteLegal representanteLegal, BindingResult bindingResult) {
-		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:/empresas/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/empresas");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("representanteLegal", representanteLegal);
@@ -47,23 +60,33 @@ public class RepresentanteLegalController {
 			representanteLegalRepository.save(representanteLegal);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 			modelAndView.addObject("representanteLegal", representanteLegal);
-			this.load(representanteLegal.getId());
 		}		
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
-	public ModelAndView load(@PathVariable("id") Long id) {
+	/*
+	 * Metodo GET - Formulário de Representante Legal com id da empresa  
+	 *  
+	 */
+	@GetMapping("/representanteEmpresa/{id}")
+	public ModelAndView load(RepresentanteLegal representanteLegal, @PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("empresas/representantes/representante");
-		RepresentanteLegal representanteLegal = representanteLegalRepository.findOne(id);
 		modelAndView.addObject("representanteLegal", representanteLegal);
+		Empresa empresa = empresaRepository.findOne(id);
+		modelAndView.addObject("empresa", empresa);
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@GetMapping("/representante/{id}")
+	public ModelAndView loadRepresentante(RepresentanteLegal representanteLegal, @PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("empresas/representantes/representante");
+		modelAndView.addObject("representanteLegal", representanteLegalRepository.findOne(id));
+		return modelAndView;
+	}
+	
+	@PostMapping("/representante/{id}")
 	public ModelAndView update(@Valid RepresentanteLegal representanteLegal, BindingResult bindingResult) {
-		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:/empresas/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/empresas");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("representanteLegal", representanteLegal);

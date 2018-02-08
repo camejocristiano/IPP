@@ -8,11 +8,15 @@ import javax.persistence.ManyToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import br.net.ipp.enums.AEDiaDaSemana;
 import br.net.ipp.enums.Area;
+import br.net.ipp.enums.DiaDaSemana;
 import br.net.ipp.enums.EstadoCivil;
 import br.net.ipp.enums.Regiao;
+import br.net.ipp.enums.ServicoMilitarSituacao;
 import br.net.ipp.enums.Sexo;
 import br.net.ipp.enums.Status;
+import br.net.ipp.enums.TipoDeCNH;
 import br.net.ipp.enums.TipoDeInsercao;
 import br.net.ipp.models.User;
 import br.net.ipp.models.configuracoes.Canal;
@@ -25,10 +29,8 @@ public class Jovem extends User {
 	private static final long serialVersionUID = 1L;
 
 	private String nome;
-	
 	private String telefone;
 	private String celular;
-	
 	private String endereco;
 	private String numeroResidencia;
 	private String complemento;
@@ -36,28 +38,15 @@ public class Jovem extends User {
 	private String cidade;
 	private String estado;
 	private String cEP;
-	
 	private String idade;
+	// Naturalidade
 	private String naturalidadeCidade;
 	private String naturalidadeEstado;
 	private String naturalidadePais;
-	
-	private String certidaoDeNascimentoCartorio;
-	private String certidaoDeNascimentoFolhaNumero;
-	private String certidaoDeNascimentoLivro;
-	
 	private String cPF;
-	private String cNHNumero;
-	private String servicoMilitarNumero;
-	private String tituloDeEleitorNumero;
-	private String tituloDeEleitorSecao;
-	private String tituloDeEleitorZona;
-	private String pISNumero;
 	private String rG;
 	private String orgaoEmissor;
-	
 	private String codigoDoJovem;
-	
 	private String responsavelLegal;
 	private String nomeDoPai;
 	private String nomeDaMae;
@@ -65,14 +54,40 @@ public class Jovem extends User {
 	private String rGResp;
 	private String cPFPai;
 	private String cPFResp;
-	
-	private String cTPSdataExpedicao;
+	// CTPS
+	@Column(name = "cTPSdataExpedicao")  
+	@DateTimeFormat(pattern = "dd/mm/yyyy") 
+	private Date cTPSdataExpedicao;
 	private String cTPSNumero;
 	private String cTPSSerie;
 	private String cTPSUF;
-	
+	// CNH
+	private Boolean cNHTem;
+	private String cNHNumero;
+	private TipoDeCNH cNHTipo;
+	// Medidas Sócio Educativas
+	private Boolean medidasSocioEducativasEstaCumprindo;
+	private Boolean medidasSocioEducativasEUsuarioDeDrogas;
+	private Boolean medidasSocioEducativasJaTeveProblemasComALei;
+	// Certidão de Nascimento
+	private Boolean certidaoDeNascimentoTem;
+	private String certidaoDeNascimentoCartorio;
+	private String certidaoDeNascimentoFolhaNumero;
+	private String certidaoDeNascimentoLivro;
+	// Título De Eleitor
+	private Boolean tituloDeEleitorTem;
+	private String tituloDeEleitorNumero;
+	private String tituloDeEleitorSessao;
+	private String tituloDeEleitorZona;
+	// Serviço Militar
+	private String servicoMilitarNumero;
+	private Boolean servicoMilitarSeAlistou;
+	private ServicoMilitarSituacao servicoMilitarSituacao;
+	// Deficiência Física
 	private String deficienciaFisicaDescricao;
-	
+	private Boolean deficienciaFisicaTem;
+	// PIS
+	private String pISNumero;
 	private String hrEmPAP;
 	private String hrSdPAP;
 	private String numeroPAP;
@@ -80,48 +95,22 @@ public class Jovem extends User {
 	private String numeroPIP;
 	private String numeroPIT;
 	private Turma aETurma;
-
-	// ATRIBUTOS BOOLEAN
-	 
-	private Boolean tituloDeEleitorTem;
-	private Boolean certidaoDeNascimentoTem;
-	private Boolean cNHTem;
-	private Boolean medidasSocioEducativasEstaCumprindo;
-	private Boolean medidasSocioEducativasEUsuarioDeDrogas;
-	private Boolean medidasSocioEducativasJaTeveProblemasComALei;
-	private Boolean deficienciaFisicaTem;
-	private Boolean servicoMilitarSeAlistou;
-	
-	
-	// CLASSES DATE
-	 
-	
+	private AEDiaDaSemana aEDiaSem;
+	private DiaDaSemana pAPDiaDaSemana;
 	@Column(name = "dataDeNascimento")  
 	@DateTimeFormat(pattern = "dd/mm/yyyy") 
 	private Date dataDeNascimento;
 	@Column(name = "dataExpedicao")  
 	@DateTimeFormat(pattern = "dd/mm/yyyy") 
 	private Date dataExpedicao;
-	
-	
-	// RELACIONAMENTOS - CLASSES
-	
 	@ManyToOne
 	private Canal canal;
 	@ManyToOne
 	private Unidade unidade;
-	
-	// RELACIONAMENTOS - ENUMS
-	/*
-	private AEDiaDaSemana aEDiaSem;
-	private TipoDeCNH cNHTipo;
-	private DiaDaSemana pAPDiaDaSemana;
-	private ServicoMilitarSituacao servicoMilitarSituacao;*/
 	private TipoDeInsercao tipoDeInsercao;
 	private EstadoCivil estadoCivil;
 	private Sexo sexo; 
-	private Status status;/*
-	private SituacaoDeSaude m_SituacaoDeSaude;*/
+	private Status status;
 	private Area area;
 	private Regiao regiao;
 	
@@ -315,11 +304,11 @@ public class Jovem extends User {
 	public void setTituloDeEleitorNumero(String tituloDeEleitorNumero) {
 		this.tituloDeEleitorNumero = tituloDeEleitorNumero;
 	}
-	public String getTituloDeEleitorSecao() {
-		return tituloDeEleitorSecao;
+	public String getTituloDeEleitorSessao() {
+		return tituloDeEleitorSessao;
 	}
-	public void setTituloDeEleitorSecao(String tituloDeEleitorSecao) {
-		this.tituloDeEleitorSecao = tituloDeEleitorSecao;
+	public void setTituloDeEleitorSessao(String tituloDeEleitorSessao) {
+		this.tituloDeEleitorSessao = tituloDeEleitorSessao;
 	}
 	public String getTituloDeEleitorZona() {
 		return tituloDeEleitorZona;
@@ -381,10 +370,10 @@ public class Jovem extends User {
 	public void setcPFResp(String cPFResp) {
 		this.cPFResp = cPFResp;
 	}
-	public String getcTPSdataExpedicao() {
+	public Date getcTPSdataExpedicao() {
 		return cTPSdataExpedicao;
 	}
-	public void setcTPSdataExpedicao(String cTPSdataExpedicao) {
+	public void setcTPSdataExpedicao(Date cTPSdataExpedicao) {
 		this.cTPSdataExpedicao = cTPSdataExpedicao;
 	}
 	public String getcTPSNumero() {
@@ -512,6 +501,30 @@ public class Jovem extends User {
 	}
 	public void setAETurma(Turma aETurma) {
 		this.aETurma = aETurma;
+	}
+	public DiaDaSemana getpAPDiaDaSemana() {
+		return pAPDiaDaSemana;
+	}
+	public void setpAPDiaDaSemana(DiaDaSemana pAPDiaDaSemana) {
+		this.pAPDiaDaSemana = pAPDiaDaSemana;
+	}
+	public AEDiaDaSemana getaEDiaSem() {
+		return aEDiaSem;
+	}
+	public void setaEDiaSem(AEDiaDaSemana aEDiaSem) {
+		this.aEDiaSem = aEDiaSem;
+	}
+	public TipoDeCNH getcNHTipo() {
+		return cNHTipo;
+	}
+	public void setcNHTipo(TipoDeCNH cNHTipo) {
+		this.cNHTipo = cNHTipo;
+	}
+	public ServicoMilitarSituacao getServicoMilitarSituacao() {
+		return servicoMilitarSituacao;
+	}
+	public void setServicoMilitarSituacao(ServicoMilitarSituacao servicoMilitarSituacao) {
+		this.servicoMilitarSituacao = servicoMilitarSituacao;
 	}
 		
 }

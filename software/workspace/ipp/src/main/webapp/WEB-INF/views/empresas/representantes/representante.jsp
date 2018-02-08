@@ -10,33 +10,86 @@
 
 <div class="container" id="main-container-content">
 
-	<div class="row">
-		<h2>Canal</h2>
-		<form:form role="form" commandName="representanteLegal" servletRelativeAction="/representantes/${representante.id}" method="POST"
-			class="col s12">
+<div class="row">
+		<div class="col s12 l12">
+			<a href="/sw/empresa/${empresa.id}">
+				<h4 class="header right black-text">${empresa.nomeFantazia != null ? empresa.nomeFantazia : representanteLegal.nome}</h4>
+			</a>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
+		</div>
+	</div>
+
+		<form:form role="form" commandName="representanteLegal" servletRelativeAction="/sw/representante/${representanteLegal.nome != null ? representanteLegal.id : null}" method="POST">
 			<div class="row">
-				<div class="input-field s12 col l12">
+				<div class="input-field s12 col l6">
 					<form:input path='nome' type='text'/>
 					<form:errors path='nome'/> 
 					<label for="nome">Nome</label>
 				</div>
+				<div class="input-field s12 col l3">
+					<form:input path='rG' type='text'/>
+					<form:errors path='rG'/> 
+					<label for="rG">RG</label>
+				</div>
+				<div class="input-field s12 col l3">
+					<form:input path='cPF' type='text'/>
+					<form:errors path='cPF'/> 
+					<label for="cPF">CPF</label>
+				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s12">
-  </div>
+				<div class="input-field s12 col l4">
+					<form:input path='cargo' type='text'/>
+					<form:errors path='cargo'/> 
+					<label for="cargo">Cargo</label>
+				</div>
+				<div class="input-field s12 col l5">
+					<form:input path='email' type='email'/>
+					<form:errors path='email'/> 
+					<label for="email">Email</label>
+				</div>
+				<div class="input-field s12 col l3">
+					<form:input path='telefone' type='text'/>
+					<form:errors path='telefone'/> 
+					<label for="telefone">Telefone</label>
+				</div>
 			</div>
+			<div class="row">
+				<div class="input-field s12 col l6">
+					<form:input path='username' type='text'/>
+					<form:errors path='username'/> 
+					<label for="username">Username</label>
+				</div>
+				<div class="input-field s12 col l3">
+					<form:input path='password' type='password'/>
+					<form:errors path='password'/> 
+					<label for="password">Password</label>
+				</div>
+				<div class="s12 col l3">
+					<input type="checkbox" class="filled-in" id="admin" name="admin" <c:if test="${representanteLegal.admin == true}">checked</c:if> />
+					<label for="admin">Admin?</label>
+				</div>
+			</div>
+			
+			<form:input path='empresa' type='hidden' value="${empresa.id}" />
 			<button class="btn waves-effect waves-light right" type="submit">
 				Salvar<i class="material-icons right">send</i>
 			</button>
 		</form:form>
-	</div>
 
+<br />
+<br />
 </div>
-
-<c:import url="../../../partials/footer.jsp"></c:import>
+<c:import url="../../../partials/js.jsp"></c:import>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('select').material_select();
 	});
 </script>
+<c:import url="../../../partials/footer.jsp"></c:import>
 <c:import url="../../../partials/final.jsp"></c:import>

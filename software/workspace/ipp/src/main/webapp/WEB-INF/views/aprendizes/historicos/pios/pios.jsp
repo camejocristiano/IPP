@@ -5,7 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<table id="tabelaCanais" class="display" width="100%" cellspacing="0">
+<table id="tabelaCanais" class="display">
 	<thead>
     	<tr>
             <th>ID</th>

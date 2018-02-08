@@ -6,6 +6,11 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../partials/header.jsp"></c:import>
+<style type="text/css">
+	.tabs .indicator{
+    	background-color: #222;
+    }
+</style>
 <c:import url="../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
@@ -13,14 +18,14 @@
 	<div class="row">
 		<div class="col s12">
 			<ul class="tabs">
-				<li class="tab col s3"><a href="#parametros">Parâmetros</a></li>
-				<li class="tab col s1"><a href="#demonstrativos">D</a></li>
-				<li class="tab col s1"><a href="#vts">T</a></li>
-				<li class="tab col s2"><a href="#vrs">VR</a></li>
-				<li class="tab col s1"><a href="#salarios1.53">13º</a></li>
-				<li class="tab col s1"><a href="#pagar">P</a></li>
-				<li class="tab col s2"><a href="#receber">Rec</a></li>
-				<li class="tab col s1"><a href="#bancos">B</a></li>
+				<li class="tab col s1"><a href="#parametros" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Parâmetros"><i class="material-icons" style="color: #222 !important;">account_balance_wallet</i></a></li>
+				<li class="tab col s1"><a href="#demonstrativos" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Demonstrativos"><i class="material-icons" style="color: #222 !important;">local_atm</i></a></li>
+				<li class="tab col s1"><a href="#vts" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="VTs"><i class="material-icons" style="color: #222 !important;">directions_bus</i></a></li>
+				<li class="tab col s1"><a href="#vrs" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="VRs"><i class="material-icons" style="color: #222 !important;">local_dining</i></a></li>
+				<li class="tab col s1"><a href="#salarios13" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="13ºs"><i class="material-icons" style="color: #222 !important;">mood</i></a></li>
+				<li class="tab col s1"><a href="#pagar" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Contas à pagar"><i class="material-icons" style="color: #222 !important;">money_off</i></a></li>
+				<li class="tab col s1"><a href="#receber" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Contas à receber"><i class="material-icons" style="color: #222 !important;">accessibility</i></a></li>
+				<li class="tab col s1"><a href="#bancos" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Bancos"><i class="material-icons" style="color: #222 !important;">business</i></a></li>
 			</ul>
 			
 	<br /> 
@@ -55,5 +60,9 @@
 </div>
 
 <c:import url="../../partials/js.jsp"></c:import>
-
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  });
+</script>
 <c:import url="../../partials/footer.jsp"></c:import>

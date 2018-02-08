@@ -1,5 +1,7 @@
 package br.net.ipp.controllers.financeiros;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -14,31 +16,48 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.net.ipp.daos.financeiros.ContaAPagarRepository;
 import br.net.ipp.models.financeiros.ContaAPagar;
+import br.net.ipp.services.EnumService;
 
 @Controller
 @Transactional
-@RequestMapping("/contasAPagar")
+@RequestMapping("/sw")
 public class ContaAPagarController {
 
 	private ContaAPagarRepository contaAPagarRepository;
+	private EnumService enumService;
 	
 	@Autowired
 	public void ContaAPagarEndPoint(
-			ContaAPagarRepository contaAPagarRepository
+			ContaAPagarRepository contaAPagarRepository,
+			EnumService enumService
 			) {
 		this.contaAPagarRepository = contaAPagarRepository;
+		this.enumService = new EnumService();
 	}
 
-	@GetMapping("/form")
+	@GetMapping("/contas")
+	public ModelAndView contas() {
+		ModelAndView modelAndView = new ModelAndView("financeiros/pagar/contas");
+		modelAndView.addObject("contas", contaAPagarRepository.findAll());
+		return modelAndView;
+	}
+	
+	@GetMapping("/conta/form")
 	public ModelAndView contaAPagar(ContaAPagar contaAPagar) {
 		ModelAndView modelAndView = new ModelAndView("financeiros/pagar/pagar");
 		modelAndView.addObject("contaAPagar", contaAPagar);
+		List<String> tiposDeParceria = this.enumService.carregarTiposDeParceria();
+		modelAndView.addObject("tiposDeParceria", tiposDeParceria);
+		List<String> regioes = this.enumService.carregarRegioes();
+		modelAndView.addObject("regioes", regioes);
+		List<String> tiposDeEmpresa = this.enumService.carregarTiposDeEmpresa();
+		modelAndView.addObject("tiposDeEmpresa", tiposDeEmpresa);
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/conta")
 	public ModelAndView save(@Valid ContaAPagar contaAPagar, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/financeiros/");
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/financeiros/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("contaAPagar", contaAPagar);
@@ -50,17 +69,23 @@ public class ContaAPagarController {
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/conta/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("financeiros/pagar/pagar");
 		ContaAPagar contaAPagar = contaAPagarRepository.findOne(id);
 		modelAndView.addObject("contaAPagar", contaAPagar);
+		List<String> tiposDeParceria = this.enumService.carregarTiposDeParceria();
+		modelAndView.addObject("tiposDeParceria", tiposDeParceria);
+		List<String> regioes = this.enumService.carregarRegioes();
+		modelAndView.addObject("regioes", regioes);
+		List<String> tiposDeEmpresa = this.enumService.carregarTiposDeEmpresa();
+		modelAndView.addObject("tiposDeEmpresa", tiposDeEmpresa);
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/conta/{id}")
 	public ModelAndView update(@Valid ContaAPagar contaAPagar, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/financeiros/");
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/financeiros/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("contaAPagar", contaAPagar);

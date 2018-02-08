@@ -4,11 +4,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<table id="tabelaTurmas" class="display" width="100%" cellspacing="0">
+
+<c:import url="../../../partials/header.jsp"></c:import>
+<c:import url="../../../partials/navbar.jsp"></c:import>
+
+<div class="container" id="main-container-content">
+
+
+	<div class="row">
+		<div class="col s12 l12">
+			<a href="/sw/cursos/${curso.id}">
+				<h4 class="header right black-text">${curso.nomeDoCurso != null ? curso.nomeDoCurso : "Turmas"}</h4>
+			</a>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
+		</div>
+	</div>
+
+
+<table id="tabelaTurmas" class="display">
 	<thead>
 		<tr>
-			<th>ID</th>
-			<th>numeroTurma</th>
+			<th>TURMA</th>
+			<th>DIA_DA_SEMANA</th>
+			<th>ORIENTADOR</th>
+			<th>HORA_DE_INÍCIO</th>
+			<th>HORA_DE_TÉRMINO</th>
+			<th>DATA_DE_INÍCIO</th>
+			<th>DATA_DE_TÉRMINO</th>
 			<th class="td-icon">EDITAR</th>
 		</tr>
 	</thead>
@@ -16,8 +43,13 @@
 		<c:forEach var="turma" items="${requestScope.turmas}">
 			<tr>
 				<td>${turma.id}</td>
-				<td>${turma.numeroTurma}</td>
-				<td class="td-icon"><a href="/turmas/${turma.id}"><i
+				<td>${turma.diaDaSemana}</td>
+				<td>${turma.orientadorTurma.nome}</td>
+				<td>${turma.horaInicioTurma}</td>
+				<td>${turma.horaFimTurma}</td>
+				<td>${turma.dataInicioTurma}</td>
+				<td>${turma.dataFimTurma}</td>
+				<td class="td-icon"><a href="/sw/turma/${turma.id}"><i
 						class="material-icons">border_color</i></a></td>
 			</tr>
 		</c:forEach>
@@ -27,6 +59,11 @@
 
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
 	<a class="btn-floating btn-large waves-effect waves-light orange"
-		href="/turmas/form/${curso.id}"> <i class="material-icons">add</i>
+		href="/sw/turmaForm/${curso.id}"> <i class="material-icons">add</i>
 	</a>
 </div>
+
+	</div>
+<c:import url="../../../partials/js.jsp"></c:import>
+<c:import url="../../../partials/footer.jsp"></c:import>
+<c:import url="../../../partials/final.jsp"></c:import>
