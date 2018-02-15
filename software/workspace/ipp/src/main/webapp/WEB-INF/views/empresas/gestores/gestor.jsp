@@ -6,29 +6,13 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
-
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/empresa/${empresa.id}">
+			<c:url value="/sw/empresa/${empresa.id}" var="swEmpresaId"></c:url>
+			<a href="${swEmpresaId}">
 				<h4 class="header right black-text">${gestor.nome != null ? gestor.nome : empresa.nomeFantazia}</h4>
 			</a>
 			<br />
@@ -39,11 +23,12 @@
 			<br />
 	</div>
 </div>
-
-		<form:form role="form" commandName="gestor" servletRelativeAction="/sw/gestor/${gestor.nome != null ? gestor.id : null}" method="POST">
+		<c:url value="/sw/gestor/${gestor.nome != null ? gestor.id : null}" var="swGestorId"></c:url>
+		<form:form role="form" commandName="gestor" servletRelativeAction="${swGestorId}" method="POST">
 <div class="row">
 <div class="s12 col l2">
-			<img src="../../../assets/images/usuario.png" alt="" width="175em" />
+			<c:url value="/images/usuario.png" var="usuarioPng"></c:url>
+			<img src="${usuarioPng}" alt="" width="175em" />
 		</div><!-- // col -->
 		<div class="s12 col l10">
 			<div class="row">
@@ -108,9 +93,4 @@
 
 <c:import url="../../../partials/js.jsp"></c:import>
 <c:import url="../../../partials/footer.jsp"></c:import>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-</script>
 <c:import url="../../../partials/final.jsp"></c:import>

@@ -13,7 +13,8 @@
 
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/cursos/${curso.id}">
+			<c:url value="/sw/homeCurso/${curso.id}" var="swHomeCursoCursoId"></c:url>
+			<a href="${swHomeCursoCursoId}">
 				<h4 class="header right black-text">${curso.nomeDoCurso != null ? curso.nomeDoCurso : "Turmas"}</h4>
 			</a>
 			<br />

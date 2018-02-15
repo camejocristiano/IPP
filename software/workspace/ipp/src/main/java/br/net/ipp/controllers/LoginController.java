@@ -12,6 +12,7 @@ import br.net.ipp.models.configuracoes.Usuario;
 @Controller
 public class LoginController {
 
+	
 	@Autowired
 	public LoginController() {}
 	

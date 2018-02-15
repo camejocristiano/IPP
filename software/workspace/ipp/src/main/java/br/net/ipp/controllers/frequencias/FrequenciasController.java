@@ -1,4 +1,4 @@
-package br.net.ipp.controllers.frequencias;
+/*package br.net.ipp.controllers.frequencias;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -101,7 +101,7 @@ public class FrequenciasController {
 		return modelAndView;
 	}
 	
-/*	@GetMapping("frequencias/{id}")
+	@GetMapping("frequencias/{id}")
 	public ModelAndView frequenciasOrientador(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("frequencias/pitsepips/turmas");
 		Usuario usuario = usuarioRepository.findOne(id);
@@ -109,6 +109,7 @@ public class FrequenciasController {
 		modelAndView.addObject("turmas", turmas);
 		return modelAndView;
 	}
-*/
+
 	
 }
+*/

@@ -1,4 +1,4 @@
-package br.net.ipp.controllers.frequencias;
+/*package br.net.ipp.controllers.frequencias;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -82,3 +82,4 @@ public class FrequenciasTurmaController {
 	}
 	
 }
+*/

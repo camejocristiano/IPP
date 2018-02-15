@@ -6,29 +6,13 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
-
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/empresa/${empresa.id}">
+			<c:url value="/sw/empresa/${empresa.id}" var="swEmpresaId"></c:url>
+			<a href="${swEmpresaId}">
 				<h4 class="header right black-text">${empresa.nomeFantazia != null ? empresa.nomeFantazia : "Empresa"}</h4>
 			</a>
 			<br />
@@ -43,7 +27,8 @@
 	
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
-				<a href="/sw/loadEmpresa/${empresa.id}">
+				<c:url value="/sw/loadEmpresa/${empresa.id}" var="swLoadEmpresaId"></c:url>
+				<a href="${swLoadEmpresaId}">
 					<div class="card-content white-text">
 						<span class="card-title">Dados Cadastrais<i
 							class="material-icons right" style="color: #eee !important;">dvr</i></span>
@@ -59,14 +44,16 @@
 		</div>
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
-				<a href="/sw/representantes/${empresa.id}">
+				<c:url value="/sw/representantes/${empresa.id}" var="swRepresentantesEmpresaId"></c:url>
+				<a href="${swRepresentantesEmpresaId}">
 					<div class="card-content white-text">
 						<span class="card-title">Representantes<i
 							class="material-icons right" style="color: #eee !important;">people_outline</i></span>
 						<p>Manutenção de Representantes Legais</p>
 					</div>
 				</a> 
-				<a href="/sw/representanteEmpresa/${empresa.id}" class="btn-index">
+				<c:url value="/sw/representanteEmpresa/${empresa.id}" var="swRepresentanteEmpresaId"></c:url>
+				<a href="${swRepresentanteEmpresaId}" class="btn-index">
 					<div class="card-action">
 						<h6 style="color: #eee !important;">Novo</h6>
 					</div>
@@ -75,14 +62,16 @@
 		</div>
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
-				<a href="/sw/gestores/${empresa.id}">
+				<c:url value="/sw/gestores/${empresa.id}" var="swGestoresEmpresaId"></c:url>
+				<a href="${swGestoresEmpresaId}">
 					<div class="card-content white-text">
 						<span class="card-title">Gestores<i
 							class="material-icons right" style="color: #eee !important;">people_outline</i></span>
 						<p>Manutenção de Gestores</p>
 					</div>
 				</a> 
-				<a href="/sw/gestorEmpresa/${empresa.id}" class="btn-index">
+				<c:url value="/sw/gestorEmpresa/${empresa.id}" var="swGestorEmpresaId"></c:url>
+				<a href="${swGestorEmpresaId}" class="btn-index">
 					<div class="card-action">
 						<h6 style="color: #eee !important;">Novo</h6>
 					</div>
@@ -92,13 +81,15 @@
 	
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
-				<a href="/sw/setores/${empresa.id}">    
+				<c:url value="/sw/setores/${empresa.id}" var="swSetoresEmpresaId"></c:url>
+				<a href="${swSetoresEmpresaId}">    
 			    	<div class="card-content white-text">
 			    		<span class="card-title">Setores<i class="material-icons right" style="color: #eee !important;">build</i></span>
 			    		<p>Manutenção de Setores</p>
 			    	</div>
 		        </a>
-				<a href="/sw/setorEmpresa/{id}" class="btn-index">
+		        <c:url value="/sw/setorEmpresa/${empresa.id}" var="swSetorEmpresaId"></c:url>
+				<a href="${swSetorEmpresaId}" class="btn-index">
 			    	<div class="card-action">
 			    		<h6 style="color: #eee !important;">Novo</h6>
 			    	</div>

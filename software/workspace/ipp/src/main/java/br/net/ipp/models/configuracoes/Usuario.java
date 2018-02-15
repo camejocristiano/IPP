@@ -1,13 +1,9 @@
 package br.net.ipp.models.configuracoes;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.enums.EstadoCivil;
 import br.net.ipp.enums.Regiao;
@@ -23,6 +19,7 @@ public class Usuario extends User {
 
 	@NotEmpty
 	private String nome;
+	private String foto;
 	private String telefone;
 	private String celular;
 	private Sexo sexo;
@@ -44,13 +41,9 @@ public class Usuario extends User {
 	private String numeroCTPS;
 	private String serieCTPS;
 	private String uFCTPS;
-	@Column(name = "dataExpedicaoCTPS")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataExpedicaoCTPS;
+	private String dataExpedicaoCTPS;
 
-	@Column(name = "dataDeNascimento")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy")  
-	private Date dataDeNascimento;
+	private String dataDeNascimento;
 	private EstadoCivil estadoCivil;
 	private String formacao;
 
@@ -60,12 +53,8 @@ public class Usuario extends User {
 	private String cPF;
 
 	private String curriculoResumido;
-	@Column(name = "dataDeAdmissao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataDeAdmissao;
-	@Column(name = "DataDeDesligamento")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataDeDesligamento;
+	private String dataDeAdmissao;
+	private String dataDeDesligamento;
 	
 	private String disciplina;
 	private String cargo;
@@ -74,6 +63,8 @@ public class Usuario extends User {
 	@ManyToOne
 	private GrupoDePermissoes grupoDePermissoes;
 	private String observacoes;
+	@ManyToOne
+	private Unidade unidade;
 
 	public String getNome() {
 		return nome;
@@ -81,6 +72,14 @@ public class Usuario extends User {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public String getTelefone() {
@@ -211,19 +210,19 @@ public class Usuario extends User {
 		this.uFCTPS = uFCTPS;
 	}
 
-	public Date getDataExpedicaoCTPS() {
+	public String getDataExpedicaoCTPS() {
 		return dataExpedicaoCTPS;
 	}
 
-	public void setDataExpedicaoCTPS(Date dataExpedicaoCTPS) {
+	public void setDataExpedicaoCTPS(String dataExpedicaoCTPS) {
 		this.dataExpedicaoCTPS = dataExpedicaoCTPS;
 	}
 
-	public Date getDataDeNascimento() {
+	public String getDataDeNascimento() {
 		return dataDeNascimento;
 	}
 
-	public void setDataDeNascimento(Date dataDeNascimento) {
+	public void setDataDeNascimento(String dataDeNascimento) {
 		this.dataDeNascimento = dataDeNascimento;
 	}
 
@@ -291,19 +290,19 @@ public class Usuario extends User {
 		this.curriculoResumido = curriculoResumido;
 	}
 
-	public Date getDataDeAdmissao() {
+	public String getDataDeAdmissao() {
 		return dataDeAdmissao;
 	}
 
-	public void setDataDeAdmissao(Date dataDeAdmissao) {
+	public void setDataDeAdmissao(String dataDeAdmissao) {
 		this.dataDeAdmissao = dataDeAdmissao;
 	}
 
-	public Date getDataDeDesligamento() {
+	public String getDataDeDesligamento() {
 		return dataDeDesligamento;
 	}
 
-	public void setDataDeDesligamento(Date dataDeDesligamento) {
+	public void setDataDeDesligamento(String dataDeDesligamento) {
 		this.dataDeDesligamento = dataDeDesligamento;
 	}
 
@@ -345,6 +344,14 @@ public class Usuario extends User {
 
 	public void setObservacoes(String observacoes) {
 		this.observacoes = observacoes;
+	}
+
+	public Unidade getUnidade() {
+		return unidade;
+	}
+
+	public void setUnidade(Unidade unidade) {
+		this.unidade = unidade;
 	}
 
 }

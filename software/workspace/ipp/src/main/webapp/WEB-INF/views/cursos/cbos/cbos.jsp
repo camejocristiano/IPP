@@ -6,29 +6,13 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
-
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/empresa/${empresa.id}">
+			<c:url value="/sw/empresa/${empresa.id}" var="swEmpresaId"></c:url>
+			<a href="${swEmpresaId}">
 				<h4 class="header right black-text">${gestor.nome != null ? gestor.nome : empresa.nomeFantazia}</h4>
 			</a>
 			<br />
@@ -55,14 +39,15 @@
             <td>${cbo.id}</td>
             <td>${cbo.titulo}</td>
             <td>${cbo.numero}</td>
-            <td class="td-icon"><a href="/sw/cbos/${cbo.id}"><i class="material-icons" >border_color</i></a></td>
+            <c:url value="/sw/cbos/${cbo.id}" var="swCbosId"></c:url>
+			<td class="td-icon"><a href=""><i class="material-icons" >border_color</i></a></td>
           </tr>
         </c:forEach>
         </tbody>
       </table> 
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    	<a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/sw/cbos/form">
+    	<c:url value="/sw/cbos/form" var="swCbosForm"></c:url>
+		<a class="btn-floating btn-large waves-effect waves-light orange" href="${swCbosForm}">
                 <i class="material-icons">add</i>
         </a>
     </div>

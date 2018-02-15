@@ -5,20 +5,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<c:import url="../../../../partials/header.jsp"></c:import>
-<c:import url="../../../../partials/navbar.jsp"></c:import>
-
+<c:import url="../../../partials/header.jsp"></c:import>
+<c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
-
 	<div class="row">
-		<div class="input-field  s12 col l12" style="border-top: 2px solid orange;">
-			 <h4 class="header right orange-text">Conteúdo Teórico Básico</h4>
-		</div>
+		<div class="col s12 l12">
+			<c:url value="/sw/curso/${curso.id}" var="swCursoId"></c:url>
+			<a href="${swCursoId}">
+				<h4 class="header right black-text">${conteudoTeoricoBasico.titulo != null ? conteudoTeoricoBasico.titulo : "Conteúdo Teórico Básico"}</h4>
+			</a>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
 	</div>
-	
-	<div class="row">
-		<form:form role="form" commandName="conteudoTeoricoBasico" servletRelativeAction="/basicos/${conteudoTeoricoBasico.id}" method="POST">
+</div>
+		<c:url value="/sw/basicos/${conteudoTeoricoBasico.titulo != null ? conteudoTeoricoBasico.id : null}" var="conteudoTeoricoBasicoId"></c:url>
+		<form:form role="form" commandName="conteudoTeoricoBasico" servletRelativeAction="${conteudoTeoricoBasicoId}" method="POST">
 			<div class="input-field s12 col l12">
 			</div>
 				<div class="input-field s12 col l8">
@@ -34,17 +40,10 @@
 			</button>
 
 		</form:form>
+		<br />
+		<br />
 	</div>
-
-</div>
 
 <c:import url="../../../../partials/js.jsp"></c:import>
 <c:import url="../../../../partials/footer.jsp"></c:import>
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-</script>
-
 <c:import url="../../../../partials/final.jsp"></c:import>

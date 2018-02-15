@@ -92,7 +92,7 @@ public class DemonstrativoController {
 		modelAndView.addObject("frequencias", frequencias);
 		int faltasCurso = 0;
 		double diasTrabalho = 0;
-		for (Frequencia frequencia : frequencias) {
+	/*	for (Frequencia frequencia : frequencias) {
 			if(!frequencia.getFrequenciaManha().equals(FrequenciaEnum.C)) {
 				faltasCurso++;
 			} else {
@@ -103,7 +103,7 @@ public class DemonstrativoController {
 			} else {
 				diasTrabalho = diasTrabalho + 0.5;
 			}
-		}
+		}*/
 		modelAndView.addObject("faltasCurso", faltasCurso);
 		modelAndView.addObject("diasTrabalho", diasTrabalho);
 		

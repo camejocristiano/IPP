@@ -1,4 +1,4 @@
-package br.net.ipp.controllers;
+/*package br.net.ipp.controllers;
 
 import javax.transaction.Transactional;
 
@@ -14,7 +14,7 @@ import br.net.ipp.models.cursos.Curso;
 
 @Controller
 @Transactional
-@RequestMapping("/sw/cursos")
+@RequestMapping("/sw")
 public class CursosController {
 
 	private CursoRepository cursoRepository;
@@ -26,7 +26,7 @@ public class CursosController {
 		this.cursoRepository = cursoRepository;
 	}
 
-	@GetMapping
+	@GetMapping("/curso")
 	public ModelAndView home() {
 		ModelAndView modelAndView = new ModelAndView("cursos/home");
 		modelAndView.addObject("cursos", cursoRepository.findAll());
@@ -50,3 +50,4 @@ public class CursosController {
 	}
 	
 }
+*/

@@ -12,7 +12,8 @@
 
 <div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/empresa/${empresa.id}">
+			<c:url value="/sw/empresa/${empresa.id}" var="swEmpresaId"></c:url>
+			<a href="${swEmpresaId}">
 				<h4 class="header right black-text">${empresa.nomeFantazia != null ? empresa.nomeFantazia : representanteLegal.nome}</h4>
 			</a>
 			<br />
@@ -23,8 +24,8 @@
 			<br />
 		</div>
 	</div>
-
-		<form:form role="form" commandName="representanteLegal" servletRelativeAction="/sw/representante/${representanteLegal.nome != null ? representanteLegal.id : null}" method="POST">
+		<c:url value="/sw/representante/${representanteLegal.nome != null ? representanteLegal.id : null}" var="swRepresentanteId"></c:url>
+		<form:form role="form" commandName="representanteLegal" servletRelativeAction="${swRepresentanteId}" method="POST">
 			<div class="row">
 				<div class="input-field s12 col l6">
 					<form:input path='nome' type='text'/>
@@ -86,10 +87,5 @@
 <br />
 </div>
 <c:import url="../../../partials/js.jsp"></c:import>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-</script>
 <c:import url="../../../partials/footer.jsp"></c:import>
 <c:import url="../../../partials/final.jsp"></c:import>

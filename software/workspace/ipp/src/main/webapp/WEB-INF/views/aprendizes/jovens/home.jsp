@@ -6,23 +6,6 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
-
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
@@ -43,7 +26,8 @@
 	
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
-				<a href="/sw/jovemForm/${jovem.id}">
+				<c:url value="/sw/jovemForm/${jovem.id}" var="swJovemFormJovemId"></c:url>
+				<a href="${swJovemFormJovemId}">
 					<div class="card-content white-text">
 						<span class="card-title">Dados Cadastrais<i
 							class="material-icons right" style="color: #eee !important;">dvr</i></span>
@@ -59,7 +43,8 @@
 		</div>
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
-				<a href="/sw/matriculasJovem/${jovem.id}">
+				<c:url value="/sw/matriculasJovem/${jovem.id}" var="swMatriculasJovemJovemId"></c:url>
+				<a href="${swMatriculasJovemJovemId}">
 					<div class="card-content white-text">
 						<span class="card-title">Cursos<i
 							class="material-icons right" style="color: #eee !important;">school</i></span>
@@ -75,7 +60,8 @@
 		</div>
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
-				<a href="/sw/escolaridadeJovem/${jovem.id}">
+				<c:url value="/sw/escolaridadeJovem/${jovem.id}" var="swEscolaridadeJovemJovemId"></c:url>
+				<a href="${swEscolaridadeJovemJovemId}">
 					<div class="card-content white-text">
 						<span class="card-title">Escolaridade<i
 							class="material-icons right" style="color: #eee !important;">book</i></span>
@@ -92,7 +78,8 @@
 	
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
-				<a href="/sw/situacaoLaboralJovem/${jovem.id}">    
+				<c:url value="/sw/situacaoLaboralJovem/${jovem.id}" var="swSituacaoLaboralJovemJovemId"></c:url>
+				<a href="${swSituacaoLaboralJovemJovemId}">    
 			    	<div class="card-content white-text">
 			    		<span class="card-title">Laboral<i class="material-icons right" style="color: #eee !important;">format_list_bulleted</i></span>
 			    		<p>Manutenção de Situação Laboral</p>
@@ -107,7 +94,8 @@
 	   	</div>
 	    <div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	      		<a href="/sw/caracteristicaDomiciliarJovem/${jovem.id}">
+	    		<c:url value="/sw/caracteristicaDomiciliarJovem/${jovem.id}" var="swCaracteristicaDomiciliarJovemJovemId"></c:url>
+	      		<a href="${swCaracteristicaDomiciliarJovemJovemId}">
 		            <div class="card-content white-text">
 		              <span class="card-title">Domiciliares<i class="material-icons right" style="color: #eee !important;">home</i></span>
 		              <p>Manutenção de Caract. Dom.</p>
@@ -122,7 +110,8 @@
 		</div>
 	    <div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<a href="/sw/habilidadeJovem/${jovem.id}">
+	    		<c:url value="/sw/habilidadeJovem/${jovem.id}" var="swHabilidadeJovemJovemId"></c:url>
+	    		<a href="${swHabilidadeJovemJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">Habilidades<i class="material-icons right" style="color: #eee !important;">thumbs_up_down</i></span>
 		              <p>Manutenção de Habilidades</p>
@@ -137,7 +126,8 @@
 		</div>
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<a href="/sw/situacaoDeSaudeJovem/${jovem.id}">
+	    		<c:url value="/sw/situacaoDeSaudeJovem/${jovem.id}" var="swSituacaoDeSaudeJovemJovemId"></c:url>
+	    		<a href="${swSituacaoDeSaudeJovemJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">Saúde<i class="material-icons right" style="color: #eee !important;">healing</i></span>
 		              <p>Situação de Saúde</p>
@@ -152,7 +142,8 @@
 		</div>
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<a href="/sw/fichaSocialJovem/${jovem.id}">
+	    		<c:url value="/sw/fichaSocialJovem/${jovem.id}" var="swFichaSocialJovemJovemId"></c:url>
+	    		<a href="${swFichaSocialJovemJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">Social<i class="material-icons right" style="color: #eee !important;">thumb_up</i></span>
 		              <p>Manutenção de Ficha Social</p>
@@ -167,7 +158,8 @@
 		</div>
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<a href="/sw/fichaProfissionalJovem/${jovem.id}">
+	    		<c:url value="/sw/fichaProfissionalJovem/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
+	    		<a href="${swFichaProfissionalJovemJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">Profissional<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
 		              <p>Manutenção de Ficha Profissional</p>
@@ -182,13 +174,15 @@
 		</div>
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<a href="/sw/entrevistasJovem/${jovem.id}">
+	    		<c:url value="/sw/entrevistasJovem/${jovem.id}" var="swEntrevistasJovemJovemId"></c:url>
+	    		<a href="${swEntrevistasJovemJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">Entrevistas<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
 		              <p>Manutenção de Entrevistas</p>
 	                </div>
 	            </a>
-				<a href="/sw/entrevistaJovem/${jovem.id}" class="btn-index">
+	            <c:url value="/sw/entrevistaJovem/${jovem.id}" var="swEntrevistaJovemJovemId"></c:url>
+				<a href="${swEntrevistaJovemJovemId}" class="btn-index">
 		            <div class="card-action">
 		              <h6 style="color: #eee !important;">Nova</h6>
 		            </div>
@@ -197,13 +191,15 @@
 		</div>
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<a href="/sw/contratacoesJovem/${jovem.id}">
+	    		<c:url value="/sw/contratacoesJovem/${jovem.id}" var="swContratacoesJovemJovemId"></c:url>
+	    		<a href="${swContratacoesJovemJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">Contratações<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
 		              <p>Manutenção de Contratações</p>
 	                </div>
 	            </a>
-				<a href="/sw/contratacaoJovem/${jovem.id}" class="btn-index">
+	            <c:url value="/sw/contratacaoJovem/${jovem.id}" var="swContratacaoJovemJovemId"></c:url>
+				<a href="${swContratacaoJovemJovemId}" class="btn-index">
 		            <div class="card-action">
 		              <h6 style="color: #eee !important;">Nova</h6>
 		            </div>
@@ -212,13 +208,15 @@
 		</div>
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<a href="/sw/dispensasJovem/${jovem.id}">
+	    		<c:url value="/sw/dispensasJovem/${jovem.id}" var="swDispensasJovemJovemId"></c:url>
+	    		<a href="${swDispensasJovemJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">Dispensas<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
 		              <p>Manutenção de Dispensas</p>
 	                </div>
 	            </a>
-				<a href="/sw/dispensaJovem/${jovem.id}" class="btn-index">
+	            <c:url value="/sw/dispensaJovem/${jovem.id}" var="swDispensaJovemJovemId"></c:url>
+				<a href="${swDispensaJovemJovemId}" class="btn-index">
 		            <div class="card-action">
 		              <h6 style="color: #eee !important;">Nova</h6>
 		            </div>
@@ -242,7 +240,8 @@
 		</div>
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<a href="/sw/dadosFinanceirosJovem/${jovem.id}">
+	    		<c:url value="/sw/dadosFinanceirosJovem/${jovem.id}" var="swDadosFinanceirosJovemJovemId"></c:url>
+	    		<a href="${swDadosFinanceirosJovemJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">Financeiros<i class="material-icons right" style="color: #eee !important;">attach_money</i></span>
 		              <p>Manutenção de Dados Finaceiros</p>

@@ -1,4 +1,4 @@
-package br.net.ipp.configuracoes;
+/*package br.net.ipp.configuracoes;
 
 
 import org.junit.Rule;
@@ -20,7 +20,7 @@ public class UnidadeRepositoryTest {
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
 
-	/*@Test
+	@Test
 	public void createShouldPersistData() {
 		Unidade unidade = new Unidade();
 		unidade.setRazaoSocial("IPPTest");
@@ -188,5 +188,6 @@ public class UnidadeRepositoryTest {
         
         
     }
-*/	
+	
 }
+*/

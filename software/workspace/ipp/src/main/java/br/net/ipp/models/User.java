@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @MappedSuperclass
 public abstract class User extends AbstractEntity {
@@ -12,20 +13,11 @@ public abstract class User extends AbstractEntity {
 
 	@NotEmpty
 	@Column(unique = true)
-    private String email;
-	@NotEmpty
-	@Column(unique = true)
 	private String username;
 	private boolean admin;
     private String password;
 	
 	
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	public String getUsername() {
 		return username;
 	}

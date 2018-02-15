@@ -15,20 +15,6 @@ table {
  	width: 100%; 
  	cellspacing: 0;
 }
-
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
 </style>
 
 <c:import url="../../../partials/navbar.jsp"></c:import>
@@ -36,7 +22,8 @@ table {
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/financeiros">
+			<c:url value="/sw/financeiros" var="swFinanceiros"></c:url>
+			<a href="${swFinanceiros}">
 				<h4 class="header right black-text">13ºs</h4>
 			</a>
 			<br />
@@ -61,7 +48,8 @@ table {
           <tr>
             <td>${jovem.id}</td>
             <td>${jovem.nome}</td>
-            <td class="td-icon"><a href="/sw/vr/${jovem.id}"><i class="material-icons" >border_color</i></a></td>
+            <c:url value="/sw/salario13/${jovem.id}" var=""></c:url>
+            <td class="td-icon"><a href=""><i class="material-icons" >border_color</i></a></td>
           </tr>
           </c:forEach>
           </tbody>

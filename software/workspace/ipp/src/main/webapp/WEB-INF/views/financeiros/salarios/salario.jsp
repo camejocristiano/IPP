@@ -22,7 +22,8 @@ table, td {
 
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/demonstrativos">
+			<c:url value="/sw/salarios13" var="swSalarios"></c:url>
+			<a href="${swVts}">
 				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "13º Salário"}</h4>
 			</a>
 			<br />
@@ -43,9 +44,4 @@ table, td {
 	</div><!-- // container -->
 <c:import url="../../../partials/js.jsp"></c:import>
 <c:import url="../../../partials/footer.jsp"></c:import>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-</script>
 <c:import url="../../../partials/final.jsp"></c:import>

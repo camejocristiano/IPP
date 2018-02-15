@@ -105,7 +105,7 @@ public class JovemController {
 			modelAndView.addObject("servicoMilitarSituacoes", servicoMilitarSituacoes);
 		} else {
 			jovemRepository.save(jovem);
-			Jovem jov = jovemRepository.findByEmail(jovem.getEmail());
+			Jovem jov = jovemRepository.findByUsername(jovem.getUsername());
 			id = jov.getId();
 			modelAndView = new ModelAndView("redirect:/jovens/"+id);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");

@@ -6,23 +6,6 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../partials/header.jsp"></c:import>
-
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
-
 <c:import url="../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
@@ -43,9 +26,28 @@
 	
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
-				<a href="/sw/frequencias/1">
+				<c:url value="/sw/frequencias/${usuario.id}" var="swFrequenciasUsuarioOrientadorId}"></c:url>
+				<a href="${swFrequenciasUsuarioOrientadorId}">
 					<div class="card-content white-text">
-						<span class="card-title">Frequências<i
+						<span class="card-title">Frequências por Orientador<i
+							class="material-icons right" style="color: #eee !important;">check_box</i></span>
+						<p>Manutenção de Frequências</p>
+					</div>
+				</a> 
+				<a href="" class="btn-index">
+					<div class="card-action orange-text lighten-5">
+						<h6 style="color: #eee;" class="btn-index">...</h6>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+		<div class="col s12 m6 l4">
+			<div class="card blue-grey darken-1">
+				<c:url value="/sw/frequencias/${usuario.id}" var="swFrequenciasUsuarioOrientadorId}"></c:url>
+				<a href="${swFrequenciasUsuarioOrientadorId}">
+					<div class="card-content white-text">
+						<span class="card-title">Frequências por Gestor<i
 							class="material-icons right" style="color: #eee !important;">check_box</i></span>
 						<p>Manutenção de Frequências</p>
 					</div>

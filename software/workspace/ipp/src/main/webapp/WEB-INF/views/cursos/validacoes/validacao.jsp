@@ -8,12 +8,14 @@
 <c:import url="../../../partials/header.jsp"></c:import>
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
-
 <div class="container" id="main-container-content">
 	
 	<div class="row">
 		<div class="col s12 l12">
-			<h4 class="header right black-text">Validação</h4>
+			<c:url value="/sw/homeCurso/${curso.id}" var="swHomeCursoCursoId"></c:url>
+			<a href="${swHomeCursoCursoId}">
+				<h4 class="header right black-text">${curso.nomeDoCurso != null ? curso.nomeDoCurso : "Validação"}</h4>
+			</a>
 			<br />
 			<br />		
 			<br />

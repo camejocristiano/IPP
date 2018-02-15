@@ -6,29 +6,13 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
-
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/jovem/${jovem.id}">
+			<c:url value="/sw/jovem/${jovem.id}" var="swJovemJovemId"></c:url>
+			<a href="${swJovemJovemId}">
 				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
 			</a>
 			<br />
@@ -39,11 +23,12 @@
 			<br />
 	</div>
 </div>
-
-<form:form role="form" commandName="jovem" servletRelativeAction="/sw/jovem/${jovem.id}" method="POST">
+<c:url value="/sw/jovem/${jovem.nome != null ? jovem.id : null}" var="swJovemIdPost" />
+<form:form role="form" commandName="jovem" servletRelativeAction="${swJovemIdPost}" method="POST">
 	<div class="row">
 		<div class="s12 col l2">
-			<img src="../../../assets/images/usuario.png" alt="" width="175em" />
+			<c:url value="/images/usuario.png" var="usuarioPng" />
+			<img src="${usuarioPng}" alt="" width="175em" />
 		</div>
 		
 		<div class="s12 col l10">
@@ -576,6 +561,8 @@
 		Salvar<i class="material-icons right">send</i>
 	</button>
 </form:form>
+<br />
+<br />
 </div><!-- // container -->
 <c:import url="../../../partials/js.jsp"></c:import>
 <script type="text/javascript">

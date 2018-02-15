@@ -12,7 +12,8 @@
 
 <div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/empresa/${empresa.id}">
+			<c:url value="/sw/empresas/" var="swEmpresas"></c:url>
+			<a href="${swEmpresas}">
 				<h4 class="header right black-text">${empresa.nomeFantazia != null ? empresa.nomeFantazia : "Empresa"}</h4>
 			</a>
 			<br />
@@ -23,11 +24,12 @@
 			<br />
 		</div>
 	</div>
-
-<form:form role="form" commandName="empresa" servletRelativeAction="/empresas/${empresa.id}" method="POST">
+<c:url value="/sw/empresa/${empresa.nomeFantazia != null ? empresa.id : null}" var="swEmpresaId"></c:url>
+<form:form role="form" commandName="empresa" servletRelativeAction="${swEmpresaId}" method="POST">
 	<div class="row">
 		<div class="s12 col l2">
-			<img src="../../../assets/images/usuario.png" alt="" width="175em" />
+			<c:url value="/images/usuario.png" var="usuarioPng"></c:url>
+			<img src="${usuarioPng}" alt="" width="175em" />
 		</div><!-- // col -->
 		<div class="s12 col l10">
 			<div class="row">
@@ -56,7 +58,7 @@
 			</div><!-- // row -->
 			<div class="row">
 				<div class="input-field s12 col l6">
-					<form:input path='nomeFantazia' type='text' />
+					<form:input path='nomeFantazia' type='text' required="required" />
 					<form:errors path='nomeFantazia' />
 					<label for="nomeFantazia">Nome Fantazia</label>
 				</div><!-- // col -->
@@ -192,7 +194,7 @@
 		</div><!-- // col -->
 	</div><!-- // row -->
 	<br />
-	<hr />
+	<br />
 	<button class="btn waves-effect waves-light right" type="submit">
 		Salvar<i class="material-icons right">send</i>
 	</button>
@@ -201,10 +203,5 @@
 <br />
 </div>
 <c:import url="../../../partials/js.jsp"></c:import>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-</script>
 <c:import url="../../../partials/footer.jsp"></c:import>
 <c:import url="../../../partials/final.jsp"></c:import>

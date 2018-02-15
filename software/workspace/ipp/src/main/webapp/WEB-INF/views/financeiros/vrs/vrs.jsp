@@ -6,29 +6,13 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
-
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/financeiros">
+			<c:url value="/sw/financeiros" var="swFinanceiros"></c:url>
+			<a href="${swFinanceiros}">
 				<h4 class="header right black-text">VRs</h4>
 			</a>
 			<br />
@@ -56,7 +40,8 @@
             <td>${contratacao.empresaContratante.nomeFantazia}</td>
             <td>${contratacao.dataDeInicioDaContratacao}</td>
             <td>${contratacao.statusDaContratacao}</td>
-            <td class="td-icon"><a href="/sw/vr/${contratacao.id}"><i class="material-icons" >border_color</i></a></td>
+            <c:url value="/sw/vr/${contratacao.id}" var="swVrId"></c:url>
+            <td class="td-icon"><a href="${swVrId}"><i class="material-icons" >border_color</i></a></td>
           </tr>
           </c:forEach>
           </tbody>

@@ -6,29 +6,13 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
-
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/financeiros">
+			<c:url value="/sw/parametros" var="swParametros"></c:url>
+			<a href="${swParametros}">
 				<h4 class="header right black-text">Parâmetros</h4>
 			</a>
 			<br />
@@ -39,8 +23,8 @@
 			<br />
 	</div>
 </div>
-
-      	<form:form role="form" commandName="parametro" servletRelativeAction="/parametros/${parametro.id}" method="POST">
+		<c:url value="/sw/parametros/${parametro.id}" var="swParametroId"></c:url>
+      	<form:form role="form" commandName="parametro" servletRelativeAction="" method="POST">
 	    <div class="row">
             <div class="input-field s12 col l3">
         		<form:input path='salarioMinimoFederalSMF' type='text' required="required" />
@@ -116,11 +100,4 @@
 	</div>
 <c:import url="../../../partials/js.jsp"></c:import>
 <c:import url="../../../partials/footer.jsp"></c:import>
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-</script>
-
 <c:import url="../../../partials/final.jsp"></c:import>

@@ -69,8 +69,7 @@ private CBORepository cBORepository;
 
 	@PostMapping("/arco")
 	public ModelAndView save(@Valid ArcoOcupacional arcoOcupacional, BindingResult bindingResult, @RequestParam("curso") String curso) {
-		Long idCurso = Long.parseLong(curso.toString());
-		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/"+idCurso);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/cursos/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("arcoOcupacional", arcoOcupacional);
@@ -97,8 +96,7 @@ private CBORepository cBORepository;
 	
 	@PostMapping("/arco/{id}")
 	public ModelAndView update(@Valid ArcoOcupacional arcoOcupacional, BindingResult bindingResult, @PathVariable("id") Long id) {
-		Long idCurso = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/"+idCurso);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/cursos/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("arcoOcupacional", arcoOcupacional);

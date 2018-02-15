@@ -54,7 +54,7 @@ public class EmpresaController {
 	
 	@PostMapping("/empresa")
 	public ModelAndView save(@Valid Empresa empresa, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/empresas/");
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/empresas/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("empresa", empresa);
@@ -93,8 +93,7 @@ public class EmpresaController {
 	
 	@PostMapping("/empresa/{id}")
 	public ModelAndView update(@Valid Empresa empresa, BindingResult bindingResult) {
-		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:/empresas/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/empresas/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("empresa", empresa);

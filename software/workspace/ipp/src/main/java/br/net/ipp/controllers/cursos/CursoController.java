@@ -35,7 +35,7 @@ import br.net.ipp.services.EnumService;
 
 @Controller
 @Transactional
-@RequestMapping("/sw/curso")
+@RequestMapping("/sw")
 public class CursoController {
 
 private CursoRepository cursoRepository;
@@ -72,8 +72,27 @@ private EnumService enumService;
 		this.validacaoRepository = validacaoRepository;
 		this.enumService = new EnumService();	
 	}
-
-	@GetMapping("/form")
+	
+	@GetMapping("/homeCursos")
+	public ModelAndView homeCursos() {
+		ModelAndView modelAndView = new ModelAndView("cursos/home");
+		return modelAndView;
+	}
+	@GetMapping("/homeCurso/{id}")
+	public ModelAndView homeCurso(@PathVariable Long id) {
+		ModelAndView modelAndView = new ModelAndView("cursos/cursos/home");
+		modelAndView.addObject("curso", cursoRepository.findOne(id));
+		return modelAndView;
+	}
+	
+	@GetMapping("/cursos")
+	public ModelAndView cursos() {
+		ModelAndView modelAndView = new ModelAndView("cursos/cursos/cursos");
+		modelAndView.addObject("cursos", cursoRepository.findAll());
+		return modelAndView;
+	}
+	
+	@GetMapping("/curso/form")
 	public ModelAndView curso(Curso curso) {
 		ModelAndView modelAndView = new ModelAndView("cursos/cursos/curso");
 		modelAndView.addObject("curso", curso);
@@ -87,33 +106,21 @@ private EnumService enumService;
 		return modelAndView;
 	}
 
-	@PostMapping
+	@PostMapping("/curso")
 	public ModelAndView save(@Valid Curso curso, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:");
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/cursos/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("curso", curso);
-			List<String> status = enumService.carregarStatus();
-			modelAndView.addObject("status", status);
-			List<String> statusPAP = enumService.carregarStatusPAP();
-			modelAndView.addObject("statusPAP", statusPAP);
-			modelAndView.addObject("cBOs", cboRepository.findAll());			
-			modelAndView.addObject("unidades", unidadeRepository.findAll());
 		} else {
 			cursoRepository.save(curso);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 			modelAndView.addObject("curso", curso);
-			List<String> status = enumService.carregarStatus();
-			modelAndView.addObject("status", status);
-			List<String> statusPAP = enumService.carregarStatusPAP();
-			modelAndView.addObject("statusPAP", statusPAP);
-			modelAndView.addObject("cBOs", cboRepository.findAll());
-			modelAndView.addObject("unidades", unidadeRepository.findAll());
 		}		
 		return modelAndView;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/curso/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("cursos/cursos/curso");
 		Curso curso = cursoRepository.findOne(id);
@@ -150,28 +157,16 @@ private EnumService enumService;
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/curso/{id}")
 	public ModelAndView update(@Valid Curso curso, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView("redirect:");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("curso", curso);
-			List<String> status = enumService.carregarStatus();
-			modelAndView.addObject("status", status);
-			List<String> statusPAP = enumService.carregarStatusPAP();
-			modelAndView.addObject("statusPAP", statusPAP);
-			modelAndView.addObject("cBOs", cboRepository.findAll());
-			modelAndView.addObject("unidades", unidadeRepository.findAll());
 		} else {
 			cursoRepository.save(curso);
 			modelAndView.addObject("curso", curso);
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
-			List<String> status = enumService.carregarStatus();
-			modelAndView.addObject("status", status);
-			List<String> statusPAP = enumService.carregarStatusPAP();
-			modelAndView.addObject("statusPAP", statusPAP);
-			modelAndView.addObject("cBOs", cboRepository.findAll());
-			modelAndView.addObject("unidades", unidadeRepository.findAll());
 		}	
 		return modelAndView;
 	}

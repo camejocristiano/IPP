@@ -8,17 +8,23 @@
 <c:import url="../../../../partials/header.jsp"></c:import>
 <c:import url="../../../../partials/navbar.jsp"></c:import>
 
-
 <div class="container" id="main-container-content">
-
 	<div class="row">
-		<div class="input-field  s12 col l12" style="border-top: 2px solid orange;">
-			 <h4 class="header right orange-text">Conteúdo Teórico Específico</h4>
-		</div>
+		<div class="col s12 l12">
+			<c:url value="/sw/curso/${curso.id}" var="swCursoId"></c:url>
+			<a href="${swCursoId}">
+				<h4 class="header right black-text">${conteudoTeoricoEspecifico.titulo != null ? conteudoTeoricoEspecifico.titulo : "Conteúdo Teórico Específico"}</h4>
+			</a>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
 	</div>
-	
-	<div class="row">
-		<form:form role="form" commandName="conteudoTeoricoEspecifico" servletRelativeAction="/especificos/${conteudoTeoricoEspecifico.id}" method="POST">
+</div>
+		<c:url value="/sw/especificos/${conteudoTeoricoEspecifico.titulo != null ? conteudoTeoricoEspecifico.id : null}" var="swEspecificoId"></c:url>
+		<form:form role="form" commandName="conteudoTeoricoEspecifico" servletRelativeAction="${swEspecificoId}" method="POST">
 			<div class="input-field s12 col l12">
 			</div>
 				<div class="input-field s12 col l8">
@@ -35,16 +41,8 @@
 
 		</form:form>
 	</div>
-
-</div>
-
+	<br />
+	<br />
 <c:import url="../../../../partials/js.jsp"></c:import>
 <c:import url="../../../../partials/footer.jsp"></c:import>
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-</script>
-
 <c:import url="../../../../partials/final.jsp"></c:import>

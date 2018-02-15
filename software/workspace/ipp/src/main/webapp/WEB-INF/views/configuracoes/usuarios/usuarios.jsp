@@ -5,28 +5,6 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-<style>
-/*
-CSS Tables
-*/
-table {
- 	width: 100%; 
- 	cellspacing: 0;
-}
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
@@ -49,10 +27,12 @@ table {
           <tr>
             <th>ID</th>
             <th>NOME</th>
-            <th>USERNAME</th>
+            <th>E-Mail</th>
             <th class="hide-on-small-only">TELEFONE</th>
             <th class="hide-on-small-only">STATUS</th>
-            <th class="td-icon">EDITAR</th>
+            <c:if test="${usuarioSessao.grupoDePermissoes.usuarioVisualizar == true}">
+            	<th class="td-icon">EDITAR</th>
+            </c:if>
           </tr>
         </thead>
         <tbody>
@@ -63,21 +43,26 @@ table {
             <td>${usuario.username}</td>
             <td class="hide-on-small-only">${usuario.telefone}</td>
             <td class="hide-on-small-only">${usuario.status}</td>
-            <td class="td-icon"><a href="/sw/usuarios/${usuario.id}"><i class="material-icons" >border_color</i></a></td>
+            <c:if test="${usuarioSessao.grupoDePermissoes.usuarioVisualizar == true}">
+				<c:url value="/sw/usuario/${usuario.id}" var="swUsuario"></c:url>
+            	<td class="td-icon"><a href="${swUsuario}"><i class="material-icons" >border_color</i></a></td>
+            </c:if>
           </tr>
           </c:forEach>
           </tbody>
           
       </table> 
-      
-	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/sw/usuarios/form">
-                <i class="material-icons">add</i>
-            </a>
-         </div>
-
+      	<c:if test="${usuarioSessao.grupoDePermissoes.usuarioCadastrar == true}">
+			<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+			<c:url value="/sw/usuario/form" var="swUsuarioForm"></c:url>
+	            <a class="btn-floating btn-large waves-effect waves-light orange" href="${swUsuarioForm}">
+	                <i class="material-icons">add</i>
+	            </a>
+         	</div>
+		</c:if>
 	</div>  
+<br />
+<br />
 <c:import url="../../../partials/js.jsp"></c:import>
-
 <c:import url="../../../partials/footer.jsp"></c:import>
+<c:import url="../../../partials/final.jsp"></c:import>

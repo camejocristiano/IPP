@@ -6,30 +6,13 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../../partials/header.jsp"></c:import>
-
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
-
 <c:import url="../../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/empresa/${empresa.id}">
-				<h4 class="header right black-text">${gestor.nome != null ? gestor.nome : empresa.nomeFantazia}</h4>
+			<a href="/sw/curso/${curso.id}">
+				<h4 class="header right black-text">${conteudoTeoricoEspecifico.titulo != null ? conteudoTeoricoEspecifico.titulo : "Conteúdo Teórico Específico"}</h4>
 			</a>
 			<br />
 			<br />		
@@ -56,7 +39,8 @@
             <td>${especifico.id}</td>
             <td>${especifico.titulo}</td>
             <td>${especifico.horaAula}</td>
-            <td class="td-icon"><a href="/sw/especificos/${especifico.id}"><i class="material-icons" >border_color</i></a></td>
+            <c:url value="/sw/especificos/${especifico.id}" var="swEspecificoId"></c:url>
+            <td class="td-icon"><a href="${swEspecificoId}"><i class="material-icons" >border_color</i></a></td>
           </tr>
           </c:forEach>
           </tbody>
@@ -64,8 +48,8 @@
       </table> 
       
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/sw/especificos/form">
+			<c:url value="/sw/especificos/form" var="swEspecificoForm"></c:url>
+            <a class="btn-floating btn-large waves-effect waves-light orange" href="${swEspecificoForm}">
                 <i class="material-icons">add</i>
             </a>
          </div>

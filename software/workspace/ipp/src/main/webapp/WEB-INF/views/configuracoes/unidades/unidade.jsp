@@ -23,7 +23,8 @@
 	</div>
 
 
-	<form:form role="form" commandName="unidade" servletRelativeAction="/sw/unidades/${unidade.id}" method="POST">
+	<c:url value="/sw/unidade/${unidade.nomeFantazia != null ? unidade.id : null}" var="swUnidade"></c:url>
+	<form:form role="form" commandName="unidade" servletRelativeAction="${swUnidade}" method="POST">
 		<div class="row">
             <div class="input-field s12 col l12">
                 <div class="row">
@@ -33,8 +34,8 @@
 						<label for="nomeFantazia">Nome Fantazia</label>
                     </div>
                     <div class="input-field s12 col l4">
-                    	<form:input id="dataDeCadastro" path="dataDeCadastro" type="date" class="validate datepicker" placeholder="Data de Cadastro" /> 
-						<label path="dataDeCadastro">Data de Cadastro</label>
+                    	<form:input id="dataDeCadastro" path="dataDeCadastro" type="text" class="validate datepicker" placeholder="Data de Cadastro" /> 
+						<label for="dataDeCadastro">Data de Cadastro</label>
                     </div>
                 </div>
                 <div class="row">
@@ -110,36 +111,16 @@
 				</div>
 			</div>
 		</div>
-		<button class="btn waves-effect waves-light right" type="submit">
-			Salvar<i class="material-icons right">send</i>
-		</button>
+		<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.unidadeCadastrar == true || requestScope.usuarioSessao.grupoDePermissoes.unidadeEditar == true}">
+                  <button class="btn waves-effect waves-light right" type="submit">
+                    Salvar<i class="material-icons right">send</i>
+                  </button>
+            </c:if>
 	</form:form>
+	
 </div>
 <br />
 <br />
 <c:import url="../../../partials/js.jsp"></c:import>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-
-	$('.datepicker').pickadate({
-		monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-		monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-		weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
-		weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-		weekdaysLetter: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
-		today: 'Hoje',
-		clear: 'Limpar',
-		close: 'Pronto',
-		labelMonthNext: 'Próximo mês',
-		labelMonthPrev: 'Mês anterior',
-		labelMonthSelect: 'Selecione um mês',
-		labelYearSelect: 'Selecione um ano',
-		selectMonths: true,
-		selectYears: 99,
-	    format: 'dd/mm/yyyy' 
-	});
-</script>
 <c:import url="../../../partials/footer.jsp"></c:import>
 <c:import url="../../../partials/final.jsp"></c:import>

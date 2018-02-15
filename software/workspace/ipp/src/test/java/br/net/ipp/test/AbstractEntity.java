@@ -1,4 +1,4 @@
-package br.net.ipp.test;
+/*package br.net.ipp.test;
 
 
 import java.io.Serializable;
@@ -12,9 +12,9 @@ import org.springframework.data.annotation.Id;
 @MappedSuperclass
 public class AbstractEntity implements Serializable {
 	
-    /**
+    *//**
 	 * 
-	 */
+	 *//*
 	private static final long serialVersionUID = 1L;
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -43,3 +43,4 @@ public class AbstractEntity implements Serializable {
         this.id = id;
     }
 }
+*/

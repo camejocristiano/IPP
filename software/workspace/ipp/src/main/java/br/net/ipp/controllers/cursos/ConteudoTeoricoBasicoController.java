@@ -45,7 +45,7 @@ private ConteudoTeoricoBasicoRepository conteudoTeoricoBasicoRepository;
 
 	@PostMapping("/basicos")
 	public ModelAndView save(@Valid ConteudoTeoricoBasico conteudoTeoricoBasico, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/");
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/cursos/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("conteudoTeoricoBasico", conteudoTeoricoBasico);
@@ -67,7 +67,7 @@ private ConteudoTeoricoBasicoRepository conteudoTeoricoBasicoRepository;
 	
 	@PostMapping("/basicos/{id}")
 	public ModelAndView update(@Valid ConteudoTeoricoBasico conteudoTeoricoBasico, BindingResult bindingResult) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/");
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/cursos/");
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("conteudoTeoricoBasico", conteudoTeoricoBasico);

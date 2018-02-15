@@ -53,8 +53,7 @@ private EnumService enumService;
 
 	@PostMapping("/matricula")
 	public ModelAndView save(@Valid Matricula matricula, BindingResult bindingResult) {
-		Long id = matricula.getTurma().getCurso().getId();
-		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+matricula.getJovem().getId());
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("matricula", matricula);
@@ -80,10 +79,9 @@ private EnumService enumService;
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/matricula/{id}")
 	public ModelAndView update(@Valid Matricula matricula, BindingResult bindingResult) {
-		Long id = matricula.getTurma().getCurso().getId();
-		ModelAndView modelAndView = new ModelAndView("redirect:/cursos/"+id);
+		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+matricula.getJovem().getId());
 		if (bindingResult.hasErrors()) {
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			modelAndView.addObject("matricula", matricula);
@@ -118,6 +116,16 @@ private EnumService enumService;
 		Jovem jovem = jovemRepository.findOne(id);
 		modelAndView.addObject("jovem", jovem);
 		modelAndView.addObject("matriculas", matriculaRepository.findAllByJovem(jovem));
+		return modelAndView;
+	}
+	
+	@GetMapping("/matriculaShow/{id}")
+	public ModelAndView matriculaShow(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("aprendizes/cursos/matricula");
+		Matricula matricula = matriculaRepository.findOne(id);
+		modelAndView.addObject("matricula", matricula);
+		List<String> statusDeMatricula = this.enumService.carregarStatusDeMatricula();
+		modelAndView.addObject("statusDeMatricula", statusDeMatricula);
 		return modelAndView;
 	}
 	

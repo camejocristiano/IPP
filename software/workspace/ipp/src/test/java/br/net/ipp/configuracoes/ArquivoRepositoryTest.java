@@ -1,4 +1,4 @@
-package br.net.ipp.configuracoes;
+/*package br.net.ipp.configuracoes;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -78,4 +78,4 @@ public class ArquivoRepositoryTest {
 		this.arquivoRepository.delete(arquivo);
 	}
 
-}
+}*/

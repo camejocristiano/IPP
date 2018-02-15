@@ -35,6 +35,7 @@ import br.net.ipp.enums.TipoDeMoradia;
 import br.net.ipp.enums.TipoDeParceria;
 import br.net.ipp.enums.TipoDeValidacao;
 import br.net.ipp.enums.TipoTurmaEnum;
+import br.net.ipp.enums.TurnoEnum;
 
 @Service
 public class EnumService {
@@ -317,6 +318,15 @@ public class EnumService {
 			periodos.add(lista.get(i).name());
 		}
 		return periodos;
+	}
+	
+	public List<String> carregarTurnos() {
+		List<TurnoEnum> lista = Arrays.asList(TurnoEnum.values());
+		List<String> turnos = new ArrayList<String>();
+		for (int i = 0; i < lista.size(); i++) {
+			turnos.add(lista.get(i).name());
+		}
+		return turnos;
 	}
 
 }

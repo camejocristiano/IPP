@@ -6,29 +6,13 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
-
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/jovem/${jovem.id}">
+			<c:url value="/sw/jovem/${jovem.id}" var="swJovemJovemId"></c:url>
+			<a href="${swJovemJovemId}">
 				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
 			</a>
 			<br />
@@ -39,8 +23,8 @@
 			<br />
 	</div>
 </div>
-
-		<form:form role="form" commandName="caracteristicasDomiciliares" servletRelativeAction="/sw/caracteristicaDomiciliar/${caracteristicasDomiciliares.jovem != null ? caracteristicasDomiciliares.id : null}" method="POST">
+		<c:url value="/sw/caracteristicaDomiciliar/${caracteristicasDomiciliares.jovem != null ? caracteristicasDomiciliares.id : null}" var="swCaracteristicaDomiciliarId"></c:url>
+		<form:form role="form" commandName="caracteristicasDomiciliares" servletRelativeAction="${swCaracteristicaDomiciliarId}" method="POST">
 			<div class="row">
 				<div class="s12 col l12">
 					<div class="row">
@@ -171,27 +155,5 @@
 		<br />
 </div><!-- // container -->
 <c:import url="../../../partials/js.jsp"></c:import>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-	$('.datepicker').pickadate({
-		monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-		monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-		weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
-		weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-		weekdaysLetter: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
-		today: 'Hoje',
-		clear: 'Limpar',
-		close: 'Pronto',
-		labelMonthNext: 'Próximo mês',
-		labelMonthPrev: 'Mês anterior',
-		labelMonthSelect: 'Selecione um mês',
-		labelYearSelect: 'Selecione um ano',
-		selectMonths: true,
-		selectYears: 99,
-	    format: 'dd/mm/yyyy' 
-	});
-</script>
 <c:import url="../../../partials/footer.jsp"></c:import>
 <c:import url="../../../partials/final.jsp"></c:import>

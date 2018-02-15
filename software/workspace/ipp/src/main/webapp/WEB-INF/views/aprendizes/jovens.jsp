@@ -44,7 +44,8 @@
             <td>${jovem.email}</td>
             <td>${jovem.telefone}</td>
             <td>${jovem.status}</td>
-            <td class="td-icon"><a href="/sw/jovem/${jovem.id}"><i class="material-icons" >border_color</i></a></td>
+            <c:url value="/sw/jovem/${jovem.id}" var="jovemFormId" />
+            <td class="td-icon"><a href="${jovemFormId}"><i class="material-icons" >border_color</i></a></td>
           </tr>
           </c:forEach>
           </tbody>
@@ -52,8 +53,8 @@
       </table> 
       
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/sw/jovem/form">
+			<c:url value="/sw/jovem/form" var="jovemForm" />
+            <a class="btn-floating btn-large waves-effect waves-light orange" href="${jovemForm}">
                 <i class="material-icons">add</i>
             </a>
          </div>

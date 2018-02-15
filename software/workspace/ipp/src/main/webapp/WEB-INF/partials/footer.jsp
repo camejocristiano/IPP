@@ -12,7 +12,8 @@
 		<div class="row">
 			<div class="col l4 s12">
 			<br />
-				<img src="../../../assets/images/mediawave.png" alt="" width="175em" />
+				<c:url value="/images/mediawave.png" var="mediawavePng" />
+				<img src="${mediawavePng}" alt="" width="175em" />
 				<p class="grey-text" style="text-indent: 4em">Soluções em Tecnologia.</p>
 			</div>
 			<div class="col l5 s12">
@@ -22,7 +23,8 @@
 				<p class="grey-text text-lighten-1" style="text-indent: 1em">Unidade - (11) 2222-3333 - contato@email.com <br /> Rua da Alegria, 1000 - Centro / São Paulo (Capital)</p>
 			</div>
 			<div class="col l3 s3">
-				<img src="../../../assets/images/ipp-logo.png" alt="" width="435em" />
+				<c:url value="/images/ipp-logo.png" var="ippLogoPng" />
+				<img src="${ippLogoPng}" alt="IPP" width="435em" />
 			</div>
 		</div>
 	</div>

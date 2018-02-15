@@ -3,7 +3,7 @@ package br.net.ipp.models.frequencias;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
-import br.net.ipp.enums.FrequenciaEnum;
+import br.net.ipp.enums.TurnoEnum;
 import br.net.ipp.models.AbstractEntity;
 import br.net.ipp.models.cursos.Matricula;
 
@@ -14,29 +14,17 @@ public class Frequencia extends AbstractEntity {
 
 	@ManyToOne
 	private Matricula matricula;
-	private FrequenciaEnum frequenciaManha;
-	private FrequenciaEnum frequenciaTarde;
 	private Integer dia;
 	private Integer mes;
 	private Integer ano;
+	private TurnoEnum turno;
+	private boolean frequencia;
 
 	public Matricula getMatricula() {
 		return matricula;
 	}
 	public void setMatricula(Matricula matricula) {
 		this.matricula = matricula;
-	}
-	public FrequenciaEnum getFrequenciaManha() {
-		return frequenciaManha;
-	}
-	public void setFrequenciaManha(FrequenciaEnum frequenciaManha) {
-		this.frequenciaManha = frequenciaManha;
-	}
-	public FrequenciaEnum getFrequenciaTarde() {
-		return frequenciaTarde;
-	}
-	public void setFrequenciaTarde(FrequenciaEnum frequenciaTarde) {
-		this.frequenciaTarde = frequenciaTarde;
 	}
 	public Integer getDia() {
 		return dia;
@@ -55,6 +43,18 @@ public class Frequencia extends AbstractEntity {
 	}
 	public void setAno(Integer ano) {
 		this.ano = ano;
+	}
+	public TurnoEnum getTurno() {
+		return turno;
+	}
+	public void setTurno(TurnoEnum turno) {
+		this.turno = turno;
+	}
+	public boolean isFrequencia() {
+		return frequencia;
+	}
+	public void setFrequencia(boolean frequencia) {
+		this.frequencia = frequencia;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

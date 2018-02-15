@@ -29,7 +29,9 @@
             <th>E-MAIL</th>
             <th>TELEFONE</th>
             <th>STATUS</th>
-            <th class="td-icon">EDITAR</th>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.unidadeVisualizar == true}">
+            	<th class="td-icon">EDITAR</th>
+            </c:if>
           </tr>
         </thead>
         <tbody>
@@ -40,22 +42,27 @@
             <td>${unidade.email}</td>
             <td>${unidade.telefone}</td>
             <td>${unidade.status}</td>
-            <td class="td-icon"><a href="/sw/unidades/${unidade.id}"><i class="material-icons" >border_color</i></a></td>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.unidadeVisualizar == true}">
+            	<c:url value="/sw/unidade/${unidade.id}" var="swUnidade"></c:url>
+				<td class="td-icon"><a href="${swUnidade}"><i class="material-icons" >border_color</i></a></td>
+			</c:if>
           </tr>
           </c:forEach>
           </tbody>
           
-      </table> 
-      
-	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/sw/unidades/form">
-                <i class="material-icons">add</i>
-            </a>
-         </div>
-         
-         
-	</div>  
+      </table>
+	<c:if
+		test="${requestScope.usuarioSessao.grupoDePermissoes.unidadeCadastrar == true}">
+		<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+			<c:url value="/sw/unidade/form" var="swUnidadeForm"></c:url>
+			<a class="btn-floating btn-large waves-effect waves-light orange"
+				href="${swUnidadeForm}"> <i class="material-icons">add</i>
+			</a>
+		</div>
+	</c:if>
+
+
+</div>  
 <c:import url="../../../partials/js.jsp"></c:import>
 <c:import url="../../../partials/footer.jsp"></c:import>
 <c:import url="../../../partials/final.jsp"></c:import>

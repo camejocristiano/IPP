@@ -1,12 +1,9 @@
 package br.net.ipp.models.configuracoes;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.enums.Status;
 import br.net.ipp.models.AbstractEntity;
@@ -26,9 +23,7 @@ public class Unidade extends AbstractEntity {
 	private String cNPJ;
 	private String fax;
 	private String telefone;
-	@Column(name = "dataDaSolicitacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataDeCadastro;
+	private String dataDeCadastro;
 	private String endereco;
 	private String numero;
 	private String complemento;
@@ -79,10 +74,10 @@ public class Unidade extends AbstractEntity {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public Date getDataDeCadastro() {
+	public String getDataDeCadastro() {
 		return dataDeCadastro;
 	}
-	public void setDataDeCadastro(Date dataDeCadastro) {
+	public void setDataDeCadastro(String dataDeCadastro) {
 		this.dataDeCadastro = dataDeCadastro;
 	}
 	public String getEndereco() {

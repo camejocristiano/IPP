@@ -6,23 +6,6 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../partials/header.jsp"></c:import>
-
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
-
 <c:import url="../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
@@ -42,14 +25,16 @@
 		
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
-				<a href="/sw/cursos/">
+				<c:url value="/sw/cursos/" var="swCursos"></c:url>
+				<a href="${swCursos}">
 					<div class="card-content white-text">
 						<span class="card-title">Cursos<i
 							class="material-icons right" style="color: #eee !important;">school</i></span>
 						<p>Manutenção de Curso</p>
 					</div>
 				</a> 
-				<a href="/sw/curso/form" class="btn-index">
+				<c:url value="/sw/curso/form" var="swCursoForm"></c:url>
+				<a href="${swCursoForm}" class="btn-index">
 					<div class="card-action orange-text lighten-5">
 						<h6 style="color: #eee;" class="btn-index">Novo</h6>
 					</div>
@@ -58,13 +43,15 @@
 		</div>
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
-				<a href="/sw/cbos/">    
+				<c:url value="/sw/cbos/" var="swCbos"></c:url>
+				<a href="${swCbos}">    
 			    	<div class="card-content white-text">
 			    		<span class="card-title">CBOS<i class="material-icons right" style="color: #eee !important;">turned_in_not</i></span>
 			    		<p>Manutenção de CBOS</p>
 			    	</div>
 		        </a>
-				<a href="/sw/cbos/form" class="btn-index">
+		        <c:url value="/sw/cbos/form" var="swCbosForm"></c:url>
+				<a href="${swCbosForm}" class="btn-index">
 			    	<div class="card-action">
 			    		<h6 style="color: #eee !important;">Novo</h6>
 			    	</div>
@@ -73,13 +60,15 @@
 	   	</div>
 	    <div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	      		<a href="/sw/arcos">
+	    		<c:url value="/sw/arcos" var="swArcos"></c:url>
+	      		<a href="${swArcos}">
 		            <div class="card-content white-text">
 		              <span class="card-title">Arcos<i class="material-icons right" style="color: #eee !important;">turned_in_not</i></span>
 		              <p>Manutenção de Arcos Ocupacionais</p>
 	                </div>
 	            </a>
-				<a href="/sw/arco/form" class="btn-index">
+	            <c:url value="/sw/arco/form" var="swArcoForm"></c:url>
+				<a href="${swArcoForm}" class="btn-index">
 		            <div class="card-action">
 		              <h6 style="color: #eee !important;">Novo</h6>
 		            </div>
@@ -88,13 +77,15 @@
 		</div>
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	      		<a href="/sw/basicos">
+	    		<c:url value="/sw/basicos" var="swBasicos"></c:url>
+	      		<a href="${swBasicos}">
 		            <div class="card-content white-text">
 		              <span class="card-title">Básicos<i class="material-icons right" style="color: #eee !important;">turned_in_not</i></span>
 		              <p>Manutenção de Conteúdos Teóricos</p>
 	                </div>
 	            </a>
-				<a href="/sw/basicos/form" class="btn-index">
+	            <c:url value="/sw/basicos/form" var="swBasicosForm"></c:url>
+				<a href="${swBasicosForm}" class="btn-index">
 		            <div class="card-action">
 		              <h6 style="color: #eee !important;">Novo</h6>
 		            </div>
@@ -103,13 +94,15 @@
 		</div>
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	      		<a href="/sw/especificos">
+	    		<c:url value="/sw/especificos" var="swEspecificos"></c:url>
+	      		<a href="${swEspecificos}">
 		            <div class="card-content white-text">
 		              <span class="card-title">Específicos<i class="material-icons right" style="color: #eee !important;">turned_in_not</i></span>
 		              <p>Manutenção de Conteúdos Teóricos</p>
 	                </div>
 	            </a>
-				<a href="/sw/especificos/form" class="btn-index">
+	            <c:url value="/sw/especificos/form" var="swEspecificosForm"></c:url>
+				<a href="${swEspecificosForm}" class="btn-index">
 		            <div class="card-action">
 		              <h6 style="color: #eee !important;">Novo</h6>
 		            </div>

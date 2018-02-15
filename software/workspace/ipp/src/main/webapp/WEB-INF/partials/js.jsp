@@ -5,9 +5,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-	<script src="../../assets/js/jquery-1.12.4.js"></script>
-	<script src="../../assets/js/materialize.js"></script>
-	<script src="../../assets/js/init.js"></script>
+	<c:url value="/js/jquery-1.12.4.js" var="jquery" />
+	<script src="${jquery}"></script>
+	<c:url value="/js/materialize.js" var="materializeJs" />
+	<script src="${materializeJs}"></script>
+	<c:url value="/js/init.js" var="initJs" />
+	<script src="${initJs}"></script>
 	
-    <script src="../../assets/js/jquery.dataTables.min.js"></script>    
-    <script src="../../assets/tables.js"></script>    
+	<c:url value="/js/jquery.dataTables.min.js" var="jqueryDataTablesMinJs" />
+    <script src="${jqueryDataTablesMinJs}"></script>    
+	<c:url value="/js/tables.js" var="tablesJs" />
+    <script src="${tablesJs}"></script>    
+    
+    <c:url value="/js/dateMaterialize.js" var="dateMaterializeJs" />
+	<script src="${dateMaterializeJs}"></script>
+	<c:url value="/js/timeMaterialize.js" var="timeMaterializeJs" />
+	<script src="${timeMaterializeJs}"></script>
+	<c:url value="/js/selectMaterialize.js" var="selectMaterializeJs" />
+	<script src="${selectMaterializeJs}"></script>
+	<c:url value="/js/modalMaterialize.js" var="modalMaterializeJs" />
+	<script src="${modalMaterializeJs}"></script>
+	

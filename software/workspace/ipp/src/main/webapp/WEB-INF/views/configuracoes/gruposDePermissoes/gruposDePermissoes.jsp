@@ -5,21 +5,6 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
@@ -43,7 +28,9 @@
 			<th>GRUPO</th>
 			<th>STATUS</th>
 			<th>UNIDADE</th>
-			<th class="td-icon">EDITAR</th>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.grupoDePermissoesVisualizar == true}">
+				<th class="td-icon">EDITAR</th>
+			</c:if>
 		</tr>
 	</thead>
 	<tbody>
@@ -54,22 +41,29 @@
 				<td>${grupoDePermissoes.grupo}</td>
 				<td>${grupoDePermissoes.status}</td>
 				<td>${grupoDePermissoes.unidade.nomeFantazia}</td>
+				<c:if test="${usuarioSessao.grupoDePermissoes.grupoDePermissoesVisualizar == true}">
+				<c:url value="/sw/grupoDePermissoes/${grupoDePermissoes.id}" var="swGrupoDePermissoesId"></c:url>
 				<td class="td-icon"><a
-					href="/sw/gruposDePermissoes/${grupoDePermissoes.id}"><i
+					href="${swGrupoDePermissoesId}"><i
 						class="material-icons">border_color</i></a></td>
+						</c:if>
 			</tr>
 		</c:forEach>
 	</tbody>
 
 </table>
+	<c:if
+		test="${usuarioSessao.grupoDePermissoes.grupoDePermissoesCadastrar == true}">
+		<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+			<c:url value="/sw/grupoDePermissoes/form"
+				var="swGruposDePermissoesForm"></c:url>
+			<a class="btn-floating btn-large waves-effect waves-light orange"
+				href="${swGruposDePermissoesForm}"> <i class="material-icons">add</i>
+			</a>
+		</div>
+	</c:if>
 
-<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-	<a class="btn-floating btn-large waves-effect waves-light orange"
-		href="/sw/gruposDePermissoes/form"> <i class="material-icons">add</i>
-	</a>
-</div>
-
-	</div>  
+</div>  
 <c:import url="../../../partials/js.jsp"></c:import>
 
 <c:import url="../../../partials/footer.jsp"></c:import>

@@ -1,4 +1,4 @@
-package br.net.ipp.configuracoes;
+/*package br.net.ipp.configuracoes;
 
 
 import org.junit.Rule;
@@ -24,7 +24,7 @@ public class GrupoDePermissoesRepositoryTest {
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
 
-/*	@Test
+	@Test
 	public void createShouldPersistData() {
 		GrupoDePermissoes grupoDePermissoes = new GrupoDePermissoes();
 		grupoDePermissoes.setGrupo("TestGrupo");
@@ -318,5 +318,5 @@ public class GrupoDePermissoesRepositoryTest {
 		this.grupoDePermissoesRepository.delete(grupoDePermissoes);
 		this.unidadeRepository.delete(unidade);
 	}
-*/
-}
+
+}*/

@@ -12,14 +12,13 @@
 <title>IPP</title>
 
 <!-- CSS  -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-<link href="../../../../assets/css/materialize.css" type="text/css"
-	rel="stylesheet" media="screen,projection" />
-<link href="../../../../assets/css/style.css" type="text/css"
-	rel="stylesheet" media="screen,projection" />
-	
-<link href="../../../../assets/css/jquery.dataTables.min.css" rel="stylesheet" media="screen,projection" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+<c:url value="/css/materialize.css" var="materializeCss" />
+<link href="${materializeCss}" type="text/css" rel="stylesheet" media="screen,projection" />
+<c:url value="/css/style.css" var="styleCss" />
+<link href="${styleCss}" type="text/css" rel="stylesheet" media="screen,projection" />
+<c:url value="/css/jquery.dataTables.min.css" var="jqueryDataTablesMinCss" />
+<link href="${jqueryDataTablesMinCss}" rel="stylesheet" media="screen,projection" />
 	
 </head>
 <body>

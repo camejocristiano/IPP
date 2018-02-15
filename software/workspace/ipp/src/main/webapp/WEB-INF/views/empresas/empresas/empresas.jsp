@@ -4,27 +4,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-
 <c:import url="../../../partials/header.jsp"></c:import>
-
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
-
 <c:import url="../../../partials/navbar.jsp"></c:import>
-
 
 <div class="container" id="main-container-content">
 
@@ -69,8 +50,9 @@
 </table>
 
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+	<c:url value="/sw/empresa" var="swEmpresaForm"></c:url>
 	<a class="btn-floating btn-large waves-effect waves-light orange"
-		href="/sw/empresa/form"> <i class="material-icons">add</i>
+		href="${swEmpresaForm}"> <i class="material-icons">add</i>
 	</a>
 </div>
 
