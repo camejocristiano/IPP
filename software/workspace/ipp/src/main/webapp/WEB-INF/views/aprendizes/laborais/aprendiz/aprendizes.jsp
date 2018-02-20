@@ -5,21 +5,64 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<c:import url="../../../../partials/header.jsp"></c:import>
+<c:import url="../../../../partials/navbar.jsp"></c:import>
+
+<div class="container" id="main-container-content">
+	<div class="row">
+		<div class="col s12 l12">
+			<c:url value="/sw/jovem/${jovem.id}" var="swJovemJovemId"></c:url>
+			<a href="${swJovemJovemId}">
+				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
+			</a>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
+	</div>
+</div>
+
+
 <table id="tabelaVRs" class="display">
 	<thead>
           <tr>
-            <th>ID</th>
-            <th>JOVEM</th>
-            <th class="td-icon">EDITAR</th>
+            <th>DATA DE INÍCIO</th>
+            <th>DATA DE FIM</th>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.jaFoiAprendizVisualizar == true}">
+            	<th class="td-icon">EDITAR</th>
+            </c:if>
           </tr>
 	</thead>
     <tbody>
         <c:forEach var="aprendiz" items="${requestScope.aprendizes}">
           <tr>
-            <td>${aprendiz.id}</td>
-            <td>${aprendiz.jovem.nome}</td>
-            <td class="td-icon"><a href="/aprendizes/${aprendiz.id}"><i class="material-icons" >border_color</i></a></td>
+            <td>${aprendiz.dataInicio}</td>
+            <td>${aprendiz.dataDeFim}</td>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.jaFoiAprendizVisualizar == true}">
+            	<c:url value="/sw/aprendizes/${aprendiz.id}" var="swAprendizesAprendizId"></c:url>
+            	<td class="td-icon"><a href="${swAprendizesAprendizId}"><i class="material-icons" >border_color</i></a></td>
+          	</c:if>
           </tr>
           </c:forEach>
     </tbody>
 </table>
+
+     <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.arcoCadastrar == true}">
+	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+            <c:url value="/sw/aprendizes/form/${jovem.id}" var="swArcoForm"></c:url>
+			<a class="btn-floating btn-large waves-effect waves-light orange" href="${swArcoForm}">
+                <i class="material-icons">add</i>
+            </a>
+         </div>
+         </c:if>
+       
+         
+<br />
+<br />
+	</div>
+
+<c:import url="../../../../partials/js.jsp"></c:import>
+<c:import url="../../../../partials/footer.jsp"></c:import>
+<c:import url="../../../../partials/final.jsp"></c:import>

@@ -14,6 +14,7 @@ import br.net.ipp.enums.Escolaridade;
 import br.net.ipp.enums.EstadoCivil;
 import br.net.ipp.enums.FrequenciaEnum;
 import br.net.ipp.enums.HabilidadeManual;
+import br.net.ipp.enums.LocalDoArquivo;
 import br.net.ipp.enums.MotivoDaDispensa;
 import br.net.ipp.enums.Periodo;
 import br.net.ipp.enums.Regiao;
@@ -32,6 +33,7 @@ import br.net.ipp.enums.TipoDeContratacao;
 import br.net.ipp.enums.TipoDeEmpresa;
 import br.net.ipp.enums.TipoDeInsercao;
 import br.net.ipp.enums.TipoDeMoradia;
+import br.net.ipp.enums.TipoDeOcorrencia;
 import br.net.ipp.enums.TipoDeParceria;
 import br.net.ipp.enums.TipoDeValidacao;
 import br.net.ipp.enums.TipoTurmaEnum;
@@ -328,5 +330,23 @@ public class EnumService {
 		}
 		return turnos;
 	}
+	
+	public List<String> carregarLocaisDosArquivos() {
+		List<LocalDoArquivo> lista = Arrays.asList(LocalDoArquivo.values());
+		List<String> locaisDosArquivos = new ArrayList<String>();
+		for (int i = 0; i < lista.size(); i++) {
+			locaisDosArquivos.add(lista.get(i).name());
+		}
+		return locaisDosArquivos;
+	}
 
+	public List<String> carregarTipoDeOcorrencia() {
+		List<TipoDeOcorrencia> lista = Arrays.asList(TipoDeOcorrencia.values());
+		List<String> tiposDeOcorrencias = new ArrayList<String>();
+		for (int i = 0; i < lista.size(); i++) {
+			tiposDeOcorrencias.add(lista.get(i).name());
+		}
+		return tiposDeOcorrencias;
+	}
+	
 }

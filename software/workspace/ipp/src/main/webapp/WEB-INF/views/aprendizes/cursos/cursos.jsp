@@ -24,26 +24,57 @@
 	</div>
 </div>
 
-<table id="tabelaSalarios13" class="display">
+<table id="tabelaJovens" class="display">
     <thead>
           <tr>
-            <th>ID</th>
+            <th>MATRÍCULA</th>
             <th>CURSO</th>
-            <th class="td-icon">EDITAR</th>
+            <th>TURMA</th>
+            <th>STATUS</th>
+	        <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.matriculaVisualizar == true}">
+            	<th class="td-icon">EDITAR</th>
+            </c:if>
           </tr>
     </thead>
 	<tbody>
-        <c:forEach var="matricula" items="${requestScope.matriculas}">
-        <tr>
-            <td>${matricula.id}</td>
-            <td>${matricula.turma.curso.nomeDoCurso}</td>
-            <c:url value="/sw/matriculaShow/${matricula.id}" var="swMatriculaId"></c:url>
-            <td class="td-icon"><a href="${swMatriculaId}"><i class="material-icons" >border_color</i></a></td>
+		<tr>
+			<td colspan="5"> CURSANDO </td>
 		</tr>
-	</c:forEach>
+		<c:forEach var="matricula" items="${requestScope.matriculas}">
+	        <c:if test="${matricula.statusDaMatricula == 'CURSANDO'}">
+	        <tr>
+	            <td>${matricula.id}</td>
+	            <td>${matricula.turma.curso.nomeDoCurso}</td>
+	            <td>${matricula.turma.numeroTurma}</td>
+	            <td>${matricula.statusDaMatricula}</td>
+	            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.matriculaVisualizar == true}">
+	            	<c:url value="/sw/matriculaShow/${matricula.id}" var="swMatriculaId"></c:url>
+	            	<td class="td-icon"><a href="${swMatriculaId}"><i class="material-icons" >border_color</i></a></td>
+	            </c:if>
+			</tr>
+			</c:if>
+		</c:forEach>
+		<tr>
+			<td colspan="5"> OUTROS </td>
+		</tr>
+        <c:forEach var="matricula" items="${requestScope.matriculas}">
+	        <c:if test="${matricula.statusDaMatricula != 'CURSANDO'}">
+	        <tr>
+	            <td>${matricula.id}</td>
+	            <td>${matricula.turma.curso.nomeDoCurso}</td>
+	            <td>${matricula.turma.numeroTurma}</td>
+	            <td>${matricula.statusDaMatricula}</td>
+	            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.matriculaVisualizar == true}">
+	            	<c:url value="/sw/matriculaShow/${matricula.id}" var="swMatriculaId"></c:url>
+	            	<td class="td-icon"><a href="${swMatriculaId}"><i class="material-icons" >border_color</i></a></td>
+	            </c:if>
+			</tr>
+			</c:if>
+		</c:forEach>
 	</tbody>
 </table> 
-
+<br />
+<br />
 </div><!-- // container -->
 <c:import url="../../../partials/js.jsp"></c:import>
 <c:import url="../../../partials/footer.jsp"></c:import>

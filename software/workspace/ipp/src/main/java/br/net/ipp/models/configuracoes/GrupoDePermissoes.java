@@ -72,6 +72,31 @@ public class GrupoDePermissoes extends AbstractEntity {
 	private boolean turmaListar;
 	private boolean turmaVisualizar;
 	
+	private boolean cboCadastrar;
+	private boolean cboEditar;
+	private boolean cboListar;
+	private boolean cboVisualizar;
+	
+	private boolean arcoCadastrar;
+	private boolean arcoEditar;
+	private boolean arcoListar;
+	private boolean arcoVisualizar;
+	
+	private boolean basicoCadastrar;
+	private boolean basicoEditar;
+	private boolean basicoListar;
+	private boolean basicoVisualizar;
+	
+	private boolean especificoCadastrar;
+	private boolean especificoEditar;
+	private boolean especificoListar;
+	private boolean especificoVisualizar;
+
+	private boolean validacaoCadastrar;
+	private boolean validacaoEditar;
+	private boolean validacaoListar;
+	private boolean validacaoVisualizar;
+	
 	/**
 	 * JOVEMS
 	 */
@@ -89,6 +114,11 @@ public class GrupoDePermissoes extends AbstractEntity {
 	private boolean situacaoLaboralEditar;
 	private boolean situacaoLaboralListar;
 	private boolean situacaoLaboralVisualizar;
+
+	private boolean jaFoiAprendizCadastrar;
+	private boolean jaFoiAprendizEditar;
+	private boolean jaFoiAprendizListar;
+	private boolean jaFoiAprendizVisualizar;
 	
 	private boolean caracteristicasDomiciliaresCadastrar;
 	private boolean caracteristicasDomiciliaresEditar;
@@ -100,6 +130,11 @@ public class GrupoDePermissoes extends AbstractEntity {
 	private boolean habilidadesListar;
 	private boolean habilidadesVisualizar;
 	
+	private boolean outroCursoCadastrar;
+	private boolean outroCursoEditar;
+	private boolean outroCursoListar;
+	private boolean outroCursoVisualizar;
+	
 	private boolean situacaoDeSaudeCadastrar;
 	private boolean situacaoDeSaudeEditar;
 	private boolean situacaoDeSaudeListar;
@@ -109,16 +144,71 @@ public class GrupoDePermissoes extends AbstractEntity {
 	private boolean fichaSocialEditar;
 	private boolean fichaSocialListar;
 	private boolean fichaSocialVisualizar;
+
+	private boolean familiarCadastrar;
+	private boolean familiarEditar;
+	private boolean familiarListar;
+	private boolean familiarVisualizar;
 	
 	private boolean fichaProfissionalCadastrar;
 	private boolean fichaProfissionalEditar;
 	private boolean fichaProfissionalListar;
 	private boolean fichaProfissionalVisualizar;
 	
+	private boolean entrevistaCadastrar;
+	private boolean entrevistaEditar;
+	private boolean entrevistaListar;
+	private boolean entrevistaVisualizar;
+	
+	private boolean contratacaoCadastrar;
+	private boolean contratacaoEditar;
+	private boolean contratacaoListar;
+	private boolean contratacaoVisualizar;
+	
+	private boolean feriasCadastrar;
+	private boolean feriasEditar;
+	private boolean feriasListar;
+	private boolean feriasVisualizar;
+	
+	private boolean dispensaCadastrar;
+	private boolean dispensaEditar;
+	private boolean dispensaListar;
+	private boolean dispensaVisualizar;
+	
 	private boolean historicoCadastrar;
 	private boolean historicoEditar;
 	private boolean historicoListar;
 	private boolean historicoVisualizar;
+	
+	private boolean pIPCadastrar;
+	private boolean pIPEditar;
+	private boolean pIPListar;
+	private boolean pIPVisualizar;
+	
+	private boolean pITCadastrar;
+	private boolean pITEditar;
+	private boolean pITListar;
+	private boolean pITVisualizar;
+	
+	private boolean pIOCadastrar;
+	private boolean pIOEditar;
+	private boolean pIOListar;
+	private boolean pIOVisualizar;
+	
+	private boolean pAPEmpresaCadastrar;
+	private boolean pAPEmpresaEditar;
+	private boolean pAPEmpresaListar;
+	private boolean pAPEmpresaVisualizar;
+	
+	private boolean pAPIPPCadastrar;
+	private boolean pAPIPPEditar;
+	private boolean pAPIPPListar;
+	private boolean pAPIPPVisualizar;
+	
+	private boolean ocorrenciaCadastrar;
+	private boolean ocorrenciaEditar;
+	private boolean ocorrenciaListar;
+	private boolean ocorrenciaVisualizar;
 	
 	private boolean dadosFinanceirosCadastrar;
 	private boolean dadosFinanceirosEditar;
@@ -439,6 +529,126 @@ public class GrupoDePermissoes extends AbstractEntity {
 	public void setTurmaVisualizar(boolean turmaVisualizar) {
 		this.turmaVisualizar = turmaVisualizar;
 	}
+	public boolean isCboCadastrar() {
+		return cboCadastrar;
+	}
+	public void setCboCadastrar(boolean cboCadastrar) {
+		this.cboCadastrar = cboCadastrar;
+	}
+	public boolean isCboEditar() {
+		return cboEditar;
+	}
+	public void setCboEditar(boolean cboEditar) {
+		this.cboEditar = cboEditar;
+	}
+	public boolean isCboListar() {
+		return cboListar;
+	}
+	public void setCboListar(boolean cboListar) {
+		this.cboListar = cboListar;
+	}
+	public boolean isCboVisualizar() {
+		return cboVisualizar;
+	}
+	public void setCboVisualizar(boolean cboVisualizar) {
+		this.cboVisualizar = cboVisualizar;
+	}
+	public boolean isArcoCadastrar() {
+		return arcoCadastrar;
+	}
+	public void setArcoCadastrar(boolean arcoCadastrar) {
+		this.arcoCadastrar = arcoCadastrar;
+	}
+	public boolean isArcoEditar() {
+		return arcoEditar;
+	}
+	public void setArcoEditar(boolean arcoEditar) {
+		this.arcoEditar = arcoEditar;
+	}
+	public boolean isArcoListar() {
+		return arcoListar;
+	}
+	public void setArcoListar(boolean arcoListar) {
+		this.arcoListar = arcoListar;
+	}
+	public boolean isArcoVisualizar() {
+		return arcoVisualizar;
+	}
+	public void setArcoVisualizar(boolean arcoVisualizar) {
+		this.arcoVisualizar = arcoVisualizar;
+	}
+	public boolean isBasicoCadastrar() {
+		return basicoCadastrar;
+	}
+	public void setBasicoCadastrar(boolean basicoCadastrar) {
+		this.basicoCadastrar = basicoCadastrar;
+	}
+	public boolean isBasicoEditar() {
+		return basicoEditar;
+	}
+	public void setBasicoEditar(boolean basicoEditar) {
+		this.basicoEditar = basicoEditar;
+	}
+	public boolean isBasicoListar() {
+		return basicoListar;
+	}
+	public void setBasicoListar(boolean basicoListar) {
+		this.basicoListar = basicoListar;
+	}
+	public boolean isBasicoVisualizar() {
+		return basicoVisualizar;
+	}
+	public void setBasicoVisualizar(boolean basicoVisualizar) {
+		this.basicoVisualizar = basicoVisualizar;
+	}
+	public boolean isEspecificoCadastrar() {
+		return especificoCadastrar;
+	}
+	public void setEspecificoCadastrar(boolean especificoCadastrar) {
+		this.especificoCadastrar = especificoCadastrar;
+	}
+	public boolean isEspecificoEditar() {
+		return especificoEditar;
+	}
+	public void setEspecificoEditar(boolean especificoEditar) {
+		this.especificoEditar = especificoEditar;
+	}
+	public boolean isEspecificoListar() {
+		return especificoListar;
+	}
+	public void setEspecificoListar(boolean especificoListar) {
+		this.especificoListar = especificoListar;
+	}
+	public boolean isEspecificoVisualizar() {
+		return especificoVisualizar;
+	}
+	public void setEspecificoVisualizar(boolean especificoVisualizar) {
+		this.especificoVisualizar = especificoVisualizar;
+	}
+	public boolean isValidacaoCadastrar() {
+		return validacaoCadastrar;
+	}
+	public void setValidacaoCadastrar(boolean validacaoCadastrar) {
+		this.validacaoCadastrar = validacaoCadastrar;
+	}
+	public boolean isValidacaoEditar() {
+		return validacaoEditar;
+	}
+	public void setValidacaoEditar(boolean validacaoEditar) {
+		this.validacaoEditar = validacaoEditar;
+	}
+	public boolean isValidacaoListar() {
+		return validacaoListar;
+	}
+	public void setValidacaoListar(boolean validacaoListar) {
+		this.validacaoListar = validacaoListar;
+	}
+	public boolean isValidacaoVisualizar() {
+		return validacaoVisualizar;
+	}
+	public void setValidacaoVisualizar(boolean validacaoVisualizar) {
+		this.validacaoVisualizar = validacaoVisualizar;
+	}
 	public boolean isJovemCadastrar() {
 		return jovemCadastrar;
 	}
@@ -511,6 +721,30 @@ public class GrupoDePermissoes extends AbstractEntity {
 	public void setSituacaoLaboralVisualizar(boolean situacaoLaboralVisualizar) {
 		this.situacaoLaboralVisualizar = situacaoLaboralVisualizar;
 	}
+	public boolean isJaFoiAprendizCadastrar() {
+		return jaFoiAprendizCadastrar;
+	}
+	public void setJaFoiAprendizCadastrar(boolean jaFoiAprendizCadastrar) {
+		this.jaFoiAprendizCadastrar = jaFoiAprendizCadastrar;
+	}
+	public boolean isJaFoiAprendizEditar() {
+		return jaFoiAprendizEditar;
+	}
+	public void setJaFoiAprendizEditar(boolean jaFoiAprendizEditar) {
+		this.jaFoiAprendizEditar = jaFoiAprendizEditar;
+	}
+	public boolean isJaFoiAprendizListar() {
+		return jaFoiAprendizListar;
+	}
+	public void setJaFoiAprendizListar(boolean jaFoiAprendizListar) {
+		this.jaFoiAprendizListar = jaFoiAprendizListar;
+	}
+	public boolean isJaFoiAprendizVisualizar() {
+		return jaFoiAprendizVisualizar;
+	}
+	public void setJaFoiAprendizVisualizar(boolean jaFoiAprendizVisualizar) {
+		this.jaFoiAprendizVisualizar = jaFoiAprendizVisualizar;
+	}
 	public boolean isCaracteristicasDomiciliaresCadastrar() {
 		return caracteristicasDomiciliaresCadastrar;
 	}
@@ -558,6 +792,30 @@ public class GrupoDePermissoes extends AbstractEntity {
 	}
 	public void setHabilidadesVisualizar(boolean habilidadesVisualizar) {
 		this.habilidadesVisualizar = habilidadesVisualizar;
+	}
+	public boolean isOutroCursoCadastrar() {
+		return outroCursoCadastrar;
+	}
+	public void setOutroCursoCadastrar(boolean outroCursoCadastrar) {
+		this.outroCursoCadastrar = outroCursoCadastrar;
+	}
+	public boolean isOutroCursoEditar() {
+		return outroCursoEditar;
+	}
+	public void setOutroCursoEditar(boolean outroCursoEditar) {
+		this.outroCursoEditar = outroCursoEditar;
+	}
+	public boolean isOutroCursoListar() {
+		return outroCursoListar;
+	}
+	public void setOutroCursoListar(boolean outroCursoListar) {
+		this.outroCursoListar = outroCursoListar;
+	}
+	public boolean isOutroCursoVisualizar() {
+		return outroCursoVisualizar;
+	}
+	public void setOutroCursoVisualizar(boolean outroCursoVisualizar) {
+		this.outroCursoVisualizar = outroCursoVisualizar;
 	}
 	public boolean isSituacaoDeSaudeCadastrar() {
 		return situacaoDeSaudeCadastrar;
@@ -607,6 +865,30 @@ public class GrupoDePermissoes extends AbstractEntity {
 	public void setFichaSocialVisualizar(boolean fichaSocialVisualizar) {
 		this.fichaSocialVisualizar = fichaSocialVisualizar;
 	}
+	public boolean isFamiliarCadastrar() {
+		return familiarCadastrar;
+	}
+	public void setFamiliarCadastrar(boolean familiarCadastrar) {
+		this.familiarCadastrar = familiarCadastrar;
+	}
+	public boolean isFamiliarEditar() {
+		return familiarEditar;
+	}
+	public void setFamiliarEditar(boolean familiarEditar) {
+		this.familiarEditar = familiarEditar;
+	}
+	public boolean isFamiliarListar() {
+		return familiarListar;
+	}
+	public void setFamiliarListar(boolean familiarListar) {
+		this.familiarListar = familiarListar;
+	}
+	public boolean isFamiliarVisualizar() {
+		return familiarVisualizar;
+	}
+	public void setFamiliarVisualizar(boolean familiarVisualizar) {
+		this.familiarVisualizar = familiarVisualizar;
+	}
 	public boolean isFichaProfissionalCadastrar() {
 		return fichaProfissionalCadastrar;
 	}
@@ -631,6 +913,102 @@ public class GrupoDePermissoes extends AbstractEntity {
 	public void setFichaProfissionalVisualizar(boolean fichaProfissionalVisualizar) {
 		this.fichaProfissionalVisualizar = fichaProfissionalVisualizar;
 	}
+	public boolean isEntrevistaCadastrar() {
+		return entrevistaCadastrar;
+	}
+	public void setEntrevistaCadastrar(boolean entrevistaCadastrar) {
+		this.entrevistaCadastrar = entrevistaCadastrar;
+	}
+	public boolean isEntrevistaEditar() {
+		return entrevistaEditar;
+	}
+	public void setEntrevistaEditar(boolean entrevistaEditar) {
+		this.entrevistaEditar = entrevistaEditar;
+	}
+	public boolean isEntrevistaListar() {
+		return entrevistaListar;
+	}
+	public void setEntrevistaListar(boolean entrevistaListar) {
+		this.entrevistaListar = entrevistaListar;
+	}
+	public boolean isEntrevistaVisualizar() {
+		return entrevistaVisualizar;
+	}
+	public void setEntrevistaVisualizar(boolean entrevistaVisualizar) {
+		this.entrevistaVisualizar = entrevistaVisualizar;
+	}
+	public boolean isContratacaoCadastrar() {
+		return contratacaoCadastrar;
+	}
+	public void setContratacaoCadastrar(boolean contratacaoCadastrar) {
+		this.contratacaoCadastrar = contratacaoCadastrar;
+	}
+	public boolean isContratacaoEditar() {
+		return contratacaoEditar;
+	}
+	public void setContratacaoEditar(boolean contratacaoEditar) {
+		this.contratacaoEditar = contratacaoEditar;
+	}
+	public boolean isContratacaoListar() {
+		return contratacaoListar;
+	}
+	public void setContratacaoListar(boolean contratacaoListar) {
+		this.contratacaoListar = contratacaoListar;
+	}
+	public boolean isContratacaoVisualizar() {
+		return contratacaoVisualizar;
+	}
+	public void setContratacaoVisualizar(boolean contratacaoVisualizar) {
+		this.contratacaoVisualizar = contratacaoVisualizar;
+	}
+	public boolean isFeriasCadastrar() {
+		return feriasCadastrar;
+	}
+	public void setFeriasCadastrar(boolean feriasCadastrar) {
+		this.feriasCadastrar = feriasCadastrar;
+	}
+	public boolean isFeriasEditar() {
+		return feriasEditar;
+	}
+	public void setFeriasEditar(boolean feriasEditar) {
+		this.feriasEditar = feriasEditar;
+	}
+	public boolean isFeriasListar() {
+		return feriasListar;
+	}
+	public void setFeriasListar(boolean feriasListar) {
+		this.feriasListar = feriasListar;
+	}
+	public boolean isFeriasVisualizar() {
+		return feriasVisualizar;
+	}
+	public void setFeriasVisualizar(boolean feriasVisualizar) {
+		this.feriasVisualizar = feriasVisualizar;
+	}
+	public boolean isDispensaCadastrar() {
+		return dispensaCadastrar;
+	}
+	public void setDispensaCadastrar(boolean dispensaCadastrar) {
+		this.dispensaCadastrar = dispensaCadastrar;
+	}
+	public boolean isDispensaEditar() {
+		return dispensaEditar;
+	}
+	public void setDispensaEditar(boolean dispensaEditar) {
+		this.dispensaEditar = dispensaEditar;
+	}
+	public boolean isDispensaListar() {
+		return dispensaListar;
+	}
+	public void setDispensaListar(boolean dispensaListar) {
+		this.dispensaListar = dispensaListar;
+	}
+	public boolean isDispensaVisualizar() {
+		return dispensaVisualizar;
+	}
+	public void setDispensaVisualizar(boolean dispensaVisualizar) {
+		this.dispensaVisualizar = dispensaVisualizar;
+	}
 	public boolean isHistoricoCadastrar() {
 		return historicoCadastrar;
 	}
@@ -654,6 +1032,150 @@ public class GrupoDePermissoes extends AbstractEntity {
 	}
 	public void setHistoricoVisualizar(boolean historicoVisualizar) {
 		this.historicoVisualizar = historicoVisualizar;
+	}
+	public boolean ispIPCadastrar() {
+		return pIPCadastrar;
+	}
+	public void setpIPCadastrar(boolean pIPCadastrar) {
+		this.pIPCadastrar = pIPCadastrar;
+	}
+	public boolean ispIPEditar() {
+		return pIPEditar;
+	}
+	public void setpIPEditar(boolean pIPEditar) {
+		this.pIPEditar = pIPEditar;
+	}
+	public boolean ispIPListar() {
+		return pIPListar;
+	}
+	public void setpIPListar(boolean pIPListar) {
+		this.pIPListar = pIPListar;
+	}
+	public boolean ispIPVisualizar() {
+		return pIPVisualizar;
+	}
+	public void setpIPVisualizar(boolean pIPVisualizar) {
+		this.pIPVisualizar = pIPVisualizar;
+	}
+	public boolean ispITCadastrar() {
+		return pITCadastrar;
+	}
+	public void setpITCadastrar(boolean pITCadastrar) {
+		this.pITCadastrar = pITCadastrar;
+	}
+	public boolean ispITEditar() {
+		return pITEditar;
+	}
+	public void setpITEditar(boolean pITEditar) {
+		this.pITEditar = pITEditar;
+	}
+	public boolean ispITListar() {
+		return pITListar;
+	}
+	public void setpITListar(boolean pITListar) {
+		this.pITListar = pITListar;
+	}
+	public boolean ispITVisualizar() {
+		return pITVisualizar;
+	}
+	public void setpITVisualizar(boolean pITVisualizar) {
+		this.pITVisualizar = pITVisualizar;
+	}
+	public boolean ispIOCadastrar() {
+		return pIOCadastrar;
+	}
+	public void setpIOCadastrar(boolean pIOCadastrar) {
+		this.pIOCadastrar = pIOCadastrar;
+	}
+	public boolean ispIOEditar() {
+		return pIOEditar;
+	}
+	public void setpIOEditar(boolean pIOEditar) {
+		this.pIOEditar = pIOEditar;
+	}
+	public boolean ispIOListar() {
+		return pIOListar;
+	}
+	public void setpIOListar(boolean pIOListar) {
+		this.pIOListar = pIOListar;
+	}
+	public boolean ispIOVisualizar() {
+		return pIOVisualizar;
+	}
+	public void setpIOVisualizar(boolean pIOVisualizar) {
+		this.pIOVisualizar = pIOVisualizar;
+	}
+	public boolean ispAPEmpresaCadastrar() {
+		return pAPEmpresaCadastrar;
+	}
+	public void setpAPEmpresaCadastrar(boolean pAPEmpresaCadastrar) {
+		this.pAPEmpresaCadastrar = pAPEmpresaCadastrar;
+	}
+	public boolean ispAPEmpresaEditar() {
+		return pAPEmpresaEditar;
+	}
+	public void setpAPEmpresaEditar(boolean pAPEmpresaEditar) {
+		this.pAPEmpresaEditar = pAPEmpresaEditar;
+	}
+	public boolean ispAPEmpresaListar() {
+		return pAPEmpresaListar;
+	}
+	public void setpAPEmpresaListar(boolean pAPEmpresaListar) {
+		this.pAPEmpresaListar = pAPEmpresaListar;
+	}
+	public boolean ispAPEmpresaVisualizar() {
+		return pAPEmpresaVisualizar;
+	}
+	public void setpAPEmpresaVisualizar(boolean pAPEmpresaVisualizar) {
+		this.pAPEmpresaVisualizar = pAPEmpresaVisualizar;
+	}
+	public boolean ispAPIPPCadastrar() {
+		return pAPIPPCadastrar;
+	}
+	public void setpAPIPPCadastrar(boolean pAPIPPCadastrar) {
+		this.pAPIPPCadastrar = pAPIPPCadastrar;
+	}
+	public boolean ispAPIPPEditar() {
+		return pAPIPPEditar;
+	}
+	public void setpAPIPPEditar(boolean pAPIPPEditar) {
+		this.pAPIPPEditar = pAPIPPEditar;
+	}
+	public boolean ispAPIPPListar() {
+		return pAPIPPListar;
+	}
+	public void setpAPIPPListar(boolean pAPIPPListar) {
+		this.pAPIPPListar = pAPIPPListar;
+	}
+	public boolean ispAPIPPVisualizar() {
+		return pAPIPPVisualizar;
+	}
+	public void setpAPIPPVisualizar(boolean pAPIPPVisualizar) {
+		this.pAPIPPVisualizar = pAPIPPVisualizar;
+	}
+	public boolean isOcorrenciaCadastrar() {
+		return ocorrenciaCadastrar;
+	}
+	public void setOcorrenciaCadastrar(boolean ocorrenciaCadastrar) {
+		this.ocorrenciaCadastrar = ocorrenciaCadastrar;
+	}
+	public boolean isOcorrenciaEditar() {
+		return ocorrenciaEditar;
+	}
+	public void setOcorrenciaEditar(boolean ocorrenciaEditar) {
+		this.ocorrenciaEditar = ocorrenciaEditar;
+	}
+	public boolean isOcorrenciaListar() {
+		return ocorrenciaListar;
+	}
+	public void setOcorrenciaListar(boolean ocorrenciaListar) {
+		this.ocorrenciaListar = ocorrenciaListar;
+	}
+	public boolean isOcorrenciaVisualizar() {
+		return ocorrenciaVisualizar;
+	}
+	public void setOcorrenciaVisualizar(boolean ocorrenciaVisualizar) {
+		this.ocorrenciaVisualizar = ocorrenciaVisualizar;
 	}
 	public boolean isDadosFinanceirosCadastrar() {
 		return dadosFinanceirosCadastrar;

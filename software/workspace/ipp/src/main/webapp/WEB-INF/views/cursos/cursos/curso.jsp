@@ -6,14 +6,14 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-<c:import url="../../../partials/header.jsp"></c:import>
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
 
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/homeCurso/${curso.id}">
+			<c:url value="/sw/homeCurso/${curso.id}" var="swHomeCursoId"></c:url>
+			<a href="">
 				<h4 class="header right black-text">${curso.nomeDoCurso != null ? curso.nomeDoCurso : "Curso"}</h4>
 			</a>
 			<br />
@@ -24,24 +24,24 @@
 			<br />
 		</div>
 	</div>
-
-<form:form role="form" commandName="curso" servletRelativeAction="/cursos/${curso.id}" method="POST">
+<c:url value="/sw/curso/${curso.nomeDoCurso != null ? curso.id : null}" var="swCursoId"></c:url>
+<form:form role="form" commandName="curso" servletRelativeAction="" method="POST">
 	<div class="s12 col l12">	
 		<div class="row">
 			<div class="s12 col l12">
 				<div class="row">
 					<div class="input-field s12 col l6">
-						<form:input path='nomeDoCurso' type='text'/>
+						<form:input path='nomeDoCurso' type='text' required="required" />
 						<form:errors path='nomeDoCurso'/> 
 						<label for="nomeDoCurso">Nome do Curso</label>
 					</div>
 					<div class="input-field s12 col l2">
-						<form:input path='numeroDoCurso' type='text'/>
+						<form:input path='numeroDoCurso' type='text' required="required" />
 						<form:errors path='numeroDoCurso'/> 
 						<label for="numeroDoCurso">Nº do Curso</label>
 					</div>
 					<div class="input-field s12 col l2">
-	                    <form:select path="status">
+	                    <form:select path="status" required="required" >
 		                	<form:option value="${curso.status}" label="${curso.status == null ? 'Status' : curso.status}" />
 							<c:forEach var="status" items="${requestScope.status}">
 								<option>${status}</option>							
@@ -49,7 +49,7 @@
 						</form:select>
 	                </div>
 					<div class="input-field s12 col l2">
-	                    <form:select path="unidade">
+	                    <form:select path="unidade" required="required" >
 	                		<form:option  value="${curso.unidade.id}" label="${curso.unidade == null ? 'Unidade' : curso.unidade.nomeFantazia}" />
 							<c:forEach var="unidade" items="${requestScope.unidades}">
 								<option value="${unidade.id}">${unidade.nomeFantazia}</option>							
@@ -103,7 +103,7 @@
 			<div class="input-field s12 col l1">
 			</div>
 			<div class="input-field s12 col l3">
-				<form:input id="dataDoCadastro" path="dataDoCadastro" type="date" class="validate datepicker" placeholder="Data de Cadastro" /> 
+				<form:input id="dataDoCadastro" path="dataDoCadastro" type="text" class="validate datepicker" placeholder="Data de Cadastro" /> 
 				<label for="dataDoCadastro">Data de Cadastro</label>
 			</div><!-- // col -->
 		</div><!-- // row -->
@@ -147,21 +147,21 @@
 			<div class="input-field s12 col l3">
 				<div class="row">
 					<div class="input-field s12 col l12">
-						<form:input path='cargaHorariaSemanal' type='text'/>
+						<form:input path='cargaHorariaSemanal' type='text' />
 						<form:errors path='cargaHorariaSemanal'/> 
 						<label for="cargaHorariaSemanal">Carga Horária Semanal</label>
 					</div><!-- // col -->
 				</div><!-- // row -->
 				<div class="row">
 					<div class="input-field s12 col l12">
-						<form:input path='cargaHorariaTotal' type='text'/>
+						<form:input path='cargaHorariaTotal' type='text' required="required" />
 						<form:errors path='cargaHorariaTotal'/> 
 						<label for="cargaHorariaTotal">Carga Horária Total</label>
 					</div><!-- // col -->
 				</div><!-- // row -->
 				<div class="row">
 					<div class="input-field s12 col l12">
-						<form:input path='publicoAlvo' type='text'/>
+						<form:input path='publicoAlvo' type='text' required="required" />
 						<form:errors path='publicoAlvo'/> 
 						<label for="publicoAlvo">Público Alvo</label>
 					</div><!-- // col -->
@@ -187,7 +187,8 @@
 								<td>${validacao.dataDaValidacao}</td>
 								<td>${validacao.dataDaSolicitacao}</td>
 								<td>${validacao.tipoDeValidacao}</td>
-								<td class="td-icon"><a href="/validacoes/${validacao.id}"><i
+								<c:url value="/sw/loadValidacao/${validacao.id}" var="swValidacaoId"></c:url>
+								<td class="td-icon"><a href="${swValidacaoId}"><i
 										class="material-icons">border_color</i></a></td>
 							</tr>
 						</c:forEach>
@@ -197,7 +198,7 @@
 		</div><!-- // row -->
 		<div class="row">
 			<div class="input-field s12 col l12">
-				<form:textarea path="atividadesPraticas" class="materialize-textarea" />
+				<form:textarea path="atividadesPraticas" class="materialize-textarea" required="required" />
 				<form:errors path="atividadesPraticas"></form:errors>
 				<form:label path="atividadesPraticas">Atividades Práticas</form:label>
 			</div><!-- col -->
@@ -205,7 +206,7 @@
 		<div class="row">
 			<div class="input-field s12 col l12">
 				<form:textarea path="articulacaoComOutrasAreas"
-					class="materialize-textarea" />
+					class="materialize-textarea" required="required" />
 				<form:errors path="articulacaoComOutrasAreas"></form:errors>
 				<form:label path="articulacaoComOutrasAreas">Articulação Com Outras Áreas</form:label>
 			</div><!-- // col -->
@@ -241,27 +242,46 @@
 								</c:forEach>
 							</tbody>
 						</table>
-						<table class="striped">
-							<thead>
-								<tr>
-									<th>NÃO-INCLUSO</th>
-									<th>TITULO</th>
-									<th>HORAS / AULA</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="basico" items="${requestScope.basicos}">
+						
+						<!-- Modal Trigger -->
+			  			<a class="modal-trigger" href="#modalBasicos">
+			              Mais Básicos
+			  			</a>
+						<!-- Modal Structure -->
+						  <div id="modalBasicos" class="modal">
+						    <div class="modal-content">
+						      
+						      <table class="striped">
+								<thead>
 									<tr>
-										<td>
-											<input type="checkbox" class="filled-in" name="conteudosTeoricosBasicos" id="basicos${basico.id}" value="${basico.id}" />
-											<label for="basicos${basico.id}"></label>
-								        </td>
-										<td>${basico.titulo}</td>
-										<td>${basico.horaAula}</td>
+										<th>NÃO-INCLUSO</th>
+										<th>TITULO</th>
+										<th>HORAS / AULA</th>
 									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
+								</thead>
+								<tbody>
+									<c:forEach var="basico" items="${requestScope.basicos}">
+										<tr>
+											<td>
+												<input type="checkbox" class="filled-in" name="conteudosTeoricosBasicos" id="basicos${basico.id}" value="${basico.id}" />
+												<label for="basicos${basico.id}"></label>
+									        </td>
+											<td>${basico.titulo}</td>
+											<td>${basico.horaAula}</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						      
+						    </div>
+						    <hr />
+						    <div class="modal-footer">
+						      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+						    </div>
+						  </div>
+						<!-- / Modal Structure -->
+						
+						
 					</div><!-- // col -->
 				</div><!-- // row -->
 				<div class="row">
@@ -290,27 +310,44 @@
 								</c:forEach>
 							</tbody>
 						</table>
-						<table class="striped">
-							<thead>
-								<tr>
-									<th>NÃO-INCLUSO</th>
-									<th>TITULO</th>
-									<th>HORAS / AULA</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="especifico_curso" items="${requestScope.especificos}">
+						<!-- Modal Trigger -->
+			  			<a class="modal-trigger" href="#modalEspecificos">
+			              Mais Específicos
+			  			</a>
+						<!-- Modal Structure -->
+						  <div id="modalEspecificos" class="modal">
+						    <div class="modal-content">
+						      
+						      <table class="striped">
+								<thead>
 									<tr>
-										<td>
-											<input type="checkbox" class="filled-in" name="conteudosTeoricosEspecificos" id="especificos${especifico_curso.id}" value="${especifico_curso.id}" />
-											<label for="especificos${especifico_curso.id}"></label>
-								        </td>
-										<td>${especifico_curso.titulo}</td>
-										<td>${especifico_curso.horaAula}</td>
+										<th>NÃO-INCLUSO</th>
+										<th>TITULO</th>
+										<th>HORAS / AULA</th>
 									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
+								</thead>
+								<tbody>
+									<c:forEach var="especifico_curso" items="${requestScope.especificos}">
+										<tr>
+											<td>
+												<input type="checkbox" class="filled-in" name="conteudosTeoricosEspecificos" id="especificos${especifico_curso.id}" value="${especifico_curso.id}" />
+												<label for="especificos${especifico_curso.id}"></label>
+									        </td>
+											<td>${especifico_curso.titulo}</td>
+											<td>${especifico_curso.horaAula}</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						      
+						    </div>
+						    <hr />
+						    <div class="modal-footer">
+						      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+						    </div>
+						  </div>
+						<!-- / Modal Structure -->
+						
 					</div><!-- // col -->
 				</div><!-- // row -->
 			</div><!-- // col -->
@@ -323,34 +360,24 @@
 			</div><!-- // col -->
 		</div><!-- // row -->
 	</div><!-- // col -->
-	<button class="btn waves-effect waves-light right" type="submit">
-		Salvar<i class="material-icons right">send</i>
-	</button>
+
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.cursoCadastrar == true && requestScope.curso.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.cursoEditar == true && requestScope.curso.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
 	</form:form>
+	
+	<br />
+	<br />
+	
 </div>
 <c:import url="../../../partials/js.jsp"></c:import>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-
-	$('.datepicker').pickadate({
-		monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-		monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-		weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
-		weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-		weekdaysLetter: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
-		today: 'Hoje',
-		clear: 'Limpar',
-		close: 'Pronto',
-		labelMonthNext: 'Próximo mês',
-		labelMonthPrev: 'Mês anterior',
-		labelMonthSelect: 'Selecione um mês',
-		labelYearSelect: 'Selecione um ano',
-		selectMonths: true,
-		selectYears: 99,
-	    format: 'dd/mm/yyyy' 
-	});
-</script>
 <c:import url="../../../partials/footer.jsp"></c:import>
 <c:import url="../../../partials/final.jsp"></c:import>

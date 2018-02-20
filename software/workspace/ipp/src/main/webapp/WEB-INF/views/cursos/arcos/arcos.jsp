@@ -29,7 +29,9 @@
           <tr>
             <th>ID</th>
             <th>Título</th>
-            <th class="td-icon">EDITAR</th>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.arcoVisualizar == true}">
+            	<th class="td-icon">EDITAR</th>
+            </c:if>
           </tr>
         </thead>
         <tbody>
@@ -37,20 +39,23 @@
           <tr>
             <td>${arco.id}</td>
             <td>${arco.titulo}</td>
-            <c:url value="/sw/arco/${arco.id}" var="swArcoId"></c:url>
-			<td class="td-icon"><a href="${swArcoId}"><i class="material-icons" >border_color</i></a></td>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.arcoVisualizar == true}">
+            	<c:url value="/sw/arco/${arco.id}" var="swArcoId"></c:url>
+				<td class="td-icon"><a href="${swArcoId}"><i class="material-icons" >border_color</i></a></td>
+			</c:if>
           </tr>
           </c:forEach>
           </tbody>
           
       </table> 
-      
+      <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.arcoCadastrar == true}">
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <c:url value="/sw/arco/form" var="swArcoForm"></c:url>
-			<a class="btn-floating btn-large waves-effect waves-light orange" href="">
+			<a class="btn-floating btn-large waves-effect waves-light orange" href="${swArcoForm}">
                 <i class="material-icons">add</i>
             </a>
          </div>
+         </c:if>
          
          
 <br />

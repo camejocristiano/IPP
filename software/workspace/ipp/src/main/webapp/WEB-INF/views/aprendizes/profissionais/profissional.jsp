@@ -6,29 +6,12 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
-
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/jovem/${jovem.id}">
+			<a href="/sw/fichaProfissional/home/${fichaProfissional.jovem != null ? fichaProfissional.jovem.id : jovem.id}">
 				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
 			</a>
 			<br />
@@ -39,13 +22,12 @@
 			<br />
 	</div>
 </div>
-
-		<form:form role="form" commandName="fichaProfissional" servletRelativeAction="/sw/fichaProfissional/${fichaProfissional.id}" method="POST">
+		<c:url value="/sw/fichaProfissional/${fichaProfissional.id != null ? fichaProfissional.id : null}" var="swFichaProfissionalId"></c:url>
+		<form:form role="form" commandName="fichaProfissional" servletRelativeAction="${swFichaProfissionalId}" method="POST">
 			<div class="row">
 				<div class="input-field s12 col l6">
-					<form:hidden path="jovem" value="${jovem.id}" />
 					<form:select path="situacaoAtual">
-					    <form:option value="${situacaoAtual}" label="${fichaProfissional.situacaoAtual == null ? 'Situação Atual: ' : fichaProfissional.situacaoAtual}" />
+					    <form:option value="${fichaProfissional.situacaoAtual}" label="${fichaProfissional.situacaoAtual == null ? 'Situação Atual: ' : fichaProfissional.situacaoAtual}" />
 						<c:forEach var="situacaoAtual" items="${requestScope.situacoesAtuais}">
 							<option>${situacaoAtual}</option>							
 						</c:forEach>
@@ -68,35 +50,24 @@
 					<form:label path="observacoesSituacaoProfissional">Observações:</form:label>
 				</div><!-- // col -->
 			</div><!-- // row -->
-			<button class="btn waves-effect waves-light right" type="submit">
-				Salvar<i class="material-icons right">send</i>
-			</button>
+
+			<form:hidden path="jovem" value="${fichaProfissional.jovem == null ? jovem.id : fichaProfissional.jovem.id}" />
+
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.fichaProfissionalCadastrar == true && requestScope.fichaProfissional.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.fichaProfissionalEditar == true && requestScope.fichaProfissional.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
 		</form:form>
 	<br />
 	<br />
 </div><!-- // container -->
 <c:import url="../../../partials/js.jsp"></c:import>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-	$('.datepicker').pickadate({
-		monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-		monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-		weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
-		weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-		weekdaysLetter: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
-		today: 'Hoje',
-		clear: 'Limpar',
-		close: 'Pronto',
-		labelMonthNext: 'Próximo mês',
-		labelMonthPrev: 'Mês anterior',
-		labelMonthSelect: 'Selecione um mês',
-		labelYearSelect: 'Selecione um ano',
-		selectMonths: true,
-		selectYears: 99,
-	    format: 'dd/mm/yyyy' 
-	});
-</script>
 <c:import url="../../../partials/footer.jsp"></c:import>
 <c:import url="../../../partials/final.jsp"></c:import>

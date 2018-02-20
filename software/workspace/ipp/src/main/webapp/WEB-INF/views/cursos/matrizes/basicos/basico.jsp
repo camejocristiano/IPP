@@ -5,8 +5,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<c:import url="../../../partials/header.jsp"></c:import>
-<c:import url="../../../partials/navbar.jsp"></c:import>
+<c:import url="../../../../partials/header.jsp"></c:import>
+<c:import url="../../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
 	<div class="row">
@@ -23,22 +23,34 @@
 			<br />
 	</div>
 </div>
-		<c:url value="/sw/basicos/${conteudoTeoricoBasico.titulo != null ? conteudoTeoricoBasico.id : null}" var="conteudoTeoricoBasicoId"></c:url>
+		<c:url value="/sw/basico/${conteudoTeoricoBasico.titulo != null ? conteudoTeoricoBasico.id : null}" var="conteudoTeoricoBasicoId"></c:url>
 		<form:form role="form" commandName="conteudoTeoricoBasico" servletRelativeAction="${conteudoTeoricoBasicoId}" method="POST">
-			<div class="input-field s12 col l12">
-			</div>
+			<div class="row">
 				<div class="input-field s12 col l8">
-					<form:input path="titulo" value="${requestScope.conteudoTeoricoBasico.titulo}"/>
+					<form:input path="titulo" value="${requestScope.conteudoTeoricoBasico.titulo}" required="required" />
 					<form:label path="titulo">Título</form:label>
 				</div>
 				<div class="input-field s12 col l4">
-					<form:input path="horaAula" value="${requestScope.conteudoTeoricoBasico.horaAula}" />
+					<form:input path="horaAula" value="${requestScope.conteudoTeoricoBasico.horaAula}" required="required" />
 					<form:label path="horaAula">Horas / Aula</form:label>
 				</div>
-			<button class="btn waves-effect waves-light right" type="submit">
-				Salvar<i class="material-icons right">send</i>
-			</button>
-
+			</div>
+			<br />
+			<br />
+			<div class="row">
+				<div class="input-field s12 col l12">
+				<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.basicoCadastrar == true && requestScope.conteudoTeoricoBasico.id == null}">
+					<button class="btn waves-effect waves-light right" type="submit">
+						Salvar<i class="material-icons right">send</i>
+					</button>
+				</c:if>
+				<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.basicoEditar == true && requestScope.conteudoTeoricoBasico.id != null}">
+					<button class="btn waves-effect waves-light right" type="submit">
+						Salvar<i class="material-icons right">send</i>
+					</button>
+				</c:if>
+				</div>
+			</div>
 		</form:form>
 		<br />
 		<br />

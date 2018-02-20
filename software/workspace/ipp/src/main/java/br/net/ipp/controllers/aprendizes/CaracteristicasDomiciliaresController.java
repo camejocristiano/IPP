@@ -6,6 +6,8 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +18,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.net.ipp.daos.aprendizes.CaracteristicasDomiciliaresRepository;
 import br.net.ipp.daos.aprendizes.JovemRepository;
+import br.net.ipp.daos.configuracoes.UsuarioRepository;
 import br.net.ipp.models.aprendizes.CaracteristicasDomiciliares;
 import br.net.ipp.models.aprendizes.Jovem;
+import br.net.ipp.models.configuracoes.Usuario;
 import br.net.ipp.services.EnumService;
 
 @Controller
@@ -28,94 +32,153 @@ public class CaracteristicasDomiciliaresController {
 	private CaracteristicasDomiciliaresRepository caracteristicasDomiciliaresRepository;
 	private JovemRepository jovemRepository;
 	private EnumService enumService;
+	private UsuarioRepository usuarioRepository; 
 	
 	@Autowired
 	public CaracteristicasDomiciliaresController(
 			CaracteristicasDomiciliaresRepository caracteristicasDomiciliaresRepository,
 			JovemRepository jovemRepository,
-			EnumService enumService
+			EnumService enumService,
+			UsuarioRepository usuarioRepository
 			) {
 		this.caracteristicasDomiciliaresRepository = caracteristicasDomiciliaresRepository;
 		this.jovemRepository = jovemRepository;
 		this.enumService = new EnumService();
+		this.usuarioRepository = usuarioRepository;
 	}
 
 	@GetMapping("/caracteristicaDomiciliar/form")
-	public ModelAndView caracteristicasDomiciliares(CaracteristicasDomiciliares caracteristicasDomiciliares) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens");
+	public ModelAndView caracteristicasDomiciliares(CaracteristicasDomiciliares caracteristicasDomiciliares, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		if (usuarioSessao.getGrupoDePermissoes().isCaracteristicasDomiciliaresCadastrar() == true) {
+			modelAndView = new ModelAndView("redirect:/sw/jovens");
+		} else {
+			modelAndView = new ModelAndView("redirect:/sw/jovens/");			
+		}
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		return modelAndView;
 	}
 	
 	@GetMapping("/caracteristicaDomiciliar/form/{id}")
-	public ModelAndView caracteristicasDomiciliaresJovem(CaracteristicasDomiciliares caracteristicasDomiciliares, @PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("aprendizes/domiciliares/domiciliar");
+	public ModelAndView caracteristicasDomiciliaresJovem(CaracteristicasDomiciliares caracteristicasDomiciliares, @PathVariable("id") Long id, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
 		Jovem jovem = jovemRepository.findOne(id);
-		modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
-		modelAndView.addObject("jovem", jovem);
-		List<String> auxiliosDoGoverno = this.enumService.carregarAuxiliosDoGoverno();
-		modelAndView.addObject("auxiliosDoGoverno", auxiliosDoGoverno);
-		List<String> escolaridades = this.enumService.carregarEscolaridades();
-		modelAndView.addObject("escolaridades", escolaridades);
+		if (usuarioSessao.getGrupoDePermissoes().isCaracteristicasDomiciliaresVisualizar() == true) {
+			modelAndView = new ModelAndView("aprendizes/domiciliares/domiciliar");
+			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
+			modelAndView.addObject("jovem", jovem);
+			List<String> auxiliosDoGoverno = this.enumService.carregarAuxiliosDoGoverno();
+			modelAndView.addObject("auxiliosDoGoverno", auxiliosDoGoverno);
+			List<String> escolaridades = this.enumService.carregarEscolaridades();
+			modelAndView.addObject("escolaridades", escolaridades);
+		} else {
+			modelAndView = new ModelAndView("redirect:/sw/jovem/"+jovem.getId());			
+			modelAndView.addObject("jovem", jovem);
+		}
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		return modelAndView;
 	}
 
 	@PostMapping("/caracteristicaDomiciliar")
-	public ModelAndView save(@Valid CaracteristicasDomiciliares caracteristicasDomiciliares, BindingResult bindingResult) {
-		Long id = caracteristicasDomiciliares.getJovem().getId();
-		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
-		if (bindingResult.hasErrors()) {
-			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
-			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
+	public ModelAndView save(@Valid CaracteristicasDomiciliares caracteristicasDomiciliares, BindingResult bindingResult, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		Jovem jovem = jovemRepository.findOne(caracteristicasDomiciliares.getJovem().getId());
+		if (usuarioSessao.getGrupoDePermissoes().isCaracteristicasDomiciliaresVisualizar() == true) {
+			modelAndView = new ModelAndView("aprendizes/domiciliares/domiciliar");
+			if (bindingResult.hasErrors()) {
+				modelAndView.addObject("color", "orange");
+				modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
+				modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
+			} else {
+				caracteristicasDomiciliaresRepository.save(caracteristicasDomiciliares);
+				modelAndView.addObject("color", "#26a69a");
+				modelAndView.addObject("msg", "Operação realizada com sucesso!");
+				modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
+			}		
 		} else {
-			caracteristicasDomiciliaresRepository.save(caracteristicasDomiciliares);
-			modelAndView.addObject("msg", "Operação realizada com sucesso!");
-			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
-		}		
+			modelAndView = new ModelAndView("redirect:/sw/jovem/"+jovem.getId());			
+			
+		}
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		return modelAndView;
 	}
 
 	@GetMapping("/caracteristicaDomiciliar/{id}")
-	public ModelAndView load(@PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("aprendizes/domiciliares/domiciliar");
+	public ModelAndView load(@PathVariable("id") Long id, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
 		CaracteristicasDomiciliares caracteristicasDomiciliares = caracteristicasDomiciliaresRepository.findOne(id);
-		modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
-		List<String> auxiliosDoGoverno = this.enumService.carregarAuxiliosDoGoverno();
-		modelAndView.addObject("auxiliosDoGoverno", auxiliosDoGoverno);
-		List<String> escolaridades = this.enumService.carregarEscolaridades();
-		modelAndView.addObject("escolaridades", escolaridades);
+		Jovem jovem = jovemRepository.findOne(caracteristicasDomiciliares.getJovem().getId());
+		if (usuarioSessao.getGrupoDePermissoes().isCaracteristicasDomiciliaresVisualizar() == true) {
+			modelAndView = new ModelAndView("aprendizes/domiciliares/domiciliar");
+			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
+			List<String> auxiliosDoGoverno = this.enumService.carregarAuxiliosDoGoverno();
+			modelAndView.addObject("auxiliosDoGoverno", auxiliosDoGoverno);
+			List<String> escolaridades = this.enumService.carregarEscolaridades();
+			modelAndView.addObject("escolaridades", escolaridades);
+		} else {
+			modelAndView = new ModelAndView("redirect:/sw/jovem/"+jovem.getId());			
+			
+		}
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		return modelAndView;
 	}
 	
 	@PostMapping("/caracteristicaDomiciliar/{id}")
-	public ModelAndView update(@Valid CaracteristicasDomiciliares caracteristicasDomiciliares, BindingResult bindingResult) {
-		Long id = (long) 1;
-		ModelAndView modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
-		if (bindingResult.hasErrors()) {
-			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
-			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
+	public ModelAndView update(@Valid CaracteristicasDomiciliares caracteristicasDomiciliares, BindingResult bindingResult, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		Jovem jovem = jovemRepository.findOne(caracteristicasDomiciliares.getJovem().getId());
+		if (usuarioSessao.getGrupoDePermissoes().isCaracteristicasDomiciliaresVisualizar() == true) {
+			modelAndView = new ModelAndView("aprendizes/domiciliares/domiciliar");
+			if (bindingResult.hasErrors()) {
+				modelAndView.addObject("color", "orange");
+				modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
+				modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
+			} else {
+				caracteristicasDomiciliaresRepository.save(caracteristicasDomiciliares);
+				modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
+				modelAndView.addObject("color", "#26a69a");
+				modelAndView.addObject("msg", "Operação realizada com sucesso!");
+			}	
 		} else {
-			caracteristicasDomiciliaresRepository.save(caracteristicasDomiciliares);
-			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
-			modelAndView.addObject("msg", "Operação realizada com sucesso!");
-		}	
+			modelAndView = new ModelAndView("redirect:/sw/jovem/"+jovem.getId());			
+			
+		}
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		return modelAndView;
 	}
 	
 	@GetMapping("/caracteristicaDomiciliarJovem/{id}")
-	public ModelAndView caracteristicaDomiciliarJovem(@PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("aprendizes/domiciliares/domiciliar");
+	public ModelAndView caracteristicaDomiciliarJovem(@PathVariable("id") Long id, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
 		Jovem jovem = jovemRepository.findOne(id);
-		modelAndView.addObject("jovem", jovem);
-		if (caracteristicasDomiciliaresRepository.findByJovem(jovem) != null) {
-			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliaresRepository.findByJovem(jovem));
+		if (usuarioSessao.getGrupoDePermissoes().isCaracteristicasDomiciliaresVisualizar() == true) {
+			modelAndView = new ModelAndView("aprendizes/domiciliares/domiciliar");
+			modelAndView.addObject("jovem", jovem);
+			if (caracteristicasDomiciliaresRepository.findByJovem(jovem) != null) {
+				modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliaresRepository.findByJovem(jovem));
+			} else {
+				CaracteristicasDomiciliares caracteristicasDomiciliares = new CaracteristicasDomiciliares();
+				modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
+			}
+			List<String> auxiliosDoGoverno = this.enumService.carregarAuxiliosDoGoverno();
+			modelAndView.addObject("auxiliosDoGoverno", auxiliosDoGoverno);
+			List<String> escolaridades = this.enumService.carregarEscolaridades();
+			modelAndView.addObject("escolaridades", escolaridades);
 		} else {
-			CaracteristicasDomiciliares caracteristicasDomiciliares = new CaracteristicasDomiciliares();
-			modelAndView.addObject("caracteristicasDomiciliares", caracteristicasDomiciliares);
+			modelAndView = new ModelAndView("redirect:/sw/jovem/"+jovem.getId());			
+			
 		}
-		List<String> auxiliosDoGoverno = this.enumService.carregarAuxiliosDoGoverno();
-		modelAndView.addObject("auxiliosDoGoverno", auxiliosDoGoverno);
-		List<String> escolaridades = this.enumService.carregarEscolaridades();
-		modelAndView.addObject("escolaridades", escolaridades);
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		return modelAndView;
 	}
 	

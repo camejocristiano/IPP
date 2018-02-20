@@ -1,17 +1,13 @@
 package br.net.ipp.models.cursos;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.enums.Status;
 import br.net.ipp.enums.StatusPAP;
@@ -43,9 +39,7 @@ public class Curso  extends AbstractEntity {
       inverseJoinColumns = @JoinColumn(name = "especifico_id", 
       referencedColumnName = "id"))
 	private List<ConteudoTeoricoEspecifico> conteudosTeoricosEspecificos;
-	@Column(name = "dataDoCadastro")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy")  
-	private Date dataDoCadastro;
+	private String dataDoCadastro;
 	private boolean livre;
 	private boolean pap;
 	private StatusPAP statusPAP;
@@ -107,10 +101,10 @@ public class Curso  extends AbstractEntity {
 	public void setConteudosTeoricosEspecificos(List<ConteudoTeoricoEspecifico> conteudosTeoricosEspecificos) {
 		this.conteudosTeoricosEspecificos = conteudosTeoricosEspecificos;
 	}
-	public Date getDataDoCadastro() {
+	public String getDataDoCadastro() {
 		return dataDoCadastro;
 	}
-	public void setDataDoCadastro(Date dataDoCadastro) {
+	public void setDataDoCadastro(String dataDoCadastro) {
 		this.dataDoCadastro = dataDoCadastro;
 	}
 	public String getNomeDoCurso() {

@@ -1,12 +1,7 @@
 package br.net.ipp.models.aprendizes;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.models.AbstractEntity;
 
@@ -16,12 +11,8 @@ public class Escolaridade extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 
 	private String nomeDoCurso;
-	@Column(name = "dataConclusaoEnsinoMedio")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy")
-	private Date dataConclusaoEnsinoMedio;
-	@Column(name = "dataConclusaoCurso")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy")
-	private Date dataConclusaoCurso;
+	private String dataConclusaoEnsinoMedio;
+	private String dataConclusaoCurso;
 	private boolean concluiuOEnsinoMedio;
 	private String cursoEnsinoMedio;
 	private boolean frequentaAEscola;
@@ -36,16 +27,16 @@ public class Escolaridade extends AbstractEntity {
 	public void setNomeDoCurso(String nomeDoCurso) {
 		this.nomeDoCurso = nomeDoCurso;
 	}
-	public Date getDataConclusaoEnsinoMedio() {
+	public String getDataConclusaoEnsinoMedio() {
 		return dataConclusaoEnsinoMedio;
 	}
-	public void setDataConclusaoEnsinoMedio(Date dataConclusaoEnsinoMedio) {
+	public void setDataConclusaoEnsinoMedio(String dataConclusaoEnsinoMedio) {
 		this.dataConclusaoEnsinoMedio = dataConclusaoEnsinoMedio;
 	}
-	public Date getDataConclusaoCurso() {
+	public String getDataConclusaoCurso() {
 		return dataConclusaoCurso;
 	}
-	public void setDataConclusaoCurso(Date dataConclusaoCurso) {
+	public void setDataConclusaoCurso(String dataConclusaoCurso) {
 		this.dataConclusaoCurso = dataConclusaoCurso;
 	}
 	public boolean isConcluiuOEnsinoMedio() {

@@ -1,8 +1,6 @@
 package br.net.ipp.models.configuracoes;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 
 import br.net.ipp.enums.LocalDoArquivo;
 import br.net.ipp.models.AbstractEntity;
@@ -14,7 +12,6 @@ public class Arquivo extends AbstractEntity {
 
 	private String nomeDoArquivo;
 	private String url;
-	@Enumerated(EnumType.STRING)
 	private LocalDoArquivo localDoArquivo;
 
 	

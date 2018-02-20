@@ -26,12 +26,20 @@
     <div class="modal-content">
       <c:url value="/sw/usuario/foto/${usuario.id}" var="enviarImagem"></c:url>
 		<form method="POST" enctype="multipart/form-data" action="${enviarImagem}">
-			<table>
-				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
-				<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
-			</table>
+			<h3>Foto - Usuário</h3>
+			<hr />
+			<hr />
+			<div class="btn">
+		        <span>File</span>
+		        <input type="file" name="file" />
+		      </div>
+		      
+			<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+			    <i class="material-icons right">send</i>
+			  </button>
 		</form>
     </div>
+    <hr />
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
     </div>
@@ -42,7 +50,7 @@
 
     	<div class="row">
             <div class="input-field  s12 col l2">
-              <c:url value="/sw/arquivo/${usuario.foto}" var="usuarioPng"></c:url>
+              <c:url value="/sw/file/${usuario.foto}" var="usuarioPng"></c:url>
         	<!-- Modal Trigger -->
   			<a class="modal-trigger" href="#modal1">
               <img src="${usuarioPng}" alt="FOTO" width="175em" />
@@ -225,6 +233,14 @@
 								<a href="${swAlterarSenha}">Alterar Senha</a>
 							</c:if>
 							<input type="hidden" name="password" value="${usuario.password}" />
+							<br />
+							<br />
+							<form:select path="status">
+		                    	<form:option value="${usuario.status}" label="${usuario.status == null ? 'Status' : usuario.status}" />
+								<c:forEach var="status" items="${requestScope.status}">
+									<form:option value="${status}">${status}</form:option>							
+								</c:forEach>
+							</form:select>	
                         </div>
                 	</div><!-- // row -->
           
@@ -269,11 +285,17 @@
                     </div><!-- // col -->
                  </div><!-- // row -->
 				<br>
-			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.usuarioCadastrar == true || requestScope.usuarioSessao.grupoDePermissoes.usuarioEditar == true}">
-                  <button class="btn waves-effect waves-light right" type="submit">
-                    Salvar<i class="material-icons right">send</i>
-                  </button>
-            </c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.usuarioCadastrar == true && requestScope.usuario.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.usuarioEditar == true && requestScope.usuario.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
 
         </form:form>
 <br />

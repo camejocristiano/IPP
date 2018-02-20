@@ -1,12 +1,13 @@
 package br.net.ipp.models.configuracoes;
 
-import java.util.Date;
+import java.util.List;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.models.AbstractEntity;
 
@@ -15,53 +16,88 @@ public class Agendamento extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	@Column(name = "data")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date data;
+	private String data;
+	
+	private Integer dia;
+	private Integer mes;
+	private Integer ano;
+	private Integer hora;
+	private Integer minuto;
+	
+	private String titulo;
 	private String descricao;
-	private Date hora;
-	private String tempoPrevisto;
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "agendamento_usuario", 
+      joinColumns = @JoinColumn(name = "agendamento_id", referencedColumnName = "id"), 
+      inverseJoinColumns = @JoinColumn(name = "usuario_id", 
+      referencedColumnName = "id"))
+	private List<Usuario> usuariosEnvolvidos;
 	@ManyToOne
-	private Usuario usuario;
-
-	public Date getData() {
+	private Usuario usuarioResponsavel;
+	
+	
+	public String getData() {
 		return data;
 	}
-
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
-
+	public Integer getDia() {
+		return dia;
+	}
+	public void setDia(Integer dia) {
+		this.dia = dia;
+	}
+	public Integer getMes() {
+		return mes;
+	}
+	public void setMes(Integer mes) {
+		this.mes = mes;
+	}
+	public Integer getAno() {
+		return ano;
+	}
+	public void setAno(Integer ano) {
+		this.ano = ano;
+	}
+	public Integer getHora() {
+		return hora;
+	}
+	public void setHora(Integer hora) {
+		this.hora = hora;
+	}
+	public Integer getMinuto() {
+		return minuto;
+	}
+	public void setMinuto(Integer minuto) {
+		this.minuto = minuto;
+	}
+	public String getTitulo() {
+		return this.titulo;
+	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
 	public String getDescricao() {
 		return descricao;
 	}
-
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
-	public Date getHora() {
-		return hora;
+	public List<Usuario> getUsuariosEnvolvidos() {
+		return usuariosEnvolvidos;
 	}
-
-	public void setHora(Date hora) {
-		this.hora = hora;
+	public void setUsuariosEnvolvidos(List<Usuario> usuariosEnvolvidos) {
+		this.usuariosEnvolvidos = usuariosEnvolvidos;
 	}
-
-	public String getTempoPrevisto() {
-		return tempoPrevisto;
+	public Usuario getUsuarioResponsavel() {
+		return usuarioResponsavel;
 	}
-
-	public void setTempoPrevisto(String tempoPrevisto) {
-		this.tempoPrevisto = tempoPrevisto;
+	public void setUsuarioResponsavel(Usuario usuarioResponsavel) {
+		this.usuarioResponsavel = usuarioResponsavel;
 	}
-
-	public Usuario getUsuario() {
-		return usuario;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-
 }

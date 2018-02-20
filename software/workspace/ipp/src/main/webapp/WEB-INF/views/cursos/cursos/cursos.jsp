@@ -29,7 +29,9 @@
             <th>NOME</th>
             <th class="hide-on-small-only">Nome do Curso</th>
             <th class="hide-on-small-only">STATUS</th>
-            <th class="td-icon">EDITAR</th>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.cursoVisualizar == true}">
+            	<th class="td-icon">EDITAR</th>
+            </c:if>
           </tr>
         </thead>
         <tbody>
@@ -39,20 +41,24 @@
             <td>${curso.nomeDoCurso}</td>
             <td class="hide-on-small-only"></td>
             <td class="hide-on-small-only">${curso.status}</td>
-            <c:url value="/sw/homeCurso/${curso.id}" var="swCursoId"></c:url>
-            <td class="td-icon"><a href="${swCursoId}"><i class="material-icons" >border_color</i></a></td>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.cursoVisualizar == true}">
+            	<c:url value="/sw/homeCurso/${curso.id}" var="swCursoId"></c:url>
+            	<td class="td-icon"><a href="${swCursoId}"><i class="material-icons" >border_color</i></a></td>
+            </c:if>
           </tr>
           </c:forEach>
           </tbody>
           
       </table> 
       
-	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+	<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.cursoCadastrar == true}">
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
 			<c:url value="/sw/curso/form" var="swCursoForm"></c:url>
             <a class="btn-floating btn-large waves-effect waves-light orange" href="${swCursoForm}">
                 <i class="material-icons">add</i>
             </a>
          </div>
+        </c:if>
 
 	
 </div>

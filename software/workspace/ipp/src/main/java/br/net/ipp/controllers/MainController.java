@@ -33,7 +33,7 @@ public class MainController {
 	public ModelAndView indexSW(@AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
 		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
-		if (usuarioSessao.getStatus().equals(Status.ATIVO)) {
+		if (usuarioSessao.getStatus() != null && usuarioSessao.getStatus().equals(Status.ATIVO)) {
 			if (usuarioSessao.getGrupoDePermissoes().getStatus().equals(Status.ATIVO)) {
 				modelAndView = new ModelAndView("index");
 			} else {

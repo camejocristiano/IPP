@@ -6,29 +6,12 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../../partials/header.jsp"></c:import>
-
-<style>
-/*
- CSS INDEXES
-*/
-.btn-index:hover {
-	background-color: #669999;
-	font-weight: bolder;
-	font-style: italic;
-}
-.card-content:hover {
-	font-weight: bolder;
-	background-color: #669999;
-	font-style: italic;
-}
-</style>
-
 <c:import url="../../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/jovem/${jovem.id}">
+			<a href="/sw/fichaProfissional/home/${entrevista.jovem != null ? entrevista.jovem.id : jovem.id}">
 				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
 			</a>
 			<br />
@@ -45,7 +28,9 @@
     	<tr>
             <th>ID</th>
             <th>Motive</th>
-            <th class="td-icon">EDITAR</th>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.entrevistaVisualizar == true}">
+            	<th class="td-icon">EDITAR</th>
+            </c:if>
         </tr>
     </thead>
     <tbody>
@@ -53,42 +38,27 @@
         <tr>
             <td>${entrevista.id}</td>
             <td>${entrevista.motivo}</td>
-            <td class="td-icon"><a href="/sw/entrevista/${entrevista.id}"><i class="material-icons" >border_color</i></a></td>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.entrevistaVisualizar == true}">
+    			<c:url value="/sw/entrevista/${entrevista.id}" var="swEntrevistaId"></c:url>
+	        	<td class="td-icon"><a href="${swEntrevistaId}"><i class="material-icons" >border_color</i></a></td>
+	        </c:if>
         </tr>
     </c:forEach>
 	</tbody>
 </table>
 
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.entrevistaCadastrar == true}">
+	<c:url value="/sw/entrevistaJovem/${jovem.id}" var="swEntrevistaJovemId"></c:url>
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/sw/entrevistaJovem/${jovem.id}">
+                href="${swEntrevistaJovemId}">
                 <i class="material-icons">add</i>
             </a>
          </div>
-
+         </c:if>
+<br />
+<br />
 </div><!-- // container -->
 <c:import url="../../../../partials/js.jsp"></c:import>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-	$('.datepicker').pickadate({
-		monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-		monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-		weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
-		weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-		weekdaysLetter: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
-		today: 'Hoje',
-		clear: 'Limpar',
-		close: 'Pronto',
-		labelMonthNext: 'Próximo mês',
-		labelMonthPrev: 'Mês anterior',
-		labelMonthSelect: 'Selecione um mês',
-		labelYearSelect: 'Selecione um ano',
-		selectMonths: true,
-		selectYears: 99,
-	    format: 'dd/mm/yyyy' 
-	});
-</script>
 <c:import url="../../../../partials/footer.jsp"></c:import>
 <c:import url="../../../../partials/final.jsp"></c:import>

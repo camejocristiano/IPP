@@ -10,68 +10,56 @@
 
 <div class="container" id="main-container-content">
 	<div class="row">
-		<div class="input-field  s12 col l12" style="border-top: 2px solid orange;">
-			 <h4 class="header right orange-text">Situação de Saúde: <a class="header right" href="/jovens/${outroCurso.jovem != null ? outroCurso.jovem.id : jovem.id}">${outroCurso.jovem != null ? outroCurso.jovem.nome : jovem.nome}</a></h4>
-		</div>
+		<div class="col s12 l12">
+			<c:url value="/sw/jovem/${jovem.id}" var="swJovemJovemId"></c:url>
+			<a href="${swJovemJovemId}">
+				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
+			</a>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
 	</div>
-	<div class="row">
-		<form:form role="form" commandName="outroCurso" servletRelativeAction="/outrosCursos/${outroCurso.jovem != null ? outroCurso.id : null}" method="POST">
-		<div class="s12 col l12">	
+</div>
+	<c:url value="/sw/outroCurso/${outroCurso.jovem != null ? outroCurso.id : null}" var="swOutrosCursosJovem"></c:url>
+	<form:form role="form" commandName="outroCurso" servletRelativeAction="${swOutrosCursosJovem}" method="POST">
 			<div class="row">
-				<div class="s12 col l12">
-					${outroCurso.jovem != null ? outroCurso.jovem.nome : jovem.nome}
-					<hr />
-					<hr />
-				</div><!-- // col -->
-			</div><!-- // row -->
-			<div class="row">
-				<div class="s12 col l12">
+				<div class="input-field s12 col l12">
 					<form:input path='nomeDoCurso' type='text'/>
 					<form:errors path='nomeDoCurso'/> 
 					<label for="nomeDoCurso">Nome do curso:</label>
 				</div><!-- // col -->
 			</div><!-- // row -->
 			<div class="row">
-				<div class="s12 col l8">
+				<div class="input-field s12 col l8">
 					<form:input path='instituicao' type='text'/>
 					<form:errors path='instituicao'/> 
 					<label for="instituicao">Instituição:</label>
 				</div><!-- // col -->
-				<div class="s12 col l4">
-					<form:input id="dataDeConclusao" path="dataDeConclusao" type="date" class="validate datepicker" placeholder="Data da Conclusão" /> 
+				<div class="input-field s12 col l4">
+					<form:input id="dataDeConclusao" path="dataDeConclusao" type="text" class="validate datepicker" placeholder="Data da Conclusão" /> 
 					<form:label path="dataDeConclusao">Data de Conclusão</form:label>
 				</div><!-- // col -->
 			</div><!-- // row -->
-		</div><!-- // col -->
 			<form:hidden path="jovem" value="${jovem.id}" />
-			<button class="btn waves-effect waves-light right" type="submit">
-				Salvar<i class="material-icons right">send</i>
-			</button>
+
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.outroCursoCadastrar == true && requestScope.outroCurso.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.outroCursoEditar == true && requestScope.outroCurso.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
 		</form:form>
-	</div><!-- // row -->
+<br />
+<br />
 </div><!-- // container -->
 <c:import url="../../../../partials/js.jsp"></c:import>
-<script type="text/javascript">
-$(document).ready(function() {
-	$('select').material_select();
-});
-$('.datepicker').pickadate({
-	monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-	monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-	weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
-	weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-	weekdaysLetter: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
-	today: 'Hoje',
-	clear: 'Limpar',
-	close: 'Pronto',
-	labelMonthNext: 'Próximo mês',
-	labelMonthPrev: 'Mês anterior',
-	labelMonthSelect: 'Selecione um mês',
-	labelYearSelect: 'Selecione um ano',
-	selectMonths: true,
-	selectYears: 99,
-    format: 'dd/mm/yyyy' 
-});
-</script>
 <c:import url="../../../../partials/footer.jsp"></c:import>
 <c:import url="../../../../partials/final.jsp"></c:import>

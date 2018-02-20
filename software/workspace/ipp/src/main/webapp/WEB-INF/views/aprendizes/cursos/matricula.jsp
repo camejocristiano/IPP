@@ -13,7 +13,7 @@
 
 	<div class="row">
 		<div class="col s12 l12">
-			<c:url value="/sw/homeCurso/${curso.id}" var="swHomeCursoCursoId"></c:url>
+			<c:url value="/sw/matriculasJovem/${matricula.jovem.id}" var="swHomeCursoCursoId"></c:url>
 			<a href="${swHomeCursoCursoId}">
 				<h4 class="header right black-text">${curso.nomeDoCurso != null ? curso.nomeDoCurso : "Matrícula"}</h4>
 			</a>
@@ -27,15 +27,15 @@
 	</div>
 
 			<div class="row">
-				<div class="input-field s12 col l4">
+				<div class="input-field s12 col l12">
 				TURMA:
 	                ${requestScope.matricula.turma.numeroTurma}				
             	</div>
-            	<div class="input-field s12 col l4">
+            	<div class="input-field s12 col l12">
 	            JOVEM:
 	                ${requestScope.matricula.jovem.nome}
             	</div>
-            	<div class="input-field s12 col l4">
+            	<div class="input-field s12 col l12">
 	            STATUS:    
 	                ${requestScope.matricula.statusDaMatricula}            		
             	</div>

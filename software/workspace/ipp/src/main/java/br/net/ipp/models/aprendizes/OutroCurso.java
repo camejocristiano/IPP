@@ -1,12 +1,7 @@
 package br.net.ipp.models.aprendizes;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.models.AbstractEntity;
 
@@ -15,24 +10,22 @@ public class OutroCurso extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	@Column(name = "dataDeConclusao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy")
-	private Date dataDeConclusao;
+	private String dataDeConclusao;
 	private String instituicao;
 	private String nomeDoCurso;
 	@ManyToOne
 	private Jovem jovem;
 	
-	public Date getDataDeConclusao() {
+	public String getDataDeConclusao() {
 		return dataDeConclusao;
 	}
-	public void setDataDeConclusao(Date dataDeConclusao) {
+	public void setDataDeConclusao(String dataDeConclusao) {
 		this.dataDeConclusao = dataDeConclusao;
 	}
-	public Date getData() {
+	public String getData() {
 		return dataDeConclusao;
 	}
-	public void setData(Date dataDeConclusao) {
+	public void setData(String dataDeConclusao) {
 		this.dataDeConclusao = dataDeConclusao;
 	}
 	public String getInstituicao() {

@@ -93,7 +93,7 @@ public class GrupoDePermissoesController {
 				modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			} else {
 				grupoDePermissoesRepository.save(grupoDePermissoes);
-				modelAndView.addObject("color", "green");
+				modelAndView.addObject("color", "#26a69a");
 				modelAndView.addObject("msg", "Operação realizada com sucesso!");
 			}
 		} else {
@@ -128,13 +128,13 @@ public class GrupoDePermissoesController {
 		if (usuarioSessao.getGrupoDePermissoes().isGrupoDePermissoesEditar() == true) {
 			if (bindingResult.hasErrors()) {
 				modelAndView.addObject("color", "orange");
-				modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
+				modelAndView.addObject("msg", "Algo saiu errado!");
 			} else {
 				List<String> status = this.enumService.carregarStatus();
 				modelAndView.addObject("unidades", unidadesRepository.findAll());
 				modelAndView.addObject("status", status);
 				grupoDePermissoesRepository.save(grupoDePermissoes);
-				modelAndView.addObject("color", "green");
+				modelAndView.addObject("color", "#26a69a");
 				modelAndView.addObject("msg", "Operação realizada com sucesso!");
 			}
 			modelAndView.addObject("grupoDePermissoes", grupoDePermissoes);

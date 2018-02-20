@@ -1,6 +1,9 @@
 package br.net.ipp.models.configuracoes;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -65,6 +68,9 @@ public class Usuario extends User {
 	private String observacoes;
 	@ManyToOne
 	private Unidade unidade;
+	
+	@ManyToMany(mappedBy = "usuariosEnvolvidos")
+	private List<Agendamento> agendamentos;
 
 	public String getNome() {
 		return nome;
@@ -352,6 +358,14 @@ public class Usuario extends User {
 
 	public void setUnidade(Unidade unidade) {
 		this.unidade = unidade;
+	}
+
+	public List<Agendamento> getAgendamentos() {
+		return agendamentos;
+	}
+
+	public void setAgendamentos(List<Agendamento> agendamentos) {
+		this.agendamentos = agendamentos;
 	}
 
 }

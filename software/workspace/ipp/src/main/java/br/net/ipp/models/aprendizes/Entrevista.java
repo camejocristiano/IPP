@@ -1,12 +1,7 @@
 package br.net.ipp.models.aprendizes;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.models.AbstractEntity;
 import br.net.ipp.models.empresas.Empresa;
@@ -19,9 +14,7 @@ public class Entrevista extends AbstractEntity {
 	private String motivo;
 	private boolean aprovadoNaEntrevista;
 	private boolean retomando;
-	@Column(name = "dataDaEntrevista")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataDaEntrevista;
+	private String dataDaEntrevista;
 	@ManyToOne
 	private Empresa empresaParaEntrevista;
 	@ManyToOne
@@ -50,10 +43,10 @@ public class Entrevista extends AbstractEntity {
 	public void setAprovadoNaEntrevista(boolean aprovadoNaEntrevista) {
 		this.aprovadoNaEntrevista = aprovadoNaEntrevista;
 	}
-	public Date getDataDaEntrevista() {
+	public String getDataDaEntrevista() {
 		return dataDaEntrevista;
 	}
-	public void setDataDaEntrevista(Date dataDaEntrevista) {
+	public void setDataDaEntrevista(String dataDaEntrevista) {
 		this.dataDaEntrevista = dataDaEntrevista;
 	}
 	public Empresa getEmpresaParaEntrevista() {

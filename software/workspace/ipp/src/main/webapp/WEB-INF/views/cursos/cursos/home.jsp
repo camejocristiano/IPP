@@ -21,6 +21,12 @@
 	
 	<div class="row">
 	
+		<c:if test="${
+			usuarioSessao.grupoDePermissoes.cursoCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.cursoVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.cursoEditar == true ||
+			usuarioSessao.grupoDePermissoes.cursoListar == true			
+				}">
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
 				<c:url value="/sw/curso/${curso.id}" var="swCursoId"></c:url>
@@ -38,14 +44,21 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
+		<c:if test="${
+			usuarioSessao.grupoDePermissoes.matriculaCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.matriculaVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.matriculaEditar == true ||
+			usuarioSessao.grupoDePermissoes.matriculaListar == true			
+				}">
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
-				<c:url value="/sw/matriculas/${curso.id}" var="swMatriculaCursoId"></c:url>
-				<a href="${swMatriculaCursoId}">
+				<c:url value="/sw/matriculas/${curso.id}" var="swMatriculasCursoId"></c:url>
+				<a href="${swMatriculasCursoId}">
 					<div class="card-content white-text">
 						<span class="card-title">Matrículas<i
 							class="material-icons right" style="color: #eee !important;">bookmark_border</i></span>
-						<p>Manutenção das Matrículas</p>
+						<p>Matrículas do Curso</p>
 					</div>
 				</a> 
 				<c:url value="/sw/novaMatricula/${curso.id}" var="swNovaMatriculaCursoId"></c:url>
@@ -56,6 +69,13 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
+		<c:if test="${
+			usuarioSessao.grupoDePermissoes.turmaCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.turmaVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.turmaEditar == true ||
+			usuarioSessao.grupoDePermissoes.turmaListar == true			
+				}">
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
 				<c:url value="/sw/turmas/${curso.id}" var="swTurmaCursoId"></c:url>
@@ -74,6 +94,13 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
+		<c:if test="${
+			usuarioSessao.grupoDePermissoes.validacaoCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.validacaoVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.validacaoEditar == true ||
+			usuarioSessao.grupoDePermissoes.validacaoListar == true			
+				}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
 	    		<c:url value="/sw/validacoesCurso/${curso.id}" var="swValidacoesCursoCursoId"></c:url>
@@ -91,6 +118,7 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
 	
 	</div>  
 	

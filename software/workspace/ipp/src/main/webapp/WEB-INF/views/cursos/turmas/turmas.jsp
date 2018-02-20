@@ -37,7 +37,9 @@
 			<th>HORA_DE_TÉRMINO</th>
 			<th>DATA_DE_INÍCIO</th>
 			<th>DATA_DE_TÉRMINO</th>
-			<th class="td-icon">EDITAR</th>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.turmaVisualizar == true}">
+				<th class="td-icon">EDITAR</th>
+			</c:if>
 		</tr>
 	</thead>
 	<tbody>
@@ -50,19 +52,28 @@
 				<td>${turma.horaFimTurma}</td>
 				<td>${turma.dataInicioTurma}</td>
 				<td>${turma.dataFimTurma}</td>
-				<td class="td-icon"><a href="/sw/turma/${turma.id}"><i
-						class="material-icons">border_color</i></a></td>
+				<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.turmaVisualizar == true}">
+				<c:url value="/sw/turma/${turma.id}" var="swIurmaId"></c:url>
+					<td class="td-icon"><a href="${swIurmaId}"><i
+							class="material-icons">border_color</i></a></td>
+				</c:if>
 			</tr>
 		</c:forEach>
 	</tbody>
 
 </table>
 
+<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.turmaCadastrar == true}">
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+<c:url value="/sw/turmaForm/${curso.id}" var="swTurmaFormId"></c:url>
 	<a class="btn-floating btn-large waves-effect waves-light orange"
-		href="/sw/turmaForm/${curso.id}"> <i class="material-icons">add</i>
+		href="${swTurmaFormId}"> <i class="material-icons">add</i>
 	</a>
 </div>
+</c:if>
+
+<br />
+<br />
 
 	</div>
 <c:import url="../../../partials/js.jsp"></c:import>

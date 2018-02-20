@@ -28,6 +28,7 @@
           <tr>
             <th>ID</th>
             <th>NOME DO CANAL</th>
+            <c:if test="${usuarioSessao.grupoDePermissoes.canalVisualizar == true}"></c:if>
             <th class="td-icon">EDITAR</th>
           </tr>
         </thead>
@@ -36,19 +37,23 @@
           <tr>
             <td>${canal.id}</td>
             <td>${canal.nomeCanal}</td>
-            <td class="td-icon"><a href="/sw/canais/${canal.id}"><i class="material-icons" >border_color</i></a></td>
+            <c:if test="${usuarioSessao.grupoDePermissoes.canalVisualizar == true}">
+            	<td class="td-icon"><a href="/sw/canal/${canal.id}"><i class="material-icons" >border_color</i></a></td>
+          	</c:if>
           </tr>
           </c:forEach>
           </tbody>
           
       </table> 
-      
-	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+
+      <c:if test="${usuarioSessao.grupoDePermissoes.canalVisualizar == true}">      
+		<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a class="btn-floating btn-large waves-effect waves-light orange"
-                href="/sw/canais/form">
+                href="/sw/canal/form">
                 <i class="material-icons">add</i>
             </a>
          </div>
+         </c:if>
          
          
 	</div>  

@@ -51,9 +51,18 @@
 			<br />
 			<br />
 			<form:hidden path="jovem" value="${jovem.id}" />
-			<button class="btn waves-effect waves-light right" type="submit">
-				Salvar<i class="material-icons right">send</i>
-			</button>
+			
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.situacaoLaboralCadastrar == true && requestScope.situacaoLaboral.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.situacaoLaboralEditar == true && requestScope.situacaoLaboral.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
 		</form:form>
 		<br />
 		<br />

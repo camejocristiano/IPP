@@ -1,12 +1,7 @@
 package br.net.ipp.models.aprendizes;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.models.AbstractEntity;
 
@@ -15,27 +10,24 @@ public class JaFoiAprendiz extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	@Column(name = "dataInicio")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataInicio;
-	@Column(name = "dataDeFim")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataDeFim;
+	private String dataInicio;
+	private String dataDeFim;
 	private boolean varJaFoiAprendiz;
 	@ManyToOne
 	private Jovem jovem;
+	private String dias;
 	
 	
-	public Date getDataInicio() {
+	public String getDataInicio() {
 		return dataInicio;
 	}
-	public void setDataInicio(Date dataInicio) {
+	public void setDataInicio(String dataInicio) {
 		this.dataInicio = dataInicio;
 	}
-	public Date getDataDeFim() {
+	public String getDataDeFim() {
 		return dataDeFim;
 	}
-	public void setDataDeFim(Date dataDeFim) {
+	public void setDataDeFim(String dataDeFim) {
 		this.dataDeFim = dataDeFim;
 	}
 	public boolean isVarJaFoiAprendiz() {
@@ -49,6 +41,12 @@ public class JaFoiAprendiz extends AbstractEntity {
 	}
 	public void setJovem(Jovem jovem) {
 		this.jovem = jovem;
+	}
+	public String getDias() {
+		return dias;
+	}
+	public void setDias(String dias) {
+		this.dias = dias;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

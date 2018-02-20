@@ -1,12 +1,7 @@
 package br.net.ipp.models.cursos;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.enums.StatusValidacao;
 import br.net.ipp.enums.TipoDeValidacao;
@@ -17,36 +12,30 @@ public class Validacao extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	@Column(name = "dataDaSolicitacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataDaSolicitacao;
-	@Column(name = "dataDaValidacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataDaValidacao;
-	@Column(name = "dataDeEnvio")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataDeEnvio;
+	private String dataDaSolicitacao;
+	private String dataDaValidacao;
+	private String dataDeEnvio;
 	private TipoDeValidacao tipoDeValidacao;
 	private StatusValidacao statusValidacao;
 	@ManyToOne
 	private Curso curso;
 
-	public Date getDataDaSolicitacao() {
+	public String getDataDaSolicitacao() {
 		return dataDaSolicitacao;
 	}
-	public void setDataDaSolicitacao(Date dataDaSolicitacao) {
+	public void setDataDaSolicitacao(String dataDaSolicitacao) {
 		this.dataDaSolicitacao = dataDaSolicitacao;
 	}
-	public Date getDataDaValidacao() {
+	public String getDataDaValidacao() {
 		return dataDaValidacao;
 	}
-	public void setDataDaValidacao(Date dataDaValidacao) {
+	public void setDataDaValidacao(String dataDaValidacao) {
 		this.dataDaValidacao = dataDaValidacao;
 	}
-	public Date getDataDeEnvio() {
+	public String getDataDeEnvio() {
 		return dataDeEnvio;
 	}
-	public void setDataDeEnvio(Date dataDeEnvio) {
+	public void setDataDeEnvio(String dataDeEnvio) {
 		this.dataDeEnvio = dataDeEnvio;
 	}
 	public TipoDeValidacao getTipoDeValidacao() {

@@ -23,14 +23,15 @@
 	</div>
 </div>
 
-
 <table id="tabelaAgendamentos" class="display">
         <thead>
           <tr>
             <th>ID</th>
             <th>TÍTULO</th>
             <th>HORA AULA</th>
-            <th class="td-icon">EDITAR</th>
+     		<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.especificoVisualizar == true}">
+            	<th class="td-icon">EDITAR</th>
+            </c:if>
           </tr>
         </thead>
         <tbody>
@@ -39,21 +40,23 @@
             <td>${especifico.id}</td>
             <td>${especifico.titulo}</td>
             <td>${especifico.horaAula}</td>
-            <c:url value="/sw/especificos/${especifico.id}" var="swEspecificoId"></c:url>
-            <td class="td-icon"><a href="${swEspecificoId}"><i class="material-icons" >border_color</i></a></td>
+     		<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.especificoVisualizar == true}">
+            	<c:url value="/sw/especifico/${especifico.id}" var="swEspecificoId"></c:url>
+            	<td class="td-icon"><a href="${swEspecificoId}"><i class="material-icons" >border_color</i></a></td>
+            </c:if>
           </tr>
           </c:forEach>
           </tbody>
           
       </table> 
-      
+      <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.especificoCadastrar == true}">
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-			<c:url value="/sw/especificos/form" var="swEspecificoForm"></c:url>
+			<c:url value="/sw/especifico/form" var="swEspecificoForm"></c:url>
             <a class="btn-floating btn-large waves-effect waves-light orange" href="${swEspecificoForm}">
                 <i class="material-icons">add</i>
             </a>
          </div>
-         
+         </c:if>
         
 <br />
 <br />

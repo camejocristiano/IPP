@@ -11,7 +11,7 @@
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<c:url value="/sw/jovem/${jovem.id}" var="swJovemJovemId"></c:url>
+			<c:url value="/sw/jovem/${dadosFinanceiros.jovem == null ? jovem.id : dadosFinanceiros.jovem.id}" var="swJovemJovemId"></c:url>
 			<a href="${swJovemJovemId}">
 				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
 			</a>
@@ -125,13 +125,9 @@
 								<div class="col s12 l8">
 									Usa vale refeição?
 								</div>
-								<div class="col s6 l2">
+								<div class="col s6 l4">
 									<input type="checkbox" name="valeRefeicao_usaValeRefeicao" class="filled-in" id="valeRefeicao_usaValeRefeicao" <c:if test="${dadosFinanceiros.valeRefeicao_usaValeRefeicao == true}">checked</c:if> />
 									<label for="valeRefeicao_usaValeRefeicao">Sim</label>
-								</div>
-								<div class="col s6 l2">
-									<input type="checkbox" class="filled-in" id="valeRefeicao_nao_usaValeRefeicao" <c:if test="${dadosFinanceiros.valeRefeicao_usaValeRefeicao == false}">checked</c:if> />
-									<label for="valeRefeicao_nao_usaValeRefeicao">Não</label>
 								</div>
 							</div>
 							<div class="row">
@@ -238,13 +234,9 @@
 								<div class="col s12 l8">
 									Usa vale Alimentação?
 								</div>
-								<div class="col s6 l2">
+								<div class="col s6 l4">
 									<input type="checkbox" name="valeAlimentacao_usa" class="filled-in" id="valeAlimentacao_usa" <c:if test="${dadosFinanceiros.valeAlimentacao_usa == true}">checked</c:if> />
 									<label for="valeAlimentacao_usa">Sim</label>
-								</div>
-								<div class="col s6 l2">
-									<input type="checkbox" class="filled-in" id="valeAlimentacao_nao_usa" <c:if test="${dadosFinanceiros.valeAlimentacao_usa == false}">checked</c:if> />
-									<label for="valeAlimentacao_nao_usa">Não</label>
 								</div>
 							</div>
 							<div class="row">
@@ -308,13 +300,9 @@
 								</div>
 								<div class="s12 col l4">
 									<div class="row">
-										<div class="col s6">
+										<div class="col s12">
 											<input type="checkbox" name="valeTransporteEmpresaTrabalho_usa" class="filled-in" id="valeTransporteEmpresaTrabalho_usa" <c:if test="${dadosFinanceiros.valeTransporteEmpresaTrabalho_usa == true}">checked</c:if> />
 											<label for="valeTransporteEmpresaTrabalho_usa">Sim</label>
-										</div>
-										<div class="col s6">
-											<input type="checkbox" class="filled-in" id="valeTransporteEmpresaTrabalho_nao_usa" <c:if test="${dadosFinanceiros.valeTransporteEmpresaTrabalho_usa == false}">checked</c:if> />
-											<label for="valeTransporteEmpresaTrabalho_nao_usa">Não</label>
 										</div>
 									</div>
 								</div><!-- // col -->
@@ -330,7 +318,7 @@
 											<label for="valeTransporteEmpresaTrabalho_metro">Metrô</label>
 										</div>
 										<div class="input-field s12 col l6">
-											<form:input path="valeTransporteEmpresaTrabalho_metroValor"/>
+											<form:input path="valeTransporteEmpresaTrabalho_metroValor" type="text" />
 											<form:label path="valeTransporteEmpresaTrabalho_metroValor">R$</form:label>
 										</div>
 										<div class="s12 col l6">
@@ -406,13 +394,9 @@
 										</div>
 										<div class="s12 col l4">
 											<div class="row">
-												<div class="col s6">
+												<div class="col s12">
 													<input type="checkbox" name="valeTransporteEmpresaTrabalho_usa" class="filled-in" id="valeTransporteEmpresaTrabalho_usa" <c:if test="${dadosFinanceiros.valeTransporteEmpresaTrabalho_usa == true}">checked</c:if> />
 													<label for="valeTransporteEmpresaTrabalho_usa">Sim</label>
-												</div>
-												<div class="col s6">
-													<input type="checkbox" class="filled-in" id="valeTransporteEmpresaTrabalho_nao_usa" <c:if test="${dadosFinanceiros.valeTransporteEmpresaTrabalho_usa == false}">checked</c:if> />
-													<label for="valeTransporteEmpresaTrabalho_nao_usa">Não</label>
 												</div>
 											</div>
 										</div>
@@ -501,13 +485,9 @@
 							<div class="row">
 								<div class="s12 col l4">
 									<div class="row">
-										<div class="col s6">
+										<div class="col s12">
 											<input type="checkbox" name="assistenciaMedica_possui" class="filled-in" id="assistenciaMedica_possui" <c:if test="${dadosFinanceiros.assistenciaMedica_possui == true}">checked</c:if> />
 											<label for="assistenciaMedica_possui">Sim</label>
-										</div>
-										<div class="col s6">
-											<input type="checkbox" class="filled-in" id="assistenciaMedica_nao_possui" <c:if test="${dadosFinanceiros.assistenciaMedica_possui == false}">checked</c:if> />
-											<label for="assistenciaMedica_nao_possui">Não</label>
 										</div>
 									</div>
 								</div><!-- // col -->
@@ -536,13 +516,9 @@
 							<div class="row">
 								<div class="s12 col l4">
 									<div class="row">
-										<div class="col s6">
+										<div class="col s12">
 											<input type="checkbox" name="assistenciaOdontologica_possui" class="filled-in" id="assistenciaOdontologica_possui" <c:if test="${dadosFinanceiros.assistenciaOdontologica_possui == true}">checked</c:if> />
 											<label for="assistenciaOdontologica_possui">Sim</label>
-										</div>
-										<div class="col s6">
-											<input type="checkbox" class="filled-in" id="assistenciaOdontologica_nao_possui" <c:if test="${dadosFinanceiros.assistenciaOdontologica_possui == false}">checked</c:if> />
-											<label for="assistenciaOdontologica_nao_possui">Não</label>
 										</div>
 									</div>
 								</div><!-- // col -->
@@ -574,9 +550,18 @@
 				</div><!-- // col Down -->
 			</div><!-- // row Down -->
 			<hr /><hr /><br />
-			<button class="btn waves-effect waves-light right" type="submit">
-				Salvar<i class="material-icons right">send</i>
-			</button>	
+			<form:hidden path="jovem" value="${dadosFinanceiros.jovem == null ? jovem.id : dadosFinanceiros.jovem.id}" />
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.arcoCadastrar == true && requestScope.arcoOcupacional.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.arcoEditar == true && requestScope.arcoOcupacional.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
 		</form:form>
 		<br />
 		<br />

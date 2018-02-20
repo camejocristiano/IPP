@@ -23,8 +23,8 @@
 			<br />
 	</div>
 </div>
-
-		<form:form role="form" commandName="fichaSocial" servletRelativeAction="/sw/fichaSocial/${fichaSocial.id}" method="POST">
+		<c:url value="/sw/fichaSocial/${fichaSocial.jovem != null ? fichaSocial.id : null}" var="swFichaSocialId"></c:url>
+		<form:form role="form" commandName="fichaSocial" servletRelativeAction="${swFichaSocialId}" method="POST">
 			<div class="row">
 				<div class="input-field s12 col l12">
 					<div class="row">
@@ -121,7 +121,7 @@
 				</div><!-- // col -->
 			</div><!-- // row -->
 			<div class="row">
-				<div class="input-field s12 col l12">
+				<div class="s12 col l12">
 				Situação Sócio Cultural
 				<hr />
 				<hr />
@@ -133,7 +133,7 @@
 						</div><!-- // col -->
 					</div><!-- // row -->
 					<div class="row">
-						<div class="input-field s12 col l12">
+						<div class="s12 col l12">
 							<input type="checkbox" name="jaRepetiuDeAno" class="filled-in" id="jaRepetiuDeAno" <c:if test="${fichaSocial.jaRepetiuDeAno == true}">checked</c:if> />
 							<label for="jaRepetiuDeAno">Já repetiu de ano?</label>
 						</div><!-- // col -->
@@ -146,7 +146,7 @@
 						</div><!-- // col -->
 					</div><!-- // row -->
 					<div class="row">
-						<div class="input-field s12 col l12">
+						<div class="s12 col l12">
 							<input type="checkbox" name="temDificuldadesEmAlgumaMateria" class="filled-in" id="temDificuldadesEmAlgumaMateria" <c:if test="${fichaSocial.temDificuldadesEmAlgumaMateria == true}">checked</c:if> />
 							<label for="temDificuldadesEmAlgumaMateria">Tem dificuldade em alguma matéria?</label>
 						</div><!-- // col -->
@@ -308,9 +308,18 @@
 					</div><!-- // row -->
 				</div><!-- // col -->
 			</div><!-- // row -->
-			<button class="btn waves-effect waves-light right" type="submit">
-				Salvar<i class="material-icons right">send</i>
-			</button>
+			
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.fichaSocialCadastrar == true && requestScope.fichaSocial.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.fichaSocialEditar == true && requestScope.fichaSocial.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
 		</form:form>
 	<br />
 	<br />

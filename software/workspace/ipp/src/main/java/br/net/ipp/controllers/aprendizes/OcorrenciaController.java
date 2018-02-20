@@ -1,13 +1,13 @@
 package br.net.ipp.controllers.aprendizes;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,102 +19,162 @@ import org.springframework.web.servlet.ModelAndView;
 import br.net.ipp.daos.aprendizes.JovemRepository;
 import br.net.ipp.daos.aprendizes.OcorrenciaRepository;
 import br.net.ipp.daos.configuracoes.UsuarioRepository;
-import br.net.ipp.enums.TipoDeOcorrencia;
 import br.net.ipp.models.aprendizes.Jovem;
 import br.net.ipp.models.aprendizes.Ocorrencia;
+import br.net.ipp.models.configuracoes.Usuario;
+import br.net.ipp.services.EnumService;
 
 @Controller
 @Transactional
-@RequestMapping("/ocorrencias")
+@RequestMapping("/sw")
 public class OcorrenciaController {
 
 	private OcorrenciaRepository ocorrenciaRepository;
 	private JovemRepository jovemRepository;
 	private UsuarioRepository usuarioRepository;
+	private EnumService enumService;
 	
 	@Autowired
-	public void OcorrenciaEndPoint(
+	public OcorrenciaController(
 			OcorrenciaRepository ocorrenciaRepository,
 			UsuarioRepository usuarioRepository,
-			JovemRepository jovemRepository
+			JovemRepository jovemRepository,
+			EnumService enumService
 			) {
 		this.ocorrenciaRepository = ocorrenciaRepository;
 		this.jovemRepository = jovemRepository;
 		this.usuarioRepository = usuarioRepository;
+		this.enumService = new EnumService();
 	}
 
-	@GetMapping("/form")
-	public ModelAndView ocorrencia(Ocorrencia ocorrencia) {
-		ModelAndView modelAndView = new ModelAndView("aprendizes/historicos/ocorrencias/form");
-		modelAndView.addObject("ocorrencia", ocorrencia);
-		Jovem jovem = jovemRepository.findOne((long)1);
-		modelAndView.addObject("jovem", jovem);
-		modelAndView.addObject("usuarios", usuarioRepository.findAll());
-		List<String> tiposDeOcorrencias = this.carregarTipoDeOcorrencia();
-		modelAndView.addObject("tiposDeOcorrencias", tiposDeOcorrencias);	
-		return modelAndView;
-	}
-	
-	@GetMapping("/form/{id}")
-	public ModelAndView ocorrenciaJovem(@PathVariable Long id, Ocorrencia ocorrencia) {
-		ModelAndView modelAndView = new ModelAndView("aprendizes/historicos/ocorrencias/ocorrencia");
-		modelAndView.addObject("ocorrencia", ocorrencia);
+	@GetMapping("/ocorrencias/{id}")
+	public ModelAndView ocorrenciasJovem(@PathVariable Long id, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
 		Jovem jovem = jovemRepository.findOne(id);
-		modelAndView.addObject("jovem", jovem);
-		modelAndView.addObject("usuarios", usuarioRepository.findAll());
-		List<String> tiposDeOcorrencias = this.carregarTipoDeOcorrencia();
-		modelAndView.addObject("tiposDeOcorrencias", tiposDeOcorrencias);
-		return modelAndView;
-	}
-
-	@PostMapping
-	public ModelAndView save(@Valid Ocorrencia ocorrencia, BindingResult bindingResult) {
-		Long id = ocorrencia.getJovem().getId();
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
-		if (bindingResult.hasErrors()) {
-			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
-			modelAndView.addObject("ocorrencia", ocorrencia);
+		if (usuarioSessao.getGrupoDePermissoes().isOcorrenciaListar() == true) {
+			modelAndView = new ModelAndView("aprendizes/historicos/ocorrencias/ocorrencias");
+			modelAndView.addObject("jovem", jovem);
+			List<String> tiposDeOcorrencias = this.enumService.carregarTipoDeOcorrencia();
+			modelAndView.addObject("tiposDeOcorrencias", tiposDeOcorrencias);
+			modelAndView.addObject("ocorrencias", ocorrenciaRepository.findAllByJovem(jovem));
 		} else {
-			ocorrenciaRepository.save(ocorrencia);
-			modelAndView.addObject("msg", "Operação realizada com sucesso!");
-			modelAndView.addObject("ocorrencia", ocorrencia);
-		}		
-		return modelAndView;
-	}
-
-	@GetMapping("/{id}")
-	public ModelAndView load(@PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("aprendizes/historicos/ocorrencias/ocorrencia");
-		Ocorrencia ocorrencia = ocorrenciaRepository.findOne(id);
-		modelAndView.addObject("ocorrencia", ocorrencia);
-		modelAndView.addObject("usuarios", usuarioRepository.findAll());
-		List<String> tiposDeOcorrencias = this.carregarTipoDeOcorrencia();
-		modelAndView.addObject("tiposDeOcorrencias", tiposDeOcorrencias);
-		return modelAndView;
-	}
-	
-	@PostMapping("/{id}")
-	public ModelAndView update(@Valid Ocorrencia ocorrencia, BindingResult bindingResult) {
-		Long id = ocorrencia.getJovem().getId();
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
-		if (bindingResult.hasErrors()) {
-			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
-			modelAndView.addObject("ocorrencia", ocorrencia);
-		} else {
-			ocorrenciaRepository.save(ocorrencia);
-			modelAndView.addObject("ocorrencia", ocorrencia);
-			modelAndView.addObject("msg", "Operação realizada com sucesso!");
-		}	
-		return modelAndView;
-	}
-	
-	public List<String> carregarTipoDeOcorrencia() {
-		List<TipoDeOcorrencia> lista = Arrays.asList(TipoDeOcorrencia.values());
-		List<String> tiposDeOcorrencias = new ArrayList<String>();
-		for (int i = 0; i < lista.size(); i++) {
-			tiposDeOcorrencias.add(lista.get(i).name());
+			modelAndView = new ModelAndView("redirect:/sw/fichaProfissional/home/"+jovem.getId());
 		}
-		return tiposDeOcorrencias;
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
+		return modelAndView;
+	}
+	
+	@GetMapping("/ocorrencia/form")
+	public ModelAndView ocorrencia(Ocorrencia ocorrencia, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		if (usuarioSessao.getGrupoDePermissoes().isOcorrenciaCadastrar() == true) {
+			modelAndView = new ModelAndView("aprendizes/historicos/ocorrencias/form");
+			modelAndView.addObject("ocorrencia", ocorrencia);
+			modelAndView.addObject("usuarios", usuarioRepository.findAll());
+			List<String> tiposDeOcorrencias = this.enumService.carregarTipoDeOcorrencia();
+			modelAndView.addObject("tiposDeOcorrencias", tiposDeOcorrencias);	
+		} else {
+			modelAndView = new ModelAndView("redirect:/sw/jovens");
+		}
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
+		return modelAndView;
+	}
+	
+	@GetMapping("/ocorrencia/form/{id}")
+	public ModelAndView ocorrenciaJovem(@PathVariable Long id, Ocorrencia ocorrencia, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		Jovem jovem = jovemRepository.findOne(id);
+		if (usuarioSessao.getGrupoDePermissoes().isOcorrenciaCadastrar() == true) {
+			modelAndView = new ModelAndView("aprendizes/historicos/ocorrencias/ocorrencia");
+			modelAndView.addObject("ocorrencia", ocorrencia);
+			modelAndView.addObject("jovem", jovem);
+			modelAndView.addObject("usuarios", usuarioRepository.findAll());
+			List<String> tiposDeOcorrencias = this.enumService.carregarTipoDeOcorrencia();
+			modelAndView.addObject("tiposDeOcorrencias", tiposDeOcorrencias);
+		} else {
+			modelAndView = new ModelAndView("redirect:/sw/fichaProfissional/home/"+jovem.getId());
+		}
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
+		return modelAndView;
+	}
+
+	@PostMapping("/ocorrencia")
+	public ModelAndView save(@Valid Ocorrencia ocorrencia, BindingResult bindingResult, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		Jovem jovem = jovemRepository.findOne(ocorrencia.getJovem().getId());
+		if (usuarioSessao.getGrupoDePermissoes().isOcorrenciaCadastrar() == true) {
+			modelAndView = new ModelAndView("aprendizes/historicos/ocorrencias/ocorrencia");
+			if (bindingResult.hasErrors()) {
+				modelAndView.addObject("color", "orange");
+				modelAndView.addObject("msg", "Algo saiu errado!");
+				modelAndView.addObject("ocorrencia", ocorrencia);
+			} else {
+				ocorrenciaRepository.save(ocorrencia);
+				modelAndView.addObject("color", "#26a69a");
+				modelAndView.addObject("msg", "Operação realizada com sucesso!");
+				modelAndView.addObject("ocorrencia", ocorrencia);
+			}		
+		} else {
+			modelAndView = new ModelAndView("redirect:/sw/fichaProfissional/home/"+jovem.getId());
+		}
+		List<String> tiposDeOcorrencias = this.enumService.carregarTipoDeOcorrencia();
+		modelAndView.addObject("tiposDeOcorrencias", tiposDeOcorrencias);
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
+		return modelAndView;
+	}
+
+	@GetMapping("/ocorrencia/{id}")
+	public ModelAndView load(@PathVariable("id") Long id, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		Ocorrencia ocorrencia = ocorrenciaRepository.findOne(id);
+		Jovem jovem = jovemRepository.findOne(ocorrencia.getJovem().getId());
+		if (usuarioSessao.getGrupoDePermissoes().isOcorrenciaVisualizar() == true) {
+			modelAndView = new ModelAndView("aprendizes/historicos/ocorrencias/ocorrencia");
+			modelAndView.addObject("ocorrencia", ocorrencia);
+			modelAndView.addObject("usuarios", usuarioRepository.findAll());
+			List<String> tiposDeOcorrencias = this.enumService.carregarTipoDeOcorrencia();
+			modelAndView.addObject("tiposDeOcorrencias", tiposDeOcorrencias);
+		} else {
+			modelAndView = new ModelAndView("redirect:/sw/fichaProfissional/home/"+jovem.getId());
+		}
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
+		return modelAndView;
+	}
+	
+	@PostMapping("/ocorrencia/{id}")
+	public ModelAndView update(@Valid Ocorrencia ocorrencia, BindingResult bindingResult, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		Jovem jovem = jovemRepository.findOne(ocorrencia.getJovem().getId());
+		if (usuarioSessao.getGrupoDePermissoes().isOcorrenciaEditar() == true) {
+			modelAndView = new ModelAndView("aprendizes/historicos/ocorrencias/ocorrencia");
+			if (bindingResult.hasErrors()) {
+				modelAndView.addObject("color", "orange");
+				modelAndView.addObject("msg", "Algo saiu errado!");
+				modelAndView.addObject("ocorrencia", ocorrencia);
+			} else {
+				ocorrenciaRepository.save(ocorrencia);
+				modelAndView.addObject("ocorrencia", ocorrencia);
+				modelAndView.addObject("color", "#26a69a");
+				modelAndView.addObject("msg", "Operação realizada com sucesso!");
+			}	
+		} else {
+			modelAndView = new ModelAndView("redirect:/sw/fichaProfissional/home/"+jovem.getId());
+		}
+		List<String> tiposDeOcorrencias = this.enumService.carregarTipoDeOcorrencia();
+		modelAndView.addObject("tiposDeOcorrencias", tiposDeOcorrencias);
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
+		return modelAndView;
 	}
 	
 }

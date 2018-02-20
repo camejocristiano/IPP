@@ -1,12 +1,7 @@
 package br.net.ipp.models.aprendizes;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.models.AbstractEntity;
 
@@ -42,30 +37,14 @@ public class AvaliacaoPIO extends AbstractEntity {
 	private double avaliacoesPIO_avOrient7avaliacao;
 	private double avaliacoesPIO_avOrient8avaliacao;
 	
-	@Column(name = "avaliacoesPIO_data1avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy")
-	private Date avaliacoesPIO_data1avaliacao;
-	@Column(name = "avaliacoesPIO_data2avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy")
-	private Date avaliacoesPIO_data2avaliacao;
-	@Column(name = "avaliacoesPIO_data3avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy")
-	private Date avaliacoesPIO_data3avaliacao;
-	@Column(name = "avaliacoesPIO_data4avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy")
-	private Date avaliacoesPIO_data4avaliacao;
-	@Column(name = "avaliacoesPIO_data5avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date avaliacoesPIO_data5avaliacao;
-	@Column(name = "avaliacoesPIO_data6avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date avaliacoesPIO_data6avaliacao;
-	@Column(name = "avaliacoesPIO_data7avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date avaliacoesPIO_data7avaliacao;
-	@Column(name = "avaliacoesPIO_data8avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date avaliacoesPIO_data8avaliacao;
+	private String avaliacoesPIO_data1avaliacao;
+	private String avaliacoesPIO_data2avaliacao;
+	private String avaliacoesPIO_data3avaliacao;
+	private String avaliacoesPIO_data4avaliacao;
+	private String avaliacoesPIO_data5avaliacao;
+	private String avaliacoesPIO_data6avaliacao;
+	private String avaliacoesPIO_data7avaliacao;
+	private String avaliacoesPIO_data8avaliacao;
 	@ManyToOne
 	private Jovem jovem;
 	
@@ -214,52 +193,52 @@ public class AvaliacaoPIO extends AbstractEntity {
 	public void setAvaliacoesPIO_avOrient8avaliacao(double avaliacoesPIO_avOrient8avaliacao) {
 		this.avaliacoesPIO_avOrient8avaliacao = avaliacoesPIO_avOrient8avaliacao;
 	}
-	public Date getAvaliacoesPIO_data1avaliacao() {
+	public String getAvaliacoesPIO_data1avaliacao() {
 		return avaliacoesPIO_data1avaliacao;
 	}
-	public void setAvaliacoesPIO_data1avaliacao(Date avaliacoesPIO_data1avaliacao) {
+	public void setAvaliacoesPIO_data1avaliacao(String avaliacoesPIO_data1avaliacao) {
 		this.avaliacoesPIO_data1avaliacao = avaliacoesPIO_data1avaliacao;
 	}
-	public Date getAvaliacoesPIO_data2avaliacao() {
+	public String getAvaliacoesPIO_data2avaliacao() {
 		return avaliacoesPIO_data2avaliacao;
 	}
-	public void setAvaliacoesPIO_data2avaliacao(Date avaliacoesPIO_data2avaliacao) {
+	public void setAvaliacoesPIO_data2avaliacao(String avaliacoesPIO_data2avaliacao) {
 		this.avaliacoesPIO_data2avaliacao = avaliacoesPIO_data2avaliacao;
 	}
-	public Date getAvaliacoesPIO_data3avaliacao() {
+	public String getAvaliacoesPIO_data3avaliacao() {
 		return avaliacoesPIO_data3avaliacao;
 	}
-	public void setAvaliacoesPIO_data3avaliacao(Date avaliacoesPIO_data3avaliacao) {
+	public void setAvaliacoesPIO_data3avaliacao(String avaliacoesPIO_data3avaliacao) {
 		this.avaliacoesPIO_data3avaliacao = avaliacoesPIO_data3avaliacao;
 	}
-	public Date getAvaliacoesPIO_data4avaliacao() {
+	public String getAvaliacoesPIO_data4avaliacao() {
 		return avaliacoesPIO_data4avaliacao;
 	}
-	public void setAvaliacoesPIO_data4avaliacao(Date avaliacoesPIO_data4avaliacao) {
+	public void setAvaliacoesPIO_data4avaliacao(String avaliacoesPIO_data4avaliacao) {
 		this.avaliacoesPIO_data4avaliacao = avaliacoesPIO_data4avaliacao;
 	}
-	public Date getAvaliacoesPIO_data5avaliacao() {
+	public String getAvaliacoesPIO_data5avaliacao() {
 		return avaliacoesPIO_data5avaliacao;
 	}
-	public void setAvaliacoesPIO_data5avaliacao(Date avaliacoesPIO_data5avaliacao) {
+	public void setAvaliacoesPIO_data5avaliacao(String avaliacoesPIO_data5avaliacao) {
 		this.avaliacoesPIO_data5avaliacao = avaliacoesPIO_data5avaliacao;
 	}
-	public Date getAvaliacoesPIO_data6avaliacao() {
+	public String getAvaliacoesPIO_data6avaliacao() {
 		return avaliacoesPIO_data6avaliacao;
 	}
-	public void setAvaliacoesPIO_data6avaliacao(Date avaliacoesPIO_data6avaliacao) {
+	public void setAvaliacoesPIO_data6avaliacao(String avaliacoesPIO_data6avaliacao) {
 		this.avaliacoesPIO_data6avaliacao = avaliacoesPIO_data6avaliacao;
 	}
-	public Date getAvaliacoesPIO_data7avaliacao() {
+	public String getAvaliacoesPIO_data7avaliacao() {
 		return avaliacoesPIO_data7avaliacao;
 	}
-	public void setAvaliacoesPIO_data7avaliacao(Date avaliacoesPIO_data7avaliacao) {
+	public void setAvaliacoesPIO_data7avaliacao(String avaliacoesPIO_data7avaliacao) {
 		this.avaliacoesPIO_data7avaliacao = avaliacoesPIO_data7avaliacao;
 	}
-	public Date getAvaliacoesPIO_data8avaliacao() {
+	public String getAvaliacoesPIO_data8avaliacao() {
 		return avaliacoesPIO_data8avaliacao;
 	}
-	public void setAvaliacoesPIO_data8avaliacao(Date avaliacoesPIO_data8avaliacao) {
+	public void setAvaliacoesPIO_data8avaliacao(String avaliacoesPIO_data8avaliacao) {
 		this.avaliacoesPIO_data8avaliacao = avaliacoesPIO_data8avaliacao;
 	}
 	public Jovem getJovem() {

@@ -1,12 +1,7 @@
 package br.net.ipp.models.aprendizes;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.models.AbstractEntity;
 import br.net.ipp.models.configuracoes.Usuario;
@@ -21,9 +16,7 @@ public class SituacaoDeSaude  extends AbstractEntity {
 	private boolean cardiopatias;
 	private String convenioMedicoFamiliar;
 	private boolean convulcoes;
-	@Column(name = "dataDaEntrevista")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataDaEntrevista;
+	private String dataDaEntrevista;
 	private boolean desmaios;
 	private boolean diabetes;
 	private String emCasoDeEmergenciaGrauDeParentesco;
@@ -75,10 +68,10 @@ public class SituacaoDeSaude  extends AbstractEntity {
 	public void setConvulcoes(boolean convulcoes) {
 		this.convulcoes = convulcoes;
 	}
-	public Date getDataDaEntrevista() {
+	public String getDataDaEntrevista() {
 		return dataDaEntrevista;
 	}
-	public void setDataDaEntrevista(Date dataDaEntrevista) {
+	public void setDataDaEntrevista(String dataDaEntrevista) {
 		this.dataDaEntrevista = dataDaEntrevista;
 	}
 	public boolean isDesmaios() {

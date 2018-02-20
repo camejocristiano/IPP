@@ -1,12 +1,7 @@
 package br.net.ipp.models.aprendizes;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.enums.MotivoDaDispensa;
 import br.net.ipp.models.AbstractEntity;
@@ -16,20 +11,19 @@ public class Dispensa extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	@ManyToOne
-	private Jovem jovem;
-	@Column(name = "dataDaDispensa")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataDaDispensa;
-	@Column(name = "exameDemissional")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date exameDemissional;
+	private String dataExameDemissional;
 	private MotivoDaDispensa motivoDaDispensa;
 	private String consideracoesDaDispensa;
 	private String informacoesComplementaresDaDispensa;
 	private String justificativaDaDispensa;
 	private Boolean oJovemEstaCienteDaDispensa;
 	private Boolean haveraSubstituicao;
+	@ManyToOne
+	private Jovem jovem;
+	private String diaDaDispensa;
+	private String mesDaDispensa;
+	private String anoDaDispensa;
+	
 	
 	public String getConsideracoesDaDispensa() {
 		return consideracoesDaDispensa;
@@ -37,17 +31,11 @@ public class Dispensa extends AbstractEntity {
 	public void setConsideracoesDaDispensa(String consideracoesDaDispensa) {
 		this.consideracoesDaDispensa = consideracoesDaDispensa;
 	}
-	public Date getDataDaDispensa() {
-		return dataDaDispensa;
+	public String getDataExameDemissional() {
+		return dataExameDemissional;
 	}
-	public void setDataDaDispensa(Date dataDaDispensa) {
-		this.dataDaDispensa = dataDaDispensa;
-	}
-	public Date getExameDemissional() {
-		return exameDemissional;
-	}
-	public void setExameDemissional(Date exameDemissional) {
-		this.exameDemissional = exameDemissional;
+	public void setDataExameDemissional(String dataExameDemissional) {
+		this.dataExameDemissional = dataExameDemissional;
 	}
 	public Boolean getHaveraSubstituicao() {
 		return haveraSubstituicao;
@@ -85,5 +73,26 @@ public class Dispensa extends AbstractEntity {
 	public void setJovem(Jovem jovem) {
 		this.jovem = jovem;
 	}
-	
+	public String getDiaDaDispensa() {
+		return diaDaDispensa;
+	}
+	public void setDiaDaDispensa(String diaDaDispensa) {
+		this.diaDaDispensa = diaDaDispensa;
+	}
+	public String getMesDaDispensa() {
+		return mesDaDispensa;
+	}
+	public void setMesDaDispensa(String mesDaDispensa) {
+		this.mesDaDispensa = mesDaDispensa;
+	}
+	public String getAnoDaDispensa() {
+		return anoDaDispensa;
+	}
+	public void setAnoDaDispensa(String anoDaDispensa) {
+		this.anoDaDispensa = anoDaDispensa;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 }

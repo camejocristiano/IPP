@@ -1,12 +1,7 @@
 package br.net.ipp.models.aprendizes;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.models.AbstractEntity;
 
@@ -42,30 +37,14 @@ public class AvaliacaoPAPIPP extends AbstractEntity {
 	private double avaliacoesPAPIPP_avOrient7avaliacao;
 	private double avaliacoesPAPIPP_avOrient8avaliacao;
 	
-	@Column(name = "avaliacoesPAPIPP_data1avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date avaliacoesPAPIPP_data1avaliacao;
-	@Column(name = "avaliacoesPAPIPP_data2avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date avaliacoesPAPIPP_data2avaliacao;
-	@Column(name = "avaliacoesPAPIPP_data3avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date avaliacoesPAPIPP_data3avaliacao;
-	@Column(name = "avaliacoesPAPIPP_data4avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date avaliacoesPAPIPP_data4avaliacao;
-	@Column(name = "avaliacoesPAPIPP_data5avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date avaliacoesPAPIPP_data5avaliacao;
-	@Column(name = "avaliacoesPAPIPP_data6avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date avaliacoesPAPIPP_data6avaliacao;
-	@Column(name = "avaliacoesPAPIPP_data7avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date avaliacoesPAPIPP_data7avaliacao;
-	@Column(name = "avaliacoesPAPIPP_data8avaliacao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date avaliacoesPAPIPP_data8avaliacao;
+	private String avaliacoesPAPIPP_data1avaliacao;
+	private String avaliacoesPAPIPP_data2avaliacao;
+	private String avaliacoesPAPIPP_data3avaliacao;
+	private String avaliacoesPAPIPP_data4avaliacao;
+	private String avaliacoesPAPIPP_data5avaliacao;
+	private String avaliacoesPAPIPP_data6avaliacao;
+	private String avaliacoesPAPIPP_data7avaliacao;
+	private String avaliacoesPAPIPP_data8avaliacao;
 	@ManyToOne
 	private Jovem jovem;
 	
@@ -214,52 +193,52 @@ public class AvaliacaoPAPIPP extends AbstractEntity {
 	public void setAvaliacoesPAPIPP_avOrient8avaliacao(double avaliacoesPAPIPP_avOrient8avaliacao) {
 		this.avaliacoesPAPIPP_avOrient8avaliacao = avaliacoesPAPIPP_avOrient8avaliacao;
 	}
-	public Date getAvaliacoesPAPIPP_data1avaliacao() {
+	public String getAvaliacoesPAPIPP_data1avaliacao() {
 		return avaliacoesPAPIPP_data1avaliacao;
 	}
-	public void setAvaliacoesPAPIPP_data1avaliacao(Date avaliacoesPAPIPP_data1avaliacao) {
+	public void setAvaliacoesPAPIPP_data1avaliacao(String avaliacoesPAPIPP_data1avaliacao) {
 		this.avaliacoesPAPIPP_data1avaliacao = avaliacoesPAPIPP_data1avaliacao;
 	}
-	public Date getAvaliacoesPAPIPP_data2avaliacao() {
+	public String getAvaliacoesPAPIPP_data2avaliacao() {
 		return avaliacoesPAPIPP_data2avaliacao;
 	}
-	public void setAvaliacoesPAPIPP_data2avaliacao(Date avaliacoesPAPIPP_data2avaliacao) {
+	public void setAvaliacoesPAPIPP_data2avaliacao(String avaliacoesPAPIPP_data2avaliacao) {
 		this.avaliacoesPAPIPP_data2avaliacao = avaliacoesPAPIPP_data2avaliacao;
 	}
-	public Date getAvaliacoesPAPIPP_data3avaliacao() {
+	public String getAvaliacoesPAPIPP_data3avaliacao() {
 		return avaliacoesPAPIPP_data3avaliacao;
 	}
-	public void setAvaliacoesPAPIPP_data3avaliacao(Date avaliacoesPAPIPP_data3avaliacao) {
+	public void setAvaliacoesPAPIPP_data3avaliacao(String avaliacoesPAPIPP_data3avaliacao) {
 		this.avaliacoesPAPIPP_data3avaliacao = avaliacoesPAPIPP_data3avaliacao;
 	}
-	public Date getAvaliacoesPAPIPP_data4avaliacao() {
+	public String getAvaliacoesPAPIPP_data4avaliacao() {
 		return avaliacoesPAPIPP_data4avaliacao;
 	}
-	public void setAvaliacoesPAPIPP_data4avaliacao(Date avaliacoesPAPIPP_data4avaliacao) {
+	public void setAvaliacoesPAPIPP_data4avaliacao(String avaliacoesPAPIPP_data4avaliacao) {
 		this.avaliacoesPAPIPP_data4avaliacao = avaliacoesPAPIPP_data4avaliacao;
 	}
-	public Date getAvaliacoesPAPIPP_data5avaliacao() {
+	public String getAvaliacoesPAPIPP_data5avaliacao() {
 		return avaliacoesPAPIPP_data5avaliacao;
 	}
-	public void setAvaliacoesPAPIPP_data5avaliacao(Date avaliacoesPAPIPP_data5avaliacao) {
+	public void setAvaliacoesPAPIPP_data5avaliacao(String avaliacoesPAPIPP_data5avaliacao) {
 		this.avaliacoesPAPIPP_data5avaliacao = avaliacoesPAPIPP_data5avaliacao;
 	}
-	public Date getAvaliacoesPAPIPP_data6avaliacao() {
+	public String getAvaliacoesPAPIPP_data6avaliacao() {
 		return avaliacoesPAPIPP_data6avaliacao;
 	}
-	public void setAvaliacoesPAPIPP_data6avaliacao(Date avaliacoesPAPIPP_data6avaliacao) {
+	public void setAvaliacoesPAPIPP_data6avaliacao(String avaliacoesPAPIPP_data6avaliacao) {
 		this.avaliacoesPAPIPP_data6avaliacao = avaliacoesPAPIPP_data6avaliacao;
 	}
-	public Date getAvaliacoesPAPIPP_data7avaliacao() {
+	public String getAvaliacoesPAPIPP_data7avaliacao() {
 		return avaliacoesPAPIPP_data7avaliacao;
 	}
-	public void setAvaliacoesPAPIPP_data7avaliacao(Date avaliacoesPAPIPP_data7avaliacao) {
+	public void setAvaliacoesPAPIPP_data7avaliacao(String avaliacoesPAPIPP_data7avaliacao) {
 		this.avaliacoesPAPIPP_data7avaliacao = avaliacoesPAPIPP_data7avaliacao;
 	}
-	public Date getAvaliacoesPAPIPP_data8avaliacao() {
+	public String getAvaliacoesPAPIPP_data8avaliacao() {
 		return avaliacoesPAPIPP_data8avaliacao;
 	}
-	public void setAvaliacoesPAPIPP_data8avaliacao(Date avaliacoesPAPIPP_data8avaliacao) {
+	public void setAvaliacoesPAPIPP_data8avaliacao(String avaliacoesPAPIPP_data8avaliacao) {
 		this.avaliacoesPAPIPP_data8avaliacao = avaliacoesPAPIPP_data8avaliacao;
 	}
 	public Jovem getJovem() {

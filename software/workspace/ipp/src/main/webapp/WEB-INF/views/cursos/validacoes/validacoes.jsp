@@ -32,7 +32,9 @@
             <th>DATA DA VALIDAÇÃO</th>
             <th>DATA DA SOLICITAÇÃO</th>
             <th>TIPO</th>
-            <th class="td-icon">EDITAR</th>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.validacaoVisualizar == true}">
+            	<th class="td-icon">EDITAR</th>
+            </c:if>
           </tr>
         </thead>
         <tbody>
@@ -42,19 +44,24 @@
             <td>${validacao.dataDaValidacao}</td>
             <td>${validacao.dataDaSolicitacao}</td>
             <td>${validacao.tipoDeValidacao}</td>
-            <td class="td-icon"><a href="/sw/loadValidacao/${validacao.id}"><i class="material-icons" >border_color</i></a></td>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.validacaoVisualizar == true}">
+            	<c:url value="/sw/loadValidacao/${validacao.id}" var="swLoadValidacaoId"></c:url>
+            	<td class="td-icon"><a href="${swLoadValidacaoId}"><i class="material-icons" >border_color</i></a></td>
+            </c:if>
           </tr>
           </c:forEach>
           </tbody>
           
       </table> 
       
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.validacaoCadastrar == true}">
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a class="btn-floating btn-large waves-effect waves-light orange"
                 href="/sw/validacaoCurso/${curso.id}">
                 <i class="material-icons">add</i>
             </a>
          </div>
+         </c:if>
          
          </div>
          

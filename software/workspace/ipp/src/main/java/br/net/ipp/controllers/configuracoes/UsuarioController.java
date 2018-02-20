@@ -76,7 +76,6 @@ public class UsuarioController {
 	public ModelAndView usuario(Usuario usuario, @AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = new ModelAndView("configuracoes/usuarios/usuario");
 		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
-		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		if (usuarioSessao.getGrupoDePermissoes().isUsuarioCadastrar() == true) {
 			List<String> status = enumService.carregarStatus();
 			modelAndView.addObject("status", status);
@@ -93,6 +92,7 @@ public class UsuarioController {
 		} else {
 			return modelAndView = new ModelAndView("redirect:/sw/user");
 		}
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		return modelAndView;
 	}
 
@@ -104,9 +104,11 @@ public class UsuarioController {
 		if (usuarioSessao.getGrupoDePermissoes().isUsuarioCadastrar() == true) {
 			modelAndView.addObject("usuario", usuarioRepository.findByUsername(userDetails.getUsername()));
 			if (bindingResult.hasErrors()) {
+				modelAndView.addObject("color", "orange");
 				modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 			} else {
 				usuarioRepository.save(usuario);
+				modelAndView.addObject("color", "#26a69a");
 				modelAndView.addObject("msg", "Operação realizada com sucesso!");
 			}		
 		} else {
@@ -150,9 +152,11 @@ public class UsuarioController {
 		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		if (usuarioSessao.getGrupoDePermissoes().isUsuarioEditar() == true) {
 			if (bindingResult.hasErrors()) {
+				modelAndView.addObject("color", "orange");
 				modelAndView.addObject("msg", "Algo saiu errado! Tente novamente!");
 			} else {
 				usuarioRepository.save(usuario);
+				modelAndView.addObject("color", "#26a69a");
 				modelAndView.addObject("msg", "Operação realizada com sucesso!");
 			}	
 			modelAndView.addObject("usuario", usuario);
@@ -218,17 +222,15 @@ public class UsuarioController {
 				}
 				String classe = "Foto-Usuario"; 
 				String nome = usuario.getNome();
-				/*
-					int dia = c.get(Calendar.DAY_OF_MONTH);
-					int mes = c.get(Calendar.MONTH);
-					int ano = c.get(Calendar.YEAR);
-				*/
-				String data = "15-12-2078";
+				String dia = Integer.toString(c.get(Calendar.DAY_OF_MONTH));
+				String mes = Integer.toString(c.get(Calendar.MONTH));
+				String ano = Integer.toString(c.get(Calendar.YEAR));
+				String data = dia+"-"+mes+"-"+ano;
 				String email = usuario.getUsername();
 				storageService.store(file, classe, nome, data, email);
 				usuario.setFoto(classe + "_" + nome + "_" + data + "_" + email + "_" + file.getOriginalFilename());
 				usuarioRepository.save(usuario);
-				modelAndView.addObject("color", "green");
+				modelAndView.addObject("color", "#26a69a");
 				modelAndView.addObject("msg", "Operação realizada com sucesso! -->> ->" + classe + "_" + nome + "_" + data + "_" + email + "_" + file.getOriginalFilename());
 			}		
 		} else {

@@ -147,9 +147,18 @@
 				</div><!-- // col -->
 			</div><!-- // row -->
 			<form:hidden path="jovem" value="${jovem.id}" />
-			<button class="btn waves-effect waves-light right" type="submit">
-				Salvar<i class="material-icons right">send</i>
-			</button>
+
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.caracteristicasDomiciliaresCadastrar == true && requestScope.caracteristicasDomiciliares.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.caracteristicasDomiciliaresEditar == true && requestScope.caracteristicasDomiciliares.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
 		</form:form>
 		<br />
 		<br />

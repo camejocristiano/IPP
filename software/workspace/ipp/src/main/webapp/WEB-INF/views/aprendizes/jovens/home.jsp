@@ -24,6 +24,12 @@
 
 	<div class="row">
 	
+		<c:if test="${
+			requestScope.usuarioSessao.grupoDePermissoes.jovemCadastrar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.jovemVisualizar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.jovemEditar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.jovemListar == true		
+		}">
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
 				<c:url value="/sw/jovemForm/${jovem.id}" var="swJovemFormJovemId"></c:url>
@@ -41,6 +47,13 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
+		<c:if test="${
+			requestScope.usuarioSessao.grupoDePermissoes.matriculaCadastrar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.matriculaVisualizar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.matriculaEditar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.matriculaListar == true		
+		}">
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
 				<c:url value="/sw/matriculasJovem/${jovem.id}" var="swMatriculasJovemJovemId"></c:url>
@@ -58,6 +71,13 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
+		<c:if test="${
+			requestScope.usuarioSessao.grupoDePermissoes.escolaridadeCadastrar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.escolaridadeVisualizar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.escolaridadeEditar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.escolaridadeListar == true	
+		}">
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
 				<c:url value="/sw/escolaridadeJovem/${jovem.id}" var="swEscolaridadeJovemJovemId"></c:url>
@@ -75,7 +95,13 @@
 				</a>
 			</div>
 		</div>
-	
+		</c:if>
+		<c:if test="${
+			requestScope.usuarioSessao.grupoDePermissoes.situacaoLaboralCadastrar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.situacaoLaboralVisualizar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.situacaoLaboralEditar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.situacaoLaboralListar == true			
+		}">
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
 				<c:url value="/sw/situacaoLaboralJovem/${jovem.id}" var="swSituacaoLaboralJovemJovemId"></c:url>
@@ -92,6 +118,37 @@
 				</a>
 			</div>
 	   	</div>
+	   	</c:if>
+	   	<c:if test="${
+			requestScope.usuarioSessao.grupoDePermissoes.jaFoiAprendizCadastrar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.jaFoiAprendizVisualizar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.jaFoiAprendizEditar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.jaFoiAprendizListar == true			
+		}">
+		<div class="col s12 m6 l4">
+			<div class="card blue-grey darken-1">
+				<c:url value="/sw/jaFoiAprendiz/${jovem.id}" var="swJaFoiAprendizJovemId"></c:url>
+				<a href="${swJaFoiAprendizJovemId}">    
+			    	<div class="card-content white-text">
+			    		<span class="card-title">Já Foi Aprendiz<i class="material-icons right" style="color: #eee !important;">format_list_bulleted</i></span>
+			    		<p>Manutenção de Já Foi Aprendiz</p>
+			    	</div>
+		        </a>
+				<c:url value="/sw/aprendizes/form/${jovem.id}" var="swAprendizesFormJovemId"></c:url>
+				<a href="${swAprendizesFormJovemId}" class="btn-index">
+			    	<div class="card-action">
+			    		<h6 style="color: #eee !important;">Novo</h6>
+			    	</div>
+				</a>
+			</div>
+	   	</div>
+	   	</c:if>
+		<c:if test="${
+			requestScope.usuarioSessao.grupoDePermissoes.caracteristicasDomiciliaresCadastrar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.caracteristicasDomiciliaresVisualizar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.caracteristicasDomiciliaresEditar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.caracteristicasDomiciliaresListar == true		
+		}">
 	    <div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
 	    		<c:url value="/sw/caracteristicaDomiciliarJovem/${jovem.id}" var="swCaracteristicaDomiciliarJovemJovemId"></c:url>
@@ -108,6 +165,13 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
+		<c:if test="${
+			requestScope.usuarioSessao.grupoDePermissoes.habilidadesCadastrar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.habilidadesVisualizar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.habilidadesEditar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.habilidadesListar == true		
+		}">
 	    <div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
 	    		<c:url value="/sw/habilidadeJovem/${jovem.id}" var="swHabilidadeJovemJovemId"></c:url>
@@ -124,6 +188,37 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
+		<c:if test="${
+			requestScope.usuarioSessao.grupoDePermissoes.outroCursoCadastrar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.outroCursoVisualizar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.outroCursoEditar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.outroCursoListar == true		
+		}">
+	    <div class="col s12 m6 l4">
+	    	<div class="card blue-grey darken-1">
+	    		<c:url value="/sw/outrosCursos/${jovem.id}" var="swOutrosCursosJovemId"></c:url>
+	    		<a href="${swOutrosCursosJovemId}">
+		   			<div class="card-content white-text">
+		              <span class="card-title">Outros Cursos<i class="material-icons right" style="color: #eee !important;">thumbs_up_down</i></span>
+		              <p>Manutenção de Outros Cursos</p>
+	                </div>
+	            </a>
+				<c:url value="/sw/outroCursoForm/${jovem.id}" var="swOutroCursoFormJovemId"></c:url>
+		   		<a href="${swOutroCursoFormJovemId}" class="btn-index">
+		            <div class="card-action">
+		              <h6 style="color: #eee !important;">Novo</h6>
+		            </div>
+				</a>
+			</div>
+		</div>
+		</c:if>
+		<c:if test="${
+			requestScope.usuarioSessao.grupoDePermissoes.situacaoDeSaudeCadastrar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.situacaoDeSaudeVisualizar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.situacaoDeSaudeEditar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.situacaoDeSaudeListar == true			
+		}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
 	    		<c:url value="/sw/situacaoDeSaudeJovem/${jovem.id}" var="swSituacaoDeSaudeJovemJovemId"></c:url>
@@ -140,6 +235,13 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
+		<c:if test="${
+			requestScope.usuarioSessao.grupoDePermissoes.fichaSocialCadastrar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.fichaSocialVisualizar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.fichaSocialEditar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.fichaSocialListar == true		
+		}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
 	    		<c:url value="/sw/fichaSocialJovem/${jovem.id}" var="swFichaSocialJovemJovemId"></c:url>
@@ -156,9 +258,40 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
+		<c:if test="${
+			requestScope.usuarioSessao.grupoDePermissoes.familiarCadastrar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.familiarVisualizar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.familiarEditar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.familiarListar == true		
+		}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<c:url value="/sw/fichaProfissionalJovem/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
+	    		<c:url value="/sw/familiares/${jovem.id}" var="swFamiliaresJovemId"></c:url>
+	    		<a href="${swFamiliaresJovemId}">
+		   			<div class="card-content white-text">
+		              <span class="card-title">Familiares<i class="material-icons right" style="color: #eee !important;">thumb_up</i></span>
+		              <p>Manutenção de Familiares</p>
+	                </div>
+	            </a>
+				<c:url value="/sw/familiar/form/${jovem.id}" var="swFamiliaresJovemId"></c:url>
+		   		<a href="${swFamiliaresJovemId}" class="btn-index">
+		            <div class="card-action">
+		              <h6 style="color: #eee !important;">Novo</h6>
+		            </div>
+				</a>
+			</div>
+		</div>
+		</c:if>
+		<c:if test="${
+			requestScope.usuarioSessao.grupoDePermissoes.fichaProfissionalCadastrar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.fichaProfissionalVisualizar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.fichaProfissionalEditar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.fichaProfissionalListar == true	
+		}">
+		<div class="col s12 m6 l4">
+	    	<div class="card blue-grey darken-1">
+	    		<c:url value="/sw/fichaProfissional/home/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
 	    		<a href="${swFichaProfissionalJovemJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">Profissional<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
@@ -172,72 +305,13 @@
 				</a>
 			</div>
 		</div>
-		<div class="col s12 m6 l4">
-	    	<div class="card blue-grey darken-1">
-	    		<c:url value="/sw/entrevistasJovem/${jovem.id}" var="swEntrevistasJovemJovemId"></c:url>
-	    		<a href="${swEntrevistasJovemJovemId}">
-		   			<div class="card-content white-text">
-		              <span class="card-title">Entrevistas<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
-		              <p>Manutenção de Entrevistas</p>
-	                </div>
-	            </a>
-	            <c:url value="/sw/entrevistaJovem/${jovem.id}" var="swEntrevistaJovemJovemId"></c:url>
-				<a href="${swEntrevistaJovemJovemId}" class="btn-index">
-		            <div class="card-action">
-		              <h6 style="color: #eee !important;">Nova</h6>
-		            </div>
-				</a>
-			</div>
-		</div>
-		<div class="col s12 m6 l4">
-	    	<div class="card blue-grey darken-1">
-	    		<c:url value="/sw/contratacoesJovem/${jovem.id}" var="swContratacoesJovemJovemId"></c:url>
-	    		<a href="${swContratacoesJovemJovemId}">
-		   			<div class="card-content white-text">
-		              <span class="card-title">Contratações<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
-		              <p>Manutenção de Contratações</p>
-	                </div>
-	            </a>
-	            <c:url value="/sw/contratacaoJovem/${jovem.id}" var="swContratacaoJovemJovemId"></c:url>
-				<a href="${swContratacaoJovemJovemId}" class="btn-index">
-		            <div class="card-action">
-		              <h6 style="color: #eee !important;">Nova</h6>
-		            </div>
-				</a>
-			</div>
-		</div>
-		<div class="col s12 m6 l4">
-	    	<div class="card blue-grey darken-1">
-	    		<c:url value="/sw/dispensasJovem/${jovem.id}" var="swDispensasJovemJovemId"></c:url>
-	    		<a href="${swDispensasJovemJovemId}">
-		   			<div class="card-content white-text">
-		              <span class="card-title">Dispensas<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
-		              <p>Manutenção de Dispensas</p>
-	                </div>
-	            </a>
-	            <c:url value="/sw/dispensaJovem/${jovem.id}" var="swDispensaJovemJovemId"></c:url>
-				<a href="${swDispensaJovemJovemId}" class="btn-index">
-		            <div class="card-action">
-		              <h6 style="color: #eee !important;">Nova</h6>
-		            </div>
-				</a>
-			</div>
-		</div>
-		<div class="col s12 m6 l4">
-	    	<div class="card blue-grey darken-1">
-	    		<a href="#">
-		   			<div class="card-content white-text">
-		              <span class="card-title">Históricos<i class="material-icons right" style="color: #eee !important;">reply_all</i></span>
-		              <p>Manutenção de Históricos</p>
-	                </div>
-	            </a>
-				<a href="#" class="btn-index">
-		            <div class="card-action">
-		              <h6 style="color: #eee !important;">Atualizar</h6>
-		            </div>
-				</a>
-			</div>
-		</div>
+		</c:if>
+		<c:if test="${
+			requestScope.usuarioSessao.grupoDePermissoes.dadosFinanceirosCadastrar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.dadosFinanceirosVisualizar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.dadosFinanceirosEditar == true ||
+			requestScope.usuarioSessao.grupoDePermissoes.dadosFinanceirosListar == true	
+		}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
 	    		<c:url value="/sw/dadosFinanceirosJovem/${jovem.id}" var="swDadosFinanceirosJovemJovemId"></c:url>
@@ -254,6 +328,7 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
 	
 	</div>  
 

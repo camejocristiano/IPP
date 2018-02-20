@@ -77,10 +77,12 @@ public class UnidadeController {
 		if (usuarioSessao.getGrupoDePermissoes().isUnidadeCadastrar() == true) {
 			modelAndView = new ModelAndView("configuracoes/unidades/unidade");
 			if (bindingResult.hasErrors()) {
+				modelAndView.addObject("color", "orange");
 				modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 				modelAndView.addObject("unidade", unidade);
 			} else {
 				unidadeRepository.save(unidade);
+				modelAndView.addObject("color", "#26a69a");
 				modelAndView.addObject("msg", "Operação realizada com sucesso!");
 				modelAndView.addObject("unidade", unidade);
 			}	
@@ -126,7 +128,7 @@ public class UnidadeController {
 					List<String> statuss = this.enumService.carregarStatus();
 					modelAndView.addObject("statuss", statuss);	
 					modelAndView.addObject("unidade", unidade);
-					modelAndView.addObject("color", "green");
+					modelAndView.addObject("color", "#26a69a");
 					modelAndView.addObject("msg", "Operação realizada com sucesso!");
 				}
 			} else if (unidade.getStatus().equals(Status.ATIVO)) {
@@ -139,7 +141,7 @@ public class UnidadeController {
 					List<String> statuss = this.enumService.carregarStatus();
 					modelAndView.addObject("statuss", statuss);	
 					modelAndView.addObject("unidade", unidade);
-					modelAndView.addObject("color", "green");
+					modelAndView.addObject("color", "#26a69a");
 					modelAndView.addObject("msg", "Operação realizada com sucesso!");
 				}
 			} else {

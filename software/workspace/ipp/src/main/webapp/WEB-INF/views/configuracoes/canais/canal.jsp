@@ -22,8 +22,8 @@
 		</div>
 	</div>
 
-
-<form:form role="form" commandName="canal" servletRelativeAction="/sw/canais/${canal.id}" method="POST">
+<c:url value="/sw/canal/${canal.nomeCanal != null ? canal.id : null}" var="swCanalId"></c:url>
+<form:form role="form" commandName="canal" servletRelativeAction="${swCanalId}" method="POST">
 	<div class="row">
 		<div class="input-field s12 col l12">
 			<div class="row">
@@ -36,9 +36,18 @@
 			</div>
 		</div>
 	</div>
-			<button class="btn waves-effect waves-light right" type="submit">
-				Salvar<i class="material-icons right">send</i>
-			</button>
+
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.canalCadastrar == true && requestScope.canal.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.canalEditar == true && requestScope.canal.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
 </form:form>
 
 </div>

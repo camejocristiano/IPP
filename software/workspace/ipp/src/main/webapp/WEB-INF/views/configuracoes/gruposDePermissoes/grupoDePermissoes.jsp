@@ -183,6 +183,66 @@
 						<label style="margin-left: 2em; float: right" for="turmaCadastrar"></label>
 					</p>
 					<hr>
+					<p>
+					CBO
+						<input type="checkbox" name="cboListar" class="filled-in" id="cboListar" <c:if test="${grupoDePermissoes.cboListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="cboListar"></label>
+						<input type="checkbox" name="cboEditar" class="filled-in" id="cboEditar" <c:if test="${grupoDePermissoes.cboEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="cboEditar"></label>
+						<input type="checkbox" name="cboVisualizar" class="filled-in" id="cboVisualizar" <c:if test="${grupoDePermissoes.cboVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="cboVisualizar"></label>
+						<input type="checkbox" name="cboCadastrar" class="filled-in" id="cboCadastrar" <c:if test="${grupoDePermissoes.cboCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="cboCadastrar"></label>
+					</p>
+					<hr>
+					<p>
+					Arco Ocupacional
+						<input type="checkbox" name="arcoListar" class="filled-in" id="arcoListar" <c:if test="${grupoDePermissoes.arcoListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="arcoListar"></label>
+						<input type="checkbox" name="arcoEditar" class="filled-in" id="arcoEditar" <c:if test="${grupoDePermissoes.arcoEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="arcoEditar"></label>
+						<input type="checkbox" name="arcoVisualizar" class="filled-in" id="arcoVisualizar" <c:if test="${grupoDePermissoes.arcoVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="arcoVisualizar"></label>
+						<input type="checkbox" name="arcoCadastrar" class="filled-in" id="arcoCadastrar" <c:if test="${grupoDePermissoes.arcoCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="arcoCadastrar"></label>
+					</p>
+					<hr>
+					<p>
+					Conteúdo Teórico Básico
+						<input type="checkbox" name="basicoListar" class="filled-in" id="basicoListar" <c:if test="${grupoDePermissoes.basicoListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="basicoListar"></label>
+						<input type="checkbox" name="basicoEditar" class="filled-in" id="basicoEditar" <c:if test="${grupoDePermissoes.basicoEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="basicoEditar"></label>
+						<input type="checkbox" name="basicoVisualizar" class="filled-in" id="basicoVisualizar" <c:if test="${grupoDePermissoes.basicoVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="basicoVisualizar"></label>
+						<input type="checkbox" name="basicoCadastrar" class="filled-in" id="basicoCadastrar" <c:if test="${grupoDePermissoes.basicoCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="basicoCadastrar"></label>
+					</p>
+					<hr>
+					<p>
+					Conteúdo Teórico Específico
+						<input type="checkbox" name="especificoListar" class="filled-in" id="especificoListar" <c:if test="${grupoDePermissoes.especificoListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="especificoListar"></label>
+						<input type="checkbox" name="especificoEditar" class="filled-in" id="especificoEditar" <c:if test="${grupoDePermissoes.especificoEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="especificoEditar"></label>
+						<input type="checkbox" name="especificoVisualizar" class="filled-in" id="especificoVisualizar" <c:if test="${grupoDePermissoes.especificoVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="especificoVisualizar"></label>
+						<input type="checkbox" name="especificoCadastrar" class="filled-in" id="especificoCadastrar" <c:if test="${grupoDePermissoes.especificoCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="especificoCadastrar"></label>
+					</p>
+					<hr>
+					<p>
+					Validação
+						<input type="checkbox" name="validacaoListar" class="filled-in" id="validacaoListar" <c:if test="${grupoDePermissoes.validacaoListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="validacaoListar"></label>
+						<input type="checkbox" name="validacaoEditar" class="filled-in" id="validacaoEditar" <c:if test="${grupoDePermissoes.validacaoEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="validacaoEditar"></label>
+						<input type="checkbox" name="validacaoVisualizar" class="filled-in" id="validacaoVisualizar" <c:if test="${grupoDePermissoes.validacaoVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="validacaoVisualizar"></label>
+						<input type="checkbox" name="validacaoCadastrar" class="filled-in" id="validacaoCadastrar" <c:if test="${grupoDePermissoes.validacaoCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="validacaoCadastrar"></label>
+					</p>
+					<hr>
 
 				</div>
 			</div>
@@ -229,6 +289,18 @@
 					</p>
 					<hr>
 					<p>
+					Já Foi Aprendiz 	
+						<input type="checkbox" name="jaFoiAprendizListar" class="filled-in" id="jaFoiAprendizListar" <c:if test="${grupoDePermissoes.jaFoiAprendizListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="jaFoiAprendizListar"></label>
+						<input type="checkbox" name="jaFoiAprendizEditar" class="filled-in" id="jaFoiAprendizEditar" <c:if test="${grupoDePermissoes.jaFoiAprendizEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="jaFoiAprendizEditar"></label>
+						<input type="checkbox" name="jaFoiAprendizVisualizar" class="filled-in" id="jaFoiAprendizVisualizar" <c:if test="${grupoDePermissoes.jaFoiAprendizVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="jaFoiAprendizVisualizar"></label>
+						<input type="checkbox" name="jaFoiAprendizCadastrar" class="filled-in" id="jaFoiAprendizCadastrar" <c:if test="${grupoDePermissoes.jaFoiAprendizCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="jaFoiAprendizCadastrar"></label>
+					</p>
+					<hr>
+					<p>
 					Características Domiciliares 	
 						<input type="checkbox" name="caracteristicasDomiciliaresListar" class="filled-in" id="caracteristicasDomiciliaresListar" <c:if test="${grupoDePermissoes.caracteristicasDomiciliaresListar == true}">checked</c:if> />
 						<label style="margin-left: 2em; float: right" for="caracteristicasDomiciliaresListar"></label>
@@ -250,6 +322,18 @@
 						<label style="margin-left: 2em; float: right" for="habilidadesVisualizar"></label>
 						<input type="checkbox" name="habilidadesCadastrar" class="filled-in" id="habilidadesCadastrar" <c:if test="${grupoDePermissoes.habilidadesCadastrar == true}">checked</c:if> />
 						<label style="margin-left: 2em; float: right" for="habilidadesCadastrar"></label>
+					</p>
+					<hr>
+					<p>
+					Outros Cursos 	
+						<input type="checkbox" name="outroCursoListar" class="filled-in" id="outroCursoListar" <c:if test="${grupoDePermissoes.outroCursoListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="outroCursoListar"></label>
+						<input type="checkbox" name="outroCursoEditar" class="filled-in" id="outroCursoEditar" <c:if test="${grupoDePermissoes.outroCursoEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="outroCursoEditar"></label>
+						<input type="checkbox" name="outroCursoVisualizar" class="filled-in" id="outroCursoVisualizar" <c:if test="${grupoDePermissoes.outroCursoVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="outroCursoVisualizar"></label>
+						<input type="checkbox" name="outroCursoCadastrar" class="filled-in" id="outroCursoCadastrar" <c:if test="${grupoDePermissoes.outroCursoCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="outroCursoCadastrar"></label>
 					</p>
 					<hr>
 					<p>
@@ -277,6 +361,18 @@
 					</p>
 					<hr>
 					<p>
+					Familiar 	
+						<input type="checkbox" name="familiarListar" class="filled-in" id="familiarListar" <c:if test="${grupoDePermissoes.familiarListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="familiarListar"></label>
+						<input type="checkbox" name="familiarEditar" class="filled-in" id="familiarEditar" <c:if test="${grupoDePermissoes.familiarEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="familiarEditar"></label>
+						<input type="checkbox" name="familiarVisualizar" class="filled-in" id="familiarVisualizar" <c:if test="${grupoDePermissoes.familiarVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="familiarVisualizar"></label>
+						<input type="checkbox" name="familiarCadastrar" class="filled-in" id="familiarCadastrar" <c:if test="${grupoDePermissoes.familiarCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="familiarCadastrar"></label>
+					</p>
+					<hr>
+					<p>
 					Ficha Profissional 	
 						<input type="checkbox" name="fichaProfissionalListar" class="filled-in" id="fichaProfissionalListar" <c:if test="${grupoDePermissoes.fichaProfissionalListar == true}">checked</c:if> />
 						<label style="margin-left: 2em; float: right" for="fichaProfissionalListar"></label>
@@ -287,7 +383,55 @@
 						<input type="checkbox" name="fichaProfissionalCadastrar" class="filled-in" id="fichaProfissionalCadastrar" <c:if test="${grupoDePermissoes.fichaProfissionalCadastrar == true}">checked</c:if> />
 						<label style="margin-left: 2em; float: right" for="fichaProfissionalCadastrar"></label>
 					</p>
-					<%-- <hr>
+					<hr>
+					<p>
+					Entrevista 	
+						<input type="checkbox" name="entrevistaListar" class="filled-in" id="entrevistaListar" <c:if test="${grupoDePermissoes.entrevistaListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="entrevistaListar"></label>
+						<input type="checkbox" name="entrevistaEditar" class="filled-in" id="entrevistaEditar" <c:if test="${grupoDePermissoes.entrevistaEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="entrevistaEditar"></label>
+						<input type="checkbox" name="entrevistaVisualizar" class="filled-in" id="entrevistaVisualizar" <c:if test="${grupoDePermissoes.entrevistaVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="entrevistaVisualizar"></label>
+						<input type="checkbox" name="entrevistaCadastrar" class="filled-in" id="entrevistaCadastrar" <c:if test="${grupoDePermissoes.entrevistaCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="entrevistaCadastrar"></label>
+					</p>
+					<hr>
+					<p>
+					Contratação 	
+						<input type="checkbox" name="contratacaoListar" class="filled-in" id="contratacaoListar" <c:if test="${grupoDePermissoes.contratacaoListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="contratacaoListar"></label>
+						<input type="checkbox" name="contratacaoEditar" class="filled-in" id="contratacaoEditar" <c:if test="${grupoDePermissoes.contratacaoEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="contratacaoEditar"></label>
+						<input type="checkbox" name="contratacaoVisualizar" class="filled-in" id="contratacaoVisualizar" <c:if test="${grupoDePermissoes.contratacaoVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="contratacaoVisualizar"></label>
+						<input type="checkbox" name="contratacaoCadastrar" class="filled-in" id="contratacaoCadastrar" <c:if test="${grupoDePermissoes.contratacaoCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="contratacaoCadastrar"></label>
+					</p>
+					<hr>
+					<p>
+					Férias 	
+						<input type="checkbox" name="feriasListar" class="filled-in" id="feriasListar" <c:if test="${grupoDePermissoes.feriasListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="feriasListar"></label>
+						<input type="checkbox" name="feriasEditar" class="filled-in" id="feriasEditar" <c:if test="${grupoDePermissoes.feriasEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="feriasEditar"></label>
+						<input type="checkbox" name="feriasVisualizar" class="filled-in" id="feriasVisualizar" <c:if test="${grupoDePermissoes.feriasVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="feriasVisualizar"></label>
+						<input type="checkbox" name="feriasCadastrar" class="filled-in" id="feriasCadastrar" <c:if test="${grupoDePermissoes.feriasCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="feriasCadastrar"></label>
+					</p>
+					<hr>
+					<p>
+					Dispensa 	
+						<input type="checkbox" name="dispensaListar" class="filled-in" id="dispensaListar" <c:if test="${grupoDePermissoes.dispensaListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="dispensaListar"></label>
+						<input type="checkbox" name="dispensaEditar" class="filled-in" id="dispensaEditar" <c:if test="${grupoDePermissoes.dispensaEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="dispensaEditar"></label>
+						<input type="checkbox" name="dispensaVisualizar" class="filled-in" id="dispensaVisualizar" <c:if test="${grupoDePermissoes.dispensaVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="dispensaVisualizar"></label>
+						<input type="checkbox" name="dispensaCadastrar" class="filled-in" id="dispensaCadastrar" <c:if test="${grupoDePermissoes.dispensaCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="dispensaCadastrar"></label>
+					</p>
+					<hr>
 					<p>
 					Histórico 	
 						<input type="checkbox" name="historicoListar" class="filled-in" id="historicoListar" <c:if test="${grupoDePermissoes.historicoListar == true}">checked</c:if> />
@@ -298,7 +442,79 @@
 						<label style="margin-left: 2em; float: right" for="historicoVisualizar"></label>
 						<input type="checkbox" name="historicoCadastrar" class="filled-in" id="historicoCadastrar" <c:if test="${grupoDePermissoes.historicoCadastrar == true}">checked</c:if> />
 						<label style="margin-left: 2em; float: right" for="historicoCadastrar"></label>
-					</p> --%>
+					</p>
+					<hr>
+					<p>
+					PIP 	
+						<input type="checkbox" name="pIPListar" class="filled-in" id="pIPListar" <c:if test="${grupoDePermissoes.pIPListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pIPListar"></label>
+						<input type="checkbox" name="pIPEditar" class="filled-in" id="pIPEditar" <c:if test="${grupoDePermissoes.pIPEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pIPEditar"></label>
+						<input type="checkbox" name="pIPVisualizar" class="filled-in" id="pIPVisualizar" <c:if test="${grupoDePermissoes.pIPVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pIPVisualizar"></label>
+						<input type="checkbox" name="pIPCadastrar" class="filled-in" id="pIPCadastrar" <c:if test="${grupoDePermissoes.pIPCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pIPCadastrar"></label>
+					</p>
+					<hr>
+					<p>
+					PIT 	
+						<input type="checkbox" name="pITListar" class="filled-in" id="pITListar" <c:if test="${grupoDePermissoes.pITListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pITListar"></label>
+						<input type="checkbox" name="pITEditar" class="filled-in" id="pITEditar" <c:if test="${grupoDePermissoes.pITEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pITEditar"></label>
+						<input type="checkbox" name="pITVisualizar" class="filled-in" id="pITVisualizar" <c:if test="${grupoDePermissoes.pITVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pITVisualizar"></label>
+						<input type="checkbox" name="pITCadastrar" class="filled-in" id="pITCadastrar" <c:if test="${grupoDePermissoes.pITCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pITCadastrar"></label>
+					</p>
+					<hr>
+					<p>
+					PIO 	
+						<input type="checkbox" name="pIOListar" class="filled-in" id="pIOListar" <c:if test="${grupoDePermissoes.pIOListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pIOListar"></label>
+						<input type="checkbox" name="pIOEditar" class="filled-in" id="pIOEditar" <c:if test="${grupoDePermissoes.pIOEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pIOEditar"></label>
+						<input type="checkbox" name="pIOVisualizar" class="filled-in" id="pIOVisualizar" <c:if test="${grupoDePermissoes.pIOVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pIOVisualizar"></label>
+						<input type="checkbox" name="pIOCadastrar" class="filled-in" id="pIOCadastrar" <c:if test="${grupoDePermissoes.pIOCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pIOCadastrar"></label>
+					</p>
+					<hr>
+					<p>
+					PAP Empresa 	
+						<input type="checkbox" name="pAPEmpresaListar" class="filled-in" id="pAPEmpresaListar" <c:if test="${grupoDePermissoes.pAPEmpresaListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pAPEmpresaListar"></label>
+						<input type="checkbox" name="pAPEmpresaEditar" class="filled-in" id="pAPEmpresaEditar" <c:if test="${grupoDePermissoes.pAPEmpresaEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pAPEmpresaEditar"></label>
+						<input type="checkbox" name="pAPEmpresaVisualizar" class="filled-in" id="pAPEmpresaVisualizar" <c:if test="${grupoDePermissoes.pAPEmpresaVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pAPEmpresaVisualizar"></label>
+						<input type="checkbox" name="pAPEmpresaCadastrar" class="filled-in" id="pAPEmpresaCadastrar" <c:if test="${grupoDePermissoes.pAPEmpresaCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pAPEmpresaCadastrar"></label>
+					</p>
+					<hr>
+					<p>
+					PAP IPP 	
+						<input type="checkbox" name="pAPIPPListar" class="filled-in" id="pAPIPPListar" <c:if test="${grupoDePermissoes.pAPIPPListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pAPIPPListar"></label>
+						<input type="checkbox" name="pAPIPPEditar" class="filled-in" id="pAPIPPEditar" <c:if test="${grupoDePermissoes.pAPIPPEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pAPIPPEditar"></label>
+						<input type="checkbox" name="pAPIPPVisualizar" class="filled-in" id="pAPIPPVisualizar" <c:if test="${grupoDePermissoes.pAPIPPVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pAPIPPVisualizar"></label>
+						<input type="checkbox" name="pAPIPPCadastrar" class="filled-in" id="pAPIPPCadastrar" <c:if test="${grupoDePermissoes.pAPIPPCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="pAPIPPCadastrar"></label>
+					</p>
+					<hr>
+					<p>
+					Ocorrência 	
+						<input type="checkbox" name="ocorrenciaListar" class="filled-in" id="ocorrenciaListar" <c:if test="${grupoDePermissoes.ocorrenciaListar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="ocorrenciaListar"></label>
+						<input type="checkbox" name="ocorrenciaEditar" class="filled-in" id="ocorrenciaEditar" <c:if test="${grupoDePermissoes.ocorrenciaEditar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="ocorrenciaEditar"></label>
+						<input type="checkbox" name="ocorrenciaVisualizar" class="filled-in" id="ocorrenciaVisualizar" <c:if test="${grupoDePermissoes.ocorrenciaVisualizar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="ocorrenciaVisualizar"></label>
+						<input type="checkbox" name="ocorrenciaCadastrar" class="filled-in" id="ocorrenciaCadastrar" <c:if test="${grupoDePermissoes.ocorrenciaCadastrar == true}">checked</c:if> />
+						<label style="margin-left: 2em; float: right" for="ocorrenciaCadastrar"></label>
+					</p>
 					<hr>
 					<p>
 					Dados Financeiros 	

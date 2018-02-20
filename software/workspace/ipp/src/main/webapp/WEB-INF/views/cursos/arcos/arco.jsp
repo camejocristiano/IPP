@@ -25,11 +25,10 @@
 </div>
 		<c:url value="/sw/arco/${arcoOcupacional.titulo != null ? arcoOcupacional.id : null}" var="swArcos"></c:url>
 		<form:form role="form" commandName="arcoOcupacional" servletRelativeAction="${swArcos}" method="POST">
-		<div class="input-field s12 col l12">
-			<form:input path="titulo" value="${arcoOcupacional.titulo}" />
-			<form:label path="titulo">Título</form:label>
-		</div>
-		
+			<div class="input-field s12 col l12">
+				<form:input path="titulo" value="${arcoOcupacional.titulo}" required="required" />
+				<form:label path="titulo">Título</form:label>
+			</div>				
 		<table id="tabelaUsuarios" class="display">
         <thead>
           <tr>
@@ -64,9 +63,17 @@
 		<br />
 		<br />
 		<input type="hidden" name="curso" value="${curso.id}" />
-			<button class="btn waves-effect waves-light right" type="submit">
-				Salvar<i class="material-icons right">send</i>
-			</button>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.arcoCadastrar == true && requestScope.arcoOcupacional.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.arcoEditar == true && requestScope.arcoOcupacional.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
 			<br />
 			<br />
 		</form:form>

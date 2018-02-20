@@ -11,9 +11,9 @@
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<c:url value="/sw/empresa/${empresa.id}" var="swEmpresaId"></c:url>
-			<a href="${swEmpresaId}">
-				<h4 class="header right black-text">${gestor.nome != null ? gestor.nome : empresa.nomeFantazia}</h4>
+			<c:url value="/sw/homeCursos/${curso.id}" var="swCursoId"></c:url>
+			<a href="${swCursoId}">
+				<h4 class="header right black-text">${curso.nomeDoCurso != null ? curso.nomeDoCurso : "CBO"}</h4>
 			</a>
 			<br />
 			<br />		
@@ -30,7 +30,9 @@
             <th>ID</th>
             <th>TITULO</th>
             <th>NUMERO</th>
-            <th class="td-icon">EDITAR</th>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.cboVisualizar == true}">
+            	<th class="td-icon">EDITAR</th>
+            </c:if>
           </tr>
         </thead>
         <tbody>
@@ -39,18 +41,22 @@
             <td>${cbo.id}</td>
             <td>${cbo.titulo}</td>
             <td>${cbo.numero}</td>
-            <c:url value="/sw/cbos/${cbo.id}" var="swCbosId"></c:url>
-			<td class="td-icon"><a href=""><i class="material-icons" >border_color</i></a></td>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.cboVisualizar == true}">
+            	<c:url value="/sw/cbo/${cbo.id}" var="swCbosId"></c:url>
+				<td class="td-icon"><a href="${swCbosId}"><i class="material-icons" >border_color</i></a></td>
+			</c:if>
           </tr>
         </c:forEach>
         </tbody>
       </table> 
+      <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.cboCadastrar == true}">
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    	<c:url value="/sw/cbos/form" var="swCbosForm"></c:url>
+    	<c:url value="/sw/cbo/form" var="swCbosForm"></c:url>
 		<a class="btn-floating btn-large waves-effect waves-light orange" href="${swCbosForm}">
                 <i class="material-icons">add</i>
         </a>
     </div>
+    </c:if>
 <br />
 <br />
 	</div>

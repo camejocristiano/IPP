@@ -23,6 +23,12 @@
 	</div>
 	<div class="row">
 		
+		<c:if test="${
+			usuarioSessao.grupoDePermissoes.cursoCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.cursoVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.cursoEditar == true ||
+			usuarioSessao.grupoDePermissoes.cursoListar == true			
+				}">
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
 				<c:url value="/sw/cursos/" var="swCursos"></c:url>
@@ -41,6 +47,13 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
+		<c:if test="${
+			usuarioSessao.grupoDePermissoes.cboCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.cboVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.cboEditar == true ||
+			usuarioSessao.grupoDePermissoes.cboListar == true			
+				}">
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
 				<c:url value="/sw/cbos/" var="swCbos"></c:url>
@@ -50,7 +63,7 @@
 			    		<p>Manutenção de CBOS</p>
 			    	</div>
 		        </a>
-		        <c:url value="/sw/cbos/form" var="swCbosForm"></c:url>
+		        <c:url value="/sw/cbo/form" var="swCbosForm"></c:url>
 				<a href="${swCbosForm}" class="btn-index">
 			    	<div class="card-action">
 			    		<h6 style="color: #eee !important;">Novo</h6>
@@ -58,6 +71,13 @@
 				</a>
 			</div>
 	   	</div>
+	   	</c:if>
+	    <c:if test="${
+			usuarioSessao.grupoDePermissoes.arcoCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.arcoVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.arcoEditar == true ||
+			usuarioSessao.grupoDePermissoes.arcoListar == true			
+				}">
 	    <div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
 	    		<c:url value="/sw/arcos" var="swArcos"></c:url>
@@ -75,6 +95,13 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
+		<c:if test="${
+			usuarioSessao.grupoDePermissoes.basicoCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.basicoVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.basicoEditar == true ||
+			usuarioSessao.grupoDePermissoes.basicoListar == true			
+				}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
 	    		<c:url value="/sw/basicos" var="swBasicos"></c:url>
@@ -84,7 +111,7 @@
 		              <p>Manutenção de Conteúdos Teóricos</p>
 	                </div>
 	            </a>
-	            <c:url value="/sw/basicos/form" var="swBasicosForm"></c:url>
+	            <c:url value="/sw/basico/form" var="swBasicosForm"></c:url>
 				<a href="${swBasicosForm}" class="btn-index">
 		            <div class="card-action">
 		              <h6 style="color: #eee !important;">Novo</h6>
@@ -92,6 +119,13 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
+		<c:if test="${
+			usuarioSessao.grupoDePermissoes.especificoCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.especificoVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.especificoEditar == true ||
+			usuarioSessao.grupoDePermissoes.especificoListar == true			
+				}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
 	    		<c:url value="/sw/especificos" var="swEspecificos"></c:url>
@@ -101,7 +135,7 @@
 		              <p>Manutenção de Conteúdos Teóricos</p>
 	                </div>
 	            </a>
-	            <c:url value="/sw/especificos/form" var="swEspecificosForm"></c:url>
+	            <c:url value="/sw/especifico/form" var="swEspecificosForm"></c:url>
 				<a href="${swEspecificosForm}" class="btn-index">
 		            <div class="card-action">
 		              <h6 style="color: #eee !important;">Novo</h6>
@@ -109,7 +143,45 @@
 				</a>
 			</div>
 		</div>
+		
+		<c:if test="${usuarioSessao.admin == true}">
+		<div class="col s12 m6 l4">
+	    	<div class="card blue-grey darken-1">
+	    		<c:url value="/sw/validacoes" var="swValidacoes"></c:url>
+	      		<a href="${swValidacoes}">
+		            <div class="card-content white-text">
+		              <span class="card-title">Validações<i class="material-icons right" style="color: #eee !important;">beenhere</i></span>
+		              <p>Manutenção de Validações</p>
+	                </div>
+	            </a>
+				<a class="btn-index">
+		            <div class="card-action">
+		              <h6 style="color: #eee !important;">...</h6>
+		            </div>
+				</a>
+			</div>
+		</div>
+		</c:if>
+		</c:if>
 
+		<c:if test="${usuarioSessao.admin == true && usuarioSessao.grupoDePermissoes.matriculaListar == true}">
+		<div class="col s12 m6 l4">
+	    	<div class="card blue-grey darken-1">
+	    		<c:url value="/sw/matriculas" var="swMatriculas"></c:url>
+	      		<a href="${swMatriculas}">
+		            <div class="card-content white-text">
+		              <span class="card-title">Matrículas<i class="material-icons right" style="color: #eee !important;">beenhere</i></span>
+		              <p>Manutenção de Matrículas</p>
+	                </div>
+	            </a>
+				<a class="btn-index">
+		            <div class="card-action">
+		              <h6 style="color: #eee !important;">...</h6>
+		            </div>
+				</a>
+			</div>
+		</div>
+		</c:if>
 	</div>  
 
 	

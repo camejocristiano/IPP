@@ -1,12 +1,7 @@
 package br.net.ipp.models.cursos;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.enums.DiaDaSemana;
 import br.net.ipp.enums.TipoTurmaEnum;
@@ -18,12 +13,8 @@ public class Turma extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name = "dataInicioTurma")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataInicioTurma;
-	@Column(name = "dataFimTurma")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy")  
-	private Date dataFimTurma;
+	private String dataInicioTurma;
+	private String dataFimTurma;
 	private DiaDaSemana diaDaSemana;
 	private String horaInicioTurma;
 	private String horaFimTurma;
@@ -34,16 +25,16 @@ public class Turma extends AbstractEntity {
 	private String numeroTurma;
 	private TipoTurmaEnum tipoTurma;
 	
-	public Date getDataInicioTurma() {
+	public String getDataInicioTurma() {
 		return dataInicioTurma;
 	}
-	public void setDataInicioTurma(Date dataInicioTurma) {
+	public void setDataInicioTurma(String dataInicioTurma) {
 		this.dataInicioTurma = dataInicioTurma;
 	}
-	public Date getDataFimTurma() {
+	public String getDataFimTurma() {
 		return dataFimTurma;
 	}
-	public void setDataFimTurma(Date dataFimTurma) {
+	public void setDataFimTurma(String dataFimTurma) {
 		this.dataFimTurma = dataFimTurma;
 	}
 	public DiaDaSemana getDiaDaSemana() {

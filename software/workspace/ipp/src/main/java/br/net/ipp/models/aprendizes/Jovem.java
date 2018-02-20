@@ -1,12 +1,9 @@
 package br.net.ipp.models.aprendizes;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import br.net.ipp.enums.AEDiaDaSemana;
 import br.net.ipp.enums.Area;
@@ -28,7 +25,9 @@ public class Jovem extends User {
 
 	private static final long serialVersionUID = 1L;
 
+	@NotEmpty
 	private String nome;
+	private String foto;
 	private String telefone;
 	private String celular;
 	private String endereco;
@@ -55,9 +54,7 @@ public class Jovem extends User {
 	private String cPFPai;
 	private String cPFResp;
 	// CTPS
-	@Column(name = "cTPSdataExpedicao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date cTPSdataExpedicao;
+	private String cTPSdataExpedicao;
 	private String cTPSNumero;
 	private String cTPSSerie;
 	private String cTPSUF;
@@ -97,12 +94,8 @@ public class Jovem extends User {
 	private Turma aETurma;
 	private AEDiaDaSemana aEDiaSem;
 	private DiaDaSemana pAPDiaDaSemana;
-	@Column(name = "dataDeNascimento")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataDeNascimento;
-	@Column(name = "dataExpedicao")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataExpedicao;
+	private String dataDeNascimento;
+	private String dataExpedicao;
 	@ManyToOne
 	private Canal canal;
 	@ManyToOne
@@ -120,6 +113,12 @@ public class Jovem extends User {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public String getFoto() {
+		return foto;
+	}
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 	public String getTelefone() {
 		return telefone;
@@ -235,16 +234,16 @@ public class Jovem extends User {
 	public void setRegiao(Regiao regiao) {
 		this.regiao = regiao;
 	}
-	public Date getDataDeNascimento() {
+	public String getDataDeNascimento() {
 		return dataDeNascimento;
 	}
-	public void setDataDeNascimento(Date dataDeNascimento) {
+	public void setDataDeNascimento(String dataDeNascimento) {
 		this.dataDeNascimento = dataDeNascimento;
 	}
-	public Date getDataExpedicao() {
+	public String getDataExpedicao() {
 		return dataExpedicao;
 	}
-	public void setDataExpedicao(Date dataExpedicao) {
+	public void setDataExpedicao(String dataExpedicao) {
 		this.dataExpedicao = dataExpedicao;
 	}
 	public static long getSerialversionuid() {
@@ -370,10 +369,10 @@ public class Jovem extends User {
 	public void setcPFResp(String cPFResp) {
 		this.cPFResp = cPFResp;
 	}
-	public Date getcTPSdataExpedicao() {
+	public String getcTPSdataExpedicao() {
 		return cTPSdataExpedicao;
 	}
-	public void setcTPSdataExpedicao(Date cTPSdataExpedicao) {
+	public void setcTPSdataExpedicao(String cTPSdataExpedicao) {
 		this.cTPSdataExpedicao = cTPSdataExpedicao;
 	}
 	public String getcTPSNumero() {

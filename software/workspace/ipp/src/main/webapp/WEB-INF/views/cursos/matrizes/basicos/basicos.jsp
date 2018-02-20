@@ -30,7 +30,9 @@
             <th>ID</th>
             <th>TÍTULO</th>
             <th>HORA AULA</th>
-            <th class="td-icon">EDITAR</th>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.basicoVisualizar == true}">
+            	<th class="td-icon">EDITAR</th>
+            </c:if>
           </tr>
         </thead>
         <tbody>
@@ -39,20 +41,24 @@
             <td>${basico.id}</td>
             <td>${basico.titulo}</td>
             <td>${especifico.horaAula}</td>
-            <c:url value="/sw/basicos/${basico.id}" var="swBasicoId"></c:url>
-            <td class="td-icon"><a href="${swBasicoId}"><i class="material-icons" >border_color</i></a></td>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.basicoVisualizar == true}">
+            	<c:url value="/sw/basico/${basico.id}" var="swBasicoId"></c:url>
+            	<td class="td-icon"><a href="${swBasicoId}"><i class="material-icons" >border_color</i></a></td>
+            </c:if>
           </tr>
           </c:forEach>
           </tbody>
           
       </table> 
       
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.basicoCadastrar == true}">
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-		<c:url value="/sw/basicos/form" var="swBasicosForm"></c:url>
+		<c:url value="/sw/basico/form" var="swBasicosForm"></c:url>
             <a class="btn-floating btn-large waves-effect waves-light orange" href="${swBasicosForm}">
                 <i class="material-icons">add</i>
             </a>
          </div>
+         </c:if>
          
            
          

@@ -4,6 +4,8 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,17 +17,18 @@ import org.springframework.web.servlet.ModelAndView;
 import br.net.ipp.daos.configuracoes.AgendamentoRepository;
 import br.net.ipp.daos.configuracoes.UsuarioRepository;
 import br.net.ipp.models.configuracoes.Agendamento;
+import br.net.ipp.models.configuracoes.Usuario;
 
 @Controller
 @Transactional
-@RequestMapping("/sw/agendamentos")
+@RequestMapping("/sw")
 public class AgendamentoController {
 	
 	private AgendamentoRepository agendamentoRepository;
 	private UsuarioRepository usuarioRepository;
 	
 	@Autowired
-	public void AgendamentoEndPoint(
+	public AgendamentoController(
 			AgendamentoRepository agendamentoRepository,
 			UsuarioRepository usuarioRepository
 			) {
@@ -33,29 +36,42 @@ public class AgendamentoController {
 		this.usuarioRepository = usuarioRepository;
 	}
 	
-	@GetMapping
-	public ModelAndView index() {
-		ModelAndView modelAndView = new ModelAndView("configuracoes/agendamentos/agendamentos");
-		modelAndView.addObject("agendamentos", agendamentoRepository.findAll());
+	@GetMapping("/agendamentos")
+	public ModelAndView agenda(@AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		if (usuarioSessao.getGrupoDePermissoes().isAgendamentoListar() == true) {
+			modelAndView = new ModelAndView("configuracoes/agendamentos/agendamentos");
+			if (usuarioSessao.isAdmin()) {
+				modelAndView.addObject("agendamentos", agendamentoRepository.findAll());
+				modelAndView.addObject("agendamentosResponsavel", agendamentoRepository.findAlByUsuarioResponsavel(usuarioSessao));
+				modelAndView.addObject("agendamentosEnvolvido", agendamentoRepository.findAlByUsuariosEnvolvidos(usuarioSessao));
+			} else {
+				modelAndView.addObject("agendamentosResponsavel", agendamentoRepository.findAlByUsuarioResponsavel(usuarioSessao));
+				modelAndView.addObject("agendamentosEnvolvido", agendamentoRepository.findAlByUsuariosEnvolvidos(usuarioSessao));
+			}
+		} else {
+			// retorna erro sem permissao
+		}
 		return modelAndView;
 	}
 	
-	@GetMapping("/form")
+	@GetMapping("/agendamento/form")
 	public ModelAndView form(Agendamento agendamento) {
 		ModelAndView modelAndView = new ModelAndView("configuracoes/agendamentos/agendamento");
 		modelAndView.addObject("usuarios", usuarioRepository.findAll());
 		return modelAndView;
 	}
 	
-	@PostMapping
+	@PostMapping("/agendamento")
 	public ModelAndView save(@Valid Agendamento agendamento, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView("configuracoes/agendamentos/agendamento");
 		if (bindingResult.hasErrors()) {
-			modelAndView.addObject("corMsg", "red");
+			modelAndView.addObject("corMsg", "orange");
 			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 		} else {
 			agendamentoRepository.save(agendamento);
-			modelAndView.addObject("corMsg", "green");
+			modelAndView.addObject("color", "#26a69a");
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");
 			modelAndView.addObject("usuarios", usuarioRepository.findAll());
 			modelAndView.addObject("agendamento", agendamento);
@@ -63,7 +79,7 @@ public class AgendamentoController {
 		return modelAndView;
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/agendamento/{id}")
 	public ModelAndView load(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("configuracoes/agendamentos/agendamento");
 		Agendamento agendamento = agendamentoRepository.findOne(id);
@@ -72,18 +88,18 @@ public class AgendamentoController {
 		return modelAndView;
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/agendamento/{id}")
 	public ModelAndView update(@PathVariable("id") String id, @Valid Agendamento agendamento,
 			BindingResult bindingResult) {
 		agendamento.setId(Long.parseLong(id));
 		ModelAndView modelAndView = new ModelAndView("configuracoes/agendamentos/agendamento");
 		if (bindingResult.hasErrors()) {
-			modelAndView.addObject("corMsg", "red");
+			modelAndView.addObject("corMsg", "orange");
 			modelAndView.addObject("msg",
 					"Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
 		} else {
 			agendamentoRepository.save(agendamento);
-			modelAndView.addObject("corMsg", "green");
+			modelAndView.addObject("color", "#26a69a");
 			modelAndView.addObject("agendamento", agendamento);
 			modelAndView.addObject("usuarios", usuarioRepository.findAll());
 			modelAndView.addObject("msg", "Operação realizada com sucesso!");

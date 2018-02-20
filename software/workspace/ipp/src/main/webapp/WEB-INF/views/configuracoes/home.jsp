@@ -100,9 +100,8 @@
 			</div>
 		</div>
 		</c:if>	
-	</div>
-	<div class="row">
-<c:if test="${
+
+		<c:if test="${
 			usuarioSessao.grupoDePermissoes.canalCadastrar == true ||
 			usuarioSessao.grupoDePermissoes.canalVisualizar == true ||
 			usuarioSessao.grupoDePermissoes.canalEditar == true ||
@@ -117,7 +116,7 @@
 			    		<p>Manutenção de Canais</p>
 			    	</div>
 		        </a>
-				<c:url value="/sw/canais/form" var="swCanaisForm"></c:url>
+				<c:url value="/sw/canal/form" var="swCanaisForm"></c:url>
 				<a href="${swCanaisForm}" class="btn-index">
 			    	<div class="card-action">
 			    		<h6 style="color: #eee !important;">Novo</h6>

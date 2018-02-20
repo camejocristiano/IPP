@@ -4,6 +4,8 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,7 @@ import br.net.ipp.daos.aprendizes.SituacaoDeSaudeRepository;
 import br.net.ipp.daos.configuracoes.UsuarioRepository;
 import br.net.ipp.models.aprendizes.Jovem;
 import br.net.ipp.models.aprendizes.SituacaoDeSaude;
+import br.net.ipp.models.configuracoes.Usuario;
 
 @Controller
 @Transactional
@@ -39,74 +42,126 @@ public class SituacaoDeSaudeController {
 	}
 
 	@GetMapping("/situacaoDeSaude/form")
-	public ModelAndView situacaoDeSaude(SituacaoDeSaude situacaoDeSaude) {
-		ModelAndView modelAndView = new ModelAndView("aprendizes/saudes/saude");
-		modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
-		modelAndView.addObject("usuarios", usuarioRepository.findAll());
+	public ModelAndView situacaoDeSaude(SituacaoDeSaude situacaoDeSaude, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		if (usuarioSessao.getGrupoDePermissoes().isSituacaoDeSaudeCadastrar() == true) {
+			modelAndView = new ModelAndView("aprendizes/saudes/saude");
+			modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
+			modelAndView.addObject("usuarios", usuarioRepository.findAll());
+		} else {
+			modelAndView = new ModelAndView("redirect:/sw/jovens/");			
+		}
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		return modelAndView;
 	}
 	
 	@GetMapping("/situacaoDeSaude/form/{id}")
-	public ModelAndView situacaoDeSaudeJovem(SituacaoDeSaude situacaoDeSaude, @PathVariable Long id) {
-		ModelAndView modelAndView = new ModelAndView("aprendizes/saudes/saude");
+	public ModelAndView situacaoDeSaudeJovem(SituacaoDeSaude situacaoDeSaude, @PathVariable Long id, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
 		Jovem jovem = jovemRepository.findOne(id);
-		modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
+		if (usuarioSessao.getGrupoDePermissoes().isSituacaoDeSaudeCadastrar() == true) {
+			modelAndView = new ModelAndView("aprendizes/saudes/saude");
+			modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
+			modelAndView.addObject("jovem", jovem);
+			modelAndView.addObject("usuarios", usuarioRepository.findAll());
+		} else {
+			modelAndView = new ModelAndView("redirect:/sw/jovem/"+jovem.getId());			
+		}
 		modelAndView.addObject("jovem", jovem);
-		modelAndView.addObject("usuarios", usuarioRepository.findAll());
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		return modelAndView;
 	}
 
 	@PostMapping("/situacaoDeSaude")
-	public ModelAndView save(@Valid SituacaoDeSaude situacaoDeSaude, BindingResult bindingResult) {
-		Long id = situacaoDeSaude.getJovem().getId();
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
-		if (bindingResult.hasErrors()) {
-			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
-			modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
+	public ModelAndView save(@Valid SituacaoDeSaude situacaoDeSaude, BindingResult bindingResult, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		Jovem jovem = jovemRepository.findOne(situacaoDeSaude.getJovem().getId());
+		if (usuarioSessao.getGrupoDePermissoes().isSituacaoDeSaudeCadastrar() == true) {
+			modelAndView = new ModelAndView("aprendizes/saudes/saude");
+			if (bindingResult.hasErrors()) {
+				modelAndView.addObject("color", "orange");
+				modelAndView.addObject("msg", "Algo saiu errado!");
+				modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
+			} else {
+				situacaoDeSaudeRepository.save(situacaoDeSaude);
+				modelAndView.addObject("color", "#26a69a");
+				modelAndView.addObject("msg", "Operação realizada com sucesso!");
+				modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
+			}		
 		} else {
-			situacaoDeSaudeRepository.save(situacaoDeSaude);
-			modelAndView.addObject("msg", "Operação realizada com sucesso!");
-			modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
-		}		
+			modelAndView = new ModelAndView("redirect:/sw/jovem/"+jovem.getId());			
+		}
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		return modelAndView;
 	}
 
 	@GetMapping("/situacaoDeSaude/{id}")
-	public ModelAndView load(@PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("aprendizes/saudes/saude");
+	public ModelAndView load(@PathVariable("id") Long id, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
 		SituacaoDeSaude situacaoDeSaude = situacaoDeSaudeRepository.findOne(id);
-		modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
-		modelAndView.addObject("usuarios", usuarioRepository.findAll());
+		Jovem jovem = jovemRepository.findOne(situacaoDeSaude.getJovem().getId());
+		if (usuarioSessao.getGrupoDePermissoes().isSituacaoDeSaudeVisualizar() == true) {
+			modelAndView = new ModelAndView("aprendizes/saudes/saude");
+			modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
+			modelAndView.addObject("usuarios", usuarioRepository.findAll());
+		} else {
+			modelAndView = new ModelAndView("redirect:/sw/jovem/"+jovem.getId());			
+		}
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		return modelAndView;
 	}
 	
 	@PostMapping("/situacaoDeSaude/{id}")
-	public ModelAndView update(@Valid SituacaoDeSaude situacaoDeSaude, BindingResult bindingResult) {
-		Long id = situacaoDeSaude.getJovem().getId();
-		ModelAndView modelAndView = new ModelAndView("redirect:/jovens/"+id);
-		if (bindingResult.hasErrors()) {
-			modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
-			modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
+	public ModelAndView update(@Valid SituacaoDeSaude situacaoDeSaude, BindingResult bindingResult, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		Jovem jovem = jovemRepository.findOne(situacaoDeSaude.getJovem().getId());
+		if (usuarioSessao.getGrupoDePermissoes().isSituacaoDeSaudeEditar() == true) {
+			modelAndView = new ModelAndView("aprendizes/saudes/saude");
+			if (bindingResult.hasErrors()) {
+				modelAndView.addObject("color", "orange");
+				modelAndView.addObject("msg", "Algo saiu errado!");
+				modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
+			} else {
+				situacaoDeSaudeRepository.save(situacaoDeSaude);
+				modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
+				modelAndView.addObject("color", "#26a69a");
+				modelAndView.addObject("msg", "Operação realizada com sucesso!");
+			}	
 		} else {
-			situacaoDeSaudeRepository.save(situacaoDeSaude);
-			modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
-			modelAndView.addObject("msg", "Operação realizada com sucesso!");
-		}	
+			modelAndView = new ModelAndView("redirect:/sw/jovem/"+jovem.getId());			
+		}
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		return modelAndView;
 	}
 	
 	@GetMapping("/situacaoDeSaudeJovem/{id}")
-	public ModelAndView situacaoDeSaudeJovem(@PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("aprendizes/saudes/saude");
+	public ModelAndView situacaoDeSaudeJovem(@PathVariable("id") Long id, @AuthenticationPrincipal UserDetails userDetails) {
+		ModelAndView modelAndView = null;
+		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
 		Jovem jovem = jovemRepository.findOne(id);
-		modelAndView.addObject("jovem", jovem);
-		if (situacaoDeSaudeRepository.findByJovem(jovem) != null) {
-			modelAndView.addObject("situacaoDeSaude", situacaoDeSaudeRepository.findByJovem(jovem));
+		if (usuarioSessao.getGrupoDePermissoes().isSituacaoDeSaudeVisualizar() == true) {
+			modelAndView = new ModelAndView("aprendizes/saudes/saude");
+			modelAndView.addObject("jovem", jovem);
+			if (situacaoDeSaudeRepository.findByJovem(jovem) != null) {
+				modelAndView.addObject("situacaoDeSaude", situacaoDeSaudeRepository.findByJovem(jovem));
+			} else {
+				SituacaoDeSaude situacaoDeSaude = new SituacaoDeSaude();
+				modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
+			}
+			modelAndView.addObject("usuarios", usuarioRepository.findAll());
 		} else {
-			SituacaoDeSaude situacaoDeSaude = new SituacaoDeSaude();
-			modelAndView.addObject("situacaoDeSaude", situacaoDeSaude);
+			modelAndView = new ModelAndView("redirect:/sw/jovem/"+jovem.getId());			
 		}
-		modelAndView.addObject("usuarios", usuarioRepository.findAll());
+		modelAndView.addObject("jovem", jovem);
+		modelAndView.addObject("usuarioSessao", usuarioSessao);
 		return modelAndView;
 	}
 	

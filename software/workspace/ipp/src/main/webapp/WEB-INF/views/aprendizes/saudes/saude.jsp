@@ -47,11 +47,12 @@
 									<option value="${usuario.id}">${usuario.nome}</option>							
 								</c:forEach>
 							</form:select>
+							<label for="quemEntrevistou">Quem Entrevistou?</label>
 						</div><!-- // col -->
 					</div><!-- // row -->
 					<div class="row">
 						<div class="input-field s12 col l12">
-							<form:input id="dataDaEntrevista" path="dataDaEntrevista" type="date" class="validate datepicker" placeholder="Data da Entrevista" /> 
+							<form:input id="dataDaEntrevista" path="dataDaEntrevista" type="text" class="validate datepicker" placeholder="Data da Entrevista" /> 
 							<form:label path="dataDaEntrevista">Data Da Entrevista</form:label>
 						</div><!-- // col -->
 					</div><!-- // row -->
@@ -135,7 +136,7 @@
 							<input type="checkbox" name="convulcoes" class="filled-in" id="convulcoes" <c:if test="${situacaoDeSaude.convulcoes == true}">checked</c:if> />
 							<label for="convulcoes">Convulções</label><br />
 							<input type="checkbox" name="asma" class="filled-in" id="asma" <c:if test="${situacaoDeSaude.asma == true}">checked</c:if> />
-							<label for="convulcoes">Asma</label><br />
+							<label for="asma">Asma</label><br />
 							<input type="checkbox" name="epilepsia" class="filled-in" id="epilepsia" <c:if test="${situacaoDeSaude.epilepsia == true}">checked</c:if> />
 							<label for="epilepsia">Epilepsia</label><br />
 							<input type="checkbox" name="hipoglicemia" class="filled-in" id="hipoglicemia" <c:if test="${situacaoDeSaude.hipoglicemia == true}">checked</c:if> />
@@ -173,9 +174,18 @@
 			</div><!-- // row -->
 			
 			<form:hidden path="jovem" value="${jovem.id}" />
-			<button class="btn waves-effect waves-light right" type="submit">
-				Salvar<i class="material-icons right">send</i>
-			</button>
+
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.situacaoDeSaudeCadastrar == true && requestScope.situacaoDeSaude.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.situacaoDeSaudeEditar == true && requestScope.situacaoDeSaude.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
 		</form:form>
 		<br />
 		<br />

@@ -32,7 +32,9 @@
             <th>E-MAIL</th>
             <th>TELEFONE</th>
             <th>STATUS</th>
-            <th class="td-icon">EDITAR</th>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.jovemVisualizar == true}">
+            	<th class="td-icon">EDITAR</th>
+            </c:if>
           </tr>
         </thead>
         <tbody>
@@ -41,23 +43,27 @@
             <td>MATRICULA</td>
             <td>${jovem.id}</td>
             <td>${jovem.nome}</td>
-            <td>${jovem.email}</td>
+            <td>${jovem.username}</td>
             <td>${jovem.telefone}</td>
             <td>${jovem.status}</td>
-            <c:url value="/sw/jovem/${jovem.id}" var="jovemFormId" />
-            <td class="td-icon"><a href="${jovemFormId}"><i class="material-icons" >border_color</i></a></td>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.jovemVisualizar == true}">
+            	<c:url value="/sw/jovem/${jovem.id}" var="jovemFormId" />
+            	<td class="td-icon"><a href="${jovemFormId}"><i class="material-icons" >border_color</i></a></td>
+          	</c:if>
           </tr>
           </c:forEach>
           </tbody>
           
       </table> 
       
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.jovemCadastrar == true}">
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
 			<c:url value="/sw/jovem/form" var="jovemForm" />
             <a class="btn-floating btn-large waves-effect waves-light orange" href="${jovemForm}">
                 <i class="material-icons">add</i>
             </a>
          </div>
+         </c:if>
          
     	</div>  
 

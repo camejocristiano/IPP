@@ -22,14 +22,43 @@
 			<hr />
 			<br />
 	</div>
+	
+	  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <c:url value="/sw/jovem/foto/${jovem.id}" var="enviarImagem"></c:url>
+		<form method="POST" enctype="multipart/form-data" action="${enviarImagem}">
+			<h3>Foto - Jovem</h3>
+			<hr />
+			<hr />
+			<div class="btn">
+		        <span>Foto</span>
+		        <input type="file" name="file" />
+		      </div>
+		      
+			<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+			    <i class="material-icons right">send</i>
+			  </button>
+		</form>
+    </div>
+    <hr />
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+    </div>
+  </div>
+	
 </div>
 <c:url value="/sw/jovem/${jovem.nome != null ? jovem.id : null}" var="swJovemIdPost" />
 <form:form role="form" commandName="jovem" servletRelativeAction="${swJovemIdPost}" method="POST">
 	<div class="row">
-		<div class="s12 col l2">
-			<c:url value="/images/usuario.png" var="usuarioPng" />
-			<img src="${usuarioPng}" alt="" width="175em" />
-		</div>
+		<div class="input-field  s12 col l2">
+              <c:url value="/sw/file/${jovem.foto}" var="jovemPng"></c:url>
+        	<!-- Modal Trigger -->
+  			<a class="modal-trigger" href="#modal1">
+              <img src="${jovemPng}" alt="FOTO" width="175em" />
+  			</a>
+            <input type="hidden" value="${jovem.foto}" name="foto" />
+            </div><!-- // col -->
 		
 		<div class="s12 col l10">
 			<div class="row">
@@ -47,10 +76,10 @@
 					</form:select>
                 </div>
 				<div class="input-field s12 col l3">
-                    <form:input id="dataDeNascimento" path="dataDeNascimento" type="date" class="validate datepicker" placeholder="Data de Nascimento" /> 
+                    <form:input id="dataDeNascimento" path="dataDeNascimento" type="text" class="validate datepicker" placeholder="Data de Nascimento" /> 
                 </div>
 				<div class="input-field s12 col l1">
-					<form:input path='idade' type='text' />
+					<form:input path='idade' type='text' required="required" />
 					<form:errors path='idade'/> 
 					<label for="idade">Idade</label>
 				</div>
@@ -64,7 +93,7 @@
                 </div>
 			</div>
 		</div>
-		<div class="s12 col l10">
+		<div class="s12 col l12">
 			<div class="row">
 				<div class="input-field s12 col l3">
                     <form:select path="unidade">
@@ -75,22 +104,22 @@
 					</form:select>
                 </div>
 				<div class="input-field s12 col l3">
-					<form:input path='cPF' type='text' />
+					<form:input path='cPF' type='text' required="required" />
 					<form:errors path='cPF'/> 
 					<label for="cPF">CPF</label>
 				</div>
 				<div class="input-field s12 col l3">
-					<form:input path='rG' type='text' />
+					<form:input path='rG' type='text' required="required" />
 					<form:errors path='rG'/> 
 					<label for="rG">RG</label>
 				</div>
 				<div class="input-field s12 col l1">
-					<form:input path='orgaoEmissor' type='text' />
+					<form:input path='orgaoEmissor' type='text' required="required" />
 					<form:errors path='orgaoEmissor'/> 
 					<label for="orgaoEmissor">Órg.Em.</label>
 				</div>
 				<div class="input-field s12 col l2">
-                    <form:input id="dataExpedicao" path="dataExpedicao" type="date" class="validate datepicker" placeholder="Data de Expedição" /> 
+                    <form:input id="dataExpedicao" path="dataExpedicao" type="text" class="validate datepicker" placeholder="Data de Expedição" /> 
                 </div>
 			</div>
 		</div>
@@ -99,27 +128,27 @@
 		<div class="s12 col l12">
 			<div class="row">
 				<div class="input-field s12 col l2">
-					<form:input path='telefone' type='text'  />
+					<form:input path='telefone' type='text' required="required" />
 					<form:errors path='telefone'/> 
 					<label for="telefone">Telefone</label>
 				</div>
 				<div class="input-field s12 col l2">
-					<form:input path='celular' type='text'  />
+					<form:input path='celular' type='text' required="required" />
 					<form:errors path='celular'/> 
 					<label for="celular">Celular</label>
 				</div>
 				<div class="input-field s12 col l5">
-					<form:input path='endereco' type='text'  />
+					<form:input path='endereco' type='text' required="required" />
 					<form:errors path='endereco'/> 
 					<label for="endereco">Endereço</label>
 				</div>
 				<div class="input-field s12 col l1">
-					<form:input path='numeroResidencia' type='text'  />
+					<form:input path='numeroResidencia' type='text' required="required" />
 					<form:errors path='numeroResidencia'/> 
 					<label for="numeroResidencia">Número</label>
 				</div>
 				<div class="input-field s12 col l2">
-                    <form:select path="area" >
+                    <form:select path="area">
                     	<form:option value="${jovem.area}" label="${jovem.area == null ? 'Area' : jovem.area}" />
 						<c:forEach var="area" items="${requestScope.area}">
 							<form:option value="${area}">${area}</form:option>							
@@ -138,12 +167,12 @@
 					<label for="complemento">Complemento</label>
 				</div>
 				<div class="input-field s12 col l2">
-					<form:input path='bairro' type='text'  />
+					<form:input path='bairro' type='text' required="required" />
 					<form:errors path='bairro'/> 
 					<label for="bairro">Bairro</label>
 				</div>
 				<div class="input-field s12 col l2">
-                    <form:select path="regiao" >
+                    <form:select path="regiao">
                     	<form:option value="${jovem.regiao}" label="${jovem.regiao == null ? 'Região' : jovem.regiao}" />
 						<c:forEach var="regiao" items="${requestScope.regiao}">
 							<form:option value="${regiao}">${regiao}</form:option>							
@@ -151,17 +180,17 @@
 					</form:select>	
                 </div>
                 <div class="input-field s12 col l2">
-					<form:input path='cEP' type='text' />
+					<form:input path='cEP' type='text' required="required" />
 					<form:errors path='cEP'/> 
 					<label for="cEP">CEP</label>
 				</div>
 				<div class="input-field s12 col l2">
-					<form:input path='estado' type='text' />
+					<form:input path='estado' type='text' required="required" />
 					<form:errors path='estado'/> 
 					<label for="estado">Estado</label>
 				</div>
 				<div class="input-field s12 col l2">
-					<form:input path='cidade' type='text' />
+					<form:input path='cidade' type='text' required="required" />
 					<form:errors path='cidade'/> 
 					<label for="cidade">Cidade</label>
 				</div>
@@ -172,12 +201,12 @@
 		<div class="s12 col l12">
 			<div class="row">
 				<div class="input-field s12 col l3">
-					<form:input path='email' type='text' required="required" />
-					<form:errors path='email'/> 
-					<label for="email">Email do Jovem</label>
+					<form:input path='username' type='text' required="required" />
+					<form:errors path='username'/> 
+					<label for="username">Email do Jovem</label>
 				</div>
 				<div class="input-field s12 col l5">
-					<form:input path='nomeDaMae' type='text' />
+					<form:input path='nomeDaMae' type='text' required="required" />
 					<form:errors path='nomeDaMae'/> 
 					<label for="nomeDaMae">Nome da Mãe</label>
 				</div>
@@ -190,7 +219,7 @@
 					</form:select>	
                 </div>
 				<div class="input-field s12 col l2">
-					<form:input path='codigoDoJovem' type='text' />
+					<form:input path='codigoDoJovem' type='text' required="required" />
 					<form:errors path='codigoDoJovem'/> 
 					<label for="codigoDoJovem">Código do Jovem</label>
 				</div>
@@ -330,19 +359,19 @@
 						<h6 class="header center" style="border-bottom: 2px solid gray; display: block;" >Naturalidade</h6>
 						<div class="row">
 							<div class="input-field s12 col l4">
-								<form:input path='naturalidadeEstado' type='text' />
+								<form:input path='naturalidadeEstado' type='text' required="required" />
 								<form:errors path='naturalidadeEstado' />
 								<label for="naturalidadeEstado" style="font-size: 11px;">Estado</label>
 							</div>
 							<div class="input-field s12 col l8">
-								<form:input path='naturalidadeCidade' type='text' />
+								<form:input path='naturalidadeCidade' type='text' required="required" />
 								<form:errors path='naturalidadeCidade' />
 								<label for="naturalidadeCidade" style="font-size: 11px;">Cidade</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="input-field s12 col l12">
-								<form:input path='naturalidadePais' type='text' />
+								<form:input path='naturalidadePais' type='text' required="required" />
 								<form:errors path='naturalidadePais' />
 								<label for="naturalidadePais" style="font-size: 11px;">País</label>
 							</div>
@@ -353,24 +382,24 @@
 						<h6 class="header center" style="border-bottom: 2px solid gray; display: block;" >CTPS</h6>
 						<div class="row">
 							<div class="input-field s12 col l6">
-							 	<form:input path='cTPSNumero' type='text' />
+							 	<form:input path='cTPSNumero' type='text' required="required" />
 								<form:errors path='cTPSNumero' />
 								<label for="cTPSNumero" style="font-size: 11px;">Nº</label>
 							</div>
 							<div class="input-field s12 col l6">
-							 	<form:input path='cTPSSerie' type='text' />
+							 	<form:input path='cTPSSerie' type='text' required="required" />
 								<form:errors path='cTPSSerie' />
 								<label for="cTPSSerie" style="font-size: 11px;">Série</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="input-field s12 col l6">
-							 	<form:input path='cTPSUF' type='text' />
+							 	<form:input path='cTPSUF' type='text' required="required" />
 								<form:errors path='cTPSUF' />
 								<label for="cTPSUF" style="font-size: 11px;">UF</label>
 							</div>
 							<div class="input-field s12 col l6">
-								<form:input id="cTPSdataExpedicao" path="cTPSdataExpedicao" type="date" class="validate datepicker" placeholder="Data de Expedição" /> 
+								<form:input id="cTPSdataExpedicao" path="cTPSdataExpedicao" type="text" class="validate datepicker" placeholder="Data de Expedição" /> 
 								<label for="cTPSdataExpedicao" style="font-size: 11px;">CTPS Data Expedição</label>
 							</div>
 						</div>
@@ -409,19 +438,19 @@
 								<label for="certidaoDeNascimentoTem">Certidão de Nascimento, Tem?</label>
 							</div>
 							<div class="input-field s12 col l6">
-								<form:input path='certidaoDeNascimentoCartorio' type='text' />
+								<form:input path='certidaoDeNascimentoCartorio' type='text' required="required" />
 								<form:errors path='certidaoDeNascimentoCartorio' />
 								<label for="certidaoDeNascimentoCartorio" style="font-size: 11px;">Cartório</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="input-field s12 col l6">
-								<form:input path='certidaoDeNascimentoLivro' type='text' />
+								<form:input path='certidaoDeNascimentoLivro' type='text' required="required" />
 								<form:errors path='certidaoDeNascimentoLivro' />
 								<label for="certidaoDeNascimentoLivro" style="font-size: 11px;">Livro</label>
 							</div>
 							<div class="input-field s12 col l6">
-								<form:input path='certidaoDeNascimentoFolhaNumero' type='text' />
+								<form:input path='certidaoDeNascimentoFolhaNumero' type='text' required="required" />
 								<form:errors path='certidaoDeNascimentoFolhaNumero' />
 								<label for="certidaoDeNascimentoFolhaNumero" style="font-size: 11px;">Folha Nº</label>
 							</div>
@@ -550,42 +579,27 @@
 		<div class="input-field s12 col l12">
 			<div class="row">
 				<div class="input-field s12 col l12">
-					<form:input path='username' type='text' required="required" />
-					<form:errors path='username'/> 
-					<label for="username">Username</label>
+					
 				</div>
 			</div>
 		</div>
 	</div>
-	<button class="btn waves-effect waves-light right" type="submit">
-		Salvar<i class="material-icons right">send</i>
-	</button>
+
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.jovemCadastrar == true && requestScope.jovem.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.jovemEditar == true && requestScope.jovem.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
 </form:form>
 <br />
 <br />
 </div><!-- // container -->
 <c:import url="../../../partials/js.jsp"></c:import>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-	$('.datepicker').pickadate({
-		monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-		monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-		weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
-		weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-		weekdaysLetter: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
-		today: 'Hoje',
-		clear: 'Limpar',
-		close: 'Pronto',
-		labelMonthNext: 'Próximo mês',
-		labelMonthPrev: 'Mês anterior',
-		labelMonthSelect: 'Selecione um mês',
-		labelYearSelect: 'Selecione um ano',
-		selectMonths: true,
-		selectYears: 99,
-	    format: 'dd/mm/yyyy' 
-	});
-</script>
 <c:import url="../../../partials/footer.jsp"></c:import>
 <c:import url="../../../partials/final.jsp"></c:import>
