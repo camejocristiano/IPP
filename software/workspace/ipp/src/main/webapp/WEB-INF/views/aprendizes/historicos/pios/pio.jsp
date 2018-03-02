@@ -1,5 +1,5 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -10,19 +10,24 @@
 
 <div class="container" id="main-container-content">
 	<div class="row">
-		<div class="input-field  s12 col l12" style="border-bottom: 2px solid orange;">
-			 <h4 class="header right orange-text">Avaliação PIO: <a class="header right" href="/jovens/${avaliacaoPIO.jovem != null ? avaliacaoPIO.jovem.id : jovem.id}">${avaliacaoPIO.jovem != null ? avaliacaoPIO.jovem.nome : jovem.nome}</a></h4>
-		</div>
+		<div class="col s12 l12">
+			<a href="/sw/historicos/home/${jovem.id}">
+				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
+			</a>
+			<br />
+			<br />		
+			<br />
+			<hr />
+			<hr />
+			<br />
 	</div>
-	<div class="row">
-		<form:form role="form" commandName="avaliacaoPIO" servletRelativeAction="/avaliacoesPIOs/${avaliacaoPIO.jovem != null ? avaliacaoPIO.id : null}" method="POST">
-		<div class="col s12">
+</div>
+		<c:url value="/sw/avaliacaoPIO/${avaliacaoPIO.historico != null ? avaliacaoPIO.id : null}" var="swAvaliacaoPIOId"></c:url>
+		<form:form role="form" commandName="avaliacaoPIO" servletRelativeAction="${swAvaliacaoPIOId}" method="POST">
 			<div class="row">
 				<div class="input-field col s12 l12">
-					<form:hidden path='jovem' value="${avaliacaoPIO.jovem != null ? avaliacaoPIO.jovem.id : jovem.id}" />
-					<form:errors path='jovem'/> 
-					<hr />
-					<hr />
+					<form:hidden path='historico' value="${avaliacaoPIO.historico != null ? avaliacaoPIO.historico.id : historico.id}" />
+					<form:errors path='historico'/> 
 				</div> <!-- // col -->
 			</div><!-- // row -->
 			<div class="row">
@@ -234,37 +239,22 @@
 					<form:label path="avaliacoesPIO_avCont8avaliacao">Nota Cont.</form:label>
 				</div> <!-- // col -->
 			</div><!-- // row -->
-			<hr /><hr /><br />
-			<button class="btn waves-effect waves-light right" type="submit">
-				Salvar<i class="material-icons right">send</i>
-			</button>	
-		</div><!-- // col Main -->
+
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.pIOCadastrar == true && requestScope.avaliacaoPIO.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.pIOEditar == true && requestScope.avaliacaoPIO.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
 		</form:form>
-	</div><!-- // row Main -->
+<br />
+		<br />
 </div><!-- // Container -->
 <c:import url="../../../../partials/js.jsp"></c:import>
 <c:import url="../../../../partials/footer.jsp"></c:import>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-
-	$('.datepicker').pickadate({
-		monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-		monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-		weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
-		weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-		weekdaysLetter: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
-		today: 'Hoje',
-		clear: 'Limpar',
-		close: 'Pronto',
-		labelMonthNext: 'Próximo mês',
-		labelMonthPrev: 'Mês anterior',
-		labelMonthSelect: 'Selecione um mês',
-		labelYearSelect: 'Selecione um ano',
-		selectMonths: true,
-		selectYears: 99,
-	    format: 'dd/mm/yyyy' 
-	});
-</script>
 <c:import url="../../../../partials/final.jsp"></c:import>

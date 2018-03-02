@@ -12,7 +12,7 @@
 
 <div class="row">
 		<div class="col s12 l12">
-			<c:url value="/sw/empresas/" var="swEmpresas"></c:url>
+			<c:url value="/sw/empresa/${empresa.id != null ? empresa.id : null}" var="swEmpresas"></c:url>
 			<a href="${swEmpresas}">
 				<h4 class="header right black-text">${empresa.nomeFantazia != null ? empresa.nomeFantazia : "Empresa"}</h4>
 			</a>
@@ -34,16 +34,31 @@
 		<div class="s12 col l10">
 			<div class="row">
 				<div class="s12 col l3">
-					select
+					<form:select path="vendedor">
+                		<form:option  value="${empresa.vendedor}" label="${empresa.vendedor == null ? 'Vendedor' : empresa.vendedor.nome}" />
+						<c:forEach var="vendedor" items="${requestScope.usuarios}">
+							<option value="${vendedor.id}">${vendedor.nome}</option>							
+						</c:forEach>
+					</form:select>
 				</div><!-- // col -->
 				<div class="s12 col l3">
-					select
+					<form:select path="monitor">
+                		<form:option  value="${empresa.monitor}" label="${empresa.monitor == null ? 'Monitor' : empresa.monitor.nome}" />
+						<c:forEach var="monitor" items="${requestScope.usuarios}">
+							<option value="${monitor.id}">${monitor.nome}</option>							
+						</c:forEach>
+					</form:select>
 				</div><!-- // col -->
 				<div class="s12 col l3">
-					select
+					<form:select path="unidade">
+                		<form:option  value="${empresa.unidade}" label="${empresa.unidade == null ? 'Unidade' : empresa.unidade.nomeFantazia}" />
+						<c:forEach var="unidade" items="${requestScope.unidades}">
+							<option value="${unidade.id}">${unidade.nomeFantazia}</option>							
+						</c:forEach>
+					</form:select>
 				</div><!-- // col -->
 				<div class="s12 col l3">
-					data
+					<form:input id="dataDeCadastro" path="dataDeCadastro" type="text" class="validate datepicker" placeholder="Data de Cadastro" value="${usuario.dataDeNascimento}" /> 
 				</div><!-- // col -->
 			</div><!-- // row -->
 			<div class="row">
@@ -52,8 +67,13 @@
 					<form:errors path='razaoSocial' />
 					<label for="razaoSocial">Razão Social</label>
 				</div><!-- // col -->
-				<div class="s12 col l2">
-					select
+				<div class="input-field s12 col l6">
+					<form:select path="tipoDeEmpresa">
+                    	<form:option value="${empresa.tipoDeEmpresa}" label="${empresa.tipoDeEmpresa == null ? 'Tipo de Empresa' : empresa.tipoDeEmpresa}" />
+						<c:forEach var="tipoDeEmpresa" items="${requestScope.tiposDeEmpresas}">
+							<form:option value="${tipoDeEmpresa}">${tipoDeEmpresa}</form:option>							
+						</c:forEach>
+					</form:select>	
 				</div><!-- // col -->
 			</div><!-- // row -->
 			<div class="row">
@@ -116,7 +136,12 @@
 			<label for="fax">Fax</label>
 		</div><!-- // col -->
 		<div class="input-field s12 col l4">
-			select regiao
+			<form:select path="regiao">
+               	<form:option value="${empresa.regiao}" label="${empresa.regiao == null ? 'Região' : empresa.regiao}" />
+				<c:forEach var="regiao" items="${requestScope.regioes}">
+					<form:option value="${regiao}">${regiao}</form:option>							
+				</c:forEach>
+			</form:select>
 		</div><!-- // col -->
 	</div><!-- // row -->
 	<div class="row">
@@ -133,21 +158,23 @@
 		<div class="s12 col l1">
 		</div><!-- // col -->
 		<div class="s12 col l3">
-			<input type="checkbox" class="filled-in" id="vinculoComOIPP" name="vinculoComOIPP" />
+			<input type="checkbox" class="filled-in" id="vinculoComOIPP" name="vinculoComOIPP" <c:if test="${empresa.vinculoComOIPP == true}">checked</c:if> />
 			<label for="vinculoComOIPP">Vínculo com o IPP?</label>
 		</div><!-- // col -->
 	</div><!-- // row -->
 	<div class="row">
-		<div class="s12 col l6">
-			tipoDeParceria select
-		</div><!-- // col -->
-		<div class="s12 col l6">
-			Carga Horária Taxa
+		<div class="s12 col l12">
+			<form:select path="tipoDeParceria">
+               	<form:option value="${empresa.tipoDeParceria}" label="${empresa.tipoDeParceria == null ? 'Tipo de Parceria' : empresa.tipoDeParceria}" />
+				<c:forEach var="tipoDeParceria" items="${requestScope.tiposDeParceria}">
+					<form:option value="${tipoDeParceria}">${tipoDeParceria}</form:option>							
+				</c:forEach>
+			</form:select>
 		</div><!-- // col -->
 	</div><!-- // row -->
 	<div class="row">
 		<div class="s12 col l4">
-			<input type="checkbox" class="filled-in" id="autorizaDivulgacaoDaEmpresaNoSiteDoIpp" name="autorizaDivulgacaoDaEmpresaNoSiteDoIpp" />
+			<input type="checkbox" class="filled-in" id="autorizaDivulgacaoDaEmpresaNoSiteDoIpp" name="autorizaDivulgacaoDaEmpresaNoSiteDoIpp" <c:if test="${empresa.autorizaDivulgacaoDaEmpresaNoSiteDoIpp == true}">checked</c:if> />
 			<label for="autorizaDivulgacaoDaEmpresaNoSiteDoIpp">Autoriza divulgação da Empresa no site do IPP?</label>
 		</div><!-- // col -->
 		<div class="s12 col l4">
@@ -159,45 +186,44 @@
 	</div><!-- // row -->
 	<div class="row">
 		<div class="s12 col l2">
-			<input type="checkbox" class="filled-in" id="valeRefeicao" name="valeRefeicao" />
+			<input type="checkbox" class="filled-in" id="valeRefeicao" name="valeRefeicao" <c:if test="${empresa.valeRefeicao == true}">checked</c:if> />
 			<label for="valeRefeicao">Vale Refeição</label>
 		</div><!-- // col -->
 		<div class="s12 col l2">
-			<input type="checkbox" class="filled-in" id="vRCurso" name="vRCurso" />
+			<input type="checkbox" class="filled-in" id="vRCurso" name="vRCurso" <c:if test="${empresa.vRCurso == true}">checked</c:if>  />
 			<label for="vRCurso">VR Curso?</label>
 		</div><!-- // col -->
 		<div class="s12 col l2">
-			<input type="checkbox" class="filled-in" id="valeAlimentacao" name="valeAlimentacao" />
+			<input type="checkbox" class="filled-in" id="valeAlimentacao" name="valeAlimentacao" <c:if test="${empresa.valeAlimentacao == true}">checked</c:if>  />
 			<label for="valeAlimentacao">Vale Alimentação</label>
 		</div><!-- // col -->
 		<div class="s12 col l2">
-			<input type="checkbox" class="filled-in" id="assistenciaMedica" name="assistenciaMedica" />
+			<input type="checkbox" class="filled-in" id="assistenciaMedica" name="assistenciaMedica" <c:if test="${empresa.assistenciaMedica == true}">checked</c:if>  />
 			<label for="assistenciaMedica">Assistência Médica</label>
 		</div><!-- // col -->
 		<div class="s12 col l2">
-			<input type="checkbox" class="filled-in" id="assistenciaOdontologica" name="assistenciaOdontologica" />
+			<input type="checkbox" class="filled-in" id="assistenciaOdontologica" name="assistenciaOdontologica" <c:if test="${empresa.assistenciaOdontologica == true}">checked</c:if>  />
 			<label for="assistenciaOdontologica">Assistência Odontológica</label>
 		</div><!-- // col -->
 		<div class="s12 col l2">
-			<input type="checkbox" class="filled-in" id="outros" name="outros" />
+			<input type="checkbox" class="filled-in" id="outros" name="outros" <c:if test="${empresa.outros == true}">checked</c:if> />
 			<label for="outros">Outros</label>
 		</div><!-- // col -->
 	</div><!-- // row -->
-	<div class="row">
-		<div class="s12 col l12">
-			Contatos
-		</div><!-- // col -->
-	</div><!-- // row -->
-	<div class="row">
-		<div class="s12 col l12">
-			Representantes Legais
-		</div><!-- // col -->
-	</div><!-- // row -->
 	<br />
 	<br />
-	<button class="btn waves-effect waves-light right" type="submit">
-		Salvar<i class="material-icons right">send</i>
-	</button>
+	
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.empresaCadastrar == true && requestScope.empresa.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.empresaEditar == true && requestScope.empresa.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+	
 </form:form>
 <br />
 <br />

@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -12,7 +11,6 @@ import br.net.ipp.enums.EstadoCivil;
 import br.net.ipp.enums.Regiao;
 import br.net.ipp.enums.RelacaoFuncional;
 import br.net.ipp.enums.Sexo;
-import br.net.ipp.enums.Status;
 import br.net.ipp.models.User;
 
 @Entity
@@ -26,7 +24,7 @@ public class Usuario extends User {
 	private String telefone;
 	private String celular;
 	private Sexo sexo;
-	private Status status;
+	/*private Status status;*/
 
 	private String rG;
 	private String orgaoEmissorRG;
@@ -63,11 +61,11 @@ public class Usuario extends User {
 	private String cargo;
 	private RelacaoFuncional relacaoFuncional;
 
-	@ManyToOne
-	private GrupoDePermissoes grupoDePermissoes;
+	/*@ManyToOne
+	private GrupoDePermissoes grupoDePermissoes;*/
 	private String observacoes;
-	@ManyToOne
-	private Unidade unidade;
+	/*@ManyToOne
+	private Unidade unidade;*/
 	
 	@ManyToMany(mappedBy = "usuariosEnvolvidos")
 	private List<Agendamento> agendamentos;
@@ -112,13 +110,13 @@ public class Usuario extends User {
 		this.sexo = sexo;
 	}
 
-	public Status getStatus() {
+	/*public Status getStatus() {
 		return status;
 	}
 
 	public void setStatus(Status status) {
 		this.status = status;
-	}
+	}*/
 
 	public String getEndereco() {
 		return endereco;
@@ -336,13 +334,13 @@ public class Usuario extends User {
 		this.relacaoFuncional = relacaoFuncional;
 	}
 
-	public GrupoDePermissoes getGrupoDePermissoes() {
+/*	public GrupoDePermissoes getGrupoDePermissoes() {
 		return grupoDePermissoes;
 	}
 
 	public void setGrupoDePermissoes(GrupoDePermissoes grupoDePermissoes) {
 		this.grupoDePermissoes = grupoDePermissoes;
-	}
+	}*/
 
 	public String getObservacoes() {
 		return observacoes;
@@ -352,13 +350,13 @@ public class Usuario extends User {
 		this.observacoes = observacoes;
 	}
 
-	public Unidade getUnidade() {
+	/*public Unidade getUnidade() {
 		return unidade;
 	}
 
 	public void setUnidade(Unidade unidade) {
 		this.unidade = unidade;
-	}
+	}*/
 
 	public List<Agendamento> getAgendamentos() {
 		return agendamentos;

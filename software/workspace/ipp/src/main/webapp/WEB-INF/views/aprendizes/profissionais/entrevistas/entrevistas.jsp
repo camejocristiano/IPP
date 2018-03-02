@@ -11,7 +11,8 @@
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/fichaProfissional/home/${entrevista.jovem != null ? entrevista.jovem.id : jovem.id}">
+			<c:url value="/sw/profissional/home/${entrevista.fichaProfissional != null ? entrevista.fichaProfissional.jovem.id : jovem.id}" var="swProfissionalHomeJovemId"></c:url>
+			<a href="${swProfissionalHomeJovemId}">
 				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
 			</a>
 			<br />

@@ -21,11 +21,12 @@ public class Parametro extends AbstractEntity {
 	private BigDecimal taxaDeEmissaoDeCartaoDeVR;
 	private BigDecimal valorDoConvenioDeSaudeMaiorDeIdade;
 	private BigDecimal valorDoConvenioDeSaudeMenorDeIdade;
-	private double taxaAdministrativaDaSPTrans;
-	private double taxaAdministrativaBom;
+	private Double taxaAdministrativaDaSPTrans;
+	private Double taxaAdministrativaBom;
 	private Integer dia;
 	private Integer mes;
 	private Integer ano;
+	
 
 	
 	public BigDecimal getContribuicaoSindical() {
@@ -88,16 +89,16 @@ public class Parametro extends AbstractEntity {
 	public void setValorDoConvenioDeSaudeMenorDeIdade(BigDecimal valorDoConvenioDeSaudeMenorDeIdade) {
 		this.valorDoConvenioDeSaudeMenorDeIdade = valorDoConvenioDeSaudeMenorDeIdade;
 	}
-	public double getTaxaAdministrativaDaSPTrans() {
+	public Double getTaxaAdministrativaDaSPTrans() {
 		return taxaAdministrativaDaSPTrans;
 	}
-	public void setTaxaAdministrativaDaSPTrans(double taxaAdministrativaDaSPTrans) {
+	public void setTaxaAdministrativaDaSPTrans(Double taxaAdministrativaDaSPTrans) {
 		this.taxaAdministrativaDaSPTrans = taxaAdministrativaDaSPTrans;
 	}
-	public double getTaxaAdministrativaBom() {
+	public Double getTaxaAdministrativaBom() {
 		return taxaAdministrativaBom;
 	}
-	public void setTaxaAdministrativaBom(double taxaAdministrativaBom) {
+	public void setTaxaAdministrativaBom(Double taxaAdministrativaBom) {
 		this.taxaAdministrativaBom = taxaAdministrativaBom;
 	}
 	public Integer getDia() {

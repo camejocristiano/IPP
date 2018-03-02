@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.1.2.5.1.3.1.2:1", "", "Nó Operacional: Jovens Aprendizes", "EARoot/EA1/EA2/EA5/EA1/EA3/EA1/EA2/EA914.htm", "189.png", "1925", "0", "", "Analysis diagram0","{2AB03E0E-4300-4af1-AAA4-9BB297100C10}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.3.1.2:2", "", "«DFD_External» Jovem Aprendiz", "EARoot/EA1/EA2/EA5/EA1/EA3/EA1/EA2/EA919.htm", "5.png", "10154", "0", "", "Class0","{91122F7F-8D3C-499b-9E8F-C2E14529EFB8}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.3.1.2.1", "1", "Capacidade 02: Visualizar", "EARoot/EA1/EA2/EA5/EA1/EA3/EA1/EA2/EA920.htm", "4.png", "", "", "{EBB87021-0CED-4803-85E7-8E558C60613E}", "Package");

@@ -5,8 +5,9 @@ import java.util.List;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import br.net.ipp.models.aprendizes.AvaliacaoPAPEmpresa;
-import br.net.ipp.models.aprendizes.Jovem;
+import br.net.ipp.models.aprendizes.Historico;
 
 public interface AvaliacaoPAPEmpresaRepository extends PagingAndSortingRepository<AvaliacaoPAPEmpresa, Long> {
-	List<AvaliacaoPAPEmpresa> findAllByJovem(Jovem jovem);
+	List<AvaliacaoPAPEmpresa> findAllByHistorico(Historico historico);
+	AvaliacaoPAPEmpresa findByHistorico(Historico historico);
 }

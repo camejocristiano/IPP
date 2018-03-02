@@ -1,0 +1,7 @@
+tocTab[tocTab.length] = new Array("0.1.3.1.2:1", "", "Geral", "EARoot/EA1/EA3/EA1/EA2/EA3218.htm", "180.png", "347", "0", "", "Use Case diagram0","{6644EDF5-EB5C-4c28-B77C-ED09ECF8C64D}");
+tocTab[tocTab.length] = new Array("0.1.3.1.2:2", "", "Manter Configuracoes", "EARoot/EA1/EA3/EA1/EA2/EA3228.htm", "7.png", "5075", "0", "", "UseCase0","{1FFAABA5-07F7-4e53-AD79-5D32E44FCC63}");
+tocTab[tocTab.length] = new Array("0.1.3.1.2:3", "", "Manter Cursos", "EARoot/EA1/EA3/EA1/EA2/EA3229.htm", "7.png", "5071", "0", "", "UseCase0","{4CCFCEEE-1BB4-4535-A137-A56FB7119802}");
+tocTab[tocTab.length] = new Array("0.1.3.1.2:4", "", "Manter Aprendizes", "EARoot/EA1/EA3/EA1/EA2/EA3230.htm", "7.png", "5070", "0", "", "UseCase0","{17E39CAD-C7A6-4f6a-B947-751B6DA026C6}");
+tocTab[tocTab.length] = new Array("0.1.3.1.2:5", "", "Manter Frequencias", "EARoot/EA1/EA3/EA1/EA2/EA3231.htm", "7.png", "5074", "0", "", "UseCase0","{725E3C26-365A-47d2-B81D-50E37285F849}");
+tocTab[tocTab.length] = new Array("0.1.3.1.2:6", "", "Manter Empresas", "EARoot/EA1/EA3/EA1/EA2/EA3232.htm", "7.png", "5072", "0", "", "UseCase0","{8D6B1D4D-A7E3-453f-8A14-DB891B1965FF}");
+tocTab[tocTab.length] = new Array("0.1.3.1.2:7", "", "Manter Financeiro", "EARoot/EA1/EA3/EA1/EA2/EA3233.htm", "7.png", "5073", "0", "", "UseCase0","{6F160512-6873-4397-AD6A-7DF543F6F94F}");

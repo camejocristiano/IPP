@@ -1,0 +1,15 @@
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:1", "", "Frequencias", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6969.htm", "188.png", "2132", "0", "", "Custom diagram0","{3693DD99-454E-44e8-AF9D-51FF616A08FA}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:2", "", "Lista de Frequências", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6974.htm", "11.png", "12241", "0", "", "Screen0","{0CCD356C-EFE9-4705-961B-B074CB3F711A}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:3", "", "Menu NavBar Principal", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6975.htm", "99.png", "12231", "0", "", "UMLDiagram0","{4A12978F-430E-4335-BADB-BB3EE4FCAD6A}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:4", "", "«checkbox» Frequência", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6976.htm", "16.png", "12265", "12241", "", "GUIElement0","{C5DBE893-DFC5-4579-A1DC-A43CEBE3FC9F}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:5", "", "«label» Matricula", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6977.htm", "16.png", "12264", "12241", "", "GUIElement0","{C5A11BF1-DFE5-498f-AA0A-1813F263D4B2}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:6", "", "«table» ", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6978.htm", "16.png", "12245", "12241", "", "GUIElement0","{EC294078-74E7-4405-A33B-0415475F68E3}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:7", "", "«label» Ano", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6979.htm", "16.png", "12242", "12241", "", "GUIElement0","{F7BD312C-8D0C-4dd7-88E3-5D1053B90B3D}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:8", "", "«label» Dia", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6980.htm", "16.png", "12237", "12241", "", "GUIElement0","{EED1B9AA-3050-4630-AC22-2F113D9D6C15}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:9", "", "«label» Jovem", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6981.htm", "16.png", "12246", "12241", "", "GUIElement0","{79AE2D8E-0FB3-4bb8-8BD8-069CA03C2E5B}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:10", "", "«label» Lista de Frequências Turma", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6983.htm", "16.png", "12240", "12241", "", "GUIElement0","{9CA42F7F-C54E-4a29-BF66-D7B50FA15769}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:11", "", "«label» Lista de Turmas para Frequências", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6984.htm", "16.png", "12238", "12241", "", "GUIElement0","{44A26D45-287B-48e7-9EE3-BB4E569C662A}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:12", "", "«label» Mês", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6985.htm", "16.png", "12235", "12241", "", "GUIElement0","{D63CC6DA-075F-4a33-90D0-507615D6E344}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:13", "", "«label» Orientador", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6986.htm", "16.png", "12243", "12241", "", "GUIElement0","{CD01C721-1379-431a-B8E0-898B283119BE}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:14", "", "«label» Turno", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6987.htm", "16.png", "12244", "12241", "", "GUIElement0","{AC7A4651-5C67-4199-8EA1-199447F4C607}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4:15", "", "«button» Visualizar Turma", "EARoot/EA1/EA3/EA2/EA7/EA4/EA6988.htm", "16.png", "12236", "12241", "", "GUIElement0","{98E0FD1D-AFFF-4bb9-AA13-39F1406DB75A}");

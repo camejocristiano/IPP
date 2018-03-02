@@ -5,5 +5,4 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import br.net.ipp.models.financeiros.Parametro;
 
 public interface ParametroRepository extends PagingAndSortingRepository<Parametro, Long> {
-
 }

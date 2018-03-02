@@ -24,27 +24,39 @@
 	</div>
 </div>
 
-<table id="tabelaUsuarios" class="display">
+
+<table id="tabelaDemonstrativos" class="display">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>NOME</th>
-            <th class="td-icon">EDITAR</th>
+            <th>JOVEM</th>
+            <th>EMPRESA</th>
+            <th>INÍCIO</th>
+            <th>TÉRMINO</th>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.vtVisualizar == true}">
+            	<th class="td-icon">MÊS</th>
+            	<th class="td-icon">OUTROS</th>
+            </c:if>	
           </tr>
         </thead>
         <tbody>
-        <c:forEach var="jovem" items="${requestScope.jovens}">
+        <c:forEach var="contratacao" items="${requestScope.contratacoes}">
           <tr>
-            <td>${jovem.id}</td>
-            <td>${jovem.nome}</td>
-            <c:url value="/sw/vt/${jovem.id}" var="swVtId"></c:url>
-            <td class="td-icon"><a href="${swVtId}"><i class="material-icons" >border_color</i></a></td>
+            <td>${contratacao.fichaProfissional.jovem.nome}</td>
+            <td>${contratacao.empresaContratante.nomeFantazia}</td>
+            <td>${contratacao.diaDeInicioDaContratacao}/${contratacao.mesDeInicioDaContratacao}/${contratacao.anoDeInicioDaContratacao}</td>
+            <td>${contratacao.diaTerminoDoContrato}/${contratacao.diaTerminoDoContrato}/${contratacao.diaTerminoDoContrato}</td>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.vtVisualizar == true}">
+            	<c:url value="/sw/vt/${contratacao.id}" var="swVTId"></c:url>
+            	<td class="td-icon"><a href="${swVTId}"><i class="material-icons" >border_color</i></a></td>
+            	<c:url value="/sw/vts/${contratacao.id}" var="swVTId"></c:url>
+            	<td class="td-icon"><a href="${swVTId}"><i class="material-icons" >border_color</i></a></td>
+            </c:if>
           </tr>
           </c:forEach>
           </tbody>
           
       </table> 
-         
+    
 <br />
 <br />
 	</div>

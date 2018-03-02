@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("0.1.3.2.4.2.3.1:1", "", "Arco Ocupacional", "EARoot/EA1/EA3/EA2/EA4/EA2/EA3/EA1/EA5704.htm", "188.png", "1867", "0", "", "Custom diagram0","{5A91CEDC-2C2E-46e5-8D48-3192665E92E7}");
+tocTab[tocTab.length] = new Array("0.1.3.2.4.2.3.1:2", "", "«text» ", "EARoot/EA1/EA3/EA2/EA4/EA2/EA3/EA1/EA5706.htm", "16.png", "8560", "0", "", "GUIElement0","{217E73A0-3445-4549-AEF6-6E719E58CF29}");
+tocTab[tocTab.length] = new Array("0.1.3.2.4.2.3.1:3", "", "CBOs", "EARoot/EA1/EA3/EA2/EA4/EA2/EA3/EA1/EA5712.htm", "99.png", "8572", "0", "", "UMLDiagram0","{18982946-9D0C-43cf-9372-689879A61D28}");
+tocTab[tocTab.length] = new Array("0.1.3.2.4.2.3.1:4", "", "«button» Incluir", "EARoot/EA1/EA3/EA2/EA4/EA2/EA3/EA1/EA5714.htm", "16.png", "8574", "0", "", "GUIElement0","{61D071E2-6086-4b1e-B953-C44DAB27DE44}");
+tocTab[tocTab.length] = new Array("0.1.3.2.4.2.3.1:5", "", "«label» Título", "EARoot/EA1/EA3/EA2/EA4/EA2/EA3/EA1/EA5715.htm", "16.png", "8561", "0", "", "GUIElement0","{2C141539-6216-4675-9A95-DFA2775BD4A7}");

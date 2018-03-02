@@ -366,7 +366,7 @@
 							</div><!-- // row -->
 							<div class="row">
 								<div class="input-field s12 col l12">
-									Vale transporte empresa R$ ${valeTransporteEmpresaPorDia} por dia.
+									Vale transporte empresa R$ ${requestScope.totalEmpresa} por dia.
 								</div><!-- // col -->
 							</div><!-- // row -->
 							<div class="row">
@@ -462,7 +462,7 @@
 							</div><!-- // row -->
 							<div class="row">
 								<div class="input-field s12 col l12">
-									Vale transporte empresa R$ ${valeTransporteEmpresaPorDia} por dia.
+									Vale transporte curso R$ ${requestScope.totalIPP} por dia.
 								</div><!-- // col -->
 							</div><!-- // row -->
 							<div class="row">

@@ -8,7 +8,6 @@ import br.net.ipp.models.empresas.Empresa;
 import br.net.ipp.models.empresas.Gestor;
 
 public interface GestorRepository extends PagingAndSortingRepository<Gestor, Long> {
-	Gestor findById(Long id);
 	Gestor findByUsername(String username);
 	List<Gestor> findByEmpresa(Empresa empresa);
 }

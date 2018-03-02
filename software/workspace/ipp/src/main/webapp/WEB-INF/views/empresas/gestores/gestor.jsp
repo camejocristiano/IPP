@@ -11,7 +11,7 @@
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<c:url value="/sw/empresa/${empresa.id}" var="swEmpresaId"></c:url>
+			<c:url value="/sw/empresa/${gestor.empresa.id != null ? gestor.empresa.id : empresa.id}" var="swEmpresaId"></c:url>
 			<a href="${swEmpresaId}">
 				<h4 class="header right black-text">${gestor.nome != null ? gestor.nome : empresa.nomeFantazia}</h4>
 			</a>
@@ -49,22 +49,37 @@
 				</div><!-- // col -->
 			</div><!-- // row -->
 			<div class="row">
-				<div class="input-field s12 col l6">
-					<form:input path='email' type='email' />
-					<form:errors path='email' />
-					<label for="email">Email</label>
-				</div><!-- // col -->
-				<div class="input-field s12 col l5">
-					<form:input path='username' type='text' />
+				<div class="input-field s12 col l12">
+					<form:input path='username' type='email' />
 					<form:errors path='username' />
-					<label for="username">Username</label>
+					<label for="username">Email</label>
+				</div><!-- // col -->
+			</div><!-- // row -->
+			<div class="row">
+				<div class="input-field s12 col l7">
+					<form:select path="empresa">
+                		<form:option  value="${gestor.empresa}" label="${gestor.empresa == null ? 'Empresa' : gestor.empresa.nomeFantazia}" />
+						<c:forEach var="empresa" items="${requestScope.empresas}">
+							<option value="${empresa.id}">${empresa.nomeFantazia}</option>							
+						</c:forEach>
+					</form:select>
+				<div class="input-field s12 col l5">
+				</div><!-- // col -->	
+					<form:select path="status">
+		                    	<form:option value="${gestor.status}" label="${gestor.status == null ? 'Status' : gestor.status}" />
+								<c:forEach var="status" items="${requestScope.status}">
+									<form:option value="${status}">${status}</form:option>							
+								</c:forEach>
+							</form:select>
 				</div><!-- // col -->
 			</div><!-- // row -->
 			<div class="row">
 				<div class="input-field s12 col l6">
-					<form:input path='password' type='password' />
-					<form:errors path='password' />
-					<label for="password">Senha</label>
+					<c:if test="${usuarioSessao.username == gestor.username}">
+						<a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Link para alteração da senha!"><i class="material-icons" style="color: #222 !important;">info_outline</i></a>
+						<c:url value="/sw/alterarSenha" var="swAlterarSenha"></c:url>
+						<a href="${swAlterarSenha}">Alterar Senha</a>
+					</c:if>
 				</div><!-- // col -->
 				<div class="s12 col l6">
 					<div class="row">
@@ -72,20 +87,39 @@
 							<input type="checkbox" class="filled-in" id="permitirQueVisualizeTodosOsJovens" name="permitirQueVisualizeTodosOsJovens" <c:if test="${gestor.permitirQueVisualizeTodosOsJovens == true}">checked</c:if> />
 							<label for="permitirQueVisualizeTodosOsJovens">Permitir que visualize todos os Jovens</label>
 						</div><!-- // col -->				
-						<div class="s12 col l12">
-							<input type="checkbox" class="filled-in" id="admin" name="admin" <c:if test="${gestor.admin == true}">checked</c:if> />
-							<label for="admin">Admin</label>
-						</div><!-- // col -->				
+						<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.grupoDePermissoesCadastrar == true
+	                 		   || requestScope.usuarioSessao.grupoDePermissoes.grupoDePermissoesEditar == true}">
+							<div class="input-field col s12 l12">
+			                	<form:select path="grupoDePermissoes">
+		                			<form:option  value="${usuarioSessao.grupoDePermissoes}" label="Grupo de Permissões" />
+									<c:forEach var="grupoDePermissoes" items="${requestScope.gruposDePermissoes}">
+										<option value="${grupoDePermissoes.id}">${grupoDePermissoes.grupo}</option>							
+									</c:forEach>
+								</form:select>
+							</div><!-- // col -->
+			                <div class="col s12 l12">
+			                	<a style="margin-left: 2em; float: right" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Caso este esteja selecionado, mostrará as listas gerais, de todas as unidades."><i class="material-icons" style="color: #222 !important;">info_outline</i></a>
+			                	<input type="checkbox" name="admin" class="filled-in" id="admin" <c:if test="${gestor.admin == true}">checked</c:if> />
+								<label style="margin-left: 2em; float: right" for="admin">Admin</label>
+							</div><!-- // col -->			
+						</c:if>
 					</div><!-- // row -->
 				</div><!-- // col -->				
 			</div><!-- // row -->
 		</div><!-- // col -->
 	</div><!-- // row -->
-
+			<input type="hidden" name="password" value="${gestor.password}" />
 			<form:input path='empresa' type='hidden' value="${empresa.id}" />
-			<button class="btn waves-effect waves-light right" type="submit">
-				Salvar<i class="material-icons right">send</i>
-			</button>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.usuarioCadastrar == true && requestScope.usuario.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.usuarioEditar == true && requestScope.usuario.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
 		</form:form>
 <br />
 <br />

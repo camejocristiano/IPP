@@ -25,7 +25,7 @@
 		</div>
 	</div>
 <c:url value="/sw/curso/${curso.nomeDoCurso != null ? curso.id : null}" var="swCursoId"></c:url>
-<form:form role="form" commandName="curso" servletRelativeAction="" method="POST">
+<form:form role="form" commandName="curso" servletRelativeAction="${swCursoId}" method="POST">
 	<div class="s12 col l12">	
 		<div class="row">
 			<div class="s12 col l12">
@@ -41,7 +41,7 @@
 						<label for="numeroDoCurso">Nº do Curso</label>
 					</div>
 					<div class="input-field s12 col l2">
-	                    <form:select path="status" required="required" >
+	                    <form:select path="status">
 		                	<form:option value="${curso.status}" label="${curso.status == null ? 'Status' : curso.status}" />
 							<c:forEach var="status" items="${requestScope.status}">
 								<option>${status}</option>							
@@ -49,7 +49,7 @@
 						</form:select>
 	                </div>
 					<div class="input-field s12 col l2">
-	                    <form:select path="unidade" required="required" >
+	                    <form:select path="unidade">
 	                		<form:option  value="${curso.unidade.id}" label="${curso.unidade == null ? 'Unidade' : curso.unidade.nomeFantazia}" />
 							<c:forEach var="unidade" items="${requestScope.unidades}">
 								<option value="${unidade.id}">${unidade.nomeFantazia}</option>							

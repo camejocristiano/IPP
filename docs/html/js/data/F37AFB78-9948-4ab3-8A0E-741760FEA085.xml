@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.1.2.5.1.5.1.1.1:1", "", "Capacidade 01: Lançar Frequencias da Turma", "EARoot/EA1/EA2/EA5/EA1/EA5/EA1/EA1/EA1/EA1670.htm", "189.png", "2085", "0", "", "Analysis diagram0","{F9932C42-5579-4d87-85C9-75C35277187D}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.5.1.1.1:2", "", "«DFD_Process» Lançar Frequencias da Turma", "EARoot/EA1/EA2/EA5/EA1/EA5/EA1/EA1/EA1/EA1673.htm", "21.png", "11943", "0", "", "Activity0","{C381DB08-7C13-4847-81E5-F0D8365CF75C}");

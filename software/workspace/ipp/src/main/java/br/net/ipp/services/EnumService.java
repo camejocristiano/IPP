@@ -29,6 +29,7 @@ import br.net.ipp.enums.StatusPAP;
 import br.net.ipp.enums.StatusValidacao;
 import br.net.ipp.enums.TipoDeCNH;
 import br.net.ipp.enums.TipoDeConstrucao;
+import br.net.ipp.enums.TipoDeContatoEnum;
 import br.net.ipp.enums.TipoDeContratacao;
 import br.net.ipp.enums.TipoDeEmpresa;
 import br.net.ipp.enums.TipoDeInsercao;
@@ -347,6 +348,15 @@ public class EnumService {
 			tiposDeOcorrencias.add(lista.get(i).name());
 		}
 		return tiposDeOcorrencias;
+	}
+	
+	public List<String> carregarTiposDeContatos() {
+		List<TipoDeContatoEnum> lista = Arrays.asList(TipoDeContatoEnum.values());
+		List<String> tiposDeContatos = new ArrayList<String>();
+		for (int i = 0; i < lista.size(); i++) {
+			tiposDeContatos.add(lista.get(i).name());
+		}
+		return tiposDeContatos;
 	}
 	
 }

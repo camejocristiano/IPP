@@ -23,8 +23,10 @@ public class Ferias extends AbstractEntity {
 	private String feriasDiasAGozar;
 	private String observacoes;
 
+	/*@ManyToOne
+	private Jovem jovem;*/
 	@ManyToOne
-	private Jovem jovem;
+	private FichaProfissional fichaProfissional;
 
 	
 	public Integer getDiaDeInicioFerias() {
@@ -99,12 +101,20 @@ public class Ferias extends AbstractEntity {
 		this.observacoes = observacoes;
 	}
 
-	public Jovem getJovem() {
+/*	public Jovem getJovem() {
 		return jovem;
 	}
 
 	public void setJovem(Jovem jovem) {
 		this.jovem = jovem;
+	}*/
+
+	public FichaProfissional getFichaProfissional() {
+		return fichaProfissional;
+	}
+
+	public void setFichaProfissional(FichaProfissional fichaProfissional) {
+		this.fichaProfissional = fichaProfissional;
 	}
 
 	public static long getSerialversionuid() {

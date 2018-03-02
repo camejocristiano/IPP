@@ -251,6 +251,21 @@ public class GrupoDePermissoes extends AbstractEntity {
 	private boolean contatoListar;
 	private boolean contatoVisualizar;
 	
+	private boolean cargaHorariaCadastrar;
+	private boolean cargaHorariaEditar;
+	private boolean cargaHorariaListar;
+	private boolean cargaHorariaVisualizar;
+	
+	private boolean taxaCadastrar;
+	private boolean taxaEditar;
+	private boolean taxaListar;
+	private boolean taxaVisualizar;
+	
+	private boolean historicosCadastrar;
+	private boolean historicosEditar;
+	private boolean historicosListar;
+	private boolean historicosVisualizar;
+	
 	/**
 	 * FINANCEIROS
 	 */
@@ -1344,6 +1359,78 @@ public class GrupoDePermissoes extends AbstractEntity {
 	}
 	public void setContatoVisualizar(boolean contatoVisualizar) {
 		this.contatoVisualizar = contatoVisualizar;
+	}
+	public boolean isCargaHorariaCadastrar() {
+		return cargaHorariaCadastrar;
+	}
+	public void setCargaHorariaCadastrar(boolean cargaHorariaCadastrar) {
+		this.cargaHorariaCadastrar = cargaHorariaCadastrar;
+	}
+	public boolean isCargaHorariaEditar() {
+		return cargaHorariaEditar;
+	}
+	public void setCargaHorariaEditar(boolean cargaHorariaEditar) {
+		this.cargaHorariaEditar = cargaHorariaEditar;
+	}
+	public boolean isCargaHorariaListar() {
+		return cargaHorariaListar;
+	}
+	public void setCargaHorariaListar(boolean cargaHorariaListar) {
+		this.cargaHorariaListar = cargaHorariaListar;
+	}
+	public boolean isCargaHorariaVisualizar() {
+		return cargaHorariaVisualizar;
+	}
+	public void setCargaHorariaVisualizar(boolean cargaHorariaVisualizar) {
+		this.cargaHorariaVisualizar = cargaHorariaVisualizar;
+	}
+	public boolean isTaxaCadastrar() {
+		return taxaCadastrar;
+	}
+	public void setTaxaCadastrar(boolean taxaCadastrar) {
+		this.taxaCadastrar = taxaCadastrar;
+	}
+	public boolean isTaxaEditar() {
+		return taxaEditar;
+	}
+	public void setTaxaEditar(boolean taxaEditar) {
+		this.taxaEditar = taxaEditar;
+	}
+	public boolean isTaxaListar() {
+		return taxaListar;
+	}
+	public void setTaxaListar(boolean taxaListar) {
+		this.taxaListar = taxaListar;
+	}
+	public boolean isTaxaVisualizar() {
+		return taxaVisualizar;
+	}
+	public void setTaxaVisualizar(boolean taxaVisualizar) {
+		this.taxaVisualizar = taxaVisualizar;
+	}
+	public boolean isHistoricosCadastrar() {
+		return historicosCadastrar;
+	}
+	public void setHistoricosCadastrar(boolean historicosCadastrar) {
+		this.historicosCadastrar = historicosCadastrar;
+	}
+	public boolean isHistoricosEditar() {
+		return historicosEditar;
+	}
+	public void setHistoricosEditar(boolean historicosEditar) {
+		this.historicosEditar = historicosEditar;
+	}
+	public boolean isHistoricosListar() {
+		return historicosListar;
+	}
+	public void setHistoricosListar(boolean historicosListar) {
+		this.historicosListar = historicosListar;
+	}
+	public boolean isHistoricosVisualizar() {
+		return historicosVisualizar;
+	}
+	public void setHistoricosVisualizar(boolean historicosVisualizar) {
+		this.historicosVisualizar = historicosVisualizar;
 	}
 	public boolean isParametrosCadastrar() {
 		return parametrosCadastrar;

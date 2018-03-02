@@ -18,7 +18,7 @@ public class Entrevista extends AbstractEntity {
 	@ManyToOne
 	private Empresa empresaParaEntrevista;
 	@ManyToOne
-	private Jovem jovem;
+	private FichaProfissional fichaProfissional;
 
 	
 	public String getMotivo() {
@@ -27,12 +27,12 @@ public class Entrevista extends AbstractEntity {
 	public void setMotivo(String motivo) {
 		this.motivo = motivo;
 	}
-	public Jovem getJovem() {
+	/*public Jovem getJovem() {
 		return jovem;
 	}
 	public void setJovem(Jovem jovem) {
 		this.jovem = jovem;
-	}
+	}*/
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -54,6 +54,12 @@ public class Entrevista extends AbstractEntity {
 	}
 	public void setEmpresaParaEntrevista(Empresa empresaParaEntrevista) {
 		this.empresaParaEntrevista = empresaParaEntrevista;
+	}
+	public FichaProfissional getFichaProfissional() {
+		return fichaProfissional;
+	}
+	public void setFichaProfissional(FichaProfissional fichaProfissional) {
+		this.fichaProfissional = fichaProfissional;
 	}
 	public boolean getRetomando() {
 		return retomando;

@@ -12,7 +12,7 @@
 
 <div class="row">
 		<div class="col s12 l12">
-			<c:url value="/sw/empresa/${empresa.id}" var="swEmpresaId"></c:url>
+			<c:url value="/sw/empresa/${representanteLegal.empresa.id != null ? representanteLegal.empresa.id : empresa.id}" var="swEmpresaId"></c:url>
 			<a href="${swEmpresaId}">
 				<h4 class="header right black-text">${empresa.nomeFantazia != null ? empresa.nomeFantazia : representanteLegal.nome}</h4>
 			</a>
@@ -28,7 +28,7 @@
 		<form:form role="form" commandName="representanteLegal" servletRelativeAction="${swRepresentanteId}" method="POST">
 			<div class="row">
 				<div class="input-field s12 col l6">
-					<form:input path='nome' type='text'/>
+					<form:input path='nome' type='text' required="true" />
 					<form:errors path='nome'/> 
 					<label for="nome">Nome</label>
 				</div>
@@ -50,9 +50,9 @@
 					<label for="cargo">Cargo</label>
 				</div>
 				<div class="input-field s12 col l5">
-					<form:input path='email' type='email'/>
-					<form:errors path='email'/> 
-					<label for="email">Email</label>
+					<form:input path='username' type='email' required="true" />
+					<form:errors path='username'/> 
+					<label for="username">Email</label>
 				</div>
 				<div class="input-field s12 col l3">
 					<form:input path='telefone' type='text'/>
@@ -60,27 +60,44 @@
 					<label for="telefone">Telefone</label>
 				</div>
 			</div>
-			<div class="row">
-				<div class="input-field s12 col l6">
-					<form:input path='username' type='text'/>
-					<form:errors path='username'/> 
-					<label for="username">Username</label>
+		<div class="row">
+			<c:if
+				test="${requestScope.usuarioSessao.grupoDePermissoes.grupoDePermissoesCadastrar == true
+	                 		   || requestScope.usuarioSessao.grupoDePermissoes.grupoDePermissoesEditar == true}">
+				<div class="input-field col s12 l12">
+					<form:select path="grupoDePermissoes">
+                		<form:option  value="${representanteLegal.grupoDePermissoes}" label="${representanteLegal.grupoDePermissoes == null ? 'Grupo De Permissoes' : representanteLegal.grupoDePermissoes.grupo}" />
+						<c:forEach var="grupoDePermissoes" items="${requestScope.gruposDePermissoes}">
+							<option value="${grupoDePermissoes.id}">${grupoDePermissoes.grupo}</option>							
+						</c:forEach>
+					</form:select>
 				</div>
-				<div class="input-field s12 col l3">
-					<form:input path='password' type='password'/>
-					<form:errors path='password'/> 
-					<label for="password">Password</label>
+				<!-- // col -->
+				<div class="col s12 l12">
+					<a style="margin-left: 2em; float: right" class="tooltipped"
+						data-position="bottom" data-delay="50"
+						data-tooltip="Caso este esteja selecionado, mostrará as listas gerais, de todas as unidades.">
+						<i class="material-icons" style="color: #222 !important;">info_outline</i>
+					</a>
+					<input type="checkbox" name="admin" class="filled-in" id="admin"
+						<c:if test="${gestor.admin == true}">checked</c:if> /> 
+						<label style="margin-left: 2em; float: right" for="admin">Admin</label>
 				</div>
-				<div class="s12 col l3">
-					<input type="checkbox" class="filled-in" id="admin" name="admin" <c:if test="${representanteLegal.admin == true}">checked</c:if> />
-					<label for="admin">Admin?</label>
-				</div>
-			</div>
-			
-			<form:input path='empresa' type='hidden' value="${empresa.id}" />
-			<button class="btn waves-effect waves-light right" type="submit">
-				Salvar<i class="material-icons right">send</i>
-			</button>
+				<!-- // col -->
+			</c:if>
+		</div>
+
+		<form:input path='empresa' type='hidden' value="${empresa.id}" />
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.representanteLegalCadastrar == true && requestScope.representanteLegal.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.representanteLegalEditar == true && requestScope.representanteLegal.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
 		</form:form>
 
 <br />

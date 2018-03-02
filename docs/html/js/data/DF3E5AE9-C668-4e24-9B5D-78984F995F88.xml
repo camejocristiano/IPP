@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("0.1.3.2.8.1:1", "", "Menu NavBar - Empresas", "EARoot/EA1/EA3/EA2/EA8/EA1/EA7018.htm", "188.png", "2009", "0", "", "Custom diagram0","{12862F69-AAA1-417f-AA47-2D75A3A4F906}");
+tocTab[tocTab.length] = new Array("0.1.3.2.8.1:2", "", "«button» Empresas", "EARoot/EA1/EA3/EA2/EA8/EA1/EA7020.htm", "16.png", "11045", "0", "", "GUIElement0","{E1077789-54F6-4d74-8098-D24B1775D8DF}");
+tocTab[tocTab.length] = new Array("0.1.3.2.8.1:3", "", "«button» Gestores", "EARoot/EA1/EA3/EA2/EA8/EA1/EA7021.htm", "16.png", "11046", "0", "", "GUIElement0","{7CD3E2BF-7AEB-44b1-8385-483299D0C735}");
+tocTab[tocTab.length] = new Array("0.1.3.2.8.1:4", "", "«button» Históricos", "EARoot/EA1/EA3/EA2/EA8/EA1/EA7022.htm", "16.png", "11048", "0", "", "GUIElement0","{2B171729-1C5C-47d3-8BE4-F164C72E6728}");
+tocTab[tocTab.length] = new Array("0.1.3.2.8.1:5", "", "«button» Setores", "EARoot/EA1/EA3/EA2/EA8/EA1/EA7023.htm", "16.png", "11047", "0", "", "GUIElement0","{951EE207-1C21-4d2f-8D76-8391274387F6}");

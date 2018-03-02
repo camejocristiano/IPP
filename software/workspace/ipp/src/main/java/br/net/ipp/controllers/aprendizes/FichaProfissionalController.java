@@ -47,17 +47,17 @@ public class FichaProfissionalController {
 		this.usuarioRepository = usuarioRepository;
 	}
 
-	@GetMapping("/fichaProfissional/home/{id}")
+	@GetMapping("/profissional/home/{id}")
 	public ModelAndView home(@PathVariable("id") Long id, @AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
 		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
 		Jovem jovem = jovemRepository.findOne(id);
+		FichaProfissional fichaProfissional = fichaProfissionalRepository.findByJovem(jovem);
 		if (usuarioSessao.getGrupoDePermissoes().isFichaProfissionalVisualizar() == true) {
 			modelAndView = new ModelAndView("aprendizes/profissionais/home");
-			List<String> situacoesAtuais = this.enumService.carregarSituacaoAtual();
-			modelAndView.addObject("situacoesAtuais", situacoesAtuais);
-			List<String> status = this.enumService.carregarStatus();
-			modelAndView.addObject("status", status);
+			if (fichaProfissionalRepository.findByJovem(jovem) != null) {
+				modelAndView.addObject("profissional", fichaProfissional);
+			}
 		} else {
 			modelAndView = new ModelAndView("redirect:/sw/jovem/"+id);
 		}
@@ -66,16 +66,18 @@ public class FichaProfissionalController {
 		return modelAndView;
 	}
 	
-	@GetMapping("/fichaProfissional/form")
-	public ModelAndView fichaProfissional(FichaProfissional fichaProfissional, @AuthenticationPrincipal UserDetails userDetails) {
+	@GetMapping("/profissional/form/{id}")
+	public ModelAndView fichaProfissional(@PathVariable Long id, FichaProfissional fichaProfissional,@AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
 		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
-		Jovem jovem = jovemRepository.findOne(fichaProfissional.getJovem().getId());
+		Jovem jovem = jovemRepository.findOne(id);
 		if (usuarioSessao.getGrupoDePermissoes().isFichaProfissionalCadastrar() == true) {
 			modelAndView = new ModelAndView("aprendizes/profissionais/profissional");
 			modelAndView.addObject("fichaProfissional", fichaProfissional);
+			modelAndView.addObject("jovem", jovem);
 		} else {
-			modelAndView = new ModelAndView("redirect:/sw/fichaProfissional/home/"+jovem.getId());
+			modelAndView = new ModelAndView("redirect:/sw/profissional/home/"+id);
+			modelAndView.addObject("jovem", jovem);
 		}
 		List<String> situacoesAtuais = this.enumService.carregarSituacaoAtual();
 		modelAndView.addObject("situacoesAtuais", situacoesAtuais);
@@ -140,7 +142,7 @@ public class FichaProfissionalController {
 		return modelAndView;
 	}
 
-	@GetMapping("/fichaProfissional/{id}")
+	@GetMapping("/profissional/{id}")
 	public ModelAndView load(@PathVariable("id") Long id, @AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
 		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());

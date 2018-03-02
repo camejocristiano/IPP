@@ -56,7 +56,7 @@ public class FileUploadController {
         storageService.deleteOne(filename);
     }
 
-/*    @PostMapping("/arquivo")
+/*    @PostMapping("/foto")
     public String handleFileUpload(@RequestParam("file") MultipartFile file,
             RedirectAttributes redirectAttributes) {
 

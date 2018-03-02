@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("0.1.2.4.4:1", "", "Frequencias", "EARoot/EA1/EA2/EA4/EA4/EA168.htm", "188.png", "1379", "0", "", "Custom diagram0","{A71FE178-47B6-4242-9D48-804036AD9F45}");
+tocTab[tocTab.length] = new Array("0.1.2.4.4:2", "", "«Functional» FEAT0021", "EARoot/EA1/EA2/EA4/EA4/EA171.htm", "19.png", "7239", "0", "", "Requirement0","{03C91244-6732-4f66-A672-56363E5B3A2A}");
+tocTab[tocTab.length] = new Array("0.1.2.4.4:3", "", "«Functional» FEAT0022", "EARoot/EA1/EA2/EA4/EA4/EA172.htm", "19.png", "7240", "0", "", "Requirement0","{D4C33C23-8E5E-4e1e-9707-CB47BFB1F9B8}");
+tocTab[tocTab.length] = new Array("0.1.2.4.4:4", "", "«Functional» FEAT0023", "EARoot/EA1/EA2/EA4/EA4/EA173.htm", "19.png", "7241", "0", "", "Requirement0","{DF0F7253-A3E5-4c39-B932-6E76DB09CC19}");
+tocTab[tocTab.length] = new Array("0.1.2.4.4:5", "", "«Functional» FEAT0024", "EARoot/EA1/EA2/EA4/EA4/EA174.htm", "19.png", "7242", "0", "", "Requirement0","{781460D5-F461-4f9c-8D07-B091890D9B71}");

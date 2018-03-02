@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("0.1.2.5.1.2.1.1.6:1", "", "Cenário 02.01.03: Manter Arcos Ocupacionais", "EARoot/EA1/EA2/EA5/EA1/EA2/EA1/EA1/EA6/EA630.htm", "189.png", "1879", "0", "", "Analysis diagram0","{A69E7EE3-2FEC-467c-A3D6-6DBC7AAF9FDA}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.2.1.1.6:2", "", "«DFD_Process» Manter Arcos Ocupacionais", "EARoot/EA1/EA2/EA5/EA1/EA2/EA1/EA1/EA6/EA635.htm", "21.png", "8787", "0", "", "Activity0","{BF33C938-444E-4698-B86D-4AFFEBB26277}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.2.1.1.6.1", "1", "Capacidade 09: Cadastrar Arco Ocupacional", "EARoot/EA1/EA2/EA5/EA1/EA2/EA1/EA1/EA6/EA637.htm", "4.png", "", "", "{ADC5787F-852C-462a-B7CB-AA85D0B00F83}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.2.1.1.6.2", "1", "Capacidade 10: Visualizar Arco Ocupacional", "EARoot/EA1/EA2/EA5/EA1/EA2/EA1/EA1/EA6/EA638.htm", "4.png", "", "", "{967498D1-AC3C-4c88-B166-AE5492D97CFE}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.2.1.1.6.3", "1", "Capacidade 11: Editar Arco Ocupacional", "EARoot/EA1/EA2/EA5/EA1/EA2/EA1/EA1/EA6/EA639.htm", "4.png", "", "", "{539D594A-A20C-47e8-8191-4153FC61B290}", "Package");

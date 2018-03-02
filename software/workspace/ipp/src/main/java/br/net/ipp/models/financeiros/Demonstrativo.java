@@ -1,13 +1,16 @@
 package br.net.ipp.models.financeiros;
 
+import javax.persistence.Entity;
+
 import br.net.ipp.models.AbstractEntity;
 
+@Entity
 public class Demonstrativo extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
 	//DADOS GERAIS 
-	
+	private String varDemonstrativo;
 	//Jovem (codigo, nome, idade)
 	private String nomeDoJovem;
 	private String codigoDoJovem;
@@ -25,8 +28,9 @@ public class Demonstrativo extends AbstractEntity {
 	private String vr;
 	
 	//FREQUENCIAS
-	private String faltasCurso;
-	private String faltasEmpresa;
+	/*private String faltasCurso;
+	private String faltasEmpresa;*/
+	private String faltas;
 	private String diasTrabalhados;
 	private String valorBruto;
 	
@@ -48,6 +52,14 @@ public class Demonstrativo extends AbstractEntity {
 	private String totalLiquedo;
 	private String diaDoCurso;
 	private String terminoDoContrato;
+	
+	
+	public String getVarDemonstrativo() {
+		return varDemonstrativo;
+	}
+	public void setVarDemonstrativo(String varDemonstrativo) {
+		this.varDemonstrativo = varDemonstrativo;
+	}
 	public String getNomeDoJovem() {
 		return nomeDoJovem;
 	}
@@ -102,7 +114,13 @@ public class Demonstrativo extends AbstractEntity {
 	public void setVr(String vr) {
 		this.vr = vr;
 	}
-	public String getFaltasCurso() {
+	public String getFaltas() {
+		return faltas;
+	}
+	public void setFaltas(String faltas) {
+		this.faltas = faltas;
+	}
+	/*public String getFaltasCurso() {
 		return faltasCurso;
 	}
 	public void setFaltasCurso(String faltasCurso) {
@@ -113,7 +131,7 @@ public class Demonstrativo extends AbstractEntity {
 	}
 	public void setFaltasEmpresa(String faltasEmpresa) {
 		this.faltasEmpresa = faltasEmpresa;
-	}
+	}*/
 	public String getDiasTrabalhados() {
 		return diasTrabalhados;
 	}

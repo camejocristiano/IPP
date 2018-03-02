@@ -11,7 +11,8 @@
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/fichaProfissional/home/${ferias.jovem != null ? ferias.jovem.id : jovem.id}">
+			<c:url value="/sw/profissional/home/${ferias.feriasDataDeVencimento != null ? ferias.fichaProfissional.jovem.id : jovem.id}" var="swProfissionalHomeJovemId"></c:url>
+			<a href="${swProfissionalHomeJovemId}">
 				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
 			</a>
 			<br />
@@ -22,7 +23,7 @@
 			<br />
 	</div>
 </div>
-		<c:url value="/sw/ferias/${ferias.jovem != null ? ferias.id : null}" var="swFeriasId"></c:url>
+		<c:url value="/sw/ferias/${ferias.fichaProfissional != null ? ferias.id : null}" var="swFeriasId"></c:url>
 		<form:form role="form" commandName="ferias" servletRelativeAction="${swFeriasId}" method="POST">
 		<div class="row">
 			<div class="input-field s12 col l12">
@@ -200,7 +201,7 @@
 				<label for="observacoes">Observações</label>
 			</div>
 		</div>
-       	<form:input path='jovem' type='hidden' value="${requestScope.jovem.id}" />
+       	<form:input path='fichaProfissional' type='hidden' value="${ferias.fichaProfissional != null ? ferias.fichaProfissional.id : fichaProfissional.id}" />
 		
 			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.feriasCadastrar == true && requestScope.ferias.id == null}">
 				<button class="btn waves-effect waves-light right" type="submit">

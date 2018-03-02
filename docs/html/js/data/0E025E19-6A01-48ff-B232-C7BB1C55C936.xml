@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.1.2.5.1.1.2.1.1:1", "", "Capacidade 01: Cadastrar", "EARoot/EA1/EA2/EA5/EA1/EA1/EA2/EA1/EA1/EA290.htm", "189.png", "1668", "0", "", "Analysis diagram0","{80A6ACDF-A08A-4e8f-9653-2753373A7CB9}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.1.2.1.1:2", "", "«DFD_Process» Cadastrar Grupo de Permissões", "EARoot/EA1/EA2/EA5/EA1/EA1/EA2/EA1/EA1/EA293.htm", "21.png", "6412", "0", "", "Activity0","{A4C4CA1B-6FB1-4323-860D-987FD6EEEB91}");

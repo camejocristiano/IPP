@@ -1,0 +1,11 @@
+tocTab[tocTab.length] = new Array("0.1.3.2.8.4:1", "", "Setor", "EARoot/EA1/EA3/EA2/EA8/EA4/EA7178.htm", "188.png", "1083", "0", "", "Custom diagram0","{8445797F-2C89-40fc-A86D-3AF714156867}");
+tocTab[tocTab.length] = new Array("0.1.3.2.8.4:2", "", "Manutenção de Setores", "EARoot/EA1/EA3/EA2/EA8/EA4/EA7183.htm", "11.png", "11043", "0", "", "Screen0","{94BAF958-0B99-45e1-86C5-981B392CDA14}");
+tocTab[tocTab.length] = new Array("0.1.3.2.8.4:3", "", "Menu NavBar - Empresas", "EARoot/EA1/EA3/EA2/EA8/EA4/EA7184.htm", "99.png", "11056", "0", "", "UMLDiagram0","{D6BB550A-1BE4-4f07-A06C-51B71FD80693}");
+tocTab[tocTab.length] = new Array("0.1.3.2.8.4:4", "", "Menu NavBar Principal", "EARoot/EA1/EA3/EA2/EA8/EA4/EA7185.htm", "99.png", "11055", "0", "", "UMLDiagram0","{35A2B900-7F3C-4927-9B69-C800234677F9}");
+tocTab[tocTab.length] = new Array("0.1.3.2.8.4:5", "", "«text» ", "EARoot/EA1/EA3/EA2/EA8/EA4/EA7186.htm", "16.png", "11074", "11043", "", "GUIElement0","{E9B64677-4CE7-4d8a-91B9-BF556F940408}");
+tocTab[tocTab.length] = new Array("0.1.3.2.8.4:6", "", "«table» ", "EARoot/EA1/EA3/EA2/EA8/EA4/EA7187.htm", "16.png", "11075", "11043", "", "GUIElement0","{41C47CE6-47EB-4b16-BB6F-F6D56DA6B37E}");
+tocTab[tocTab.length] = new Array("0.1.3.2.8.4:7", "", "«combobox» ", "EARoot/EA1/EA3/EA2/EA8/EA4/EA7188.htm", "16.png", "11073", "11043", "", "GUIElement0","{55C01A18-1A25-42be-B326-AEE52B876F81}");
+tocTab[tocTab.length] = new Array("0.1.3.2.8.4:8", "", "«label» Gestor", "EARoot/EA1/EA3/EA2/EA8/EA4/EA7189.htm", "16.png", "11072", "11043", "", "GUIElement0","{89CAE6C5-E8B2-4787-B0CC-BE371E27A6DB}");
+tocTab[tocTab.length] = new Array("0.1.3.2.8.4:9", "", "«label» Lista de Setores", "EARoot/EA1/EA3/EA2/EA8/EA4/EA7190.htm", "16.png", "11078", "11043", "", "GUIElement0","{51C31BA5-229C-44ed-87E9-4992FB90A4E6}");
+tocTab[tocTab.length] = new Array("0.1.3.2.8.4:10", "", "«button» Salvar", "EARoot/EA1/EA3/EA2/EA8/EA4/EA7192.htm", "16.png", "11076", "11043", "", "GUIElement0","{ECD8B3FF-9AAE-4310-BBEB-359FD3A92E11}");
+tocTab[tocTab.length] = new Array("0.1.3.2.8.4:11", "", "«label» Setor", "EARoot/EA1/EA3/EA2/EA8/EA4/EA7193.htm", "16.png", "11071", "11043", "", "GUIElement0","{93966F9E-3243-446e-BAF8-15404288849E}");

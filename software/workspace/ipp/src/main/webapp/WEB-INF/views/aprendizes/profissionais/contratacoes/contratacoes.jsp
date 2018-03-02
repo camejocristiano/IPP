@@ -11,7 +11,8 @@
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/fichaProfissional/home/${contratacao.jovem != null ? contratacao.jovem.id : jovem.id}">
+			<c:url value="/sw/profissional/home/${contratacao.fichaProfissional != null ? contratacao.fichaProfissional.jovem.id : jovem.id}" var="swProfissionalHomeJovemId"></c:url>
+			<a href="${swProfissionalHomeJovemId}">
 				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
 			</a>
 			<br />
@@ -48,7 +49,7 @@
 </table>
 <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.contratacaoCadastrar == true}">
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-	<c:url value="/sw/contratacaoJovem/${jovem.id}" var="swContratacaoJovemId"></c:url>
+	<c:url value="/sw/contratacao/profissional/${jovem.id}" var="swContratacaoJovemId"></c:url>
 	<a class="btn-floating btn-large waves-effect waves-light orange" href="${swContratacaoJovemId}">
     	<i class="material-icons">add</i>
     </a>

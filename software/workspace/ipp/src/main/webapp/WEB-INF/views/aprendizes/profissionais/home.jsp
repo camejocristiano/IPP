@@ -35,7 +35,12 @@
 		}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<c:url value="/sw/fichaProfissionalJovem/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
+	    		<c:if test="${profissional.id == null}">
+	    			<c:url value="/sw/profissional/form/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
+	    		</c:if>
+	    		<c:if test="${profissional.id != null}">
+	    			<c:url value="/sw/profissional/${profissional.id}" var="swFichaProfissionalJovemJovemId"></c:url>
+	    		</c:if>
 	    		<a href="${swFichaProfissionalJovemJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">Profissional<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
@@ -50,6 +55,7 @@
 			</div>
 		</div>
 		</c:if>
+		<c:if test="${profissional.id != null}">
 		<c:if test="${
 			requestScope.usuarioSessao.grupoDePermissoes.entrevistaCadastrar == true ||
 			requestScope.usuarioSessao.grupoDePermissoes.entrevistaVisualizar == true ||
@@ -78,18 +84,18 @@
 			requestScope.usuarioSessao.grupoDePermissoes.contratacaoCadastrar == true ||
 			requestScope.usuarioSessao.grupoDePermissoes.contratacaoVisualizar == true ||
 			requestScope.usuarioSessao.grupoDePermissoes.contratacaoEditar == true ||
-			requestScope.usuarioSessao.grupoDePermissoes.contratacaoListar == true	
+			requestScope.usuarioSessao.grupoDePermissoes.contratacaoListar == true 
 		}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<c:url value="/sw/contratacoesJovem/${jovem.id}" var="swContratacoesJovemJovemId"></c:url>
+	    		<c:url value="/sw/contratacoes/profissional/${profissional.id}" var="swContratacoesJovemJovemId"></c:url>
 	    		<a href="${swContratacoesJovemJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">Contratações<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
 		              <p>Manutenção de Contratações</p>
 	                </div>
 	            </a>
-	            <c:url value="/sw/contratacaoJovem/${jovem.id}" var="swContratacaoJovemJovemId"></c:url>
+	            <c:url value="/sw/contratacao/profissional/${jovem.id}" var="swContratacaoJovemJovemId"></c:url>
 				<a href="${swContratacaoJovemJovemId}" class="btn-index">
 		            <div class="card-action">
 		              <h6 style="color: #eee !important;">Nova</h6>
@@ -168,6 +174,7 @@
 				</a>
 			</div>
 		</div>
+		</c:if>
 		</c:if>
 	
 	</div>  

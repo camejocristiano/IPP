@@ -291,7 +291,7 @@
 		}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<c:url value="/sw/fichaProfissional/home/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
+	    		<c:url value="/sw/profissional/home/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
 	    		<a href="${swFichaProfissionalJovemJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">Profissional<i class="material-icons right" style="color: #eee !important;">receipt</i></span>

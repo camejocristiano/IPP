@@ -6,14 +6,6 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-<style>
-table, th {
-    border: 2px solid black;
-}
-table, td {
-    border: 1px solid black;
-}
-</style>
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
@@ -33,143 +25,227 @@ table, td {
 			<br />
 		</div><!-- // col -->
 	</div><!-- // row -->
-   		<div class="row">
-            <div class="input-field s12 col l12">
 
-			<table class="display">
-				<thead>
-					<tr>
-						<th colspan="7" style="text-align: center">VALE TRANSPORTE DO APRENDIZ</th>
-					</tr>
-					<tr>
-						<th colspan="1">CÓDIGO</th>
-						<th colspan="2">APRENDIZ</th>
-						<th colspan="2">EMPRESA</th>
-						<th colspan="1">INÍCIO</th>
-						<th colspan="1">PAP</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="1">${jovem.id}</td>
-						<td colspan="2">${jovem.nome}</td>
-						<td colspan="2">IPP</td>
-						<td colspan="1">01/01/2012</td>
-						<td colspan="1">PAP</td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th colspan="2">ÚNICO</th>
-						<th colspan="1">ÚNICO</th>
-						<th colspan="2">PARA JOVEM</th>
-						<th colspan="2">PARA SPTRANS</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="2">4.75</td>
-						<td colspan="1">42.00</td>
-						<td colspan="2">250.00</td>
-						<td colspan="2">250.00</td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th colspan="2">BOM</th>
-						<th colspan="1">BOM</th>
-						<th colspan="2">PARA JOVEM</th>
-						<th colspan="2">PARA CMT</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="2">4.75</td>
-						<td colspan="1">42.00</td>
-						<td colspan="2">250.00</td>
-						<td colspan="2">250.00</td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th colspan="2">BEM</th>
-						<th colspan="2">BEM</th>
-						<th colspan="3">PARA JOVEM</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="2">4.75</td>
-						<td colspan="2">42.00</td>
-						<td colspan="3">250.00</td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th colspan="1">2ª</th>
-						<th colspan="1">3ª</th>
-						<th colspan="1">4ª</th>
-						<th colspan="1">5ª</th>
-						<th colspan="1">6ª</th>
-						<th colspan="1">Sáb</th>
-						<th colspan="1">DIAS DO MÊS</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="1">4.75</td>
-						<td colspan="1">4.75</td>
-						<td colspan="1">4.75</td>
-						<td colspan="1">4.75</td>
-						<td colspan="1">4.75</td>
-						<td colspan="1">4.75</td>
-						<td colspan="1">30</td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th colspan="3">FALTA / CUR</th>
-						<th colspan="2">Falta Empresa Injustificada Será Imputada</th>
-						<th colspan="2">Falta Empresa Justificada Será Imputada</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="3">2</td>
-						<td colspan="2">2</td>
-						<td colspan="2">0</td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th colspan="3">DIAS À PAGAR</th>
-						<th colspan="2">TOTAL ALUNO</th>
-						<th colspan="2">TOTAL CONSSESSIONÁRIA</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="3">29</td>
-						<td colspan="2">880.00</td>
-						<td colspan="2">880.00</td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th colspan="7">OBSERVAÇÕES</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="7"> Testando as obsedrvações dos vales transportes do Jovem Aprendiz...</td>
-					</tr>
-				</tbody>
-																
-			</table>
+   		<c:url value="/sw/vt/${vt.varVT != null ? vt.id : null}" var="swVT"></c:url>
+		<form:form role="form" commandName="vt" servletRelativeAction="${swVT}" method="POST">
+		
+   		<div class="row">
+            <div class="input-field s12 col l1"> 
+				<form:input path="varVT" required="true" />
+				<form:errors path="varVT"></form:errors>
+				<form:label path="varVT">X</form:label>				
+			</div><!-- // col -->
+			<div class="input-field s12 col l1"> 
+				<form:input path="cod" />
+				<form:errors path="cod"></form:errors>
+				<form:label path="cod">Cód</form:label>				
+			</div><!-- // col -->
+			<div class="input-field s12 col l3">
+				<form:input path="aprendiz" />
+				<form:errors path="aprendiz"></form:errors>
+				<form:label path="aprendiz">Aprendiz</form:label>				
+			</div><!-- // col -->
+			<div class="input-field s12 col l2">
+				<form:input path="empresa" />
+				<form:errors path="empresa"></form:errors>
+				<form:label path="empresa">Empresa</form:label>				
+			</div><!-- // col -->
+			<div class="input-field s12 col l1">
+				<form:input path="mesReferente" />
+				<form:errors path="mesReferente"></form:errors>
+				<form:label path="mesReferente">Mês Referente</form:label>				
+			</div><!-- // col -->
+			<div class="input-field s12 col l3">
+				<form:input path="pap" />
+				<form:errors path="pap"></form:errors>
+				<form:label path="pap">PAP</form:label>				
+			</div><!-- // col -->
+        </div><!-- // row -->
+        <hr />
+        <div class="row">
+        	<div class="input-field s12 col l3">
+				<form:input path="unico" />
+				<form:errors path="unico"></form:errors>
+				<form:label path="unico">Único</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l3">
+				<form:input path="unicoIdaEVolta" />
+				<form:errors path="unicoIdaEVolta"></form:errors>
+				<form:label path="unicoIdaEVolta">Único Ida e Volta</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l3">
+				<form:input path="unicoParaJovem" />
+				<form:errors path="unicoParaJovem"></form:errors>
+				<form:label path="unicoParaJovem">Único para Jovem</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l3">
+				<form:input path="unicoParaSPTans" />
+				<form:errors path="unicoParaSPTans"></form:errors>
+				<form:label path="unicoParaSPTans">Único para SPTans</form:label>
+			</div><!-- // col -->
+        </div><!-- // row -->
+        <div class="row">
+        	<div class="input-field s12 col l3">
+				<form:input path="bom" />
+				<form:errors path="bom"></form:errors>
+				<form:label path="bom">Bom</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l3">
+				<form:input path="bomIdaEVolta" />
+				<form:errors path="bomIdaEVolta"></form:errors>
+				<form:label path="bomIdaEVolta">Bom Ida e Volta</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l3">
+				<form:input path="bomParaJovem" />
+				<form:errors path="bomParaJovem"></form:errors>
+				<form:label path="bomParaJovem">Bom para Jovem</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l3">
+				<form:input path="bomParaCMT" />
+				<form:errors path="bomParaCMT"></form:errors>
+				<form:label path="bomParaCMT">Bom para CMT</form:label>
+			</div><!-- // col -->
+        </div><!-- // row -->
+        <div class="row">
+        	<div class="input-field s12 col l3">
+				<form:input path="bEM" />
+				<form:errors path="bEM"></form:errors>
+				<form:label path="bEM">Bem</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l3">
+				<form:input path="bEMIdaEVolta" />
+				<form:errors path="bEMIdaEVolta"></form:errors>
+				<form:label path="bEMIdaEVolta">Bem Ida e Volta</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l3">
+				<form:input path="bEMParaJovem" />
+				<form:errors path="bEMParaJovem"></form:errors>
+				<form:label path="bEMParaJovem">Bem para Jovem</form:label>
+			</div><!-- // col -->
+        </div><!-- // row -->
+   		<hr />
+   		<div class="row">
+        	<div class="input-field s12 col l2">
+				<form:input path="segunda" />
+				<form:errors path="segunda"></form:errors>
+				<form:label path="segunda">Segunda</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l2">
+				<form:input path="terca" />
+				<form:errors path="terca"></form:errors>
+				<form:label path="terca">Terça</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l2">
+				<form:input path="quarta" />
+				<form:errors path="quarta"></form:errors>
+				<form:label path="quarta">Quarta</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l2">
+				<form:input path="quinta" />
+				<form:errors path="quinta"></form:errors>
+				<form:label path="quinta">Quinta</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l2">
+				<form:input path="sexta" />
+				<form:errors path="sexta"></form:errors>
+				<form:label path="sexta">Sexta</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l2">
+				<form:input path="sab" />
+				<form:errors path="sab"></form:errors>
+				<form:label path="sab">Sábado</form:label>
+			</div><!-- // col -->
+        </div><!-- // row -->
+   		<div class="row">
+        	<div class="input-field s12 col l3">
+				<form:input path="faltasCurso" />
+				<form:errors path="faltasCurso"></form:errors>
+				<form:label path="faltasCurso">Faltas Curso</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l3">
+				<form:input path="faltasEmpresa" />
+				<form:errors path="faltasEmpresa"></form:errors>
+				<form:label path="faltasEmpresa">Faltas Empresa</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l3">
+				<form:input path="faltasEmpresaInjustificada" />
+				<form:errors path="faltasEmpresaInjustificada"></form:errors>
+				<form:label path="faltasEmpresaInjustificada">Faltas Empresa Injustificada</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l3">
+				<form:input path="faltasEmpresaJustificada" />
+				<form:errors path="faltasEmpresaJustificada"></form:errors>
+				<form:label path="faltasEmpresaJustificada">Faltas Empresa Justificada</form:label>
+			</div><!-- // col -->
+        </div><!-- // row -->
+   		<div class="row">
+        	<div class="input-field s12 col l3">
+				<form:input path="diasMes" />
+				<form:errors path="diasMes"></form:errors>
+				<form:label path="diasMes">Dias Mês</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l3">
+				<form:input path="diasAPagar" />
+				<form:errors path="diasAPagar"></form:errors>
+				<form:label path="diasAPagar">Dias à Pagar</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l3">
+				<form:input path="totalAluno" />
+				<form:errors path="totalAluno"></form:errors>
+				<form:label path="totalAluno">Total Aluno</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l3">
+				<form:input path="totalConcessionaria" />
+				<form:errors path="totalConcessionaria"></form:errors>
+				<form:label path="totalConcessionaria">Total Concessionária</form:label>
+			</div><!-- // col -->
+        </div><!-- // row -->
+        <hr />
+        <div class="row">
+        	<div class="input-field s12 col l3">
+				<form:input path="valorIPP" />
+				<form:errors path="valorIPP"></form:errors>
+				<form:label path="valorIPP">Valor IPP</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l3">
+				<form:input path="valorEmpresa" />
+				<form:errors path="valorEmpresa"></form:errors>
+				<form:label path="valorEmpresa">Valor Empresa</form:label>
+			</div><!-- // col -->
+        	<div class="input-field s12 col l3">
+				<form:input path="dataInicioContrato" />
+				<form:errors path="dataInicioContrato"></form:errors>
+				<form:label path="dataInicioContrato">Data Início do Contrato</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l3">
+				<form:input path="dataFimContrato" />
+				<form:errors path="dataFimContrato"></form:errors>
+				<form:label path="dataFimContrato">Data Fim do Contrato</form:label>
+			</div><!-- // col -->
+        </div><!-- // row -->
+		<div class="row">
+        	<div class="input-field s12 col l12">
+				<form:textarea path="observacao"/>
+				<form:errors path="observacao"></form:errors>
+				<form:label path="observacao">Observação</form:label>
 			</div><!-- // col -->
         </div><!-- // row -->
    		<br />
    		<br />
+   			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.vtCadastrar == true && requestScope.vt.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.vtEditar == true && requestScope.vt.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
+			<br />
+			<br />
+		</form:form>
 	</div><!-- // container -->
 <c:import url="../../../partials/js.jsp"></c:import>
 <c:import url="../../../partials/footer.jsp"></c:import>

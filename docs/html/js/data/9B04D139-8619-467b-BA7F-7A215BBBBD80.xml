@@ -1,0 +1,10 @@
+tocTab[tocTab.length] = new Array("0.1.3.1.3.5.2.2:1", "", "Gestor", "EARoot/EA1/EA3/EA1/EA3/EA5/EA2/EA2/EA4823.htm", "180.png", "1134", "0", "", "Use Case diagram0","{FD3380F1-6740-441e-9A25-931E9ABC8485}");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.5.2.2:2", "", "Add Gestor", "EARoot/EA1/EA3/EA1/EA3/EA5/EA2/EA2/EA4826.htm", "7.png", "5861", "0", "", "UseCase0","{73E93958-2111-486c-8BDA-717A6E574324}");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.5.2.2:3", "", "Edit Gestor", "EARoot/EA1/EA3/EA1/EA3/EA5/EA2/EA2/EA4828.htm", "7.png", "5862", "0", "", "UseCase0","{ACF4E50A-D2BF-4516-A808-5E25576064BF}");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.5.2.2:4", "", "List Gestores", "EARoot/EA1/EA3/EA1/EA3/EA5/EA2/EA2/EA4831.htm", "7.png", "5864", "0", "", "UseCase0","{18FD350E-2209-41e7-A62B-E4AD1182BF2F}");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.5.2.2:5", "", "Visualizar Gestor", "EARoot/EA1/EA3/EA1/EA3/EA5/EA2/EA2/EA4834.htm", "7.png", "5863", "0", "", "UseCase0","{2519C9B3-47F1-4b56-B269-2A0456B3C1D2}");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.5.2.2.1", "1", "Add Gestor", "EARoot/EA1/EA3/EA1/EA3/EA5/EA2/EA2/EA4836.htm", "4.png", "", "", "{CF6BF2C8-B779-43ff-A510-94F16FA99358}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.5.2.2.2", "1", "Edit Gestor", "EARoot/EA1/EA3/EA1/EA3/EA5/EA2/EA2/EA4837.htm", "4.png", "", "", "{0067021E-6A1B-4da1-A137-C54284F4C79C}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.5.2.2.3", "1", "List Gestores", "EARoot/EA1/EA3/EA1/EA3/EA5/EA2/EA2/EA4838.htm", "4.png", "", "", "{1478CFE1-D5CC-450a-BE80-1F3B08F59C1B}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.5.2.2.4", "1", "Visualizar Gestor", "EARoot/EA1/EA3/EA1/EA3/EA5/EA2/EA2/EA4839.htm", "4.png", "", "", "{CD07CD64-44B8-4e09-8F60-2BC696B738FD}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.5.2.2.5", "1", "Listar Gestores Por Empresa", "EARoot/EA1/EA3/EA1/EA3/EA5/EA2/EA2/EA4840.htm", "4.png", "", "", "{A30F291E-E685-4364-81D0-E3985B786A15}", "Package");

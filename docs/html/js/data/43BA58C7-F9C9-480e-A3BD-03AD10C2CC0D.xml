@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("0.1.2.5.1.5:1", "", "Cenário 04: Manutenção de Frequencias", "EARoot/EA1/EA2/EA5/EA1/EA5/EA1635.htm", "189.png", "2082", "0", "", "Analysis diagram0","{FF06F111-B8A7-49cb-8E3B-3D15D5FA2DF0}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.5:2", "", "«DFD_DataStore» Frequencia", "EARoot/EA1/EA2/EA5/EA1/EA5/EA1639.htm", "5.png", "11920", "0", "", "Class0","{19A78747-085C-4662-92D3-F5150C1BD548}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.5.1", "1", "Cenário 04.01: Manutenção de Frequências", "EARoot/EA1/EA2/EA5/EA1/EA5/EA1640.htm", "4.png", "", "", "{3B3662B7-49C4-4149-9DCF-4FE237D26279}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.5.2", "1", "Cenário 04.02: Manutenção de Aulas Extras", "EARoot/EA1/EA2/EA5/EA1/EA5/EA1641.htm", "4.png", "", "", "{3C554B4D-A58A-4e0a-9B12-190EEBCB8A5E}", "Package");

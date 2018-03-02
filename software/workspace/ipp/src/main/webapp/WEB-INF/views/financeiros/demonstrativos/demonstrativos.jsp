@@ -31,18 +31,25 @@
             <th>EMPRESA</th>
             <th>INÍCIO</th>
             <th>TÉRMINO</th>
-            <th class="td-icon">EDITAR</th>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.demonstrativoVisualizar == true}">
+            	<th class="td-icon">MÊS</th>
+            	<th class="td-icon">OUTROS</th>
+            </c:if>	
           </tr>
         </thead>
         <tbody>
         <c:forEach var="contratacao" items="${requestScope.contratacoes}">
           <tr>
-            <td>${contratacao.jovem.nome}</td>
+            <td>${contratacao.fichaProfissional.jovem.nome}</td>
             <td>${contratacao.empresaContratante.nomeFantazia}</td>
-            <td>${contratacao.dataDeInicioDaContratacao}</td>
-            <td>${contratacao.terminoDoContrato}</td>
-            <c:url value="/sw/demonstrativo/${contratacao.id}" var="swDemonstrativoId"></c:url>
-            <td class="td-icon"><a href="${swDemonstrativoId}"><i class="material-icons" >border_color</i></a></td>
+            <td>${contratacao.diaDeInicioDaContratacao}/${contratacao.mesDeInicioDaContratacao}/${contratacao.anoDeInicioDaContratacao}</td>
+            <td>${contratacao.diaTerminoDoContrato}/${contratacao.diaTerminoDoContrato}/${contratacao.diaTerminoDoContrato}</td>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.demonstrativoVisualizar == true}">
+            	<c:url value="/sw/demonstrativo/${contratacao.id}" var="swDemonstrativoId"></c:url>
+            	<td class="td-icon"><a href="${swDemonstrativoId}"><i class="material-icons" >border_color</i></a></td>
+            	<c:url value="/sw/demonstrativos/${contratacao.id}" var="swDemonstrativoId"></c:url>
+            	<td class="td-icon"><a href="${swDemonstrativoId}"><i class="material-icons" >border_color</i></a></td>
+            </c:if>
           </tr>
           </c:forEach>
           </tbody>

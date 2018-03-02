@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("0.1.2.5.3.2.7:1", "", "Financeiro", "EARoot/EA1/EA2/EA5/EA3/EA2/EA7/EA3186.htm", "175.png", "975", "0", "", "Logical diagram0","{BAE5D3F5-2D54-4509-9DD3-F4D86DAD073B}");
+tocTab[tocTab.length] = new Array("0.1.2.5.3.2.7:2", "", "Banco", "EARoot/EA1/EA2/EA5/EA3/EA2/EA7/EA3188.htm", "5.png", "11853", "0", "", "Class0","{AF5480A4-848B-4803-B7E5-02A6AEB7C4C4}");
+tocTab[tocTab.length] = new Array("0.1.2.5.3.2.7:3", "", "ContaAReceber", "EARoot/EA1/EA2/EA5/EA3/EA2/EA7/EA3189.htm", "5.png", "11855", "0", "", "Class0","{4AC66759-D280-4521-8B18-1472492FEA40}");
+tocTab[tocTab.length] = new Array("0.1.2.5.3.2.7:4", "", "Fornecedor", "EARoot/EA1/EA2/EA5/EA3/EA2/EA7/EA3190.htm", "5.png", "11856", "0", "", "Class0","{8E515382-142E-47a3-BD65-FF2C088B5E0F}");
+tocTab[tocTab.length] = new Array("0.1.2.5.3.2.7:5", "", "Parametros", "EARoot/EA1/EA2/EA5/EA3/EA2/EA7/EA3191.htm", "5.png", "11857", "0", "", "Class0","{42993F34-8F1D-40c7-88E5-FC23A19D5FCB}");
+tocTab[tocTab.length] = new Array("0.1.2.5.3.2.7:6", "", "ContaAPagar", "EARoot/EA1/EA2/EA5/EA3/EA2/EA7/EA3192.htm", "5.png", "11863", "0", "", "Class0","{89E7ECEE-F48E-4cd3-AC8F-ED2BBDC20411}");

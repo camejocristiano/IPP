@@ -11,7 +11,7 @@
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/fichaProfissional/home/${fichaProfissional.jovem != null ? fichaProfissional.jovem.id : jovem.id}">
+			<a href="/sw/profissional/home/${fichaProfissional.jovem != null ? fichaProfissional.jovem.id : jovem.id}">
 				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
 			</a>
 			<br />

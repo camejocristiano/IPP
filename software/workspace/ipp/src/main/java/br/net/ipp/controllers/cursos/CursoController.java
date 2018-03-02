@@ -126,6 +126,7 @@ private UsuarioRepository usuarioRepository;
 			List<String> statusPAP = enumService.carregarStatusPAP();
 			modelAndView.addObject("statusPAP", statusPAP);
 			modelAndView.addObject("cBOs", cboRepository.findAll());
+			modelAndView.addObject("arcos", arcoOcupacionalRepository.findAll());
 			modelAndView.addObject("unidades", unidadeRepository.findAll());
 			modelAndView.addObject("basicos", conteudoTeoricoBasicoRepository.findAll());
 			modelAndView.addObject("especificos", conteudoTeoricoEspecificoRepository.findAll());
@@ -144,7 +145,7 @@ private UsuarioRepository usuarioRepository;
 			modelAndView = new ModelAndView("cursos/cursos/curso");
 			if (bindingResult.hasErrors()) {
 				modelAndView.addObject("color", "orange");
-				modelAndView.addObject("msg", "Algo saiu errado! Tente novamente, caso persista o erro, entre em contato com o desenvolvimento!");
+				modelAndView.addObject("msg", "Algo saiu errado! OKK");
 				modelAndView.addObject("curso", curso);
 			} else {
 				cursoRepository.save(curso);

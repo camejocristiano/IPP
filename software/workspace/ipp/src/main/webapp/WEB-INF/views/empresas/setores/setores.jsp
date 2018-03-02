@@ -28,7 +28,9 @@
 		<tr>
 			<th>ID</th>
 			<th>NOME</th>
-			<th class="td-icon">EDITAR</th>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.setorVisualizar == true}">
+				<th class="td-icon">EDITAR</th>
+			</c:if>
 		</tr>
 	</thead>
 	<tbody>
@@ -36,21 +38,24 @@
 			<tr>
 				<td>${setor.id}</td>
 				<td>${setor.nome}</td>
-				<c:url value="/sw/setor/${setor.id}" var="swSetorId"></c:url>
-				<td class="td-icon"><a href="${swSetorId}"><i
-						class="material-icons">border_color</i></a></td>
+				<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.setorVisualizar == true}">
+					<c:url value="/sw/setor/${setor.id}" var="swSetorId"></c:url>
+					<td class="td-icon"><a href="${swSetorId}"><i
+							class="material-icons">border_color</i></a></td>
+				</c:if>
 			</tr>
 		</c:forEach>
 	</tbody>
 
 </table>
-
+<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.setorCadastrar == true}">
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-	<c:url value="/sw/setorEmpresa/${empresa.id}" var="swSetorEmpresaId"></c:url>
+	<c:url value="/sw/setor/form/${empresa.id}" var="swSetorEmpresaId"></c:url>
 	<a class="btn-floating btn-large waves-effect waves-light orange"
 		href="${swSetorEmpresaId}"> <i class="material-icons">add</i>
 	</a>
 </div>
+</c:if>
  </div>
 
 <c:import url="../../../partials/js.jsp"></c:import>

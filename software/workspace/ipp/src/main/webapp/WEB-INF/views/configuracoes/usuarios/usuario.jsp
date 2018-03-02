@@ -30,8 +30,9 @@
 			<hr />
 			<hr />
 			<div class="btn">
-		        <span>File</span>
-		        <input type="file" name="file" />
+		        <span>File</span><!-- 
+		        <input type="file" name="file" /> -->
+		        Foto:</td><td><input type="file" name="file" />
 		      </div>
 		      
 			<button class="btn waves-effect waves-light" type="submit" name="action">Submit

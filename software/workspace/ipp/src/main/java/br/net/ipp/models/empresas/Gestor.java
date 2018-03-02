@@ -11,17 +11,24 @@ public class Gestor extends User {
 	private static final long serialVersionUID = 1L;
 	
 	private String nome;
+	private String foto;
 	private String ramal;
 	private String telefone;
+	private Boolean permitirQueVisualizeTodosOsJovens;
 	@ManyToOne
 	private Empresa empresa;
-	private Boolean permitirQueVisualizeTodosOsJovens;
-
+	
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public String getFoto() {
+		return foto;
+	}
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 	public String getRamal() {
 		return ramal;
@@ -35,17 +42,17 @@ public class Gestor extends User {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public Empresa getEmpresa() {
-		return empresa;
-	}
-	public void setEmpresa(Empresa empresa) {
-		this.empresa = empresa;
-	}
 	public Boolean getPermitirQueVisualizeTodosOsJovens() {
 		return permitirQueVisualizeTodosOsJovens;
 	}
 	public void setPermitirQueVisualizeTodosOsJovens(Boolean permitirQueVisualizeTodosOsJovens) {
 		this.permitirQueVisualizeTodosOsJovens = permitirQueVisualizeTodosOsJovens;
+	}
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

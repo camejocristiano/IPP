@@ -46,7 +46,7 @@ public class AvaliacaoPAPIPP extends AbstractEntity {
 	private String avaliacoesPAPIPP_data7avaliacao;
 	private String avaliacoesPAPIPP_data8avaliacao;
 	@ManyToOne
-	private Jovem jovem;
+	private Historico historico;
 	
 	
 	public double getAvaliacoesPAPIPP_autoav1avaliacao() {
@@ -241,11 +241,11 @@ public class AvaliacaoPAPIPP extends AbstractEntity {
 	public void setAvaliacoesPAPIPP_data8avaliacao(String avaliacoesPAPIPP_data8avaliacao) {
 		this.avaliacoesPAPIPP_data8avaliacao = avaliacoesPAPIPP_data8avaliacao;
 	}
-	public Jovem getJovem() {
-		return jovem;
+	public Historico getHistorico() {
+		return historico;
 	}
-	public void setJovem(Jovem jovem) {
-		this.jovem = jovem;
+	public void setHistorico(Historico historico) {
+		this.historico = historico;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

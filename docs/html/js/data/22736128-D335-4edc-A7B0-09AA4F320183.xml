@@ -1,0 +1,7 @@
+tocTab[tocTab.length] = new Array("0.1.2.5.1.3.9.1.6:1", "", "Capacidade 06: Manter Contratações", "EARoot/EA1/EA2/EA5/EA1/EA3/EA9/EA1/EA6/EA1274.htm", "189.png", "1949", "0", "", "Analysis diagram0","{3036F4BD-E468-4a34-A53B-ED485E45294E}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.3.9.1.6:2", "", "«DFD_Process» Manter Contratações", "EARoot/EA1/EA2/EA5/EA1/EA3/EA9/EA1/EA6/EA1283.htm", "21.png", "10370", "0", "", "Activity0","{EC0C822C-7064-40ed-B866-825331C832F0}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.3.9.1.6.1", "1", "Capacidade 05.01: Cadastrar", "EARoot/EA1/EA2/EA5/EA1/EA3/EA9/EA1/EA6/EA1284.htm", "4.png", "", "", "{65B17F74-9F1C-4a5c-81AA-7E3B49B1C94B}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.3.9.1.6.2", "1", "Capacidade 05.02: Listar", "EARoot/EA1/EA2/EA5/EA1/EA3/EA9/EA1/EA6/EA1285.htm", "4.png", "", "", "{800B37F4-FFA0-4c1e-B394-4BD55E009B18}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.3.9.1.6.3", "1", "Capacidade 05.03: Visualizar", "EARoot/EA1/EA2/EA5/EA1/EA3/EA9/EA1/EA6/EA1286.htm", "4.png", "", "", "{589FAD66-7599-4c98-839E-FBD24A5A1E6A}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.3.9.1.6.4", "1", "Capacidade 05.04: Editar", "EARoot/EA1/EA2/EA5/EA1/EA3/EA9/EA1/EA6/EA1287.htm", "4.png", "", "", "{15925C18-CB51-4c1a-A10A-A21AF1269E27}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.3.9.1.6.5", "1", "Capacidade 05.05: Listar por Aprendiz", "EARoot/EA1/EA2/EA5/EA1/EA3/EA9/EA1/EA6/EA1288.htm", "4.png", "", "", "{2ECA7951-8DB8-4d26-83D0-E5344C4ABAB9}", "Package");

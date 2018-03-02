@@ -46,7 +46,7 @@ public class AvaliacaoPIO extends AbstractEntity {
 	private String avaliacoesPIO_data7avaliacao;
 	private String avaliacoesPIO_data8avaliacao;
 	@ManyToOne
-	private Jovem jovem;
+	private Historico historico;
 	
 	
 	public double getAvaliacoesPIO_autoav1avaliacao() {
@@ -241,11 +241,11 @@ public class AvaliacaoPIO extends AbstractEntity {
 	public void setAvaliacoesPIO_data8avaliacao(String avaliacoesPIO_data8avaliacao) {
 		this.avaliacoesPIO_data8avaliacao = avaliacoesPIO_data8avaliacao;
 	}
-	public Jovem getJovem() {
-		return jovem;
+	public Historico getHistorico() {
+		return historico;
 	}
-	public void setJovem(Jovem jovem) {
-		this.jovem = jovem;
+	public void setHistorico(Historico historico) {
+		this.historico = historico;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

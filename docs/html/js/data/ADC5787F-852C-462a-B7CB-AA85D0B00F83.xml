@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.1.2.5.1.2.1.1.6.1:1", "", "Capacidade 09: Cadastrar Arco Ocupacional", "EARoot/EA1/EA2/EA5/EA1/EA2/EA1/EA1/EA6/EA1/EA640.htm", "189.png", "1849", "0", "", "Analysis diagram0","{40BC917A-7BA9-4c75-8D85-CA592A0CD1D8}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.2.1.1.6.1:2", "", "«DFD_Process» Cadastrar Arco Ocupacional", "EARoot/EA1/EA2/EA5/EA1/EA2/EA1/EA1/EA6/EA1/EA643.htm", "21.png", "8348", "0", "", "Activity0","{1A401CBF-0226-44da-9A23-C1C63FC8190F}");

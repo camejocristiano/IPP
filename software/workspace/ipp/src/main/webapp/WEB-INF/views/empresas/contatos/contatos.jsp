@@ -29,7 +29,9 @@
 		<tr>
 			<th>ID</th>
 			<th>Nome</th>
-			<th class="td-icon">EDITAR</th>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.contatoVisualizar == true}">
+				<th class="td-icon">EDITAR</th>
+			</c:if>
 		</tr>
 	</thead>
 	<tbody>
@@ -37,9 +39,11 @@
 			<tr>
 				<td>${contato.id}</td>
 				<td>${contato.nome}</td>
-				<c:url value="/sw/contatos/${contato.id}" var="swContatoId"></c:url>
-				<td class="td-icon"><a href="${swContatoId}"><i
-						class="material-icons">border_color</i></a></td>
+				<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.contatoVisualizar == true}">
+					<c:url value="/sw/contatos/${contato.id}" var="swContatoId"></c:url>
+					<td class="td-icon"><a href="${swContatoId}"><i
+							class="material-icons">border_color</i></a></td>
+				</c:if>
 			</tr>
 		</c:forEach>
 	</tbody>
@@ -47,10 +51,12 @@
 </table>
 
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-	<c:url value="/sw/contatos/form" var="swContatosForm"></c:url>
-	<a class="btn-floating btn-large waves-effect waves-light orange"
-		href="${swContatosForm}"> <i class="material-icons">add</i>
-	</a>
+	<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.contatoCadastrar == true}">
+		<c:url value="/sw/contato/form/${empresa.id}" var="swContatosForm"></c:url>
+		<a class="btn-floating btn-large waves-effect waves-light orange"
+			href="${swContatosForm}"> <i class="material-icons">add</i>
+		</a>
+	</c:if>
 </div>
 <br />
 <br />

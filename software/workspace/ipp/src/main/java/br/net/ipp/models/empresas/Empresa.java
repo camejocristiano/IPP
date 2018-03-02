@@ -1,12 +1,7 @@
 package br.net.ipp.models.empresas;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.enums.Regiao;
 import br.net.ipp.enums.Status;
@@ -21,6 +16,7 @@ public class Empresa extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 
 	private String razaoSocial;
+	private String foto;
 	private Status status;
 	private Boolean assistenciaMedica;
 	private Boolean assistenciaOdontologica;
@@ -32,34 +28,32 @@ public class Empresa extends AbstractEntity {
 	private String cidade;
 	private String cNPJ;
 	private String complemento;
-	@Column(name = "dataDeCadastro")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date dataDeCadastro;
-	@Column(name = "dataDeVencimentoDaFatura")  
+	private String dataDeCadastro;
 	private String dataDeVencimentoDaFatura;
 	private String endereco;
 	private String estado;
 	private String fax;
 	private String nomeFantazia;
 	private Boolean outros;
-	private double porcentagemSobreATaxaExtraBaseSMF;
-	private double porcentagemSobreOSMF;
+	private Double porcentagemSobreATaxaExtraBaseSMF;
+	private Double porcentagemSobreOSMF;
 	private Regiao regiao;
 	private String site;
 	private Boolean taxaDeAdministracaoDeBeneficiosConvenioDeSaude;
 	private Boolean taxaDeAdministracaoDeBeneficiosVR;
-	private double taxaExtra18DoSMF;
+	private Double taxaExtra18DoSMF;
 	private String telefone;
 	private String tipoDeEmpresa;
 	private TipoDeParceria tipoDeParceria;
 	private Boolean valeAlimentacao;
 	private Boolean valeRefeicao;
-	private double valorPorcentagemSobreATaxaExtraBaseSMF;
-	private double valorPorcentagemSobreOSMF;
+	private Double valorPorcentagemSobreATaxaExtraBaseSMF;
+	private Double valorPorcentagemSobreOSMF;
 	private Boolean vinculoComOIPP;
 	private Boolean vRCurso;
-	// Criar relacionamento
+	@ManyToOne
 	private Usuario monitor;
+	@ManyToOne
 	private Usuario vendedor;
 	@ManyToOne
 	private Unidade unidade;
@@ -69,6 +63,12 @@ public class Empresa extends AbstractEntity {
 	}
 	public void setRazaoSocial(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
+	}
+	public String getFoto() {
+		return foto;
+	}
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 	public Status getStatus() {
 		return status;
@@ -136,10 +136,10 @@ public class Empresa extends AbstractEntity {
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-	public Date getDataDeCadastro() {
+	public String getDataDeCadastro() {
 		return dataDeCadastro;
 	}
-	public void setDataDeCadastro(Date dataDeCadastro) {
+	public void setDataDeCadastro(String dataDeCadastro) {
 		this.dataDeCadastro = dataDeCadastro;
 	}
 	public String getDataDeVencimentoDaFatura() {
@@ -184,16 +184,16 @@ public class Empresa extends AbstractEntity {
 	public void setOutros(Boolean outros) {
 		this.outros = outros;
 	}
-	public double getPorcentagemSobreATaxaExtraBaseSMF() {
+	public Double getPorcentagemSobreATaxaExtraBaseSMF() {
 		return porcentagemSobreATaxaExtraBaseSMF;
 	}
-	public void setPorcentagemSobreATaxaExtraBaseSMF(double porcentagemSobreATaxaExtraBaseSMF) {
+	public void setPorcentagemSobreATaxaExtraBaseSMF(Double porcentagemSobreATaxaExtraBaseSMF) {
 		this.porcentagemSobreATaxaExtraBaseSMF = porcentagemSobreATaxaExtraBaseSMF;
 	}
-	public double getPorcentagemSobreOSMF() {
+	public Double getPorcentagemSobreOSMF() {
 		return porcentagemSobreOSMF;
 	}
-	public void setPorcentagemSobreOSMF(double porcentagemSobreOSMF) {
+	public void setPorcentagemSobreOSMF(Double porcentagemSobreOSMF) {
 		this.porcentagemSobreOSMF = porcentagemSobreOSMF;
 	}
 	public Regiao getRegiao() {
@@ -220,10 +220,10 @@ public class Empresa extends AbstractEntity {
 	public void setTaxaDeAdministracaoDeBeneficiosVR(Boolean taxaDeAdministracaoDeBeneficiosVR) {
 		this.taxaDeAdministracaoDeBeneficiosVR = taxaDeAdministracaoDeBeneficiosVR;
 	}
-	public double getTaxaExtra18DoSMF() {
+	public Double getTaxaExtra18DoSMF() {
 		return taxaExtra18DoSMF;
 	}
-	public void setTaxaExtra18DoSMF(double taxaExtra18DoSMF) {
+	public void setTaxaExtra18DoSMF(Double taxaExtra18DoSMF) {
 		this.taxaExtra18DoSMF = taxaExtra18DoSMF;
 	}
 	public String getTelefone() {
@@ -262,16 +262,16 @@ public class Empresa extends AbstractEntity {
 	public void setValeRefeicao(Boolean valeRefeicao) {
 		this.valeRefeicao = valeRefeicao;
 	}
-	public double getValorPorcentagemSobreATaxaExtraBaseSMF() {
+	public Double getValorPorcentagemSobreATaxaExtraBaseSMF() {
 		return valorPorcentagemSobreATaxaExtraBaseSMF;
 	}
-	public void setValorPorcentagemSobreATaxaExtraBaseSMF(double valorPorcentagemSobreATaxaExtraBaseSMF) {
+	public void setValorPorcentagemSobreATaxaExtraBaseSMF(Double valorPorcentagemSobreATaxaExtraBaseSMF) {
 		this.valorPorcentagemSobreATaxaExtraBaseSMF = valorPorcentagemSobreATaxaExtraBaseSMF;
 	}
-	public double getValorPorcentagemSobreOSMF() {
+	public Double getValorPorcentagemSobreOSMF() {
 		return valorPorcentagemSobreOSMF;
 	}
-	public void setValorPorcentagemSobreOSMF(double valorPorcentagemSobreOSMF) {
+	public void setValorPorcentagemSobreOSMF(Double valorPorcentagemSobreOSMF) {
 		this.valorPorcentagemSobreOSMF = valorPorcentagemSobreOSMF;
 	}
 	public Usuario getVendedor() {

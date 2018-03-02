@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("0.1.3.2.7:1", "", "Frequencias", "EARoot/EA1/EA3/EA2/EA7/EA6921.htm", "188.png", "2125", "0", "", "Custom diagram0","{F4CB7AF1-ED02-42e1-ADB5-9A8D34381456}");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.1", "1", "Home - Frequências", "EARoot/EA1/EA3/EA2/EA7/EA6924.htm", "4.png", "", "", "{C164671E-4CCB-4e44-BB25-0912E0E1029E}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.2", "1", "Frequencias por Jovens", "EARoot/EA1/EA3/EA2/EA7/EA6926.htm", "4.png", "", "", "{A35C2BF1-3D30-43fc-AF03-959410CFB693}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.3", "1", "Frequencias por Turmas", "EARoot/EA1/EA3/EA2/EA7/EA6927.htm", "4.png", "", "", "{446B7761-AEF7-466b-B7B2-BABF03238FFB}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.4", "1", "Lançamento de Frequencias po Turma", "EARoot/EA1/EA3/EA2/EA7/EA6928.htm", "4.png", "", "", "{D64945F4-03E1-429c-A649-BCD0483C77DC}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2.7.5", "1", "Lançamento de Frequencias por Gestor", "EARoot/EA1/EA3/EA2/EA7/EA6929.htm", "4.png", "", "", "{84A40DCB-C7DD-4f60-84DC-68D2BA004CA8}", "Package");

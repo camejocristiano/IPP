@@ -12,7 +12,7 @@
 
 <div class="row">
 		<div class="col s12 l12">
-			<c:url value="/sw/jovem/${historico.jovem == null ? jovem.id : historico.jovem.id}" var="swJovemJovemId"></c:url>
+			<c:url value="/sw/profissional/home/${historico.jovem == null ? jovem.id : historico.jovem.id}" var="swJovemJovemId"></c:url>
 			<a href="${swJovemJovemId}">
 				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
 			</a>
@@ -34,8 +34,8 @@
 		}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<c:url value="/sw/historicoJovem/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
-	    		<a href="${swFichaProfissionalJovemJovemId}">
+	    		<c:url value="/sw/historico/form/${jovem.id}" var="swHistoricoJovemId"></c:url>
+	    		<a href="${swHistoricoJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">Observações<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
 		              <p>Manutenção de Observações</p>
@@ -49,6 +49,7 @@
 			</div><!-- / card -->
 		</div><!-- / col -->
 		</c:if>
+		<c:if test="${profissional.id != null}">
 		<c:if test="${
 			requestScope.usuarioSessao.grupoDePermissoes.ocorrenciaCadastrar == true ||
 			requestScope.usuarioSessao.grupoDePermissoes.ocorrenciaVisualizar == true ||
@@ -57,17 +58,17 @@
 		}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<c:url value="/sw/historicoJovem/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
-	    		<a href="${swFichaProfissionalJovemJovemId}">
+	    		<c:url value="/sw/ocorrencias/${jovem.id}" var="swOcorrenciasJovemId"></c:url>
+	    		<a href="${swOcorrenciasJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">Ocorrências<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
 		              <p>Manutenção de Ocorrências</p>
 	                </div>
 	            </a>
-				<c:url value="/sw/historicoJovem/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
-		   		<a href="${swFichaProfissionalJovemJovemId}" class="btn-index">
+				<c:url value="/sw/ocorrencia/form/${jovem.id}" var="swOcorrenciaJovemId"></c:url>
+		   		<a href="${swOcorrenciaJovemId}" class="btn-index">
 		            <div class="card-action">
-		              <h6 style="color: #eee !important;">...</h6>
+		              <h6 style="color: #eee !important;">Nova</h6>
 		            </div>
 				</a>
 			</div><!-- / card -->
@@ -81,8 +82,8 @@
 		}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<c:url value="/sw/historicoJovem/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
-	    		<a href="${swFichaProfissionalJovemJovemId}">
+	    		<c:url value="/sw/avaliacaoPIP/form/${jovem.id}" var="swAvaliacaoPIPFormJovemId"></c:url>
+	    		<a href="${swAvaliacaoPIPFormJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">PIP<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
 		              <p>Manutenção de Avaliação PIP</p>
@@ -104,8 +105,8 @@
 		}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<c:url value="/sw/historicoJovem/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
-	    		<a href="${swFichaProfissionalJovemJovemId}">
+	    		<c:url value="/sw/avaliacaoPIT/form/${jovem.id}" var="swAvaliacaoPITFormJovemId"></c:url>
+	    		<a href="${swAvaliacaoPITFormJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">PIT<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
 		              <p>Manutenção de Avaliação PIT</p>
@@ -127,8 +128,8 @@
 		}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<c:url value="/sw/historicoJovem/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
-	    		<a href="${swFichaProfissionalJovemJovemId}">
+	    		<c:url value="/sw/avaliacaoPIO/form/${jovem.id}" var="swAvaliacaoPIOFormJovemId"></c:url>
+	    		<a href="${swAvaliacaoPIOFormJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">PIO<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
 		              <p>Manutenção de Avaliação PIO</p>
@@ -150,8 +151,8 @@
 		}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<c:url value="/sw/historicoJovem/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
-	    		<a href="${swFichaProfissionalJovemJovemId}">
+	    		<c:url value="/sw/avaliacaoPAPEmpresa/form/${jovem.id}" var="swAvaliacaoPAPEmpresaJovemId"></c:url>
+	    		<a href="${swAvaliacaoPAPEmpresaJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">PAP Empresa<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
 		              <p>Manutenção de Avaliação PAP Empresa</p>
@@ -173,7 +174,7 @@
 		}">
 		<div class="col s12 m6 l4">
 	    	<div class="card blue-grey darken-1">
-	    		<c:url value="/sw/historicoJovem/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
+	    		<c:url value="/sw/avaliacaoPAPIPP/form/${jovem.id}" var="swFichaProfissionalJovemJovemId"></c:url>
 	    		<a href="${swFichaProfissionalJovemJovemId}">
 		   			<div class="card-content white-text">
 		              <span class="card-title">PAP IPP<i class="material-icons right" style="color: #eee !important;">receipt</i></span>
@@ -188,6 +189,8 @@
 			</div><!-- / card -->
 		</div><!-- / col -->
 		</c:if>
+	</c:if>
+		
 	</div><!-- / row -->  
 </div><!-- / container -->
 <c:import url="../../../partials/js.jsp"></c:import>

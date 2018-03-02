@@ -27,21 +27,37 @@
 		<form:form role="form" commandName="setor" servletRelativeAction="${swSetorId}" method="POST"
 			class="col s12">
 			<div class="row">
-				<div class="input-field s12 col l12">
-					<form:input path='nome' type='text'/>
+				<div class="input-field s12 col l6">
+					<form:input path='nome' type='text' required="true" />
 					<form:errors path='nome'/> 
 					<label for="nome">Nome</label>
 				</div>
+				<div class="input-field s12 col l6">
+				<form:select path="gestor">
+		        <form:option  value="${setor.gestor}" label="${setor.gestor != null ? setor.gestor.nome : 'Gestor'}" />
+					<c:forEach var="gestor" items="${requestScope.gestores}">
+						<option value="${gestor.id}">${gestor.nome}</option>							
+					</c:forEach>
+				</form:select>
+				</div>
 			</div>
-			<div class="row">
-				<div class="input-field col s12">
-  </div>
-			</div>
+		<br />
+<br />
 			<form:input path='empresa' type='hidden' value="${empresa.id}" />
-			<button class="btn waves-effect waves-light right" type="submit">
-				Salvar<i class="material-icons right">send</i>
-			</button>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.setorCadastrar == true && requestScope.setor.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.setorEditar == true && requestScope.setor.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+		
 		</form:form>
+<br />
+<br />
 <br />
 <br />
 	</div>

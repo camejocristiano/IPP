@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.1.2.5.1.7.6.1.12:1", "", "Capacidade 12: Listar Despesas", "EARoot/EA1/EA2/EA5/EA1/EA7/EA6/EA1/EA12/EA2487.htm", "189.png", "1700", "0", "", "Analysis diagram0","{DF83844A-4DEF-4f68-AD29-0021AC5A0B42}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.7.6.1.12:2", "", "«DFD_Process» Listar Despesas", "EARoot/EA1/EA2/EA5/EA1/EA7/EA6/EA1/EA12/EA2489.htm", "21.png", "6976", "0", "", "Activity0","{003DBA94-0186-4b9a-807A-6A78083A9D12}");

@@ -30,32 +30,38 @@
             <th>EMAIL</th>
             <th>TELEFONE</th>
             <th>RAMAL</th>
-            <th class="td-icon">EDITAR</th>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.gestorVisualizar == true}">
+            	<th class="td-icon">EDITAR</th>
+            </c:if>
           </tr>
         </thead>
         <tbody>
         <c:forEach var="gestor" items="${requestScope.gestores}">
           <tr>
             <td>${gestor.nome}</td>
-            <td>${gestor.email}</td>
+            <td>${gestor.username}</td>
             <td>${gestor.telefone}</td>
             <td>${gestor.ramal}</td>
-            <c:url value="/sw/gestor/${gestor.id}" var="swGestorId"></c:url>
-			<td class="td-icon"><a href="${swGestorId}"><i class="material-icons" >border_color</i></a></td>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.gestorVisualizar == true}">
+            	<c:url value="/sw/gestor/${gestor.id}" var="swGestorId"></c:url>
+				<td class="td-icon"><a href="${swGestorId}"><i class="material-icons" >border_color</i></a></td>
+			</c:if>
           </tr>
           </c:forEach>
           </tbody>
           
       </table> 
       
-	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-			<c:url value="/sw/gestorEmpresa/${empresa.id}" var="swGestorEmpresaId"></c:url>
+		<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.gestorCadastrar == true}">
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+			<c:url value="/sw/gestor/form/${requestScope.empresa.id}" var="swGestorEmpresaId"></c:url>
             <a class="btn-floating btn-large waves-effect waves-light orange"
                 href="${swGestorEmpresaId}">
                 <i class="material-icons">add</i>
             </a>
          </div>
- </div>
+ 		</c:if>
+</div>
 
 <c:import url="../../../partials/js.jsp"></c:import>
 <c:import url="../../../partials/footer.jsp"></c:import>

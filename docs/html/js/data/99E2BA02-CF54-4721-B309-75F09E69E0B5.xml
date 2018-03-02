@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.1.3:1", "", "Análise de Software", "EARoot/EA1/EA3/EA3193.htm", "176.png", "1716", "0", "", "Package diagram0","{92DC3CF6-7493-472c-9143-B6C736A01C5A}");
+tocTab[tocTab.length] = new Array("0.1.3.1", "1", "Use Case Diagram", "", "4.png", "", "", "{FA116E6E-C300-4bd7-9202-71C72FEB4E46}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.2", "1", "User Interface", "", "4.png", "", "", "{5F01F2E3-6E89-4886-9CE1-008A5FAC2345}", "Package");

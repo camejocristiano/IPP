@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import br.net.ipp.models.aprendizes.Dispensa;
-import br.net.ipp.models.aprendizes.Jovem;
+import br.net.ipp.models.aprendizes.FichaProfissional;
 
 public interface DispensaRepository extends PagingAndSortingRepository<Dispensa, Long> {
-	List<Dispensa> findAllByJovem(Jovem jovem);
-	Dispensa findByJovem(Jovem jovem);
+	List<Dispensa> findAllByFichaProfissional(FichaProfissional fichaProfissional);
+	Dispensa findByFichaProfissional(FichaProfissional fichaProfissional);
 }

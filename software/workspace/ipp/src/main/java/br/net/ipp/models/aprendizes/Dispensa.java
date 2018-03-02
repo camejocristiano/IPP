@@ -18,8 +18,10 @@ public class Dispensa extends AbstractEntity {
 	private String justificativaDaDispensa;
 	private Boolean oJovemEstaCienteDaDispensa;
 	private Boolean haveraSubstituicao;
+	/*@ManyToOne
+	private Jovem jovem;*/
 	@ManyToOne
-	private Jovem jovem;
+	private FichaProfissional fichaProfissional;
 	private String diaDaDispensa;
 	private String mesDaDispensa;
 	private String anoDaDispensa;
@@ -42,6 +44,12 @@ public class Dispensa extends AbstractEntity {
 	}
 	public void setHaveraSubstituicao(Boolean haveraSubstituicao) {
 		this.haveraSubstituicao = haveraSubstituicao;
+	}
+	public FichaProfissional getFichaProfissional() {
+		return fichaProfissional;
+	}
+	public void setFichaProfissional(FichaProfissional fichaProfissional) {
+		this.fichaProfissional = fichaProfissional;
 	}
 	public String getInformacoesComplementaresDaDispensa() {
 		return informacoesComplementaresDaDispensa;
@@ -67,12 +75,12 @@ public class Dispensa extends AbstractEntity {
 	public void setoJovemEstaCienteDaDispensa(Boolean oJovemEstaCienteDaDispensa) {
 		this.oJovemEstaCienteDaDispensa = oJovemEstaCienteDaDispensa;
 	}
-	public Jovem getJovem() {
+	/*public Jovem getJovem() {
 		return jovem;
 	}
 	public void setJovem(Jovem jovem) {
 		this.jovem = jovem;
-	}
+	}*/
 	public String getDiaDaDispensa() {
 		return diaDaDispensa;
 	}

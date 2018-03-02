@@ -13,6 +13,7 @@ public interface FrequenciaRepository extends PagingAndSortingRepository<Frequen
 	List<Frequencia> findByMatricula(Matricula matricula);
 	List<Frequencia> findByMatriculaAndDia(Matricula matricula, Integer dia);
 	List<Frequencia> findByMatriculaAndMes(Matricula matricula, Integer mes);
+	List<Frequencia> findByMatriculaAndAno(Matricula matricula, Integer ano);
 	void save(List<Frequencia> frequencias);
 	List<Frequencia> findDistinctFrequenciaByMatriculaAndMes(Matricula matricula, Integer id);
 }

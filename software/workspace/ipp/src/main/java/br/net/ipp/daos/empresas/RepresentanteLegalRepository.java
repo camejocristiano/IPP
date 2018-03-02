@@ -8,7 +8,6 @@ import br.net.ipp.models.empresas.Empresa;
 import br.net.ipp.models.empresas.RepresentanteLegal;
 
 public interface RepresentanteLegalRepository extends PagingAndSortingRepository<RepresentanteLegal, Long> {
-	RepresentanteLegal findById(Long id);
 	RepresentanteLegal findByUsername(String username);
 	List<RepresentanteLegal> findByEmpresa(Empresa empresa);
 }

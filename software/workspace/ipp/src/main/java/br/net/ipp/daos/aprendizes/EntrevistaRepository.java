@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import br.net.ipp.models.aprendizes.Entrevista;
-import br.net.ipp.models.aprendizes.Jovem;
+import br.net.ipp.models.aprendizes.FichaProfissional;
 
 public interface EntrevistaRepository extends PagingAndSortingRepository<Entrevista, Long> {
-	List<Entrevista> findAllByJovem(Jovem jovem);
-	Entrevista findByJovem(Jovem jovem);
+	List<Entrevista> findAllByFichaProfissional(FichaProfissional fichaProfissional);
+	Entrevista findByFichaProfissional(FichaProfissional fichaProfissional);
 }

@@ -38,7 +38,7 @@ public class AvaliacaoPAPEmpresa extends AbstractEntity {
 	private String avaliacoesPAPEmpresa_data8avaliacao;
 	
 	@ManyToOne
-	private Jovem jovem;
+	private Historico historico;
 	
 	
 	public String getAvaliacoesPAPEmpresa_avaliador1avaliacao() {
@@ -185,11 +185,11 @@ public class AvaliacaoPAPEmpresa extends AbstractEntity {
 	public void setAvaliacoesPAPEmpresa_nota8avaliacao(double avaliacoesPAPEmpresa_nota8avaliacao) {
 		this.avaliacoesPAPEmpresa_nota8avaliacao = avaliacoesPAPEmpresa_nota8avaliacao;
 	}
-	public Jovem getJovem() {
-		return jovem;
+	public Historico getHistorico() {
+		return historico;
 	}
-	public void setJovem(Jovem jovem) {
-		this.jovem = jovem;
+	public void setHistorico(Historico historico) {
+		this.historico = historico;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

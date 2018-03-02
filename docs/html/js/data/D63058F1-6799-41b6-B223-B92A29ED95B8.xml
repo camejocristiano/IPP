@@ -1,0 +1,9 @@
+tocTab[tocTab.length] = new Array("0.1.3.1.3.1.2.4:1", "", "Canais", "EARoot/EA1/EA3/EA1/EA3/EA1/EA2/EA4/EA3460.htm", "180.png", "1132", "0", "", "Use Case diagram0","{49F11313-B326-41e8-A36F-37B47D83981A}");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.1.2.4:2", "", "Add Canal", "EARoot/EA1/EA3/EA1/EA3/EA1/EA2/EA4/EA3464.htm", "7.png", "5023", "0", "", "UseCase0","{5ADF7D59-C4B6-4de0-8AD5-8598BD7B824E}");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.1.2.4:3", "", "Edit Canal", "EARoot/EA1/EA3/EA1/EA3/EA1/EA2/EA4/EA3466.htm", "7.png", "5026", "0", "", "UseCase0","{657DEE7D-5B76-4c50-83C8-21E0D784C2B4}");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.1.2.4:4", "", "List Canais", "EARoot/EA1/EA3/EA1/EA3/EA1/EA2/EA4/EA3468.htm", "7.png", "5025", "0", "", "UseCase0","{C2B59D0D-5BD6-4930-AA51-975A34F9D927}");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.1.2.4:5", "", "Visualizar Canal", "EARoot/EA1/EA3/EA1/EA3/EA1/EA2/EA4/EA3470.htm", "7.png", "5024", "0", "", "UseCase0","{385921B7-8D7E-4be3-9B7E-FBDCF1D2B672}");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.1.2.4.1", "1", "Add Canal", "EARoot/EA1/EA3/EA1/EA3/EA1/EA2/EA4/EA3472.htm", "4.png", "", "", "{2D78AB4B-D87C-4818-A34B-1B6C6F224CF4}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.1.2.4.2", "1", "Edit Canal", "EARoot/EA1/EA3/EA1/EA3/EA1/EA2/EA4/EA3473.htm", "4.png", "", "", "{BC260A41-D4A1-4dd8-A6EF-2ED27C1519E8}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.1.2.4.3", "1", "List Canais", "EARoot/EA1/EA3/EA1/EA3/EA1/EA2/EA4/EA3474.htm", "4.png", "", "", "{241336C7-62AF-492d-B1D3-BDBF41253BA8}", "Package");
+tocTab[tocTab.length] = new Array("0.1.3.1.3.1.2.4.4", "1", "Visualizar Canal", "EARoot/EA1/EA3/EA1/EA3/EA1/EA2/EA4/EA3475.htm", "4.png", "", "", "{019BBFE3-B5E1-4bda-8BF6-4D022D3C62DE}", "Package");

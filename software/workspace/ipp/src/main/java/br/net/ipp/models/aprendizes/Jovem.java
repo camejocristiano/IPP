@@ -17,7 +17,6 @@ import br.net.ipp.enums.TipoDeCNH;
 import br.net.ipp.enums.TipoDeInsercao;
 import br.net.ipp.models.User;
 import br.net.ipp.models.configuracoes.Canal;
-import br.net.ipp.models.configuracoes.Unidade;
 import br.net.ipp.models.cursos.Turma;
 
 @Entity
@@ -98,8 +97,8 @@ public class Jovem extends User {
 	private String dataExpedicao;
 	@ManyToOne
 	private Canal canal;
-	@ManyToOne
-	private Unidade unidade;
+	/*@ManyToOne
+	private Unidade unidade;*/
 	private TipoDeInsercao tipoDeInsercao;
 	private EstadoCivil estadoCivil;
 	private Sexo sexo; 
@@ -198,12 +197,12 @@ public class Jovem extends User {
 	public void setOrgaoEmissor(String orgaoEmissor) {
 		this.orgaoEmissor = orgaoEmissor;
 	}
-	public Unidade getUnidade() {
+	/*public Unidade getUnidade() {
 		return unidade;
 	}
 	public void setUnidade(Unidade unidade) {
 		this.unidade = unidade;
-	}
+	}*/
 	public Canal getCanal() {
 		return canal;
 	}

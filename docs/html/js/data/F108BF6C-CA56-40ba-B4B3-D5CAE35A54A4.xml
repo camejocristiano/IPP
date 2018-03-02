@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("0.1.2.2:1", "", "Análise do Problema			", "EARoot/EA1/EA2/EA2/EA78.htm", "188.png", "9", "0", "", "Custom diagram0","{E8CA085F-BAF8-462b-983F-837F62B84C5B}");
+tocTab[tocTab.length] = new Array("0.1.2.2.1", "1", "Declaração do Problema", "", "4.png", "", "", "{FF5BEBAD-194D-4b08-AABE-D819FAC3C619}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.2", "1", "Análise das Causas Raízes", "", "4.png", "", "", "{ADCCBFC4-C7AE-4b36-B0BA-067D3D8DE96F}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.3", "1", "Usuários e Outros Stakeholders", "", "4.png", "", "", "{64FC7149-EFCC-4948-8E9B-CD4280940014}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.4", "1", "Fronteira Sistêmica", "", "4.png", "", "", "{FF5ED6A6-CFE0-4880-B12F-A64603A128A0}", "Package");
+tocTab[tocTab.length] = new Array("0.1.2.2.5", "1", "Lista de Restrições", "", "4.png", "", "", "{F6BF5D29-CCD9-4d84-AAD0-FBE4C805ACE6}", "Package");

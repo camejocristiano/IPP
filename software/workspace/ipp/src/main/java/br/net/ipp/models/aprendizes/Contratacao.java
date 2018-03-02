@@ -27,9 +27,11 @@ public class Contratacao extends AbstractEntity {
 	private Integer diaTerminoDoContrato;
 	private Integer mesTerminoDoContrato;
 	private Integer anoTerminoDoContrato;
-
+/*
 	@ManyToOne
-	private Jovem jovem;
+	private Jovem jovem;*/
+	@ManyToOne
+	private FichaProfissional fichaProfissional;
 	private String contratacaoObservacoes;
 	@ManyToOne
 	private CBO dadosDoCursoCBO;
@@ -108,12 +110,18 @@ public class Contratacao extends AbstractEntity {
 	public void setAnoTerminoDoContrato(Integer anoTerminoDoContrato) {
 		this.anoTerminoDoContrato = anoTerminoDoContrato;
 	}
-	public Jovem getJovem() {
+	public FichaProfissional getFichaProfissional() {
+		return fichaProfissional;
+	}
+	public void setFichaProfissional(FichaProfissional fichaProfissional) {
+		this.fichaProfissional = fichaProfissional;
+	}
+	/*public Jovem getJovem() {
 		return jovem;
 	}
 	public void setJovem(Jovem jovem) {
 		this.jovem = jovem;
-	}
+	}*/
 	public String getContratacaoObservacoes() {
 		return contratacaoObservacoes;
 	}

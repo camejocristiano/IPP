@@ -23,8 +23,8 @@
 			<br />
 	</div>
 </div>
-		<c:url value="/sw/parametros/${parametro.id}" var="swParametroId"></c:url>
-      	<form:form role="form" commandName="parametro" servletRelativeAction="" method="POST">
+		<c:url value="/sw/parametro/${parametro.salarioMinimoFederalSMF != null ? parametro.id : null}" var="swParametroId"></c:url>
+      	<form:form role="form" commandName="parametro" servletRelativeAction="${swParametroId}" method="POST">
 	    <div class="row">
             <div class="input-field s12 col l3">
         		<form:input path='salarioMinimoFederalSMF' type='text' required="required" />

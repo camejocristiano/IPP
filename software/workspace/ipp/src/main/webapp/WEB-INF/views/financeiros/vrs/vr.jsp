@@ -6,15 +6,6 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-<style>
-table, th {
-    border: 2px solid black;
-}
-table, td {
-    border: 1px solid black;
-}
-</style>
-
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
@@ -32,88 +23,79 @@ table, td {
 			<hr />
 			<hr />
 			<br />
-<!-- 			contratacao
-empresa
-jovem
-fichaProfissional
-dadosFinanceiros
-parametro
-frequencias
-diasAPagar
-valor -->
+
 		</div><!-- // col -->
 	</div><!-- // row -->
+   		
+   		<c:url value="/sw/vr/${vr.nomeDoJovem != null ? vr.id : null}" var="swVR"></c:url>
+		<form:form role="form" commandName="vr" servletRelativeAction="${swVR}" method="POST">
    		<div class="row">
-            <div class="input-field s12 col l12">
-
-			<table class="display">
-				<thead>
-					<tr>
-						<th colspan="7" style="text-align: center">VALE REFEIÇÃO DO APRENDIZ</th>
-					</tr>
-					<tr>
-						<th>CÓDIGO</th>
-						<th colspan="4">APRENDIZ</th>
-						<th colspan="2">EMPRESA</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>${jovem.id}</td>
-						<td colspan="4">${jovem.nome}</td>
-						<td colspan="2">${empresa.nomeFantazia}</td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th colspan="3">ADMISSÃO</th>
-						<th colspan="4">STATUS_DA_CONTRATAÇÃO</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="3">${contratacao.dataDeInicioDaContratacao}</td>
-						<td colspan="4">${contratacao.statusDaContratacao}</td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th colspan="3">TOTAL_DIAS</th>
-						<th colspan="1">FALTAS_CURSO</th>
-						<th colspan="1">FALTAS_EMPRESA</th>
-						<th colspan="2">DIAS_A_PAGAR</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="3">###</td>
-						<td colspan="1">###</td>
-						<td colspan="1">###</td>
-						<td colspan="2">###</td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th colspan="1">VR_UNITÁRIO</th>
-						<th colspan="2">VALOR_JOVEM</th>
-						<th colspan="2">VALOR_EMPRESA</th>
-						<th colspan="2">TOTAL</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="1">${dadosFinanceiros.valeRefeicao_valorIPPRS}</td>
-						<td colspan="2">$$$.$$</td>
-						<td colspan="2">$$$.$$</td>
-						<td colspan="2">$$$.$$</td>
-					</tr>
-				</tbody>
-																
-			</table>
+            <div class="input-field s12 col l4">
+				<form:input path="diasAPagar" disabled="true" />	
+            	<form:errors path="diasAPagar" ></form:errors>
+            	<form:label path="diasAPagar">Dias à Pagar</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l4">
+				<form:input path="valor" disabled="true" />	
+            	<form:errors path="valor" ></form:errors>
+            	<form:label path="valor">Valor</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l4">
+				<form:input path="total" disabled="true" />	
+            	<form:errors path="total" ></form:errors>
+            	<form:label path="total">Total</form:label>
+			</div><!-- // col -->
+        </div><!-- // row -->
+   		<div class="row">
+            <div class="input-field s12 col l8">
+				<form:input path="nomeDoJovem" disabled="true" />	
+            	<form:errors path="nomeDoJovem" ></form:errors>
+            	<form:label path="nomeDoJovem">Nome do Jovem</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l2">
+				<form:input path="codigoDoJovem" disabled="true" />	
+            	<form:errors path="codigoDoJovem" ></form:errors>
+            	<form:label path="codigoDoJovem">Código do Jovem</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l2">
+				<form:input path="nomeFantaziaEmpresa" disabled="true" />	
+            	<form:errors path="nomeFantaziaEmpresa" ></form:errors>
+            	<form:label path="nomeFantaziaEmpresa">Nome Fantazia Empresa</form:label>
+			</div><!-- // col -->
+        </div><!-- // row -->
+		<div class="row">
+            <div class="input-field s12 col l8">
+				<form:input path="diaSemana" disabled="true" />	
+            	<form:errors path="diaSemana" ></form:errors>
+            	<form:label path="diaSemana">Dia da Semana</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l2">
+				<form:input path="dataInicioContrato" disabled="true" />	
+            	<form:errors path="dataInicioContrato" ></form:errors>
+            	<form:label path="dataInicioContrato">Data Início Contrato</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l2">
+				<form:input path="dataFimContrato" disabled="true" />	
+            	<form:errors path="dataFimContrato" ></form:errors>
+            	<form:label path="dataFimContrato">Data Fim Contrato</form:label>
 			</div><!-- // col -->
         </div><!-- // row -->
    		<br />
    		<br />
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.vrCadastrar == true && requestScope.vr.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.vrEditar == true && requestScope.vr.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
+			<br />
+			<br />
+		</form:form>
 	</div><!-- // container -->
 <c:import url="../../../partials/js.jsp"></c:import>
 <c:import url="../../../partials/footer.jsp"></c:import>

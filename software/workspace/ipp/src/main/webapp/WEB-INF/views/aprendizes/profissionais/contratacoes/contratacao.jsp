@@ -11,7 +11,8 @@
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/fichaProfissional/home/${contratacao.jovem != null ? contratacao.jovem.id : jovem.id}">
+			<c:url value="/sw/profissional/home/${contratacao.fichaProfissional != null ? contratacao.fichaProfissional.jovem.id : jovem.id}" var="swProfissionalHomeJovemId"></c:url>
+			<a href="${swProfissionalHomeJovemId}">
 				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
 			</a>
 			<br />
@@ -22,7 +23,7 @@
 			<br />
 	</div>
 </div>
-		<c:url value="/sw/contratacao/${contratacao.jovem != null ? contratacao.id : null}" var="swContratacaoId"></c:url>
+		<c:url value="/sw/contratacao/${contratacao.diaDeInicioDaContratacao != null ? contratacao.id : null}" var="swContratacaoId"></c:url>
 		<form:form role="form" commandName="contratacao" servletRelativeAction="${swContratacaoId}" method="POST">
 		<div class="row">
 			<div class="input-field s12 col l12">
@@ -282,7 +283,7 @@
 				<label for="observacoes">Observações</label>
 			</div>
 		</div>
-       	<form:input path='jovem' type='hidden' value="${requestScope.jovem.id}" />
+       	<form:input path='fichaProfissional' type='hidden' value="${contratacao.fichaProfissional.id != null ? contratacao.fichaProfissional.id : fichaProfissional.id}" />
 		
 			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.contratacaoCadastrar == true && requestScope.contratacao.id == null}">
 				<button class="btn waves-effect waves-light right" type="submit">

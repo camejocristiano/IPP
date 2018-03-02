@@ -105,11 +105,71 @@
         <c:url value="/sw/jovens" var="swJovens" />
         <li><a href="${swJovens}" style="color: #222 !important;">Aprendizes</a></li>
 		</c:if>    
+        
+       <!-- 
+      	FREQUENCIAS
+       -->
+		<c:if test="${
+			usuarioSessao.grupoDePermissoes.frequenciaCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.frequenciaVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.frequenciaEditar == true ||
+			usuarioSessao.grupoDePermissoes.frequenciaListar == true	
+			}">
         <c:url value="/sw/frequencias" var="swFrequencias" />
         <li><a href="${swFrequencias}" style="color: #222 !important;">Frequências</a></li>
+		</c:if>
+
+       <!-- 
+      	EMPRESAS
+       -->
+		<c:if test="${
+			usuarioSessao.grupoDePermissoes.empresaCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.empresaVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.empresaEditar == true ||
+			usuarioSessao.grupoDePermissoes.empresaListar == true	||
+			
+			usuarioSessao.grupoDePermissoes.gestorCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.gestorVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.gestorEditar == true ||
+			usuarioSessao.grupoDePermissoes.gestorListar == true ||
+			
+			usuarioSessao.grupoDePermissoes.setorCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.setorVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.setorEditar == true ||
+			usuarioSessao.grupoDePermissoes.setorListar == true ||	
+
+			usuarioSessao.grupoDePermissoes.representanteLegalCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.representanteLegalVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.representanteLegalEditar == true ||
+			usuarioSessao.grupoDePermissoes.representanteLegalListar == true ||
+			
+			usuarioSessao.grupoDePermissoes.contatoCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.contatoVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.contatoEditar == true ||
+			usuarioSessao.grupoDePermissoes.contatoListar == true ||
+			
+			usuarioSessao.grupoDePermissoes.cargaHorariaCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.cargaHorariaVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.cargaHorariaEditar == true ||
+			usuarioSessao.grupoDePermissoes.cargaHorariaListar == true ||
+			
+			usuarioSessao.grupoDePermissoes.taxaCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.taxaVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.taxaEditar == true ||
+			usuarioSessao.grupoDePermissoes.taxaListar == true ||
+			
+			usuarioSessao.grupoDePermissoes.historicosCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.historicosVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.historicosEditar == true ||
+			usuarioSessao.grupoDePermissoes.historicosListar == true
+			}">	
         <c:url value="/sw/empresas" var="swEmpresas" />
         <li><a href="${swEmpresas}" style="color: #222 !important;">Empresas</a></li>
+		</c:if>
         
+       <!-- 
+      	FINANCEIROS
+       -->
 		<c:if test="${
 			usuarioSessao.grupoDePermissoes.parametrosCadastrar == true ||
 			usuarioSessao.grupoDePermissoes.parametrosVisualizar == true ||
@@ -237,13 +297,80 @@
         <li><a href="${swCursos}" style="color: #222 !important;">Cursos</a></li>
     	</c:if>
 
+    	<!-- 
+      		JOVENS
+       	-->
+      	<c:if test="${
+			usuarioSessao.grupoDePermissoes.jovemCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.jovemVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.jovemEditar == true ||
+			usuarioSessao.grupoDePermissoes.jovemListar == true
+				}">
         <c:url value="/sw/jovens" var="swJovens" />
         <li><a href="${swJovens}" style="color: #222 !important;">Aprendizes</a></li>
+		</c:if>    
+    
+       <!-- 
+      	FREQUENCIAS
+       -->
+		<c:if test="${
+			usuarioSessao.grupoDePermissoes.frequenciaCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.frequenciaVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.frequenciaEditar == true ||
+			usuarioSessao.grupoDePermissoes.frequenciaListar == true	
+			}">
         <c:url value="/sw/frequencias" var="swFrequencias" />
         <li><a href="${swFrequencias}" style="color: #222 !important;">Frequências</a></li>
+		</c:if>
+
+       <!-- 
+      	EMPRESAS
+       -->
+		<c:if test="${
+			usuarioSessao.grupoDePermissoes.empresaCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.empresaVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.empresaEditar == true ||
+			usuarioSessao.grupoDePermissoes.empresaListar == true	||
+			
+			usuarioSessao.grupoDePermissoes.gestorCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.gestorVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.gestorEditar == true ||
+			usuarioSessao.grupoDePermissoes.gestorListar == true ||
+			
+			usuarioSessao.grupoDePermissoes.setorCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.setorVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.setorEditar == true ||
+			usuarioSessao.grupoDePermissoes.setorListar == true ||	
+
+			usuarioSessao.grupoDePermissoes.representanteLegalCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.representanteLegalVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.representanteLegalEditar == true ||
+			usuarioSessao.grupoDePermissoes.representanteLegalListar == true ||
+			
+			usuarioSessao.grupoDePermissoes.contatoCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.contatoVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.contatoEditar == true ||
+			usuarioSessao.grupoDePermissoes.contatoListar == true ||
+			
+			usuarioSessao.grupoDePermissoes.cargaHorariaCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.cargaHorariaVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.cargaHorariaEditar == true ||
+			usuarioSessao.grupoDePermissoes.cargaHorariaListar == true ||
+			
+			usuarioSessao.grupoDePermissoes.taxaCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.taxaVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.taxaEditar == true ||
+			usuarioSessao.grupoDePermissoes.taxaListar == true ||
+			
+			usuarioSessao.grupoDePermissoes.historicosCadastrar == true ||
+			usuarioSessao.grupoDePermissoes.historicosVisualizar == true ||
+			usuarioSessao.grupoDePermissoes.historicosEditar == true ||
+			usuarioSessao.grupoDePermissoes.historicosListar == true
+			}">	
         <c:url value="/sw/empresas" var="swEmpresas" />
         <li><a href="${swEmpresas}" style="color: #222 !important;">Empresas</a></li>
-        
+		</c:if>
+
         <c:if test="${
 			usuarioSessao.grupoDePermissoes.parametrosCadastrar == true ||
 			usuarioSessao.grupoDePermissoes.parametrosVisualizar == true ||

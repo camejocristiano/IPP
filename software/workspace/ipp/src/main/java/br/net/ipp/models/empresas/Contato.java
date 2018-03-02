@@ -1,8 +1,10 @@
 package br.net.ipp.models.empresas;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 import br.net.ipp.models.User;
+import br.net.ipp.models.aprendizes.Jovem;
 
 @Entity
 public class Contato extends User {
@@ -15,6 +17,12 @@ public class Contato extends User {
 	private String observacoes;
 	private String telefone;
 	private String tipoDeContato;
+	@ManyToOne
+	private Empresa empresa;
+	@ManyToOne
+	private Jovem jovem;
+	/*@ManyToOne
+	private Unidade unidade;*/
 	
 	public String getNome() {
 		return nome;
@@ -52,6 +60,12 @@ public class Contato extends User {
 	}
 	public void setTipoDeContato(String tipoDeContato) {
 		this.tipoDeContato = tipoDeContato;
+	}
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

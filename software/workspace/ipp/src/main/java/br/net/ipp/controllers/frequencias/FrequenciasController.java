@@ -63,6 +63,55 @@ public class FrequenciasController {
 		return modelAndView;
 	}
 	
+	@GetMapping("/frequencias/mes/{id}")
+	public ModelAndView frequenciaMes(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("frequencias/mes");
+		List<List<Frequencia>> frequencias = new ArrayList<>();
+		Turma turma = turmaRepository.findOne(id);
+		modelAndView.addObject("turma", turma);
+		List<Matricula> matriculas = matriculaRepository.findAllByTurma(turma);
+		modelAndView.addObject("matriculas", matriculas);
+		List<Frequencia> cabecalho = new ArrayList<Frequencia>();
+		for (Matricula matricula : matriculas) {
+			cabecalho = frequenciaRepository.findByMatriculaAndMes(matricula, 1);
+			List<Frequencia> freq = frequenciaRepository.findByMatriculaAndMes(matricula, 1);
+			frequencias.add(freq);
+		}
+		modelAndView.addObject("cabecalho", cabecalho);
+		modelAndView.addObject("frequencias", frequencias);
+		return modelAndView;
+	}
+	
+	@GetMapping("/frequencias/geral/{id}")
+	public ModelAndView frequenciaGeral(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("frequencias/mes");
+		List<List<Frequencia>> frequencias = new ArrayList<>();
+		Turma turma = turmaRepository.findOne(id);
+		modelAndView.addObject("turma", turma);
+		List<Matricula> matriculas = matriculaRepository.findAllByTurma(turma);
+		modelAndView.addObject("matriculas", matriculas);
+		List<Frequencia> cabecalho = new ArrayList<Frequencia>();
+		for (Matricula matricula : matriculas) {
+			cabecalho = frequenciaRepository.findByMatricula(matricula);
+			List<Frequencia> freq = frequenciaRepository.findAllByMatricula(matricula);
+			frequencias.add(freq);
+		}
+		modelAndView.addObject("cabecalho", cabecalho);
+		modelAndView.addObject("frequencias", frequencias);
+		return modelAndView;
+	}
+	
+	@GetMapping("frequencias/{id}")
+	public ModelAndView frequenciasOrientador(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("frequencias/pitsepips/turmas");
+		Usuario usuario = usuarioRepository.findOne(id);
+		List<Turma> turmas = turmaRepository.findAllByOrientadorTurma(usuario);
+		modelAndView.addObject("turmas", turmas);
+		return modelAndView;
+	}
+
+
+	
 	@GetMapping("/mes/{id}")
 	public ModelAndView frequenciaMes(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("frequencias/mes");

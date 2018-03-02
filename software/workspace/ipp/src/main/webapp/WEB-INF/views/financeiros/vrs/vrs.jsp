@@ -28,20 +28,27 @@
           <tr>
             <th>JOVEM</th>
             <th>EMPRESA</th>
-            <th>DATA_ADMISSÃO</th>
-            <th>STATUS</th>
-            <th class="td-icon">EDITAR</th>
+            <th>INÍCIO</th>
+            <th>TÉRMINO</th>
+            <c:if test="${requestScope.usuarioSessao.grupoDePermissoes.vrVisualizar == true}">
+            	<th class="td-icon">MÊS</th>
+            	<th class="td-icon">OUTROS</th>
+            </c:if>	
           </tr>
         </thead>
         <tbody>
         <c:forEach var="contratacao" items="${requestScope.contratacoes}">
           <tr>
-            <td>${contratacao.jovem.nome}</td>
+            <td>${contratacao.fichaProfissional.jovem.nome}</td>
             <td>${contratacao.empresaContratante.nomeFantazia}</td>
-            <td>${contratacao.dataDeInicioDaContratacao}</td>
-            <td>${contratacao.statusDaContratacao}</td>
-            <c:url value="/sw/vr/${contratacao.id}" var="swVrId"></c:url>
-            <td class="td-icon"><a href="${swVrId}"><i class="material-icons" >border_color</i></a></td>
+            <td>${contratacao.diaDeInicioDaContratacao}/${contratacao.mesDeInicioDaContratacao}/${contratacao.anoDeInicioDaContratacao}</td>
+            <td>${contratacao.diaTerminoDoContrato}/${contratacao.diaTerminoDoContrato}/${contratacao.diaTerminoDoContrato}</td>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.vrVisualizar == true}">
+            	<c:url value="/sw/vr/${contratacao.id}" var="swVRId"></c:url>
+            	<td class="td-icon"><a href="${swVRId}"><i class="material-icons" >border_color</i></a></td>
+            	<c:url value="/sw/vrs/${contratacao.id}" var="swVRId"></c:url>
+            	<td class="td-icon"><a href="${swVRId}"><i class="material-icons" >border_color</i></a></td>
+            </c:if>
           </tr>
           </c:forEach>
           </tbody>

@@ -21,9 +21,17 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.net.ipp.daos.aprendizes.JovemRepository;
+import br.net.ipp.daos.configuracoes.UnidadeRepository;
 import br.net.ipp.daos.configuracoes.UsuarioRepository;
+import br.net.ipp.daos.empresas.ContatoRepository;
+import br.net.ipp.daos.empresas.GestorRepository;
+import br.net.ipp.daos.empresas.RepresentanteLegalRepository;
+import br.net.ipp.models.User;
 import br.net.ipp.models.aprendizes.Jovem;
 import br.net.ipp.models.configuracoes.Usuario;
+import br.net.ipp.models.empresas.Contato;
+import br.net.ipp.models.empresas.Gestor;
+import br.net.ipp.models.empresas.RepresentanteLegal;
 import br.net.ipp.services.EnumService;
 import br.net.ipp.storage.StorageService;
 
@@ -37,24 +45,55 @@ public class JovemController {
 	private UsuarioRepository usuarioRepository;
 	private final StorageService storageService;
 	Calendar c = Calendar.getInstance();
+	private ContatoRepository contatoRepository;
+    private RepresentanteLegalRepository representanteLegalRepository;
+    private GestorRepository gestorRepository;
+    private UnidadeRepository unidadeRepository;
 	
 	@Autowired
 	public JovemController (
 			JovemRepository jovemRepository,
 			EnumService enumService,
 			UsuarioRepository usuarioRepository,
-			StorageService storageService
-			) {
+			StorageService storageService,
+			ContatoRepository contatoRepository,
+    		RepresentanteLegalRepository representanteLegalRepository,
+    		GestorRepository gestorRepository,
+    		UnidadeRepository unidadeRepository
+    		) {
 		this.jovemRepository = jovemRepository;
 		this.enumService = new EnumService();
 		this.usuarioRepository = usuarioRepository;
 		this.storageService = storageService;
+		this.contatoRepository = contatoRepository;
+        this.representanteLegalRepository = representanteLegalRepository;
+        this.gestorRepository = gestorRepository;
+        this.unidadeRepository = unidadeRepository;
 	}
 	
+	/**
+	 * @param userDetails
+	 * @return
+	 * 		List<Jovem>
+	 * @exception
+	 * 		Index
+	 */
 	@GetMapping("/jovens")
 	public ModelAndView aprendizes(@AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
-		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		User usuarioSessao = null;
+		if (usuarioRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Usuario) usuarioRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (gestorRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Gestor) gestorRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (contatoRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Contato) contatoRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (representanteLegalRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (RepresentanteLegal) representanteLegalRepository.findByUsername(userDetails.getUsername());
+		}
 		if (usuarioSessao.getGrupoDePermissoes().isJovemListar() == true) {
 			modelAndView = new ModelAndView("aprendizes/jovens");
 			if (usuarioSessao.isAdmin() == true) {
@@ -72,7 +111,19 @@ public class JovemController {
 	@GetMapping("/jovem")
 	public ModelAndView aprendiz(@AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
-		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		User usuarioSessao = null;
+		if (usuarioRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Usuario) usuarioRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (gestorRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Gestor) gestorRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (contatoRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Contato) contatoRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (representanteLegalRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (RepresentanteLegal) representanteLegalRepository.findByUsername(userDetails.getUsername());
+		}
 		if (usuarioSessao.getGrupoDePermissoes().isJovemVisualizar() == true) {
 			modelAndView = new ModelAndView("aprendizes/jovens/home");
 		} else {
@@ -85,10 +136,23 @@ public class JovemController {
 	@GetMapping("/jovem/form")
 	public ModelAndView jovem(Jovem jovem, @AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
-		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		User usuarioSessao = null;
+		if (usuarioRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Usuario) usuarioRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (gestorRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Gestor) gestorRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (contatoRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Contato) contatoRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (representanteLegalRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (RepresentanteLegal) representanteLegalRepository.findByUsername(userDetails.getUsername());
+		}
 		if (usuarioSessao.getGrupoDePermissoes().isJovemCadastrar() == true) {
 			modelAndView = new ModelAndView("aprendizes/jovens/jovem");
 			modelAndView.addObject("jovem", jovem);
+			modelAndView.addObject("unidades", unidadeRepository.findAll());
 			List<String> status = enumService.carregarStatus();
 			modelAndView.addObject("status", status);
 			List<String> sexo = enumService.carregarSexo();
@@ -119,7 +183,19 @@ public class JovemController {
 	@PostMapping("/jovem")
 	public ModelAndView save(@Valid Jovem jovem, BindingResult bindingResult, @AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
-		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		User usuarioSessao = null;
+		if (usuarioRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Usuario) usuarioRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (gestorRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Gestor) gestorRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (contatoRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Contato) contatoRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (representanteLegalRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (RepresentanteLegal) representanteLegalRepository.findByUsername(userDetails.getUsername());
+		}
 		if (usuarioSessao.getGrupoDePermissoes().isJovemCadastrar() == true) {
 			if (bindingResult.hasErrors()) {
 				modelAndView = new ModelAndView("aprendizes/jovens/jovem/");
@@ -183,7 +259,19 @@ public class JovemController {
 	@GetMapping("/jovemForm/{id}")
 	public ModelAndView jovemForm(@PathVariable("id") Long id, @AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
-		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		User usuarioSessao = null;
+		if (usuarioRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Usuario) usuarioRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (gestorRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Gestor) gestorRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (contatoRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Contato) contatoRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (representanteLegalRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (RepresentanteLegal) representanteLegalRepository.findByUsername(userDetails.getUsername());
+		}
 		if (usuarioSessao.getGrupoDePermissoes().isJovemVisualizar() == true) {
 			modelAndView = new ModelAndView("aprendizes/jovens/jovem");
 			Jovem jovem = jovemRepository.findOne(id);
@@ -218,7 +306,19 @@ public class JovemController {
 	@GetMapping("/jovem/{id}")
 	public ModelAndView load(@PathVariable("id") Long id, @AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
-		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		User usuarioSessao = null;
+		if (usuarioRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Usuario) usuarioRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (gestorRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Gestor) gestorRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (contatoRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Contato) contatoRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (representanteLegalRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (RepresentanteLegal) representanteLegalRepository.findByUsername(userDetails.getUsername());
+		}
 		if (usuarioSessao.getGrupoDePermissoes().isJovemVisualizar() == true) {
 			modelAndView = new ModelAndView("aprendizes/jovens/home");
 			Jovem jovem = jovemRepository.findOne(id);
@@ -253,7 +353,19 @@ public class JovemController {
 	@PostMapping("/jovem/{id}")
 	public ModelAndView update(@Valid Jovem jovem, BindingResult bindingResult, @AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
-		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		User usuarioSessao = null;
+		if (usuarioRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Usuario) usuarioRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (gestorRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Gestor) gestorRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (contatoRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Contato) contatoRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (representanteLegalRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (RepresentanteLegal) representanteLegalRepository.findByUsername(userDetails.getUsername());
+		}
 		if (usuarioSessao.getGrupoDePermissoes().isJovemEditar() == true) {
 			modelAndView = new ModelAndView("aprendizes/jovens/jovem");
 			if (bindingResult.hasErrors()) {
@@ -316,7 +428,19 @@ public class JovemController {
 	@PostMapping("/jovem/foto/{id}")
     public ModelAndView foto(@PathVariable Long id, @RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes, @AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = new ModelAndView("aprendizes/jovens/jovem");
-		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		User usuarioSessao = null;
+		if (usuarioRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Usuario) usuarioRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (gestorRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Gestor) gestorRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (contatoRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Contato) contatoRepository.findByUsername(userDetails.getUsername());
+		} else
+		if (representanteLegalRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (RepresentanteLegal) representanteLegalRepository.findByUsername(userDetails.getUsername());
+		}
 		Jovem jovem = jovemRepository.findOne(id);
 		if (usuarioSessao.getGrupoDePermissoes().isJovemEditar() == true) {
 			if (file == null) {

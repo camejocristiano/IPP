@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.1.2.5.1.2.1.1.5.1:1", "", "Capacidade 05: Cadastrar CBO", "EARoot/EA1/EA2/EA5/EA1/EA2/EA1/EA1/EA5/EA1/EA610.htm", "189.png", "1845", "0", "", "Analysis diagram0","{574D02B6-C0AC-4c77-A24E-1A90CFE5DB66}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.2.1.1.5.1:2", "", "«DFD_Process» Cadastrar CBO", "EARoot/EA1/EA2/EA5/EA1/EA2/EA1/EA1/EA5/EA1/EA613.htm", "21.png", "8344", "0", "", "Activity0","{B7FB1E9C-51A8-4aa9-BD44-C8DCA48C5D12}");

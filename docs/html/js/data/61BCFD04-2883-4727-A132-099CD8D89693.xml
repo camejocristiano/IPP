@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.1.2.5.1.5.1.1.5:1", "", "Capacidade 04: Listar", "EARoot/EA1/EA2/EA5/EA1/EA5/EA1/EA1/EA5/EA1690.htm", "189.png", "2122", "0", "", "Analysis diagram0","{8B04BFC0-B8C8-4473-BE3B-1579AE419031}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.5.1.1.5:2", "", "«DFD_Process» Listar PITs e PIPs", "EARoot/EA1/EA2/EA5/EA1/EA5/EA1/EA1/EA5/EA1693.htm", "21.png", "12097", "0", "", "Activity0","{5A13F466-943E-4b42-94AC-2BD3148FC965}");

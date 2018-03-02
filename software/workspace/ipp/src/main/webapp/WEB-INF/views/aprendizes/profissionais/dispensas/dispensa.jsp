@@ -11,7 +11,8 @@
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/fichaProfissional/home/${dispensa.jovem != null ? dispensa.jovem.id : jovem.id}">
+			<c:url value="/sw/profissional/home/${dispensa.fichaProfissional != null ? dispensa.fichaProfissional.jovem.id : jovem.id}" var="swProfissionalHomeJovemId"></c:url>
+			<a href="${swProfissionalHomeJovemId}">
 				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
 			</a>
 			<br />
@@ -22,7 +23,7 @@
 			<br />
 	</div>
 </div>
-		<c:url value="/sw/dispensa/${dispensa.jovem != null ? dispensa.id : null}" var="swDispensaId"></c:url>
+		<c:url value="/sw/dispensa/${dispensa.motivoDaDispensa != null ? dispensa.id : null}" var="swDispensaId"></c:url>
 		<form:form role="form" commandName="dispensa" servletRelativeAction="${swDispensaId}" method="POST">
 			<div class="row">
 				<div class="input-field s12 col l12">
@@ -149,16 +150,8 @@
 					<label for="informacoesComplementaresDaDispensa">Informações Complementares Da Dispensa</label>
 				</div>
 			</div>
-			<div class="row">
-				<div class="input-field s12 col l5">
-                	<form:input path='jovem' type='hidden' value="${requestScope.jovem.id}" />
-					<form:errors path='jovem'/> 
-					<label for="jovem">
-						<c:if test="${dispensa.jovem == null}">${requestScope.jovem.nome}</c:if>
-						<c:if test="${dispensa.jovem != null}">${dispensa.jovem.nome}</c:if>
-					</label>
-				</div>
-			</div>
+
+          	<form:input path='fichaProfissional' type='hidden' value="${dispensa.fichaProfissional != null ? disprnsa.fichaProfissional.id : fichaProfissional.id}" />
 
 			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.dispensaCadastrar == true && requestScope.dispensa.id == null}">
 				<button class="btn waves-effect waves-light right" type="submit">

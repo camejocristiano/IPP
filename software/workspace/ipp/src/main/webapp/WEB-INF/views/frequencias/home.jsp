@@ -26,10 +26,10 @@
 	
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
-				<c:url value="/sw/frequencias/${usuario.id}" var="swFrequenciasUsuarioOrientadorId}"></c:url>
-				<a href="${swFrequenciasUsuarioOrientadorId}">
+				<c:url value="/sw/frequencias/total" var="swFrequenciasTotal"></c:url>
+				<a href="${swFrequenciasTotal}">
 					<div class="card-content white-text">
-						<span class="card-title">Frequências por Orientador<i
+						<span class="card-title">Frequências Geral<i
 							class="material-icons right" style="color: #eee !important;">check_box</i></span>
 						<p>Manutenção de Frequências</p>
 					</div>
@@ -44,10 +44,10 @@
 		
 		<div class="col s12 m6 l4">
 			<div class="card blue-grey darken-1">
-				<c:url value="/sw/frequencias/${usuario.id}" var="swFrequenciasUsuarioOrientadorId}"></c:url>
-				<a href="${swFrequenciasUsuarioOrientadorId}">
+				<c:url value="/sw/frequencias/turmas" var="swFrequenciasTurmas"></c:url>
+				<a href="${swFrequenciasTurmas}">
 					<div class="card-content white-text">
-						<span class="card-title">Frequências por Gestor<i
+						<span class="card-title">Frequências por Turma<i
 							class="material-icons right" style="color: #eee !important;">check_box</i></span>
 						<p>Manutenção de Frequências</p>
 					</div>

@@ -1,12 +1,7 @@
 package br.net.ipp.models.aprendizes;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.net.ipp.enums.TipoDeOcorrencia;
 import br.net.ipp.models.AbstractEntity;
@@ -19,14 +14,12 @@ public class Ocorrencia extends AbstractEntity {
 
 	private String descricao;	
 	private String titulo;
-	@Column(name = "data")  
-	@DateTimeFormat(pattern = "dd/mm/yyyy") 
-	private Date data;
+	private String data;
 	private TipoDeOcorrencia tipo;
 	@ManyToOne
 	private Usuario responsavel;
 	@ManyToOne
-	private Jovem jovem;
+	private Historico historico;
 	
 	
 	public String getDescricao() {
@@ -41,10 +34,10 @@ public class Ocorrencia extends AbstractEntity {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 	public TipoDeOcorrencia getTipo() {
@@ -59,11 +52,11 @@ public class Ocorrencia extends AbstractEntity {
 	public void setResponsavel(Usuario responsavel) {
 		this.responsavel = responsavel;
 	}
-	public Jovem getJovem() {
-		return jovem;
+	public Historico getHistorico() {
+		return historico;
 	}
-	public void setJovem(Jovem jovem) {
-		this.jovem = jovem;
+	public void setHistorico(Historico historico) {
+		this.historico = historico;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

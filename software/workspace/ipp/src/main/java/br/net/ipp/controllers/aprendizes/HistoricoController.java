@@ -17,9 +17,16 @@ import org.springframework.web.servlet.ModelAndView;
 import br.net.ipp.daos.aprendizes.HistoricoRepository;
 import br.net.ipp.daos.aprendizes.JovemRepository;
 import br.net.ipp.daos.configuracoes.UsuarioRepository;
+import br.net.ipp.daos.empresas.ContatoRepository;
+import br.net.ipp.daos.empresas.GestorRepository;
+import br.net.ipp.daos.empresas.RepresentanteLegalRepository;
+import br.net.ipp.models.User;
 import br.net.ipp.models.aprendizes.Historico;
 import br.net.ipp.models.aprendizes.Jovem;
 import br.net.ipp.models.configuracoes.Usuario;
+import br.net.ipp.models.empresas.Contato;
+import br.net.ipp.models.empresas.Gestor;
+import br.net.ipp.models.empresas.RepresentanteLegal;
 
 @Controller
 @Transactional
@@ -29,23 +36,45 @@ public class HistoricoController {
 	private HistoricoRepository historicoRepository;
 	private JovemRepository jovemRepository;
 	private UsuarioRepository usuarioRepository;
+	private GestorRepository gestorRepository;
+	private ContatoRepository contatoRepository;
+	private RepresentanteLegalRepository representanteLegalRepository;
 	
 	@Autowired
 	public void HistoricoEndPoint(
 			HistoricoRepository historicoRepository,
 			JovemRepository jovemRepository,
-			UsuarioRepository usuarioRepository
+			UsuarioRepository usuarioRepository,
+			GestorRepository gestorRepository, 
+			ContatoRepository contatoRepository,
+			RepresentanteLegalRepository representanteLegalRepository
 			) {
 		this.historicoRepository = historicoRepository;
 		this.jovemRepository = jovemRepository;
 		this.usuarioRepository = usuarioRepository;
+		this.gestorRepository = gestorRepository;
+		this.contatoRepository = contatoRepository;
+		this.representanteLegalRepository = representanteLegalRepository;
 	}
 
 	@GetMapping("/historicos/home/{id}")
 	public ModelAndView historicosHome(@PathVariable Long id, @AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
-		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		User usuarioSessao = null;
+		if (usuarioRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Usuario) usuarioRepository.findByUsername(userDetails.getUsername());
+		} else if (gestorRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Gestor) gestorRepository.findByUsername(userDetails.getUsername());
+		} else if (contatoRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Contato) contatoRepository.findByUsername(userDetails.getUsername());
+		} else if (representanteLegalRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (RepresentanteLegal) representanteLegalRepository.findByUsername(userDetails.getUsername());
+		}
 		Jovem jovem = jovemRepository.findOne(id);
+		Historico historico = null;
+		if (historicoRepository.findByJovem(jovem) != null) {
+			historico = historicoRepository.findByJovem(jovem);
+		}
 		if (
 				usuarioSessao.getGrupoDePermissoes().isHistoricoCadastrar() == true ||
 				usuarioSessao.getGrupoDePermissoes().isHistoricoVisualizar() == true ||
@@ -53,6 +82,7 @@ public class HistoricoController {
 				usuarioSessao.getGrupoDePermissoes().isHistoricoListar() == true
 			) {
 			modelAndView = new ModelAndView("aprendizes/historicos/home");
+			modelAndView.addObject("historico", historico);
 		} else {
 			modelAndView = new ModelAndView("redirect:/sw/fichaProfissional/home/"+jovem.getId());
 		}
@@ -61,25 +91,24 @@ public class HistoricoController {
 		return modelAndView;
 	}
 	
-	@GetMapping("/historico/form")
-	public ModelAndView historico(Historico historico, @AuthenticationPrincipal UserDetails userDetails) {
-		ModelAndView modelAndView = null;
-		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
-		if (usuarioSessao.getGrupoDePermissoes().isHistoricoCadastrar() == true) {
-			modelAndView = new ModelAndView("aprendizes/historicos/historico");
-			modelAndView.addObject("historico", historico);
-		} else {
-			modelAndView = new ModelAndView("redirect:/sw/jovens");
-		}
-		modelAndView.addObject("usuarioSessao", usuarioSessao);
-		return modelAndView;
-	}
-	
 	@GetMapping("/historico/form/{id}")
 	public ModelAndView historicoJovem(Historico historico, @PathVariable Long id, @AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
-		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		User usuarioSessao = null;
+		if (usuarioRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Usuario) usuarioRepository.findByUsername(userDetails.getUsername());
+		} else if (gestorRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Gestor) gestorRepository.findByUsername(userDetails.getUsername());
+		} else if (contatoRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Contato) contatoRepository.findByUsername(userDetails.getUsername());
+		} else if (representanteLegalRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (RepresentanteLegal) representanteLegalRepository.findByUsername(userDetails.getUsername());
+		}
 		Jovem jovem = jovemRepository.findOne(id);
+		if (historicoRepository.findByJovem(jovem) != null) {
+			historico = historicoRepository.findByJovem(jovem);
+			modelAndView = new ModelAndView("redirect:/sw/historico/"+historico.getId());
+		}
 		if (usuarioSessao.getGrupoDePermissoes().isHistoricoCadastrar() == true) {
 			modelAndView = new ModelAndView("aprendizes/historicos/historico");
 			modelAndView.addObject("historico", historico);
@@ -95,7 +124,16 @@ public class HistoricoController {
 	@PostMapping("/historico")
 	public ModelAndView save(@Valid Historico historico, BindingResult bindingResult, @AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
-		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		User usuarioSessao = null;
+		if (usuarioRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Usuario) usuarioRepository.findByUsername(userDetails.getUsername());
+		} else if (gestorRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Gestor) gestorRepository.findByUsername(userDetails.getUsername());
+		} else if (contatoRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Contato) contatoRepository.findByUsername(userDetails.getUsername());
+		} else if (representanteLegalRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (RepresentanteLegal) representanteLegalRepository.findByUsername(userDetails.getUsername());
+		}
 		Jovem jovem = jovemRepository.findOne(historico.getJovem().getId());
 		if (usuarioSessao.getGrupoDePermissoes().isHistoricoCadastrar() == true) {
 			modelAndView = new ModelAndView("aprendizes/historicos/historico");
@@ -120,7 +158,16 @@ public class HistoricoController {
 	@GetMapping("/historico/{id}")
 	public ModelAndView load(@PathVariable("id") Long id, @AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
-		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		User usuarioSessao = null;
+		if (usuarioRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Usuario) usuarioRepository.findByUsername(userDetails.getUsername());
+		} else if (gestorRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Gestor) gestorRepository.findByUsername(userDetails.getUsername());
+		} else if (contatoRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Contato) contatoRepository.findByUsername(userDetails.getUsername());
+		} else if (representanteLegalRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (RepresentanteLegal) representanteLegalRepository.findByUsername(userDetails.getUsername());
+		}
 		Historico historico = historicoRepository.findOne(id);
 		Jovem jovem = jovemRepository.findOne(historico.getJovem().getId());
 		if (usuarioSessao.getGrupoDePermissoes().isHistoricoVisualizar() == true) {
@@ -137,7 +184,16 @@ public class HistoricoController {
 	@PostMapping("/historico/{id}")
 	public ModelAndView update(@Valid Historico historico, BindingResult bindingResult, @AuthenticationPrincipal UserDetails userDetails) {
 		ModelAndView modelAndView = null;
-		Usuario usuarioSessao = usuarioRepository.findByUsername(userDetails.getUsername());
+		User usuarioSessao = null;
+		if (usuarioRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Usuario) usuarioRepository.findByUsername(userDetails.getUsername());
+		} else if (gestorRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Gestor) gestorRepository.findByUsername(userDetails.getUsername());
+		} else if (contatoRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (Contato) contatoRepository.findByUsername(userDetails.getUsername());
+		} else if (representanteLegalRepository.findByUsername(userDetails.getUsername()) != null) {
+			usuarioSessao = (RepresentanteLegal) representanteLegalRepository.findByUsername(userDetails.getUsername());
+		}
 		Jovem jovem = jovemRepository.findOne(historico.getJovem().getId());
 		if (usuarioSessao.getGrupoDePermissoes().isHistoricoEditar() == true) {
 			modelAndView = new ModelAndView("aprendizes/historicos/historico");

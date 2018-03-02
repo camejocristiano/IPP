@@ -9,4 +9,5 @@ import br.net.ipp.models.aprendizes.Jovem;
 
 public interface HistoricoRepository extends PagingAndSortingRepository<Historico, Long> {
 	List<Historico> findAllByJovem(Jovem jovem);
+	Historico findByJovem(Jovem jovem);
 }

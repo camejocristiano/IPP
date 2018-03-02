@@ -6,19 +6,9 @@
 	pageEncoding="UTF-8"%>
 
 <c:import url="../../../partials/header.jsp"></c:import>
-<style>
-table, th {
-    border: 2px solid black;
-}
-table, td {
-    border: 1px solid black;
-}
-</style>
-
 <c:import url="../../../partials/navbar.jsp"></c:import>
 
 <div class="container" id="main-container-content">
-
 
 	<div class="row">
 		<div class="col s12 l12">
@@ -34,281 +24,170 @@ table, td {
 			<br />
 		</div>
 	</div>
+	
+		<c:url value="/sw/demonstrativo/" var="swDemonstrativo"></c:url>
+		<form:form role="form" commandName="demonstrativo" servletRelativeAction="${swDemonstrativo}" method="POST">
    		<div class="row">
-            <div class="input-field s12 col l12">
-			<table border="1">
-				<thead>
-					<tr>
-						<th colspan="8">DADOS DA EMPRESA</th>
-					</tr>
-					<tr>
-						<th colspan="6">Nome da Empresa</th>
-						<th colspan="2">Demonstrativo de Folha de Pagamento</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="6">CNPJ Empresa</td>
-						<td colspan="2">Data Referente</td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th colspan="8">DADOS DO JOVEM</th>
-					</tr>
-					<tr>
-						<th>Código</th>
-						<th colspan="2">Nome do Jovem</th>
-						<th>Idade do Jovem</th>
-						<th>Admissão</th>
-						<th>CBO</th>
-						<th colspan="2">Local de Trabalho</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>${jovem.id}</td>
-						<td colspan="2">${jovem.nome}</td>
-						<td>${jovem.idade}</td>
-						<td>10/10/1998</td>
-						<td>123</td>
-						<td colspan="2">IPP</td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th colspan="8">DADOS DO CURSO</th>
-					</tr>
-					<tr>
-						<th colspan="3">Curso</th>
-						<th colspan="2">PAP</th>
-						<th>Data de Início:</th>
-						<th>Dias Mês:</th>
-						<th>Término do Contrato:</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="3"></td>	
-						<td colspan="2"></td>
-						<td>${contratacao.dataDeInicioDaContratacao}</td>
-						<td>30</td>	
-						<td>${contratacao.terminoDoContrato}</td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th colspan="8">FREQUÊNCIAS</th>
-					</tr>
-					<tr>
-						<th>Faltas Curso:</th>
-						<th>Falta Esa Injustificada:</th>
-						<th>Falta Esa Justificada:</th>
-						<th>Estorno Faltas:</th>
-						<th>Dias Trabalho:</th>
-						<th>Atrasos hrs:</th>
-						<th>Desconto Portfolio hrs:</th>
-						<th>Valor:</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>${faltasCurso}</td>
-						<td></td>						
-						<td></td>
-						<td></td>						
-						<td>${diasTrabalho}</td>						
-						<td></td>
-						<td></td>						
-						<td></td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th colspan="8">DETALHAMENTO FINANCEIRO</th>
-					</tr>
-					<tr>
-						<th>Código</th>
-						<th colspan="3">Descrição</th>
-						<th>Frequência</th>
-						<th>Vencimentos</th>
-						<th colspan="2">Descontos</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>0001</td>
-						<td colspan="3">Salário Base</td>
-						<td>${parametros.salarioMinimoFederalSMF}</td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0002</td>
-						<td colspan="3">VT</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0003</td>
-						<td colspan="3">VR</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0004</td>
-						<td colspan="3">Seguro de Vida/PCMSO:</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0005</td>
-						<td colspan="3">INSS - 20%</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0006</td>
-						<td colspan="3">FGTS - 2%:</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0007</td>
-						<td colspan="3">PIS - 1%</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<!-- <tr>
-						<td>0008</td>
-						<td colspan="3">Acidente de Trabalho - 2%</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0009</td>
-						<td colspan="3">Sistema S - 3,5%</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0010</td>
-						<td colspan="3">Salário Educação - 1%</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>00011</td>
-						<td colspan="3">VT 20 dias Contrato</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0012</td>
-						<td colspan="3">VT ref. Admissão</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0013</td>
-						<td colspan="3">VT próximo mês + 2,5%</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0014</td>
-						<td colspan="3">VR 20 dias contrato</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0015</td>
-						<td colspan="3">VR Ref. Admissão</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0016</td>
-						<td colspan="3">VR Próximo Mês + 2,60%</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0017</td>
-						<td colspan="3">Plano de saúde</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0018</td>
-						<td colspan="3">Plano odonto</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0019</td>
-						<td colspan="3">Tx Extra Adicional 18% s/min</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0020</td>
-						<td colspan="3">Media Taxas</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td>0021</td>
-						<td colspan="3">Media Prov 13 + Férias + Encargos</td>
-						<td></td>
-						<td></td>
-						<td colspan="2"></td>
-					</tr> -->
-					<tr>
-						<th colspan="8">RESUMO</th>
-					</tr>
-					<tr>
-						<th colspan="4" rowspan="3"></th>
-						<th>Total Vencimentos</th>
-						<th>Total Descontos</th>
-						<th colspan="2"></th>
-					</tr>
-					<tr>
-						<td>910.00</td>
-						<td>1,080.20</td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<th colspan="2">Total por Jovem</th>
-						<th colspan="2">1,258.20</th>			
-					</tr>
-				</tbody>
-			</table>
-			<br />
-		</div><!-- // col -->
+            <div class="input-field s12 col l1">
+            	<form:input path="varDemonstrativo" />	
+            	<form:errors path="varDemonstrativo" ></form:errors>
+            	<form:label path="varDemonstrativo">X</form:label>
+			</div><!-- // col -->
+            <div class="input-field s12 col l7">
+            	<form:input path="nomeDoJovem" />	
+            	<form:errors path="nomeDoJovem" ></form:errors>
+            	<form:label path="nomeDoJovem">Jovem</form:label>
+			</div><!-- // col -->
+            <div class="input-field s12 col l2">
+            	<form:input path="codigoDoJovem" />	
+            	<form:errors path="codigoDoJovem" ></form:errors>
+            	<form:label path="codigoDoJovem">Código</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l2">
+            	<form:input path="idadeDoJovem" />	
+            	<form:errors path="idadeDoJovem" ></form:errors>
+            	<form:label path="idadeDoJovem">Idade</form:label>
+			</div><!-- // col -->
         </div><!-- // row -->
-   		<br />
-   		<br />
-	</div><!-- // container -->
+   		<div class="row">
+            <div class="input-field s12 col l2">
+            	<form:input path="dataDaContratacao" />	
+            	<form:errors path="dataDaContratacao" ></form:errors>
+            	<form:label path="dataDaContratacao">Data da Contratação</form:label>
+			</div><!-- // col -->
+            <div class="input-field s12 col l2">
+            	<form:input path="base" />	
+            	<form:errors path="base" ></form:errors>
+            	<form:label path="base">Base</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l2">
+            	<form:input path="seguroDeVida_PCMSO" />	
+            	<form:errors path="seguroDeVida_PCMSO" ></form:errors>
+            	<form:label path="seguroDeVida_PCMSO">Seguro de Vida PCMSO</form:label>
+			</div><!-- // col -->
+            <div class="input-field s12 col l2">
+            	<form:input path="mesReferente" />	
+            	<form:errors path="mesReferente" ></form:errors>
+            	<form:label path="mesReferente">Mes Referente</form:label>
+			</div><!-- // col -->
+            <div class="input-field s12 col l2">
+            	<form:input path="vt" />	
+            	<form:errors path="vt" ></form:errors>
+            	<form:label path="vt">VT</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l2">
+            	<form:input path="vr" />	
+            	<form:errors path="vr" ></form:errors>
+            	<form:label path="vr">VR</form:label>
+			</div><!-- // col -->
+        </div><!-- // row -->
+        <div class="row">
+            <div class="input-field s12 col l4">
+				<form:input path="faltas" />	
+            	<form:errors path="faltas" ></form:errors>
+            	<form:label path="faltas">Faltas</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l4">
+				<form:input path="diasTrabalhados" />	
+            	<form:errors path="diasTrabalhados" ></form:errors>
+            	<form:label path="diasTrabalhados">Dias Trabalhados</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l4">
+				<form:input path="valorBruto" />	
+            	<form:errors path="valorBruto" ></form:errors>
+            	<form:label path="valorBruto">Valor Bruto</form:label>
+			</div><!-- // col -->
+        </div><!-- // row -->
+        <hr />
+        <div class="row">
+            <div class="input-field s12 col l12">
+				<form:input path="iNSS_20_porCento" />	
+            	<form:errors path="iNSS_20_porCento" ></form:errors>
+            	<form:label path="iNSS_20_porCento">INSS 20%</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l12">
+				<form:input path="fGTS_2_porCento" />	
+            	<form:errors path="fGTS_2_porCento" ></form:errors>
+            	<form:label path="fGTS_2_porCento">FGTS 2%</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l12">
+				<form:input path="pIS_1_porCento" />	
+            	<form:errors path="pIS_1_porCento" ></form:errors>
+            	<form:label path="pIS_1_porCento">PIS 1%</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l12">
+				<form:input path="acidenteDeTrabalho_2_porCento" />	
+            	<form:errors path="acidenteDeTrabalho_2_porCento" ></form:errors>
+            	<form:label path="acidenteDeTrabalho_2_porCento">Acidente de Trabalho 2%</form:label>
+			</div><!-- // col -->
+            <div class="input-field s12 col l12">
+				<form:input path="sistemaS_3_ponto_5_porCento" />	
+            	<form:errors path="sistemaS_3_ponto_5_porCento" ></form:errors>
+            	<form:label path="sistemaS_3_ponto_5_porCento">Sistemas 3 ponto 5%</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l12">
+				<form:input path="salarioEducacao_1_porCento" />	
+            	<form:errors path="salarioEducacao_1_porCento" ></form:errors>
+            	<form:label path="salarioEducacao_1_porCento">Salário Educação 1%</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l12">
+				<form:input path="planoDeSaude" />	
+            	<form:errors path="planoDeSaude" ></form:errors>
+            	<form:label path="planoDeSaude">Plano de Saúde</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l12">
+				<form:input path="planoOdonto" />	
+            	<form:errors path="planoOdonto" ></form:errors>
+            	<form:label path="planoOdonto">Plano Odonto</form:label>
+			</div><!-- // col -->
+			<div class="input-field s12 col l12">
+				<form:input path="taxaExtraAdicional_18_porCento_s_min" />	
+            	<form:errors path="taxaExtraAdicional_18_porCento_s_min" ></form:errors>
+            	<form:label path="taxaExtraAdicional_18_porCento_s_min">Taxa Extra Adicional 18% S/min</form:label>
+			</div><!-- // col -->
+        </div><!-- // row -->
+		<hr />
+        <div class="row">
+            <div class="input-field s12 col l12">
+            	<form:input path="valorDaParceiriaEmpresa" />	
+            	<form:errors path="valorDaParceiriaEmpresa" ></form:errors>
+            	<form:label path="valorDaParceiriaEmpresa">Valor da Parceiria Empresa</form:label>
+			</div><!-- // col -->
+            <div class="input-field s12 col l12">
+            	<form:input path="totalLiquedo" />	
+            	<form:errors path="totalLiquedo" ></form:errors>
+            	<form:label path="totalLiquedo">Total Líquedo</form:label>
+			</div><!-- // col -->
+            <div class="input-field s12 col l12">
+            	<form:input path="diaDoCurso" />	
+            	<form:errors path="diaDoCurso" ></form:errors>
+            	<form:label path="diaDoCurso">Dia do Curso</form:label>
+			</div><!-- // col -->
+            <div class="input-field s12 col l12">
+            	<form:input path="terminoDoContrato" />	
+            	<form:errors path="terminoDoContrato" ></form:errors>
+            	<form:label path="terminoDoContrato">Término do Contrato</form:label>
+			</div><!-- // col -->
+        </div><!-- // row -->
+		<br />
+		<br />
+		<input type="hidden" name="curso" value="${curso.id}" />
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.demonstrativoCadastrar == true && requestScope.demonstrativoOcupacional.id == null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.demonstrativoEditar == true && requestScope.demonstrativoOcupacional.id != null}">
+				<button class="btn waves-effect waves-light right" type="submit">
+					Salvar<i class="material-icons right">send</i>
+				</button>
+			</c:if>
+
+			<br />
+			<br />
+		</form:form>
+</div><!-- // container -->
+
 <c:import url="../../../partials/js.jsp"></c:import>
 <c:import url="../../../partials/footer.jsp"></c:import>
 <c:import url="../../../partials/final.jsp"></c:import>

@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.1.2.5.1.1.2:1", "", "Cenário 01.02: Manutenção de Permissões", "EARoot/EA1/EA2/EA5/EA1/EA1/EA2/EA273.htm", "189.png", "1409", "0", "", "Analysis diagram0","{2F0F0F9A-48DC-4dc6-97E9-202C2239CCEE}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.1.2.1", "1", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA2/EA5/EA1/EA1/EA2/EA277.htm", "4.png", "", "", "{9E3E8321-2DC0-40f0-950F-E2E86C8CA342}", "Package");

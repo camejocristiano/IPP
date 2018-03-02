@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.1.2.5.1.1.4:1", "", "Cenário 01.04: Manter Canais", "EARoot/EA1/EA2/EA5/EA1/EA1/EA4/EA406.htm", "189.png", "1411", "0", "", "Analysis diagram0","{E66D6B16-360D-4556-B816-C1997C37388B}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.1.4.1", "1", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA2/EA5/EA1/EA1/EA4/EA410.htm", "4.png", "", "", "{108A1F7F-80B4-41e1-99A1-44082CC179B7}", "Package");

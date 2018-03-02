@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.1.2.5.1.4.1:1", "", "Cenário 04.01: Manutenção de PITs E PIPs", "EARoot/EA1/EA2/EA5/EA1/EA4/EA1/EA1488.htm", "189.png", "1434", "0", "", "Analysis diagram0","{C0BB6E9D-2641-43d7-837F-6ECC73A24A2E}");
+tocTab[tocTab.length] = new Array("0.1.2.5.1.4.1.1", "1", "Nó Operacional: Administração do Estabelecimento", "EARoot/EA1/EA2/EA5/EA1/EA4/EA1/EA1492.htm", "4.png", "", "", "{1CA6C029-C90A-4568-AEDF-1A729509F53B}", "Package");

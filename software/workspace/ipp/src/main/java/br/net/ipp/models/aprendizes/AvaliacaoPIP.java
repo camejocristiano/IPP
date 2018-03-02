@@ -23,7 +23,7 @@ public class AvaliacaoPIP extends AbstractEntity {
 	private double avaliacoesPIP_notaAvaliacaoPortugues;
 	private double avaliacoesPIP_notaAvaliacaoVivencia;
 	@ManyToOne
-	private Jovem jovem;
+	private Historico historico;
 	
 	
 	public String getAvaliacoesPIP_dataAutoAvaliacao() {
@@ -98,11 +98,11 @@ public class AvaliacaoPIP extends AbstractEntity {
 	public void setAvaliacoesPIP_notaAvaliacaoVivencia(double avaliacoesPIP_notaAvaliacaoVivencia) {
 		this.avaliacoesPIP_notaAvaliacaoVivencia = avaliacoesPIP_notaAvaliacaoVivencia;
 	}
-	public Jovem getJovem() {
-		return jovem;
+	public Historico getHistorico() {
+		return historico;
 	}
-	public void setJovem(Jovem jovem) {
-		this.jovem = jovem;
+	public void setHistorico(Historico historico) {
+		this.historico = historico;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

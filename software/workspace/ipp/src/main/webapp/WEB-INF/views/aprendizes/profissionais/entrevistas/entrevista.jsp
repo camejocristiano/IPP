@@ -11,7 +11,8 @@
 <div class="container" id="main-container-content">
 	<div class="row">
 		<div class="col s12 l12">
-			<a href="/sw/fichaProfissional/home/${entrevista.jovem != null ? entrevista.jovem.id : jovem.id}">
+			<c:url value="/sw/profissional/home/${entrevista.fichaProfissional != null ? entrevista.fichaProfissional.jovem.id : jovem.id}" var="swProfissionalHomeJovemId"></c:url>
+			<a href="${swProfissionalHomeJovemId}">
 				<h4 class="header right black-text">${jovem.nome != null ? jovem.nome : "Jovem"}</h4>
 			</a>
 			<br />
@@ -56,7 +57,7 @@
 			</div>
 		</div>
 
-			<form:hidden path="jovem" value="${entrevista.jovem == null ? jovem.id : entrevista.jovem.id}" />
+			<form:hidden path="fichaProfissional" value="${entrevista.fichaProfissional == null ? fichaProfissional.id : entrevista.fichaProfissional.id}" />
 
 			<c:if test="${requestScope.usuarioSessao.grupoDePermissoes.entrevistaCadastrar == true && requestScope.entrevista.id == null}">
 				<button class="btn waves-effect waves-light right" type="submit">
